@@ -10,6 +10,7 @@ const app = express()
 const repository = new DatasetRepository(process.env.VNAV_DATA_ROOT)
 
 app.disable('x-powered-by')
+app.use(express.json({ limit: '16kb' }))
 
 app.get('/api/datasets', (_request, response) => {
   try {
@@ -29,6 +30,36 @@ app.get('/api/datasets/:id', (request, response) => {
     response.json(loaded.detail)
   } catch (error) {
     response.status(500).json({ error: error instanceof Error ? error.message : '无法加载数据集' })
+  }
+})
+
+app.delete('/api/datasets/:id', async (request, response) => {
+  try {
+    const result = await repository.delete(request.params.id)
+    if (!result) {
+      response.status(404).json({ error: '未找到该数据集' })
+      return
+    }
+    response.json(result)
+  } catch (error) {
+    response.status(500).json({ error: error instanceof Error ? error.message : '无法删除数据集' })
+  }
+})
+
+app.post('/api/datasets/:id/trim', async (request, response) => {
+  try {
+    const trimStart = Number(request.body?.trimStart)
+    const trimEnd = Number(request.body?.trimEnd)
+    const result = await repository.trim(request.params.id, trimStart, trimEnd)
+    if (!result) {
+      response.status(404).json({ error: '未找到该数据集' })
+      return
+    }
+    response.json(result)
+  } catch (error) {
+    const message = error instanceof Error ? error.message : '无法裁剪数据集'
+    const status = /必须|请至少|过长|没有可保留/.test(message) ? 400 : /正在处理/.test(message) ? 409 : 500
+    response.status(status).json({ error: message })
   }
 })
 
@@ -52,7 +83,7 @@ app.get('/media/:id/grids/:filename', (request, response) => {
       response.status(404).json({ error: '未找到该占据图' })
       return
     }
-    response.setHeader('Cache-Control', 'public, max-age=3600')
+    response.setHeader('Cache-Control', 'no-store')
     response.sendFile(gridPath)
   } catch (error) {
     response.status(500).json({ error: error instanceof Error ? error.message : '无法读取占据图' })

@@ -49,10 +49,15 @@ const summary: DatasetSummary = {
 const detail: DatasetDetail = {
   ...summary,
   timeline: { from: 100, to: 399, duration: 299 },
-  cameras: ['cam0', 'cam1', 'cam2', 'cam3', 'cam7'].map((id) => ({
+  cameras: Object.entries({
+    cam0: { positionZh: '左', positionEn: 'left' },
+    cam1: { positionZh: '右', positionEn: 'right' },
+    cam2: { positionZh: '前下', positionEn: 'front_bottom' },
+    cam3: { positionZh: '前上', positionEn: 'front_top' },
+    cam7: { positionZh: '后上', positionEn: 'rear_top' },
+  }).map(([id, position]) => ({
     id,
-    positionZh: id,
-    positionEn: id,
+    ...position,
     videoUrl: `/media/example/cameras/${id}`,
     available: true,
     coverage: 1,
@@ -113,5 +118,136 @@ describe('App timeline integration', () => {
     await waitFor(() => expect(screen.getByText('无对应数据')).toBeInTheDocument())
     expect(videos.every((video) => video.currentTime === 293)).toBe(true)
     expect(document.querySelector('.occupancy-stage img')).toBeNull()
+  })
+
+  it('asks for confirmation and deletes the selected Meta and video dataset', async () => {
+    let deleted = false
+    const fetchMock = vi.mocked(fetch)
+    fetchMock.mockImplementation(async (input: RequestInfo | URL, init?: RequestInit) => {
+      const url = String(input)
+      if (init?.method === 'DELETE') {
+        deleted = true
+        return { ok: true, json: async () => ({ deletedId: summary.id }) } as Response
+      }
+      if (url === '/api/datasets') {
+        return { ok: true, json: async () => deleted ? [] : [summary] } as Response
+      }
+      return { ok: true, json: async () => detail } as Response
+    })
+
+    render(<App />)
+    fireEvent.click(await screen.findByRole('button', { name: '删除数据集' }))
+    expect(screen.getByRole('dialog', { name: '删除数据集' })).toBeInTheDocument()
+    expect(screen.getByText(/全部 Meta（含占据图）和视频文件/)).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: '确认永久删除' }))
+    await waitFor(() => expect(fetchMock).toHaveBeenCalledWith('/api/datasets/example', { method: 'DELETE' }))
+    expect(await screen.findByText('暂无可预览的数据集')).toBeInTheDocument()
+    expect(screen.getByText(/已删除数据集\s*测试任务\s*的 Meta 和视频/)).toBeInTheDocument()
+  })
+
+  it('submits a retained time range as start and end removal durations', async () => {
+    const fetchMock = vi.mocked(fetch)
+    fetchMock.mockImplementation(async (input: RequestInfo | URL, init?: RequestInit) => {
+      const url = String(input)
+      if (init?.method === 'POST') {
+        return {
+          ok: true,
+          json: async () => ({
+            id: summary.id,
+            from: 105.2,
+            to: 396,
+            duration: 290.8,
+            removedFrames: 2,
+            removedGrids: 2,
+            trimmedVideos: 5,
+            warnings: [],
+          }),
+        } as Response
+      }
+      return { ok: true, json: async () => url === '/api/datasets' ? [summary] : detail } as Response
+    })
+
+    render(<App />)
+    fireEvent.click(await screen.findByRole('button', { name: '裁剪数据集片段' }))
+    const dialog = screen.getByRole('dialog', { name: '裁剪首尾片段' })
+    expect(dialog).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: '纯秒' }))
+    fireEvent.change(screen.getByRole('spinbutton', { name: '保留起点秒数' }), { target: { value: '5.2' } })
+    fireEvent.change(screen.getByRole('spinbutton', { name: '保留终点秒数' }), { target: { value: '296' } })
+    expect(screen.getByText('将保留 290.8 秒')).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: '确认裁剪' }))
+    await waitFor(() => expect(fetchMock).toHaveBeenCalledWith(
+      '/api/datasets/example/trim',
+      expect.objectContaining({ method: 'POST', body: JSON.stringify({ trimStart: 5.2, trimEnd: 3 }) }),
+    ))
+    await waitFor(() => expect(screen.getByText(/裁剪完成：保留 290.8 秒/)).toBeInTheDocument())
+  })
+
+  it('accepts 00:00:24 to 00:02:23 as a retained range for a 00:02:25.3 dataset', async () => {
+    const shortDetail: DatasetDetail = {
+      ...detail,
+      endedTimestamp: 245.3,
+      timeline: { from: 100, to: 245.3, duration: 145.3 },
+    }
+    vi.mocked(fetch).mockImplementation(async (input: RequestInfo | URL) => ({
+      ok: true,
+      json: async () => String(input) === '/api/datasets' ? [summary] : shortDetail,
+    }) as Response)
+
+    render(<App />)
+    fireEvent.click(await screen.findByRole('button', { name: '裁剪数据集片段' }))
+    fireEvent.change(screen.getByRole('spinbutton', { name: '保留起点秒' }), { target: { value: '24' } })
+    fireEvent.change(screen.getByRole('spinbutton', { name: '保留终点分钟' }), { target: { value: '2' } })
+    fireEvent.change(screen.getByRole('spinbutton', { name: '保留终点秒' }), { target: { value: '23' } })
+
+    expect(screen.getByText('将保留 00:01:59.0')).toBeInTheDocument()
+    expect(screen.getByText('删除开头 24.0 秒 · 结尾 2.3 秒')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '确认裁剪' })).toBeEnabled()
+  })
+
+  it('switches between hour-minute-second and pure-second inputs without changing the duration', async () => {
+    render(<App />)
+    fireEvent.click(await screen.findByRole('button', { name: '裁剪数据集片段' }))
+
+    expect(screen.getByRole('button', { name: '时分秒' })).toHaveAttribute('aria-pressed', 'true')
+    fireEvent.change(screen.getByRole('spinbutton', { name: '保留起点分钟' }), { target: { value: '1' } })
+    fireEvent.change(screen.getByRole('spinbutton', { name: '保留起点秒' }), { target: { value: '5.5' } })
+    fireEvent.change(screen.getByRole('spinbutton', { name: '保留终点秒' }), { target: { value: '50' } })
+    expect(screen.getByText('当前长度 00:04:59.0')).toBeInTheDocument()
+    expect(screen.getByText('将保留 00:03:44.5')).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: '纯秒' }))
+    expect(screen.getByRole('spinbutton', { name: '保留起点秒数' })).toHaveValue(65.5)
+    expect(screen.getByRole('spinbutton', { name: '保留终点秒数' })).toHaveValue(290)
+    expect(screen.getByText('将保留 224.5 秒')).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: '时分秒' }))
+    expect(screen.getByRole('spinbutton', { name: '保留起点分钟' })).toHaveValue(1)
+    expect(screen.getByRole('spinbutton', { name: '保留起点秒' })).toHaveValue(5.5)
+    expect(screen.getByRole('spinbutton', { name: '保留终点秒' })).toHaveValue(50)
+    fireEvent.change(screen.getByRole('spinbutton', { name: '保留起点分钟' }), { target: { value: '60' } })
+    expect(screen.getByText('请输入有效时间')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '确认裁剪' })).toBeDisabled()
+  })
+
+  it('carries rounded seconds into minutes instead of showing an invalid 60-second field', async () => {
+    const roundedDetail: DatasetDetail = {
+      ...detail,
+      endedTimestamp: 159.9998,
+      timeline: { from: 100, to: 159.9998, duration: 59.9998 },
+    }
+    vi.mocked(fetch).mockImplementation(async (input: RequestInfo | URL) => ({
+      ok: true,
+      json: async () => String(input) === '/api/datasets' ? [summary] : roundedDetail,
+    }) as Response)
+
+    render(<App />)
+    fireEvent.click(await screen.findByRole('button', { name: '裁剪数据集片段' }))
+
+    expect(screen.getByText('当前长度 00:01:00.0')).toBeInTheDocument()
+    expect(screen.getByRole('spinbutton', { name: '保留终点分钟' })).toHaveValue(1)
+    expect(screen.getByRole('spinbutton', { name: '保留终点秒' })).toHaveValue(0)
   })
 })

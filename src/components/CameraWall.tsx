@@ -1,7 +1,33 @@
 import { useCallback, useState } from 'react'
 import type { CameraInfo } from '../../shared/types'
 
-const CAMERA_SLOTS: Array<string | null> = [null, 'cam3', 'cam7', 'cam0', 'cam2', 'cam1']
+const CAMERA_POSITION_SLOTS = [
+  ['后', '后左'],
+  ['前上'],
+  ['前广', '右中', '后上'],
+  ['左'],
+  ['前下'],
+  ['右'],
+] as const
+
+function arrangeCameras(cameras: CameraInfo[]): Array<CameraInfo | null> {
+  const unused = new Set(cameras.map((camera) => camera.id))
+  const slots = CAMERA_POSITION_SLOTS.map((positionNames) => {
+    const camera = cameras.find(
+      (candidate) =>
+        unused.has(candidate.id) && positionNames.some((positionName) => positionName === candidate.positionZh.trim()),
+    ) ?? null
+    if (camera) unused.delete(camera.id)
+    return camera
+  })
+
+  const unassigned = cameras.filter((camera) => unused.has(camera.id))
+  for (const slotIndex of [0, 2]) {
+    if (!slots[slotIndex] && unassigned.length) slots[slotIndex] = unassigned.shift() ?? null
+  }
+
+  return slots
+}
 
 interface CameraTileProps {
   camera: CameraInfo | null
@@ -73,7 +99,7 @@ interface CameraWallProps {
 }
 
 export function CameraWall({ cameras, registerVideo, onMediaError }: CameraWallProps) {
-  const byId = new Map(cameras.map((camera) => [camera.id, camera]))
+  const cameraSlots = arrangeCameras(cameras)
   return (
     <section className="panel camera-panel" aria-label="多视角相机">
       <div className="panel-heading">
@@ -84,10 +110,10 @@ export function CameraWall({ cameras, registerVideo, onMediaError }: CameraWallP
         <span className="panel-meta">2 × 3 同步预览</span>
       </div>
       <div className="camera-grid">
-        {CAMERA_SLOTS.map((cameraId, index) => (
+        {cameraSlots.map((camera, index) => (
           <CameraTile
-            key={cameraId ?? `empty-${index}`}
-            camera={cameraId ? (byId.get(cameraId) ?? null) : null}
+            key={camera?.id ?? `empty-${index}`}
+            camera={camera}
             registerVideo={registerVideo}
             onMediaError={onMediaError}
           />

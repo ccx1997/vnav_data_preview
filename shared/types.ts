@@ -72,6 +72,21 @@ export interface DatasetDetail extends DatasetSummary {
   parseWarnings: string[]
 }
 
+export interface DatasetDeleteResult {
+  deletedId: string
+}
+
+export interface DatasetTrimResult {
+  id: string
+  from: number
+  to: number
+  duration: number
+  removedFrames: number
+  removedGrids: number
+  trimmedVideos: number
+  warnings: string[]
+}
+
 export interface PlaybackState {
   currentTime: number
   duration: number
