@@ -107,6 +107,55 @@ function createGroupedFixture(): string {
   return root
 }
 
+function createVisualNavFixture(): string {
+  const root = join(tmpdir(), `vnav-preview-visual-nav-${process.pid}-${Date.now()}-${Math.random().toString(16).slice(2)}`)
+  roots.push(root)
+  const id = 'downloaded_1'
+  const taskRoot = join(root, 'downloaded')
+  const meta = join(taskRoot, 'meta', 'unpacked', `meta_${id}`)
+  const videos = join(taskRoot, 'videos', `videos_${id}`)
+  mkdirSync(join(meta, 'grids'), { recursive: true })
+  mkdirSync(videos, { recursive: true })
+  writeFileSync(
+    join(meta, 'task.json'),
+    JSON.stringify({
+      task_id: 'downloaded',
+      title: '下载数据',
+      robot_id: 'Robot-4',
+      video_cameras: ['cam0'],
+      camera_positions: { cam0: { position_zh: '前下', position_en: 'front_bottom' } },
+      sub_task: { index: 1, sub_task_id: id, from: 300, to: 310 },
+    }),
+  )
+  writeFileSync(
+    join(meta, 'export_meta.json'),
+    JSON.stringify({ sample_count: 1, sub_task: { index: 1, sub_task_id: id, from: 300, to: 310 } }),
+  )
+  writeFileSync(join(meta, 'video_segments.json'), JSON.stringify({ video_cameras: ['cam0'] }))
+  writeFileSync(
+    join(videos, 'manifest.json'),
+    JSON.stringify({
+      task_id: 'downloaded',
+      sub_task_id: id,
+      results: [{ camera: 'cam0', out: join(videos, 'cam0_continuous.mp4'), ok: true }],
+    }),
+  )
+  writeFileSync(join(videos, 'cam0_continuous.mp4'), 'video')
+  writeFileSync(join(meta, 'grids', '300000.png'), 'png')
+  writeFileSync(
+    join(meta, 'frames.jsonl'),
+    JSON.stringify({
+      ts: 300,
+      ts_ms: 300000,
+      pose: { valid: true },
+      actual_vel: { valid: true },
+      grid_valid: true,
+      grid_png: 'grids/300000.png',
+    }),
+  )
+  return root
+}
+
 function createTrimFixture(): string {
   const root = join(tmpdir(), `vnav-preview-trim-${process.pid}-${Date.now()}-${Math.random().toString(16).slice(2)}`)
   roots.push(root)
@@ -211,6 +260,26 @@ describe('DatasetRepository', () => {
     expect(repository.getCameraPath('batch_2', 'cam5')).toMatch(/cam5_continuous\.mp4$/)
     expect(repository.getGridPath('batch_2', '200000.png')).toMatch(/200000\.png$/)
     expect(repository.load('batch_all')).toBeNull()
+  })
+
+  it('scans conventional and downloaded visual-nav roots together', () => {
+    const conventionalRoot = createFixture()
+    const visualNavRoot = createVisualNavFixture()
+    const repository = new DatasetRepository([conventionalRoot, visualNavRoot])
+
+    expect(repository.list().map((dataset) => dataset.id).sort()).toEqual(['downloaded_1', 'example.1'])
+    expect(repository.rootDirectories).toEqual([conventionalRoot, visualNavRoot])
+
+    const loaded = repository.load('downloaded_1')
+    expect(loaded?.detail).toMatchObject({
+      id: 'downloaded_1',
+      taskId: 'downloaded_1',
+      title: '下载数据 · 片段 1',
+      timeline: { from: 300, to: 310, duration: 10 },
+    })
+    expect(loaded?.detail.cameras[0]).toMatchObject({ id: 'cam0', positionZh: '前下', available: true })
+    expect(repository.getCameraPath('downloaded_1', 'cam0')).toMatch(/cam0_continuous\.mp4$/)
+    expect(repository.getGridPath('downloaded_1', '300000.png')).toMatch(/300000\.png$/)
   })
 
   it('permanently deletes both flat Meta and video directories', async () => {

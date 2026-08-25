@@ -58,6 +58,7 @@ interface RawFrameLine {
 
 const META_PREFIX = 'meta_'
 const VIDEO_PREFIX = 'videos_'
+const DEFAULT_VISUAL_NAV_ROOT = '/mnt/chengchangxu/data/visual_nav_mv'
 
 function runFfmpeg(inputPath: string, outputPath: string, startSeconds: number, durationSeconds: number): Promise<void> {
   const ffmpeg = process.env.FFMPEG_PATH ?? 'ffmpeg'
@@ -325,7 +326,19 @@ function looksLikeDataset(metaDirectory: string, videoDirectory: string): boolea
 
 function videoFilename(descriptor: DatasetDescriptor, metadata: JsonObject, cameraId: string): string {
   const cameraMetadata = asObject(asObject(metadata.per_camera)[cameraId])
-  return asString(cameraMetadata.file, `${cameraId}${descriptor.defaultVideoSuffix}`)
+  const explicitFilename = asString(cameraMetadata.file)
+  if (explicitFilename) return basename(explicitFilename)
+
+  const result = Array.isArray(metadata.results)
+    ? metadata.results.map(asObject).find((item) => asString(item.camera) === cameraId)
+    : undefined
+  const resultPath = asString(result?.out)
+  if (resultPath) return basename(resultPath)
+
+  const continuousFilename = `${cameraId}_continuous.mp4`
+  return existsSync(join(descriptor.videoDirectory, continuousFilename))
+    ? continuousFilename
+    : `${cameraId}${descriptor.defaultVideoSuffix}`
 }
 
 function asObject(value: unknown): JsonObject {
@@ -445,33 +458,73 @@ export function parseFramesJsonl(content: string): {
 
 export class DatasetRepository {
   readonly rootDirectory: string
+  readonly rootDirectories: string[]
   private readonly cache = new Map<string, LoadedDataset>()
   private readonly activeOperations = new Set<string>()
   private readonly trimVideo: VideoTrimmer
 
-  constructor(rootDirectory = resolve(process.cwd(), 'tmp_data'), options: DatasetRepositoryOptions = {}) {
-    this.rootDirectory = resolve(rootDirectory)
+  constructor(rootDirectory?: string | string[], options: DatasetRepositoryOptions = {}) {
+    const configuredRoots = rootDirectory === undefined
+      ? [resolve(process.cwd(), 'tmp_data'), DEFAULT_VISUAL_NAV_ROOT]
+      : Array.isArray(rootDirectory)
+        ? rootDirectory
+        : [rootDirectory]
+    this.rootDirectories = [...new Set(configuredRoots.map((directory) => resolve(directory)))]
+    this.rootDirectory = this.rootDirectories[0]
     this.trimVideo = options.trimVideo ?? runFfmpeg
   }
 
-  private scan(): DatasetDescriptor[] {
-    if (!existsSync(this.rootDirectory)) return []
-    const entries = readdirSync(this.rootDirectory, { withFileTypes: true }).sort((left, right) =>
+  private scanPairedDirectories(
+    metaRoot: string,
+    videoRoot: string,
+    descriptors: Map<string, DatasetDescriptor>,
+    grouped: boolean,
+  ): void {
+    if (!existsSync(metaRoot) || !existsSync(videoRoot)) return
+    const metaEntries = readdirSync(metaRoot, { withFileTypes: true }).sort((left, right) =>
+      left.name.localeCompare(right.name),
+    )
+    const videoNames = new Set(
+      readdirSync(videoRoot, { withFileTypes: true })
+        .filter((entry) => entry.isDirectory())
+        .map((entry) => entry.name),
+    )
+
+    for (const entry of metaEntries) {
+      if (!entry.isDirectory() || !entry.name.startsWith(META_PREFIX)) continue
+      const id = entry.name.slice(META_PREFIX.length)
+      if (!id) continue
+      const videoName = videoNames.has(`${VIDEO_PREFIX}${id}`)
+        ? `${VIDEO_PREFIX}${id}`
+        : videoNames.has(id)
+          ? id
+          : null
+      if (!videoName) continue
+      const metaDirectory = join(metaRoot, entry.name)
+      const videoDirectory = join(videoRoot, videoName)
+
+      if (looksLikeDataset(metaDirectory, videoDirectory)) {
+        if (!descriptors.has(id)) {
+          descriptors.set(id, createDescriptor(id, metaDirectory, videoDirectory, grouped))
+        }
+      }
+    }
+  }
+
+  private scanConventionalRoot(rootDirectory: string, descriptors: Map<string, DatasetDescriptor>): void {
+    const entries = readdirSync(rootDirectory, { withFileTypes: true }).sort((left, right) =>
       left.name.localeCompare(right.name),
     )
     const directoryNames = new Set(entries.filter((entry) => entry.isDirectory()).map((entry) => entry.name))
-    const descriptors = new Map<string, DatasetDescriptor>()
+
+    this.scanPairedDirectories(rootDirectory, rootDirectory, descriptors, false)
 
     for (const entry of entries) {
       if (!entry.isDirectory() || !entry.name.startsWith(META_PREFIX)) continue
       const containerId = entry.name.slice(META_PREFIX.length)
       if (!containerId || !directoryNames.has(`${VIDEO_PREFIX}${containerId}`)) continue
-      const metaDirectory = join(this.rootDirectory, entry.name)
-      const videoDirectory = join(this.rootDirectory, `${VIDEO_PREFIX}${containerId}`)
-
-      if (looksLikeDataset(metaDirectory, videoDirectory)) {
-        descriptors.set(containerId, createDescriptor(containerId, metaDirectory, videoDirectory, false))
-      }
+      const metaDirectory = join(rootDirectory, entry.name)
+      const videoDirectory = join(rootDirectory, `${VIDEO_PREFIX}${containerId}`)
 
       const nestedMetaEntries = readdirSync(metaDirectory, { withFileTypes: true }).sort((left, right) =>
         left.name.localeCompare(right.name),
@@ -500,6 +553,31 @@ export class DatasetRepository {
           descriptors.set(id, createDescriptor(id, nestedMetaDirectory, nestedVideoDirectory, true))
         }
       }
+    }
+  }
+
+  private scanVisualNavRoot(rootDirectory: string, descriptors: Map<string, DatasetDescriptor>): void {
+    const taskEntries = readdirSync(rootDirectory, { withFileTypes: true }).sort((left, right) =>
+      left.name.localeCompare(right.name),
+    )
+    for (const taskEntry of taskEntries) {
+      if (!taskEntry.isDirectory()) continue
+      const taskDirectory = join(rootDirectory, taskEntry.name)
+      this.scanPairedDirectories(
+        join(taskDirectory, 'meta', 'unpacked'),
+        join(taskDirectory, 'videos'),
+        descriptors,
+        true,
+      )
+    }
+  }
+
+  private scan(): DatasetDescriptor[] {
+    const descriptors = new Map<string, DatasetDescriptor>()
+    for (const rootDirectory of this.rootDirectories) {
+      if (!existsSync(rootDirectory)) continue
+      this.scanConventionalRoot(rootDirectory, descriptors)
+      this.scanVisualNavRoot(rootDirectory, descriptors)
     }
     return [...descriptors.values()]
   }

@@ -368,7 +368,7 @@ export default function App() {
       <main className="state-screen">
         <span className="state-symbol state-symbol--empty">0</span>
         <h1>暂无可预览的数据集</h1>
-        <p>tmp_data 中没有找到成对的 Meta 和视频目录。</p>
+        <p>tmp_data 和 visual_nav_mv 中没有找到成对的 Meta 和视频目录。</p>
         {notice ? <p className="state-notice">{notice}</p> : null}
       </main>
     )

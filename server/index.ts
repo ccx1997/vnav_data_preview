@@ -7,7 +7,11 @@ const isProduction = process.env.NODE_ENV === 'production'
 const port = Number(process.env.PORT ?? 5173)
 const host = process.env.HOST ?? '127.0.0.1'
 const app = express()
-const repository = new DatasetRepository(process.env.VNAV_DATA_ROOT)
+const configuredRoots = process.env.VNAV_DATA_ROOTS
+  ?.split(':')
+  .map((directory) => directory.trim())
+  .filter(Boolean)
+const repository = new DatasetRepository(configuredRoots?.length ? configuredRoots : process.env.VNAV_DATA_ROOT)
 
 app.disable('x-powered-by')
 app.use(express.json({ limit: '16kb' }))

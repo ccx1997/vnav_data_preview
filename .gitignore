@@ -1,6 +1,11 @@
 node_modules/
 dist/
 .npm-cache/
+__pycache__/
+*.py[cod]
 .DS_Store
 coverage/
 tmp_data/
+.env
+.env.*
+!.env.example
