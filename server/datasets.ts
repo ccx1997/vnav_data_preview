@@ -33,6 +33,7 @@ interface DatasetDescriptor {
 
 interface LoadedDataset {
   signature: string
+  descriptor: DatasetDescriptor
   detail: DatasetDetail
   videos: Map<string, string>
   grids: Set<string>
@@ -721,7 +722,7 @@ export class DatasetRepository {
       frames: parsed.frames,
       parseWarnings,
     }
-    const loaded = { signature, detail, videos, grids: parsed.grids }
+    const loaded = { signature, descriptor, detail, videos, grids: parsed.grids }
     this.cache.set(id, loaded)
     return loaded
   }
@@ -731,13 +732,17 @@ export class DatasetRepository {
   }
 
   getGridPath(id: string, filename: string): string | null {
-    if (basename(filename) !== filename || !/^\d+\.png$/.test(filename)) return null
+    return this.getGridPaths(id, [filename])?.[0] ?? null
+  }
+
+  getGridPaths(id: string, filenames: string[]): Array<string | null> | null {
     const loaded = this.load(id)
-    if (!loaded?.grids.has(filename)) return null
-    const descriptor = this.getDescriptor(id)
-    if (!descriptor) return null
-    const path = join(descriptor.gridsDirectory, filename)
-    return existsSync(path) ? path : null
+    if (!loaded) return null
+    return filenames.map((filename) => {
+      if (basename(filename) !== filename || !/^\d+\.png$/.test(filename) || !loaded.grids.has(filename)) return null
+      const path = join(loaded.descriptor.gridsDirectory, filename)
+      return existsSync(path) ? path : null
+    })
   }
 
   async delete(id: string): Promise<DatasetDeleteResult | null> {

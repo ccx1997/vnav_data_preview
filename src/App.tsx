@@ -1,11 +1,17 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import type { DatasetDeleteResult, DatasetDetail, DatasetSummary, DatasetTrimResult } from '../shared/types'
+import type {
+  DatasetDeleteResult,
+  DatasetDetail,
+  DatasetSummary,
+  DatasetTrimResult,
+  PreviewSessionResult,
+} from '../shared/types'
 import { CameraWall } from './components/CameraWall'
 import { OccupancyPanel } from './components/OccupancyPanel'
 import { PlaybackControls } from './components/PlaybackControls'
 import { TelemetryPanel } from './components/TelemetryPanel'
 import { TrajectoryCanvas } from './components/TrajectoryCanvas'
-import { findFreshFrame } from './lib/playback'
+import { findNearestFrame } from './lib/playback'
 
 async function fetchJson<T>(url: string, init?: RequestInit): Promise<T> {
   const response = await fetch(url, init)
@@ -62,6 +68,17 @@ function formatHms(totalSeconds: number): string {
   return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${seconds.toFixed(1).padStart(4, '0')}`
 }
 
+function videoTimelineTime(video: HTMLVideoElement): number {
+  const streamStart = video.dataset.preview === 'true' ? Number(video.dataset.streamStart ?? 0) : 0
+  return streamStart + video.currentTime
+}
+
+function setVideoTimelineTime(video: HTMLVideoElement, target: number): void {
+  const streamStart = video.dataset.preview === 'true' ? Number(video.dataset.streamStart ?? 0) : 0
+  const localTarget = Math.max(0, target - streamStart)
+  if (Math.abs(video.currentTime - localTarget) > 0.015) video.currentTime = localTarget
+}
+
 export default function App() {
   const [datasets, setDatasets] = useState<DatasetSummary[]>([])
   const [selectedId, setSelectedId] = useState('')
@@ -81,8 +98,36 @@ export default function App() {
   const [mutationPending, setMutationPending] = useState(false)
   const [mutationError, setMutationError] = useState('')
   const [notice, setNotice] = useState('')
+  const [previewSession, setPreviewSession] = useState<PreviewSessionResult | null>(null)
+  const [previewStartTime, setPreviewStartTime] = useState(0)
+  const [previewRevision, setPreviewRevision] = useState(0)
+  const [previewStarting, setPreviewStarting] = useState(false)
+  const [previewStatus, setPreviewStatus] = useState('原始码率')
+  const [bufferingIds, setBufferingIds] = useState<Set<string>>(new Set())
+  const [occupancyBuffering, setOccupancyBuffering] = useState(false)
   const videoRefs = useRef(new Map<string, HTMLVideoElement>())
   const frameRequest = useRef<number | null>(null)
+  const previewSessionRef = useRef<PreviewSessionResult | null>(null)
+  const previewSeekTimer = useRef<number | null>(null)
+  const previewRequestRevision = useRef(0)
+  const isPlayingRef = useRef(false)
+  const bufferingIdsRef = useRef(new Set<string>())
+  const occupancyBufferingRef = useRef(false)
+  const hardSeekTimes = useRef(new WeakMap<HTMLVideoElement, number>())
+  isPlayingRef.current = isPlaying
+
+  const releasePreviewSession = useCallback((updateState = true) => {
+    previewRequestRevision.current += 1
+    const sessionId = previewSessionRef.current?.sessionId
+    previewSessionRef.current = null
+    if (updateState) setPreviewSession(null)
+    if (sessionId) {
+      void fetch(`/api/preview/sessions/${encodeURIComponent(sessionId)}`, {
+        method: 'DELETE',
+        keepalive: true,
+      }).catch(() => undefined)
+    }
+  }, [])
 
   useEffect(() => {
     const controller = new AbortController()
@@ -100,6 +145,7 @@ export default function App() {
   }, [])
 
   useEffect(() => {
+    releasePreviewSession()
     if (!selectedId) {
       setDetail(null)
       setLoading(false)
@@ -112,6 +158,11 @@ export default function App() {
     setCurrentTime(0)
     setDetail(null)
     setMediaErrors(new Set())
+    bufferingIdsRef.current.clear()
+    setBufferingIds(new Set())
+    occupancyBufferingRef.current = false
+    setOccupancyBuffering(false)
+    setPreviewStatus('原始码率')
     for (const video of videoRefs.current.values()) video.pause()
     videoRefs.current.clear()
     fetchJson<DatasetDetail>(`/api/datasets/${encodeURIComponent(selectedId)}`, { signal: controller.signal })
@@ -121,7 +172,7 @@ export default function App() {
       })
       .finally(() => setLoading(false))
     return () => controller.abort()
-  }, [reloadRevision, selectedId])
+  }, [releasePreviewSession, reloadRevision, selectedId])
 
   const registerVideo = useCallback((cameraId: string, video: HTMLVideoElement | null) => {
     if (video) videoRefs.current.set(cameraId, video)
@@ -146,22 +197,76 @@ export default function App() {
       .filter((video): video is HTMLVideoElement => Boolean(video))
   }, [detail, mediaErrors])
 
+  const pauseMedia = useCallback(() => {
+    for (const video of getOrderedVideos()) {
+      video.pause()
+      video.playbackRate = 1
+    }
+  }, [getOrderedVideos])
+
+  const playGroup = useCallback(async (videos = getOrderedVideos()) => {
+    if (!videos.length) return false
+    const results = await Promise.allSettled(videos.map((video) => video.play()))
+    const startedTogether = results.every((result) => result.status === 'fulfilled')
+    if (!startedTogether) {
+      for (const video of videos) video.pause()
+      setError('部分视频未能开始播放，已暂停全部视角')
+    }
+    return startedTogether
+  }, [getOrderedVideos])
+
+  const handleBufferingChange = useCallback((cameraId: string, buffering: boolean) => {
+    const next = new Set(bufferingIdsRef.current)
+    if (buffering) next.add(cameraId)
+    else next.delete(cameraId)
+    bufferingIdsRef.current = next
+    setBufferingIds(next)
+    if (buffering && isPlayingRef.current) pauseMedia()
+  }, [pauseMedia])
+
+  const handleOccupancyBufferingChange = useCallback((buffering: boolean) => {
+    if (occupancyBufferingRef.current === buffering) return
+    occupancyBufferingRef.current = buffering
+    setOccupancyBuffering(buffering)
+    if (buffering && isPlayingRef.current) pauseMedia()
+  }, [pauseMedia])
+
   const seek = useCallback(
     (seconds: number) => {
       const duration = detail?.timeline.duration ?? 0
       const target = Math.min(duration, Math.max(0, seconds))
       setCurrentTime(target)
+      if (previewSessionRef.current?.enabled) {
+        pauseMedia()
+        const waiting = new Set(detail?.cameras.filter((camera) => camera.available).map((camera) => camera.id) ?? [])
+        bufferingIdsRef.current = waiting
+        setBufferingIds(waiting)
+        if (previewSeekTimer.current !== null) window.clearTimeout(previewSeekTimer.current)
+        previewSeekTimer.current = window.setTimeout(() => {
+          setPreviewStartTime(target)
+          setPreviewRevision((revision) => revision + 1)
+          previewSeekTimer.current = null
+        }, 180)
+        return
+      }
       for (const video of getOrderedVideos()) {
-        if (Math.abs(video.currentTime - target) > 0.015) video.currentTime = target
+        setVideoTimelineTime(video, target)
       }
     },
-    [detail, getOrderedVideos],
+    [detail, getOrderedVideos, pauseMedia],
   )
 
   const pause = useCallback(() => {
-    for (const video of getOrderedVideos()) video.pause()
+    pauseMedia()
+    if (previewSeekTimer.current !== null) {
+      window.clearTimeout(previewSeekTimer.current)
+      previewSeekTimer.current = null
+    }
     setIsPlaying(false)
-  }, [getOrderedVideos])
+    setPreviewStarting(false)
+    releasePreviewSession()
+    setPreviewStatus('原始码率')
+  }, [pauseMedia, releasePreviewSession])
 
   const openDialog = useCallback((nextDialog: 'delete' | 'trim') => {
     const keepTo = nextDialog === 'trim' ? (detail?.timeline.duration ?? 0) : 0
@@ -251,17 +356,65 @@ export default function App() {
   const togglePlayback = useCallback(async () => {
     const videos = getOrderedVideos()
     if (!videos.length) return
-    if (isPlaying) {
+    if (isPlaying || previewStarting) {
       pause()
       return
     }
     if (detail && currentTime >= detail.timeline.duration - 0.05) seek(0)
     const target = currentTime >= (detail?.timeline.duration ?? 0) - 0.05 ? 0 : currentTime
-    for (const video of videos) video.currentTime = target
-    const results = await Promise.allSettled(videos.map((video) => video.play()))
-    if (results.some((result) => result.status === 'fulfilled')) setIsPlaying(true)
-    else setError('浏览器未能开始播放视频')
-  }, [currentTime, detail, getOrderedVideos, isPlaying, pause, seek])
+    setError('')
+    setPreviewStarting(true)
+    pauseMedia()
+    const requestRevision = ++previewRequestRevision.current
+    try {
+      const session = await fetchJson<PreviewSessionResult>('/api/preview/sessions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ streams: videos.length }),
+      })
+      if (requestRevision !== previewRequestRevision.current) {
+        if (session.sessionId) {
+          void fetch(`/api/preview/sessions/${encodeURIComponent(session.sessionId)}`, {
+            method: 'DELETE',
+            keepalive: true,
+          }).catch(() => undefined)
+        }
+        return
+      }
+      if (session.enabled && session.sessionId) {
+        previewSessionRef.current = session
+        setPreviewSession(session)
+        setPreviewStartTime(target)
+        setPreviewRevision((revision) => revision + 1)
+        const waiting = new Set(detail?.cameras.filter((camera) => camera.available).map((camera) => camera.id) ?? [])
+        bufferingIdsRef.current = waiting
+        setBufferingIds(waiting)
+        setPreviewStatus(`GPU ${session.gpuIndex} · ${session.profile?.width ?? 480}px/${session.profile?.fps ?? 10}fps`)
+        setIsPlaying(true)
+        return
+      }
+      setPreviewStatus(session.reason || '原始码率')
+    } catch {
+      if (requestRevision === previewRequestRevision.current) setPreviewStatus('GPU 检测失败 · 原始码率')
+    } finally {
+      if (requestRevision === previewRequestRevision.current) setPreviewStarting(false)
+    }
+
+    if (requestRevision !== previewRequestRevision.current) return
+
+    for (const video of videos) setVideoTimelineTime(video, target)
+    setIsPlaying(true)
+    if (!occupancyBufferingRef.current && !await playGroup(videos)) setIsPlaying(false)
+  }, [currentTime, detail, getOrderedVideos, isPlaying, pause, pauseMedia, playGroup, previewStarting, seek])
+
+  useEffect(() => {
+    if (!isPlaying || bufferingIds.size || occupancyBuffering) return
+    const videos = getOrderedVideos()
+    if (!videos.length) return
+    void playGroup(videos).then((started) => {
+      if (!started) setIsPlaying(false)
+    })
+  }, [bufferingIds, getOrderedVideos, isPlaying, occupancyBuffering, playGroup, previewRevision])
 
   useEffect(() => {
     if (!isPlaying) return
@@ -272,17 +425,29 @@ export default function App() {
         setIsPlaying(false)
         return
       }
-      const masterTime = master.currentTime
+      const masterTime = videoTimelineTime(master)
       setCurrentTime(masterTime)
       for (const video of videos.slice(1)) {
-        if (video.readyState >= HTMLMediaElement.HAVE_METADATA && Math.abs(video.currentTime - masterTime) > 0.1) {
-          video.currentTime = masterTime
+        if (video.readyState < HTMLMediaElement.HAVE_METADATA) continue
+        const difference = masterTime - videoTimelineTime(video)
+        const absoluteDifference = Math.abs(difference)
+        if (absoluteDifference < 0.04) video.playbackRate = 1
+        else if (absoluteDifference <= 0.5) video.playbackRate = difference > 0 ? 1.04 : 0.96
+        else {
+          const now = performance.now()
+          const lastHardSeek = hardSeekTimes.current.get(video) ?? -Infinity
+          if (now - lastHardSeek >= 1000) {
+            setVideoTimelineTime(video, masterTime)
+            hardSeekTimes.current.set(video, now)
+          }
         }
       }
       if (master.ended || masterTime >= (detail?.timeline.duration ?? Infinity) - 0.01) {
-        for (const video of videos) video.pause()
+        pauseMedia()
         setCurrentTime(detail?.timeline.duration ?? masterTime)
         setIsPlaying(false)
+        releasePreviewSession()
+        setPreviewStatus('原始码率')
         return
       }
       frameRequest.current = window.requestAnimationFrame(update)
@@ -291,19 +456,38 @@ export default function App() {
     return () => {
       if (frameRequest.current !== null) window.cancelAnimationFrame(frameRequest.current)
     }
-  }, [detail, getOrderedVideos, isPlaying])
+  }, [detail, getOrderedVideos, isPlaying, pauseMedia, releasePreviewSession])
+
+  const handlePreviewFailure = useCallback(() => {
+    pauseMedia()
+    releasePreviewSession()
+    setPreviewStatus('GPU 预览中断 · 已回退原始码率')
+    const waiting = new Set(detail?.cameras.filter((camera) => camera.available).map((camera) => camera.id) ?? [])
+    bufferingIdsRef.current = waiting
+    setBufferingIds(waiting)
+  }, [detail, pauseMedia, releasePreviewSession])
 
   useEffect(
     () => () => {
       for (const video of videoRefs.current.values()) video.pause()
+      if (previewSeekTimer.current !== null) window.clearTimeout(previewSeekTimer.current)
+      releasePreviewSession(false)
     },
-    [],
+    [releasePreviewSession],
   )
 
   const timestamp = (detail?.timeline.from ?? 0) + currentTime
+  const gridFrames = useMemo(
+    () => detail?.frames.filter((frame) => frame.grid.valid && frame.grid.filename) ?? [],
+    [detail],
+  )
   const active = useMemo(
-    () => (detail ? findFreshFrame(detail.frames, timestamp, 1) : null),
+    () => (detail ? findNearestFrame(detail.frames, timestamp) : null),
     [detail, timestamp],
+  )
+  const activeGrid = useMemo(
+    () => findNearestFrame(gridFrames, timestamp),
+    [gridFrames, timestamp],
   )
   const selected = datasets.find((dataset) => dataset.id === selectedId)
   const startPartsValue = durationPartsToSeconds(trimStartParts)
@@ -437,13 +621,21 @@ export default function App() {
           cameras={detail.cameras}
           registerVideo={registerVideo}
           onMediaError={handleMediaError}
+          onBufferingChange={handleBufferingChange}
+          onPreviewFailure={handlePreviewFailure}
+          previewSessionId={previewSession?.sessionId ?? null}
+          previewStartTime={previewStartTime}
+          previewRevision={previewRevision}
+          initialTime={currentTime}
         />
         <aside className="side-column">
           <OccupancyPanel
+            key={detail.id}
             datasetId={detail.id}
-            frame={active?.frame ?? null}
-            frameIndex={active?.index ?? -1}
-            allFrames={detail.frames}
+            frame={activeGrid?.frame ?? null}
+            frameIndex={activeGrid?.index ?? -1}
+            allFrames={gridFrames}
+            onBufferingChange={handleOccupancyBufferingChange}
           />
           <TelemetryPanel frame={active?.frame ?? null} />
           <TrajectoryCanvas
@@ -460,6 +652,8 @@ export default function App() {
         <span>{detail.frameCount.toLocaleString()} 帧数据</span>
         <i />
         <span>{selected?.taskId || detail.taskId}</span>
+        <i />
+        <span>{previewStarting ? '正在检测 GPU' : previewStatus}</span>
         {notice ? <span className="playback-notice">{notice}</span> : null}
         {error ? <span className="playback-error">{error}</span> : null}
       </div>
@@ -467,6 +661,7 @@ export default function App() {
         currentTime={currentTime}
         duration={detail.timeline.duration}
         isPlaying={isPlaying}
+        isBuffering={previewStarting || (isPlaying && bufferingIds.size > 0)}
         onToggle={togglePlayback}
         onSeek={seek}
       />

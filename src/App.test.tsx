@@ -1,7 +1,12 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { encodeGridBatch } from '../shared/gridBatch'
 import type { DatasetDetail, DatasetSummary, FrameSample } from '../shared/types'
 import App from './App'
+
+const originalCreateObjectUrl = URL.createObjectURL
+const originalRevokeObjectUrl = URL.revokeObjectURL
+const originalImageDecode = HTMLImageElement.prototype.decode
 
 function makeFrame(timestamp: number, x: number): FrameSample {
   return {
@@ -29,6 +34,14 @@ function makeFrame(timestamp: number, x: number): FrameSample {
       frameId: 'body',
     },
   }
+}
+
+function deferred<T>() {
+  let resolvePromise!: (value: T) => void
+  const promise = new Promise<T>((resolve) => {
+    resolvePromise = resolve
+  })
+  return { promise, resolve: resolvePromise }
 }
 
 const summary: DatasetSummary = {
@@ -89,6 +102,12 @@ describe('App timeline integration', () => {
   })
 
   afterEach(() => {
+    if (originalCreateObjectUrl) Object.defineProperty(URL, 'createObjectURL', { configurable: true, value: originalCreateObjectUrl })
+    else delete (URL as { createObjectURL?: typeof URL.createObjectURL }).createObjectURL
+    if (originalRevokeObjectUrl) Object.defineProperty(URL, 'revokeObjectURL', { configurable: true, value: originalRevokeObjectUrl })
+    else delete (URL as { revokeObjectURL?: typeof URL.revokeObjectURL }).revokeObjectURL
+    if (originalImageDecode) Object.defineProperty(HTMLImageElement.prototype, 'decode', { configurable: true, value: originalImageDecode })
+    else delete (HTMLImageElement.prototype as { decode?: typeof HTMLImageElement.prototype.decode }).decode
     vi.unstubAllGlobals()
     vi.restoreAllMocks()
   })
@@ -118,6 +137,139 @@ describe('App timeline integration', () => {
     await waitFor(() => expect(screen.getByText('无对应数据')).toBeInTheDocument())
     expect(videos.every((video) => video.currentTime === 293)).toBe(true)
     expect(document.querySelector('.occupancy-stage img')).toBeNull()
+  })
+
+  it('previews telemetry and the nearest valid occupancy grid independently', async () => {
+    const invalidGridFrame = makeFrame(250, 7.25)
+    invalidGridFrame.grid = { ...invalidGridFrame.grid, valid: false, filename: null }
+    const independentDetail = {
+      ...detail,
+      frames: [makeFrame(249.6, 6), invalidGridFrame, makeFrame(250.4, 8)],
+    }
+    vi.mocked(fetch).mockImplementation(async (input: RequestInfo | URL) => ({
+      ok: true,
+      json: async () => String(input) === '/api/datasets' ? [summary] : independentDetail,
+    }) as Response)
+
+    render(<App />)
+    const slider = await screen.findByRole('slider', { name: '播放进度' })
+    fireEvent.change(slider, { target: { value: '150' } })
+
+    await waitFor(() => expect(screen.getByText('7.25')).toBeInTheDocument())
+    expect(document.querySelector('.occupancy-stage img')?.getAttribute('src')).toContain('249600.png')
+  })
+
+  it('uses a reserved GPU preview session only after playback starts', async () => {
+    vi.mocked(fetch).mockImplementation(async (input: RequestInfo | URL, init?: RequestInit) => {
+      const url = String(input)
+      if (url === '/api/preview/sessions' && init?.method === 'POST') {
+        return {
+          ok: true,
+          json: async () => ({
+            enabled: true,
+            mode: 'nvenc',
+            sessionId: 'preview-session',
+            gpuIndex: 2,
+            reason: '空闲',
+            profile: { width: 640, fps: 10, bitrateKbps: 450 },
+          }),
+        } as Response
+      }
+      return { ok: true, json: async () => url === '/api/datasets' ? [summary] : detail } as Response
+    })
+
+    render(<App />)
+    expect(await screen.findByText('原始码率')).toBeInTheDocument()
+    expect([...document.querySelectorAll('video')].every((video) => !video.src.includes('/preview?'))).toBe(true)
+
+    fireEvent.click(screen.getByRole('button', { name: '播放' }))
+    await waitFor(() => expect(document.querySelector('video')?.src).toContain('/preview?session=preview-session'))
+    expect(screen.getByText('GPU 2 · 640px/10fps')).toBeInTheDocument()
+  })
+
+  it('pauses every camera while one stream buffers and resumes them together', async () => {
+    vi.mocked(fetch).mockImplementation(async (input: RequestInfo | URL, init?: RequestInit) => {
+      const url = String(input)
+      if (url === '/api/preview/sessions' && init?.method === 'POST') {
+        return {
+          ok: true,
+          json: async () => ({
+            enabled: false,
+            mode: 'original',
+            sessionId: null,
+            gpuIndex: null,
+            reason: 'GPU 正忙或资源不足，使用原始视频',
+            profile: null,
+          }),
+        } as Response
+      }
+      return { ok: true, json: async () => url === '/api/datasets' ? [summary] : detail } as Response
+    })
+
+    render(<App />)
+    await screen.findByRole('button', { name: '播放' })
+    const videos = [...document.querySelectorAll('video')]
+    fireEvent.click(screen.getByRole('button', { name: '播放' }))
+    await waitFor(() => expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(5))
+
+    vi.mocked(HTMLMediaElement.prototype.pause).mockClear()
+    vi.mocked(HTMLMediaElement.prototype.play).mockClear()
+    fireEvent.waiting(videos[2])
+    expect(HTMLMediaElement.prototype.pause).toHaveBeenCalledTimes(5)
+
+    fireEvent.canPlay(videos[2])
+    await waitFor(() => expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(5))
+  })
+
+  it('does not start the video clock until the matching occupancy batch is decoded', async () => {
+    const gridBatch = deferred<Response>()
+    const synchronizedDetail: DatasetDetail = {
+      ...detail,
+      frames: [makeFrame(100, 0), makeFrame(100.2, 0.1), makeFrame(100.4, 0.2)],
+    }
+    Object.defineProperty(URL, 'createObjectURL', {
+      configurable: true,
+      value: vi.fn((blob: Blob) => `blob:grid-${blob.size}`),
+    })
+    Object.defineProperty(URL, 'revokeObjectURL', { configurable: true, value: vi.fn() })
+    Object.defineProperty(HTMLImageElement.prototype, 'decode', {
+      configurable: true,
+      value: vi.fn().mockResolvedValue(undefined),
+    })
+    vi.mocked(fetch).mockImplementation(async (input: RequestInfo | URL, init?: RequestInit) => {
+      const url = String(input)
+      if (url.endsWith('/grids/batch')) return gridBatch.promise
+      if (url === '/api/preview/sessions' && init?.method === 'POST') {
+        return {
+          ok: true,
+          json: async () => ({
+            enabled: false,
+            mode: 'original',
+            sessionId: null,
+            gpuIndex: null,
+            reason: '原始码率',
+            profile: null,
+          }),
+        } as Response
+      }
+      return { ok: true, json: async () => url === '/api/datasets' ? [summary] : synchronizedDetail } as Response
+    })
+
+    render(<App />)
+    fireEvent.click(await screen.findByRole('button', { name: '播放' }))
+    await waitFor(() => expect(fetch).toHaveBeenCalledWith('/api/preview/sessions', expect.objectContaining({ method: 'POST' })))
+    expect(HTMLMediaElement.prototype.play).not.toHaveBeenCalled()
+
+    const batchCall = vi.mocked(fetch).mock.calls.find(([input]) => String(input).endsWith('/grids/batch'))
+    const filenames = JSON.parse(String(batchCall?.[1]?.body)).filenames as string[]
+    const payload = encodeGridBatch(filenames.map((filename) => ({
+      filename,
+      bytes: new TextEncoder().encode(filename),
+    })))
+    gridBatch.resolve({ ok: true, arrayBuffer: async () => payload.buffer } as Response)
+
+    await waitFor(() => expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(5))
+    expect(screen.getByText('10:00:00.000')).toBeInTheDocument()
   })
 
   it('asks for confirmation and deletes the selected Meta and video dataset', async () => {

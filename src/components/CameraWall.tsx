@@ -33,9 +33,25 @@ interface CameraTileProps {
   camera: CameraInfo | null
   registerVideo: (cameraId: string, video: HTMLVideoElement | null) => void
   onMediaError: (cameraId: string, failed: boolean) => void
+  onBufferingChange: (cameraId: string, buffering: boolean) => void
+  onPreviewFailure: () => void
+  previewSessionId: string | null
+  previewStartTime: number
+  previewRevision: number
+  initialTime: number
 }
 
-function CameraTile({ camera, registerVideo, onMediaError }: CameraTileProps) {
+function CameraTile({
+  camera,
+  registerVideo,
+  onMediaError,
+  onBufferingChange,
+  onPreviewFailure,
+  previewSessionId,
+  previewStartTime,
+  previewRevision,
+  initialTime,
+}: CameraTileProps) {
   const [failed, setFailed] = useState(false)
   const attachVideo = useCallback(
     (video: HTMLVideoElement | null) => {
@@ -56,9 +72,17 @@ function CameraTile({ camera, registerVideo, onMediaError }: CameraTileProps) {
   }
 
   const markFailed = () => {
+    if (previewSessionId) {
+      onPreviewFailure()
+      return
+    }
     setFailed(true)
     onMediaError(camera.id, true)
   }
+
+  const sourceUrl = previewSessionId
+    ? `${camera.videoUrl}/preview?session=${encodeURIComponent(previewSessionId)}&start=${previewStartTime.toFixed(3)}&revision=${previewRevision}`
+    : camera.videoUrl
 
   return (
     <div className="camera-tile">
@@ -73,13 +97,26 @@ function CameraTile({ camera, registerVideo, onMediaError }: CameraTileProps) {
         </div>
       ) : (
         <video
+          key={sourceUrl}
           ref={attachVideo}
-          src={camera.videoUrl}
+          src={sourceUrl}
           muted
           playsInline
-          preload="metadata"
+          preload={previewSessionId ? 'auto' : 'metadata'}
           data-camera={camera.id}
-          onCanPlay={() => onMediaError(camera.id, false)}
+          data-preview={previewSessionId ? 'true' : 'false'}
+          data-stream-start={previewSessionId ? String(previewStartTime) : '0'}
+          onLoadStart={() => onBufferingChange(camera.id, true)}
+          onLoadedMetadata={(event) => {
+            if (!previewSessionId && initialTime > 0) event.currentTarget.currentTime = initialTime
+          }}
+          onCanPlay={() => {
+            onMediaError(camera.id, false)
+            onBufferingChange(camera.id, false)
+          }}
+          onPlaying={() => onBufferingChange(camera.id, false)}
+          onWaiting={() => onBufferingChange(camera.id, true)}
+          onStalled={() => onBufferingChange(camera.id, true)}
           onError={markFailed}
         />
       )}
@@ -96,9 +133,25 @@ interface CameraWallProps {
   cameras: CameraInfo[]
   registerVideo: (cameraId: string, video: HTMLVideoElement | null) => void
   onMediaError: (cameraId: string, failed: boolean) => void
+  onBufferingChange?: (cameraId: string, buffering: boolean) => void
+  onPreviewFailure?: () => void
+  previewSessionId?: string | null
+  previewStartTime?: number
+  previewRevision?: number
+  initialTime?: number
 }
 
-export function CameraWall({ cameras, registerVideo, onMediaError }: CameraWallProps) {
+export function CameraWall({
+  cameras,
+  registerVideo,
+  onMediaError,
+  onBufferingChange = () => undefined,
+  onPreviewFailure = () => undefined,
+  previewSessionId = null,
+  previewStartTime = 0,
+  previewRevision = 0,
+  initialTime = 0,
+}: CameraWallProps) {
   const cameraSlots = arrangeCameras(cameras)
   return (
     <section className="panel camera-panel" aria-label="多视角相机">
@@ -116,6 +169,12 @@ export function CameraWall({ cameras, registerVideo, onMediaError }: CameraWallP
             camera={camera}
             registerVideo={registerVideo}
             onMediaError={onMediaError}
+            onBufferingChange={onBufferingChange}
+            onPreviewFailure={onPreviewFailure}
+            previewSessionId={previewSessionId}
+            previewStartTime={previewStartTime}
+            previewRevision={previewRevision}
+            initialTime={initialTime}
           />
         ))}
       </div>

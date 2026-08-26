@@ -92,3 +92,16 @@ export interface PlaybackState {
   duration: number
   isPlaying: boolean
 }
+
+export interface PreviewSessionResult {
+  enabled: boolean
+  mode: 'nvenc' | 'original'
+  sessionId: string | null
+  gpuIndex: number | null
+  reason: string
+  profile: {
+    width: number
+    fps: number
+    bitrateKbps: number
+  } | null
+}

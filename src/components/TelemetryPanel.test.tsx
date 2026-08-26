@@ -32,6 +32,7 @@ const frame: FrameSample = {
 describe('TelemetryPanel', () => {
   it('renders pose and velocity with two decimals and source information', () => {
     render(<TelemetryPanel frame={frame} />)
+    expect(screen.getByText('近邻预览')).toBeInTheDocument()
     expect(screen.getByText('-0.19')).toBeInTheDocument()
     expect(screen.getByText('0.03')).toBeInTheDocument()
     expect(screen.getByText('-5.50')).toBeInTheDocument()

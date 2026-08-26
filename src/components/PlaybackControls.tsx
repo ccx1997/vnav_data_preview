@@ -4,6 +4,7 @@ interface PlaybackControlsProps {
   currentTime: number
   duration: number
   isPlaying: boolean
+  isBuffering?: boolean
   onToggle: () => void
   onSeek: (seconds: number) => void
 }
@@ -12,6 +13,7 @@ export function PlaybackControls({
   currentTime,
   duration,
   isPlaying,
+  isBuffering = false,
   onToggle,
   onSeek,
 }: PlaybackControlsProps) {
@@ -40,7 +42,7 @@ export function PlaybackControls({
         />
       </div>
       <div className="time-display">{formatClock(duration)}</div>
-      <span className="speed-chip">1×</span>
+      <span className="speed-chip">{isBuffering ? '缓冲中' : '1×'}</span>
     </footer>
   )
 }

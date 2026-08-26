@@ -1,9 +1,13 @@
 import express from 'express'
+import { readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { createServer as createViteServer } from 'vite'
+import { encodeGridBatch, MAX_GRID_BATCH_FRAMES } from '../shared/gridBatch.js'
 import { DatasetRepository, sendVideoWithRange } from './datasets.js'
+import { PreviewTranscoder } from './preview.js'
 
 const isProduction = process.env.NODE_ENV === 'production'
+const useVitePolling = process.env.VNAV_VITE_USE_POLLING === '1'
 const port = Number(process.env.PORT ?? 5173)
 const host = process.env.HOST ?? '127.0.0.1'
 const app = express()
@@ -12,6 +16,7 @@ const configuredRoots = process.env.VNAV_DATA_ROOTS
   .map((directory) => directory.trim())
   .filter(Boolean)
 const repository = new DatasetRepository(configuredRoots?.length ? configuredRoots : process.env.VNAV_DATA_ROOT)
+const previewTranscoder = new PreviewTranscoder()
 
 app.disable('x-powered-by')
 app.use(express.json({ limit: '16kb' }))
@@ -67,6 +72,37 @@ app.post('/api/datasets/:id/trim', async (request, response) => {
   }
 })
 
+app.post('/api/preview/sessions', async (request, response) => {
+  const streams = Number(request.body?.streams)
+  try {
+    response.json(await previewTranscoder.createSession(Number.isFinite(streams) ? streams : 1))
+  } catch (error) {
+    response.status(500).json({ error: error instanceof Error ? error.message : '无法检测 GPU 预览资源' })
+  }
+})
+
+app.delete('/api/preview/sessions/:sessionId', (request, response) => {
+  previewTranscoder.releaseSession(request.params.sessionId)
+  response.status(204).end()
+})
+
+app.get('/media/:id/cameras/:camera/preview', (request, response) => {
+  try {
+    const videoPath = repository.getCameraPath(request.params.id, request.params.camera)
+    if (!videoPath) {
+      response.status(404).json({ error: '未找到该相机视频' })
+      return
+    }
+    const sessionId = typeof request.query.session === 'string' ? request.query.session : ''
+    const start = Number(request.query.start)
+    if (!sessionId || !previewTranscoder.stream(sessionId, videoPath, Number.isFinite(start) ? start : 0, response)) {
+      response.status(409).json({ error: 'GPU 预览会话已释放，请重新播放' })
+    }
+  } catch (error) {
+    response.status(500).json({ error: error instanceof Error ? error.message : '无法启动 GPU 预览' })
+  }
+})
+
 app.get('/media/:id/cameras/:camera', (request, response) => {
   try {
     const videoPath = repository.getCameraPath(request.params.id, request.params.camera)
@@ -77,6 +113,38 @@ app.get('/media/:id/cameras/:camera', (request, response) => {
     sendVideoWithRange(response, videoPath, request.headers.range)
   } catch (error) {
     response.status(500).json({ error: error instanceof Error ? error.message : '无法读取视频' })
+  }
+})
+
+app.post('/media/:id/grids/batch', async (request, response) => {
+  const requestedFilenames: unknown = request.body?.filenames
+  const filenames: string[] = Array.isArray(requestedFilenames)
+    ? [...new Set(requestedFilenames.filter((value): value is string => typeof value === 'string'))]
+    : []
+  if (!filenames.length || filenames.length > MAX_GRID_BATCH_FRAMES) {
+    response.status(400).json({ error: `占据图批次必须包含 1–${MAX_GRID_BATCH_FRAMES} 个文件` })
+    return
+  }
+  try {
+    const startedAt = performance.now()
+    const paths = repository.getGridPaths(request.params.id, filenames)
+    if (!paths || paths.some((path) => path === null)) {
+      response.status(404).json({ error: '批次中包含不存在的占据图' })
+      return
+    }
+    const contents = await Promise.all(paths.map((path) => readFile(path!)))
+    const payload = encodeGridBatch(contents.map((bytes, index) => ({
+      filename: filenames[index],
+      bytes,
+    })))
+    response.setHeader('Cache-Control', 'no-store')
+    response.setHeader('Content-Type', 'application/vnd.vnav.grid-batch')
+    response.setHeader('Content-Length', payload.byteLength)
+    response.setHeader('X-Grid-Count', contents.length)
+    response.setHeader('Server-Timing', `grid-read;dur=${(performance.now() - startedAt).toFixed(1)}`)
+    response.send(Buffer.from(payload.buffer, payload.byteOffset, payload.byteLength))
+  } catch (error) {
+    response.status(500).json({ error: error instanceof Error ? error.message : '无法批量读取占据图' })
   }
 })
 
@@ -100,7 +168,10 @@ if (isProduction) {
   app.get('*', (_request, response) => response.sendFile(resolve(distDirectory, 'index.html')))
 } else {
   const vite = await createViteServer({
-    server: { middlewareMode: true },
+    server: {
+      middlewareMode: true,
+      ...(useVitePolling ? { watch: { usePolling: true, interval: 500 } } : {}),
+    },
     appType: 'spa',
   })
   app.use(vite.middlewares)

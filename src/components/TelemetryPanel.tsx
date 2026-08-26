@@ -28,9 +28,12 @@ export function TelemetryPanel({ frame }: { frame: FrameSample | null }) {
           <span className="eyebrow">TELEMETRY</span>
           <h2>实时数据</h2>
         </div>
-        <span className={`data-state${frame ? ' data-state--active' : ''}`}>
+        <span
+          className={`data-state${frame ? ' data-state--active' : ''}`}
+          title={frame ? '预览使用当前视频时刻前后 1 秒内最近的 Meta' : ''}
+        >
           <span className="status-dot" />
-          {frame ? '数据同步' : '无对应数据'}
+          {frame ? '近邻预览' : '无对应数据'}
         </span>
       </div>
       <div className="telemetry-group">

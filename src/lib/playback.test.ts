@@ -3,18 +3,19 @@ import type { FrameSample } from '../../shared/types'
 import {
   computeTrajectoryViewport,
   findFrameIndexAtOrBefore,
-  findFreshFrame,
+  findNearestFrame,
+  findSynchronizedFrame,
   formatClock,
   formatFixed,
   getTrajectoryFrames,
 } from './playback'
 
-function makeFrame(timestamp: number, x: number, y: number, valid = true): FrameSample {
+function makeFrame(timestamp: number, x: number, y: number, valid = true, yaw = 0): FrameSample {
   return {
     timestamp,
     timestampMs: timestamp * 1000,
     dateTimeLocal: '',
-    pose: { x, y, yaw: 0, valid, poseAgeSeconds: 0 },
+    pose: { x, y, yaw, valid, poseAgeSeconds: 0 },
     velocity: {
       vx: 0,
       vy: 0,
@@ -55,10 +56,31 @@ describe('playback helpers', () => {
     expect(findFrameIndexAtOrBefore(frames, 99)).toBe(2)
   })
 
-  it('rejects stale frames after the configured age', () => {
-    expect(findFreshFrame(frames, 11.5, 1)?.frame.timestamp).toBe(11)
-    expect(findFreshFrame(frames, 12.1, 1)).toBeNull()
-    expect(findFreshFrame(frames, 9.9, 1)).toBeNull()
+  it('finds the nearest preview frame on either side within one second', () => {
+    expect(findNearestFrame(frames, 9.2)?.frame.timestamp).toBe(10)
+    expect(findNearestFrame(frames, 10.6)?.frame.timestamp).toBe(11)
+    expect(findNearestFrame(frames, 12.1)?.frame.timestamp).toBe(13)
+    expect(findNearestFrame(frames, 14.1)).toBeNull()
+  })
+
+  it('selects the nearest frame within the synchronized time window', () => {
+    const samples = [makeFrame(10, 0, 0), makeFrame(10.2, 0.1, 0), makeFrame(10.4, 0.2, 0)]
+    expect(findSynchronizedFrame(samples, 10.04)?.frame.timestamp).toBe(10)
+    expect(findSynchronizedFrame(samples, 10.17)?.frame.timestamp).toBe(10.2)
+    expect(findSynchronizedFrame(samples, 10.06)).toBeNull()
+  })
+
+  it('rejects excessive position or yaw changes without using velocity', () => {
+    expect(findSynchronizedFrame([makeFrame(20, 0, 0), makeFrame(20.2, 1, 0)], 20.04)).toBeNull()
+    expect(findSynchronizedFrame([makeFrame(30, 0, 0, true, 0), makeFrame(30.2, 0, 0, true, 20)], 30.04)).toBeNull()
+  })
+
+  it('handles wrapped yaw and rejects unreliable pose neighborhoods', () => {
+    expect(
+      findSynchronizedFrame([makeFrame(40, 0, 0, true, 179), makeFrame(40.2, 0, 0, true, -179)], 40.04),
+    ).not.toBeNull()
+    expect(findSynchronizedFrame([makeFrame(50, 0, 0), makeFrame(50.6, 0, 0)], 50.04)).toBeNull()
+    expect(findSynchronizedFrame([makeFrame(60, 0, 0)], 60)).not.toBeNull()
   })
 
   it('keeps only valid poses in the trailing window', () => {
