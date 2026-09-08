@@ -1,4 +1,4 @@
-"""Collection gate for retaining turn and in-place rotation data.
+"""Collection gates for retaining turns and sampled straight-driving data.
 
 The gate is intentionally independent from the recorder.  A recorder passes a
 pose cache and a timestamp in that cache to :meth:`TurnGate.start_collection`
@@ -18,14 +18,72 @@ import math
 import random
 import statistics
 from dataclasses import dataclass
-from typing import Mapping, Optional, Protocol, Sequence, Union
+from functools import wraps
+from typing import (
+    Any,
+    Callable,
+    Mapping,
+    Optional,
+    Protocol,
+    Sequence,
+    TypeVar,
+    Union,
+    cast,
+)
 
 
 TURN_CURVATURE_THRESHOLD_RAD_PER_M = math.radians(8.0)
 NORMAL_STRAIGHT_MINIMUM_TRANSLATION_M = 0.10
 NORMAL_STRAIGHT_MAXIMUM_YAW_CHANGE_RAD = math.radians(3.0)
+DEFAULT_MAXIMUM_COLLECTION_INTERVAL_S = 45.0
+STABLE_STOP_WINDOW_S = 3.0
+STABLE_STOP_MAXIMUM_TRANSLATION_M = 0.03
+STABLE_STOP_MAXIMUM_YAW_CHANGE_RAD = math.radians(3.0)
 
 GateResult = tuple[bool, float]
+_EndCollectionMethod = TypeVar("_EndCollectionMethod", bound=Callable[..., GateResult])
+
+
+def with_maximum_collection_interval(
+    method: _EndCollectionMethod,
+) -> _EndCollectionMethod:
+    """Decorate ``end_collection`` with the configured hard deadline.
+
+    The gate must expose ``active_start_timestamp_s``,
+    ``config.maximum_collection_interval_s``, and ``reset()``.  Natural end
+    conditions are evaluated through the deadline first, so an earlier action
+    node still wins when a streaming call arrives late.
+    """
+
+    @wraps(method)
+    def wrapped(
+        self: Any,
+        pose_cache: Sequence[PoseSampleLike],
+        decision_timestamp_s: float,
+    ) -> GateResult:
+        timestamp_s = _finite_timestamp(decision_timestamp_s)
+        active_start_s = self.active_start_timestamp_s
+        if active_start_s is None:
+            return method(self, pose_cache, timestamp_s)
+
+        maximum_end_s = active_start_s + self.config.maximum_collection_interval_s
+        evaluation_timestamp_s = min(timestamp_s, maximum_end_s)
+        try:
+            result = method(self, pose_cache, evaluation_timestamp_s)
+        except ValueError:
+            if timestamp_s + 1.0e-12 < maximum_end_s or len(pose_cache) >= 2:
+                raise
+            # A hard deadline remains actionable during a pose outage.  With
+            # fewer than two samples the wrapped TurnGate method can only fail
+            # its minimum-cache validation, so no natural stop can be found.
+            result = (False, evaluation_timestamp_s)
+
+        if result[0] or timestamp_s + 1.0e-12 < maximum_end_s:
+            return result
+        self.reset()
+        return True, maximum_end_s
+
+    return cast(_EndCollectionMethod, wrapped)
 
 
 @dataclass(frozen=True)
@@ -67,6 +125,10 @@ class TurnGateConfig:
     straight_recovery_maximum_yaw_change_rad: float = (
         NORMAL_STRAIGHT_MAXIMUM_YAW_CHANGE_RAD
     )
+    stable_stop_window_s: float = STABLE_STOP_WINDOW_S
+    stable_stop_maximum_translation_m: float = STABLE_STOP_MAXIMUM_TRANSLATION_M
+    stable_stop_maximum_yaw_change_rad: float = STABLE_STOP_MAXIMUM_YAW_CHANGE_RAD
+    maximum_collection_interval_s: float = DEFAULT_MAXIMUM_COLLECTION_INTERVAL_S
     probe_interval_s: float = 0.20
 
     # Pose denoising and the same jump limits used by the training pipeline.
@@ -92,6 +154,10 @@ class TurnGateConfig:
             "straight_recovery_persistence_s": self.straight_recovery_persistence_s,
             "straight_recovery_minimum_translation_m": self.straight_recovery_minimum_translation_m,
             "straight_recovery_maximum_yaw_change_rad": self.straight_recovery_maximum_yaw_change_rad,
+            "stable_stop_window_s": self.stable_stop_window_s,
+            "stable_stop_maximum_translation_m": self.stable_stop_maximum_translation_m,
+            "stable_stop_maximum_yaw_change_rad": self.stable_stop_maximum_yaw_change_rad,
+            "maximum_collection_interval_s": self.maximum_collection_interval_s,
             "probe_interval_s": self.probe_interval_s,
             "maximum_pose_gap_s": self.maximum_pose_gap_s,
             "maximum_pose_jump_m": self.maximum_pose_jump_m,
@@ -116,6 +182,10 @@ class TurnGateConfig:
             )
         if self.curve_minimum_path_m > self.curve_lookahead_m:
             raise ValueError("curve_minimum_path_m cannot exceed curve_lookahead_m")
+        if self.maximum_collection_interval_s < self.start_lookahead_s:
+            raise ValueError(
+                "maximum_collection_interval_s cannot be shorter than start_lookahead_s"
+            )
 
 
 @dataclass(frozen=True)
@@ -146,6 +216,7 @@ class StraightGateConfig:
     start_probability: float = 0.01
     minimum_collection_duration_s: float = 6.0
     maximum_collection_duration_s: float = 12.0
+    maximum_collection_interval_s: float = DEFAULT_MAXIMUM_COLLECTION_INTERVAL_S
     minimum_translation_m: float = NORMAL_STRAIGHT_MINIMUM_TRANSLATION_M
     maximum_yaw_change_rad: float = NORMAL_STRAIGHT_MAXIMUM_YAW_CHANGE_RAD
 
@@ -157,6 +228,10 @@ class StraightGateConfig:
         if self.maximum_collection_duration_s < self.minimum_collection_duration_s:
             raise ValueError(
                 "maximum_collection_duration_s cannot be shorter than the minimum"
+            )
+        if self.maximum_collection_interval_s < self.minimum_collection_duration_s:
+            raise ValueError(
+                "maximum_collection_interval_s cannot be shorter than the minimum duration"
             )
         if self.minimum_translation_m <= 0.0:
             raise ValueError("minimum_translation_m must be positive")
@@ -196,9 +271,9 @@ class _RandomSource(Protocol):
 class TurnGate:
     """Streaming state machine for turn-data collection.
 
-    A successful start owns the active turn state.  Ending is allowed only
-    after subsequent calls observe continuous normal straight driving for the
-    configured recovery duration.
+    A successful start owns the active turn state.  Ending is allowed after
+    subsequent calls observe continuous normal straight driving or a stable
+    stop.  Every active clip also has a hard maximum interval.
     """
 
     def __init__(self, config: Optional[TurnGateConfig] = None) -> None:
@@ -252,6 +327,7 @@ class TurnGate:
                 return True, timestamp_s
         return False, timestamp_s
 
+    @with_maximum_collection_interval
     def end_collection(
         self,
         pose_cache: Sequence[PoseSampleLike],
@@ -261,8 +337,8 @@ class TurnGate:
 
         A turn-free observation is not enough.  The trajectory immediately
         before the action node must satisfy the configured normal-straight
-        recovery window.  Insufficient, stationary, discontinuous, or renewed
-        turn evidence cannot end the clip.
+        recovery or stable-stop window.  The maximum-interval decorator adds
+        the final hard deadline.
         """
 
         timestamp_s = _finite_timestamp(decision_timestamp_s)
@@ -271,7 +347,6 @@ class TurnGate:
             return False, timestamp_s
         if timestamp_s < active_start_s:
             raise ValueError("end timestamp cannot precede collection start")
-
         previous_check_s = self._last_end_check_timestamp_s
         if previous_check_s is not None and timestamp_s < previous_check_s:
             # Start look-ahead may have already examined a future node.  Calls
@@ -284,6 +359,15 @@ class TurnGate:
         for probe_timestamp_s in self._stream_probe_times(
             previous_check_s, timestamp_s
         ):
+            if self._is_trailing_stable_stop(
+                samples,
+                probe_timestamp_s,
+                window_s=self.config.stable_stop_window_s,
+                maximum_translation_m=self.config.stable_stop_maximum_translation_m,
+                maximum_yaw_change_rad=self.config.stable_stop_maximum_yaw_change_rad,
+            ):
+                self.reset()
+                return True, probe_timestamp_s
             if not self._is_trailing_normal_straight(
                 samples,
                 probe_timestamp_s,
@@ -327,22 +411,11 @@ class TurnGate:
         minimum_translation_m: float,
         maximum_yaw_change_rad: float,
     ) -> bool:
-        segment, _failure = self._continuous_segment(cache, timestamp_s)
-        if segment is None:
+        window = self._trailing_window(cache, timestamp_s, window_s)
+        if window is None:
             return False
-        start_timestamp_s = timestamp_s - window_s
-        if start_timestamp_s < segment[0].timestamp_s - 1.0e-9:
-            return False
-
-        start = _interpolate_pose(segment, start_timestamp_s)
-        stop = _interpolate_pose(segment, timestamp_s)
-        window = [start]
-        window.extend(
-            pose
-            for pose in segment
-            if start_timestamp_s < pose.timestamp_s < timestamp_s
-        )
-        window.append(stop)
+        start = window[0]
+        stop = window[-1]
         translation_m = max(
             math.hypot(pose.x_m - start.x_m, pose.y_m - start.y_m) for pose in window
         )
@@ -362,6 +435,50 @@ class TurnGate:
             curvature is not None
             and abs(curvature) < self.config.curvature_threshold_rad_per_m
         )
+
+    def _is_trailing_stable_stop(
+        self,
+        cache: _PreparedCache,
+        timestamp_s: float,
+        *,
+        window_s: float,
+        maximum_translation_m: float,
+        maximum_yaw_change_rad: float,
+    ) -> bool:
+        window = self._trailing_window(cache, timestamp_s, window_s)
+        if window is None:
+            return False
+        start = window[0]
+        maximum_translation = max(
+            math.hypot(pose.x_m - start.x_m, pose.y_m - start.y_m) for pose in window
+        )
+        maximum_yaw_change = max(abs(pose.yaw_rad - start.yaw_rad) for pose in window)
+        return bool(
+            maximum_translation <= maximum_translation_m + 1.0e-12
+            and maximum_yaw_change <= maximum_yaw_change_rad + 1.0e-12
+        )
+
+    def _trailing_window(
+        self,
+        cache: _PreparedCache,
+        timestamp_s: float,
+        window_s: float,
+    ) -> Optional[list[_PreparedPose]]:
+        segment, _failure = self._continuous_segment(cache, timestamp_s)
+        if segment is None:
+            return None
+        start_timestamp_s = timestamp_s - window_s
+        if start_timestamp_s < segment[0].timestamp_s - 1.0e-9:
+            return None
+
+        window = [_interpolate_pose(segment, start_timestamp_s)]
+        window.extend(
+            pose
+            for pose in segment
+            if start_timestamp_s < pose.timestamp_s < timestamp_s
+        )
+        window.append(_interpolate_pose(segment, timestamp_s))
+        return window
 
     def _prepare_cache(self, pose_cache: Sequence[PoseSampleLike]) -> _PreparedCache:
         if len(pose_cache) < 2:
@@ -563,6 +680,13 @@ class StraightGate:
         return self._active_collection
 
     @property
+    def active_start_timestamp_s(self) -> Optional[float]:
+        """Return the active clip's start node for the Tmax decorator."""
+
+        collection = self._active_collection
+        return None if collection is None else collection.start_timestamp_s
+
+    @property
     def last_collection(self) -> Optional[StraightCollection]:
         """Return the most recently completed clip budget, if any."""
 
@@ -608,9 +732,16 @@ class StraightGate:
         if probability < 1.0 and self._rng.random() >= probability:
             return False, timestamp_s
 
-        duration_s = self._rng.uniform(
-            self.config.minimum_collection_duration_s,
+        maximum_duration_s = min(
             self.config.maximum_collection_duration_s,
+            self.config.maximum_collection_interval_s,
+        )
+        duration_s = min(
+            self._rng.uniform(
+                self.config.minimum_collection_duration_s,
+                maximum_duration_s,
+            ),
+            maximum_duration_s,
         )
         self._active_collection = StraightCollection(
             start_timestamp_s=timestamp_s,
@@ -619,6 +750,7 @@ class StraightGate:
         )
         return True, timestamp_s
 
+    @with_maximum_collection_interval
     def end_collection(
         self,
         _pose_cache: Sequence[PoseSampleLike],
@@ -876,6 +1008,7 @@ def _empty_evidence(timestamp_s: float, reason: str) -> TurnEvidence:
 
 
 __all__ = [
+    "DEFAULT_MAXIMUM_COLLECTION_INTERVAL_S",
     "GateResult",
     "NORMAL_STRAIGHT_MAXIMUM_YAW_CHANGE_RAD",
     "NORMAL_STRAIGHT_MINIMUM_TRANSLATION_M",
@@ -883,8 +1016,12 @@ __all__ = [
     "StraightCollection",
     "StraightGate",
     "StraightGateConfig",
+    "STABLE_STOP_MAXIMUM_TRANSLATION_M",
+    "STABLE_STOP_MAXIMUM_YAW_CHANGE_RAD",
+    "STABLE_STOP_WINDOW_S",
     "TURN_CURVATURE_THRESHOLD_RAD_PER_M",
     "TurnEvidence",
     "TurnGate",
     "TurnGateConfig",
+    "with_maximum_collection_interval",
 ]

@@ -2,10 +2,10 @@
 
 `data_collection_gate.py` 提供两个流式采集状态机：
 
-- `TurnGate`：采集弧形转弯和原地转弯，恢复正常直线行驶后才结束；
+- `TurnGate`：采集弧形转弯和原地转弯，恢复正常直线行驶或稳定停车后结束；
 - `StraightGate`：正常直线行驶时按默认 1% 概率启动，采满随机的 6–12 s 后结束。
 
-Gate 只给出录制器应该采取的动作及其准确时间节点，不直接启停录制、删除缓存或写文件。
+每次采集还有默认 `Tmax=45 s` 的硬截止。Gate 只给出录制器应该采取的动作及其准确时间节点，不直接启停录制、删除缓存或写文件。
 
 ## 统一返回格式
 
@@ -97,11 +97,24 @@ else:
 
 结束不再以“某个锚点已经不是转弯”作为条件。转弯开始后，`end_collection()` 按流式历史依次检查：
 
-1. 动作节点之前连续 2 s 必须是正常直线运动：最大平移 `>=0.10 m`、yaw 变化 `<=3 deg`、路线曲率绝对值 `<8 deg/m`；
-2. 上述正常直线证据还必须持续 1 s；
-3. 满足后返回 `(True, recovery_end_timestamp_s)`，其中时间戳是缓存里的准确结束节点，不一定等于本次调用时间。
+1. **恢复直线**：动作节点之前连续 2 s 是正常直线运动（最大平移 `>=0.10 m`、yaw 变化 `<=3 deg`、路线曲率绝对值 `<8 deg/m`），并让该证据再持续 1 s；或
+2. **稳定停车**：连续 3 s 内相对窗口起点的最大位置漂移 `<=0.03 m`，最大 yaw 漂移 `<=3 deg`；或
+3. **硬截止**：从成功开始节点起达到 `Tmax=45 s`。
 
-新的转弯、自转、静止、pose gap、pose jump 或证据不足都会清除“正在恢复”的候选状态。因此短暂拉直不会截断连续弯道，停在弯后也不会被误当成恢复直行。这个结束定义是因果的，只用动作节点及其历史；未来缓存主要用于开始判别。
+三个条件取最早出现的动作节点并返回 `(True, action_timestamp_s)`。新的转弯、自转、短暂停车、pose gap、pose jump 或证据不足都会清除“正在恢复直线”的候选状态；连续停车满 3 s 则通过独立的稳定停车分支结束。即使缓存已经不包含 `Tmax` 附近的位姿，硬截止仍返回准确的 `start + Tmax` 节点。结束定义是因果的，只用动作节点及其历史；未来缓存主要用于开始判别。
+
+`Tmax` 由通用方法装饰器实现，不写入具体运动判断：
+
+```python
+from data_collection_gate import with_maximum_collection_interval
+
+@with_maximum_collection_interval
+def end_collection(self, pose_cache, decision_timestamp_s):
+    # 只实现当前采集目标自己的自然结束条件。
+    ...
+```
+
+使用该装饰器的 Gate 需要提供 `active_start_timestamp_s`、`config.maximum_collection_interval_s` 和 `reset()`。装饰器会先把自然结束逻辑检查到截止节点；如果历史中存在更早的恢复直线或稳定停车节点，仍返回较早节点，否则统一在 `start + Tmax` 结束。`functools.wraps` 保留原方法名称、docstring 和 `__wrapped__`。
 
 `TurnGate` 是有状态对象，可用以下属性审计：
 
@@ -126,6 +139,10 @@ else:
 | `straight_recovery_persistence_s` | 1.0 s | 正常直线判别成立后的持续确认时间 |
 | `straight_recovery_minimum_translation_m` | 0.10 m | 恢复窗的最低平移，排除静止 |
 | `straight_recovery_maximum_yaw_change_rad` | 3 deg | 恢复窗允许的最大 yaw 变化 |
+| `stable_stop_window_s` | 3.0 s | 稳定停车需要连续满足的时间 |
+| `stable_stop_maximum_translation_m` | 0.03 m | 停车窗允许的最大位置漂移 |
+| `stable_stop_maximum_yaw_change_rad` | 3 deg | 停车窗允许的最大 yaw 漂移 |
+| `maximum_collection_interval_s` | 45.0 s | 每次采集的硬截止 `Tmax` |
 | `probe_interval_s` | 0.20 s | 补查两个流式调用之间历史节点的间隔 |
 | `pose_smoothing_window_s` | 1.0 s | XY 中值平滑；yaw 展开后中值平滑 |
 | `maximum_pose_gap_s` | 0.50 s | 超过则不跨 gap 判定 |
@@ -142,7 +159,7 @@ else:
 
 每个合格调用以 `start_probability=0.01` 做一次伯努利抽样。1% 指“每次合格开始机会的命中概率”，不是最终采集时长占比；调用方必须固定并记录机会节拍，例如 1 Hz。改变调用频率会改变实际启动率。
 
-开始命中后，从闭区间 `[6,12] s` 的连续均匀分布只抽一次时长并锁定截止节点。开始后即使停车或转弯也不提前结束；到达或越过截止时间后，结束方法返回准确截止节点，而不是较晚的检查节点。
+开始命中后，从闭区间 `[6,12] s` 的连续均匀分布只抽一次时长并锁定截止节点。开始后即使停车或转弯也不提前结束；到达或越过截止时间后，结束方法返回准确截止节点，而不是较晚的检查节点。`StraightGateConfig.maximum_collection_interval_s` 同样默认为 45 s；默认随机上限只有 12 s，因此通常不会触发。如果自定义随机上限超过 `Tmax`，实际抽样上限取二者较小值。
 
 ```python
 import random
@@ -154,12 +171,13 @@ straight_gate = StraightGate(
         start_probability=0.01,
         minimum_collection_duration_s=6.0,
         maximum_collection_duration_s=12.0,
+        maximum_collection_interval_s=45.0,
     ),
     rng=random.Random(20260908),  # 仅回放/测试固定 seed
 )
 ```
 
-可通过 `active_collection` 查看当前 `StraightCollection(start_timestamp_s, target_duration_s, end_timestamp_s)`，通过 `last_collection` 审计最近完成片段；`last_evidence` 保存最近一次开始尝试的运动证据。
+可通过 `active_collection` 查看当前 `StraightCollection(start_timestamp_s, target_duration_s, end_timestamp_s)`，`active_start_timestamp_s` 为通用 `Tmax` 装饰器提供相同的开始节点接口；通过 `last_collection` 审计最近完成片段，`last_evidence` 保存最近一次开始尝试的运动证据。
 
 ## 输入与延迟契约
 
@@ -196,7 +214,7 @@ decision_delay >= start_lookahead
 
 - yaw 计算差值前会跨 `+pi/-pi` 展开，避免 179° 到 -179° 被误判为 358°；
 - 位姿 gap、位置/yaw 跳变会切断连续段，不会被当成转弯或恢复直行；
-- 开始证据不足时不开始，结束证据不足时不结束，宁可延长转弯片段；
+- 开始证据不足时不开始；结束证据不足时不触发运动结束条件，但到达 `Tmax` 仍会硬截止；
 - Gate 只依赖位姿，不能发现“画面在动但定位冻结”，采集系统仍需跨模态冻结报警。
 
 ## 验证与视频回放
@@ -208,7 +226,7 @@ python3 -m unittest -v test_data_collection_gate.py
 python3 -m py_compile data_collection_gate.py test_data_collection_gate.py
 ```
 
-当前 16 个定向测试覆盖左右弧线、曲率边界、跨 yaw 环绕的原地转弯、输入异常、流式状态、恢复直线后结束、静止不结束、二次转弯重置恢复、稀疏调用返回历史动作节点、1% 边界和 6–12 s 直线时长。
+当前 19 个定向测试覆盖左右弧线、曲率边界、跨 yaw 环绕的原地转弯、输入异常、流式状态、恢复直线后结束、3 s 稳定停车结束、2 s 短暂停车不结束、二次转弯重置恢复、稀疏调用返回历史动作节点、默认 45 s 硬截止、1% 边界和 6–12 s 直线时长。
 
 真实例子使用 `20260820180215WDK_1/cam0_continuous.mp4`。视频长 119.924 s，371 个有效 pose；历史 pose 约 3 Hz 且有 0.5–2.0 s 间隔，因此仅本次离线回放将 `maximum_pose_gap_s` 设为 2.0 s，实时高频缓存仍使用默认 0.5 s。其他设置为 60 s 缓存、6 s 判定延迟、转弯检查 0.2 s、直线机会 1 Hz、转弯优先、直线 seed 42。
 
@@ -216,6 +234,6 @@ python3 -m py_compile data_collection_gate.py test_data_collection_gate.py
 | --- | ---: | ---: | --- |
 | straight | 43.000 s | 53.835 s | 第 20 个合格机会命中；锁定时长 10.835 s |
 | turn | 82.200 s | 94.600 s | 83.200 s 首次检测为右弧线；继续采到恢复直线后再结束 |
-| turn | 102.200 s | 未结束 | 后续左转连续出现，视频尾部前没有足够的恢复直线证据 |
+| turn | 102.200 s | 113.000 s | 后续左转保持为同一片段；连续稳定停车 3 s 后结束 |
 
-旧的非状态式结束逻辑会把右转截成 82.200–85.400 s；新逻辑返回 82.200–94.600 s。旧逻辑还会把后段左转拆成 102.200–105.200 s 和 107.800–110.800 s；新逻辑不会在中间短暂变化时结束，而是保持同一活动片段。以上都是算法对历史 pose 的回放结果，没有人工修订边界。
+旧的非状态式结束逻辑会把右转截成 82.200–85.400 s；新逻辑返回 82.200–94.600 s。旧逻辑还会把后段左转拆成 102.200–105.200 s 和 107.800–110.800 s；新逻辑保持为 102.200–113.000 s 的同一片段，在稳定停车后结束。本例所有片段都短于 45 s，因此 `Tmax` 没有介入。以上都是算法对历史 pose 的回放结果，没有人工修订边界。

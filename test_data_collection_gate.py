@@ -170,7 +170,7 @@ class TurnGateTest(unittest.TestCase):
         self.assertEqual(gate.end_collection(samples, 2.2), (False, 2.2))
         self.assertEqual(gate.active_start_timestamp_s, 2.0)
 
-    def test_stationary_after_turn_does_not_count_as_straight_recovery(self) -> None:
+    def test_stable_stop_after_turn_ends_collection(self) -> None:
         samples = _motion_profile(
             [
                 (5.0, 0.5, math.radians(12.0)),
@@ -181,19 +181,45 @@ class TurnGateTest(unittest.TestCase):
         gate = TurnGate(TurnGateConfig(pose_smoothing_window_s=0.0))
         self.assertEqual(gate.start_collection(samples, 2.0), (True, 2.0))
 
+        stop_result = (False, 0.0)
         for index in range(21, 91):
+            timestamp_s = index / 10.0
+            stop_result = gate.end_collection(samples, timestamp_s)
+            if stop_result[0]:
+                break
+
+        self.assertTrue(stop_result[0])
+        self.assertAlmostEqual(stop_result[1], 8.0)
+
+    def test_short_stationary_pause_does_not_end_collection(self) -> None:
+        samples = _motion_profile(
+            [
+                (5.0, 0.5, math.radians(12.0)),
+                (2.0, 0.0, 0.0),
+                (4.0, 0.5, math.radians(12.0)),
+            ]
+        )
+        gate = TurnGate(TurnGateConfig(pose_smoothing_window_s=0.0))
+        self.assertEqual(gate.start_collection(samples, 2.0), (True, 2.0))
+
+        for index in range(21, 81):
             timestamp_s = index / 10.0
             self.assertEqual(
                 gate.end_collection(samples, timestamp_s), (False, timestamp_s)
             )
+        self.assertEqual(gate.active_start_timestamp_s, 2.0)
 
-        stop_result = (False, 0.0)
-        for index in range(91, 141):
-            stop_result = gate.end_collection(samples, index / 10.0)
-            if stop_result[0]:
-                break
-        self.assertTrue(stop_result[0])
-        self.assertGreater(stop_result[1], 9.0)
+    def test_turn_collection_has_exact_default_maximum_interval(self) -> None:
+        initial_cache = _arc(math.radians(12.0), duration_s=12.0)
+        gate = TurnGate(TurnGateConfig(pose_smoothing_window_s=0.0))
+        self.assertTrue(hasattr(TurnGate.end_collection, "__wrapped__"))
+        self.assertEqual(gate.start_collection(initial_cache, 2.0), (True, 2.0))
+
+        # The late call contains no history around the deadline.  Tmax still
+        # returns the exact start + 45 s action node.
+        recent_cache = [PoseSample(60.0, 0.0, 0.0, 0.0)]
+        self.assertEqual(gate.end_collection(recent_cache, 60.0), (True, 47.0))
+        self.assertIsNone(gate.active_start_timestamp_s)
 
     def test_renewed_turn_resets_pending_straight_recovery(self) -> None:
         samples = _motion_profile(
@@ -325,6 +351,7 @@ class StraightGateTest(unittest.TestCase):
         gate = StraightGate(
             StraightGateConfig(start_probability=1.0), rng=random.Random(20260908)
         )
+        self.assertEqual(gate.config.maximum_collection_interval_s, 45.0)
         for index in range(50):
             start_s = 3.0 + index * 0.01
             self.assertEqual(gate.start_collection(samples, start_s), (True, start_s))
@@ -339,6 +366,23 @@ class StraightGateTest(unittest.TestCase):
         self.assertGreaterEqual(min(durations), 6.0)
         self.assertLessEqual(max(durations), 12.0)
         self.assertGreater(max(durations) - min(durations), 2.5)
+
+    def test_maximum_interval_caps_custom_straight_duration(self) -> None:
+        samples = _straight(duration_s=60.0)
+        self.assertTrue(hasattr(StraightGate.end_collection, "__wrapped__"))
+        gate = StraightGate(
+            StraightGateConfig(
+                start_probability=1.0,
+                minimum_collection_duration_s=6.0,
+                maximum_collection_duration_s=60.0,
+                maximum_collection_interval_s=45.0,
+            ),
+            rng=_StubRandom(probability_draw=0.0, duration_s=60.0),
+        )
+
+        self.assertEqual(gate.start_collection(samples, 3.0), (True, 3.0))
+        self.assertEqual(gate.active_collection.target_duration_s, 45.0)  # type: ignore[union-attr]
+        self.assertEqual(gate.end_collection(samples, 60.0), (True, 48.0))
 
 
 class _StubRandom:
