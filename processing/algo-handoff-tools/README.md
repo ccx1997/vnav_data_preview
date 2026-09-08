@@ -26,7 +26,9 @@ python3 pull-task-export.py --task 20260820180215WDK --out ./meta
 | `README.md` | 本说明 |
 | `annotation-export-zip-algo-usage.md` | JSONL/ZIP 字段、坐标系、`grid_pose` |
 | **`download-task.sh`** | **项目入口：按 task 完成导出、解压、视频下载、对齐与可选安全清理** |
+| **`list-task-ids.py`** | **按起止时间列出全部 task_id**（不受看板 200 条限制） |
 | **`pull-task-export.py`** | **训练机直拉「任务数据导出」ZIP / JSONL** |
+| **`normalize-meta-export.py`** | **校验 task/subtask 归属并规范解压到 `unpacked/meta_<sub_task_id>/`** |
 | **`pull-oss-videos.py`** | 从刚拉到的 ZIP/JSONL 拉 OSS 段 + 按 keep_windows 拼连续 MP4 |
 | `download-video-segments.mjs` | 可选：只下载分段（Node 18+） |
 | `export-local-continuous-video.py` | 可选：车上读本机盘拼接（不经 OSS） |
@@ -45,6 +47,38 @@ python3 pull-task-export.py --task 20260820180215WDK --out ./meta
 
 历史任务可能仍是 `at-…`，前缀规则一样。
 
+## 按时间批量查 task_id
+
+看板任务列表只加载最近 200 条。训练机需要完整时间窗时，使用：
+
+```http
+GET /api/annotation-tasks/ids?from=2026-08-26&to=2026-08-26&robot=Robot-U2-V1
+```
+
+- `from` / `to` 必填，可为 unix 秒或 `YYYY-MM-DD` / `YYYY-MM-DD HH:MM[:SS]`。
+- 未写时区按 `Asia/Shanghai`；只给日期时，`from` 从当天 00:00:00 开始，`to` 包含当天结束。
+- 筛选采集开始时间 `started_ts`；未启动草稿使用 `created_ts`。可选 `robot`。
+- 服务端最多返回 50000 条；响应 `truncated=true` 时应缩小时间窗。
+- 鉴权与导出一致，只从环境变量 `SKDOS_API_KEY` 读取。
+
+```bash
+# 某一整天（上海时间）
+python3 list-task-ids.py --from 2026-08-26 --to 2026-08-26
+
+# 指定机器人和时段
+python3 list-task-ids.py \
+  --from '2026-08-26 15:00' --to '2026-08-26 20:00' \
+  --robot Robot-U2-V1
+
+# 仅输出 ID，便于批量导出
+python3 list-task-ids.py --from 2026-08-26 --to 2026-08-27 --ids-only > ids.txt
+while read -r task_id; do
+  python3 pull-task-export.py --task "$task_id" --out ./meta
+done < ids.txt
+```
+
+`pull-task-export.py --list` 仍走看板最近任务列表，不可用于完整时间窗查询。
+
 ## 推荐流程
 
 ```text
@@ -54,11 +88,22 @@ OSS 分段 mp4
     ↓ 训练机
 python3 pull-task-export.py --task <task_id> --out ./meta
     ↓
-meta_<task_id>_all.zip          # pose / vel / grids PNG / video_segments
+meta_<task_id>_all.zip 或 meta_<task_id>_1.zip
+    ↓ 校验归属并规范解压
+unpacked/meta_<sub_task_id>/    # pose / vel / grids PNG / video_segments
     ↓
-python3 pull-oss-videos.py --in meta_<task_id>_all.zip --out ./videos
+python3 pull-oss-videos.py --in <实际下载 ZIP> --out ./videos
 videos_<sub_task_id>/cam*_continuous.mp4
 ```
+
+导出器以服务端实际文件名为准：单子任务的 `sub_task=all` 响应可能是 `_1.zip`，且包内文件可能直接
+位于根目录。`download-task.sh` 读取 `EXPORT_PATH`，再由 `normalize-meta-export.py` 校验 ZIP 内声明的
+task/subtask 归属；根级单 bundle 和多目录 bundle 最终都统一写到
+`meta/unpacked/meta_<sub_task_id>/`。归属不一致、缺少核心文件或空 `frames.jsonl` 时不覆盖现有规范目录。
+
+`meta_<task_id>_all.zip` 可直接传给 `pull-oss-videos.py`；脚本会按包内
+`meta_<task_id>_<i>/` 自动展开子任务。展开后与重复传入多个 `--in` 使用同一个
+`--jobs` 总并发预算。
 
 默认拼接按子任务 `keep_windows` 建立定长时间轴，缺段补黑；15fps 下各路输出时长互差目标 **<100ms**（≤1 帧）。所有分段都有完整车上采集钟 `t0_hw`/`t1_hw` 时使用 `align_mode=hw_ts`；任一分段缺失时整批回退 `wall_clock`，避免混用时间基准。仅 `--copy` 走旧关键帧 copy 快路径，不视为已对齐。
 
@@ -87,7 +132,8 @@ python3 pull-task-export.py --task 20260820180215WDK --format jsonl --sub-task 1
 python3 pull-task-export.py --task 20260820180215WDK --out ./meta --dry-run
 ```
 
-输出文件名与看板一致：`meta_{task_id}_all.zip` 或 `meta_{task_id}_{i}.zip`。
+输出文件名采用 HTTP `Content-Disposition` 的实际值：通常为 `meta_{task_id}_all.zip` 或
+`meta_{task_id}_{i}.zip`；脚本最后一行稳定输出 `EXPORT_PATH=<绝对路径>`，调用方不得自行猜文件名。
 
 ZIP 内：
 
@@ -108,6 +154,7 @@ meta_{task_id}_{i}/          # sub_task=all 时每个子任务一个目录
 ```bash
 # 要 ffmpeg
 ./download-task.sh --jobs 4 20260820180215WDK
+python3 pull-oss-videos.py --in meta_20260820180215WDK_all.zip --out ./videos
 python3 pull-oss-videos.py --in meta_20260820180215WDK_7.zip --out ./videos
 # 多个子任务与各相机共享 4 个并发槽；单子任务时 4 个槽全部用于相机
 python3 pull-oss-videos.py --in meta_..._1/video_segments.json --in meta_..._2/video_segments.json --out ./videos --jobs 4
@@ -115,7 +162,6 @@ python3 pull-oss-videos.py --in meta_....jsonl --out ./videos --dry-run
 python3 pull-oss-videos.py --in meta_....zip --out ./videos --copy
 # 复用已有非空分段，只下载缺失分段，并覆盖连续视频
 python3 pull-oss-videos.py --in meta_....jsonl --out ./videos --reuse-segments
-# 全部子任务 ZIP 请按里面的 meta_{task}_{i}/ 分别喂，或拉取时加 --sub-task N
 ```
 
 输出：
@@ -132,11 +178,19 @@ videos/
 拼接规则：
 
 - 按 **子任务** 一条连续片，不是整次任务一条
-- 默认 `--jobs 4`；多个 `--in` 并行处理子任务，并在每个子任务内并行处理不同相机，总并发不超过该值
+- `all.zip` 按包内目录自动展开 `_1` / `_2` / …，不会只读第一份 `video_segments.json`
+- 默认 `--jobs 4`；展开的子任务和多个 `--in` 并行处理，并在每个子任务内并行处理不同相机，总并发不超过该值
 - 默认按该子任务 `keep_windows` 定长补黑；全段硬件时间完整时用 `hw_ts`，否则整批用 `wall_clock`
 - 直接传 `video_segments.json` 时会自动读取同目录 `export_meta.json` / `task.json` 的子任务窗口
 - `--copy` 使用段上的 `clip_from_ts` / `clip_to_ts` 走旧关键帧 copy 快路径，不标成已对齐
 - presigned `url` 有时效（约 1 小时）；过期重新跑 `pull-task-export.py`
+- 相机路数和 ID 以各子任务 `video_segments.json` 的实际内容为准，不要求固定六路；只要实际各路均
+  下载、拼接成功，Manifest 即为完成。与 Robot-U2-V1 推荐集合
+  `cam0/cam1/cam2/cam3/cam5/cam6` 不一致时，命令末尾会输出 `WARNING`，但不会把完整数据判失败
+
+`download-task.sh` 无论成功失败都会在日志最后输出“下载任务最终汇总”，列出实际 ZIP、规范 Meta、
+视频子任务和全部 `WARNING`。以后出现单子任务根级 ZIP、非推荐相机集合或不完整 Manifest 时，应以
+这个末尾汇总为准，不能只看中间下载日志。
 
 方位名称统一：前下 / 右 / 前上 / 左 / 前广 / 后上。cam 编号按车不同。Robot-U2-V1：`cam0` 前下、`cam1` 右、`cam2` 前上、`cam3` 左、`cam5` 前广、`cam6` 后上。
 
@@ -147,6 +201,9 @@ videos/
 ```bash
 node download-video-segments.mjs --in meta_<sub_task_id>.jsonl --out ./vids
 ```
+
+Node 脚本定位为单子任务下载；若输入 `all.zip`，它会警告并仅处理第一份。
+多子任务必须使用 Python `pull-oss-videos.py`。
 
 车上直接读本机盘（不经 OSS）：
 

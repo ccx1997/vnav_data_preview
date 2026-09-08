@@ -8,6 +8,9 @@
  *   node tools/download-video-segments.mjs --in meta_<task>_<i>.zip --out ./vids
  *   node tools/download-video-segments.mjs --in video_segments.json --out ./vids --dry-run
  *
+ * all.zip（多个 meta_{task}_{i}/）本脚本只取第一份 video_segments.json。
+ * 多子任务下载+拼接请用: python3 pull-oss-videos.py --in meta_*_all.zip --out ./videos
+ *
  * 契约字段: segments[].camera, start_ts, end_ts, clip_from_ts, clip_to_ts, url, object_key
  * URL 为 OSS presigned，有时效；过期请重新导出。拼接请用 pull-oss-videos.py。
  */
@@ -25,7 +28,8 @@ function usage() {
   --out      输出目录（按 camera/ 分子目录）
   --dry-run  只打印将请求的 URL，不写盘
   --limit N  最多下载 N 段（调试）
-  拼接连续 MP4 请用: python3 pull-oss-videos.py --in <jsonl|zip> --out <dir>
+  拼接连续 MP4 请用: python3 pull-oss-videos.py --in <jsonl|zip|all.zip> --out <dir>
+  all.zip 含多个子任务时本脚本只下第一份；请改用 pull-oss-videos.py
 `);
 }
 
@@ -51,6 +55,13 @@ export function loadVideoSegmentsPayload(inputPath) {
   if (!fs.existsSync(abs)) throw new Error(`input not found: ${abs}`);
   const buf = fs.readFileSync(abs);
   if (buf[0] === 0x50 && buf[1] === 0x4b) {
+    const count = countZipEntriesNamed(buf, 'video_segments.json');
+    if (count > 1) {
+      console.warn(
+        `[warn] ZIP 含 ${count} 份 video_segments.json；本脚本只下第一份。` +
+        `多子任务请用 python3 pull-oss-videos.py --in <all.zip>`,
+      );
+    }
     const text = extractZipEntry(buf, 'video_segments.json');
     if (!text) throw new Error('ZIP missing video_segments.json');
     return normalizePayload(JSON.parse(text));
@@ -93,6 +104,22 @@ function normalizePayload(raw) {
       count: raw.count,
     },
   };
+}
+
+/** 统计 store-only ZIP 里 basename 匹配的本地文件条目。 */
+function countZipEntriesNamed(buf, name) {
+  let offset = 0;
+  let count = 0;
+  while (offset + 30 < buf.length) {
+    if (buf.readUInt32LE(offset) !== 0x04034b50) break;
+    const compSize = buf.readUInt32LE(offset + 18);
+    const nameLen = buf.readUInt16LE(offset + 26);
+    const extraLen = buf.readUInt16LE(offset + 28);
+    const entryName = buf.slice(offset + 30, offset + 30 + nameLen).toString('utf8');
+    if (entryName === name || entryName.endsWith('/' + name)) count += 1;
+    offset = offset + 30 + nameLen + extraLen + compSize;
+  }
+  return count;
 }
 
 /** 极简 ZIP store 解压：找 local file header 名匹配 entry */

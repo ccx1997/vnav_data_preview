@@ -237,7 +237,13 @@ def cmd_pull(args: argparse.Namespace) -> int:
 
     elapsed = max(0.001, time.time() - t0)
     print("saved %s (%dB, %.1fs)" % (dest, n, elapsed))
-    print("字段说明见 annotation-export-zip-algo-usage.md；拉视频：python3 pull-oss-videos.py --in %s --out ./videos" % dest)
+    video_hint = "python3 pull-oss-videos.py --in %s --out ./videos" % dest
+    if dest.endswith("_all.zip"):
+        video_hint += "  （自动按子任务目录分别拼接）"
+    print("字段说明见 annotation-export-zip-algo-usage.md；拉视频：%s" % video_hint)
+    # Stable machine-readable final line for wrappers.  The response is
+    # allowed to rename an all-subtask request to ``meta_<task>_1.zip``.
+    print("EXPORT_PATH=%s" % dest)
     return 0
 
 

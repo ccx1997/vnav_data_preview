@@ -13,6 +13,7 @@
 依赖：Python 3.8+、ffmpeg（PATH）、能访问 OSS presigned URL。
 
 用法：
+  python3 pull-oss-videos.py --in meta_20260819120000aB3_all.zip --out ./videos
   python3 pull-oss-videos.py --in meta_20260819120000aB3_1.jsonl --out ./videos
   python3 pull-oss-videos.py --in meta_20260819120000aB3_1.zip --out ./videos
   python3 pull-oss-videos.py --in meta_..._1/video_segments.json --in meta_..._2/video_segments.json --out ./videos --jobs 4
@@ -39,6 +40,7 @@ from typing import Any, Callable, Dict, List, Optional, Tuple, TypeVar
 
 T = TypeVar("T")
 R = TypeVar("R")
+RECOMMENDED_CAMERA_IDS = ("cam0", "cam1", "cam2", "cam3", "cam5", "cam6")
 
 
 def _as_float(v: Any) -> Optional[float]:
@@ -62,17 +64,46 @@ def _read_jsonl_meta(path: str) -> Dict[str, Any]:
     return row
 
 
-def _read_zip_json(zf: zipfile.ZipFile, name: str) -> Optional[Dict[str, Any]]:
-    candidates = [name]
+def _normalize_zip_name(name: str) -> str:
+    return str(name or "").replace("\\", "/").lstrip("./")
+
+
+def _zip_bundle_prefixes(zf: zipfile.ZipFile) -> List[str]:
+    """Return one prefix per subtask bundle inside a ZIP.
+
+    A single-subtask ZIP may store files at the archive root or below one
+    ``meta_<sub_task_id>/`` directory. An ``all.zip`` stores one such directory
+    per subtask. If nested bundles exist, root-level metadata is ignored so it
+    cannot be mistaken for an additional subtask.
+    """
+    prefixes = set()
     for info in zf.infolist():
-        base = os.path.basename(info.filename)
-        if base == name:
+        normalized = _normalize_zip_name(info.filename)
+        if normalized.rsplit("/", 1)[-1] != "video_segments.json":
+            continue
+        if "/" in normalized:
+            prefixes.add(normalized.rsplit("/", 1)[0] + "/")
+    return sorted(prefixes) if prefixes else [""]
+
+
+def _read_zip_json(
+    zf: zipfile.ZipFile,
+    name: str,
+    prefix: str = "",
+) -> Optional[Dict[str, Any]]:
+    normalized_prefix = _normalize_zip_name(prefix)
+    if normalized_prefix and not normalized_prefix.endswith("/"):
+        normalized_prefix += "/"
+    exact_name = normalized_prefix + name
+    candidates = []
+    for info in zf.infolist():
+        normalized = _normalize_zip_name(info.filename)
+        if normalized == exact_name:
+            candidates.insert(0, info.filename)
+        elif not normalized_prefix and normalized.rsplit("/", 1)[-1] == name:
             candidates.append(info.filename)
     for cand in candidates:
-        try:
-            raw = zf.read(cand)
-        except KeyError:
-            continue
+        raw = zf.read(cand)
         data = json.loads(raw.decode("utf-8"))
         if isinstance(data, dict):
             return data
@@ -105,70 +136,15 @@ def _parse_windows(raw: Any) -> List[Tuple[float, float]]:
     return sorted(set(windows))
 
 
-def load_bundle(path: str) -> Dict[str, Any]:
-    """读 jsonl / zip / video_segments.json / task.json，抽出段和命名。"""
-    abs_path = os.path.abspath(path)
-    if not os.path.exists(abs_path):
-        raise SystemExit("找不到输入: %s" % abs_path)
-
-    task: Dict[str, Any] = {}
-    export_meta: Dict[str, Any] = {}
-    video_meta: Dict[str, Any] = {}
-    segments: List[Dict[str, Any]] = []
-    camera_positions: Dict[str, Any] = {}
-    sub_task_id = ""
-    task_id = ""
-
-    if zipfile.is_zipfile(abs_path):
-        with zipfile.ZipFile(abs_path) as zf:
-            vs = _read_zip_json(zf, "video_segments.json") or {}
-            video_meta = vs
-            task = _read_zip_json(zf, "task.json") or {}
-            export_meta = _read_zip_json(zf, "export_meta.json") or {}
-            segments = list(vs.get("segments") or [])
-            camera_positions = vs.get("camera_positions") or task.get("camera_positions") or {}
-            task_id = str(vs.get("task_id") or task.get("task_id") or "")
-            sub_task_id = str(vs.get("sub_task_id") or (task.get("sub_task") or {}).get("sub_task_id") or "")
-    elif abs_path.endswith(".jsonl"):
-        row = _read_jsonl_meta(abs_path)
-        task = row.get("_task") if isinstance(row.get("_task"), dict) else {}
-        export_meta = row.get("_export") if isinstance(row.get("_export"), dict) else {}
-        segments = list(row.get("_video_segments") or [])
-        camera_positions = row.get("_camera_positions") or task.get("camera_positions") or {}
-        task_id = str(task.get("task_id") or "")
-        sub = task.get("sub_task") if isinstance(task.get("sub_task"), dict) else {}
-        sub_task_id = str(sub.get("sub_task_id") or "")
-    else:
-        try:
-            with open(abs_path, "r", encoding="utf-8") as f:
-                raw = json.load(f)
-        except (OSError, ValueError) as e:
-            raise SystemExit("无法读取 JSON %s: %s" % (abs_path, e))
-        if isinstance(raw, list):
-            segments = raw
-        elif isinstance(raw, dict):
-            if isinstance(raw.get("segments"), list):
-                video_meta = raw
-                segments = raw["segments"]
-                task_id = str(raw.get("task_id") or "")
-                sub_task_id = str(raw.get("sub_task_id") or "")
-                camera_positions = raw.get("camera_positions") or {}
-
-                # download-task.sh 传入解压后的 video_segments.json。它的
-                # keep_windows 在同目录 export_meta.json/task.json 中，必须一并读取。
-                sibling_dir = os.path.dirname(abs_path)
-                task = _read_optional_json_object(os.path.join(sibling_dir, "task.json"))
-                export_meta = _read_optional_json_object(os.path.join(sibling_dir, "export_meta.json"))
-                camera_positions = camera_positions or task.get("camera_positions") or {}
-                task_id = str(task_id or task.get("task_id") or "")
-            elif raw.get("task_id") and (raw.get("sub_tasks") or raw.get("keep_windows")):
-                task = raw
-                task_id = str(raw.get("task_id") or "")
-            else:
-                raise SystemExit("无法从 JSON 识别 video_segments")
-        else:
-            raise SystemExit("不支持的 JSON 形状")
-
+def _assemble_bundle(
+    task: Dict[str, Any],
+    export_meta: Dict[str, Any],
+    video_meta: Dict[str, Any],
+    segments: List[Dict[str, Any]],
+    camera_positions: Dict[str, Any],
+    task_id: str,
+    sub_task_id: str,
+) -> Dict[str, Any]:
     if not sub_task_id:
         sub = task.get("sub_task") if isinstance(task.get("sub_task"), dict) else {}
         sub_task_id = str(sub.get("sub_task_id") or "")
@@ -212,6 +188,107 @@ def load_bundle(path: str) -> Dict[str, Any]:
         "keep_windows": keep,
         "keep_windows_source": keep_source,
     }
+
+
+def _load_zip_bundle(zf: zipfile.ZipFile, prefix: str) -> Dict[str, Any]:
+    video_meta = _read_zip_json(zf, "video_segments.json", prefix) or {}
+    task = _read_zip_json(zf, "task.json", prefix) or {}
+    export_meta = _read_zip_json(zf, "export_meta.json", prefix) or {}
+    segments = list(video_meta.get("segments") or [])
+    camera_positions = video_meta.get("camera_positions") or task.get("camera_positions") or {}
+    task_id = str(video_meta.get("task_id") or task.get("task_id") or "")
+    task_sub = task.get("sub_task") if isinstance(task.get("sub_task"), dict) else {}
+    sub_task_id = str(video_meta.get("sub_task_id") or task_sub.get("sub_task_id") or "")
+    bundle = _assemble_bundle(
+        task,
+        export_meta,
+        video_meta,
+        segments,
+        camera_positions,
+        task_id,
+        sub_task_id,
+    )
+    bundle["zip_prefix"] = prefix
+    return bundle
+
+
+def _load_non_zip_bundle(abs_path: str) -> Dict[str, Any]:
+    task: Dict[str, Any] = {}
+    export_meta: Dict[str, Any] = {}
+    video_meta: Dict[str, Any] = {}
+    segments: List[Dict[str, Any]] = []
+    camera_positions: Dict[str, Any] = {}
+    sub_task_id = ""
+    task_id = ""
+
+    if abs_path.endswith(".jsonl"):
+        row = _read_jsonl_meta(abs_path)
+        task = row.get("_task") if isinstance(row.get("_task"), dict) else {}
+        export_meta = row.get("_export") if isinstance(row.get("_export"), dict) else {}
+        segments = list(row.get("_video_segments") or [])
+        camera_positions = row.get("_camera_positions") or task.get("camera_positions") or {}
+        task_id = str(task.get("task_id") or "")
+        sub = task.get("sub_task") if isinstance(task.get("sub_task"), dict) else {}
+        sub_task_id = str(sub.get("sub_task_id") or "")
+    else:
+        try:
+            with open(abs_path, "r", encoding="utf-8") as f:
+                raw = json.load(f)
+        except (OSError, ValueError) as e:
+            raise SystemExit("无法读取 JSON %s: %s" % (abs_path, e))
+        if isinstance(raw, list):
+            segments = raw
+        elif isinstance(raw, dict):
+            if isinstance(raw.get("segments"), list):
+                video_meta = raw
+                segments = raw["segments"]
+                task_id = str(raw.get("task_id") or "")
+                sub_task_id = str(raw.get("sub_task_id") or "")
+                camera_positions = raw.get("camera_positions") or {}
+
+                # download-task.sh 传入解压后的 video_segments.json。它的
+                # keep_windows 在同目录 export_meta.json/task.json 中，必须一并读取。
+                sibling_dir = os.path.dirname(abs_path)
+                task = _read_optional_json_object(os.path.join(sibling_dir, "task.json"))
+                export_meta = _read_optional_json_object(os.path.join(sibling_dir, "export_meta.json"))
+                camera_positions = camera_positions or task.get("camera_positions") or {}
+                task_id = str(task_id or task.get("task_id") or "")
+            elif raw.get("task_id") and (raw.get("sub_tasks") or raw.get("keep_windows")):
+                task = raw
+                task_id = str(raw.get("task_id") or "")
+            else:
+                raise SystemExit("无法从 JSON 识别 video_segments")
+        else:
+            raise SystemExit("不支持的 JSON 形状")
+
+    return _assemble_bundle(
+        task,
+        export_meta,
+        video_meta,
+        segments,
+        camera_positions,
+        task_id,
+        sub_task_id,
+    )
+
+
+def load_bundles(path: str) -> List[Dict[str, Any]]:
+    """读 jsonl / zip / video_segments.json / task.json；all.zip 返回每个子任务。"""
+    abs_path = os.path.abspath(path)
+    if not os.path.exists(abs_path):
+        raise SystemExit("找不到输入: %s" % abs_path)
+    if zipfile.is_zipfile(abs_path):
+        with zipfile.ZipFile(abs_path) as zf:
+            return [_load_zip_bundle(zf, prefix) for prefix in _zip_bundle_prefixes(zf)]
+    return [_load_non_zip_bundle(abs_path)]
+
+
+def load_bundle(path: str) -> Dict[str, Any]:
+    """兼容旧调用：单包返回一份；CLI 用 load_bundles 展开 all.zip。"""
+    bundles = load_bundles(path)
+    if not bundles:
+        raise SystemExit("ZIP/JSON 里没有可读的任务包: %s" % path)
+    return bundles[0]
 
 
 def _ffmpeg() -> str:
@@ -624,8 +701,13 @@ def _split_job_budget(task_count: int, jobs: int) -> Tuple[int, List[int]]:
     return task_jobs, [base + (index < extra) for index in range(task_count)]
 
 
-def _cmd_run_bundle(args: argparse.Namespace, in_path: str, camera_jobs: int) -> int:
-    bundle = load_bundle(in_path)
+def _cmd_run_bundle(
+    args: argparse.Namespace,
+    in_path: str,
+    camera_jobs: int,
+    bundle: Optional[Dict[str, Any]] = None,
+) -> int:
+    bundle = bundle or load_bundle(in_path)
     segs = bundle["segments"]
     if args.limit and args.limit > 0:
         segs = segs[: args.limit]
@@ -804,13 +886,47 @@ def _cmd_run_bundle(args: argparse.Namespace, in_path: str, camera_jobs: int) ->
 
 def cmd_run(args: argparse.Namespace) -> int:
     input_paths = list(args.in_paths)
-    task_jobs, camera_jobs = _split_job_budget(len(input_paths), args.jobs)
-    work = list(zip(input_paths, camera_jobs))
+    expanded = [
+        (in_path, bundle)
+        for in_path in input_paths
+        for bundle in load_bundles(in_path)
+    ]
+    task_jobs, camera_jobs = _split_job_budget(len(expanded), args.jobs)
+    work = [
+        (in_path, bundle, bundle_jobs)
+        for (in_path, bundle), bundle_jobs in zip(expanded, camera_jobs)
+    ]
 
-    def run_bundle(item: Tuple[str, int]) -> int:
-        return _cmd_run_bundle(args, item[0], item[1])
+    def run_bundle(item: Tuple[str, Dict[str, Any], int]) -> int:
+        return _cmd_run_bundle(args, item[0], item[2], item[1])
 
     return_codes = _parallel_map_ordered(run_bundle, work, task_jobs)
+    warnings = []
+    print("\n========== 视频下载最终汇总 ==========")
+    for (_in_path, bundle), return_code in zip(expanded, return_codes):
+        sub_task_id = str(bundle.get("sub_task_id") or "task_1")
+        camera_ids = sorted(group_by_camera(list(bundle.get("segments") or ())))
+        print(
+            "sub_task=%s status=%s camera_count=%d cameras=[%s]"
+            % (
+                sub_task_id,
+                "success" if return_code == 0 else "failed",
+                len(camera_ids),
+                ",".join(camera_ids),
+            )
+        )
+        if tuple(camera_ids) != tuple(sorted(RECOMMENDED_CAMERA_IDS)):
+            warnings.append(
+                "%s 相机集合为 [%s]，不同于推荐集合 [%s]；仍按实际相机下载和拼接"
+                % (
+                    sub_task_id,
+                    ",".join(camera_ids),
+                    ",".join(RECOMMENDED_CAMERA_IDS),
+                )
+            )
+    for warning in warnings:
+        print("WARNING: " + warning)
+    print("========== 汇总结束 ==========")
     return 1 if any(return_codes) else 0
 
 
@@ -820,7 +936,8 @@ def main(argv: Optional[List[str]] = None) -> int:
     )
     p.add_argument(
         "--in", dest="in_paths", action="append", required=True,
-        help="meta_*.jsonl / meta_*.zip / video_segments.json；可重复传入多个子任务",
+        help="meta_*.jsonl / meta_*.zip / meta_*_all.zip / video_segments.json；"
+        "all.zip 自动按子任务展开，也可重复传入 --in",
     )
     p.add_argument("--out", required=True, help="输出目录")
     p.add_argument("--jobs", type=int, default=4, help="子任务与相机共享的总并发数（默认 4）")

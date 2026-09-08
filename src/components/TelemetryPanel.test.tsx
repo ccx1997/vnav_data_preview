@@ -31,7 +31,7 @@ const frame: FrameSample = {
 
 describe('TelemetryPanel', () => {
   it('renders pose and velocity with two decimals and source information', () => {
-    render(<TelemetryPanel frame={frame} />)
+    render(<TelemetryPanel frame={frame} mapName="B10_map" />)
     expect(screen.getByText('近邻预览')).toBeInTheDocument()
     expect(screen.getByText('-0.19')).toBeInTheDocument()
     expect(screen.getByText('0.03')).toBeInTheDocument()
@@ -40,11 +40,13 @@ describe('TelemetryPanel', () => {
     expect(screen.getByText('0.00')).toBeInTheDocument()
     expect(screen.getByText('0.80')).toBeInTheDocument()
     expect(screen.getByText('pose_diff_fallback')).toBeInTheDocument()
+    expect(screen.getByText('map_name')).toBeInTheDocument()
+    expect(screen.getByText('B10_map')).toBeInTheDocument()
   })
 
   it('shows empty placeholders when no current frame exists', () => {
-    render(<TelemetryPanel frame={null} />)
+    render(<TelemetryPanel frame={null} mapName={null} />)
     expect(screen.getByText('无对应数据')).toBeInTheDocument()
-    expect(screen.getAllByText('—')).toHaveLength(7)
+    expect(screen.getAllByText('—')).toHaveLength(8)
   })
 })

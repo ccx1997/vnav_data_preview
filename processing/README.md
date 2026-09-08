@@ -1,6 +1,97 @@
 # 数据下载与处理
 
-`algo-handoff-tools/download-task.sh` 用于按 task 下载结构化数据、栅格图和 OSS 视频，并按子任务把各相机合并为等长连续 MP4。默认按 keep 窗定长、缺段补黑；硬件时间完整时使用车上采集钟对齐，否则整批回退墙钟。
+`algo-handoff-tools/download-task.sh` 用于按 task 下载结构化数据、栅格图和 OSS 视频，校验 Meta 的
+task/subtask 归属并统一解压到 `meta/unpacked/meta_<sub_task_id>/`，再按子任务把实际存在的各相机
+合并为等长连续 MP4。默认按 keep 窗定长、缺段补黑；硬件时间完整时使用车上采集钟对齐，否则整批
+回退墙钟。相机不固定为六路；偏离推荐相机集合时任务仍可完成，但日志末尾会明确输出 `WARNING`。
+
+## 训练数据制作
+
+[`training-data-builder/`](training-data-builder/) 提供多视角训练样本、稀疏路线、地图裁剪和雷达教师
+伪标签的 `pilot/full` 流水线。原始下载数据保持只读，生成物默认写到
+`/mnt/chengchangxu/data/visual_nav_training/`。
+
+当前版本是 `vnav_teacher_rule10_history_v2`，通过无状态 `/teacher/infer_batch` 同时提交 batch 内每个
+样本的独立占据历史。初态有 20% 稳定随机分支为精确零速，教师占据和学生 RGB 均重复当前单图；
+其余样本用当前前 0.5 s 的实际 pose 变化估算线角速度，并使用真实多帧历史。动态 RGB 按 MP4 实际
+PTS 索引 1.0 s 窗口，频率不超过 10 Hz。
+
+修正版 12-case pilot 已验证 older/recent 两个教师通道均非空、确定性一致、每次
+`forward_passes=1`，逐样本深度校验错误为 0。详细参数和输出契约见
+[`training-data-builder/README.md`](training-data-builder/README.md)。
+
+手工生成一个 pilot：
+
+```bash
+/mnt/wlf/anaconda3/envs/deepseek_train/bin/python \
+  processing/training-data-builder/build_training_data.py pilot \
+  --revision 1
+```
+
+正式输出位于
+`/mnt/chengchangxu/data/visual_nav_training/<task_id>/vnav_teacher_rule10_history_v2/full/run_*/`。
+源采集根目录 `/mnt/chengchangxu/data/visual_nav_mv/` 始终只读。
+
+### 自动补齐未生成任务
+
+已提供包含教师生命周期的一键入口：
+
+```bash
+# 自动扫描、跳过已成功任务并生成所有当前就绪任务
+./processing/training-data-builder/build_pending_training_data.sh
+
+# 只查看 pending / already_completed / incomplete 分类
+./processing/training-data-builder/build_pending_training_data.sh --dry-run
+```
+
+成功完成的判定不是“目录存在”，而是同一 pipeline 下 full `run.json` 成功、已授权、接受样本数大于
+0，且 cases 与 source、教师标签、RGB 历史三份核心 Manifest 存在。失败或 0 样本任务会在下次运行重试；未规范解压 Meta、缺子任务
+Manifest 或 Manifest 所声明的实际相机视频不齐会标为 `incomplete`，待下载完整后自动进入下一批。
+实际相机集合偏离配置中的推荐集合只记 warning，不阻止进入 pending。批次状态位于
+`/mnt/chengchangxu/data/visual_nav_training/_batch_runs/run_*/batch_run.json`，并用文件锁避免两个批次
+同时运行。
+
+跨地图源子任务按逐帧 `map_name` 的变化时刻切成独立地图段，不跨坐标系构造路线；若逐帧地图缺失，
+仅允许 `task.json` 快照地图唯一时回退。Manifest 同时存在 `local_trim` 与旧 `keep_windows` 时，训练
+同步优先使用实际 MP4 对应的 `local_trim`。
+
+2026-08-31 Rule-10 v2 正式批次完成 7 个就绪任务，`6902` 个候选中接受 `6813` 个，`89` 个拒绝
+全部为碰撞回放；220 次 batch 均为一次 forward。20% 零速重复分支实际为 `1408/6813=20.67%`，
+动态 RGB 实际约 7.5 Hz。逐样本深度验证 7/7 run、0 错误、0 警告，19/19 回归通过。4 个 source
+不完整任务保持未处理；删除旧 v1 后 dry-run 为 `pending=0 / already_completed=7 / incomplete=4`。
+旧数据共删除 16.10 GB，采集源 22,831 个文件的内容聚合 SHA-256 删除前后相同。详细统计见
+[`training-data-builder/rule10_history_v2_report_20260831.md`](training-data-builder/rule10_history_v2_report_20260831.md)。
+
+同日按新 Meta/相机规范修复四个历史目录后，限定 dry-run 更新为
+`pending=3 / incomplete=1`：`20260819181014HWI` 与 `20260824161657Li2` 已规范解压并完整下载，
+五路的 `20260828154654XXz` 以 warning 进入 pending；`202608181754378l1` 已恢复 Meta，但远端任务
+返回 404，仍缺视频 Manifest。本次只修复下载源并验证发现/同步，没有启动教师或生成训练样本。
+
+以下 2026-08-27 数字只保留为旧 `vnav_teacher_v1` 的历史审计记录；该版本没有正确动态初态和显式
+教师历史，已被 Rule-10 v2 取代，不得继续作为当前训练集。
+
+2026-08-27 首次自动批处理新增完成 3 个任务：
+
+```text
+20260818193938Axg  3156 候选 / 3147 接受 /  9 拒绝  4.2 GB
+20260819203318qFl  2180 候选 / 2159 接受 / 21 拒绝  2.8 GB
+20260821114524n4Q   389 候选 /  384 接受 /  5 拒绝  795 MB
+```
+
+共新增 5690 个完整样本，逐样本六路文件、融合二值值域/并集/hash、同步和路线门槛验收错误为 0；
+二次扫描为 `pending=0 / already_completed=4 / incomplete=2`，证明成功任务不会重复生成。
+
+随后下载目录新增任务后，从主项目再次运行同一入口，又自动完成：
+
+```text
+202608251919001QS  1209 候选 / 1128 接受 / 81 拒绝  1.4 GB
+20260826154539RI5    54 候选 /   54 接受 /  0 拒绝   93 MB
+```
+
+本轮新增 1182 个样本，逐样本验收错误仍为 0；81 个拒绝均为碰撞回放。全路线清单中的一条
+`176.046 deg` 坏路线未被接受样本引用，其 679 行由 `route_simplification_error` 拒绝；实际训练路线
+最大横向/切向误差为 `0.098927 m / 3.465017 deg`。截至本轮，自动入口累计完成 5 个新任务、生成
+6872 个样本；当前全部 9 个目录应分类为 `pending=0 / already_completed=6 / incomplete=3`。
 
 ## 使用方法
 
@@ -15,7 +106,7 @@
 # 指定其他输出根目录
 ./processing/algo-handoff-tools/download-task.sh 20260820180215WDK /path/to/output
 
-# 合并算法更新后，复用已有 segments 重新合并并覆盖旧结果
+# “合并算法”更新后，复用已有 segments 重新合并并覆盖旧结果
 ./processing/algo-handoff-tools/download-task.sh --remerge 20260820180215WDK
 
 # 下载、解压和合并成功后删除 ZIP
@@ -29,7 +120,9 @@
   --delete-zip --delete-segments 20260820180215WDK
 ```
 
-两个删除选项默认均不开启。只有所有子任务都满足下载无缺失、所有相机拼接成功且 manifest 标记为对齐完成时才会清理；任一检查失败都会保留 ZIP 和原始视频段。旧版或 `--copy` 生成的 manifest 不会被当作已对齐完成，重跑任务级命令会按新规则重新处理。
+两个删除选项默认均不开启。只有所有子任务都满足下载无缺失、Manifest 声明的实际相机全部拼接成功
+且标记为对齐完成时才会清理；任一检查失败都会保留 ZIP 和原始视频段。相机数不是固定六路。
+旧版或 `--copy` 生成的 manifest 不会被当作已对齐完成，重跑任务级命令会按新规则重新处理。
 
 `--remerge` 用于合并算法更新后的重新处理：
 
@@ -62,7 +155,7 @@
 ```text
 /mnt/chengchangxu/data/visual_nav_mv/<task_id>/
   meta/
-    meta_<task_id>_all.zip
+    meta_<task_id>_all.zip 或 meta_<task_id>_<i>.zip
     unpacked/meta_<sub_task_id>/
       frames.jsonl
       grids/*.png

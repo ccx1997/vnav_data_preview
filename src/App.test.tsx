@@ -61,6 +61,7 @@ const summary: DatasetSummary = {
 
 const detail: DatasetDetail = {
   ...summary,
+  mapName: null,
   timeline: { from: 100, to: 399, duration: 299 },
   cameras: Object.entries({
     cam0: { positionZh: '左', positionEn: 'left' },
@@ -296,6 +297,35 @@ describe('App timeline integration', () => {
     await waitFor(() => expect(fetchMock).toHaveBeenCalledWith('/api/datasets/example', { method: 'DELETE' }))
     expect(await screen.findByText('暂无可预览的数据集')).toBeInTheDocument()
     expect(screen.getByText(/已删除数据集\s*测试任务\s*的 Meta 和视频/)).toBeInTheDocument()
+  })
+
+  it('requires a map selection and confirms the label for every Meta frame', async () => {
+    const fetchMock = vi.mocked(fetch)
+    fetchMock.mockImplementation(async (input: RequestInfo | URL, init?: RequestInit) => {
+      const url = String(input)
+      if (url === '/api/datasets/example/map-name' && init?.method === 'POST') {
+        return {
+          ok: true,
+          json: async () => ({ id: summary.id, mapName: 'B10_map', labeledFrames: 3 }),
+        } as Response
+      }
+      return { ok: true, json: async () => url === '/api/datasets' ? [summary] : detail } as Response
+    })
+
+    render(<App />)
+    fireEvent.click(await screen.findByRole('button', { name: '标注地图名称' }))
+    expect(screen.getByRole('dialog', { name: '标注地图名称' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '确认标签' })).toBeDisabled()
+
+    fireEvent.change(screen.getByRole('combobox', { name: '地图名称' }), { target: { value: 'B10_map' } })
+    fireEvent.click(screen.getByRole('button', { name: '确认标签' }))
+
+    await waitFor(() => expect(fetchMock).toHaveBeenCalledWith(
+      '/api/datasets/example/map-name',
+      expect.objectContaining({ method: 'POST', body: JSON.stringify({ mapName: 'B10_map' }) }),
+    ))
+    expect(await screen.findByText('地图标签已写入 3 帧：B10_map')).toBeInTheDocument()
+    expect(screen.getByText('地图 B10_map')).toBeInTheDocument()
   })
 
   it('submits a retained time range as start and end removal durations', async () => {

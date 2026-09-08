@@ -1,11 +1,19 @@
 #!/usr/bin/env bash
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ENV="${SCRIPT_DIR}/../../.env"
+if [[ -f "${PROJECT_ENV}" ]]; then
+  set -a
+  source "${PROJECT_ENV}"
+  set +a
+fi
+
 set -euo pipefail
 
 usage() {
   echo "用法: $0 [--jobs N] [--remerge] [--delete-zip] [--delete-segments] <task_id> [output_root]"
   echo "  --jobs N           子任务与相机共享的总并发数（默认 4）"
   echo "  --remerge          复用已有片段重新合并并覆盖旧结果；片段缺失时只补下载缺失部分"
-  echo "  --delete-zip       解压并完成下载后删除 meta_..._all.zip"
+  echo "  --delete-zip       规范解包并完成下载后删除本任务的 meta_*.zip"
   echo "  --delete-segments  合并成功后删除 videos/segs 原始视频段"
   echo "  默认保留 ZIP 和视频 segments"
   echo "  已完成任务带删除选项重跑时，只执行清理，不重复下载或合并"
@@ -73,12 +81,13 @@ if [[ ! "${TASK_ID}" =~ ^[0-9A-Za-z][0-9A-Za-z._-]*$ ]]; then
   exit 2
 fi
 
-SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+OUTPUT_ROOT="$(realpath -m -- "${OUTPUT_ROOT}")"
 TASK_DIR="${OUTPUT_ROOT}/${TASK_ID}"
 META_DIR="${TASK_DIR}/meta"
 UNPACK_DIR="${META_DIR}/unpacked"
 VIDEO_DIR="${TASK_DIR}/videos"
-ZIP_PATH="${META_DIR}/meta_${TASK_ID}_all.zip"
+DOWNLOADED_ARCHIVE=""
+NORMALIZE_WARNINGS=()
 
 collect_segment_files() {
   SEGMENT_FILES=()
@@ -172,11 +181,18 @@ print(data["camera_count"])
 
 cleanup_outputs() {
   if [[ "${DELETE_ZIP}" == true ]]; then
-    if [[ -f "${ZIP_PATH}" ]]; then
-      rm -- "${ZIP_PATH}"
-      echo "已删除 ZIP: ${ZIP_PATH}"
+    local zip_files=()
+    mapfile -d '' zip_files < <(
+      find "${META_DIR}" -maxdepth 1 -type f -name "meta_${TASK_ID}_*.zip" -print0 2>/dev/null | sort -z
+    )
+    if ((${#zip_files[@]})); then
+      local zip_path
+      for zip_path in "${zip_files[@]}"; do
+        rm -- "${zip_path}"
+        echo "已删除 ZIP: ${zip_path}"
+      done
     else
-      echo "ZIP 已不存在: ${ZIP_PATH}"
+      echo "本任务 ZIP 已不存在: ${META_DIR}/meta_${TASK_ID}_*.zip"
     fi
   fi
 
@@ -191,11 +207,122 @@ cleanup_outputs() {
 }
 
 download_metadata() {
-  python3 "${SCRIPT_DIR}/pull-task-export.py" \
-    --task "${TASK_ID}" \
-    --out "${META_DIR}"
-  unzip -q -o "${ZIP_PATH}" -d "${UNPACK_DIR}"
+  local pull_output export_path normalize_output line
+  pull_output="$(
+    python3 "${SCRIPT_DIR}/pull-task-export.py" \
+      --task "${TASK_ID}" \
+      --out "${META_DIR}"
+  )"
+  printf '%s\n' "${pull_output}"
+  export_path="$(
+    printf '%s\n' "${pull_output}" | sed -n 's/^EXPORT_PATH=//p' | tail -n 1
+  )"
+  if [[ -z "${export_path}" || ! -f "${export_path}" ]]; then
+    echo "导出器未返回有效 EXPORT_PATH" >&2
+    return 1
+  fi
+  if [[ "$(dirname -- "${export_path}")" != "${META_DIR}" ]]; then
+    echo "导出文件不属于任务 Meta 目录: ${export_path}" >&2
+    return 1
+  fi
+  DOWNLOADED_ARCHIVE="${export_path}"
+  if [[ "$(basename -- "${export_path}")" != "meta_${TASK_ID}_all.zip" ]]; then
+    NORMALIZE_WARNINGS+=(
+      "导出响应使用非 all 文件名 $(basename -- "${export_path}")；已按 ZIP 内 sub_task_id 规范归档"
+    )
+  fi
+  normalize_output="$(
+    python3 "${SCRIPT_DIR}/normalize-meta-export.py" \
+      --archive "${export_path}" \
+      --unpack-root "${UNPACK_DIR}" \
+      --task-id "${TASK_ID}"
+  )"
+  printf '%s\n' "${normalize_output}"
+  while IFS= read -r line; do
+    [[ "${line}" == NORMALIZE_WARNING=* ]] || continue
+    NORMALIZE_WARNINGS+=("${line#NORMALIZE_WARNING=}")
+  done <<< "${normalize_output}"
 }
+
+print_final_summary() {
+  local exit_code=$?
+  trap - EXIT
+  set +e
+  python3 - "${TASK_DIR}" "${exit_code}" "${DOWNLOADED_ARCHIVE}" <<'PY'
+import json
+import os
+import sys
+
+task_root = os.path.abspath(sys.argv[1])
+exit_code = int(sys.argv[2])
+archive = sys.argv[3]
+recommended = ("cam0", "cam1", "cam2", "cam3", "cam5", "cam6")
+warnings = []
+print("\n========== 下载任务最终汇总 ==========")
+print("task=%s status=%s" % (os.path.basename(task_root), "success" if exit_code == 0 else "failed"))
+if archive:
+    print("export_archive=%s" % archive)
+unpack_root = os.path.join(task_root, "meta", "unpacked")
+meta_dirs = []
+if os.path.isdir(unpack_root):
+    meta_dirs = sorted(
+        name
+        for name in os.listdir(unpack_root)
+        if name.startswith("meta_")
+        and os.path.isfile(os.path.join(unpack_root, name, "frames.jsonl"))
+    )
+print("normalized_meta=%d [%s]" % (len(meta_dirs), ",".join(meta_dirs)))
+loose = [
+    name for name in ("task.json", "export_meta.json", "video_segments.json", "frames.jsonl")
+    if os.path.isfile(os.path.join(unpack_root, name))
+]
+if loose:
+    warnings.append("unpacked 根目录仍有未归属 Meta 文件: %s" % ",".join(loose))
+if not meta_dirs:
+    warnings.append("没有发现规范目录 unpacked/meta_<sub_task_id>/frames.jsonl")
+
+videos_root = os.path.join(task_root, "videos")
+video_summaries = []
+if os.path.isdir(videos_root):
+    for name in sorted(os.listdir(videos_root)):
+        manifest_path = os.path.join(videos_root, name, "manifest.json")
+        if not name.startswith("videos_") or not os.path.isfile(manifest_path):
+            continue
+        try:
+            with open(manifest_path, encoding="utf-8") as stream:
+                manifest = json.load(stream)
+        except Exception as error:
+            warnings.append("%s Manifest 无法读取: %s" % (name, type(error).__name__))
+            continue
+        cameras = sorted({
+            str(item.get("camera"))
+            for item in manifest.get("results", ())
+            if isinstance(item, dict) and item.get("ok") and item.get("camera")
+        })
+        status = "complete" if manifest.get("concat_complete") else "incomplete"
+        video_summaries.append("%s:%s:%d[%s]" % (name, status, len(cameras), ",".join(cameras)))
+        if tuple(cameras) != tuple(sorted(recommended)):
+            warnings.append(
+                "%s 相机集合为 [%s]，不同于推荐集合 [%s]；下载保留，后续训练需按实际集合处理"
+                % (name, ",".join(cameras), ",".join(recommended))
+            )
+print("videos=%d [%s]" % (len(video_summaries), "; ".join(video_summaries)))
+if not video_summaries:
+    warnings.append("没有发现视频 Manifest；视频尚未下载或拼接")
+if exit_code:
+    warnings.append("任务命令退出码为 %d，请结合上方首个错误定位" % exit_code)
+for warning in warnings:
+    print("WARNING: " + warning)
+PY
+  local warning
+  for warning in "${NORMALIZE_WARNINGS[@]}"; do
+    printf 'WARNING: %s\n' "${warning}"
+  done
+  echo "========== 汇总结束 =========="
+  exit "${exit_code}"
+}
+
+trap print_final_summary EXIT
 
 if [[ "${REMERGE}" == false ]] \
   && [[ "${DELETE_ZIP}" == true || "${DELETE_SEGMENTS}" == true ]] \

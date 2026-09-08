@@ -9,6 +9,7 @@ import subprocess
 import tempfile
 import threading
 import unittest
+import zipfile
 from pathlib import Path
 from unittest import mock
 
@@ -21,6 +22,56 @@ SPEC.loader.exec_module(pull_oss_videos)
 
 
 class BundleLoadingTest(unittest.TestCase):
+    def test_all_zip_loads_each_subtask_with_its_own_keep_windows(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            archive = Path(temp_dir) / "meta_task-all_all.zip"
+            with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_STORED) as zf:
+                for index in (1, 2):
+                    prefix = "meta_task-all_%d" % index
+                    zf.writestr(
+                        prefix + "/video_segments.json",
+                        json.dumps({
+                            "task_id": "task-all",
+                            "sub_task_id": "task-all_%d" % index,
+                            "segments": [{
+                                "camera": "cam0",
+                                "start_ts": 100.0 * index,
+                                "end_ts": 100.0 * index + 10.0,
+                            }],
+                        }),
+                    )
+                    zf.writestr(
+                        prefix + "/export_meta.json",
+                        json.dumps({
+                            "keep_windows": [{
+                                "from": 100.0 * index + 1.0,
+                                "to": 100.0 * index + 9.0,
+                            }]
+                        }),
+                    )
+                    zf.writestr(
+                        prefix + "/task.json",
+                        json.dumps({
+                            "task_id": "task-all",
+                            "sub_task": {"sub_task_id": "task-all_%d" % index},
+                        }),
+                    )
+
+            bundles = pull_oss_videos.load_bundles(str(archive))
+
+            self.assertEqual(
+                [bundle["sub_task_id"] for bundle in bundles],
+                ["task-all_1", "task-all_2"],
+            )
+            self.assertEqual(
+                [bundle["keep_windows_source"] for bundle in bundles],
+                ["export_meta", "export_meta"],
+            )
+            self.assertEqual(
+                [bundle["keep_windows"] for bundle in bundles],
+                [[(101.0, 109.0)], [(201.0, 209.0)]],
+            )
+
     def test_video_segments_uses_sibling_export_metadata(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
@@ -229,13 +280,16 @@ class FfmpegAlignmentTest(unittest.TestCase):
             )
             output_dir = root / "output"
 
-            with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+            stdout = io.StringIO()
+            with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(io.StringIO()):
                 return_code = pull_oss_videos.main([
                     "--in", str(bundle_dir / "video_segments.json"),
                     "--out", str(output_dir),
                 ])
 
             self.assertEqual(return_code, 0)
+            self.assertIn("视频下载最终汇总", stdout.getvalue())
+            self.assertIn("WARNING: task-c_1 相机集合为 [cam0]", stdout.getvalue())
             manifest = json.loads(
                 (output_dir / "videos_task-c_1" / "manifest.json").read_text(encoding="utf-8")
             )
@@ -290,6 +344,50 @@ class FfmpegAlignmentTest(unittest.TestCase):
                 manifest = json.loads((result_dir / "manifest.json").read_text(encoding="utf-8"))
                 self.assertTrue(manifest["concat_complete"])
 
+    def test_cli_expands_all_zip_and_writes_each_subtask(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            source = root / "source.mp4"
+            self._make_video(source, "purple")
+            archive = root / "meta_task-f_all.zip"
+            with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_STORED) as zf:
+                for index in (1, 2):
+                    start = 100.0 + index * 10.0
+                    prefix = "meta_task-f_%d" % index
+                    zf.writestr(
+                        prefix + "/video_segments.json",
+                        json.dumps({
+                            "task_id": "task-f",
+                            "sub_task_id": "task-f_%d" % index,
+                            "segments": [{
+                                "camera": "cam0",
+                                "start_ts": start,
+                                "end_ts": start + 2.0,
+                                "url": source.as_uri(),
+                            }],
+                        }),
+                    )
+                    zf.writestr(
+                        prefix + "/export_meta.json",
+                        json.dumps({"keep_windows": [{"from": start, "to": start + 5.0}]}),
+                    )
+
+            output_dir = root / "output"
+            with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                return_code = pull_oss_videos.main([
+                    "--in", str(archive),
+                    "--out", str(output_dir),
+                    "--jobs", "2",
+                ])
+
+            self.assertEqual(return_code, 0)
+            for index in (1, 2):
+                result_dir = output_dir / ("videos_task-f_%d" % index)
+                self.assertTrue((result_dir / "cam0_continuous.mp4").stat().st_size > 0)
+                manifest = json.loads((result_dir / "manifest.json").read_text(encoding="utf-8"))
+                self.assertEqual(manifest["keep_windows_source"], "export_meta")
+                self.assertTrue(manifest["concat_complete"])
+
 
 class DownloadTaskCompletionTest(unittest.TestCase):
     def test_completed_aligned_task_can_clean_intermediates_without_redownloading(self) -> None:
@@ -335,6 +433,8 @@ class DownloadTaskCompletionTest(unittest.TestCase):
 
             self.assertEqual(completed.returncode, 0, completed.stderr)
             self.assertIn("仅执行清理", completed.stdout)
+            self.assertIn("下载任务最终汇总", completed.stdout)
+            self.assertIn("WARNING:", completed.stdout)
             self.assertFalse(zip_path.exists())
             self.assertFalse((task_root / "videos" / "segs").exists())
             self.assertTrue((result_dir / "cam0_continuous.mp4").exists())

@@ -153,7 +153,8 @@ GET .../export?format=zip&grids=png&pack=full
     "match_dt_ms": 0,
     "pose_src": "ros_grid_sync"
   },
-  "grid_png": "grids/1784623469294.png"
+  "grid_png": "grids/1784623469294.png",
+  "map_name": "B10_map"
 }
 ```
 
@@ -171,6 +172,7 @@ GET .../export?format=zip&grids=png&pack=full
 | `cells_count` | 占用格子数（**无 cells 数组**） |
 | `grid_pose` | **栅格对齐位姿**：栅格帧内 ROS 同步（`payload.grid_pose`，兼容历史 `robot_pose`）；无则 `null` 或 `match=none` |
 | `grid_png` | 相对 ZIP 根路径；无图时为 `null` |
+| `map_name` | 该帧所在地图。当前标准值为 `P_map` / `B9_map` / `B10_map` / `Lift_map`；未知或废弃图为 `null`。楼层图由 `current_map` 前缀归一，如 `B10_map_20260420_170044` → `B10_map`；电梯模式归一为 `Lift_map` |
 
 **位姿（勿混用）：**
 
@@ -288,7 +290,7 @@ grid 与 path **不要**直接叠在同一张全局图上，除非已有 TF。
 1. 丢弃 `grid_valid=false` 或 `grid_pose.valid=false` / `match!="ros_grid_sync"`（若只训占据）
 2. 轨迹序列可用 `pose`/`actual_vel`，即使该行无 grid
 3. 速度：优先 `src=="odom"`（`linear_vel_mps`/`vx`、`angular_vel_rads`/`wz`）；`pose_diff*` 为兜底
-4. 跨图：按 `planned_route.segments[].graph_name` 分段
+4. 跨图：训练实测时间线按每帧 `map_name` 变化分段；规划路径仍按 `planned_route.segments[].graph_name` 分段
 
 ---
 
@@ -342,6 +344,7 @@ python3 pull-task-export.py --task 20260820180215WDK --format jsonl --sub-task 1
 每段字段：`camera`、`start_ts`/`end_ts`、`clip_from_ts`/`clip_to_ts`（keep∩段墙钟，无 hw 回退）、`url`（presigned，约 1h）、`object_key`、`physical_position`、`spec`；有车上采集钟时另有 `t0_hw`/`t1_hw`/`frame_count`（无则省略，不填假值）。
 
 ```bash
+python3 pull-oss-videos.py --in meta_20260819143022aB3_all.zip --out ./videos
 python3 pull-oss-videos.py --in meta_20260819143022aB3_1.jsonl --out ./videos
 python3 pull-oss-videos.py --in meta_20260819143022aB3_1.zip --out ./videos
 python3 pull-oss-videos.py --in meta_....jsonl --out ./videos --dry-run
@@ -349,6 +352,7 @@ python3 pull-oss-videos.py --in meta_....zip --out ./videos --copy   # 旧 copy�
 ```
 
 - 按 **子任务** 输出 `videos_{sub_task_id}/camX_continuous.mp4`
+- `meta_{task}_all.zip` 可直接输入，脚本会按包内 `meta_{task}_{i}/` 分别拼接
 - 默认按 `keep_windows` 建立定长时间轴，缺段补黑；各路输出时长互差目标 **<100ms**
 - 所有分段都有完整 `t0_hw`/`t1_hw` → `align_mode=hw_ts`；否则整批回退 `wall_clock`
 - 相位 <100ms 依赖车上采集钟，不使用 shm `%019d` / jpegenc 文件名推断时间

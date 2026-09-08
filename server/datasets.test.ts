@@ -219,6 +219,17 @@ describe('parseFramesJsonl', () => {
     expect(parsed.frames.map((frame) => frame.timestamp)).toEqual([1, 2])
     expect(parsed.warnings).toHaveLength(2)
   })
+
+  it('reports a map name only when every JSON frame has the same supported label', () => {
+    expect(parseFramesJsonl([
+      JSON.stringify({ ts: 1, map_name: 'P_map' }),
+      JSON.stringify({ ts: 2, map_name: 'P_map' }),
+    ].join('\n')).mapName).toBe('P_map')
+    expect(parseFramesJsonl([
+      JSON.stringify({ ts: 1, map_name: 'P_map' }),
+      JSON.stringify({ ts: 2 }),
+    ].join('\n')).mapName).toBeNull()
+  })
 })
 
 describe('DatasetRepository', () => {
@@ -302,6 +313,36 @@ describe('DatasetRepository', () => {
     expect(existsSync(join(root, 'videos_batch_all'))).toBe(true)
     expect(existsSync(join(root, 'meta_batch_all', 'meta_batch_2'))).toBe(false)
     expect(existsSync(join(root, 'videos_batch_all', 'batch_2'))).toBe(false)
+  })
+
+  it('atomically writes a validated map name to every frames.jsonl row', async () => {
+    const root = createTrimFixture()
+    const repository = new DatasetRepository(root)
+    const framesPath = join(root, 'meta_trim-example', 'frames.jsonl')
+
+    await expect(repository.setMapName('trim-example', 'B9_map')).resolves.toEqual({
+      id: 'trim-example',
+      mapName: 'B9_map',
+      labeledFrames: 4,
+    })
+    const labeledFrames = readFileSync(framesPath, 'utf8').trim().split('\n').map((line) => JSON.parse(line))
+    expect(labeledFrames).toHaveLength(4)
+    expect(labeledFrames.every((frame) => frame.map_name === 'B9_map')).toBe(true)
+    expect(repository.load('trim-example')?.detail.mapName).toBe('B9_map')
+
+    const labeledContent = readFileSync(framesPath, 'utf8')
+    await expect(repository.setMapName('trim-example', 'unknown_map')).rejects.toThrow('地图名称必须是')
+    expect(readFileSync(framesPath, 'utf8')).toBe(labeledContent)
+  })
+
+  it('leaves frames.jsonl unchanged when any row cannot be labeled', async () => {
+    const root = createFixture()
+    const repository = new DatasetRepository(root)
+    const framesPath = join(root, 'meta_example.1', 'frames.jsonl')
+    const original = readFileSync(framesPath, 'utf8')
+
+    await expect(repository.setMapName('example.1', 'Lift_map')).rejects.toThrow('第 2 行不是有效 JSON')
+    expect(readFileSync(framesPath, 'utf8')).toBe(original)
   })
 
   it('trims videos, frame Meta, occupancy images and time metadata together', async () => {

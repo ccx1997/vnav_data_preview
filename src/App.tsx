@@ -1,15 +1,19 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { MAP_NAMES } from '../shared/types'
 import type {
   DatasetDeleteResult,
   DatasetDetail,
+  DatasetMapNameResult,
   DatasetSummary,
   DatasetTrimResult,
+  MapName,
   PreviewSessionResult,
 } from '../shared/types'
 import { CameraWall } from './components/CameraWall'
 import { OccupancyPanel } from './components/OccupancyPanel'
 import { PlaybackControls } from './components/PlaybackControls'
 import { TelemetryPanel } from './components/TelemetryPanel'
+import { TrainingDataPage } from './components/TrainingDataPage'
 import { TrajectoryCanvas } from './components/TrajectoryCanvas'
 import { findNearestFrame } from './lib/playback'
 
@@ -79,7 +83,7 @@ function setVideoTimelineTime(video: HTMLVideoElement, target: number): void {
   if (Math.abs(video.currentTime - localTarget) > 0.015) video.currentTime = localTarget
 }
 
-export default function App() {
+function DatasetPreviewApp({ onOpenTraining }: { onOpenTraining: () => void }) {
   const [datasets, setDatasets] = useState<DatasetSummary[]>([])
   const [selectedId, setSelectedId] = useState('')
   const [detail, setDetail] = useState<DatasetDetail | null>(null)
@@ -89,7 +93,8 @@ export default function App() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [mediaErrors, setMediaErrors] = useState<Set<string>>(new Set())
   const [reloadRevision, setReloadRevision] = useState(0)
-  const [dialog, setDialog] = useState<'delete' | 'trim' | null>(null)
+  const [dialog, setDialog] = useState<'delete' | 'trim' | 'map' | null>(null)
+  const [mapNameSelection, setMapNameSelection] = useState<MapName | ''>('')
   const [trimInputMode, setTrimInputMode] = useState<TrimInputMode>('hms')
   const [trimStart, setTrimStart] = useState('0')
   const [trimEnd, setTrimEnd] = useState('0')
@@ -268,9 +273,14 @@ export default function App() {
     setPreviewStatus('原始码率')
   }, [pauseMedia, releasePreviewSession])
 
-  const openDialog = useCallback((nextDialog: 'delete' | 'trim') => {
-    const keepTo = nextDialog === 'trim' ? (detail?.timeline.duration ?? 0) : 0
+  const openDialog = useCallback((nextDialog: 'delete' | 'trim' | 'map') => {
     setMutationError('')
+    if (nextDialog === 'map') {
+      setMapNameSelection(detail?.mapName ?? '')
+      setDialog(nextDialog)
+      return
+    }
+    const keepTo = nextDialog === 'trim' ? (detail?.timeline.duration ?? 0) : 0
     setTrimStart('0')
     setTrimEnd(String(keepTo))
     setTrimStartParts({ ...EMPTY_DURATION })
@@ -352,6 +362,30 @@ export default function App() {
       setMutationPending(false)
     }
   }, [detail, mutationPending, pause, trimEnd, trimEndParts, trimInputMode, trimStart, trimStartParts])
+
+  const handleMapName = useCallback(async () => {
+    if (!detail || !mapNameSelection || mutationPending) return
+    setMutationPending(true)
+    setMutationError('')
+    setNotice('')
+    try {
+      const result = await fetchJson<DatasetMapNameResult>(
+        `/api/datasets/${encodeURIComponent(detail.id)}/map-name`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ mapName: mapNameSelection }),
+        },
+      )
+      setDetail((current) => current ? { ...current, mapName: result.mapName } : current)
+      setDialog(null)
+      setNotice(`地图标签已写入 ${result.labeledFrames.toLocaleString()} 帧：${result.mapName}`)
+    } catch (reason) {
+      setMutationError((reason as Error).message)
+    } finally {
+      setMutationPending(false)
+    }
+  }, [detail, mapNameSelection, mutationPending])
 
   const togglePlayback = useCallback(async () => {
     const videos = getOrderedVideos()
@@ -570,6 +604,10 @@ export default function App() {
             <strong>数据预览</strong>
           </div>
         </div>
+        <nav className="workspace-tabs" aria-label="数据视图">
+          <button type="button" className="is-active" aria-current="page">采集预览</button>
+          <button type="button" onClick={onOpenTraining}>训练数据</button>
+        </nav>
         <div className="task-summary">
           <div>
             <span className="eyebrow">CURRENT SESSION</span>
@@ -600,6 +638,18 @@ export default function App() {
               ))}
             </select>
           </label>
+          <button
+            className={`dataset-action${detail.mapName ? ' dataset-action--labeled' : ''}`}
+            type="button"
+            onClick={() => openDialog('map')}
+            aria-label="标注地图名称"
+            title={detail.mapName ? `地图标签：${detail.mapName}` : '标注地图名称'}
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 5v6.2L12.8 20 20 12.8 11.2 4H5a1 1 0 0 0-1 1Z" />
+              <circle cx="8" cy="8" r="1.3" />
+            </svg>
+          </button>
           <button className="dataset-action" type="button" onClick={() => openDialog('trim')} aria-label="裁剪数据集片段" title="裁剪开头或结尾">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="m4 6 16 12M4 18 20 6" />
@@ -637,7 +687,7 @@ export default function App() {
             allFrames={gridFrames}
             onBufferingChange={handleOccupancyBufferingChange}
           />
-          <TelemetryPanel frame={active?.frame ?? null} />
+          <TelemetryPanel frame={active?.frame ?? null} mapName={detail.mapName} />
           <TrajectoryCanvas
             frames={detail.frames}
             currentTimestamp={timestamp}
@@ -652,6 +702,8 @@ export default function App() {
         <span>{detail.frameCount.toLocaleString()} 帧数据</span>
         <i />
         <span>{selected?.taskId || detail.taskId}</span>
+        <i />
+        <span>地图 {detail.mapName ?? '未标注'}</span>
         <i />
         <span>{previewStarting ? '正在检测 GPU' : previewStatus}</span>
         {notice ? <span className="playback-notice">{notice}</span> : null}
@@ -673,7 +725,9 @@ export default function App() {
             <div className="dialog-heading">
               <div>
                 <span className="eyebrow">DATA MANAGEMENT</span>
-                <h2 id="dataset-dialog-title">{dialog === 'delete' ? '删除数据集' : '裁剪首尾片段'}</h2>
+                <h2 id="dataset-dialog-title">
+                  {dialog === 'delete' ? '删除数据集' : dialog === 'map' ? '标注地图名称' : '裁剪首尾片段'}
+                </h2>
               </div>
               <button className="dialog-close" type="button" onClick={closeDialog} disabled={mutationPending} aria-label="关闭">×</button>
             </div>
@@ -691,6 +745,35 @@ export default function App() {
                   </button>
                 </div>
               </div>
+            ) : dialog === 'map' ? (
+              <form className="dialog-body" onSubmit={(event) => {
+                event.preventDefault()
+                if (mapNameSelection) void handleMapName()
+              }}>
+                <p>为“{detail.title || detail.id}”选择小车所在的地图。</p>
+                <label className="map-name-field">
+                  <span>地图名称</span>
+                  <select
+                    aria-label="地图名称"
+                    value={mapNameSelection}
+                    onChange={(event) => setMapNameSelection(event.target.value as MapName | '')}
+                    disabled={mutationPending}
+                  >
+                    <option value="">请选择地图标签</option>
+                    {MAP_NAMES.map((mapName) => <option key={mapName} value={mapName}>{mapName}</option>)}
+                  </select>
+                </label>
+                <div className="info-callout">
+                  确认后会在当前 Meta 目录的 frames.jsonl 每一行写入 map_name；已有标签会被本次选择覆盖。
+                </div>
+                {mutationError ? <p className="dialog-error" role="alert">{mutationError}</p> : null}
+                <div className="dialog-actions">
+                  <button type="button" className="secondary-button" onClick={closeDialog} disabled={mutationPending}>取消</button>
+                  <button type="submit" className="primary-button" disabled={mutationPending || !mapNameSelection}>
+                    {mutationPending ? '正在写入标签…' : '确认标签'}
+                  </button>
+                </div>
+              </form>
             ) : (
               <form className="dialog-body" onSubmit={(event) => {
                 event.preventDefault()
@@ -759,4 +842,29 @@ export default function App() {
       ) : null}
     </div>
   )
+}
+
+export default function App() {
+  const [view, setView] = useState<'source' | 'training'>(
+    () => window.location.hash === '#training' ? 'training' : 'source',
+  )
+
+  useEffect(() => {
+    const handleHashChange = () => setView(window.location.hash === '#training' ? 'training' : 'source')
+    window.addEventListener('hashchange', handleHashChange)
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [])
+
+  const openTraining = useCallback(() => {
+    window.location.hash = 'training'
+    setView('training')
+  }, [])
+  const openSource = useCallback(() => {
+    window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`)
+    setView('source')
+  }, [])
+
+  return view === 'training'
+    ? <TrainingDataPage onOpenSource={openSource} />
+    : <DatasetPreviewApp onOpenTraining={openTraining} />
 }

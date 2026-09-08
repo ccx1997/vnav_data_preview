@@ -1,4 +1,4 @@
-import type { FrameSample } from '../../shared/types'
+import type { FrameSample, MapName } from '../../shared/types'
 import { formatFixed } from '../lib/playback'
 
 interface ValueCardProps {
@@ -13,12 +13,12 @@ function ValueCard({ label, value, unit, accent = false }: ValueCardProps) {
     <div className={`value-card${accent ? ' value-card--accent' : ''}`}>
       <span>{label}</span>
       <strong>{value}</strong>
-      <small>{unit}</small>
+      {unit ? <small>{unit}</small> : null}
     </div>
   )
 }
 
-export function TelemetryPanel({ frame }: { frame: FrameSample | null }) {
+export function TelemetryPanel({ frame, mapName }: { frame: FrameSample | null; mapName: MapName | null }) {
   const poseValid = frame?.pose.valid ?? false
   const velocityValid = frame?.velocity.valid ?? false
   return (
@@ -41,10 +41,11 @@ export function TelemetryPanel({ frame }: { frame: FrameSample | null }) {
           <span>位姿</span>
           <span>map frame</span>
         </div>
-        <div className="value-grid">
+        <div className="value-grid value-grid--pose">
           <ValueCard label="X" value={formatFixed(frame?.pose.x ?? null, poseValid)} unit="m" accent />
           <ValueCard label="Y" value={formatFixed(frame?.pose.y ?? null, poseValid)} unit="m" accent />
           <ValueCard label="YAW" value={formatFixed(frame?.pose.yaw ?? null, poseValid)} unit="deg" accent />
+          <ValueCard label="map_name" value={mapName ?? '—'} unit="" accent={mapName !== null} />
         </div>
       </div>
       <div className="telemetry-group">

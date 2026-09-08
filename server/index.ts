@@ -5,6 +5,8 @@ import { createServer as createViteServer } from 'vite'
 import { encodeGridBatch, MAX_GRID_BATCH_FRAMES } from '../shared/gridBatch.js'
 import { DatasetRepository, sendVideoWithRange } from './datasets.js'
 import { PreviewTranscoder } from './preview.js'
+import { renderTrainingMapPreview } from './trainingMapPreview.js'
+import { TrainingDataRepository } from './trainingData.js'
 
 const isProduction = process.env.NODE_ENV === 'production'
 const useVitePolling = process.env.VNAV_VITE_USE_POLLING === '1'
@@ -16,6 +18,7 @@ const configuredRoots = process.env.VNAV_DATA_ROOTS
   .map((directory) => directory.trim())
   .filter(Boolean)
 const repository = new DatasetRepository(configuredRoots?.length ? configuredRoots : process.env.VNAV_DATA_ROOT)
+const trainingRepository = new TrainingDataRepository()
 const previewTranscoder = new PreviewTranscoder()
 
 app.disable('x-powered-by')
@@ -39,6 +42,79 @@ app.get('/api/datasets/:id', (request, response) => {
     response.json(loaded.detail)
   } catch (error) {
     response.status(500).json({ error: error instanceof Error ? error.message : '无法加载数据集' })
+  }
+})
+
+app.get('/api/training/runs', (_request, response) => {
+  try {
+    response.json(trainingRepository.listRuns())
+  } catch (error) {
+    response.status(500).json({ error: error instanceof Error ? error.message : '无法扫描训练数据目录' })
+  }
+})
+
+app.get('/api/training/runs/:runId/cases', (request, response) => {
+  try {
+    const result = trainingRepository.listCases(request.params.runId, {
+      status: typeof request.query.status === 'string' ? request.query.status : undefined,
+      subtask: typeof request.query.subtask === 'string' ? request.query.subtask : undefined,
+      query: typeof request.query.query === 'string' ? request.query.query : undefined,
+      offset: Number(request.query.offset),
+      limit: Number(request.query.limit),
+    })
+    if (!result) {
+      response.status(404).json({ error: '未找到该训练数据 run' })
+      return
+    }
+    response.json(result)
+  } catch (error) {
+    response.status(500).json({ error: error instanceof Error ? error.message : '无法读取训练样本列表' })
+  }
+})
+
+app.get('/api/training/runs/:runId/cases/:caseKey', (request, response) => {
+  try {
+    const result = trainingRepository.getCase(request.params.runId, request.params.caseKey)
+    if (!result) {
+      response.status(404).json({ error: '未找到该训练样本' })
+      return
+    }
+    response.json(result)
+  } catch (error) {
+    response.status(500).json({ error: error instanceof Error ? error.message : '无法读取训练样本' })
+  }
+})
+
+app.get('/training-media/:runId/cases/:caseId/map-route.png', async (request, response) => {
+  try {
+    const archivePath = trainingRepository.getInputArchivePath(request.params.runId, request.params.caseId)
+    if (!archivePath) {
+      response.status(404).json({ error: '未找到该训练样本的地图路线输入' })
+      return
+    }
+    const preview = await renderTrainingMapPreview(archivePath)
+    response.setHeader('Cache-Control', 'private, max-age=3600')
+    response.type('png').send(preview)
+  } catch (error) {
+    response.status(500).json({ error: error instanceof Error ? error.message : '无法生成地图路线预览' })
+  }
+})
+
+app.get('/training-media/:runId/cases/:caseId/:filename', (request, response) => {
+  try {
+    const path = trainingRepository.getMediaPath(
+      request.params.runId,
+      request.params.caseId,
+      request.params.filename,
+    )
+    if (!path) {
+      response.status(404).json({ error: '未找到该训练样本媒体' })
+      return
+    }
+    response.setHeader('Cache-Control', 'private, max-age=3600')
+    response.sendFile(path)
+  } catch (error) {
+    response.status(500).json({ error: error instanceof Error ? error.message : '无法读取训练样本媒体' })
   }
 })
 
@@ -68,6 +144,25 @@ app.post('/api/datasets/:id/trim', async (request, response) => {
   } catch (error) {
     const message = error instanceof Error ? error.message : '无法裁剪数据集'
     const status = /必须|请至少|过长|没有可保留/.test(message) ? 400 : /正在处理/.test(message) ? 409 : 500
+    response.status(status).json({ error: message })
+  }
+})
+
+app.post('/api/datasets/:id/map-name', async (request, response) => {
+  try {
+    const result = await repository.setMapName(request.params.id, request.body?.mapName)
+    if (!result) {
+      response.status(404).json({ error: '未找到该数据集' })
+      return
+    }
+    response.json(result)
+  } catch (error) {
+    const message = error instanceof Error ? error.message : '无法写入地图标签'
+    const status = /必须是|不是有效 JSON|不是 JSON 对象|没有可标注/.test(message)
+      ? 400
+      : /正在处理/.test(message)
+        ? 409
+        : 500
     response.status(status).json({ error: message })
   }
 })

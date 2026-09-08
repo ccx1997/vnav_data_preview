@@ -8,13 +8,16 @@ import type {
   CameraInfo,
   DatasetDeleteResult,
   DatasetDetail,
+  DatasetMapNameResult,
   DatasetSummary,
   DatasetTrimResult,
   FrameSample,
   GridFrame,
+  MapName,
   Pose,
   Velocity,
 } from '../shared/types.js'
+import { MAP_NAMES } from '../shared/types.js'
 
 type JsonObject = Record<string, unknown>
 
@@ -364,6 +367,12 @@ function asStringArray(value: unknown): string[] {
   return Array.isArray(value) ? value.filter((item): item is string => typeof item === 'string') : []
 }
 
+function asMapName(value: unknown): MapName | null {
+  return typeof value === 'string' && (MAP_NAMES as readonly string[]).includes(value)
+    ? value as MapName
+    : null
+}
+
 function readJson(path: string): JsonObject {
   return asObject(JSON.parse(readFileSync(path, 'utf8')))
 }
@@ -424,15 +433,21 @@ export function parseFramesJsonl(content: string): {
   frames: FrameSample[]
   warnings: string[]
   grids: Set<string>
+  mapName: MapName | null
 } {
   const frames: FrameSample[] = []
   const warnings: string[] = []
   const grids = new Set<string>()
+  const mapNames = new Set<MapName>()
+  let unlabeledFrames = 0
 
   for (const [index, line] of content.split(/\r?\n/).entries()) {
     if (!line.trim()) continue
     try {
       const frame = asObject(JSON.parse(line))
+      const mapName = asMapName(frame.map_name)
+      if (mapName) mapNames.add(mapName)
+      else unlabeledFrames += 1
       const timestamp = asNumber(frame.ts)
       if (timestamp === null) {
         warnings.push(`第 ${index + 1} 行缺少有效时间戳`)
@@ -454,7 +469,8 @@ export function parseFramesJsonl(content: string): {
   }
 
   frames.sort((left, right) => left.timestamp - right.timestamp)
-  return { frames, warnings, grids }
+  const mapName = mapNames.size === 1 && unlabeledFrames === 0 ? [...mapNames][0] : null
+  return { frames, warnings, grids, mapName }
 }
 
 export class DatasetRepository {
@@ -714,6 +730,7 @@ export class DatasetRepository {
 
     const detail: DatasetDetail = {
       ...summary,
+      mapName: parsed.mapName,
       frameCount: parsed.frames.length,
       complete: summary.complete && parseWarnings.length === 0,
       warningCount: summary.warningCount + parseWarnings.length,
@@ -776,6 +793,45 @@ export class DatasetRepository {
       }
       throw error
     } finally {
+      this.activeOperations.delete(id)
+    }
+  }
+
+  async setMapName(id: string, mapNameValue: unknown): Promise<DatasetMapNameResult | null> {
+    const descriptor = this.getDescriptor(id)
+    if (!descriptor) return null
+    const mapName = asMapName(mapNameValue)
+    if (!mapName) throw new Error(`地图名称必须是 ${MAP_NAMES.join('、')} 之一`)
+    if (this.activeOperations.has(id)) throw new Error('该数据集正在处理，请稍后再试')
+
+    this.activeOperations.add(id)
+    const temporary = `${descriptor.framesPath}.map-name-${randomUUID()}`
+    try {
+      const content = readFileSync(descriptor.framesPath, 'utf8')
+      let labeledFrames = 0
+      const updatedLines = content.split(/\r?\n/).map((line, index) => {
+        if (!line.trim()) return line
+        let value: unknown
+        try {
+          value = JSON.parse(line)
+        } catch {
+          throw new Error(`frames.jsonl 第 ${index + 1} 行不是有效 JSON，未写入地图标签`)
+        }
+        if (value === null || typeof value !== 'object' || Array.isArray(value)) {
+          throw new Error(`frames.jsonl 第 ${index + 1} 行不是 JSON 对象，未写入地图标签`)
+        }
+        labeledFrames += 1
+        return JSON.stringify({ ...(value as JsonObject), map_name: mapName })
+      })
+      if (!labeledFrames) throw new Error('frames.jsonl 没有可标注的数据行')
+
+      const sourceStat = await stat(descriptor.framesPath)
+      await writeFile(temporary, updatedLines.join('\n'), { mode: sourceStat.mode })
+      await rename(temporary, descriptor.framesPath)
+      this.cache.delete(id)
+      return { id, mapName, labeledFrames }
+    } finally {
+      await rm(temporary, { force: true }).catch(() => undefined)
       this.activeOperations.delete(id)
     }
   }
