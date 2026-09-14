@@ -101,6 +101,13 @@ videos_<sub_task_id>/cam*_continuous.mp4
 task/subtask 归属；根级单 bundle 和多目录 bundle 最终都统一写到
 `meta/unpacked/meta_<sub_task_id>/`。归属不一致、缺少核心文件或空 `frames.jsonl` 时不覆盖现有规范目录。
 
+本地已下载处理的任务使用 `download-task.sh <task_id> [output_root]` 会直接跳过，ZIP 或原始
+segments 已清理也不会触发重新下载。附带清理选项时只清理指定中间产物。
+已有但未通过完整性检查的任务会停止并保留现场，不自动刷新导出、解包或覆盖视频。
+`--remerge` 仅允许复用完整本地 segments；缺段时停止，不补下载或刷新 Meta。
+`normalize-meta-export.py` 拒绝覆盖任何已有同名 Meta 目录，避免丢失本地 `map_name` 人工标注和
+裁剪结果；需要读取新版导出时，应使用独立输出目录，不把上游导出覆盖回已处理采集目录。
+
 `meta_<task_id>_all.zip` 可直接传给 `pull-oss-videos.py`；脚本会按包内
 `meta_<task_id>_<i>/` 自动展开子任务。展开后与重复传入多个 `--in` 使用同一个
 `--jobs` 总并发预算。

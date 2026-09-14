@@ -44,15 +44,17 @@ GateResult = tuple[bool, float]
 _EndCollectionMethod = TypeVar("_EndCollectionMethod", bound=Callable[..., GateResult])
 
 
-def with_maximum_collection_interval(
+def with_hard_stop_conditions(
     method: _EndCollectionMethod,
 ) -> _EndCollectionMethod:
-    """Decorate ``end_collection`` with the configured hard deadline.
+    """Decorate ``end_collection`` with shared pose and time hard stops.
 
     The gate must expose ``active_start_timestamp_s``,
-    ``config.maximum_collection_interval_s``, and ``reset()``.  Natural end
-    conditions are evaluated through the deadline first, so an earlier action
-    node still wins when a streaming call arrives late.
+    ``config.maximum_collection_interval_s``, and ``reset()``.  Gates that
+    expose ``_pose_hard_stop_timestamp()`` additionally stop at a pose jump or
+    sustained stable pose.  Natural end conditions are evaluated through the
+    earliest hard stop first, so an earlier action node still wins when a
+    streaming call arrives late.
     """
 
     @wraps(method)
@@ -64,26 +66,66 @@ def with_maximum_collection_interval(
         timestamp_s = _finite_timestamp(decision_timestamp_s)
         active_start_s = self.active_start_timestamp_s
         if active_start_s is None:
+            setattr(self, "_hard_stop_decorator_state", None)
+            return method(self, pose_cache, timestamp_s)
+        if timestamp_s < active_start_s:
             return method(self, pose_cache, timestamp_s)
 
         maximum_end_s = active_start_s + self.config.maximum_collection_interval_s
-        evaluation_timestamp_s = min(timestamp_s, maximum_end_s)
+        hard_stop_s = maximum_end_s
+        pose_hard_stop = getattr(self, "_pose_hard_stop_timestamp", None)
+        if pose_hard_stop is not None:
+            state = getattr(self, "_hard_stop_decorator_state", None)
+            scan_start_s = (
+                active_start_s
+                if state is None or state[0] != active_start_s
+                else min(float(state[1]), timestamp_s)
+            )
+            pose_stop_s = pose_hard_stop(
+                pose_cache,
+                active_start_s,
+                scan_start_s,
+                min(timestamp_s, maximum_end_s),
+            )
+            if pose_stop_s is not None:
+                hard_stop_s = min(hard_stop_s, pose_stop_s)
+
+        evaluation_timestamp_s = min(timestamp_s, hard_stop_s)
         try:
             result = method(self, pose_cache, evaluation_timestamp_s)
         except ValueError:
-            if timestamp_s + 1.0e-12 < maximum_end_s or len(pose_cache) >= 2:
+            if timestamp_s + 1.0e-12 < hard_stop_s or len(pose_cache) >= 2:
                 raise
             # A hard deadline remains actionable during a pose outage.  With
             # fewer than two samples the wrapped TurnGate method can only fail
-            # its minimum-cache validation, so no natural stop can be found.
+            # its minimum-cache validation, so no earlier stop can be found.
             result = (False, evaluation_timestamp_s)
 
-        if result[0] or timestamp_s + 1.0e-12 < maximum_end_s:
+        if result[0]:
+            setattr(self, "_hard_stop_decorator_state", None)
             return result
-        self.reset()
-        return True, maximum_end_s
+        if timestamp_s + 1.0e-12 < hard_stop_s:
+            setattr(
+                self,
+                "_hard_stop_decorator_state",
+                (active_start_s, evaluation_timestamp_s),
+            )
+            return result
+        finish_hard_stop = getattr(self, "_finish_hard_stop", None)
+        if finish_hard_stop is None:
+            self.reset()
+        else:
+            finish_hard_stop(hard_stop_s)
+        setattr(self, "_hard_stop_decorator_state", None)
+        return True, hard_stop_s
 
     return cast(_EndCollectionMethod, wrapped)
+
+
+# Compatibility name retained for collection targets that adopted the first
+# Tmax-only version.  The implementation now also applies pose hard stops when
+# the decorated class exposes ``_pose_hard_stop_timestamp``.
+with_maximum_collection_interval = with_hard_stop_conditions
 
 
 @dataclass(frozen=True)
@@ -281,6 +323,7 @@ class TurnGate:
         self._active_start_timestamp_s: Optional[float] = None
         self._last_end_check_timestamp_s: Optional[float] = None
         self._straight_recovery_start_timestamp_s: Optional[float] = None
+        self._hard_stop_decorator_state: Optional[tuple[float, float]] = None
 
     @property
     def active_start_timestamp_s(self) -> Optional[float]:
@@ -300,6 +343,7 @@ class TurnGate:
         self._active_start_timestamp_s = None
         self._last_end_check_timestamp_s = None
         self._straight_recovery_start_timestamp_s = None
+        self._hard_stop_decorator_state = None
 
     def start_collection(
         self,
@@ -327,7 +371,7 @@ class TurnGate:
                 return True, timestamp_s
         return False, timestamp_s
 
-    @with_maximum_collection_interval
+    @with_hard_stop_conditions
     def end_collection(
         self,
         pose_cache: Sequence[PoseSampleLike],
@@ -337,8 +381,8 @@ class TurnGate:
 
         A turn-free observation is not enough.  The trajectory immediately
         before the action node must satisfy the configured normal-straight
-        recovery or stable-stop window.  The maximum-interval decorator adds
-        the final hard deadline.
+        recovery window.  The shared hard-stop decorator handles stable poses,
+        pose jumps, and the maximum interval.
         """
 
         timestamp_s = _finite_timestamp(decision_timestamp_s)
@@ -359,15 +403,6 @@ class TurnGate:
         for probe_timestamp_s in self._stream_probe_times(
             previous_check_s, timestamp_s
         ):
-            if self._is_trailing_stable_stop(
-                samples,
-                probe_timestamp_s,
-                window_s=self.config.stable_stop_window_s,
-                maximum_translation_m=self.config.stable_stop_maximum_translation_m,
-                maximum_yaw_change_rad=self.config.stable_stop_maximum_yaw_change_rad,
-            ):
-                self.reset()
-                return True, probe_timestamp_s
             if not self._is_trailing_normal_straight(
                 samples,
                 probe_timestamp_s,
@@ -390,6 +425,74 @@ class TurnGate:
 
         self._last_end_check_timestamp_s = timestamp_s
         return False, timestamp_s
+
+    def _pose_hard_stop_timestamp(
+        self,
+        pose_cache: Sequence[PoseSampleLike],
+        active_start_s: float,
+        scan_start_s: float,
+        scan_stop_s: float,
+    ) -> Optional[float]:
+        """Return the earliest pose-jump or stable-pose stop in the interval."""
+
+        if scan_stop_s < active_start_s or len(pose_cache) < 2:
+            return None
+        raw = [_coerce_pose_sample(item) for item in pose_cache]
+        raw_timestamps = [item.timestamp_s for item in raw]
+        if any(
+            right <= left for left, right in zip(raw_timestamps, raw_timestamps[1:])
+        ):
+            raise ValueError("pose timestamps must be strictly increasing")
+        unwrapped_yaw = _unwrap_angles([item.yaw_rad for item in raw])
+        raw_prepared = [
+            _PreparedPose(item.timestamp_s, item.x_m, item.y_m, yaw_rad)
+            for item, yaw_rad in zip(raw, unwrapped_yaw)
+        ]
+        candidates = []
+        for first, second in zip(raw_prepared, raw_prepared[1:]):
+            if (
+                second.timestamp_s <= scan_start_s + 1.0e-12
+                or second.timestamp_s > scan_stop_s + 1.0e-12
+            ):
+                continue
+            dt_s = second.timestamp_s - first.timestamp_s
+            translation_m = math.hypot(second.x_m - first.x_m, second.y_m - first.y_m)
+            yaw_change_rad = abs(second.yaw_rad - first.yaw_rad)
+            is_jump = bool(
+                translation_m > self.config.maximum_pose_jump_m
+                or yaw_change_rad > self.config.maximum_yaw_step_rad
+                or (
+                    dt_s <= self.config.maximum_pose_gap_s
+                    and (
+                        translation_m / dt_s > self.config.maximum_linear_speed_mps
+                        or yaw_change_rad / dt_s > self.config.maximum_yaw_rate_rps
+                    )
+                )
+            )
+            if is_jump:
+                candidates.append(max(active_start_s, first.timestamp_s))
+                break
+
+        cache = self._prepare_cache(pose_cache)
+
+        first_stable_probe_s = max(
+            active_start_s + self.config.stable_stop_window_s,
+            scan_start_s,
+        )
+        if first_stable_probe_s <= scan_stop_s + 1.0e-12:
+            for probe_timestamp_s in self._probe_times(
+                first_stable_probe_s, scan_stop_s
+            ):
+                if self._is_trailing_stable_stop(
+                    cache,
+                    probe_timestamp_s,
+                    window_s=self.config.stable_stop_window_s,
+                    maximum_translation_m=self.config.stable_stop_maximum_translation_m,
+                    maximum_yaw_change_rad=self.config.stable_stop_maximum_yaw_change_rad,
+                ):
+                    candidates.append(probe_timestamp_s)
+                    break
+        return min(candidates) if candidates else None
 
     def evaluate(
         self,
@@ -672,6 +775,7 @@ class StraightGate:
         self._active_collection: Optional[StraightCollection] = None
         self._last_collection: Optional[StraightCollection] = None
         self._last_evidence: Optional[TurnEvidence] = None
+        self._hard_stop_decorator_state: Optional[tuple[float, float]] = None
 
     @property
     def active_collection(self) -> Optional[StraightCollection]:
@@ -681,7 +785,7 @@ class StraightGate:
 
     @property
     def active_start_timestamp_s(self) -> Optional[float]:
-        """Return the active clip's start node for the Tmax decorator."""
+        """Return the active clip's start node for the hard-stop decorator."""
 
         collection = self._active_collection
         return None if collection is None else collection.start_timestamp_s
@@ -702,6 +806,7 @@ class StraightGate:
         """Clear the active clip after an external recorder reset or abort."""
 
         self._active_collection = None
+        self._hard_stop_decorator_state = None
 
     def start_collection(
         self,
@@ -750,7 +855,31 @@ class StraightGate:
         )
         return True, timestamp_s
 
-    @with_maximum_collection_interval
+    def _pose_hard_stop_timestamp(
+        self,
+        pose_cache: Sequence[PoseSampleLike],
+        active_start_s: float,
+        scan_start_s: float,
+        scan_stop_s: float,
+    ) -> Optional[float]:
+        return self.turn_gate._pose_hard_stop_timestamp(
+            pose_cache,
+            active_start_s,
+            scan_start_s,
+            scan_stop_s,
+        )
+
+    def _finish_hard_stop(self, action_timestamp_s: float) -> None:
+        collection = self._active_collection
+        if collection is not None:
+            self._last_collection = StraightCollection(
+                start_timestamp_s=collection.start_timestamp_s,
+                target_duration_s=action_timestamp_s - collection.start_timestamp_s,
+                end_timestamp_s=action_timestamp_s,
+            )
+        self._active_collection = None
+
+    @with_hard_stop_conditions
     def end_collection(
         self,
         _pose_cache: Sequence[PoseSampleLike],
@@ -1023,5 +1152,6 @@ __all__ = [
     "TurnEvidence",
     "TurnGate",
     "TurnGateConfig",
+    "with_hard_stop_conditions",
     "with_maximum_collection_interval",
 ]

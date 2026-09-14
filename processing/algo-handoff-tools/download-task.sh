@@ -12,11 +12,12 @@ set -euo pipefail
 usage() {
   echo "用法: $0 [--jobs N] [--remerge] [--delete-zip] [--delete-segments] <task_id> [output_root]"
   echo "  --jobs N           子任务与相机共享的总并发数（默认 4）"
-  echo "  --remerge          复用已有片段重新合并并覆盖旧结果；片段缺失时只补下载缺失部分"
+  echo "  --remerge          仅复用完整本地片段重新合并；片段缺失时停止，不刷新 Meta 或补下载"
   echo "  --delete-zip       规范解包并完成下载后删除本任务的 meta_*.zip"
   echo "  --delete-segments  合并成功后删除 videos/segs 原始视频段"
   echo "  默认保留 ZIP 和视频 segments"
-  echo "  已完成任务带删除选项重跑时，只执行清理，不重复下载或合并"
+  echo "  已完成任务默认跳过；带删除选项时只执行清理，不重复下载或合并"
+  echo "  已有但不完整的任务停止并保留现场，不自动重新导出或覆盖本地数据"
 }
 
 DELETE_ZIP=false
@@ -149,6 +150,7 @@ task_is_complete() {
   for segments_json in "${SEGMENT_FILES[@]}"; do
     bundle_name="$(basename -- "$(dirname -- "${segments_json}")")"
     [[ "${bundle_name}" == meta_* ]] || return 1
+    [[ -s "$(dirname -- "${segments_json}")/frames.jsonl" ]] || return 1
     sub_task_id="${bundle_name#meta_}"
     result_dir="${VIDEO_DIR}/videos_${sub_task_id}"
     manifest="${result_dir}/manifest.json"
@@ -324,25 +326,32 @@ PY
 
 trap print_final_summary EXIT
 
-if [[ "${REMERGE}" == false ]] \
-  && [[ "${DELETE_ZIP}" == true || "${DELETE_SEGMENTS}" == true ]] \
-  && task_is_complete; then
-  echo "检测到任务已完整处理，仅执行清理，不重复下载或合并。"
-  cleanup_outputs
-  echo "清理完成: ${TASK_DIR}"
+if [[ "${REMERGE}" == false ]] && task_is_complete; then
+  if [[ "${DELETE_ZIP}" == true || "${DELETE_SEGMENTS}" == true ]]; then
+    echo "检测到任务已完整处理，仅执行清理，不重复下载或合并。"
+    cleanup_outputs
+    echo "清理完成: ${TASK_DIR}"
+  else
+    echo "检测到任务已完整处理，跳过，不重复下载、解包或合并: ${TASK_DIR}"
+  fi
   exit 0
 fi
-
-mkdir -p "${META_DIR}" "${UNPACK_DIR}" "${VIDEO_DIR}"
 
 if [[ "${REMERGE}" == true ]]; then
   if segments_are_complete; then
     echo "检测到视频 segments 完整，直接重新合并，不重复下载。"
   else
-    echo "视频 segments 缺失或不完整，刷新任务导出并补下载缺失片段。"
-    download_metadata
+    echo "视频 segments 缺失或不完整，停止重新合并；保护已有 Meta 和人工 map_name，不刷新导出或补下载: ${TASK_DIR}" >&2
+    exit 1
   fi
-else
+elif [[ -e "${TASK_DIR}" ]] && [[ -n "$(find "${TASK_DIR}" -mindepth 1 -print -quit)" ]]; then
+  echo "已有任务未通过完整性检查，保留现场并停止；不重新下载或覆盖本地 Meta、人工 map_name 和视频: ${TASK_DIR}" >&2
+  exit 1
+fi
+
+mkdir -p "${META_DIR}" "${UNPACK_DIR}" "${VIDEO_DIR}"
+
+if [[ "${REMERGE}" == false ]]; then
   download_metadata
 fi
 

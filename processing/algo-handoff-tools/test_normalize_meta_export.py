@@ -101,6 +101,47 @@ class NormalizeMetaExportTest(unittest.TestCase):
 
             self.assertEqual((target / "sentinel.txt").read_text(), "keep")
 
+    def test_valid_export_cannot_replace_manual_labels_or_trimmed_meta(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            archive = root / "meta_task-d_all.zip"
+            with zipfile.ZipFile(archive, "w") as zf:
+                for name, content in _bundle_files("task-d", "task-d_1").items():
+                    zf.writestr("meta_task-d_1/" + name, content)
+            target = root / "unpacked" / "meta_task-d_1"
+            target.mkdir(parents=True)
+            frames = target / "frames.jsonl"
+            frames.write_text('{"ts": 42, "map_name": "B10_map"}\n', encoding="utf-8")
+            original = frames.read_bytes(), frames.stat()
+            (target / "trim.json").write_text('{"start": 42}', encoding="utf-8")
+
+            with self.assertRaisesRegex(FileExistsError, "refusing to overwrite"):
+                normalize_meta_export.normalize_archive(archive, root / "unpacked", "task-d")
+
+            self.assertEqual((frames.read_bytes(), frames.stat()), original)
+            self.assertEqual((target / "trim.json").read_text(), '{"start": 42}')
+            self.assertEqual(sorted(p.name for p in target.iterdir()), ["frames.jsonl", "trim.json"])
+            self.assertEqual(list((root / "unpacked").iterdir()), [target])
+
+    def test_collision_is_checked_before_publishing_other_subtasks(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            archive = root / "meta_task-e_all.zip"
+            with zipfile.ZipFile(archive, "w") as zf:
+                for index in (1, 2):
+                    subtask = "task-e_%d" % index
+                    for name, content in _bundle_files("task-e", subtask).items():
+                        zf.writestr("meta_%s/%s" % (subtask, name), content)
+            existing = root / "unpacked" / "meta_task-e_2"
+            existing.mkdir(parents=True)
+            (existing / "frames.jsonl").write_text('{"map_name":"P_map"}\n')
+
+            with self.assertRaises(FileExistsError):
+                normalize_meta_export.normalize_archive(archive, root / "unpacked", "task-e")
+
+            self.assertFalse((root / "unpacked" / "meta_task-e_1").exists())
+            self.assertEqual((existing / "frames.jsonl").read_text(), '{"map_name":"P_map"}\n')
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -118,6 +118,9 @@ class TurnGateTest(unittest.TestCase):
             evidence.spin_yaw_change_rad or 0.0,
             math.radians(30.0),
         )
+        self.assertEqual(gate.start_collection(samples, 2.0), (True, 2.0))
+        # Crossing +pi/-pi is normal wrapped-yaw motion, not a pose jump.
+        self.assertEqual(gate.end_collection(samples, 4.0), (False, 4.0))
 
     def test_translation_prevents_curve_from_being_labeled_spin(self) -> None:
         gate = TurnGate(TurnGateConfig(pose_smoothing_window_s=0.0))
@@ -220,6 +223,18 @@ class TurnGateTest(unittest.TestCase):
         recent_cache = [PoseSample(60.0, 0.0, 0.0, 0.0)]
         self.assertEqual(gate.end_collection(recent_cache, 60.0), (True, 47.0))
         self.assertIsNone(gate.active_start_timestamp_s)
+
+    def test_pose_jump_is_a_hard_stop_for_turn_collection(self) -> None:
+        samples = _arc(math.radians(12.0), duration_s=5.0)
+        last = samples[-1]
+        samples.extend(
+            PoseSample(6.0 + index / 10.0, 20.0 + index * 0.05, 10.0, last.yaw_rad)
+            for index in range(30)
+        )
+        gate = TurnGate(TurnGateConfig(pose_smoothing_window_s=0.0))
+        self.assertEqual(gate.start_collection(samples, 2.0), (True, 2.0))
+
+        self.assertEqual(gate.end_collection(samples, 7.0), (True, 5.0))
 
     def test_renewed_turn_resets_pending_straight_recovery(self) -> None:
         samples = _motion_profile(
@@ -383,6 +398,60 @@ class StraightGateTest(unittest.TestCase):
         self.assertEqual(gate.start_collection(samples, 3.0), (True, 3.0))
         self.assertEqual(gate.active_collection.target_duration_s, 45.0)  # type: ignore[union-attr]
         self.assertEqual(gate.end_collection(samples, 60.0), (True, 48.0))
+
+    def test_stable_stop_is_a_hard_stop_for_straight_collection(self) -> None:
+        samples = _motion_profile([(5.0, 0.5, 0.0), (8.0, 0.0, 0.0)])
+        samples = [
+            PoseSample(
+                sample.timestamp_s,
+                sample.x_m
+                + (
+                    0.01 * math.sin(sample.timestamp_s * 7.0)
+                    if sample.timestamp_s > 5.0
+                    else 0.0
+                ),
+                sample.y_m,
+                sample.yaw_rad
+                + (
+                    math.radians(0.5) * math.sin(sample.timestamp_s * 5.0)
+                    if sample.timestamp_s > 5.0
+                    else 0.0
+                ),
+            )
+            for sample in samples
+        ]
+        gate = StraightGate(
+            StraightGateConfig(
+                start_probability=1.0,
+                minimum_collection_duration_s=12.0,
+                maximum_collection_duration_s=12.0,
+            ),
+            rng=random.Random(7),
+        )
+        self.assertEqual(gate.start_collection(samples, 2.0), (True, 2.0))
+
+        self.assertEqual(gate.end_collection(samples, 10.0), (True, 8.0))
+        self.assertEqual(gate.last_collection.end_timestamp_s, 8.0)  # type: ignore[union-attr]
+        self.assertEqual(gate.last_collection.target_duration_s, 6.0)  # type: ignore[union-attr]
+
+    def test_pose_jump_is_a_hard_stop_for_straight_collection(self) -> None:
+        samples = _straight(duration_s=5.0)
+        samples.extend(
+            PoseSample(5.1 + index / 10.0, 20.0 + index * 0.05, 10.0, 0.0)
+            for index in range(30)
+        )
+        gate = StraightGate(
+            StraightGateConfig(
+                start_probability=1.0,
+                minimum_collection_duration_s=12.0,
+                maximum_collection_duration_s=12.0,
+            ),
+            rng=random.Random(7),
+        )
+        self.assertEqual(gate.start_collection(samples, 2.0), (True, 2.0))
+
+        self.assertEqual(gate.end_collection(samples, 7.0), (True, 5.0))
+        self.assertEqual(gate.last_collection.end_timestamp_s, 5.0)  # type: ignore[union-attr]
 
 
 class _StubRandom:

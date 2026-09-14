@@ -390,6 +390,69 @@ class FfmpegAlignmentTest(unittest.TestCase):
 
 
 class DownloadTaskCompletionTest(unittest.TestCase):
+    def test_reruns_preserve_local_labels_and_never_call_downloaders(self) -> None:
+        scenarios = [
+            ("complete_with_intermediates", [], True, True, 0),
+            ("complete_after_cleanup", [], True, False, 0),
+            ("incomplete", [], False, False, 1),
+            ("incomplete_cleanup", ["--delete-zip", "--delete-segments"], False, True, 1),
+            ("remerge_missing_segments", ["--remerge"], True, False, 1),
+        ]
+        for name, options, complete, intermediates, expected_code in scenarios:
+            with self.subTest(name=name), tempfile.TemporaryDirectory() as temp_dir:
+                root = Path(temp_dir)
+                # Isolate from project credentials and replace network/merge entry
+                # points with tripwires; these tests only use temporary fixtures.
+                scripts = root / "tools"
+                scripts.mkdir()
+                script = scripts / "download-task.sh"
+                shutil.copyfile(Path(__file__).with_name("download-task.sh"), script)
+                tripwire = scripts / "unexpected_download"
+                for filename in ("pull-task-export.py", "pull-oss-videos.py"):
+                    (scripts / filename).write_text(
+                        "from pathlib import Path\n"
+                        "Path(__file__).with_name('unexpected_download').touch()\n"
+                        "raise SystemExit(99)\n"
+                    )
+                output = root / "output"
+                task = output / "task-safe"
+                bundle = task / "meta" / "unpacked" / "meta_task-safe_1"
+                videos = task / "videos" / "videos_task-safe_1"
+                bundle.mkdir(parents=True)
+                videos.mkdir(parents=True)
+                (bundle / "frames.jsonl").write_text('{"ts":42,"map_name":"P_map"}\n')
+                (bundle / "video_segments.json").write_text('{"segments":[]}')
+                (videos / "cam0_continuous.mp4").write_bytes(b"existing-video")
+                (videos / "manifest.json").write_text(json.dumps({
+                    "sub_task_id": "task-safe_1", "download_ok": 1,
+                    "download_skip": 0, "download_fail": 0,
+                    "camera_count": 1, "concat_ok": 1,
+                    "concat_complete": complete, "align": True,
+                    "align_mode": "hw_ts",
+                }))
+                if intermediates:
+                    (task / "meta" / "meta_task-safe_all.zip").write_bytes(b"old-zip")
+                    segments = task / "videos" / "segs"
+                    segments.mkdir()
+                    (segments / "segment.mp4").write_bytes(b"old-segment")
+
+                def snapshot():
+                    return {
+                        str(p.relative_to(task)): (p.read_bytes(), p.stat().st_mtime_ns, p.stat().st_ino)
+                        for p in task.rglob("*") if p.is_file()
+                    }
+
+                before = snapshot()
+                result = subprocess.run(
+                    ["bash", str(script), *options, "task-safe", str(output)],
+                    capture_output=True, text=True, timeout=20,
+                )
+                self.assertEqual(result.returncode, expected_code, result.stdout + result.stderr)
+                self.assertFalse(tripwire.exists(), result.stdout + result.stderr)
+                self.assertEqual(snapshot(), before)
+                self.assertIn("下载任务最终汇总", result.stdout)
+                self.assertIn("跳过" if expected_code == 0 else "停止", result.stdout + result.stderr)
+
     def test_completed_aligned_task_can_clean_intermediates_without_redownloading(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             output_root = Path(temp_dir)
@@ -402,6 +465,7 @@ class DownloadTaskCompletionTest(unittest.TestCase):
             result_dir.mkdir(parents=True)
             segment_dir.mkdir(parents=True)
             (unpacked / "video_segments.json").write_text("{}", encoding="utf-8")
+            (unpacked / "frames.jsonl").write_text('{"map_name":"P_map"}\n', encoding="utf-8")
             (result_dir / "cam0_continuous.mp4").write_bytes(b"video")
             (segment_dir / "cam0_1.mp4").write_bytes(b"segment")
             zip_path = task_root / "meta" / ("meta_" + task_id + "_all.zip")

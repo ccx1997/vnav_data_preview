@@ -4,6 +4,8 @@
 
 ## 核心原则
 
+- 已下载并处理的采集任务直接复用，不自动重新下载、解包或处理；本地人工 `map_name` 和裁剪结果
+  必须保留。已有任务未通过完整性检查时停止并报告，不能用上游重新导出来覆盖现场。
 - 预览与训练使用不同的匹配策略。预览优先连续、易检查；训练优先时间同步和标签可信度。
 - 训练样本应以有效占据图所在的 Meta 行为锚点，再从各路视频中检索最近的实际 PTS 帧。
 - 不要从连续视频的任意时刻反查并复用旧占据图，否则会产生重复或过时的训练标签。
@@ -1116,22 +1118,224 @@ locked test。修复后的全仓回归为 `126 passed, 14 warnings`。
 
 - 弧形转弯继续使用未来 1 m 路线曲率，阈值保持 `abs(curvature) >= 0.13962634 rad/m`（`8 deg/m`，包含边界）。在线路线由未来实际 XY 位姿构成，经 1 s 中值平滑并按约 0.05 m 路程重采样；与现有 `estimate_route_curvature()` 一致，对相邻路线段的局部曲率取中位数。
 - 离线 `is_turn_or_spin` 中的自转来自教师 `SPIN_LEFT/SPIN_RIGHT`；采集侧没有该标签，因此明确改用未来 2 s 内最大平移 `<=0.10 m` 且 `abs(yaw change)>=8 deg` 的可观测代理。yaw 先跨环绕展开，正/负分别标记左/右。
-- 开始判定仍预看 1 s。结束判定改为有状态的流式恢复，取以下最早节点：正常直线证据（历史 2 s 平移 `>=0.10 m`、yaw 变化 `<=3 deg`、`abs(curvature)<8 deg/m`）再持续 1 s；连续 3 s 稳定停车（最大位置漂移 `<=0.03 m`、最大 yaw 漂移 `<=3 deg`）；或从开始节点起达到默认 `Tmax=45 s`。新的转弯、自转、短暂停车、证据不足、pose gap 或 pose jump 会重置直线恢复状态，避免刚离开转弯证据就过早截断。位置跳变 `2 m`、表观速度 `3 m/s`、yaw 单步 `45 deg`、yaw rate `2 rad/s` 和相邻 pose gap `0.5 s` 沿用现有训练切段/对齐门槛。
+- 开始判定仍预看 1 s。Turn 的自然结束条件是正常直线证据（历史 2 s 平移 `>=0.10 m`、yaw 变化 `<=3 deg`、`abs(curvature)<8 deg/m`）再持续 1 s。所有 Gate 额外执行统一硬停止：连续 3 s 几乎不动（最大位置漂移 `<=0.03 m`、最大 yaw 漂移 `<=3 deg`）、位姿跳变，或从开始节点起达到默认 `Tmax=45 s`，取最早节点。位姿跳变结束点取跳变前最后一个有效 pose；即使两帧超过普通 pose gap，只要绝对位置/yaw 跳变量越界仍硬停。yaw 先展开，正常 `+pi/-pi` 环绕不触发；短暂停车、证据不足和只有时间缺口而无绝对跳变的普通 pose gap 不硬停。位置跳变 `2 m`、表观速度 `3 m/s`、yaw 单步 `45 deg`、yaw rate `2 rad/s` 和相邻 pose gap `0.5 s` 沿用现有训练切段/对齐门槛。
 - 采集系统必须传入缓存中的历史锚点，并长期复用同一个 Gate 实例。推荐开始判定延迟至少为 `start_lookahead + max(2 s, 1 m / 最低可靠识别速度)`；默认预看为 1 s，若最低速度为 `0.2 m/s`，应使用至少 6 s。当前导出 `pose.yaw` 为度，接入时必须显式转 rad，或使用 mapping 的 `yaw_deg` 字段。
 - 四个控制方法统一返回 `(should_act: bool, action_timestamp_s: float)`。true 时第二项是应开始/结束的准确缓存节点；false 时不采取动作。稀疏调用可以返回早于本次检查时刻的历史动作节点。调用方必须先解包，不能直接对 tuple 做 `if` 判断。
-- `Tmax` 统一由 `@with_maximum_collection_interval` 方法装饰器负责，具体 Gate 的 `end_collection()` 只保留各自自然结束条件。装饰器依赖统一的 `active_start_timestamp_s`、`config.maximum_collection_interval_s` 和 `reset()` 契约，先检查截止节点之前是否存在更早自然结束，再执行硬截止；两类 Gate 不再分别维护超时分支。
-- 定向验证命令为 `python3 -m unittest -v test_data_collection_gate.py` 及 `python3 -m py_compile data_collection_gate.py test_data_collection_gate.py`。2026-09-08 当前结果为 19/19 通过，除原有曲率、自转、缓存和输入契约外，覆盖流式活动状态、恢复直线后结束、3 s 稳定停车结束、2 s 短暂停车不结束、再次转弯重置恢复、稀疏调用返回准确历史节点，以及 Turn/Straight 两类的 45 s 硬截止。
+- 全局硬停止统一由 `@with_hard_stop_conditions` 方法装饰器负责，具体 Gate 的 `end_collection()` 只保留各自自然结束条件。装饰器依赖统一的 `active_start_timestamp_s`、`config.maximum_collection_interval_s`、`reset()` 和位姿硬停判定契约，比较自然结束、位姿跳变、稳定停车和 `Tmax` 后返回最早节点；`with_maximum_collection_interval` 仅作为兼容别名保留。
+- 定向验证命令为 `python3 -m unittest -v test_data_collection_gate.py` 及 `python3 -m py_compile data_collection_gate.py test_data_collection_gate.py`。2026-09-13 当前结果为 22/22 通过，除原有曲率、自转、缓存和输入契约外，覆盖流式活动状态、恢复直线后结束、3 s 稳定停车硬停止、2 s 短暂停车不结束、再次转弯重置恢复、位姿跳变前停止、稀疏调用返回准确历史节点，以及 Turn/Straight 两类的硬停止和审计状态。60 s、20 Hz、1201 pose 上按 5 Hz 顺序执行 190 次结束检查，Turn 平均/95 分位/最大为 `20.0/29.3/37.9 ms`，Straight 为 `10.6/12.9/19.6 ms`，均低于 200 ms 调用周期。
 
 同日新增 `StraightGate`，保留少量正常直线行驶数据：
 
 - 合格直线要求 `TurnGate` 未来证据充分且非转弯、未来 2 s 最大平移 `>=0.10 m`、yaw 变化 `<=3 deg`，并且已有足够实际路线估计曲率；完全静止、缓存不足、位姿异常不参与随机抽样。
 - 每个由采集控制器按固定节拍提供的合格开始机会，以默认 `0.01` 做一次伯努利抽样。该 1% 是每机会启动概率，不是最终数据时长占比；机会节拍必须作为采集配置记录，改变调用频率时必须重新评估实际采集率。
-- 命中后从连续均匀分布 `[6,12] s` 抽取一次目标时长并锁定；唯一停止条件是到达该截止时间。活动期间不重抽、不延长，也不因中途停车或转弯提前结束。两类 Gate 均配置默认 `maximum_collection_interval_s=45 s`；Straight 默认随机上限 12 s 已更严格，自定义随机上限超过 `Tmax` 时取较小的有效上限。即使结束检查晚于截止时间，返回的 float 仍是准确截止节点。控制器必须记录片段 owner，不能用 `TurnGate` 的结束条件关闭 `StraightGate` 启动的片段。
+- 命中后从连续均匀分布 `[6,12] s` 抽取一次目标时长并锁定。活动期间不重抽、不延长，转弯本身不提前结束；但位姿跳变和连续 3 s 稳定停车是贯穿所有 Gate 的硬停止，会提前结束。两类 Gate 均配置默认 `maximum_collection_interval_s=45 s`；Straight 默认随机上限 12 s 已更严格，自定义随机上限超过 `Tmax` 时取较小的有效上限。即使结束检查晚于截止时间，返回的 float 仍是准确截止节点。控制器必须记录片段 owner，不能用 `TurnGate` 的自然停止条件关闭 `StraightGate` 启动的片段。
 - 直线 Gate 用例覆盖默认 1% 边界、静止/转弯拒绝、活动期不重启、固定时长截止和 6–12 s 取值范围。
 
 真实视频回放验证使用 `20260820180215WDK_1/cam0_continuous.mp4`，视频长 `119.924 s`、manifest 无 hole、对应 371 个有效 pose。由于历史导出 pose 约 3 Hz 且存在 `0.5–2.0 s` 稀疏间隔，本次回放单独将 `maximum_pose_gap_s` 设为训练路线切段所用的 `2.0 s`；线上高频缓存默认 `0.5 s` 不变。其余设置为 60 s 缓存、6 s 判定延迟、转弯 0.2 s 节拍、直线机会 1 Hz、转弯优先、直线 seed 42。输出为直线 `[43.000,53.835] s`，时长 `10.834916 s`；右转 `[82.200,94.600] s`，在恢复直线后结束；后段左转合并为 `[102.200,113.000] s`，在连续 3 s 稳定停车后结束。旧逻辑把后段拆成 `[102.200,105.200] s` 与 `[107.800,110.800] s`，上一版流式逻辑因没有恢复直线而保持未结束；新增停车分支后得到明确结束节点。本例所有片段均短于 45 s，`Tmax` 未触发。
 
+## 2026-09-09：2026-09-01 起 OSS 采集数据同步与处理
+
+本轮使用统一 `vnav-oss-training-data` 编排器，按 `Asia/Shanghai` 时间从
+`2026-09-01 00:00:00`（含起点）发现到 `2026-09-09 12:10:07`，不设置 robot 过滤，下载并处理到
+`/mnt/chengchangxu/data/visual_nav_mv`，视频下载共享 `--jobs 4`。服务端返回计数和实际 ID 数均为 6，
+发现结果未截断：
+
+- `20260901185939a1N`：成功；3 个子任务，实际六路
+  `[cam0,cam1,cam2,cam3,cam5,cam6]` 全部按 `hw_ts` 对齐并拼接。
+- `20260902153110uGf`：首次因
+  `cam3_1788336233.mp4` 为 partial file、H.264 NAL 损坏而失败；恢复时先将坏文件暂存为
+  `cam3_1788336233.mp4.corrupt-20260909`，刷新导出后仅补下该分片并重新合并，最终 10/10 个子任务
+  严格成功。补下文件为 3,544,459 bytes，整段 FFmpeg 解码无报错；原坏文件为 1,303,620 bytes，
+  在后续获授权的 segments 清理中与其他原始分片一并删除。
+  10 个子任务实际均为五路 `[cam0,cam1,cam2,cam3,cam6]`，缺少推荐集合中的 `cam5`，后续只能按
+  实际相机集合消费。
+- `20260903154146O1X`：成功；2 个子任务、75 个视频分片，实际五路
+  `[cam0,cam1,cam2,cam3,cam6]`，全部按 `hw_ts` 对齐并拼接；同样记录非标准相机集合 warning。
+- `20260904155611MuZ`：任务级失败；2 个规范 Meta 子任务实际均只有 `[cam0,cam2]`。子任务 1 的
+  3/3 分片和两路拼接严格成功；子任务 2 的 24 个可用分片已下载并生成两路连续视频，但另有
+  `cam0`、`cam2` 各 1 个分片在首次导出和一次刷新导出中均无 URL，manifest 为
+  `download_skip=2`，因此该子任务不可视为完整数据，不得直接进入训练。
+- `20260907162109nzz`：失败；首次和一次重试均在 Meta ZIP 的 chunked HTTP 响应中断，稳定复现
+  `IncompleteRead(11945 bytes read)`；没有规范 Meta 或视频 manifest，停止继续重试。
+- `20260908171756w8w`：失败；首次和一次重试均由导出服务返回 HTTP 502；没有规范 Meta 或视频
+  manifest，停止继续重试。
+
+最终只读核验共发现 17 个非空规范 `frames.jsonl` 子任务和 17 份视频 manifest；16/17 份通过
+`download_ok + download_reused > 0`、`download_skip=0`、`download_fail=0`、全部实际相机拼接成功、
+`concat_complete=true`、`align=true` 的严格条件。唯一未通过的是
+`20260904155611MuZ_2` 的 2 个缺 URL 分片；已有 manifest 的输出全部采用 `hw_ts` 对齐。任务级最终为
+3/6 完整成功、3/6 受上游数据或导出服务阻塞。未请求也未运行 teacher 生成，teacher 配置和训练数据
+验证均为不适用。
+
+随后按用户要求，对 3 个完整任务分别调用
+`download-task.sh --delete-zip --delete-segments <task_id> /mnt/chengchangxu/data/visual_nav_mv`。脚本均命中
+“任务已完整处理，仅执行清理”保护分支，没有重新下载或合并；共删除 3 个 Meta ZIP 和 3 个
+`videos/segs` 目录，释放 913,803,113 bytes。清理后逐任务确认 ZIP 与分片目录均不存在，同时仍保留
+15 个非空规范 Meta、15 份成功 manifest 和 78 个非空连续视频。最终核验时，先前失败的
+`20260904155611MuZ`、`20260907162109nzz`、`20260908171756w8w` 任务目录也已不在输出根目录；本轮
+3 条清理命令仅以成功任务为目标，没有删除这 3 个失败任务目录，也未尝试恢复其来源。
+
+### 指定 3 个任务的 Rule-10 训练数据生成
+
+同日用户明确授权为 `20260901185939a1N`、`20260902153110uGf`、`20260903154146O1X` 生成 full
+训练数据。本轮按显式 task ID 扫描，不重新按日期发现，也不设置 robot 过滤；只读预检确认 3/3 均为
+pending、没有已有成功 full run。源根目录为 `/mnt/chengchangxu/data/visual_nav_mv`，输出根目录为
+`/mnt/chengchangxu/data/visual_nav_training`，流水线配置为
+`processing/training-data-builder/config.json`。
+
+teacher 使用默认
+`model_server/config_rule10_continuous_ep011200_sim.yaml`，以 `cuda:0` batch 模式启动并由构建器通过
+`--no-start-teacher` 复用；健康检查确认 `Rule10ContinuousPolicyNet` epoch 11200、
+`route_encoding=rule10_directional_visible_progress_history`、`curvature_only=false`。teacher 配置 SHA-256
+为 `212caf60c9a4969a9861ac0dee8911994ac996b0033e88592f56b0d126489246`，checkpoint SHA-256 为
+`2f372ee3f204f2978d1e3466ee2742011cbaab1d66aa79861bebdfa875f13028`。生成版本固定为：
+
+```text
+pipeline_version = vnav_teacher_rule10_history_v2
+route_version = pose_truncate_rdp_turn_v2
+state_sampler_version = pose_velocity_zero20_v2
+occupancy_fusion_version = local_static_obstacle_union_history_v2
+```
+
+三个任务均成功原子提交：
+
+- `20260901185939a1N`：`run_20260909_144652`，27 个候选、22 个接受、5 个
+  `teacher_rollout_collision` 拒绝；1 次 batch 请求，逐 run 验证错误 0、warning 0。
+- `20260902153110uGf`：`run_20260909_144758`，1,384 个候选、1,376 个接受、8 个
+  `teacher_rollout_collision` 拒绝；44 次 batch 请求。10 个子任务均按实际五路
+  `[cam0,cam1,cam2,cam3,cam6]` 生成，逐 run 验证通过、错误 0，并保留 1 个聚合
+  `video_camera_set_nonstandard` warning。
+- `20260903154146O1X`：`run_20260909_150420`，1,373 个候选全部接受、拒绝 0；43 次 batch 请求。
+  2 个子任务均按实际五路 `[cam0,cam1,cam2,cam3,cam6]` 生成，逐 run 验证通过、错误 0，并保留
+  1 个聚合 `video_camera_set_nonstandard` warning。
+
+本批合计 2,784 个候选、2,771 个接受、13 个碰撞回放拒绝，接受率 99.533%；共 88 次 teacher batch
+请求，所有请求均只执行一次 forward。生成完成后只停止本轮启动的 teacher，8103 端口已关闭。
+
+随后用权威 `validate_training_data.py` 对整个训练根目录重新验证并更新
+`/mnt/chengchangxu/data/visual_nav_training/vnav_teacher_rule10_history_v2_validation.json`：当前 14 个 full
+run、11,532 个候选、11,383 个接受、149 个拒绝，`all_passed=true`。验证报告 SHA-256 为
+`29938d8ec42fc2287749f24138dd4ea9cc91e39bc95717160ee0b29afeb10ca5`。
+
+## 2026-09-12：人工地图标签丢失排查与已有采集数据保护
+
+用户反馈 0826 及以前人工标注的地图标签缺失，并明确要求已下载处理的数据不得再重新下载。
+本轮只读检查真实采集目录、代码与历史执行记录，没有下载 OSS、重新解包、重新合并、启动教师，
+也没有回写或推断补填任何地图标签。
+
+已确认的代码缺陷：预览页 `setMapName` 将人工标注直接原子写入本地 `frames.jsonl`，没有独立的
+持久标注副本。旧 `download-task.sh` 仅在带 `--delete-zip` 或 `--delete-segments` 时跳过完整任务，
+普通重跑仍会刷新导出；旧规范化器随后替换整个同名 Meta 目录，并删除临时旧目录。上游文件没有
+人工标签时，这条路径会丢失本地标签，也会覆盖本地裁剪结果。
+
+实际证据与边界（时间均为 Asia/Shanghai）：
+
+- 8 月 31 日任务 `01a057db-1440-7b60-b121-4d074f7faca7` 的执行记录确认，21:18:55 曾对
+  `20260819181014HWI`、`20260824161657Li2` 调用普通 `download-task.sh --jobs 4`。
+  HWI 的两份 Meta 落盘于 21:19:02/05，Li2 的其他 Meta 文件落盘于 21:19:06。那次是在修复
+  缺失/根级 Meta 布局和恢复视频；记录不能证明此前每份人工标签的存在与具体丢失时间。
+- 该轮检查时，0826 及以前共 32 个规范 `frames.jsonl`、19,922 行，其中 28 个文件有完整有效标签。
+  `20260819181014HWI_1/_2`（459/403 行）与 `20260826154539RI5_1/_2`（121/89 行）仍无
+  `map_name`。不能把这四份未标注数据自动按任务首尾快照补标。
+- 用户当天 17:35–17:36 已重新标注 `Li2_1` 和 `1QS_2/_5/_6/_7/_8`，六份文件目前标签完整。
+  `1QS` 的其他 Meta 保留 8 月 27 日 16:56 的导出/落盘时间；RI5 的未标注 frames ctime 为
+  8 月 27 日 16:52。Axg、qFl、WDK、n4Q 的多份人工标签仍保留 8 月 26/27 日修改时间。
+  因此没有证据支持“最近把所有 0826 以前数据重新下载覆盖”的判断。
+
+修复后的执行约定：
+
+- 默认入口对完整任务无条件跳过，不依赖 ZIP/segments 是否保留；只有显式清理选项才清理中间产物。
+- 已有非空任务目录若未通过完整性检查，失败退出并保留现场，不自动重下、刷新 Meta 或覆盖视频。
+- 显式 `--remerge` 只复用完整本地 segments；缺段时停止，不再自动刷新导出或补下载。
+- 规范化器在发布任何 bundle 前检查全部目标目录；发现已有同名目录则拒绝覆盖，保护标签和裁剪。
+  需要对比新版导出时使用独立输出目录，不能替换原采集输入。
+- 本要求同时写入项目 `AGENTS.md`，约束后续采集与训练任务。
+
+验证：在临时目录验证普通重跑、清理过中间产物后的重跑、不完整任务、失败任务的清理请求和
+缺段 `--remerge`，均未触发下载/合并入口，原有文件内容、mtime、inode 保持不变；有效但同名的
+新 ZIP 也不能覆盖人工标签或裁剪，且多 bundle 冲突会在发布新 bundle 前拒绝。
+`test_normalize_meta_export.py` 与 `test_pull_oss_videos.py` 共 19/19 回归通过，包含现有本地
+FFmpeg 拼接验证；Bash 语法和 `git diff --check` 通过。所有写入测试均使用临时数据。
+
+## 2026-09-12：按人工地图修改时间定向重打标签
+
+用户依据任务 `01a09444-95b6-7eb3-b147-48607e7d0d52` 的第 279 条地图问题，授权先检查
+`map_name`，再仅对修改过地图字段的采集数据重新生成标签。此次不触发下载、解包、视频拼接或
+源文件回写。审计和执行记录目录为
+`/mnt/chengchangxu/data/visual_nav_training/_repairs/map_name_20260912_175553/`。
+
+- 全量检查 15 个现存采集任务、66 份规范 `frames.jsonl`、41,484 行：所有行都有 `map_name`
+  属性，但只有 64 份、40,622 行为有效枚举；`20260819181014HWI_1/_2` 的 459/403 行仍为
+  `null`。HWI 没有成功 full run，本轮不自动推断地图、不生成标签，等待明确人工归属。
+- 筛选同时要求 `frames.jsonl` 的 mtime 晚于该任务最新成功 full run 的 `completed_at`，且与旧
+  `source_manifest.jsonl` 按子任务和行号连接后，源 `map_name` 确实改变；另核对行数及逐行时间戳
+  没有变化。不是只因目录时间变新就重跑，也不把 ZIP 保留的 1979 年 mtime 当作人工修改。
+- 命中 8 份、4,967 行：`20260824161657Li2_1`；`202608251919001QS_2/_5/_6/_7/_8`；
+  `20260826154539RI5_1/_2`。mtime 均为本日 17:35:03–17:44:54，原始地图字段均从 null 补为人工
+  枚举。三任务当前全部子任务恰好都命中，所以可以调用原有 full 构建器而不扩大重打标范围。
+- `1QS_5` 的 169 行从旧快照回退的 `P_map` 更正为 `B10_map / 2_lifts_6_units`；其余七份的
+  人工地图与旧回退值一致。重新生成的来源必须全部是 `frames.map_name`，本轮禁止快照回退。
+- 显式使用 `config_rule10_continuous_ep011200_sim.yaml`，配置 SHA-256
+  `212caf60c9a4969a9861ac0dee8911994ac996b0033e88592f56b0d126489246`，checkpoint SHA-256
+  `2f372ee3f204f2978d1e3466ee2742011cbaab1d66aa79861bebdfa875f13028`，均与旧 run 一致。
+  保持 `vnav_teacher_rule10_history_v2`、原路线、过滤、20% 零速分支、历史融合及 batch=32 配置。
+- 使用独立新 run 保存当前/历史雷达静态地图融合、teacher 动作、NPZ 和 manifest；旧 run 保留。
+  `sample_mapping.json` 按源子任务和原始 `meta_ts` 连接新旧候选，供后续显式迁移下游成员；不能
+  假设新旧 `sample_XXXXXXX` 编号相同。已有 Streaming VIB 冻结清单、checkpoint 和评估不在本轮
+  重打标范围内，不会自动改写。
+- 源数据保护核验通过：42,818 个文件的大小/mtime/inode 与所有源 JSON 哈希前后相同；全部
+  14 份旧成功 full run 的权威 manifest 大小/mtime/哈希保持一致。未修改人工地图或裁剪。
+
+执行于 18:04:40–18:20:18（Asia/Shanghai），三份新 run 均已原子发布并通过权威
+`validate_run`；逐帧地图/来源/静态地图 provenance 和新旧候选身份的补充核验也通过：
+
+| 任务 | 新 run | 候选 | 接受 | 碰撞拒绝 | 验证 |
+| --- | --- | ---: | ---: | ---: | --- |
+| `20260824161657Li2` | `run_20260912_180447` | 93 | 89 | 4 | 0 错误、0 警告 |
+| `202608251919001QS` | `run_20260912_180638` | 926 | 904 | 22 | 0 错误、0 警告 |
+| `20260826154539RI5` | `run_20260912_181915` | 33 | 33 | 0 | 0 错误、0 警告 |
+
+- 合计 1,052 个候选、1,026 个接受、26 个碰撞拒绝；34 次 batch 请求全部只执行一次 forward。
+  本轮自启的 GPU 5 teacher 已停止，8103 端口释放。
+- 新旧 1,052 个候选的源子任务和时间戳一一对应；970 个有效地图没有改变的候选，teacher
+  动作命令逐值完全一致。Li2 的原 89 个训练样本与 RI5 的 33 个样本保持原动作。
+- `1QS_5` 共 82 个候选改用 B10，其中原 43 个接受全部保留、37 个旧碰撞拒绝改为接受、2 个
+  仍碰撞拒绝；该子任务现有 80 个接受样本。动作差值统计仅比较命令形状相同的 78 个候选，另
+  4 个命令长度变化单独记录，不能把停止命令与五步命令直接广播比较。
+- 原第 279 条按 `202608251919001QS_5 + meta_ts=1787658079.5927436` 找到新
+  `sample_0000279`，地图为 `B10_map / 2_lifts_6_units`。原始雷达、历史位姿/时间、路线和坐标
+  变换完全一致；静态地图、当前及历史融合、teacher rollout 与动作均已重算。
+- 修订后的最新标签库存为 14 个任务、11,532 个候选、11,420 个接受、112 个拒绝。
+  `current_runs_manifest.json` 列出明确 run 路径及验证来源：本轮验证三份新 run，另外 11 份复用
+  原有验证并核对旧 manifest 未变；没有重打标或重复全量验证未修改任务。原全局验证 JSON
+  SHA-256 `29938d8ec42fc2287749f24138dd4ea9cc91e39bc95717160ee0b29afeb10ca5` 保留为历史记录。
+- 完整报告：
+  `/mnt/chengchangxu/data/visual_nav_training/_repairs/map_name_20260912_175553/report.md`；同目录
+  保存 `audit.json`、三份 `*_validation.json`、`map_validation.json`、`sample_mapping.json`、
+  `current_runs_manifest.json`、源文件保护快照和执行日志。修复前检查及三任务验证结论均已同步飞书。
+
 ## 更新记录
+
+- 2026-09-12：按 frames 修改时间及旧 source_manifest 确认，仅对 Li2/1QS/RI5 的 8 份人工补标
+  数据重打 ep011200 标签。3/3 新 run 验证通过，接受 1,026、碰撞拒绝 26；1QS_5 更正为 B10
+  后新增 37 个接受样本，其余 970 个候选动作完全一致。源数据与旧 manifest 校验不变，HWI 的
+  两份 862 行仍为 null，未自动补标。保留旧模型与 7861 冻结输入；新旧成员对照与修订清单已落盘。
+
+- 2026-09-12：修复已有采集任务普通重跑刷新 Meta 的风险；完整任务默认跳过、不完整任务停止，
+  规范化器拒绝覆盖已有 Meta。只读核查保留了用户本日补标的六份文件，四份旧 Meta 仍无地图标签；
+  未对真实数据重新下载、处理或自动回填标签。
+
+- 2026-09-09：使用 ep011200 Rule-10 batch teacher 为 0901、0902、0903 三个指定任务生成 full 训练
+  数据；3/3 原子提交成功，共 2,784 个候选、2,771 个接受、13 个碰撞拒绝。0902/0903 按实际五路
+  相机生成并保留非标准集合 warning。全局 14 个 run、11,383 个接受样本验证 `all_passed=true`，
+  验证报告 SHA-256 为 `29938d8ec42fc2287749f24138dd4ea9cc91e39bc95717160ee0b29afeb10ca5`；本轮
+  teacher 已停止。
+- 2026-09-09：完整发现并处理 2026-09-01 起的 6 个登记 OSS 采集任务；一次性修复 0902 任务的损坏
+  视频分片后，3 个任务完整成功。0904 任务仍缺 2 个源 URL，0907 Meta 导出稳定断流，0908 导出服务
+  稳定返回 502；三者停止重试，首轮结束时保留诊断。最终 17 份 manifest 中 16 份通过严格完整性
+  核验，未运行 teacher 生成。随后用 `download-task.sh --delete-zip --delete-segments` 清理 3 个完整任务的 ZIP 和
+  原始视频分片，释放 913,803,113 bytes；清理后 15 个规范 Meta、15 份成功 manifest 和 78 个连续
+  视频保持存在。最终核验时三个失败任务目录已在输出根目录中消失，但不属于本轮清理命令的目标。
 
 - 2026-09-08：新增转弯过滤式采集 Gate 和独立接入文档；沿用未来 1 m、`8 deg/m` 弧线口径，
   以未来 2 s 低平移/高 yaw 变化代理在线自转，并增加开始预看、结束迟滞及位姿异常失败安全。
@@ -1153,6 +1357,11 @@ locked test。修复后的全仓回归为 `126 passed, 14 warnings`。
 - 2026-09-08：将 `Tmax` 硬截止重构为通用 `@with_maximum_collection_interval` 方法装饰器，移除
   `TurnGate.end_collection()` 内的超时分支，并为 `StraightGate` 补齐统一开始节点属性。19/19 回归通过；
   WDK_1 三个输出区间逐项一致，未改变采集边界。
+- 2026-09-13：将位姿跳变和连续 3 s 几乎不动提升为贯穿所有 Gate 的硬停止，并将装饰器扩展为
+  `@with_hard_stop_conditions`；跳变结束点取跳变前最后有效 pose，稳定停车阈值为 3 cm/3 deg，且
+  已验证 1 cm/0.5 deg 静态噪声及跨 pose-gap 的绝对跳变边界。
+  Turn/Straight 定向回归 22/22 通过。只读复用现有 WDK_1 数据回放，三个区间逐项不变；未下载、
+  解包、重处理或覆盖本地 `frames.jsonl`。
 - 2026-09-02：动态学生方法版本统一为 v0，采用 joint temporal/decoder memory 融合；重建并绑定
   ep011200 Rule-10 数据。完成 overfit、1×/2× 三折和 bootstrap；2× 未通过后，用户明确选择 1× 并
   人工放行唯一失败的 OOF history-repeat 门槛，完成 7,654 条全量训练和 958 条一次性 locked test。

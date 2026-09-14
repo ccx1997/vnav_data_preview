@@ -9,7 +9,6 @@ import os
 import re
 import shutil
 import tempfile
-import uuid
 import zipfile
 from pathlib import Path, PurePosixPath
 from typing import Any, Dict, Iterable, List, Mapping, Optional, Sequence, Tuple
@@ -167,22 +166,22 @@ def normalize_archive(archive: Path, unpack_root: Path, task_id: str) -> Dict[st
                     raise ValueError("bundle %s has empty frames.jsonl" % sub_task_id)
                 normalized.append(sub_task_id)
 
+        # Check the whole archive before publishing any new bundle. Local Meta
+        # can contain manual labels and trims that do not exist in the export.
+        for sub_task_id in normalized:
+            target = unpack_root / ("meta_" + sub_task_id)
+            if os.path.lexists(target):
+                raise FileExistsError(
+                    "refusing to overwrite existing Meta (preserving local labels and trims): %s"
+                    % target
+                )
+
         for sub_task_id in normalized:
             staged = stage_root / ("meta_" + sub_task_id)
             target = unpack_root / staged.name
-            backup: Optional[Path] = None
-            try:
-                if target.exists():
-                    backup = unpack_root / (".previous-%s-%s" % (uuid.uuid4().hex, staged.name))
-                    target.replace(backup)
-                staged.replace(target)
-            except BaseException:
-                if backup is not None and backup.exists() and not target.exists():
-                    backup.replace(target)
-                raise
-            else:
-                if backup is not None:
-                    shutil.rmtree(backup)
+            if os.path.lexists(target):
+                raise FileExistsError("refusing to overwrite existing Meta: %s" % target)
+            staged.rename(target)
     finally:
         shutil.rmtree(stage_root, ignore_errors=True)
 
