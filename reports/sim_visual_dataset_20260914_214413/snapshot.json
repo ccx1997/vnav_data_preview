@@ -1,0 +1,8 @@
+{
+  "source": "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/index.jsonl",
+  "captured_at": "2026-09-14T21:44:13.817331+08:00",
+  "byte_count": 3899029,
+  "sha256": "dbf105c0f541cfb7ae8c62af46a4b4fd2988cd6142bc4733a1a8046dc6eaf56c",
+  "rows": 5416,
+  "parse_errors": []
+}

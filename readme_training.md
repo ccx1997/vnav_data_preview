@@ -4,6 +4,9 @@
 
 ## 2026-09-14 仿真视觉数据只读统计与抽检
 
+- 2026-09-18 归档前复核：已有 JSON/JSONL/CSV 可解析，两个逐轨迹清单和 CSV 均为
+  5,416 行，索引快照 SHA-256 与报告一致，20 张派生图像校验通过；未重新处理源数据。
+
 - 输入：`/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/index.jsonl`。
   数据持续生产，以北京时间 `2026-09-14 21:44:13` 的索引快照固定本次口径；
   按 `generation_settings_version` 区分 `legacy_v1` 与 `v2_unique_obstacles`。

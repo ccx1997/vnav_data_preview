@@ -1,0 +1,13 @@
+{
+  "completed_at": "2026-09-14T21:55:05.599172+08:00",
+  "index_rows": 5416,
+  "index_sha256_verified": true,
+  "metadata_and_rgb_header_issues": 0,
+  "case_count": 9,
+  "new_cases": 6,
+  "legacy_cases": 3,
+  "decoded_unique_jpeg_previews": 81,
+  "source_files_modified": false,
+  "full_dataset_rgb_pixel_decode_performed": false,
+  "notes": "All indexed samples: required top-level files, selected rollout/visual metadata and arrays, alignment, 2Hz timestamps, obstacle ID/asset uniqueness, RGB NPY header/member size. Selected cases: 81 JPEGs decoded; 18 derived PNGs opened."
+}

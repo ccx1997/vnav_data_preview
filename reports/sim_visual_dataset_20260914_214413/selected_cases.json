@@ -1,0 +1,1124 @@
+[
+  {
+    "sample_id": "indoor-cf402de9a274",
+    "mode": "indoor",
+    "seed": 300446984,
+    "num_frames": 102,
+    "duration_s": 50.70000000000033,
+    "obstacle_count": 8,
+    "route_length_m": 30.157862270939678,
+    "scale": 1.0,
+    "side_bias": false,
+    "generation_attempts": 9,
+    "created_at": "2026-09-14T13:03:43.805293+00:00",
+    "generation_settings_version": "v2_unique_obstacles",
+    "obstacle_sampling": "unique_id_and_atlas_v1",
+    "rollout_url": "/dataset-files/indoor-cf402de9a274/rollout.npz",
+    "visual_url": "/dataset-files/indoor-cf402de9a274/visual.npz",
+    "map_url": "/dataset-files/indoor-cf402de9a274/map.png",
+    "map_original_url": "/dataset-files/indoor-cf402de9a274/map_original.png",
+    "frame_url_template": "/dataset-files/indoor-cf402de9a274/preview/{camera}/{frame}.jpg",
+    "npz_bytes": 82707118,
+    "unique_obstacle_ids": 8,
+    "unique_obstacle_assets": 8,
+    "obstacle_ids": [
+      273,
+      586,
+      596,
+      413,
+      499,
+      234,
+      186,
+      276
+    ],
+    "obstacle_assets": [
+      "large_gso_ecoforms_plant_container_b4_har_2c1949c2",
+      "large_gso_unmellow_yellow_tieks_neon_patent_leather_ballet_6b96dce8",
+      "large_gso_womens_angelfish_boat_shoe_in_linen_oat_52e00b71",
+      "large_gso_olive_kids_birdie_pack_n_snack_7162d9e9",
+      "large_gso_rexy_glove_heavy_duty_large_0fa668fb",
+      "large_gso_cole_hardware_hammer_black_0c04760a",
+      "large_gso_asus_z87pro_motherboard_atx_lga1150_socket_11a99596",
+      "large_gso_ecoforms_plant_container_qp_harvest_4fe4d662"
+    ],
+    "repeated_id_instances": 0,
+    "repeated_asset_instances": 0,
+    "door_count": 10,
+    "materials": {
+      "indoor_floor": {
+        "id": 95,
+        "material_id": 351,
+        "name": "polyhaven_laminate_floor_03"
+      },
+      "indoor_ceiling": {
+        "id": 16,
+        "material_id": 386,
+        "name": "白色平整抹灰顶"
+      },
+      "indoor_occupied": {
+        "id": 116,
+        "material_id": 519,
+        "name": "米白墙板"
+      }
+    },
+    "recorded_success": true,
+    "stop_reason": "goal",
+    "final_goal_distance_m": 0.029624098149668467,
+    "final_speed_mps": 0.0,
+    "checkpoint_sha256": "3c1644c24fbdbbb4c6f1a9ba0acb7b256abfe98aca5fc3cc06e18b5a173e8965",
+    "source_scene_id": "rule10_maze_train_300446984_300454903",
+    "time_scale": 1.5,
+    "max_linear_mps": 0.5,
+    "actual_path_length_m": 17.33063507080078,
+    "heading_change_deg": 528.343505859375,
+    "camera_names": [
+      "front",
+      "rear_left",
+      "rear_right"
+    ],
+    "rgb_shape": [
+      102,
+      3,
+      512,
+      640,
+      3
+    ],
+    "issues": [],
+    "case_number": 1,
+    "title": "New / indoor / typical length",
+    "title_zh": "新版室内：典型路线长度",
+    "selection": {
+      "field": "route_length_m",
+      "quantile": 0.5,
+      "target": 30.171976877406756
+    },
+    "preview_frame_indices": [
+      18,
+      51,
+      69
+    ],
+    "preview_times_s": [
+      9.0,
+      25.5,
+      34.5
+    ],
+    "frame_selection_scores": [
+      0.08543283708372884,
+      0.15210732081158132,
+      0.031710547457961376
+    ],
+    "figure": "case_01.png",
+    "map_figure": "case_01_map.png",
+    "decoded_previews": [
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-cf402de9a274/preview/front/00018.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-cf402de9a274/preview/rear_left/00018.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-cf402de9a274/preview/rear_right/00018.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-cf402de9a274/preview/front/00051.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-cf402de9a274/preview/rear_left/00051.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-cf402de9a274/preview/rear_right/00051.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-cf402de9a274/preview/front/00069.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-cf402de9a274/preview/rear_left/00069.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-cf402de9a274/preview/rear_right/00069.jpg"
+    ]
+  },
+  {
+    "sample_id": "indoor-00ac8d79d643",
+    "mode": "indoor",
+    "seed": 816274500,
+    "num_frames": 265,
+    "duration_s": 131.9999999999957,
+    "obstacle_count": 17,
+    "route_length_m": 58.495183720653785,
+    "scale": 1.0,
+    "side_bias": false,
+    "generation_attempts": 3,
+    "created_at": "2026-09-14T09:03:06.077224+00:00",
+    "generation_settings_version": "v2_unique_obstacles",
+    "obstacle_sampling": "unique_id_and_atlas_v1",
+    "rollout_url": "/dataset-files/indoor-00ac8d79d643/rollout.npz",
+    "visual_url": "/dataset-files/indoor-00ac8d79d643/visual.npz",
+    "map_url": "/dataset-files/indoor-00ac8d79d643/map.png",
+    "map_original_url": "/dataset-files/indoor-00ac8d79d643/map_original.png",
+    "frame_url_template": "/dataset-files/indoor-00ac8d79d643/preview/{camera}/{frame}.jpg",
+    "npz_bytes": 257200036,
+    "unique_obstacle_ids": 17,
+    "unique_obstacle_assets": 17,
+    "obstacle_ids": [
+      343,
+      407,
+      242,
+      330,
+      273,
+      189,
+      76,
+      287,
+      521,
+      622,
+      461,
+      573,
+      336,
+      546,
+      607,
+      499,
+      577
+    ],
+    "obstacle_assets": [
+      "large_gso_ladybug_bead_25339c83",
+      "large_gso_office_depot_hp_564xl_ink_cartridge_black_cn684w_646a4542",
+      "large_gso_cone_sorting_kg5fbarbwts_50a4164f",
+      "large_gso_isorich_soy_522420c3",
+      "large_gso_ecoforms_plant_container_b4_har_2c1949c2",
+      "large_gso_avengers_thor_pllrpyniaeb_4339006a",
+      "large_ph_korean_public_payphone_01_ee6f0e37",
+      "large_gso_ecoforms_saucer_sq3_turquoise_0cc4f006",
+      "large_gso_shark_27765b6f",
+      "large_gso_yumyum_d3_liquid_0be6539d",
+      "large_gso_predator_lz_trx_fg_2daec666",
+      "large_gso_turboprop_airplane_with_pilot_3730bd66",
+      "large_gso_jungle_height_2e017602",
+      "large_gso_tea_set_6fcbbfe6",
+      "large_gso_womens_bluefish_2eye_boat_shoe_in_linen_oat_4b7ee20c",
+      "large_gso_rexy_glove_heavy_duty_large_0fa668fb",
+      "large_gso_twist_shape_1eadb816"
+    ],
+    "repeated_id_instances": 0,
+    "repeated_asset_instances": 0,
+    "door_count": 8,
+    "materials": {
+      "indoor_floor": {
+        "id": 24,
+        "material_id": 295,
+        "name": "ambientcg_WoodFloor014"
+      },
+      "indoor_ceiling": {
+        "id": 16,
+        "material_id": 386,
+        "name": "白色平整抹灰顶"
+      },
+      "indoor_occupied": {
+        "id": 112,
+        "material_id": 515,
+        "name": "白色抹灰墙"
+      }
+    },
+    "recorded_success": true,
+    "stop_reason": "goal",
+    "final_goal_distance_m": 0.049219140395308426,
+    "final_speed_mps": 0.0,
+    "checkpoint_sha256": "3c1644c24fbdbbb4c6f1a9ba0acb7b256abfe98aca5fc3cc06e18b5a173e8965",
+    "source_scene_id": "rule10_maze_train_816274500_816282419",
+    "time_scale": 1.5,
+    "max_linear_mps": 0.5,
+    "actual_path_length_m": 53.600669860839844,
+    "heading_change_deg": 1150.7086181640625,
+    "camera_names": [
+      "front",
+      "rear_left",
+      "rear_right"
+    ],
+    "rgb_shape": [
+      265,
+      3,
+      512,
+      640,
+      3
+    ],
+    "issues": [],
+    "case_number": 2,
+    "title": "New / indoor / many obstacles",
+    "title_zh": "新版室内：高障碍数量",
+    "selection": {
+      "field": "obstacle_count",
+      "quantile": 0.95,
+      "target": 17.0
+    },
+    "preview_frame_indices": [
+      60,
+      159,
+      202
+    ],
+    "preview_times_s": [
+      30.0,
+      79.5,
+      101.0
+    ],
+    "frame_selection_scores": [
+      0.09116493951339871,
+      0.08026385449147228,
+      0.25045877405015066
+    ],
+    "figure": "case_02.png",
+    "map_figure": "case_02_map.png",
+    "decoded_previews": [
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-00ac8d79d643/preview/front/00060.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-00ac8d79d643/preview/rear_left/00060.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-00ac8d79d643/preview/rear_right/00060.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-00ac8d79d643/preview/front/00159.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-00ac8d79d643/preview/rear_left/00159.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-00ac8d79d643/preview/rear_right/00159.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-00ac8d79d643/preview/front/00202.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-00ac8d79d643/preview/rear_left/00202.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-00ac8d79d643/preview/rear_right/00202.jpg"
+    ]
+  },
+  {
+    "sample_id": "indoor-7679a6baac38",
+    "mode": "indoor",
+    "seed": 804576863,
+    "num_frames": 265,
+    "duration_s": 132.2999999999957,
+    "obstacle_count": 16,
+    "route_length_m": 56.32242745688215,
+    "scale": 1.0,
+    "side_bias": false,
+    "generation_attempts": 2,
+    "created_at": "2026-09-14T05:35:45.640340+00:00",
+    "generation_settings_version": "v2_unique_obstacles",
+    "obstacle_sampling": "unique_id_and_atlas_v1",
+    "rollout_url": "/dataset-files/indoor-7679a6baac38/rollout.npz",
+    "visual_url": "/dataset-files/indoor-7679a6baac38/visual.npz",
+    "map_url": "/dataset-files/indoor-7679a6baac38/map.png",
+    "map_original_url": "/dataset-files/indoor-7679a6baac38/map_original.png",
+    "frame_url_template": "/dataset-files/indoor-7679a6baac38/preview/{camera}/{frame}.jpg",
+    "npz_bytes": 209220896,
+    "unique_obstacle_ids": 16,
+    "unique_obstacle_assets": 16,
+    "obstacle_ids": [
+      380,
+      374,
+      212,
+      294,
+      461,
+      563,
+      122,
+      242,
+      292,
+      424,
+      355,
+      326,
+      551,
+      64,
+      163,
+      404
+    ],
+    "obstacle_assets": [
+      "large_gso_mini_roller_36b655e4",
+      "large_gso_mens_santa_cruz_thong_in_chocolate_la1fo2maove_2cca0916",
+      "large_gso_canon_pixma_ink_cartridge_251_m_17463d0d",
+      "large_gso_farm_animal_0111bb44",
+      "large_gso_predator_lz_trx_fg_2daec666",
+      "large_gso_timberland_womens_classic_amherst_2eye_boat_shoe_6478df73",
+      "large_ph_standing_picture_frame_01_5a5d5c83",
+      "large_gso_cone_sorting_kg5fbarbwts_50a4164f",
+      "large_gso_epson_ultrachrome_t0543_ink_cartridge_magenta_1p_085fb4e7",
+      "large_gso_organic_whey_protein_unflavored_2e014333",
+      "large_gso_markings_desk_caddy_71557e81",
+      "large_gso_horse_dreams_pencil_case_5254c568",
+      "large_gso_threshold_basket_natural_finish_fabric_liner_sma_1efc8340",
+      "large_ph_food_pears_asian_01_ca9c6a9e",
+      "large_gso_3m_antislip_surfacing_light_duty_white_2d4b8156",
+      "large_gso_office_depot_canon_pgi35_remanufactured_ink_cart_2426c3b2"
+    ],
+    "repeated_id_instances": 0,
+    "repeated_asset_instances": 0,
+    "door_count": 8,
+    "materials": {
+      "indoor_floor": {
+        "id": 1,
+        "material_id": 10,
+        "name": "ambientcg_carpet016"
+      },
+      "indoor_ceiling": {
+        "id": 17,
+        "material_id": 387,
+        "name": "白色细纹抹灰顶"
+      },
+      "indoor_occupied": {
+        "id": 154,
+        "material_id": 557,
+        "name": "白色粉刷墙"
+      }
+    },
+    "recorded_success": true,
+    "stop_reason": "goal",
+    "final_goal_distance_m": 0.046149485351764954,
+    "final_speed_mps": 0.0,
+    "checkpoint_sha256": "3c1644c24fbdbbb4c6f1a9ba0acb7b256abfe98aca5fc3cc06e18b5a173e8965",
+    "source_scene_id": "rule10_maze_train_804576863_804584782",
+    "time_scale": 1.5,
+    "max_linear_mps": 0.5,
+    "actual_path_length_m": 50.450904846191406,
+    "heading_change_deg": 1248.1605224609375,
+    "camera_names": [
+      "front",
+      "rear_left",
+      "rear_right"
+    ],
+    "rgb_shape": [
+      265,
+      3,
+      512,
+      640,
+      3
+    ],
+    "issues": [],
+    "case_number": 3,
+    "title": "New / indoor / many turns",
+    "title_zh": "新版室内：大累计转向",
+    "selection": {
+      "field": "heading_change_deg",
+      "quantile": 0.95,
+      "target": 1252.1693298339833
+    },
+    "preview_frame_indices": [
+      42,
+      134,
+      187
+    ],
+    "preview_times_s": [
+      21.0,
+      67.0,
+      93.5
+    ],
+    "frame_selection_scores": [
+      0.150578398074796,
+      0.12445378304392264,
+      0.09224831222329898
+    ],
+    "figure": "case_03.png",
+    "map_figure": "case_03_map.png",
+    "decoded_previews": [
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-7679a6baac38/preview/front/00042.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-7679a6baac38/preview/rear_left/00042.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-7679a6baac38/preview/rear_right/00042.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-7679a6baac38/preview/front/00134.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-7679a6baac38/preview/rear_left/00134.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-7679a6baac38/preview/rear_right/00134.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-7679a6baac38/preview/front/00187.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-7679a6baac38/preview/rear_left/00187.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-7679a6baac38/preview/rear_right/00187.jpg"
+    ]
+  },
+  {
+    "sample_id": "outdoor-3ece8904abc1",
+    "mode": "outdoor",
+    "seed": 12039486,
+    "num_frames": 179,
+    "duration_s": 89.39999999999706,
+    "obstacle_count": 7,
+    "route_length_m": 65.42075579531908,
+    "scale": 6.2527339970276445,
+    "side_bias": false,
+    "generation_attempts": 1,
+    "created_at": "2026-09-14T06:08:52.042516+00:00",
+    "generation_settings_version": "v2_unique_obstacles",
+    "obstacle_sampling": "unique_id_and_atlas_v1",
+    "rollout_url": "/dataset-files/outdoor-3ece8904abc1/rollout.npz",
+    "visual_url": "/dataset-files/outdoor-3ece8904abc1/visual.npz",
+    "map_url": "/dataset-files/outdoor-3ece8904abc1/map.png",
+    "map_original_url": "/dataset-files/outdoor-3ece8904abc1/map_original.png",
+    "frame_url_template": "/dataset-files/outdoor-3ece8904abc1/preview/{camera}/{frame}.jpg",
+    "npz_bytes": 59310460,
+    "unique_obstacle_ids": 7,
+    "unique_obstacle_assets": 7,
+    "obstacle_ids": [
+      664,
+      652,
+      635,
+      331,
+      124,
+      362,
+      66
+    ],
+    "obstacle_assets": [
+      "large_obj_956a47ccc1a54a40a8711f3852d54433_14802d34",
+      "large_obj_6d73db6c079542b8abaf54e2e7f748a9_0475e2d5",
+      "large_obj_305863cd3839482f8fdfc1b799ef5029_040fae80",
+      "large_gso_jansport_school_backpack_blue_streak_5d3d4b65",
+      "large_ph_steel_frame_shelves_02_edab42f3",
+      "large_gso_melissa_doug_pattern_blocks_and_boards_3c9facdc",
+      "large_ph_football_2d27b62c"
+    ],
+    "repeated_id_instances": 0,
+    "repeated_asset_instances": 0,
+    "door_count": 0,
+    "materials": {
+      "outdoor_ground": {
+        "id": 81,
+        "material_id": 569,
+        "name": "黄色虚线双向路"
+      },
+      "outdoor_occupied": {
+        "id": 211,
+        "material_id": 577,
+        "name": "雏菊花草地"
+      }
+    },
+    "recorded_success": true,
+    "stop_reason": "goal",
+    "final_goal_distance_m": 0.035225027557499636,
+    "final_speed_mps": 0.0,
+    "checkpoint_sha256": "3c1644c24fbdbbb4c6f1a9ba0acb7b256abfe98aca5fc3cc06e18b5a173e8965",
+    "source_scene_id": "rule10_maze_train_12039486_12047405",
+    "time_scale": 1.0,
+    "max_linear_mps": 0.75,
+    "actual_path_length_m": 63.58409118652344,
+    "heading_change_deg": 240.79360961914062,
+    "camera_names": [
+      "front",
+      "rear_left",
+      "rear_right"
+    ],
+    "rgb_shape": [
+      179,
+      3,
+      512,
+      640,
+      3
+    ],
+    "issues": [],
+    "case_number": 4,
+    "title": "New / outdoor / center route",
+    "title_zh": "新版室外：中线行驶",
+    "selection": {
+      "field": "route_length_m",
+      "quantile": 0.5,
+      "target": 65.38558423297918
+    },
+    "preview_frame_indices": [
+      29,
+      85,
+      158
+    ],
+    "preview_times_s": [
+      14.5,
+      42.5,
+      79.0
+    ],
+    "frame_selection_scores": [
+      0.0,
+      0.22498562609862965,
+      0.5922812387944202
+    ],
+    "figure": "case_04.png",
+    "map_figure": "case_04_map.png",
+    "decoded_previews": [
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-3ece8904abc1/preview/front/00029.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-3ece8904abc1/preview/rear_left/00029.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-3ece8904abc1/preview/rear_right/00029.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-3ece8904abc1/preview/front/00085.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-3ece8904abc1/preview/rear_left/00085.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-3ece8904abc1/preview/rear_right/00085.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-3ece8904abc1/preview/front/00158.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-3ece8904abc1/preview/rear_left/00158.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-3ece8904abc1/preview/rear_right/00158.jpg"
+    ]
+  },
+  {
+    "sample_id": "outdoor-344afbb80c42",
+    "mode": "outdoor",
+    "seed": 180562822,
+    "num_frames": 217,
+    "duration_s": 107.999999999996,
+    "obstacle_count": 8,
+    "route_length_m": 77.081279705324,
+    "scale": 7.660598869177539,
+    "side_bias": true,
+    "generation_attempts": 3,
+    "created_at": "2026-09-14T10:58:45.537136+00:00",
+    "generation_settings_version": "v2_unique_obstacles",
+    "obstacle_sampling": "unique_id_and_atlas_v1",
+    "rollout_url": "/dataset-files/outdoor-344afbb80c42/rollout.npz",
+    "visual_url": "/dataset-files/outdoor-344afbb80c42/visual.npz",
+    "map_url": "/dataset-files/outdoor-344afbb80c42/map.png",
+    "map_original_url": "/dataset-files/outdoor-344afbb80c42/map_original.png",
+    "frame_url_template": "/dataset-files/outdoor-344afbb80c42/preview/{camera}/{frame}.jpg",
+    "npz_bytes": 116625332,
+    "unique_obstacle_ids": 8,
+    "unique_obstacle_assets": 8,
+    "obstacle_ids": [
+      70,
+      76,
+      625,
+      9,
+      682,
+      66,
+      668,
+      137
+    ],
+    "obstacle_assets": [
+      "large_ph_gothiccabinet_01_a2265ea2",
+      "large_ph_korean_public_payphone_01_ee6f0e37",
+      "large_obj_03febdfb56cf419d89fe2d4eaa0bdb5e_1262c872",
+      "gso_jansport_backpack",
+      "large_obj_fc34791dc62545758ee7290c8d0ff67e_004b8009",
+      "large_ph_football_2d27b62c",
+      "large_obj_ae0fab3e19b94a8daf568fcb1c9e883a_0fa98758",
+      "large_ph_vintage_cabinet_01_c0a5272e"
+    ],
+    "repeated_id_instances": 0,
+    "repeated_asset_instances": 0,
+    "door_count": 0,
+    "materials": {
+      "outdoor_ground": {
+        "id": 80,
+        "material_id": 568,
+        "name": "蓝色塑胶跑道"
+      },
+      "outdoor_occupied": {
+        "id": 207,
+        "material_id": 573,
+        "name": "深绿色草地"
+      }
+    },
+    "recorded_success": true,
+    "stop_reason": "goal",
+    "final_goal_distance_m": 0.048378895421193606,
+    "final_speed_mps": 0.0,
+    "checkpoint_sha256": "3c1644c24fbdbbb4c6f1a9ba0acb7b256abfe98aca5fc3cc06e18b5a173e8965",
+    "source_scene_id": "rule10_maze_train_180562822_180570741",
+    "time_scale": 1.0,
+    "max_linear_mps": 0.75,
+    "actual_path_length_m": 72.63174438476562,
+    "heading_change_deg": 642.308349609375,
+    "camera_names": [
+      "front",
+      "rear_left",
+      "rear_right"
+    ],
+    "rgb_shape": [
+      217,
+      3,
+      512,
+      640,
+      3
+    ],
+    "issues": [],
+    "case_number": 5,
+    "title": "New / outdoor / right-biased",
+    "title_zh": "新版室外：靠右行驶",
+    "selection": {
+      "field": "route_length_m",
+      "quantile": 0.5,
+      "target": 76.90219144898732
+    },
+    "preview_frame_indices": [
+      47,
+      143,
+      187
+    ],
+    "preview_times_s": [
+      23.5,
+      71.5,
+      93.5
+    ],
+    "frame_selection_scores": [
+      0.332582514662186,
+      0.6394528494896955,
+      0.08089692705404976
+    ],
+    "figure": "case_05.png",
+    "map_figure": "case_05_map.png",
+    "decoded_previews": [
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-344afbb80c42/preview/front/00047.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-344afbb80c42/preview/rear_left/00047.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-344afbb80c42/preview/rear_right/00047.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-344afbb80c42/preview/front/00143.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-344afbb80c42/preview/rear_left/00143.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-344afbb80c42/preview/rear_right/00143.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-344afbb80c42/preview/front/00187.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-344afbb80c42/preview/rear_left/00187.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-344afbb80c42/preview/rear_right/00187.jpg"
+    ]
+  },
+  {
+    "sample_id": "outdoor-7bc9db3a2aa6",
+    "mode": "outdoor",
+    "seed": 653010870,
+    "num_frames": 317,
+    "duration_s": 158.40000000000177,
+    "obstacle_count": 12,
+    "route_length_m": 127.12194017460114,
+    "scale": 7.311948898798317,
+    "side_bias": true,
+    "generation_attempts": 1,
+    "created_at": "2026-09-14T08:34:46.219967+00:00",
+    "generation_settings_version": "v2_unique_obstacles",
+    "obstacle_sampling": "unique_id_and_atlas_v1",
+    "rollout_url": "/dataset-files/outdoor-7bc9db3a2aa6/rollout.npz",
+    "visual_url": "/dataset-files/outdoor-7bc9db3a2aa6/visual.npz",
+    "map_url": "/dataset-files/outdoor-7bc9db3a2aa6/map.png",
+    "map_original_url": "/dataset-files/outdoor-7bc9db3a2aa6/map_original.png",
+    "frame_url_template": "/dataset-files/outdoor-7bc9db3a2aa6/preview/{camera}/{frame}.jpg",
+    "npz_bytes": 143833160,
+    "unique_obstacle_ids": 12,
+    "unique_obstacle_assets": 12,
+    "obstacle_ids": [
+      87,
+      42,
+      105,
+      210,
+      20,
+      157,
+      101,
+      631,
+      0,
+      58,
+      75,
+      43
+    ],
+    "obstacle_assets": [
+      "large_ph_modern_arm_chair_01_08fbf221",
+      "large_ph_chess_set_61179b52",
+      "large_ph_round_wooden_table_01_9554e396",
+      "large_gso_calphalon_kitchen_essentials_12_cast_iron_fry_pa_6a7d0616",
+      "large_ph_barrel_02_17b746ee",
+      "large_ph_wooden_table_02_be1c0f62",
+      "large_ph_plastic_monobloc_chair_01_9796c0f7",
+      "large_obj_17f0678bbd944c2ea3b63033e1f4f97c_03c5d7a4",
+      "electric_car",
+      "large_ph_fire_hydrant_de7d6daf",
+      "large_ph_korean_fire_extinguisher_01_456ac33d",
+      "large_ph_chinese_tea_table_b9fb39ae"
+    ],
+    "repeated_id_instances": 0,
+    "repeated_asset_instances": 0,
+    "door_count": 0,
+    "materials": {
+      "outdoor_ground": {
+        "id": 84,
+        "material_id": 572,
+        "name": "无标线沥青路"
+      },
+      "outdoor_occupied": {
+        "id": 211,
+        "material_id": 577,
+        "name": "雏菊花草地"
+      }
+    },
+    "recorded_success": true,
+    "stop_reason": "goal",
+    "final_goal_distance_m": 0.032138913133627336,
+    "final_speed_mps": 0.0,
+    "checkpoint_sha256": "3c1644c24fbdbbb4c6f1a9ba0acb7b256abfe98aca5fc3cc06e18b5a173e8965",
+    "source_scene_id": "rule10_maze_train_653010870_653018789",
+    "time_scale": 1.0,
+    "max_linear_mps": 0.75,
+    "actual_path_length_m": 106.01730346679688,
+    "heading_change_deg": 1050.0068359375,
+    "camera_names": [
+      "front",
+      "rear_left",
+      "rear_right"
+    ],
+    "rgb_shape": [
+      317,
+      3,
+      512,
+      640,
+      3
+    ],
+    "issues": [],
+    "case_number": 6,
+    "title": "New / outdoor / long route",
+    "title_zh": "新版室外：长路线",
+    "selection": {
+      "field": "route_length_m",
+      "quantile": 0.95,
+      "target": 126.9959920922812
+    },
+    "preview_frame_indices": [
+      105,
+      157,
+      243
+    ],
+    "preview_times_s": [
+      52.5,
+      78.5,
+      121.5
+    ],
+    "frame_selection_scores": [
+      0.14845267509593615,
+      0.39839933360947233,
+      0.38051560376399285
+    ],
+    "figure": "case_06.png",
+    "map_figure": "case_06_map.png",
+    "decoded_previews": [
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-7bc9db3a2aa6/preview/front/00105.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-7bc9db3a2aa6/preview/rear_left/00105.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-7bc9db3a2aa6/preview/rear_right/00105.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-7bc9db3a2aa6/preview/front/00157.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-7bc9db3a2aa6/preview/rear_left/00157.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-7bc9db3a2aa6/preview/rear_right/00157.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-7bc9db3a2aa6/preview/front/00243.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-7bc9db3a2aa6/preview/rear_left/00243.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-7bc9db3a2aa6/preview/rear_right/00243.jpg"
+    ]
+  },
+  {
+    "sample_id": "indoor-0f137463f455",
+    "mode": "indoor",
+    "seed": 614076210,
+    "num_frames": 218,
+    "duration_s": 108.89999999999702,
+    "obstacle_count": 16,
+    "route_length_m": 50.694427245987676,
+    "scale": 1.0,
+    "side_bias": false,
+    "generation_attempts": 3,
+    "created_at": "2026-09-12T20:01:06.437883+00:00",
+    "rollout_url": "/dataset-files/indoor-0f137463f455/rollout.npz",
+    "visual_url": "/dataset-files/indoor-0f137463f455/visual.npz",
+    "map_url": "/dataset-files/indoor-0f137463f455/map.png",
+    "map_original_url": "/dataset-files/indoor-0f137463f455/map_original.png",
+    "frame_url_template": "/dataset-files/indoor-0f137463f455/preview/{camera}/{frame}.jpg",
+    "generation_settings_version": "legacy_v1",
+    "npz_bytes": 145186960,
+    "unique_obstacle_ids": 4,
+    "unique_obstacle_assets": 4,
+    "obstacle_ids": [
+      171,
+      187,
+      171,
+      171,
+      190,
+      171,
+      187,
+      190,
+      190,
+      171,
+      356,
+      187,
+      187,
+      190,
+      171,
+      187
+    ],
+    "obstacle_assets": [
+      "large_gso_amberlight_up_w_68e9efc2",
+      "large_gso_asus_z97iplus_motherboard_mini_itx_lga1150_socke_1a512943",
+      "large_gso_amberlight_up_w_68e9efc2",
+      "large_gso_amberlight_up_w_68e9efc2",
+      "large_gso_azure_snake_tieks_leather_snake_print_ballet_fla_3e1f2c59",
+      "large_gso_amberlight_up_w_68e9efc2",
+      "large_gso_asus_z97iplus_motherboard_mini_itx_lga1150_socke_1a512943",
+      "large_gso_azure_snake_tieks_leather_snake_print_ballet_fla_3e1f2c59",
+      "large_gso_azure_snake_tieks_leather_snake_print_ballet_fla_3e1f2c59",
+      "large_gso_amberlight_up_w_68e9efc2",
+      "large_gso_markings_letter_holder_0e9c95f2",
+      "large_gso_asus_z97iplus_motherboard_mini_itx_lga1150_socke_1a512943",
+      "large_gso_asus_z97iplus_motherboard_mini_itx_lga1150_socke_1a512943",
+      "large_gso_azure_snake_tieks_leather_snake_print_ballet_fla_3e1f2c59",
+      "large_gso_amberlight_up_w_68e9efc2",
+      "large_gso_asus_z97iplus_motherboard_mini_itx_lga1150_socke_1a512943"
+    ],
+    "repeated_id_instances": 12,
+    "repeated_asset_instances": 12,
+    "door_count": 12,
+    "materials": {
+      "indoor_floor": {
+        "id": 43,
+        "material_id": 314,
+        "name": "ambientcg_WoodFloor033"
+      },
+      "indoor_ceiling": {
+        "id": 1,
+        "material_id": 19,
+        "name": "白色办公室吊顶"
+      },
+      "indoor_occupied": {
+        "id": 73,
+        "material_id": 476,
+        "name": "米色涂料墙"
+      }
+    },
+    "recorded_success": true,
+    "stop_reason": "goal",
+    "final_goal_distance_m": 0.04371901568197771,
+    "final_speed_mps": 0.0,
+    "checkpoint_sha256": "3c1644c24fbdbbb4c6f1a9ba0acb7b256abfe98aca5fc3cc06e18b5a173e8965",
+    "source_scene_id": "rule10_maze_train_614076210_614084129",
+    "time_scale": 1.5,
+    "max_linear_mps": 0.5,
+    "actual_path_length_m": 42.95464324951172,
+    "heading_change_deg": 1001.39453125,
+    "camera_names": [
+      "front",
+      "rear_left",
+      "rear_right"
+    ],
+    "rgb_shape": [
+      218,
+      3,
+      512,
+      640,
+      3
+    ],
+    "issues": [],
+    "case_number": 7,
+    "title": "Legacy / indoor / repeated assets",
+    "title_zh": "旧版室内：重复障碍物对照",
+    "selection": {
+      "field": "repeated_asset_instances",
+      "quantile": 0.9,
+      "target": 12.0
+    },
+    "preview_frame_indices": [
+      60,
+      108,
+      153
+    ],
+    "preview_times_s": [
+      30.0,
+      54.0,
+      76.5
+    ],
+    "frame_selection_scores": [
+      0.14308518832735698,
+      0.1846813369484132,
+      0.15879275040052473
+    ],
+    "figure": "case_07.png",
+    "map_figure": "case_07_map.png",
+    "decoded_previews": [
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-0f137463f455/preview/front/00060.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-0f137463f455/preview/rear_left/00060.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-0f137463f455/preview/rear_right/00060.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-0f137463f455/preview/front/00108.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-0f137463f455/preview/rear_left/00108.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-0f137463f455/preview/rear_right/00108.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-0f137463f455/preview/front/00153.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-0f137463f455/preview/rear_left/00153.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/indoor-0f137463f455/preview/rear_right/00153.jpg"
+    ]
+  },
+  {
+    "sample_id": "outdoor-045fa7be67d9",
+    "mode": "outdoor",
+    "seed": 994663105,
+    "num_frames": 266,
+    "duration_s": 132.5999999999959,
+    "obstacle_count": 11,
+    "route_length_m": 100.21501882228728,
+    "scale": 9.60693517451627,
+    "side_bias": false,
+    "generation_attempts": 1,
+    "created_at": "2026-09-13T23:39:14.060749+00:00",
+    "rollout_url": "/dataset-files/outdoor-045fa7be67d9/rollout.npz",
+    "visual_url": "/dataset-files/outdoor-045fa7be67d9/visual.npz",
+    "map_url": "/dataset-files/outdoor-045fa7be67d9/map.png",
+    "map_original_url": "/dataset-files/outdoor-045fa7be67d9/map_original.png",
+    "frame_url_template": "/dataset-files/outdoor-045fa7be67d9/preview/{camera}/{frame}.jpg",
+    "generation_settings_version": "legacy_v1",
+    "npz_bytes": 187217608,
+    "unique_obstacle_ids": 4,
+    "unique_obstacle_assets": 4,
+    "obstacle_ids": [
+      684,
+      501,
+      143,
+      42,
+      42,
+      684,
+      501,
+      501,
+      143,
+      42,
+      143
+    ],
+    "obstacle_assets": [
+      "large_obj_ff75867adf374193ae3ab083e8df660e_08a4dc5c",
+      "large_gso_room_essentials_dish_drainer_collapsible_white_3149adf6",
+      "large_ph_wicker_basket_01_e2b45d68",
+      "large_ph_chess_set_61179b52",
+      "large_ph_chess_set_61179b52",
+      "large_obj_ff75867adf374193ae3ab083e8df660e_08a4dc5c",
+      "large_gso_room_essentials_dish_drainer_collapsible_white_3149adf6",
+      "large_gso_room_essentials_dish_drainer_collapsible_white_3149adf6",
+      "large_ph_wicker_basket_01_e2b45d68",
+      "large_ph_chess_set_61179b52",
+      "large_ph_wicker_basket_01_e2b45d68"
+    ],
+    "repeated_id_instances": 7,
+    "repeated_asset_instances": 7,
+    "door_count": 0,
+    "materials": {
+      "outdoor_ground": {
+        "id": 74,
+        "material_id": 562,
+        "name": "灰色裂纹沥青"
+      },
+      "outdoor_occupied": {
+        "id": 212,
+        "material_id": 578,
+        "name": "红色矮牵牛花丛"
+      }
+    },
+    "recorded_success": true,
+    "stop_reason": "goal",
+    "final_goal_distance_m": 0.05932256480827978,
+    "final_speed_mps": 0.0,
+    "checkpoint_sha256": "3c1644c24fbdbbb4c6f1a9ba0acb7b256abfe98aca5fc3cc06e18b5a173e8965",
+    "source_scene_id": "rule10_maze_train_994663105_994671024",
+    "time_scale": 1.0,
+    "max_linear_mps": 0.75,
+    "actual_path_length_m": 95.14453125,
+    "heading_change_deg": 476.18255615234375,
+    "camera_names": [
+      "front",
+      "rear_left",
+      "rear_right"
+    ],
+    "rgb_shape": [
+      266,
+      3,
+      512,
+      640,
+      3
+    ],
+    "issues": [],
+    "case_number": 8,
+    "title": "Legacy / outdoor / repeated assets",
+    "title_zh": "旧版室外：重复障碍物对照",
+    "selection": {
+      "field": "repeated_asset_instances",
+      "quantile": 0.9,
+      "target": 7.0
+    },
+    "preview_frame_indices": [
+      18,
+      173,
+      207
+    ],
+    "preview_times_s": [
+      9.0,
+      86.5,
+      103.5
+    ],
+    "frame_selection_scores": [
+      0.0474514490075795,
+      0.23713812775689713,
+      0.21549895946755743
+    ],
+    "figure": "case_08.png",
+    "map_figure": "case_08_map.png",
+    "decoded_previews": [
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-045fa7be67d9/preview/front/00018.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-045fa7be67d9/preview/rear_left/00018.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-045fa7be67d9/preview/rear_right/00018.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-045fa7be67d9/preview/front/00173.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-045fa7be67d9/preview/rear_left/00173.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-045fa7be67d9/preview/rear_right/00173.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-045fa7be67d9/preview/front/00207.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-045fa7be67d9/preview/rear_left/00207.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-045fa7be67d9/preview/rear_right/00207.jpg"
+    ]
+  },
+  {
+    "sample_id": "outdoor-018f4f7d7a73",
+    "mode": "outdoor",
+    "seed": 611987888,
+    "num_frames": 95,
+    "duration_s": 47.399999999999444,
+    "obstacle_count": 3,
+    "route_length_m": 35.08774304683149,
+    "scale": 4.228272892409837,
+    "side_bias": true,
+    "generation_attempts": 1,
+    "created_at": "2026-09-14T02:43:42.929105+00:00",
+    "rollout_url": "/dataset-files/outdoor-018f4f7d7a73/rollout.npz",
+    "visual_url": "/dataset-files/outdoor-018f4f7d7a73/visual.npz",
+    "map_url": "/dataset-files/outdoor-018f4f7d7a73/map.png",
+    "map_original_url": "/dataset-files/outdoor-018f4f7d7a73/map_original.png",
+    "frame_url_template": "/dataset-files/outdoor-018f4f7d7a73/preview/{camera}/{frame}.jpg",
+    "generation_settings_version": "legacy_v1",
+    "npz_bytes": 76140520,
+    "unique_obstacle_ids": 3,
+    "unique_obstacle_assets": 3,
+    "obstacle_ids": [
+      19,
+      158,
+      270
+    ],
+    "obstacle_assets": [
+      "large_ph_barrel_01_284af7fe",
+      "large_ph_woodenchair_01_6f71246f",
+      "large_gso_ecoforms_plant_bowl_atlas_low_38341b60"
+    ],
+    "repeated_id_instances": 0,
+    "repeated_asset_instances": 0,
+    "door_count": 0,
+    "materials": {
+      "outdoor_ground": {
+        "id": 27,
+        "material_id": 43,
+        "name": "细粒沥青路面"
+      },
+      "outdoor_occupied": {
+        "id": 4,
+        "material_id": 17,
+        "name": "深绿草地"
+      }
+    },
+    "recorded_success": true,
+    "stop_reason": "goal",
+    "final_goal_distance_m": 0.15233344566293225,
+    "final_speed_mps": 0.0,
+    "checkpoint_sha256": "3c1644c24fbdbbb4c6f1a9ba0acb7b256abfe98aca5fc3cc06e18b5a173e8965",
+    "source_scene_id": "rule10_maze_train_611987888_611995807",
+    "time_scale": 1.0,
+    "max_linear_mps": 0.75,
+    "actual_path_length_m": 31.82048797607422,
+    "heading_change_deg": 252.03123474121094,
+    "camera_names": [
+      "front",
+      "rear_left",
+      "rear_right"
+    ],
+    "rgb_shape": [
+      95,
+      3,
+      512,
+      640,
+      3
+    ],
+    "issues": [],
+    "case_number": 9,
+    "title": "Legacy / outdoor / no repeats",
+    "title_zh": "旧版室外：无重复对照",
+    "selection": {
+      "field": "route_length_m",
+      "quantile": 0.5,
+      "target": 35.315880774101544
+    },
+    "preview_frame_indices": [
+      30,
+      63,
+      84
+    ],
+    "preview_times_s": [
+      15.0,
+      31.5,
+      42.0
+    ],
+    "frame_selection_scores": [
+      0.24604834782993773,
+      0.5687261189538865,
+      0.0
+    ],
+    "figure": "case_09.png",
+    "map_figure": "case_09_map.png",
+    "decoded_previews": [
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-018f4f7d7a73/preview/front/00030.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-018f4f7d7a73/preview/rear_left/00030.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-018f4f7d7a73/preview/rear_right/00030.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-018f4f7d7a73/preview/front/00063.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-018f4f7d7a73/preview/rear_left/00063.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-018f4f7d7a73/preview/rear_right/00063.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-018f4f7d7a73/preview/front/00084.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-018f4f7d7a73/preview/rear_left/00084.jpg",
+      "/mnt/wlf/projects/e2evnav/hybrid25d_renderer/outputs/visual_dataset/outdoor-018f4f7d7a73/preview/rear_right/00084.jpg"
+    ]
+  }
+]
