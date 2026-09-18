@@ -36,12 +36,30 @@ TURN_CURVATURE_THRESHOLD_RAD_PER_M = math.radians(8.0)
 NORMAL_STRAIGHT_MINIMUM_TRANSLATION_M = 0.10
 NORMAL_STRAIGHT_MAXIMUM_YAW_CHANGE_RAD = math.radians(3.0)
 DEFAULT_MAXIMUM_COLLECTION_INTERVAL_S = 45.0
+MINIMUM_SAVED_COLLECTION_DURATION_S = 4.0
 STABLE_STOP_WINDOW_S = 3.0
 STABLE_STOP_MAXIMUM_TRANSLATION_M = 0.03
 STABLE_STOP_MAXIMUM_YAW_CHANGE_RAD = math.radians(3.0)
 
 GateResult = tuple[bool, float]
 _EndCollectionMethod = TypeVar("_EndCollectionMethod", bound=Callable[..., GateResult])
+
+
+@dataclass(frozen=True)
+class CompletedCollection:
+    """Final action window; the recorder must discard it when should_save is false."""
+
+    start_timestamp_s: float
+    end_timestamp_s: float
+    target_confirmed: bool = True
+
+    @property
+    def duration_s(self) -> float:
+        return self.end_timestamp_s - self.start_timestamp_s
+
+    @property
+    def should_save(self) -> bool:
+        return self.duration_s >= MINIMUM_SAVED_COLLECTION_DURATION_S and self.target_confirmed
 
 
 def with_hard_stop_conditions(
@@ -54,7 +72,8 @@ def with_hard_stop_conditions(
     expose ``_pose_hard_stop_timestamp()`` additionally stop at a pose jump or
     sustained stable pose.  Natural end conditions are evaluated through the
     earliest hard stop first, so an earlier action node still wins when a
-    streaming call arrives late.
+    streaming call arrives late.  Every completed window is published as
+    ``last_completed_collection`` for the recorder's keep/discard decision.
     """
 
     @wraps(method)
@@ -101,23 +120,27 @@ def with_hard_stop_conditions(
             # its minimum-cache validation, so no earlier stop can be found.
             result = (False, evaluation_timestamp_s)
 
-        if result[0]:
-            setattr(self, "_hard_stop_decorator_state", None)
-            return result
-        if timestamp_s + 1.0e-12 < hard_stop_s:
-            setattr(
-                self,
-                "_hard_stop_decorator_state",
-                (active_start_s, evaluation_timestamp_s),
-            )
-            return result
-        finish_hard_stop = getattr(self, "_finish_hard_stop", None)
-        if finish_hard_stop is None:
-            self.reset()
-        else:
-            finish_hard_stop(hard_stop_s)
+        target_confirmed = True
+        if not result[0]:
+            if timestamp_s + 1.0e-12 < hard_stop_s:
+                setattr(
+                    self,
+                    "_hard_stop_decorator_state",
+                    (active_start_s, evaluation_timestamp_s),
+                )
+                return result
+            confirm_target = getattr(self, "_hard_stop_target_confirmed", None)
+            if confirm_target is not None:
+                target_confirmed = confirm_target(pose_cache, active_start_s, hard_stop_s)
+            finish_hard_stop = getattr(self, "_finish_hard_stop", None)
+            if finish_hard_stop is None:
+                self.reset()
+            else:
+                finish_hard_stop(hard_stop_s)
+            result = (True, hard_stop_s)
         setattr(self, "_hard_stop_decorator_state", None)
-        return True, hard_stop_s
+        self.last_completed_collection = CompletedCollection(active_start_s, result[1], target_confirmed)
+        return result
 
     return cast(_EndCollectionMethod, wrapped)
 
@@ -145,7 +168,7 @@ PoseSampleLike = Union[PoseSample, Sequence[float], Mapping[str, object]]
 class TurnGateConfig:
     """Thresholds matching the existing turn-oriented post-processing rules."""
 
-    # Route turns: future-one-metre route curvature >= 8 deg/m.
+    # Route turns: at most one metre, allowing slow motion up to fifteen seconds.
     curve_lookahead_m: float = 1.0
     curve_minimum_path_m: float = 0.30
     curve_maximum_lookahead_s: float = 15.0
@@ -207,20 +230,26 @@ class TurnGateConfig:
             "maximum_yaw_step_rad": self.maximum_yaw_step_rad,
             "maximum_yaw_rate_rps": self.maximum_yaw_rate_rps,
         }
-        invalid = [name for name, value in positive.items() if value <= 0.0]
+        invalid = [
+            name for name, value in positive.items()
+            if not math.isfinite(value) or value <= 0.0
+        ]
         if invalid:
             raise ValueError(
-                f"configuration values must be positive: {', '.join(invalid)}"
+                f"configuration values must be finite and positive: {', '.join(invalid)}"
             )
         nonnegative = {
             "start_lookahead_s": self.start_lookahead_s,
             "pose_smoothing_window_s": self.pose_smoothing_window_s,
             "minimum_route_step_m": self.minimum_route_step_m,
         }
-        invalid = [name for name, value in nonnegative.items() if value < 0.0]
+        invalid = [
+            name for name, value in nonnegative.items()
+            if not math.isfinite(value) or value < 0.0
+        ]
         if invalid:
             raise ValueError(
-                f"configuration values must be non-negative: {', '.join(invalid)}"
+                f"configuration values must be finite and non-negative: {', '.join(invalid)}"
             )
         if self.curve_minimum_path_m > self.curve_lookahead_m:
             raise ValueError("curve_minimum_path_m cannot exceed curve_lookahead_m")
@@ -236,6 +265,8 @@ class TurnEvidence:
 
     ``sufficient_data`` is deliberately separate from ``is_turn``.  A caller
     must not interpret insufficient data as confirmed straight motion.
+    Positive evidence includes the end of its observation window; natural
+    recovery cannot be decided before that future motion has occurred.
     """
 
     timestamp_s: float
@@ -249,6 +280,7 @@ class TurnEvidence:
     spin_translation_m: Optional[float]
     spin_yaw_change_rad: Optional[float]
     reason: str
+    observation_end_timestamp_s: Optional[float] = None
 
 
 @dataclass(frozen=True)
@@ -320,7 +352,9 @@ class TurnGate:
 
     def __init__(self, config: Optional[TurnGateConfig] = None) -> None:
         self.config = config or TurnGateConfig()
+        self.last_completed_collection: Optional[CompletedCollection] = None
         self._active_start_timestamp_s: Optional[float] = None
+        self._start_evidence_end_timestamp_s: Optional[float] = None
         self._last_end_check_timestamp_s: Optional[float] = None
         self._straight_recovery_start_timestamp_s: Optional[float] = None
         self._hard_stop_decorator_state: Optional[tuple[float, float]] = None
@@ -341,6 +375,7 @@ class TurnGate:
         """Clear streaming state after an external recorder reset or abort."""
 
         self._active_start_timestamp_s = None
+        self._start_evidence_end_timestamp_s = None
         self._last_end_check_timestamp_s = None
         self._straight_recovery_start_timestamp_s = None
         self._hard_stop_decorator_state = None
@@ -364,9 +399,12 @@ class TurnGate:
             timestamp_s,
             timestamp_s + self.config.start_lookahead_s,
         ):
-            if self._evaluate_prepared(samples, probe_timestamp_s).is_turn:
+            evidence = self._evaluate_prepared(samples, probe_timestamp_s)
+            if evidence.is_turn:
                 self._active_start_timestamp_s = timestamp_s
-                self._last_end_check_timestamp_s = probe_timestamp_s
+                self._start_evidence_end_timestamp_s = evidence.observation_end_timestamp_s
+                # Recovery cannot precede the future motion that justified starting.
+                self._last_end_check_timestamp_s = evidence.observation_end_timestamp_s
                 self._straight_recovery_start_timestamp_s = None
                 return True, timestamp_s
         return False, timestamp_s
@@ -393,8 +431,8 @@ class TurnGate:
             raise ValueError("end timestamp cannot precede collection start")
         previous_check_s = self._last_end_check_timestamp_s
         if previous_check_s is not None and timestamp_s < previous_check_s:
-            # Start look-ahead may have already examined a future node.  Calls
-            # before that known turn evidence are harmless and need no replay.
+            # The start decision already observed this future turn window.
+            # Hard stops still apply, but natural recovery must wait for it.
             return False, timestamp_s
         if previous_check_s is not None and timestamp_s == previous_check_s:
             return False, timestamp_s
@@ -481,7 +519,7 @@ class TurnGate:
         )
         if first_stable_probe_s <= scan_stop_s + 1.0e-12:
             for probe_timestamp_s in self._probe_times(
-                first_stable_probe_s, scan_stop_s
+                min(first_stable_probe_s, scan_stop_s), scan_stop_s
             ):
                 if self._is_trailing_stable_stop(
                     cache,
@@ -493,6 +531,36 @@ class TurnGate:
                     candidates.append(probe_timestamp_s)
                     break
         return min(candidates) if candidates else None
+
+    def _hard_stop_target_confirmed(
+        self, pose_cache: Sequence[PoseSampleLike], start_s: float, end_s: float,
+    ) -> bool:
+        """Do not save a hard stop that cut off the turn used to start it."""
+        if end_s - start_s < MINIMUM_SAVED_COLLECTION_DURATION_S:
+            return True  # Already discarded by duration; no extra scan needed.
+        evidence_end_s = self._start_evidence_end_timestamp_s
+        if evidence_end_s is not None and end_s >= evidence_end_s:
+            return True
+        # Confirm against the final window only; samples after its end must
+        # not influence smoothing or supply the missing future turn again.
+        poses = [_coerce_pose_sample(pose) for pose in pose_cache]
+        poses = [pose for pose in poses if start_s <= pose.timestamp_s <= end_s]
+        if len(poses) < 2:
+            return False
+        cache = self._prepare_cache(poses)
+        # Starting needs substantial path support; retaining an already-started
+        # clip only needs a real bend. Do not reject a short bend just because
+        # the hard stop removed the remainder of its original 0.30 m support.
+        return any(
+            abs(curvature) + 1.0e-12 >= self.config.curvature_threshold_rad_per_m
+            for segment in cache.segments
+            for curvature in _route_curvatures(
+                _collapse_route_points(segment, self.config.minimum_route_step_m)
+            )
+        ) or any(
+            self._evaluate_prepared(cache, timestamp).is_spin
+            for timestamp in self._probe_times(poses[0].timestamp_s, poses[-1].timestamp_s)
+        )
 
     def evaluate(
         self,
@@ -527,12 +595,22 @@ class TurnGate:
         if abs(stop.yaw_rad - start.yaw_rad) > maximum_yaw_change_rad:
             return False
 
-        route_points = _collapse_route_points(window, self.config.minimum_route_step_m)
+        segment, _failure = self._continuous_segment(cache, timestamp_s)
+        assert segment is not None  # _trailing_window already validated the segment.
+        route = [
+            pose for pose in segment
+            if timestamp_s - window_s <= pose.timestamp_s <= timestamp_s
+        ]
+        route_points = _collapse_route_points(route, self.config.minimum_route_step_m)
         curvature, _path_m = _estimate_route_curvature(
             route_points,
             lookahead_m=self.config.curve_lookahead_m,
             minimum_path_m=self.config.curve_minimum_path_m,
             resample_m=self.config.curve_resample_m,
+            initial_path_m=(
+                math.hypot(route[0].x_m - start.x_m, route[0].y_m - start.y_m)
+                if route else 0.0
+            ),
         )
         return bool(
             curvature is not None
@@ -573,6 +651,7 @@ class TurnGate:
         start_timestamp_s = timestamp_s - window_s
         if start_timestamp_s < segment[0].timestamp_s - 1.0e-9:
             return None
+        start_timestamp_s = max(start_timestamp_s, segment[0].timestamp_s)
 
         window = [_interpolate_pose(segment, start_timestamp_s)]
         window.extend(
@@ -633,6 +712,7 @@ class TurnGate:
         spin_stop_s = timestamp_s + self.config.spin_measurement_window_s
         if spin_stop_s > segment[-1].timestamp_s + 1.0e-9:
             return _empty_evidence(timestamp_s, "future_time_insufficient")
+        spin_stop_s = min(spin_stop_s, segment[-1].timestamp_s)
 
         spin_stop = _interpolate_pose(segment, spin_stop_s)
         spin_window = [anchor]
@@ -655,19 +735,44 @@ class TurnGate:
             segment[-1].timestamp_s,
             timestamp_s + self.config.curve_maximum_lookahead_s,
         )
-        route = [anchor]
-        route.extend(
-            pose for pose in segment if timestamp_s < pose.timestamp_s <= curve_stop_s
-        )
-        route_points = _collapse_route_points(route, self.config.minimum_route_step_m)
+        # Accumulate distance, not a fixed two-second budget. Stop observing as
+        # soon as the target path is covered; stationary tail samples add no evidence.
+        route = []
+        route_length_m = 0.0
+        for pose in segment:
+            if not timestamp_s <= pose.timestamp_s <= curve_stop_s:
+                continue
+            if route:
+                step_m = math.hypot(pose.x_m - route[-1].x_m, pose.y_m - route[-1].y_m)
+                if step_m < self.config.minimum_route_step_m:
+                    continue
+                route_length_m += step_m
+            else:
+                route_length_m = math.hypot(pose.x_m - anchor.x_m, pose.y_m - anchor.y_m)
+            route.append(pose)
+            if route_length_m >= self.config.curve_lookahead_m:
+                break
+        route_points = [(pose.x_m, pose.y_m) for pose in route]
         curvature, future_path_m = _estimate_route_curvature(
             route_points,
             lookahead_m=self.config.curve_lookahead_m,
             minimum_path_m=self.config.curve_minimum_path_m,
             resample_m=self.config.curve_resample_m,
+            initial_path_m=(
+                math.hypot(route[0].x_m - anchor.x_m, route[0].y_m - anchor.y_m)
+                if route else 0.0
+            ),
         )
-        is_curve = curvature is not None and (
-            abs(curvature) + 1.0e-12 >= self.config.curvature_threshold_rad_per_m
+        is_curve = (
+            curvature is not None
+            and abs(curvature) + 1.0e-12 >= self.config.curvature_threshold_rad_per_m
+            # The short window only excludes stationary drift. The larger
+            # motion test belongs to the full curve window, not a speed cutoff.
+            and spin_translation > self.config.stable_stop_maximum_translation_m
+            and max(
+                (math.hypot(pose.x_m - anchor.x_m, pose.y_m - anchor.y_m) for pose in route),
+                default=0.0,
+            ) > NORMAL_STRAIGHT_MINIMUM_TRANSLATION_M + 1.0e-12
         )
 
         # A confirmed stationary two-second window cannot contain an arc turn,
@@ -695,6 +800,9 @@ class TurnGate:
             spin_translation_m=spin_translation,
             spin_yaw_change_rad=spin_yaw_change,
             reason=reason,
+            observation_end_timestamp_s=(
+                spin_stop_s if is_spin else route[-1].timestamp_s if is_curve else None
+            ),
         )
 
     def _continuous_segment(
@@ -770,6 +878,7 @@ class StraightGate:
         rng: Optional[_RandomSource] = None,
     ) -> None:
         self.config = config or StraightGateConfig()
+        self.last_completed_collection: Optional[CompletedCollection] = None
         self.turn_gate = turn_gate or TurnGate()
         self._rng = rng or random.Random()
         self._active_collection: Optional[StraightCollection] = None
@@ -828,6 +937,7 @@ class StraightGate:
             evidence,
             minimum_translation_m=self.config.minimum_translation_m,
             maximum_yaw_change_rad=self.config.maximum_yaw_change_rad,
+            curvature_threshold_rad_per_m=self.turn_gate.config.curvature_threshold_rad_per_m,
         ):
             return False, timestamp_s
 
@@ -887,10 +997,9 @@ class StraightGate:
     ) -> GateResult:
         """Return ``(should_end, action_timestamp_s)`` for the stream.
 
-        Motion changes after the start do not shorten the selected 6--12 second
-        clip.  A true decision completes and clears the active clip.  The pose
-        cache is accepted to keep the same controller-facing signature as
-        :class:`TurnGate`, but duration is deliberately the only stop input.
+        The natural deadline is the selected 6--12 second duration; the shared
+        decorator can stop earlier at a pose jump or stable stop.  Completed
+        windows shorter than four seconds must be discarded by the recorder.
         """
 
         timestamp_s = _finite_timestamp(decision_timestamp_s)
@@ -918,11 +1027,13 @@ def _is_normal_straight_evidence(
     *,
     minimum_translation_m: float,
     maximum_yaw_change_rad: float,
+    curvature_threshold_rad_per_m: float,
 ) -> bool:
     return bool(
         evidence.sufficient_data
         and not evidence.is_turn
         and evidence.reference_curvature_rad_per_m is not None
+        and abs(evidence.reference_curvature_rad_per_m) < curvature_threshold_rad_per_m
         and evidence.spin_translation_m is not None
         and evidence.spin_translation_m + 1.0e-12 >= minimum_translation_m
         and evidence.spin_yaw_change_rad is not None
@@ -1044,10 +1155,13 @@ def _estimate_route_curvature(
     lookahead_m: float,
     minimum_path_m: float,
     resample_m: float,
+    initial_path_m: float = 0.0,
 ) -> tuple[Optional[float], float]:
     if len(points) < 2:
         return None, 0.0
-    metrics = [0.0]
+    # Interpolated anchor distance counts toward support without inserting a
+    # synthetic vertex into the three-point curvature calculation.
+    metrics = [initial_path_m]
     for first, second in zip(points, points[1:]):
         metrics.append(
             metrics[-1] + math.hypot(second[0] - first[0], second[1] - first[1])
@@ -1056,51 +1170,33 @@ def _estimate_route_curvature(
     if available_m + 1.0e-12 < minimum_path_m:
         return None, available_m
 
-    sample_count = max(3, int(available_m / resample_m) + 1)
-    distances = [
-        available_m * index / (sample_count - 1) for index in range(sample_count)
-    ]
-    sampled = [_point_at_distance(points, metrics, distance) for distance in distances]
-    vectors = [
-        (second[0] - first[0], second[1] - first[1])
-        for first, second in zip(sampled, sampled[1:])
-    ]
-    lengths = [math.hypot(vector[0], vector[1]) for vector in vectors]
-    valid = [index for index, length_m in enumerate(lengths) if length_m > 1.0e-6]
-    if len(valid) < 2:
-        return None, available_m
-    headings = [math.atan2(vectors[index][1], vectors[index][0]) for index in valid]
-    valid_lengths = [lengths[index] for index in valid]
-    headings = _unwrap_angles(headings)
-    local_curvatures = [
-        (second_heading - first_heading)
-        / max(1.0e-6, 0.5 * (first_length + second_length))
-        for first_heading, second_heading, first_length, second_length in zip(
-            headings,
-            headings[1:],
-            valid_lengths,
-            valid_lengths[1:],
-        )
-    ]
+    # Thin actual vertices instead of inserting collinear points into sparse
+    # poses: those artificial zero turns would bias the curvature median.
+    sampled = [points[0]]
+    last_distance_m = initial_path_m
+    for point, distance_m in zip(points[1:], metrics[1:]):
+        if distance_m > available_m + 1.0e-12:
+            break
+        if distance_m - last_distance_m + 1.0e-12 >= resample_m:
+            sampled.append(point)
+            last_distance_m = distance_m
+
+    local_curvatures = _route_curvatures(sampled)
     if not local_curvatures:
         return None, available_m
     return float(statistics.median(local_curvatures)), available_m
 
 
-def _point_at_distance(
-    points: Sequence[tuple[float, float]], metrics: Sequence[float], distance_m: float
-) -> tuple[float, float]:
-    index = min(
-        len(points) - 2,
-        max(0, bisect.bisect_right(metrics, distance_m) - 1),
-    )
-    length_m = metrics[index + 1] - metrics[index]
-    fraction = 0.0 if length_m <= 1.0e-12 else (distance_m - metrics[index]) / length_m
-    first, second = points[index], points[index + 1]
-    return (
-        first[0] + fraction * (second[0] - first[0]),
-        first[1] + fraction * (second[1] - first[1]),
-    )
+def _route_curvatures(points: Sequence[tuple[float, float]]) -> list[float]:
+    """Signed three-point circle curvature, independent of vertex spacing."""
+    local_curvatures = []
+    for first, middle, last in zip(points, points[1:], points[2:]):
+        ax, ay = middle[0] - first[0], middle[1] - first[1]
+        bx, by = last[0] - middle[0], last[1] - middle[1]
+        denominator = math.hypot(ax, ay) * math.hypot(bx, by) * math.hypot(ax + bx, ay + by)
+        if denominator > 1.0e-12:
+            local_curvatures.append(2.0 * (ax * by - ay * bx) / denominator)
+    return local_curvatures
 
 
 def _turn_direction(
@@ -1111,8 +1207,7 @@ def _turn_direction(
 ) -> str:
     if not is_curve and not is_spin:
         return "none"
-    # Low-translation yaw evidence is the stronger direction signal when both
-    # detectors fire (for example, during a very tight creeping turn).
+    # Spin direction comes from yaw; arc direction comes from the XY route.
     if is_spin:
         signed_value = yaw_change
     else:
@@ -1137,8 +1232,10 @@ def _empty_evidence(timestamp_s: float, reason: str) -> TurnEvidence:
 
 
 __all__ = [
+    "CompletedCollection",
     "DEFAULT_MAXIMUM_COLLECTION_INTERVAL_S",
     "GateResult",
+    "MINIMUM_SAVED_COLLECTION_DURATION_S",
     "NORMAL_STRAIGHT_MAXIMUM_YAW_CHANGE_RAD",
     "NORMAL_STRAIGHT_MINIMUM_TRANSLATION_M",
     "PoseSample",

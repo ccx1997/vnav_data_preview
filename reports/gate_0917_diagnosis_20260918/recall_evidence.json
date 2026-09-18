@@ -1,0 +1,755 @@
+{
+  "baseline_git_head": "048c0f6b6b9123b12ad5ce09e63adc17deea778f",
+  "baseline_sha256": "ee4bd989e48c894b8273fab9c24ae12e1311583bc78329c99351bb80df191f2f",
+  "current_sha256": "7d0d252ee29012fc0ec399a08cc7441801acc4aa3d87fbbb68028f9ff6edd866",
+  "parameters": {
+    "pose_hz": "10, except the explicit 2Hz case",
+    "decision_delay_s": 6,
+    "cache_s": 60,
+    "probe_s": 0.2
+  },
+  "cases": [
+    {
+      "name": "20s_arc_30deg_per_m_at_0.06mps",
+      "profile_duration_speed_curvature": [
+        [
+          20.0,
+          0.06,
+          0.5235987755982988
+        ],
+        [
+          12.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "decision_offset_s": 0.0,
+      "baseline": {
+        "starts": [
+          0.0
+        ],
+        "clips": [
+          {
+            "start_s": 0.0,
+            "end_s": 22.6,
+            "duration_s": 22.6,
+            "at_least_4s": true
+          }
+        ],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.0,
+          "is_turn": true,
+          "is_curve": true,
+          "is_spin": false,
+          "future_path_m": 0.3299979739147513,
+          "spin_translation_m": 0.11998031110518503,
+          "yaw_change_deg": 3.5999999999999996,
+          "curvature_deg_per_m": 29.515549859357414
+        }
+      },
+      "current": {
+        "starts": [],
+        "clips": [],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.0,
+          "is_turn": false,
+          "is_curve": false,
+          "is_spin": false,
+          "future_path_m": 0.11699926824069623,
+          "spin_translation_m": 0.11998031110518503,
+          "yaw_change_deg": 3.5999999999999996,
+          "curvature_deg_per_m": null
+        }
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.1mps",
+      "profile_duration_speed_curvature": [
+        [
+          20.0,
+          0.1,
+          0.5235987755982988
+        ],
+        [
+          12.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "decision_offset_s": 0.0,
+      "baseline": {
+        "starts": [
+          0.0
+        ],
+        "clips": [
+          {
+            "start_s": 0.0,
+            "end_s": 22.8,
+            "duration_s": 22.8,
+            "at_least_4s": true
+          }
+        ],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.0,
+          "is_turn": true,
+          "is_curve": true,
+          "is_spin": false,
+          "future_path_m": 0.5649946177507867,
+          "spin_translation_m": 0.1999088556590066,
+          "yaw_change_deg": 6.000000000000009,
+          "curvature_deg_per_m": 29.230897866807585
+        }
+      },
+      "current": {
+        "starts": [],
+        "clips": [],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.0,
+          "is_turn": false,
+          "is_curve": false,
+          "is_spin": false,
+          "future_path_m": 0.1849980172733947,
+          "spin_translation_m": 0.1999088556590066,
+          "yaw_change_deg": 6.000000000000009,
+          "curvature_deg_per_m": null
+        }
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.14mps",
+      "profile_duration_speed_curvature": [
+        [
+          20.0,
+          0.14,
+          0.5235987755982988
+        ],
+        [
+          12.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "decision_offset_s": 0.0,
+      "baseline": {
+        "starts": [
+          0.0
+        ],
+        "clips": [
+          {
+            "start_s": 0.0,
+            "end_s": 22.8,
+            "duration_s": 22.8,
+            "at_least_4s": true
+          }
+        ],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.0,
+          "is_turn": true,
+          "is_curve": true,
+          "is_spin": false,
+          "future_path_m": 0.790994357885134,
+          "spin_translation_m": 0.27974993264637354,
+          "yaw_change_deg": 8.399999999999986,
+          "curvature_deg_per_m": 29.886445893799024
+        }
+      },
+      "current": {
+        "starts": [],
+        "clips": [],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.0,
+          "is_turn": false,
+          "is_curve": false,
+          "is_spin": false,
+          "future_path_m": 0.2729978058457549,
+          "spin_translation_m": 0.27974993264637354,
+          "yaw_change_deg": 8.399999999999986,
+          "curvature_deg_per_m": null
+        }
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.15mps",
+      "profile_duration_speed_curvature": [
+        [
+          20.0,
+          0.15,
+          0.5235987755982988
+        ],
+        [
+          12.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "decision_offset_s": 0.0,
+      "baseline": {
+        "starts": [
+          0.0
+        ],
+        "clips": [
+          {
+            "start_s": 0.0,
+            "end_s": 22.8,
+            "duration_s": 22.8,
+            "at_least_4s": true
+          }
+        ],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.0,
+          "is_turn": true,
+          "is_curve": true,
+          "is_spin": false,
+          "future_path_m": 0.8474930604470882,
+          "spin_translation_m": 0.2996924402463184,
+          "yaw_change_deg": 9.00000000000001,
+          "curvature_deg_per_m": 29.47305909425724
+        }
+      },
+      "current": {
+        "starts": [],
+        "clips": [],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.0,
+          "is_turn": false,
+          "is_curve": false,
+          "is_spin": false,
+          "future_path_m": 0.29249730128714796,
+          "spin_translation_m": 0.2996924402463184,
+          "yaw_change_deg": 9.00000000000001,
+          "curvature_deg_per_m": null
+        }
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.16mps",
+      "profile_duration_speed_curvature": [
+        [
+          20.0,
+          0.16,
+          0.5235987755982988
+        ],
+        [
+          12.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "decision_offset_s": 0.0,
+      "baseline": {
+        "starts": [
+          0.0
+        ],
+        "clips": [
+          {
+            "start_s": 0.0,
+            "end_s": 23.0,
+            "duration_s": 23.0,
+            "at_least_4s": true
+          }
+        ],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.0,
+          "is_turn": true,
+          "is_curve": true,
+          "is_spin": false,
+          "future_path_m": 0.9039915779550914,
+          "spin_translation_m": 0.31962675213896763,
+          "yaw_change_deg": 9.59999999999999,
+          "curvature_deg_per_m": 29.731384726984857
+        }
+      },
+      "current": {
+        "starts": [
+          0.6000000000000001
+        ],
+        "clips": [
+          {
+            "start_s": 0.6000000000000001,
+            "end_s": 23.0,
+            "duration_s": 22.4,
+            "at_least_4s": true
+          }
+        ],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.0,
+          "is_turn": true,
+          "is_curve": true,
+          "is_spin": false,
+          "future_path_m": 0.31199672476330836,
+          "spin_translation_m": 0.31962675213896763,
+          "yaw_change_deg": 9.59999999999999,
+          "curvature_deg_per_m": 29.999912270260076
+        }
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.2mps",
+      "profile_duration_speed_curvature": [
+        [
+          20.0,
+          0.2,
+          0.5235987755982988
+        ],
+        [
+          12.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "decision_offset_s": 0.0,
+      "baseline": {
+        "starts": [
+          0.0
+        ],
+        "clips": [
+          {
+            "start_s": 0.0,
+            "end_s": 23.0,
+            "duration_s": 23.0,
+            "at_least_4s": true
+          }
+        ],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.0,
+          "is_turn": true,
+          "is_curve": true,
+          "is_spin": false,
+          "future_path_m": 1.0,
+          "spin_translation_m": 0.39927114332000135,
+          "yaw_change_deg": 12.000000000000018,
+          "curvature_deg_per_m": 29.202980406591237
+        }
+      },
+      "current": {
+        "starts": [
+          0.0
+        ],
+        "clips": [
+          {
+            "start_s": 0.0,
+            "end_s": 23.0,
+            "duration_s": 23.0,
+            "at_least_4s": true
+          }
+        ],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.0,
+          "is_turn": true,
+          "is_curve": true,
+          "is_spin": false,
+          "future_path_m": 0.38999524799441876,
+          "spin_translation_m": 0.39927114332000135,
+          "yaw_change_deg": 12.000000000000018,
+          "curvature_deg_per_m": 29.999862922349198
+        }
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.4mps",
+      "profile_duration_speed_curvature": [
+        [
+          20.0,
+          0.4,
+          0.5235987755982988
+        ],
+        [
+          12.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "decision_offset_s": 0.0,
+      "baseline": {
+        "starts": [
+          0.0
+        ],
+        "clips": [
+          {
+            "start_s": 0.0,
+            "end_s": 23.0,
+            "duration_s": 23.0,
+            "at_least_4s": true
+          }
+        ],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.0,
+          "is_turn": true,
+          "is_curve": true,
+          "is_spin": false,
+          "future_path_m": 1.0,
+          "spin_translation_m": 0.794178674845704,
+          "yaw_change_deg": 24.000000000000036,
+          "curvature_deg_per_m": 28.801684492579984
+        }
+      },
+      "current": {
+        "starts": [
+          0.0
+        ],
+        "clips": [
+          {
+            "start_s": 0.0,
+            "end_s": 23.0,
+            "duration_s": 23.0,
+            "at_least_4s": true
+          }
+        ],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.0,
+          "is_turn": true,
+          "is_curve": true,
+          "is_spin": false,
+          "future_path_m": 0.7799883028068842,
+          "spin_translation_m": 0.794178674845704,
+          "yaw_change_deg": 24.000000000000036,
+          "curvature_deg_per_m": 29.999451691651043
+        }
+      }
+    },
+    {
+      "name": "20s_tight_arc_170deg_per_m_at_0.08mps",
+      "profile_duration_speed_curvature": [
+        [
+          20.0,
+          0.08,
+          2.9670597283903604
+        ],
+        [
+          12.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "decision_offset_s": 0.0,
+      "baseline": {
+        "starts": [
+          0.0
+        ],
+        "clips": [
+          {
+            "start_s": 0.0,
+            "end_s": 22.8,
+            "duration_s": 22.8,
+            "at_least_4s": true
+          }
+        ],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.0,
+          "is_turn": true,
+          "is_curve": true,
+          "is_spin": false,
+          "future_path_m": 0.4398794606656177,
+          "spin_translation_m": 0.1585054935726888,
+          "yaw_change_deg": 27.199999999999964,
+          "curvature_deg_per_m": 169.31519996046657
+        }
+      },
+      "current": {
+        "starts": [
+          17.8
+        ],
+        "clips": [
+          {
+            "start_s": 17.8,
+            "end_s": 22.8,
+            "duration_s": 5.0,
+            "at_least_4s": true
+          }
+        ],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.0,
+          "is_turn": false,
+          "is_curve": false,
+          "is_spin": false,
+          "future_path_m": 0.14796740427628643,
+          "spin_translation_m": 0.1585054935726888,
+          "yaw_change_deg": 27.199999999999964,
+          "curvature_deg_per_m": null
+        }
+      }
+    },
+    {
+      "name": "stop_go_0.5s_move_1.5s_pause",
+      "profile_duration_speed_curvature": [
+        [
+          0.5,
+          0.4,
+          0.5235987755982988
+        ],
+        [
+          1.5,
+          0.0,
+          0.0
+        ],
+        [
+          0.5,
+          0.4,
+          0.5235987755982988
+        ],
+        [
+          1.5,
+          0.0,
+          0.0
+        ],
+        [
+          0.5,
+          0.4,
+          0.5235987755982988
+        ],
+        [
+          1.5,
+          0.0,
+          0.0
+        ],
+        [
+          0.5,
+          0.4,
+          0.5235987755982988
+        ],
+        [
+          1.5,
+          0.0,
+          0.0
+        ],
+        [
+          0.5,
+          0.4,
+          0.5235987755982988
+        ],
+        [
+          1.5,
+          0.0,
+          0.0
+        ],
+        [
+          0.5,
+          0.4,
+          0.5235987755982988
+        ],
+        [
+          1.5,
+          0.0,
+          0.0
+        ],
+        [
+          0.5,
+          0.4,
+          0.5235987755982988
+        ],
+        [
+          1.5,
+          0.0,
+          0.0
+        ],
+        [
+          0.5,
+          0.4,
+          0.5235987755982988
+        ],
+        [
+          1.5,
+          0.0,
+          0.0
+        ],
+        [
+          0.5,
+          0.4,
+          0.5235987755982988
+        ],
+        [
+          1.5,
+          0.0,
+          0.0
+        ],
+        [
+          0.5,
+          0.4,
+          0.5235987755982988
+        ],
+        [
+          1.5,
+          0.0,
+          0.0
+        ],
+        [
+          12.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "decision_offset_s": 0.0,
+      "baseline": {
+        "starts": [
+          0.0
+        ],
+        "clips": [
+          {
+            "start_s": 0.0,
+            "end_s": 21.6,
+            "duration_s": 21.6,
+            "at_least_4s": true
+          }
+        ],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.0,
+          "is_turn": true,
+          "is_curve": true,
+          "is_spin": false,
+          "future_path_m": 0.6000000000000002,
+          "spin_translation_m": 0.19991228108589632,
+          "yaw_change_deg": 6.000000000000001,
+          "curvature_deg_per_m": 28.801347571660767
+        }
+      },
+      "current": {
+        "starts": [],
+        "clips": [],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.0,
+          "is_turn": false,
+          "is_curve": false,
+          "is_spin": false,
+          "future_path_m": 0.20000000000000004,
+          "spin_translation_m": 0.19991228108589632,
+          "yaw_change_deg": 6.000000000000001,
+          "curvature_deg_per_m": null
+        }
+      }
+    },
+    {
+      "name": "4s_slow_turn_after_3s_stop",
+      "profile_duration_speed_curvature": [
+        [
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          4.0,
+          0.1,
+          0.5235987755982988
+        ],
+        [
+          12.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "decision_offset_s": 0.0,
+      "baseline": {
+        "starts": [
+          0.4
+        ],
+        "clips": [
+          {
+            "start_s": 0.4,
+            "end_s": 9.8,
+            "duration_s": 9.4,
+            "at_least_4s": true
+          }
+        ],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.0,
+          "is_turn": true,
+          "is_curve": true,
+          "is_spin": false,
+          "future_path_m": 0.3799964976700109,
+          "spin_translation_m": 0.09998869145679226,
+          "yaw_change_deg": 3.0000000000000004,
+          "curvature_deg_per_m": 29.669378644876666
+        }
+      },
+      "current": {
+        "starts": [],
+        "clips": [],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.0,
+          "is_turn": false,
+          "is_curve": false,
+          "is_spin": false,
+          "future_path_m": 0.08499915697399515,
+          "spin_translation_m": 0.09998869145679226,
+          "yaw_change_deg": 3.0000000000000004,
+          "curvature_deg_per_m": null
+        }
+      }
+    },
+    {
+      "name": "2Hz_0.20mps_arc_with_0.01s_probe_offset",
+      "profile_duration_speed_curvature": [
+        [
+          20.0,
+          0.2,
+          0.5235987755982988
+        ],
+        [
+          12.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "decision_offset_s": 0.01,
+      "baseline": {
+        "starts": [
+          0.01
+        ],
+        "clips": [
+          {
+            "start_s": 0.01,
+            "end_s": 23.01,
+            "duration_s": 23.0,
+            "at_least_4s": true
+          }
+        ],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.01,
+          "is_turn": false,
+          "is_curve": false,
+          "is_spin": false,
+          "future_path_m": 1.0,
+          "spin_translation_m": 0.3992585939836621,
+          "yaw_change_deg": 12.0,
+          "curvature_deg_per_m": 2.535853180358229
+        }
+      },
+      "current": {
+        "starts": [],
+        "clips": [],
+        "active_start_s": null,
+        "anchor_evidence": {
+          "timestamp_s": 2.01,
+          "is_turn": false,
+          "is_curve": false,
+          "is_spin": false,
+          "future_path_m": 0.2999657317146507,
+          "spin_translation_m": 0.3992585939836621,
+          "yaw_change_deg": 12.0,
+          "curvature_deg_per_m": null
+        }
+      }
+    }
+  ],
+  "limits": "Constructed recall counterexamples, not a representative corpus or production recall estimate."
+}

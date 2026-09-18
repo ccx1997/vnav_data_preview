@@ -1,0 +1,433 @@
+{
+  "clips": [
+    {
+      "clip": 43,
+      "title": "0917-auto",
+      "owner": "turn",
+      "start_s": 1789639379.0706234,
+      "end_s": 1789639382.0706234,
+      "duration_s": 3.0,
+      "row_count": 14,
+      "row_span_s": 2.7016961574554443,
+      "max_translation_from_first_m": 0.006599841393982668,
+      "yaw_range_deg": 0.2908393951803756,
+      "max_pose_gap_s": 0.2863624095916748,
+      "videos": [
+        {
+          "camera": "cam0",
+          "duration_s": 3.0,
+          "holes": [],
+          "missing_segments": 0
+        },
+        {
+          "camera": "cam1",
+          "duration_s": 3.0,
+          "holes": [],
+          "missing_segments": 0
+        },
+        {
+          "camera": "cam2",
+          "duration_s": 3.0,
+          "holes": [],
+          "missing_segments": 0
+        },
+        {
+          "camera": "cam3",
+          "duration_s": 3.0,
+          "holes": [],
+          "missing_segments": 0
+        },
+        {
+          "camera": "cam6",
+          "duration_s": 3.0,
+          "holes": [],
+          "missing_segments": 0
+        }
+      ]
+    },
+    {
+      "clip": 53,
+      "title": "0917-auto",
+      "owner": "turn",
+      "start_s": 1789639647.5014226,
+      "end_s": 1789639650.5014226,
+      "duration_s": 3.0,
+      "row_count": 14,
+      "row_span_s": 2.6634721755981445,
+      "max_translation_from_first_m": 0.0071691200366066085,
+      "yaw_range_deg": 0.19939407277257715,
+      "max_pose_gap_s": 0.2308790683746338,
+      "videos": [
+        {
+          "camera": "cam0",
+          "duration_s": 3.0,
+          "holes": [],
+          "missing_segments": 0
+        },
+        {
+          "camera": "cam1",
+          "duration_s": 3.0,
+          "holes": [],
+          "missing_segments": 0
+        },
+        {
+          "camera": "cam2",
+          "duration_s": 3.0,
+          "holes": [],
+          "missing_segments": 0
+        },
+        {
+          "camera": "cam3",
+          "duration_s": 3.0,
+          "holes": [],
+          "missing_segments": 0
+        },
+        {
+          "camera": "cam6",
+          "duration_s": 3.0,
+          "holes": [],
+          "missing_segments": 0
+        }
+      ]
+    },
+    {
+      "clip": 20,
+      "title": "0917-auto",
+      "owner": "turn",
+      "start_s": 1789638876.337135,
+      "end_s": 1789638878.4155855,
+      "duration_s": 2.0784504413604736,
+      "row_count": 10,
+      "row_span_s": 1.8325135707855225,
+      "max_translation_from_first_m": 1.2142960629705766,
+      "yaw_range_deg": 1.7441373245905538,
+      "max_pose_gap_s": 0.2228400707244873,
+      "videos": [
+        {
+          "camera": "cam0",
+          "duration_s": 2.067,
+          "holes": [],
+          "missing_segments": 0
+        },
+        {
+          "camera": "cam1",
+          "duration_s": 2.067,
+          "holes": [],
+          "missing_segments": 0
+        },
+        {
+          "camera": "cam2",
+          "duration_s": 2.067,
+          "holes": [],
+          "missing_segments": 0
+        },
+        {
+          "camera": "cam3",
+          "duration_s": 2.067,
+          "holes": [],
+          "missing_segments": 0
+        },
+        {
+          "camera": "cam6",
+          "duration_s": 2.067,
+          "holes": [],
+          "missing_segments": 0
+        }
+      ]
+    },
+    {
+      "clip": 14,
+      "title": "0917-auto",
+      "owner": "turn",
+      "start_s": 1789638794.173288,
+      "end_s": 1789638795.9793706,
+      "duration_s": 1.8060824871063232,
+      "row_count": 9,
+      "row_span_s": 1.6098666191101074,
+      "max_translation_from_first_m": 0.4938221188540294,
+      "yaw_range_deg": 0.46176886853423094,
+      "max_pose_gap_s": 0.20311784744262695,
+      "videos": [
+        {
+          "camera": "cam0",
+          "duration_s": 1.8,
+          "holes": [],
+          "missing_segments": 0
+        },
+        {
+          "camera": "cam1",
+          "duration_s": 1.8,
+          "holes": [],
+          "missing_segments": 0
+        },
+        {
+          "camera": "cam2",
+          "duration_s": 1.8,
+          "holes": [],
+          "missing_segments": 0
+        },
+        {
+          "camera": "cam3",
+          "duration_s": 1.8,
+          "holes": [],
+          "missing_segments": 0
+        },
+        {
+          "camera": "cam6",
+          "duration_s": 1.8,
+          "holes": [],
+          "missing_segments": 0
+        }
+      ]
+    }
+  ],
+  "synthetic_reproductions": [
+    {
+      "name": "stationary_until_6s_then_turn",
+      "motion_segments_duration_speed_curvature": [
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          6,
+          0.5,
+          0.6
+        ]
+      ],
+      "start_s": 2.0,
+      "end_s": 5.0,
+      "duration_s": 3.0,
+      "start_evidence": {
+        "timestamp_s": 2.0,
+        "sufficient_data": true,
+        "is_turn": true,
+        "is_curve": true,
+        "is_spin": false,
+        "direction": "left",
+        "reference_curvature_rad_per_m": 0.599561991068283,
+        "future_path_m": 0.8750000000000001,
+        "spin_translation_m": 0.0,
+        "spin_yaw_change_rad": 0.0,
+        "reason": "turn"
+      }
+    },
+    {
+      "name": "straight_until_4.5s_then_turn",
+      "motion_segments_duration_speed_curvature": [
+        [
+          4.5,
+          0.2,
+          0
+        ],
+        [
+          8,
+          0.5,
+          0.6
+        ]
+      ],
+      "start_s": 3.0,
+      "end_s": 4.2,
+      "duration_s": 1.2000000000000002,
+      "start_evidence": {
+        "timestamp_s": 3.0,
+        "sufficient_data": true,
+        "is_turn": true,
+        "is_curve": true,
+        "is_spin": false,
+        "direction": "left",
+        "reference_curvature_rad_per_m": 0.5999999999999897,
+        "future_path_m": 1.0,
+        "spin_translation_m": 0.5493917689901006,
+        "spin_yaw_change_rad": 0.15000000000000052,
+        "reason": "turn"
+      }
+    }
+  ],
+  "source_files_unchanged": true,
+  "source_fingerprints": {
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_43/export_meta.json": [
+      6705,
+      1789654116842476667,
+      "318e47a3091b3b6cbb3c49a34a5d461103389ebeb076bc11cf003bf317eabc2e"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_43/task.json": [
+      223382,
+      1789654116822298288,
+      "6d31e3a54a3bd7f660732b2afe141a4d1649cd32445033bb7352f0d2bec9482c"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_43/frames.jsonl": [
+      12600,
+      1789654116854529830,
+      "de1951e9c84bea7d37297767760b06ed00e8b94ff09e77b456867d7acc9b997b"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_43/manifest.json": [
+      2568,
+      1789654194816588269,
+      "d167172a4dc9a0c9dfa1d07e0717d54f0db572ad8d4c822cbcce08506e531700"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_43/cam0_continuous.mp4": [
+      129417,
+      1789654193279525663,
+      "b8a0b3f18a79a456e5819594950d8ebed55422cc5a11eb5fac9fb2c550ac745a"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_43/cam1_continuous.mp4": [
+      117298,
+      1789654193698202795,
+      "f7f221021da4c3dddcc7b071e006930cb2c59bbde8d6925dd8fc1267dd2e86ab"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_43/cam2_continuous.mp4": [
+      96007,
+      1789654194048359425,
+      "00de1a7f15dd64d11fb4ede304751e62c79533f13a33e63b5ad535f331df1cea"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_43/cam3_continuous.mp4": [
+      72332,
+      1789654194398540231,
+      "298cdfb806436cf900355e71aeb73fefc16d222df25dfaab7c017f080180f497"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_43/cam6_continuous.mp4": [
+      63650,
+      1789654194793766523,
+      "35e71626dbf1972adcb9eda9f44b1e089bef859fadd36a344cfd6418415bad58"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_53/export_meta.json": [
+      6705,
+      1789654120013311972,
+      "ec6af93a0d222a0762f77b667eddb2b069090a912c747c6db480b12cd2430b1a"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_53/task.json": [
+      223382,
+      1789654120006853799,
+      "406b8b6ee04888b0f2e1aafd8ea1570b2e25588f24f3e32d42c1cc34c634f4a1"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_53/frames.jsonl": [
+      12609,
+      1789654120024757298,
+      "49577037f8ff8dec23e3bfc8dc420774934a0cc035a61b9191b2af5b39dd03e7"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_53/manifest.json": [
+      2568,
+      1789654212403637501,
+      "e629ab0649369ded472650d915af8e25770f289075d23f41184fccf7770eca50"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_53/cam0_continuous.mp4": [
+      76363,
+      1789654211242342931,
+      "6fac69d3fedfd0df52985324aae417d80b893c2c8a3eacaef360f9c34f7f4b41"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_53/cam1_continuous.mp4": [
+      150651,
+      1789654211513518421,
+      "8aa19547e707b8a6820b09b375d59cba00b13e2bf252717d1e7cae8512bbc27c"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_53/cam2_continuous.mp4": [
+      93016,
+      1789654211825209234,
+      "9cb6b8197e0b32eaed19e80e2c046afa3018402b6de0b5efc914f5fda9393933"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_53/cam3_continuous.mp4": [
+      54969,
+      1789654212092641424,
+      "c440a4ca1a6c3f1c13f156445f55f1d97d2d246f91b544659a816e89e3a2fff8"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_53/cam6_continuous.mp4": [
+      123274,
+      1789654212393712228,
+      "ca4a67bc7fb3c2afa712f80733ecca0ae3f1925c22de1237b53750b8b87406ad"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_20/export_meta.json": [
+      6702,
+      1789654108515371378,
+      "a92704003ef9b3f48ca3b61122ee72f9b3ad68997fddcdceadad07a79bcaac49"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_20/task.json": [
+      223380,
+      1789654108509565309,
+      "7b380af20a24938c295d0119b301e995ba7b229d40c636304fffed29008330e0"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_20/frames.jsonl": [
+      9031,
+      1789654108526507210,
+      "3bbe467707264c749e7708e067970bd6e7857899d2540fb385d3a4a56f20471f"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_20/manifest.json": [
+      2655,
+      1789654148864914367,
+      "0ccb0a907a83ea29d2ef3dc8c9dcb55784ec642a4eefe59589dbc93d85b8348a"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_20/cam0_continuous.mp4": [
+      262768,
+      1789654147620235174,
+      "fe673b6178e8aec40df6a08ce5c8ed06754a014a4f341c07af9600ff7bfb72e2"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_20/cam1_continuous.mp4": [
+      298834,
+      1789654147920105888,
+      "25327aa2c83a1f1674ac676c48d4e424784bd8743f22688ab7b152b5df50d821"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_20/cam2_continuous.mp4": [
+      231588,
+      1789654148238355739,
+      "18dba88586c037618ab3367fd4e23b51bd8aee33a4d547fd30b75186962e83ca"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_20/cam3_continuous.mp4": [
+      283125,
+      1789654148541819903,
+      "28b4cd5df87126d4ecab026857ececd9b1abcb05c31d38a0c8edd9a81288f2d0"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_20/cam6_continuous.mp4": [
+      238671,
+      1789654148834712863,
+      "f46a222357150c9800d558acaa1198e75283c9a2e7ee4b70fa9f822d9e477801"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_14/export_meta.json": [
+      6698,
+      1789654107092895238,
+      "6a0d6aba8ee8298a130ee5f4b1121ee02b170e4a9e306277e6490904c476fd42"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_14/task.json": [
+      223380,
+      1789654107077699684,
+      "9c3ac42e490ae123ef9f7826c2e66829d38752b9d9f949858813381e97ed4058"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_14/frames.jsonl": [
+      8153,
+      1789654107104517820,
+      "a346513c96fa5a94a3c09ff5118f73432a344ab41f485bf28ee9b96e5d94abac"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_14/manifest.json": [
+      2655,
+      1789654133004459837,
+      "de6d6616f8676299d5eba2166c69eb87a310391cc99b2001e14a6778148f863c"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_14/cam0_continuous.mp4": [
+      116782,
+      1789654131933324648,
+      "cddccfdeb82fc28595e4935e8725c2277c7fef69aece43f9c01fc59801d6c4b0"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_14/cam1_continuous.mp4": [
+      136333,
+      1789654132271397083,
+      "13a700aea0a51f2981abc84f7f4a832b695b533c0ab7cd1f055787fb4d2679e0"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_14/cam2_continuous.mp4": [
+      108299,
+      1789654132511840439,
+      "73b6ece032f86b104fe7b9e0faf4369d5ec0e02f9a5452f35fbd4d3f62156138"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_14/cam3_continuous.mp4": [
+      106266,
+      1789654132742212923,
+      "9079a5f3b5555dc1a65f05e4894bb492fed6469834633d0be0ff8aebc80c454c"
+    ],
+    "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_14/cam6_continuous.mp4": [
+      146148,
+      1789654132996491944,
+      "2559438c0aa95ab04facb7aa4705c747a882359e5aad3df82d077c7c7ed11746"
+    ]
+  },
+  "gate_sha256": "ee4bd989e48c894b8273fab9c24ae12e1311583bc78329c99351bb80df191f2f",
+  "limits": "Saved poses are approximately 5 Hz and exclude unsaved intervals; online gate logs/config/version are unavailable. Synthetic mechanisms are not exact replays of the four real triggers."
+}

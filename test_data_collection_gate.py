@@ -5,6 +5,7 @@ import random
 import unittest
 
 from data_collection_gate import (
+    CompletedCollection,
     PoseSample,
     StraightGate,
     StraightGateConfig,
@@ -20,11 +21,16 @@ def _straight(duration_s: float = 12.0, speed_mps: float = 0.5) -> list[PoseSamp
     ]
 
 
-def _arc(curvature_rad_per_m: float, duration_s: float = 12.0) -> list[PoseSample]:
-    speed_mps = 0.5
+def _arc(
+    curvature_rad_per_m: float,
+    duration_s: float = 12.0,
+    *,
+    speed_mps: float = 0.5,
+    sample_rate_hz: float = 10.0,
+) -> list[PoseSample]:
     samples = []
-    for index in range(int(duration_s * 10) + 1):
-        timestamp_s = index / 10.0
+    for index in range(int(duration_s * sample_rate_hz) + 1):
+        timestamp_s = index / sample_rate_hz
         distance_m = speed_mps * timestamp_s
         angle = curvature_rad_per_m * distance_m
         radius_m = 1.0 / curvature_rad_per_m
@@ -94,11 +100,10 @@ class TurnGateTest(unittest.TestCase):
 
     def test_curve_threshold_is_inclusive(self) -> None:
         gate = TurnGate(TurnGateConfig(pose_smoothing_window_s=0.0))
-        samples = _arc(math.radians(8.0))
-
-        evidence = gate.evaluate(samples, 2.0)
-
-        self.assertTrue(evidence.is_curve)
+        for degrees in (-8.1, -8.0, -7.9, 7.9, 8.0, 8.1):
+            with self.subTest(degrees=degrees):
+                evidence = gate.evaluate(_arc(math.radians(degrees)), 2.0)
+                self.assertEqual(evidence.is_curve, abs(degrees) >= 8.0)
 
     def test_spin_uses_unwrapped_yaw_and_low_translation(self) -> None:
         samples = []
@@ -452,6 +457,302 @@ class StraightGateTest(unittest.TestCase):
 
         self.assertEqual(gate.end_collection(samples, 7.0), (True, 5.0))
         self.assertEqual(gate.last_collection.end_timestamp_s, 5.0)  # type: ignore[union-attr]
+
+
+class GateTimingTest(unittest.TestCase):
+    def test_straight_requires_low_curvature_even_when_turn_motion_is_rejected(self) -> None:
+        samples = _arc(math.radians(8.1), speed_mps=0.18)
+        for threshold in (8.0, 9.0):
+            with self.subTest(threshold=threshold):
+                detector = TurnGate(TurnGateConfig(
+                    stable_stop_maximum_translation_m=0.5,
+                    curvature_threshold_rad_per_m=math.radians(threshold),
+                ))
+                self.assertFalse(detector.evaluate(samples, 2.0).is_turn)
+                straight = StraightGate(
+                    StraightGateConfig(start_probability=1.0), turn_gate=detector,
+                )
+                self.assertEqual(straight.start_collection(samples, 2.0)[0], threshold > 8.1)
+
+        # At the default 0.10 m motion boundary, a jitter loop is not straight.
+        jitter = [
+            PoseSample(index / 10.0, 0.05 * math.cos(index * math.pi / 10.0),
+                       0.05 * math.sin(index * math.pi / 10.0), 0.0)
+            for index in range(121)
+        ]
+        straight = StraightGate(
+            StraightGateConfig(start_probability=1.0),
+            turn_gate=TurnGate(TurnGateConfig(pose_smoothing_window_s=0.0)),
+        )
+        self.assertFalse(straight.turn_gate.evaluate(jitter, 2.0).is_turn)
+        self.assertEqual(straight.start_collection(jitter, 2.0), (False, 2.0))
+
+    def test_curve_classification_is_stable_with_sparse_poses_and_probe_phase(self) -> None:
+        gate = TurnGate()
+        for frequency, speed in ((4.0, 0.39), (10.0, 0.21), (4.0, 1.2)):
+            for degrees in (-12.0, -8.1, -7.9, -5.0, 5.0, 7.9, 8.1, 12.0):
+                samples = _arc(math.radians(degrees), speed_mps=speed, sample_rate_hz=frequency)
+                for timestamp in (2.0, 2.2, 2.4, 2.6, 2.8, 3.0):
+                    with self.subTest(frequency=frequency, speed=speed, degrees=degrees, timestamp=timestamp):
+                        evidence = gate.evaluate(samples, timestamp)
+                        self.assertEqual(evidence.is_curve, abs(degrees) >= 8.0)
+                gate.reset()
+                self.assertEqual(gate.start_collection(samples, 2.0)[0], abs(degrees) >= 8.0)
+                gate.reset()
+
+    def test_parked_anchor_does_not_borrow_a_distant_turn(self) -> None:
+        samples = _motion_profile([(6.0, 0.0, 0.0), (6.0, 0.5, 0.6)])
+        for horizon in (2.0, 15.0):
+            with self.subTest(horizon=horizon):
+                gate = TurnGate(TurnGateConfig(curve_maximum_lookahead_s=horizon))
+                self.assertEqual(gate.start_collection(samples, 2.0), (False, 2.0))
+                self.assertFalse(gate.evaluate(samples, 2.0).is_curve)
+
+    def test_curve_window_is_bounded_in_time_and_retains_low_speed_turns(self) -> None:
+        samples = _motion_profile([(12.0, 0.2, math.radians(12.0))])
+        gate = TurnGate(TurnGateConfig(curve_maximum_lookahead_s=2.0))
+        # Data beyond the observation window cannot extend its route length.
+        evidence = gate.evaluate(samples, 2.0)
+        self.assertTrue(evidence.is_curve)
+        # Median smoothing and the 2 cm noise filter may shorten the path.
+        self.assertGreaterEqual(evidence.future_path_m, 0.3)
+        self.assertLessEqual(evidence.future_path_m, 0.401)
+        self.assertGreater(evidence.observation_end_timestamp_s, 3.5)
+        self.assertLessEqual(evidence.observation_end_timestamp_s, 4.0)
+        self.assertEqual(gate.start_collection(samples, 2.0), (True, 2.0))
+
+    def test_small_xy_loops_without_yaw_are_not_turns(self) -> None:
+        samples = [
+            PoseSample(index / 20.0, 0.04 * math.cos(index * 0.3),
+                       0.04 * math.sin(index * 0.3), 0.0)
+            for index in range(241)
+        ]
+        gate = TurnGate(TurnGateConfig(pose_smoothing_window_s=0.0))
+        self.assertFalse(gate.evaluate(samples, 2.0).is_turn)
+        self.assertEqual(gate.start_collection(samples, 2.0), (False, 2.0))
+
+    def test_streaming_clips_include_the_turn_that_triggered_them(self) -> None:
+        for approach_s, speed in ((6.0, 0.0), (4.5, 0.2)):
+            with self.subTest(approach_s=approach_s, speed=speed):
+                samples = _motion_profile([
+                    (approach_s, speed, 0.0), (6.0, 0.5, 0.6), (10.0, 0.5, 0.0),
+                ])
+                gate = TurnGate()
+                completed = []
+                for index in range(int((samples[-1].timestamp_s - 6.0) / 0.2) + 1):
+                    timestamp = index * 0.2
+                    cache = [p for p in samples if timestamp - 54.0 <= p.timestamp_s <= timestamp + 6.0 + 1e-8]
+                    if gate.active_start_timestamp_s is None:
+                        gate.start_collection(cache, timestamp)
+                    elif gate.end_collection(cache, timestamp)[0]:
+                        completed.append(gate.last_completed_collection)
+                self.assertEqual(len(completed), 1)
+                clip = completed[0]
+                self.assertTrue(clip.should_save)
+                if speed == 0.0:
+                    self.assertGreaterEqual(clip.start_timestamp_s, approach_s - 3.0)
+                self.assertLess(clip.start_timestamp_s, approach_s + 1.0)
+                self.assertGreater(clip.end_timestamp_s, approach_s + 6.0)
+
+    def test_natural_recovery_waits_for_the_start_observation(self) -> None:
+        samples = _motion_profile([(4.5, 0.2, 0.0), (8.0, 0.5, 0.6)])
+        gate = TurnGate()
+        self.assertEqual(gate.start_collection(samples, 3.0), (True, 3.0))
+        # Previously the pre-turn straight history ended the clip at 4.2 s.
+        self.assertEqual(gate.end_collection(samples, 4.2), (False, 4.2))
+        self.assertEqual(gate.end_collection(samples, 6.0), (False, 6.0))
+
+    def test_slow_turns_accumulate_distance_without_a_two_second_speed_cutoff(self) -> None:
+        for speed, degrees in ((0.06, 30.0), (0.10, 30.0), (0.14, 30.0), (0.08, 170.0)):
+            with self.subTest(speed=speed, degrees=degrees):
+                samples = _arc(math.radians(degrees), 20.0, speed_mps=speed)
+                cache = [p for p in samples if p.timestamp_s <= 8.0]
+                gate = TurnGate()
+                self.assertTrue(gate.evaluate(cache, 2.0).is_curve)
+                self.assertEqual(gate.start_collection(cache, 2.0), (True, 2.0))
+
+    def test_sparse_pose_phase_does_not_prevent_slow_curve_start(self) -> None:
+        samples = _arc(math.radians(30.0), 20.0, speed_mps=0.2, sample_rate_hz=2.0)
+        for timestamp in (2.0, 2.01, 2.11, 2.31, 2.49):
+            with self.subTest(timestamp=timestamp):
+                gate = TurnGate()
+                cache = [p for p in samples if p.timestamp_s <= timestamp + 6.0]
+                self.assertEqual(gate.start_collection(cache, timestamp), (True, timestamp))
+
+    def test_stop_go_turn_and_finite_slow_turn_are_retained(self) -> None:
+        profiles = [
+            [(0.5, 0.4, math.radians(30.0)), (1.5, 0.0, 0.0)] * 10,
+            [(3.0, 0.0, 0.0), (4.0, 0.1, math.radians(30.0))],
+        ]
+        for profile, turn_start, turn_end in zip(profiles, (0.0, 3.0), (18.5, 7.0)):
+            with self.subTest(profile=profile):
+                samples = _motion_profile(profile + [(12.0, 0.0, 0.0)])
+                gate = TurnGate()
+                completed = []
+                for index in range(int((samples[-1].timestamp_s - 6.0) / 0.2) + 1):
+                    timestamp = index * 0.2
+                    cache = [p for p in samples if p.timestamp_s <= timestamp + 6.0 + 1e-8]
+                    if gate.active_start_timestamp_s is None:
+                        gate.start_collection(cache, timestamp)
+                    elif gate.end_collection(cache, timestamp)[0]:
+                        clip = gate.last_completed_collection
+                        if clip.should_save:
+                            completed.append(clip)
+                self.assertEqual(len(completed), 1)
+                self.assertLessEqual(completed[0].start_timestamp_s, turn_start)
+                self.assertGreaterEqual(completed[0].end_timestamp_s, turn_end)
+
+    def test_curve_observation_ends_at_distance_support_not_at_cache_tail(self) -> None:
+        gate = TurnGate()
+        moving = _motion_profile([(4.0, 0.5, math.radians(30.0)), (12.0, 0.0, 0.0)])
+        evidence = gate.evaluate(moving, 1.0)
+        self.assertTrue(evidence.is_curve)
+        self.assertLess(evidence.observation_end_timestamp_s, 3.3)
+        stopped = _motion_profile([(1.0, 0.5, math.radians(30.0)), (12.0, 0.0, 0.0)])
+        evidence = gate.evaluate(stopped, 0.0)
+        self.assertTrue(evidence.is_curve)
+        self.assertLess(evidence.observation_end_timestamp_s, 1.5)
+
+    def test_finite_sparse_turn_retains_interpolated_anchor_distance(self) -> None:
+        for duration, speed in ((2.0, 0.19), (2.0, 0.20), (3.0, 0.115), (3.0, 0.12)):
+            with self.subTest(duration=duration, speed=speed):
+                samples = _arc(math.radians(30.0), duration, speed_mps=speed, sample_rate_hz=2.0)
+                last = samples[-1]
+                samples.extend(PoseSample(duration + i * 0.5, last.x_m, last.y_m, last.yaw_rad)
+                               for i in range(1, 25))
+                gate = TurnGate()
+                cache = [p for p in samples if p.timestamp_s <= 6.01]
+                self.assertEqual(gate.start_collection(cache, 0.01), (True, 0.01))
+                self.assertTrue(gate.end_collection(samples, duration + 4.0)[0])
+                clip = gate.last_completed_collection
+                self.assertTrue(clip.should_save)
+                self.assertGreaterEqual(clip.end_timestamp_s, duration)
+
+    def test_hard_stop_keeps_only_turns_present_in_the_final_window(self) -> None:
+        for first_speed, first_curvature in ((0.04, 0.0), (0.08, 0.6), (0.10, 0.6), (0.2, 0.6)):
+            with self.subTest(first_speed=first_speed):
+                samples = _motion_profile([
+                    (2.0, first_speed, first_curvature), (3.3, 0.0, 0.0),
+                    (4.0, 0.5, 0.6), (12.0, 0.0, 0.0),
+                ])
+                gate = TurnGate()
+                cache = [p for p in samples if p.timestamp_s <= 6.2 + 1e-8]
+                self.assertTrue(gate.start_collection(cache, 0.2)[0])
+                self.assertTrue(gate.end_collection(samples, 5.2)[0])
+                clip = gate.last_completed_collection
+                self.assertGreaterEqual(clip.duration_s, 4.0)
+                self.assertLess(clip.end_timestamp_s, 5.3)
+                self.assertEqual(clip.target_confirmed, first_curvature != 0.0)
+                self.assertEqual(clip.should_save, first_curvature != 0.0)
+
+    def test_future_time_boundary_tolerates_float_roundoff(self) -> None:
+        samples = _motion_profile([(2.0, 0.10, 0.6), (2.8, 0.0, 0.0)])
+        self.assertLess(samples[-1].timestamp_s, 4.8)
+        evidence = TurnGate().evaluate(samples, 2.8000000000000003)
+        self.assertTrue(evidence.sufficient_data)
+        self.assertFalse(evidence.is_turn)
+
+    def test_hard_stop_retains_spin_when_started_by_a_future_curve(self) -> None:
+        profile = _motion_profile([
+            (2.0, 0.04, 0.0), (0.4, 0.0, 0.0), (3.3, 0.0, 0.0),
+            (4.0, 1.0, 0.6), (12.0, 0.0, 0.0),
+        ])
+        samples = []
+        for p in profile:
+            spin = math.radians(20.0) * min(1.0, max(0.0, (p.timestamp_s - 2.0) / 0.4))
+            dx = p.x_m - 0.08
+            samples.append(PoseSample(
+                p.timestamp_s, 0.08 + dx * math.cos(spin) - p.y_m * math.sin(spin),
+                dx * math.sin(spin) + p.y_m * math.cos(spin), p.yaw_rad + spin,
+            ))
+        for delay in (6.0, 7.0):
+            with self.subTest(delay=delay):
+                gate = TurnGate()
+                completed = []
+                for index in range(int((samples[-1].timestamp_s - delay) / 0.2) + 1):
+                    timestamp = index * 0.2
+                    cache = [p for p in samples if p.timestamp_s <= timestamp + delay + 1e-8]
+                    if gate.active_start_timestamp_s is None:
+                        gate.start_collection(cache, timestamp)
+                    elif gate.end_collection(cache, timestamp)[0]:
+                        completed.append(gate.last_completed_collection)
+                self.assertGreaterEqual(len(completed), 2)
+                self.assertTrue(completed[0].should_save)
+                self.assertLessEqual(completed[0].start_timestamp_s, 2.0)
+                self.assertGreaterEqual(completed[0].end_timestamp_s, 2.4)
+                self.assertTrue(all(clip.target_confirmed for clip in completed))
+
+    def test_save_threshold_uses_exact_action_times(self) -> None:
+        for start in (2.0, 1789639379.0706234):
+            for duration in (0.0, 1.806082, 2.07845, 3.0, 3.999, 4.0, 4.001):
+                with self.subTest(start=start, duration=duration):
+                    clip = CompletedCollection(start, start + duration)
+                    self.assertEqual(clip.should_save, duration >= 4.0)
+
+    def test_short_hard_stop_ends_both_gates_and_publishes_discard(self) -> None:
+        for kind in ('turn', 'straight'):
+            for duration in (3.999, 4.0):
+                with self.subTest(kind=kind, duration=duration):
+                    start = 2.0
+                    end = start + duration
+                    samples = _arc(math.radians(12.0)) if kind == 'turn' else _straight()
+                    samples = [p for p in samples if p.timestamp_s < end]
+                    last = samples[-1]
+                    samples.append(PoseSample(end, last.x_m, last.y_m, last.yaw_rad))
+                    # Absolute jump beyond a gap still ends at the pre-jump pose.
+                    samples.append(PoseSample(end + 1.0, 20.0, 20.0, last.yaw_rad))
+                    gate = TurnGate() if kind == 'turn' else StraightGate(
+                        StraightGateConfig(start_probability=1.0),
+                    )
+                    self.assertIsNone(gate.last_completed_collection)
+                    self.assertEqual(gate.start_collection(samples, start), (True, start))
+                    self.assertEqual(gate.end_collection(samples, end + 1.0), (True, end))
+                    clip = gate.last_completed_collection
+                    self.assertEqual(clip, CompletedCollection(start, end))
+                    self.assertEqual(clip.should_save, duration >= 4.0)
+                    self.assertIsNone(gate.active_start_timestamp_s)
+                    self.assertEqual(gate.end_collection(samples, end + 1.2), (False, end + 1.2))
+                    self.assertEqual(gate.last_completed_collection, clip)
+                    gate.reset()
+                    self.assertEqual(gate.last_completed_collection, clip)
+
+    def test_natural_and_timeout_ends_publish_final_window(self) -> None:
+        samples = _straight(duration_s=20.0)
+        straight = StraightGate(StraightGateConfig(
+            start_probability=1.0, minimum_collection_duration_s=6.0,
+            maximum_collection_duration_s=6.0,
+        ))
+        self.assertEqual(straight.start_collection(samples, 2.0), (True, 2.0))
+        self.assertEqual(straight.end_collection(samples, 10.0), (True, 8.0))
+        self.assertEqual(straight.last_completed_collection, CompletedCollection(2.0, 8.0))
+        turn = TurnGate()
+        self.assertTrue(turn.start_collection(_arc(math.radians(12.0)), 2.0)[0])
+        self.assertEqual(turn.end_collection([], 60.0), (True, 47.0))
+        self.assertEqual(turn.last_completed_collection, CompletedCollection(2.0, 47.0))
+
+    def test_short_stable_stop_is_discarded_even_before_observation_end(self) -> None:
+        for kind in ('turn', 'straight'):
+            with self.subTest(kind=kind):
+                curvature = 0.6 if kind == 'turn' else 0.0
+                samples = _motion_profile([
+                    (1.0, 0.5, curvature), (5.0, 0.0, 0.0), (3.0, 0.5, curvature),
+                ])
+                detector = TurnGate(TurnGateConfig(curve_maximum_lookahead_s=15.0))
+                gate = detector if kind == 'turn' else StraightGate(
+                    StraightGateConfig(start_probability=1.0), turn_gate=detector,
+                )
+                self.assertTrue(gate.start_collection(samples, 0.2)[0])
+                should_end, end = gate.end_collection(samples, 4.5)
+                self.assertTrue(should_end)
+                self.assertAlmostEqual(end, 4.0)
+                self.assertFalse(gate.last_completed_collection.should_save)
+                self.assertIsNone(gate.active_start_timestamp_s)
+
+    def test_turn_time_limits_must_be_finite(self) -> None:
+        for value in (math.inf, math.nan, 0.0, -1.0):
+            with self.subTest(value=value):
+                with self.assertRaises(ValueError):
+                    TurnGateConfig(curve_maximum_lookahead_s=value)
 
 
 class _StubRandom:
