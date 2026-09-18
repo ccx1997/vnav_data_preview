@@ -2,6 +2,49 @@
 
 本文记录本项目已经确认的训练数据读取、同步、过滤和处理方式。后续对话或代码改动只要涉及训练数据读取、同步、采样、过滤、裁剪、导出或预处理，都必须同步更新本文，记录新增结论、参数和验证结果。
 
+## 2026-09-17 指定采集任务下载、预处理与教师轨迹
+
+- 范围仅为用户指定的 `20260917174539CCx`；开始前采集目录和训练目录均不存在，执行首次下载。
+  使用 `download-task.sh --jobs 4` 完成 Meta 归属校验、规范解包和实际相机视频对齐，保留 ZIP
+  与原始视频分片。已有采集任务全部复用，既有 `frames.jsonl` 和视频 manifest 已保存保护快照。
+- 采集根目录 `/mnt/chengchangxu/data/visual_nav_mv`，训练输出根目录
+  `/mnt/chengchangxu/data/visual_nav_training`；报告和执行日志位于后者的
+  `_task_reports/20260917174539CCx/`。
+- 显式使用 `config_rule10_continuous_ep011200_sim.yaml`，配置 SHA-256
+  `212caf60c9a4969a9861ac0dee8911994ac996b0033e88592f56b0d126489246`，checkpoint SHA-256
+  `2f372ee3f204f2978d1e3466ee2742011cbaab1d66aa79861bebdfa875f13028`，预检均与最近成功批次一致。
+  使用 `vnav_teacher_rule10_history_v2` 与现有 `config.json`：batch=32、20% 精确零速重复、
+  0.5 s pose 估速、1.5 s 教师历史、1.0 s RGB 历史且不超过 10 Hz；同步门槛保持
+  50 ms / 0.05 m / 3 deg，按逐帧地图切段并保留碰撞拒绝记录。
+- 下载与源数据验证通过：58 个规范 Meta、2,363 行（全部 `P_map`）、2,362 张有效栅格、290 路
+  连续视频；58 份 manifest 均完整且采用 `hw_ts`，总窗口 495.000351 s。实际相机集合统一为
+  `cam0/cam1/cam2/cam3/cam6`，缺少推荐 `cam5` 仅记 warning；最大跨相机时长差
+  0.066667 s、最大窗口时长误差 0.066437 s。清单没有缺失分片，但按既有定长补黑策略记录了
+  46 个视频覆盖空隙，保留在 manifest 中。全部 290 路通过 ffprobe 时长/帧数检查。
+- 一键入口首次启动未传 model server 新接口所需的 `--batch`，在教师推理前报
+  `teacher service does not expose /teacher/infer_batch`，无已接受样本；该服务已自动停止，
+  失败批次和日志保留。随后通过报告目录的 `generate_teacher.py` 显式用 GPU 3、8103 端口、
+  `--batch` 启动教师，再以 `--no-start-teacher --task-id 20260917174539CCx` 调用原构建器。
+  健康检查确认 epoch 11200、独立历史 batch 接口启用、`curvature_only=false`。
+- 教师已完成：成功 run 为
+  `/mnt/chengchangxu/data/visual_nav_training/20260917174539CCx/vnav_teacher_rule10_history_v2/full/run_20260917_221344/`。
+  2,363 行中 1,261 行因路线/历史/同步等原有门槛被拒绝；1,102 个候选进入教师，接受 1,063 个，
+  39 个全部因 `teacher_rollout_collision` 拒绝。接受样本来自 31 个子任务，包含 866 个动态历史
+  和 197 个零速重复；35 次 batch 全部只执行一次 forward。原项目 `validate_run` 通过，0 错误，
+  1 个实际五路相机集合 warning。
+- 补充逐图像检查覆盖 18,585 个当前/历史 RGB 引用路径，解码失败为 0；发现 173 个整帧黑屏路径，
+  影响 87 个样本（31 个涉及当前帧，另外 56 个仅历史帧涉及）。黑屏阈值为 RGB 全图所有通道
+  像素均 `<=8`。保留原始 1,063 个 accepted 教师结果，同时在报告目录生成
+  `samples_without_black_frames.jsonl`，明确列出排除这 87 个样本后的 **976** 个 `sample_json`
+  路径；训练时应显式使用该清单，现有加载器/预览计数不会自动应用它。此检查不代表完成模糊、
+  曝光、冻结等所有视觉质量筛选。
+- 保护验证通过：原有 132 份 frames/视频 manifest 的大小、mtime 和内容哈希未变；本任务
+  3,036 个源文件的大小/mtime/inode、JSON 内容哈希及文件集合均未变。再次限定扫描结果为
+  `pending=0 / already_completed=1 / incomplete=0`。本次启动的 GPU 3 teacher 已停止，8103 释放。
+- 完整报告与验证产物：
+  `/mnt/chengchangxu/data/visual_nav_training/_task_reports/20260917174539CCx/report.md`。
+  源数据验证、教师启动修复状态与最终验证结果均已通过 `send-feishu-experiment` 成功发送飞书。
+
 ## 2026-09-14 仿真视觉数据只读统计与抽检
 
 - 2026-09-18 归档前复核：已有 JSON/JSONL/CSV 可解析，两个逐轨迹清单和 CSV 均为
