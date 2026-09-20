@@ -1,0 +1,67 @@
+{
+  "random_reference_comparison": {
+    "points": 2048,
+    "max_xy_error_px": 0.0,
+    "max_distance_error_m": 0.0
+  },
+  "image_reference_comparison": {
+    "width": 1619,
+    "height": 2162,
+    "max_channel_error": 0,
+    "changed_channels": 0
+  },
+  "real_teacher_readonly_smoke": {
+    "run": "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806",
+    "samples": 12,
+    "mapped_points": 1111,
+    "max_xy_error_px": 0.0,
+    "source_unchanged": true,
+    "tracked_files": 30,
+    "scope": "first 12 accepted cases only; no full dataset export/reprocessing"
+  },
+  "regression": {
+    "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python3 -m pytest -q processing/coordinate-converter/tests processing/training-data-builder/tests",
+    "passed": 50,
+    "failed": 0,
+    "coordinate_converter_tests": 29,
+    "existing_training_tests": 21,
+    "elapsed_s": 7.2
+  },
+  "source_sha256": {
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/run.json": "abc547bf940a111d68b30d301aa9446d416496f250fdfca4630f5af0cf031118",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/teacher_labels.jsonl": "d7b69d546140c846a568b9945f6b133ee242e4c8caac1f9d9b42a17a49cab009",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000001/sample.json": "f333978710c467d63fb01b3ce9521571f99290c1f6acec6912c8b42ad94f5d44",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000001/inputs.npz": "4d03f822c29f4262a69d32335313260d26cb9015535b19228327aefecfbdab12",
+    "/mnt/chengchangxu/projects/navi_sys_odo/dev/model_server/model_server/maps/dufu_community_map.npz": "c5d90abf926b489b36f43c8aff954a4552dd6172fa4c8b7440423a6b31996048",
+    "/mnt/chengchangxu/projects/vnav_data_preview/processing/coordinate-converter/assets/handdraw_pmap/metadata.json": "3cf81704686c59c59d755622f9a6a2433ddf0e633269a656ca8016716e76b1c1",
+    "/mnt/chengchangxu/projects/vnav_data_preview/processing/coordinate-converter/assets/handdraw_pmap/data/roads.json": "30199849f179a04772d6daf25b7cfca8d590bfef70e88a45c3b68b98de51e507",
+    "/mnt/chengchangxu/projects/vnav_data_preview/processing/coordinate-converter/assets/handdraw_pmap/original.jpg": "1a2bead0f9c4c6c056d12e7d01c9341dd8f03571027479f56e3151fba0090668",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000002/sample.json": "7feb823428c4b5dd7dedcc5a69656c52269c7937636a5dd9fca77087abdb0b89",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000002/inputs.npz": "832e09bbf610dd50cfcd0bbd126755ac33fa8eddcc31ec0936bfba9f991ae404",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000003/sample.json": "72a5364ae604953d3d2ec8fef5109cda099d3b48263730a49118948181a18a46",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000003/inputs.npz": "d8883eb71d75fce021afc426f4b419e8662793cf3c730e0fed8221bf557c2ce7",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000004/sample.json": "299c950810efd99cc88a5f58ac401d74b5809c7600913a08f68a6cee002101ad",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000004/inputs.npz": "ceafd565225daf0b05885f19fc074f537167201293528545d7a5521ba41261e2",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000005/sample.json": "8b59149c1265a448176c80d4246f91136000cda8e05eb7f06b4989c50c4626cb",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000005/inputs.npz": "7db18f6717cd0644515536cd375a112dc894dc68a15290d04fb06485a0a21d99",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000006/sample.json": "689cc4f15b771cc158b1a8f0a220e3a83c51c576955c5ab7ccdf5063887bfef5",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000006/inputs.npz": "df4f25338b039093bad07cf57ba749eb02e45a3905ceb73d71d15e20266f7f07",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000007/sample.json": "17f33c8a59eb099eac0c9ea494a4cfb5aa4d2cf87d12a0e40a4075fbec24b540",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000007/inputs.npz": "a50a1e8f27d247787d62b37507b52ad7f94c490e60c2930313f644fd45419625",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000008/sample.json": "69ccafbea275567c6e07d4296313267844aa02d30c135de143b142706e8240ca",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000008/inputs.npz": "0698ac9fef40a0f989c8006e974e7f3a7664be250f9ccf90b4638a076be099dc",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000009/sample.json": "1588c70284c5ee74f82cee1afec4890ecc38428f3545eefc55ed02bd05802b33",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000009/inputs.npz": "7e704bfb410021ca2fdd12813262622f32dbe50a5316e6e0941b30d9d0f2014f",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000010/sample.json": "d33ec37d2dbc3ccaf4dfe9c23decadc9948c77e7151136d9f16990dcae2b6e36",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000010/inputs.npz": "ab6c0ed04d3c145317b2e12bd8a4097a80b63700161f1bf6738de77077868629",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000011/sample.json": "be8487354e4539698bb339ffcb1561f991bca92ecad185b6e896c40cf38b1d77",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000011/inputs.npz": "d0998213e1a7963a68c70088ac4055bcbca850f96be03ef673a107a16b014c0f",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000012/sample.json": "0cbef930cb5d1e438812759b0b66bfe8573d3883ba1f74693562dcb8e100082f",
+    "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806/cases/sample_0000012/inputs.npz": "7a0b7a653bad0ce7980b82b04fa005b2dc13f5534c21e664bd55b637e1d4893d"
+  },
+  "reference_implementation_sha256": {
+    "/mnt/chengchangxu/projects/visual_navigation_e2e_bak/src/visual_navigation_e2e/pixel_coordinates.py": "a60a79116526f6c819155a9f1f6b6ccb19bfd46c55de7a066dc1f7dd9f694b74",
+    "/mnt/chengchangxu/projects/visual_navigation_e2e_bak/scripts/build_pose_history_v4_pixels.py": "f00cd81aa1c2c5ea195ca015496a3037daeea19886ce25ed47b07c0842632dea"
+  },
+  "notification": "Feishu send-feishu-experiment: regression result sent successfully"
+}

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "tests": 78,
+  "real_reuse_tasks": 2,
+  "real_reuse_accepted": 1775,
+  "real_reuse_without_black_frames": 1682,
+  "real_reuse_generated_or_downloaded": false,
+  "stdout_equals_result_file": true,
+  "date_discovery_passed": true,
+  "date_api_compatibility": "timezone-aware bounds converted to unix seconds before calling IDs API",
+  "runtime_report_dir": "/mnt/chengchangxu/data/visual_nav_training/_pipeline_runs/2026-09-20T200127_0800_0c13ee3d"
+}

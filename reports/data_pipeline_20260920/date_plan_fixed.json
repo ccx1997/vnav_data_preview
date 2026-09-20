@@ -1,0 +1,47 @@
+{
+  "schema_version": "vnav_data_pipeline_v1",
+  "status": "dry_run",
+  "selection": {
+    "task_ids": [
+      "20260920122356WIt",
+      "202609201240128Up"
+    ],
+    "since": "2026-09-20T00:00:00+08:00",
+    "until": "2026-09-20T20:07:23.434588+08:00",
+    "robot": null
+  },
+  "started_at": "2026-09-20T20:07:26+08:00",
+  "tasks": [
+    {
+      "task_id": "20260920122356WIt",
+      "status": "planned",
+      "source_data_dir": "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt",
+      "annotation_data_dir": "/mnt/chengchangxu/data/visual_nav_training/20260920122356WIt",
+      "teacher_data_dir": "/mnt/chengchangxu/data/visual_nav_training/20260920122356WIt/vnav_teacher_rule10_history_v2/full/run_20260920_172826",
+      "pixel_data_dir": "/mnt/chengchangxu/data/visual_nav_training/20260920122356WIt/pixel_exports/run_20260920_172826",
+      "planned_actions": {
+        "source": "validate_and_reuse",
+        "teacher": "validate_and_reuse",
+        "pixels": "validate_and_reuse"
+      }
+    },
+    {
+      "task_id": "202609201240128Up",
+      "status": "planned",
+      "source_data_dir": "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up",
+      "annotation_data_dir": "/mnt/chengchangxu/data/visual_nav_training/202609201240128Up",
+      "teacher_data_dir": "/mnt/chengchangxu/data/visual_nav_training/202609201240128Up/vnav_teacher_rule10_history_v2/full/run_20260920_174149",
+      "pixel_data_dir": "/mnt/chengchangxu/data/visual_nav_training/202609201240128Up/pixel_exports/run_20260920_174149",
+      "planned_actions": {
+        "source": "validate_and_reuse",
+        "teacher": "validate_and_reuse",
+        "pixels": "validate_and_reuse"
+      }
+    }
+  ],
+  "counts": {
+    "selected": 2,
+    "completed": 0,
+    "failed": 0
+  }
+}

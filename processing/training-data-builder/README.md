@@ -122,6 +122,12 @@ pose 估速一致性、RGB 文件与 PTS 频率、教师 forward 次数、命令
 产物。四个历史目录 dry-run 为 `pending=3 / incomplete=1`，五路任务的八个子任务均保留明确
 `video_camera_set_nonstandard` warning。
 
+## 教师数据完成后的像素导出
+
+使用独立的 [`../coordinate-converter/`](../coordinate-converter/) 第四步，将当前 `grid_pose`、
+教师历史 pose 与 NPZ 的前向路线导出为全局栅格像素；`P_map` 同时生成道路配对的手绘像素字段。
+保持原 run 只读，不重新调用教师，不改写世界坐标 NPZ；新输出包含坐标契约、对齐手绘图和哈希审计。
+
 ## 测试
 
 ```bash

@@ -1,9 +1,36 @@
 # 数据下载与处理
 
+## 四步一键处理
+
+统一入口 [`run-data-pipeline.sh`](run-data-pipeline.sh) 接受任务 ID、ID 列表或起始日期，完成下载、
+预处理、ep011200 教师轨迹及像素坐标导出。完整结果复用，已有损坏数据只报告；stdout 返回包含
+源目录、标注根目录、教师 run 和像素目录的 JSON，日志/进度写入独立报告目录及 stderr。
+
+```bash
+./processing/run-data-pipeline.sh --task-ids 20260920122356WIt 202609201240128Up
+./processing/run-data-pipeline.sh --since 2026-09-20 --result-json ./results.json
+```
+
+日期边界、输出字段、环境选项和复用规则见 [`data_pipeline/README.md`](data_pipeline/README.md)。
+
+## 单独下载和对齐
+
 `algo-handoff-tools/download-task.sh` 用于按 task 下载结构化数据、栅格图和 OSS 视频，校验 Meta 的
 task/subtask 归属并统一解压到 `meta/unpacked/meta_<sub_task_id>/`，再按子任务把实际存在的各相机
 合并为等长连续 MP4。默认按 keep 窗定长、缺段补黑；硬件时间完整时使用车上采集钟对齐，否则整批
 回退墙钟。相机不固定为六路；偏离推荐相机集合时任务仍可完成，但日志末尾会明确输出 `WARNING`。
+
+## 世界坐标转像素坐标
+
+[`coordinate-converter/`](coordinate-converter/) 是独立第四步：读取已完成教师 run 或世界坐标
+JSONL，输出各地图栅格像素及 `P_map` 对应的手绘像素，并生成对齐图像、坐标约定与哈希审计。
+输出必须是新目录，复用已有教师结果和采集数据。单点和批量接口、地图参数及命令示例见其 README。
+
+```bash
+python3 processing/coordinate-converter/export_pixels.py \
+  --run /path/to/existing/run \
+  --output /path/to/pixel_exports/new_run
+```
 
 ## 训练数据制作
 

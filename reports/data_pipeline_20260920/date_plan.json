@@ -1,0 +1,6 @@
+{
+  "schema_version": "vnav_data_pipeline_v1",
+  "status": "failed",
+  "error": "PipelineError: 日期任务查询失败（退出码 1），请检查凭据/日期/服务",
+  "tasks": []
+}

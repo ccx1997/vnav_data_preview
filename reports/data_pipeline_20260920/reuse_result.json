@@ -1,0 +1,154 @@
+{
+  "schema_version": "vnav_data_pipeline_v1",
+  "status": "success",
+  "selection": {
+    "task_ids": [
+      "20260920122356WIt",
+      "202609201240128Up"
+    ],
+    "since": null,
+    "until": null,
+    "robot": null
+  },
+  "started_at": "2026-09-20T20:01:27+08:00",
+  "tasks": [
+    {
+      "task_id": "20260920122356WIt",
+      "status": "completed",
+      "stage": "done",
+      "source_data_dir": "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt",
+      "annotation_data_dir": "/mnt/chengchangxu/data/visual_nav_training/20260920122356WIt",
+      "teacher_data_dir": "/mnt/chengchangxu/data/visual_nav_training/20260920122356WIt/vnav_teacher_rule10_history_v2/full/run_20260920_172826",
+      "pixel_data_dir": "/mnt/chengchangxu/data/visual_nav_training/20260920122356WIt/pixel_exports/run_20260920_172826",
+      "report_dir": "/mnt/chengchangxu/data/visual_nav_training/_pipeline_runs/2026-09-20T200127_0800_0c13ee3d/20260920122356WIt",
+      "reused": {
+        "source": true,
+        "teacher": true,
+        "pixels": true
+      },
+      "counts": {
+        "candidate_count": 852,
+        "accepted_count": 835,
+        "rejected_count": 17,
+        "validation": {
+          "passed": true,
+          "error_count": 0,
+          "warning_count": 1,
+          "errors": [],
+          "warnings": [
+            {
+              "scope": "run",
+              "reason": "video_camera_set_nonstandard",
+              "actual": [
+                "cam0",
+                "cam1",
+                "cam2",
+                "cam3",
+                "cam6"
+              ],
+              "recommended": [
+                "cam0",
+                "cam1",
+                "cam2",
+                "cam3",
+                "cam5",
+                "cam6"
+              ]
+            }
+          ]
+        },
+        "without_black_frames_count": 791,
+        "pixel_count": 835
+      },
+      "pixel_manifest": "/mnt/chengchangxu/data/visual_nav_training/20260920122356WIt/pixel_exports/run_20260920_172826/samples.jsonl",
+      "teacher_labels": "/mnt/chengchangxu/data/visual_nav_training/20260920122356WIt/vnav_teacher_rule10_history_v2/full/run_20260920_172826/teacher_labels.jsonl",
+      "samples_without_black_frames": "/mnt/chengchangxu/data/visual_nav_training/_pipeline_runs/2026-09-20T200127_0800_0c13ee3d/20260920122356WIt/samples_without_black_frames.jsonl",
+      "source_counts": {
+        "subtask_count": 37,
+        "row_count": 1382,
+        "grid_count": 1381,
+        "video_count": 185,
+        "map_names": {
+          "P_map": 1382
+        }
+      },
+      "source_unchanged": true,
+      "notification": {
+        "status": "disabled"
+      }
+    },
+    {
+      "task_id": "202609201240128Up",
+      "status": "completed",
+      "stage": "done",
+      "source_data_dir": "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up",
+      "annotation_data_dir": "/mnt/chengchangxu/data/visual_nav_training/202609201240128Up",
+      "teacher_data_dir": "/mnt/chengchangxu/data/visual_nav_training/202609201240128Up/vnav_teacher_rule10_history_v2/full/run_20260920_174149",
+      "pixel_data_dir": "/mnt/chengchangxu/data/visual_nav_training/202609201240128Up/pixel_exports/run_20260920_174149",
+      "report_dir": "/mnt/chengchangxu/data/visual_nav_training/_pipeline_runs/2026-09-20T200127_0800_0c13ee3d/202609201240128Up",
+      "reused": {
+        "source": true,
+        "teacher": true,
+        "pixels": true
+      },
+      "counts": {
+        "candidate_count": 954,
+        "accepted_count": 940,
+        "rejected_count": 14,
+        "validation": {
+          "passed": true,
+          "error_count": 0,
+          "warning_count": 1,
+          "errors": [],
+          "warnings": [
+            {
+              "scope": "run",
+              "reason": "video_camera_set_nonstandard",
+              "actual": [
+                "cam0",
+                "cam1",
+                "cam2",
+                "cam3",
+                "cam6"
+              ],
+              "recommended": [
+                "cam0",
+                "cam1",
+                "cam2",
+                "cam3",
+                "cam5",
+                "cam6"
+              ]
+            }
+          ]
+        },
+        "without_black_frames_count": 891,
+        "pixel_count": 940
+      },
+      "pixel_manifest": "/mnt/chengchangxu/data/visual_nav_training/202609201240128Up/pixel_exports/run_20260920_174149/samples.jsonl",
+      "teacher_labels": "/mnt/chengchangxu/data/visual_nav_training/202609201240128Up/vnav_teacher_rule10_history_v2/full/run_20260920_174149/teacher_labels.jsonl",
+      "samples_without_black_frames": "/mnt/chengchangxu/data/visual_nav_training/_pipeline_runs/2026-09-20T200127_0800_0c13ee3d/202609201240128Up/samples_without_black_frames.jsonl",
+      "source_counts": {
+        "subtask_count": 33,
+        "row_count": 1500,
+        "grid_count": 1499,
+        "video_count": 165,
+        "map_names": {
+          "P_map": 1500
+        }
+      },
+      "source_unchanged": true,
+      "notification": {
+        "status": "disabled"
+      }
+    }
+  ],
+  "report_dir": "/mnt/chengchangxu/data/visual_nav_training/_pipeline_runs/2026-09-20T200127_0800_0c13ee3d",
+  "result_json": "/mnt/chengchangxu/data/visual_nav_training/_pipeline_runs/2026-09-20T200127_0800_0c13ee3d/result.json",
+  "counts": {
+    "selected": 2,
+    "completed": 2,
+    "failed": 0
+  },
+  "completed_at": "2026-09-20T20:05:26+08:00"
+}

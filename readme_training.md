@@ -2,6 +2,151 @@
 
 本文记录本项目已经确认的训练数据读取、同步、过滤和处理方式。后续对话或代码改动只要涉及训练数据读取、同步、采样、过滤、裁剪、导出或预处理，都必须同步更新本文，记录新增结论、参数和验证结果。
 
+## 2026-09-20 新增统一四阶段脚本
+
+- 入口：[`processing/run-data-pipeline.sh`](processing/run-data-pipeline.sh)，Python 入口为
+  [`processing/run_data_pipeline.py`](processing/run_data_pipeline.py)。支持单个 ID、位置参数列表、
+  重复 `--task-id`、`--task-ids` 空格/逗号/JSON 数组，以及 `--since/--date` 或单个日期位置参数。
+  ID 稳定去重；不同选择模式互斥。完整选项和输出示例见
+  [`processing/data_pipeline/README.md`](processing/data_pipeline/README.md)。
+- 日期模式包含起始日期零点，默认查询至当前 `Asia/Shanghai` 时间，可指定 `--until` 和 `--robot`。
+  复用 `list-task-ids.py` 完整时间窗接口；查询截断时在下载前失败，空查询不会误处理所有本地任务。
+  实测接口拒绝带 `+08:00` 的 ISO 字符串（HTTP 400），故在解析时区后传 Unix 秒，JSON 中仍保存
+  ISO 时间。修正后 `2026-09-20 00:00` 至本次执行时刻成功发现 WIt/8Up 两个任务。
+- 四阶段复用现有下载器、训练构建器和像素转换器；默认 ep011200、Rule-10 v2 与既有 config.json，
+  不修改同步、路线、历史、20% 零速、batch=32、碰撞或坐标规则。源目录和输出根目录可配置，
+  必须互不包含。依赖预检先于云端查询/下载，不回退旧教师。
+- 新任务先检查云端停止采集、视频 ready、object_key 和修订号，再首次下载；已有源目录只读验证，
+  完整则复用，不完整则保留现场报错。已有成功教师与像素结果分别验证复用，只补缺失阶段；
+  不自动重打成功标签或覆盖损坏像素。人工地图、裁剪或源行变化触发失败。
+- 独立 `_pipeline_state/<task>/<run>.json` 绑定源文件集合/元信息/JSON 哈希和配置。首次接入旧 run
+  依据原 provenance、时间/地图/mtime、逐样本校验建立基线，不能追溯旧流水线没有保存的历史源哈希。
+  默认选空余 GPU/端口，显式以 `--batch` 启动教师，构建器使用 `auto_start_teacher=False`；
+  复用服务时核对 batch 能力、checkpoint 哈希与真实启动 YAML，只停止本次自启进程。
+- stdout 仅输出一个 `vnav_data_pipeline_v1` JSON，进度写 stderr。每任务返回 `source_data_dir`、
+  `annotation_data_dir`（任务标注根目录）、`teacher_data_dir`、`pixel_data_dir`、标签/像素 Manifest、
+  无黑帧清单、计数、验证结果、复用标记及报告路径；失败包含 `stage/error` 并继续后续任务。
+  非 dry-run 另存 `_pipeline_runs/<batch>/result.json`；`--result-json` 可另存到数据根目录之外。
+  成功/预览退出 0、任务失败退出 1、预检/参数错误退出 2、中断退出 130；中断保留完成条目和现场。
+- 新脚本的 RGB 检查覆盖历史引用和每个 case 的当前图像，部分路径为指向同一图像内容的硬链接，
+  因而路径检查数量可能高于先前仅检查历史引用的脚本；黑帧阈值仍为所有通道均 `<=8`。
+  主教师/像素数据保留全部 accepted，额外无黑帧清单需显式使用。默认技能和 webhook 可用时逐任务
+  通知飞书，支持 `--no-feishu`；dry-run 不通知。通知失败不触发数据重试。
+- 验证：新入口 **28 项** + 原训练 **21 项** + 像素转换 **29 项**，合计 **78/78 通过**，覆盖输入、
+  时区/日期查询、截断/空集合、缺失依赖、云端修订、复用、源地图/裁剪保护、部分失败、中断与锁、
+  教师清理、像素身份/哈希/坐标往返和纯 JSON stdout。
+- 真实复用验证指定 WIt/8Up，两个任务均 `source/teacher/pixels=true`，完整验证 835/940 个接受样本
+  和对应像素，额外无黑帧清单 791/891 条，源文件前后未变。未下载、重生成教师或重导出这两份数据。
+  新数据执行分支使用隔离测试替身验证调用顺序、授权范围、失败处理和资源清理，未另拉真实新任务。
+- [真实复用 JSON](reports/data_pipeline_20260920/reuse_result.json)、
+  [日期查询计划](reports/data_pipeline_20260920/date_plan_fixed.json)、
+  [78 项回归日志](reports/data_pipeline_20260920/regression_final.log)。
+- 提交前复验：使用 `deepseek_train` 环境并设置 `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1`，运行
+  `processing/data_pipeline/tests`、`processing/coordinate-converter/tests` 和
+  `processing/training-data-builder/tests`，**78/78 通过（4.01 s）**；本次仅运行隔离回归测试。
+
+## 2026-09-20 指定两份采集数据的完整处理
+
+- 范围仅限 `20260920122356WIt`、`202609201240128Up`；开始前两任务的采集和训练目录均不存在。
+  首次下载使用 `download-task.sh --jobs 4`，保留 ZIP 与原始视频分片；既有任务不下载、不解包、
+  不重新处理，保护本地人工 `map_name` 和裁剪。报告各自保存于
+  `/mnt/chengchangxu/data/visual_nav_training/_task_reports/<task_id>/`。
+- 沿用 `vnav_teacher_rule10_history_v2` 和现有 `config.json`，显式指定 ep011200 教师与
+  `--batch`：batch=32、20% 零速重复、0.5 s pose 估速、1.5 s 教师历史、1.0 s RGB 历史且最高
+  10 Hz；同步门槛 50 ms / 0.05 m / 3 deg。限定 task ID 构建，只停止本次自启教师。
+- 第四步对成功 run 的全部 accepted case 使用 `coordinate-converter/export_pixels.py`，
+  输出到训练任务目录下独立的 `pixel_exports/<run_name>/`；采用左下像素中心坐标及既有 P_map
+  手绘映射约定，保留世界坐标源 run、yaw、速度指令与时间戳。
+- 验证计划：云端完整性、源 Meta/PNG/连续视频、逐样本 `validate_run`、RGB 解码与全黑检查、
+  像素转换审计和源文件前后保护核验。无黑帧清单单独保存，不隐式缩减教师或像素导出范围。
+- 云端 350/350 路视频就绪后，两任务首次下载与对齐均成功。源数据验证共 70 个子任务、
+  2,882 行（全部 `P_map`）、2,880 张有效栅格、350 路视频，全部使用 `hw_ts`；保留视频清单
+  中的 24/26 个覆盖空隙及既有定长补黑规则。已保存 312 份既有 frames/视频 manifest 的保护快照。
+- `WIt` 已于 17:41 完成四步：`run_20260920_172826` 共 852 个候选、835 个接受、17 个碰撞拒绝；
+  逐样本教师验证 0 错误，唯一 warning 为实际五路相机。RGB 解码失败 0，79 个全黑图像路径影响
+  44 个样本，无黑帧清单 791 条。独立像素目录
+  `/mnt/chengchangxu/data/visual_nav_training/20260920122356WIt/pixel_exports/run_20260920_172826/`
+  包含全部 835 条 accepted；坐标往返最大误差 `4.2633e-14 m`，yaw/命令/时间戳及源文件未变。
+- `8Up` 已于 18:00 完成四步：`run_20260920_174149` 共 954 个候选、940 个接受、14 个碰撞拒绝；
+  逐样本教师验证 0 错误，唯一 warning 同为实际五路相机。RGB 解码失败 0，48 个全黑图像路径
+  影响 49 个样本，无黑帧清单 891 条。独立像素目录
+  `/mnt/chengchangxu/data/visual_nav_training/202609201240128Up/pixel_exports/run_20260920_174149/`
+  包含全部 940 条 accepted；坐标往返最大误差同为 `4.2633e-14 m`。
+- 两任务合计 **1,806 个候选、1,775 个接受、31 个碰撞拒绝、1,775 条像素记录**；57 次 teacher
+  batch 均仅执行一次 forward。另有 530/546 行源记录被原有路线、历史、同步等预处理门槛拒绝；
+  `8Up_19` 的 20 行均未成为候选，因此接受样本实际使用该任务其余 32 个子任务的 160 路视频。
+  这不影响完整下载和验证全部 33 个子任务的 165 路源视频。
+- 共检查 32,607 个 RGB 当前/历史引用路径，解码失败 0；全黑阈值为所有 RGB 通道像素均 `<=8`。
+  93 个样本涉及全黑帧，额外无黑帧清单共 **1,682 条**，分别位于各任务报告目录的
+  `samples_without_black_frames.jsonl`。它们没有自动过滤原教师 run 或像素导出，也不代表已做
+  模糊、曝光、冻结等完整画质筛选。
+- 像素验证覆盖全部接受样本：几何坐标往返、yaw/命令/时间戳/RGB 引用保持、导出文件 SHA-256
+  均通过。手绘投影距离统计含重复历史和路线点，WIt 的 p95/max 为 `3.9879/6.5906 m`，8Up 为
+  `4.1101/4.9027 m`；沿用既有道路投影规则，不新增离路过滤。
+- 312 份既有 frames/视频 manifest 与两任务全部 3,669 个源文件保护核验通过；像素转换读取的
+  教师源文件前后哈希一致。两个本次自启 teacher 均已停止；各任务限定 dry-run 均为
+  `pending=0 / already_completed=1 / incomplete=0`。源数据验收和最终结果已分别成功同步飞书。
+- 报告：
+  [WIt 完整报告](/mnt/chengchangxu/data/visual_nav_training/_task_reports/20260920122356WIt/report.md)、
+  [8Up 完整报告](/mnt/chengchangxu/data/visual_nav_training/_task_reports/202609201240128Up/report.md)。
+  报告目录保存 preflight、pipeline_config、源保护快照、教师验证、RGB 质量、像素验证与全部执行日志。
+
+## 2026-09-20 新增第四步：世界坐标导出为指定地图像素
+
+- 新入口：[`processing/coordinate-converter/export_pixels.py`](processing/coordinate-converter/export_pixels.py)。
+  `--run` 显式读取一个已有成功教师 run 的 accepted case，或 `--input` 读取一个或多个世界坐标
+  JSONL；`--output` 必须是源目录外的新目录。独立导出，不自动接入下载或教师重跑，不覆盖已有
+  采集数据、人工 `map_name`、裁剪结果或教师 run。不自动应用外部无黑帧清单；保持调用者选择的
+  输入范围，不能将像素导出当成重新筛选或教师质量验证。
+- 世界坐标转换公式：`xy_px=(xy_world-origin_xy)/resolution_m-0.5`，左下像素中心为原点，
+  x 向右、y 向上；读取图像用 `column=x_px,row=height-1-y_px`。各地图参数默认由原训练配置的
+  `map_mapping` 对应全局 NPZ 读取，可用 `--static-map-root` 或 `--maps-json` 指定。
+  未知地图/非有限坐标/错误形状/已转换数据报错，不猜测坐标系。
+- 教师 run 适配：`reference_pose ← sample.grid_pose`，`raw_poses ← inputs.npz.teacher_history_pose`，
+  `route ← inputs.npz.forward_route`；历史时间戳另存 `raw_pose_stamps_s`。源 yaw 弧度值原样保留，
+  不旋转、不归一化；命令保留 m/s、rad/s 和秒。只转换这三组全局位置，局部 teacher rollout、
+  占据图和原 NPZ 保留源含义。此输出为独立坐标 Manifest，不能替换原 run 用于旧预览/验证器。
+- `P_map` 增加 `handdraw_pixel_xy / handdraw_raw_pixel_xy / handdraw_route_pixel_xy`，字段按
+  实际输入几何字段生成；其他地图对应手绘字段与 `handdraw_map` 为 `null`。复用用户指定的
+  `visual_navigation_e2e_bak` 道路配对和 `HanddrawMapper.map_many()`：最近道路中心线 →
+  岔路口 4 m/普通节点 1.5 m/入口 1 m 吸附（每端最多 45% 道路长度）→ 对应道路弧长进度 →
+  JPG → 对齐后手绘像素。保留 JPG `37–35`（P_map `38–36`），排除 JPG `35–47`（P_map `36–48`）。
+  越界/离路点仍按参考逻辑投影，不新增过滤阈值；输出全体映射点（含重复点）的距离统计，单位米。
+- 原始图像、道路标注及元数据已原样迁入本项目，运行不依赖备份仓库。检查资产哈希和 P_map
+  尺寸/原点/分辨率一致性；原图 `1441×1079` 逆时针 90°、精确 1.5 倍采样，输出 `1619×2162`。
+  原 JPG 像素 `(u,v)` 对应 `handdraw_xy=(1.5*v+0.25,1.5*u+0.75)`，不能改成取整尺寸后的 resize。
+- 输出：`samples.jsonl`（或原输入 JSONL 文件名）、`coordinate_schema.json`、
+  `pixel_coordinate_audit.json`，涉及 P_map 时另写 `handdraw_pmap/aligned.png/.jpg/metadata.json`。
+  `source_*`/`inputs_npz_path` 仅引用原坐标资产；源数据不复制改写或建立可写目录链接。
+  校验实际读取文件的前后 SHA-256，检查接受数量、样本身份/地图、JSON/NPZ 历史一致性；失败
+  不发布部分结果、不自动修复源数据，既有输出拒绝覆盖。
+- 验证：新增 29 项 + 原训练流水线 21 项，共 **50/50 通过**。2,048 个固定随机测试点与参考实现
+  的 XY/投影距离最大误差均为 **0**；生成图与参考 `aligned.png` 逐像素一致。只读抽查任务
+  `20260918200506GCy` 已有 run 前 12 个 accepted case，共 **1,111 个映射点**，最大误差 **0**，
+  涉及 30 个源/地图/资产文件的 SHA-256 前后一致。未进行已有任务全量导出或重新处理。
+  首轮 2 个测试断言修正了 JPG/P_map 编号差异和独立插值轴交换的舍入容差；迁移图像本身与参考
+  图逐像素相同。验证结果已通过 `send-feishu-experiment` 通知飞书。
+- [使用说明与命令](processing/coordinate-converter/README.md)、
+  [验证报告及源文件哈希](reports/coordinate_converter_20260920.json)。
+
+
+<!-- task:20260918200506GCy:start -->
+## 2026-09-18 指定任务 `20260918200506GCy` 下载、预处理与教师轨迹
+
+- 当前状态：**completed**；更新时间 `2026-09-18T22:27:01.294814+08:00`。
+- 完成并验证通过：1750 个候选、1727 个接受、23 个拒绝；无黑帧清单 1619 条，源文件保护通过。
+- 本机后台轮询间隔为 1,200 秒；仅在全部云端视频 ready、有 object_key、修订号一致且子任务/相机集合完整后开始。初次见到 54 个子任务、270 路视频；缺少推荐 cam5 不阻断实际五路处理。
+- 仅首次下载本任务，调用 `download-task.sh --jobs 4`；保留 ZIP/原始分片。已有任务复用；本地不完整现场停止并报告，不刷新、重新解包或覆盖 frames/map_name/裁剪。
+- 教师显式使用 ep011200、`--batch`、`vnav_teacher_rule10_history_v2`。batch=32、20% 零速重复、0.5 s pose 估速、1.5 s 教师历史、1.0 s RGB 历史/最高 10 Hz；同步门槛 50 ms/0.05 m/3 deg。运行时选空余 GPU 和空闲端口，结束只停止本次自启服务。
+- 验证顺序：源 Meta/PNG/全部连续 MP4 → 原项目逐样本 validate_run → RGB 解码与全黑检查（所有通道均 <=8）→ 源文件保护核验。完整标签保留，额外生成 `samples_without_black_frames.jsonl`；训练需显式采用该清单。
+- 预检已核对教师配置/权重 SHA-256 与上次成功批次一致；检查脚本、cloud readiness 判定及源数据保护快照记录在报告目录。未就绪期间不启动教师，不写源采集目录；完成或需要人工处理时通过 send-feishu-experiment 通知飞书。
+- 后台编排验证：4 份脚本语法通过，9/9 就绪判断检查通过（覆盖未就绪、无对象键、旧修订、缺相机、重复项、采集中、空集合和截断）；已有采集数据的 204 份 frames/视频 manifest 已保存大小、mtime、inode 与 SHA-256 保护快照。这些是编排预检，尚不代表目标数据验收完成。
+- 报告目录：`/mnt/chengchangxu/data/visual_nav_training/_task_reports/20260918200506GCy`；实时状态 `state.json`、轮询历史 `events.jsonl`、后台日志 `worker.log`。
+- 成功产物：`/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806`；候选 1750，接受 1727，拒绝 23。
+- 验证：`{"passed": true, "error_count": 0, "warning_count": 1, "errors": [], "warnings": [{"scope": "run", "reason": "video_camera_set_nonstandard", "actual": ["cam0", "cam1", "cam2", "cam3", "cam6"], "recommended": ["cam0", "cam1", "cam2", "cam3", "cam5", "cam6"]}]}`；源文件未变 `True`；无黑帧清单 1619 条。
+
+<!-- task:20260918200506GCy:end -->
+
 ## 2026-09-18 Gate precision 与 recall 联合修正（当前规则）
 
 - 撤销会降低召回的 2 秒弧线硬上限，恢复原有最多 15 秒、最多 1 米的曲率观测范围，

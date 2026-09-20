@@ -1,0 +1,49 @@
+{
+  "coordinate_frame": "cartesian_pixel",
+  "origin": "center of bottom-left pixel",
+  "axes": "x_right_y_up",
+  "position_unit": "pixel",
+  "resolution_m": 0.1,
+  "width": 1619,
+  "height": 2162,
+  "original_size": [
+    1441,
+    1079
+  ],
+  "original_raster_to_aligned_cartesian": [
+    [
+      0,
+      1.5,
+      0.25
+    ],
+    [
+      1.5,
+      0,
+      0.75
+    ]
+  ],
+  "rotation_ccw_degrees": 90,
+  "exact_scale": 1.5,
+  "junction_snap_m": 4.0,
+  "ordinary_snap_m": 1.5,
+  "entrance_snap_m": 1.0,
+  "max_endpoint_fraction": 0.45,
+  "original_sha256": "1a2bead0f9c4c6c056d12e7d01c9341dd8f03571027479f56e3151fba0090668",
+  "jpg_sha256": "b62c714f3616e26655a85714ee4cdd16b8231f4db3bc03a157bdc7182fa41f75",
+  "roads_sha256": "30199849f179a04772d6daf25b7cfca8d590bfef70e88a45c3b68b98de51e507",
+  "training_pmap": {
+    "path": "/mnt/chengchangxu/projects/navi_sys_odo/dev/model_server/model_server/maps/dufu_community_map.npz",
+    "sha256": "c5d90abf926b489b36f43c8aff954a4552dd6172fa4c8b7440423a6b31996048",
+    "height": 2908,
+    "width": 1736,
+    "resolution_m": 0.1,
+    "origin_xy": [
+      -84.30652770996093,
+      -154.6760009765625
+    ]
+  },
+  "road_map_note": "Road annotations use the same dimensions, origin and resolution as the training map; occupancy revisions differ.",
+  "mapping": "nearest pmap centerline, endpoint attraction, paired JPG arc progress; yaw is not transferred",
+  "pixel_center_formula": "x_px=(world_x-origin_x)/resolution_m-0.5; y_px=(world_y-origin_y)/resolution_m-0.5",
+  "raster_formula": "column=x_px; row=height-1-y_px"
+}
