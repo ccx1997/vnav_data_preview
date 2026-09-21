@@ -1,0 +1,531 @@
+{
+  "sources": 159,
+  "source_files_unchanged": 640,
+  "source_issues": [
+    {
+      "directory": "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_50",
+      "error": "non-single or inconsistent keep window; do not bridge cuts"
+    }
+  ],
+  "audit": [
+    {
+      "id": "20260917174539CCx_40",
+      "task_id": "20260917174539CCx",
+      "index": 40,
+      "sampling": "random",
+      "anonymous_id": "A01",
+      "label": "turn",
+      "confidence": "high",
+      "evidence_zh": "前约 2 秒形成可辨认的连续右弧，约 1.5 米内航向累计改变近 28°，随后进入稳定直线；相对端点连线外凸约 25 厘米，不是往返的小摆动。",
+      "turn_core_time_ranges_s": [
+        [
+          0.35,
+          1.85
+        ]
+      ],
+      "current_saved": true,
+      "agrees": true
+    },
+    {
+      "id": "20260918200506GCy_52",
+      "task_id": "20260918200506GCy",
+      "index": 52,
+      "sampling": "random",
+      "anonymous_id": "A02",
+      "label": "turn",
+      "confidence": "high",
+      "evidence_zh": "前半段先向一侧弯、再持续反向弯，形成宽缓 S 形；约 7.4 米行程相对端点连线外凸约 1.1 米，航向先升约 22° 再降到约 -25°。",
+      "turn_core_time_ranges_s": [
+        [
+          0.3,
+          2.3
+        ],
+        [
+          2.5,
+          6.3
+        ]
+      ],
+      "current_saved": true,
+      "agrees": true
+    },
+    {
+      "id": "202609201240128Up_20",
+      "task_id": "202609201240128Up",
+      "index": 20,
+      "sampling": "targeted",
+      "anonymous_id": "A03",
+      "label": "straight",
+      "confidence": "high",
+      "evidence_zh": "约 3.9 米路径近直线，横向偏离只在约 -2 至 1 厘米间波动；航向的小幅修正没有形成有意义的弯道。",
+      "turn_core_time_ranges_s": [],
+      "current_saved": false,
+      "agrees": true
+    },
+    {
+      "id": "20260918200506GCy_5",
+      "task_id": "20260918200506GCy",
+      "index": 5,
+      "sampling": "random",
+      "anonymous_id": "A04",
+      "label": "straight",
+      "confidence": "high",
+      "evidence_zh": "约 5.3 米前进中只有约 6.5 厘米的浅偏移后回正，航向小幅来回修正，等比例 XY 仍表现为近直线。",
+      "turn_core_time_ranges_s": [],
+      "current_saved": false,
+      "agrees": true
+    },
+    {
+      "id": "20260917174539CCx_36",
+      "task_id": "20260917174539CCx",
+      "index": 36,
+      "sampling": "random",
+      "anonymous_id": "A05",
+      "label": "turn",
+      "confidence": "high",
+      "evidence_zh": "前进约 2.3 米时从斜向逐渐转为接近水平，持续右转约 43°；形成明显弧形后停住，后半段静止不抵消此前拐弯。",
+      "turn_core_time_ranges_s": [
+        [
+          1.05,
+          2.6
+        ]
+      ],
+      "current_saved": true,
+      "agrees": true
+    },
+    {
+      "id": "20260920122356WIt_18",
+      "task_id": "20260920122356WIt",
+      "index": 18,
+      "sampling": "random",
+      "anonymous_id": "A06",
+      "label": "straight",
+      "confidence": "medium",
+      "evidence_zh": "约 22.8 米整体路线近直线；中前段宽缓漂移约 27 厘米，随后回到原走向，航向仅几度的纠偏，未形成清楚的转弯或避障绕行形状。",
+      "turn_core_time_ranges_s": [],
+      "current_saved": false,
+      "agrees": true
+    },
+    {
+      "id": "20260920122356WIt_31",
+      "task_id": "20260920122356WIt",
+      "index": 31,
+      "sampling": "random",
+      "anonymous_id": "A07",
+      "label": "straight",
+      "confidence": "high",
+      "evidence_zh": "约 5.7 米路径近直线，横向仅厘米级不规则摆动，航向在约 2° 范围内修正。",
+      "turn_core_time_ranges_s": [],
+      "current_saved": false,
+      "agrees": true
+    },
+    {
+      "id": "202609201240128Up_22",
+      "task_id": "202609201240128Up",
+      "index": 22,
+      "sampling": "random",
+      "anonymous_id": "A08",
+      "label": "straight",
+      "confidence": "high",
+      "evidence_zh": "约 5.7 米路径上的横向偏离约正负 2.5 厘米；虽有先增后减的几度航向变化，但几何形状仍是局部修正的直线。",
+      "turn_core_time_ranges_s": [],
+      "current_saved": false,
+      "agrees": true
+    },
+    {
+      "id": "20260917174539CCx_19",
+      "task_id": "20260917174539CCx",
+      "index": 19,
+      "sampling": "random",
+      "anonymous_id": "A09",
+      "label": "turn",
+      "confidence": "high",
+      "evidence_zh": "开头约 0.6 米低速段连续转向约 60°，XY 起步弧随后接稳定直线；短距离中的持续转向不能被全段近直的外观掩盖。",
+      "turn_core_time_ranges_s": [
+        [
+          0.2,
+          3.8
+        ]
+      ],
+      "current_saved": true,
+      "agrees": true
+    },
+    {
+      "id": "20260917174539CCx_26",
+      "task_id": "20260917174539CCx",
+      "index": 26,
+      "sampling": "random",
+      "anonymous_id": "A10",
+      "label": "straight",
+      "confidence": "high",
+      "evidence_zh": "约 2.5 米路径仅有 2 厘米量级的浅摆动，航向先小幅修正再缓慢回落，没有明显拐点或持续有意义的弧线。",
+      "turn_core_time_ranges_s": [],
+      "current_saved": false,
+      "agrees": true
+    },
+    {
+      "id": "202609201240128Up_19",
+      "task_id": "202609201240128Up",
+      "index": 19,
+      "sampling": "random",
+      "anonymous_id": "A11",
+      "label": "straight",
+      "confidence": "high",
+      "evidence_zh": "约 2.3 米路径近直线，横向偏离最大约 2 厘米；小角度航向调整对应局部微摆。",
+      "turn_core_time_ranges_s": [],
+      "current_saved": false,
+      "agrees": true
+    },
+    {
+      "id": "20260920122356WIt_32",
+      "task_id": "20260920122356WIt",
+      "index": 32,
+      "sampling": "random",
+      "anonymous_id": "A12",
+      "label": "straight",
+      "confidence": "high",
+      "evidence_zh": "约 5.1 米路径基本直行，横向仅约 4 厘米以内的短暂偏移后回正；航向小幅往复。",
+      "turn_core_time_ranges_s": [],
+      "current_saved": false,
+      "agrees": true
+    },
+    {
+      "id": "20260917174539CCx_38",
+      "task_id": "20260917174539CCx",
+      "index": 38,
+      "sampling": "random",
+      "anonymous_id": "A13",
+      "label": "turn",
+      "confidence": "high",
+      "evidence_zh": "路径先向下弯出、再绕大弧转向上方，出现数米级侧向位移；航向经历约 +70° 到 -100° 的连续变化，是多段明确转弯。",
+      "turn_core_time_ranges_s": [
+        [
+          2.5,
+          6.6
+        ],
+        [
+          7.0,
+          15.4
+        ]
+      ],
+      "current_saved": true,
+      "agrees": true
+    },
+    {
+      "id": "202609201240128Up_25",
+      "task_id": "202609201240128Up",
+      "index": 25,
+      "sampling": "targeted",
+      "anonymous_id": "A14",
+      "label": "turn",
+      "confidence": "high",
+      "evidence_zh": "前段存在米级浅 S 形，中后段连续绕过大半径直角弯，从向下转为向右；主弯持续十余秒，方向改变清楚。",
+      "turn_core_time_ranges_s": [
+        [
+          3.7,
+          9.6
+        ],
+        [
+          12.3,
+          35.0
+        ]
+      ],
+      "current_saved": true,
+      "agrees": true
+    },
+    {
+      "id": "20260917174539CCx_33",
+      "task_id": "20260917174539CCx",
+      "index": 33,
+      "sampling": "random",
+      "anonymous_id": "A15",
+      "label": "turn",
+      "confidence": "high",
+      "evidence_zh": "先浅 S 调整，再转入明显 U 形路径；约 9.5 至 10.7 秒位置基本不变但航向快速旋转，包含原地转向，随后还有一段可辨认回弯。",
+      "turn_core_time_ranges_s": [
+        [
+          0.2,
+          4.1
+        ],
+        [
+          4.5,
+          10.8
+        ],
+        [
+          11.8,
+          16.1
+        ]
+      ],
+      "current_saved": true,
+      "agrees": true
+    },
+    {
+      "id": "202609201240128Up_16",
+      "task_id": "202609201240128Up",
+      "index": 16,
+      "sampling": "random",
+      "anonymous_id": "A16",
+      "label": "straight",
+      "confidence": "medium",
+      "evidence_zh": "约 5.9 米路线出现约 11 厘米宽的浅弓形，航向变化约 7° 后部分回落；整体方向与行进走廊基本保持，按小幅纠偏直线处理。",
+      "turn_core_time_ranges_s": [],
+      "current_saved": false,
+      "agrees": true
+    },
+    {
+      "id": "20260918200506GCy_42",
+      "task_id": "20260918200506GCy",
+      "index": 42,
+      "sampling": "targeted",
+      "anonymous_id": "A17",
+      "label": "straight",
+      "confidence": "medium",
+      "evidence_zh": "约 5.2 米路线中段仅约 9 厘米侧向偏离，航向先小幅漂移再一次回正；等比例轨迹没有形成有意义的弯道。",
+      "turn_core_time_ranges_s": [],
+      "current_saved": false,
+      "agrees": true
+    },
+    {
+      "id": "20260918200506GCy_23",
+      "task_id": "20260918200506GCy",
+      "index": 23,
+      "sampling": "random",
+      "anonymous_id": "A18",
+      "label": "turn",
+      "confidence": "high",
+      "evidence_zh": "整段约 12.2 米形成多个可见的连续 S 弯，横向尺度达到米级；航向多次在明显不同方向之间持续切换，末段静止。",
+      "turn_core_time_ranges_s": [
+        [
+          1.2,
+          12.8
+        ],
+        [
+          14.6,
+          19.4
+        ],
+        [
+          21.1,
+          22.6
+        ]
+      ],
+      "current_saved": true,
+      "agrees": true
+    },
+    {
+      "id": "20260920122356WIt_8",
+      "task_id": "20260920122356WIt",
+      "index": 8,
+      "sampling": "random",
+      "anonymous_id": "A19",
+      "label": "turn",
+      "confidence": "high",
+      "evidence_zh": "约 17.3 米路径形成完整的大半径近直角圆弧，从向下逐步转为向左；转向持续而同向，约 80° 的方向变化与 XY 一致。",
+      "turn_core_time_ranges_s": [
+        [
+          0.4,
+          11.9
+        ]
+      ],
+      "current_saved": true,
+      "agrees": true
+    },
+    {
+      "id": "202609201240128Up_10",
+      "task_id": "202609201240128Up",
+      "index": 10,
+      "sampling": "random",
+      "anonymous_id": "A20",
+      "label": "straight",
+      "confidence": "high",
+      "evidence_zh": "约 6.2 米路径接近同一条直线，横向偏离约 5.5 厘米以内，航向只有几度的局部往返修正。",
+      "turn_core_time_ranges_s": [],
+      "current_saved": false,
+      "agrees": true
+    },
+    {
+      "id": "20260917174539CCx_6",
+      "task_id": "20260917174539CCx",
+      "index": 6,
+      "sampling": "random",
+      "anonymous_id": "A21",
+      "label": "turn",
+      "confidence": "high",
+      "evidence_zh": "中段向右绕出约 1 米后回到原来的前进方向，形成明显 S 形绕行；航向先增加约 38°、随后反向到约 -15°，最后回正。",
+      "turn_core_time_ranges_s": [
+        [
+          3.0,
+          4.6
+        ],
+        [
+          4.9,
+          9.1
+        ],
+        [
+          9.9,
+          11.8
+        ]
+      ],
+      "current_saved": true,
+      "agrees": true
+    },
+    {
+      "id": "20260917174539CCx_4",
+      "task_id": "20260917174539CCx",
+      "index": 4,
+      "sampling": "random",
+      "anonymous_id": "A22",
+      "label": "turn",
+      "confidence": "high",
+      "evidence_zh": "轨迹从向右连续圆弧转为向下，约 7.5 米路径形成清楚的直角弯，航向最终改变约 90°。",
+      "turn_core_time_ranges_s": [
+        [
+          1.4,
+          10.7
+        ]
+      ],
+      "current_saved": true,
+      "agrees": true
+    },
+    {
+      "id": "20260920122356WIt_14",
+      "task_id": "20260920122356WIt",
+      "index": 14,
+      "sampling": "targeted",
+      "anonymous_id": "A23",
+      "label": "straight",
+      "confidence": "medium",
+      "evidence_zh": "约 12.2 米路径只有约 -7 至 14 厘米的宽缓偏移，航向一次小幅抬升后逐渐回正；按长直行中的轻微纠偏处理。",
+      "turn_core_time_ranges_s": [],
+      "current_saved": false,
+      "agrees": true
+    },
+    {
+      "id": "20260920122356WIt_34",
+      "task_id": "20260920122356WIt",
+      "index": 34,
+      "sampling": "random",
+      "anonymous_id": "A24",
+      "label": "turn",
+      "confidence": "high",
+      "evidence_zh": "先沿近竖直方向直走，再持续弯向左下，之后沿新的斜线方向前进；中段方向改变约 45°，横向偏离超过 1 米。",
+      "turn_core_time_ranges_s": [
+        [
+          2.8,
+          7.4
+        ]
+      ],
+      "current_saved": true,
+      "agrees": true
+    },
+    {
+      "id": "202609201240128Up_7",
+      "task_id": "202609201240128Up",
+      "index": 7,
+      "sampling": "random",
+      "anonymous_id": "A25",
+      "label": "straight",
+      "confidence": "high",
+      "evidence_zh": "约 5.4 米路径中只有约 7 厘米的浅偏移后回正，航向改变幅度小，几何形状仍为直线上的局部修正。",
+      "turn_core_time_ranges_s": [],
+      "current_saved": false,
+      "agrees": true
+    },
+    {
+      "id": "20260920122356WIt_26",
+      "task_id": "20260920122356WIt",
+      "index": 26,
+      "sampling": "random",
+      "anonymous_id": "A26",
+      "label": "straight",
+      "confidence": "medium",
+      "evidence_zh": "约 5.2 米路径呈很浅的单向缓弧，相对自身端点连线仅约 8 厘米；航向缓慢改变约 5°，尚不足以呈现明确路线拐弯，按轻微漂移处理。",
+      "turn_core_time_ranges_s": [],
+      "current_saved": false,
+      "agrees": true
+    },
+    {
+      "id": "20260918200506GCy_29",
+      "task_id": "20260918200506GCy",
+      "index": 29,
+      "sampling": "targeted",
+      "anonymous_id": "A27",
+      "label": "straight",
+      "confidence": "medium",
+      "evidence_zh": "约 6.6 米路径先浅偏后回正，最大相对连线偏离约 11 厘米；约 8° 的短时航向修正未形成明显绕行弯道。",
+      "turn_core_time_ranges_s": [],
+      "current_saved": false,
+      "agrees": true
+    },
+    {
+      "id": "20260920122356WIt_20",
+      "task_id": "20260920122356WIt",
+      "index": 20,
+      "sampling": "random",
+      "anonymous_id": "A28",
+      "label": "straight",
+      "confidence": "high",
+      "evidence_zh": "约 5.7 米路线整体虽略斜，但相对自身端点连线仅有约 4 厘米偏离；航向缓慢小幅变化，整体倾斜不等于拐弯。",
+      "turn_core_time_ranges_s": [],
+      "current_saved": false,
+      "agrees": true
+    },
+    {
+      "id": "20260917174539CCx_29",
+      "task_id": "20260917174539CCx",
+      "index": 29,
+      "sampling": "random",
+      "anonymous_id": "A29",
+      "label": "turn",
+      "confidence": "high",
+      "evidence_zh": "起步低速持续转向，中段向一侧绕出约 0.8 米又回到原走向，形成明确 S 弯；总航向变化接近抵消但中间转向幅度显著。",
+      "turn_core_time_ranges_s": [
+        [
+          0.3,
+          2.6
+        ],
+        [
+          3.9,
+          5.8
+        ],
+        [
+          7.6,
+          9.2
+        ]
+      ],
+      "current_saved": true,
+      "agrees": true
+    }
+  ],
+  "reference_metrics": {
+    "positive": {
+      "count": 32,
+      "baseline_started": 32,
+      "baseline_saved": 32,
+      "current_started": 32,
+      "current_saved": 32
+    },
+    "negative": {
+      "count": 69,
+      "baseline_started": 61,
+      "baseline_saved": 51,
+      "current_started": 0,
+      "current_saved": 0
+    },
+    "ambiguous": {
+      "count": 23,
+      "baseline_started": 23,
+      "baseline_saved": 23,
+      "current_started": 20,
+      "current_saved": 20
+    }
+  },
+  "source_clips_with_saved_windows_before": 141,
+  "source_clips_with_saved_windows_after": 84,
+  "saved_window_count": 87,
+  "saved_duration_median_s": 11.643958806991577,
+  "streaming_regression_passed": 54,
+  "streaming_regression_total": 54,
+  "code_sha256": {
+    "data_collection_gate.py": "4ea656ffe5c511c596f3025c2fdaf5c0eb5acb555206824c05a31dfff871f0f6",
+    "test_data_collection_gate.py": "31f706cc6883b5765d7f53e7facdeccb612832fbb6f12549c46abe7eea337dca"
+  }
+}

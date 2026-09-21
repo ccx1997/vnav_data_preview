@@ -5,9 +5,9 @@
 - `TurnGate`：采集弧形转弯和原地转弯，恢复正常直线行驶或稳定停车后结束；
 - `StraightGate`：正常直线行驶时按默认 1% 概率启动，采满随机的 6–12 s 后结束。
 
-所有 Gate 都执行三项硬停止：位姿跳变、连续 3 s 几乎不变，以及默认 `Tmax=45 s`。所有结束片段统一要求至少 4 s 才能保留。Gate 给出启停节点与保留判定，不直接操作录制器或写文件。
+所有 Gate 都执行硬停止：位姿跳变或 gap、连续 3 s 几乎不变，以及默认 `Tmax=45 s`。所有结束片段统一要求至少 4 s 才能保留。Gate 给出启停节点与保留判定，不直接操作录制器或写文件。
 
-2026-09-18 [召回复核](reports/gate_0917_diagnosis_20260918/recall_audit.md)发现早先 2 秒弧线窗口漏采后，已恢复按距离积累证据，时间上限沿用原来的 15 秒。当前实现见下文；[联合修正记录](reports/gate_0917_diagnosis_20260918/precision_recall_repair.md)记录新旧保存窗口对比和验证范围。
+历史背景：2026-09-18 [召回复核](reports/gate_0917_diagnosis_20260918/recall_audit.md)发现早先 2 秒弧线窗口漏采后，已恢复按距离积累证据，时间上限沿用原来的 15 秒。当时修正之后，2026-09-21 又按持续转向语义完成精度与上下文优化，当前实现见下文；[联合修正记录](reports/gate_0917_diagnosis_20260918/precision_recall_repair.md)记录新旧保存窗口对比和验证范围。
 
 ## 统一返回格式
 
@@ -39,7 +39,7 @@ should_act, action_timestamp_s = gate.start_collection(
 
 - `start_timestamp_s` / `end_timestamp_s`：最终动作窗口，结束时间可能早于本次调用时间；
 - `duration_s`：窗口的精确时长；
-- `target_confirmed`：转弯 Gate 被提前硬停止截断时，最终窗口内是否仍有转向证据；其他正常结束为 `True`；
+- `target_confirmed`：转弯最终窗口内是否有确认的转向目标；正常、硬停止和 EOF 均验收，直行 Gate 为 `True`；
 - `should_save`：时长 `>=4.0 s` 且 `target_confirmed=True` 才保留，恰好 4 秒满足时长要求。
 
 该属性初始为 `None`，完成后一直保留最近一次结果，包括 `reset()` 和下一次开始；只在本次结束返回 `True` 时消费它。短片段照常结束并清除活动状态，不能通过返回 `False` 或推迟硬停止来凑满 4 秒。外部强制截断不属于 Gate 正常结束：调用方需确认实际窗口内的目标，再用 `CompletedCollection(start_s, end_s, target_confirmed=...).should_save` 判断，随后调用 `reset()`；只传起止时间只能检查时长。
@@ -55,7 +55,7 @@ gates = {"turn": TurnGate(), "straight": StraightGate()}
 collection_owner = None
 
 # decision_timestamp_s 是滚动缓存内的历史锚点，不是墙上时钟的现在。
-# 沿用 6 s 延迟；曲率只使用缓存中实际已有的未来路线。
+# 沿用 6 s 延迟；证据只使用缓存中实际已有的连续历史和未来。
 decision_timestamp_s = pose_cache[-1].timestamp_s - 6.0
 
 if collection_owner is None:
@@ -87,90 +87,74 @@ else:
 
 ## 转弯 Gate
 
-### 开始判别
+### 开始确认与诊断
 
-本实现沿用训练数据后处理的转弯阈值，采集侧限制未来路径和时间范围。在线受可用缓存限制，与离线标签不保证逐点一致：
+2026-09-21 改为识别持续转向：局部三点高曲率只保留作诊断，不能单独启动 TurnGate。`0902-auto2` 19/20 的厘米级摆动由此排除。算法先展开 yaw、做中值去噪，再用 2° 回转死区划分方向波段；不会累加逐帧绝对转角，也不会让 S 弯的左右转向在首尾相减时抵消。
 
-| 目标 | 在线判别 |
+| 分支 | 默认确认条件 |
 | --- | --- |
-| 弧形转弯 | 使用缓存中未来最多 15 s 的 XY 顶点，积累到 1 m 路线即停止，至少有 0.30 m 有效路径；按至少 0.05 m 路程间隔抽稀，三点圆曲率中位数绝对值 `>=8 deg/m`；附近 2 s 最大平移 `>0.03 m`，完整曲线观测内最大平移 `>0.10 m` |
-| 原地转弯 | 未来 2 s 最大平移 `<=0.10 m`，同时 `abs(yaw change) >=8 deg` |
+| 常规曲线 | 同一方向波段累计 yaw ≥8°，路径 ≥0.15 m；距离加权稳健拟合的入口/出口路线方向变化 ≥3°，且与 yaw 同向 |
+| 短慢弯 | yaw ≥4°，路径 0.08–0.80 m；5%–95% 转角的形成时间 ≥1.5 s、净角度/绝对变化 ≥0.85、XY 拟合一致且残差足够小；还须看到方向反转闭合，或波段极值之后至少 0.5 s 航向稳定 |
+| 原地转向 | 保留未来 2 s 最大平移 ≤0.10 m、yaw 变化 ≥8° 的判据 |
 
-离线后处理用教师动作 `SPIN_LEFT/SPIN_RIGHT` 判断原地转弯；采集侧没有教师标签，因此“低平移 + yaw 变化”是显式的在线代理。正曲率/yaw 为左转，负值为右转。
+短慢弯几何门槛为 `max(2°, 0.4×yaw)` 至 `2×yaw+3°`，入口/出口拟合的 80% 分位垂直残差不超过 `max(3 mm, 路程×1%)`。不足以确认的小角度转向返回 `reason="uncertain_turn"`、`sufficient_data=False`，不自动进入正式转弯样本；未闭合的小角度前缀不能被当成完整短弯。约 0.8 s 的局部纠偏不能靠后续停车凑满持续时间。
 
-`start_collection()` 默认预看未来 1 s 内的锚点。阳性时返回 `(True, decision_timestamp_s)`，保留接近过程。附近 2 秒运动检查只用于排除静止漂移，复用停车的 3 cm 容差；0.30 m 曲率支持路径可在更长的可用缓存内积累，避免引入原先 2 秒窗口造成的约 0.15 m/s 速度门槛。完整曲线位移超过 10 cm 则排除在小范围内反复抖动累计的假路径。原地转弯保留独立 yaw 分支；活动期间重复调用开始方法不会再次启动。
+每次证据的 yaw、路径、方向拟合、持续性和**平滑输入**都来自同一连续、最多 15 s 的实际观测窗；不跨 pose gap、跳变或稳定停车借证据。XY 方向用实际路线独立展开，支持大于 180° 的弯道；没有 yaw 转动的前进/倒退不会成为掉头。yaw 与 XY 来自同一定位源，不能视为两套独立传感器的验证。
 
-`TurnEvidence.observation_end_timestamp_s` 记录阳性证据实际使用的最后节点：弧线取积累路线的最后一个有效顶点，原地转弯取 2 秒 yaw 窗口末端；非转弯为 `None`。自然结束从该节点之后开始检查，避免真正的转弯尚未发生，就把转弯前历史直行判成“恢复直行”；静止尾部不会无故延长证据窗口。位姿跳变、稳定停车和 `Tmax` 仍可在该节点之前硬停止。若硬停止提前截断启动证据，且片段已满 4 秒，只在最终窗口内确认是否出现过达到曲率阈值的实际弯折，或符合原有 yaw 判据的原地转弯，无证据则丢弃；此处不再要求 0.30 m 完整启动路径，避免丢掉已经发生的短弯道。
+`start_collection()` 保留未来 1 s 的锚点探测，并在需要时复查一个有界历史锚点，使 6 s 调度延迟仍可积累更慢转向。历史复查同样受 15 s、连续区间及已完成窗口约束。`evaluate()` 本身无状态，只诊断指定锚点，不承担这些控制器历史复查。
 
-开始与恢复直行的曲率均使用平滑后的实际采样顶点，避免边界插值或密集重采样制造共线零曲率；锚点到首个实际顶点的插值距离仍计入有效路径，避免错相位采样少算路程。稀疏数据不足三个有效顶点或不足路径长度时，不强行生成启动/直行证据。位移、yaw 和停车时长使用精确时间边界的位姿插值。
+`TurnEvidence` 提供以下可审计字段：
 
-### 结束判别
+- `core_start_timestamp_s` / `core_end_timestamp_s`：触发确认的方向波段，非整场景的人工精确边界；
+- `observation_end_timestamp_s`：包含闭合确认及平滑支持的观测终点；
+- `yaw_excursion_rad` / `route_heading_change_rad`：该波段的 yaw 与 XY 方向变化；
+- `reason`：`curve_turn`、`short_slow_turn`、`spin_turn`、`uncertain_turn`、`straight` 或证据不足原因；
+- 原有 `reference_curvature_rad_per_m` / `future_path_m`：最多 1 m、至少 0.30 m 路线的旧曲率诊断，不再单独决定 TurnGate。
 
-结束不再以“某个锚点已经不是转弯”作为条件。转弯开始后，`end_collection()` 按流式历史依次检查：
+### 场景上下文、结束和续段
 
-1. **转弯自然结束**：已越过启动证据观测窗，动作节点之前连续 2 s 是正常直线运动（最大平移 `>=0.10 m`、yaw 变化 `<=3 deg`、路线曲率绝对值 `<8 deg/m`），并让该证据再持续 1 s；或
-2. **通用位姿硬停止**：检测到位姿跳变，或者连续 3 s 内相对窗口起点的最大位置漂移 `<=0.03 m`、最大 yaw 漂移 `<=3 deg`；或
-3. **通用时间硬停止**：从成功开始节点起达到 `Tmax=45 s`。
+默认 `pre_context_s=4`：保存起点回溯到核心之前 4 s，受当前连续缓存起点限制。返回的动作时间可能早于本次 `decision_timestamp_s`，录制器必须使用返回值。`active_start_timestamp_s` 是保存起点；`core_start_timestamp_s` 是动作核心起点。停车硬停止从核心起点之后检查，避免新增的停车接近画面把真正转弯截掉。
 
-三个条件取最早出现的动作节点并返回 `(True, action_timestamp_s)`。新的转弯、自转、短暂停车、pose gap 或证据不足都会清除“正在恢复直线”的候选状态。位姿跳变的动作节点取跳变前最后一个有效 pose，避免把跳变后的新坐标系写入片段；即使两帧间隔超过普通 gap，只要绝对位置/yaw 跳变量越界仍会硬停。yaw 会先展开，因此正常跨 `+pi/-pi` 不算跳变。稳定停车的动作节点取连续静止满 3 s 的节点。即使缓存已经不包含 `Tmax` 附近的位姿，时间硬截止仍返回准确的 `start + Tmax`。结束定义是因果的，只用动作节点及其历史；未来缓存主要用于开始判别。
+自然结束需先越过启动证据观测终点，再观察到连续 2 s 正常直行（最大平移 ≥0.10 m、yaw 极差 ≤3°、净位移/路径 ≥0.95、稳健直线拟合的 80% 分位残差 ≤3 cm），并持续 `max(straight_recovery_persistence_s, post_context_s)`。默认后者为 4 s，即**确认恢复直行后再保留 4 s**，通常带来约 5–6 s 的驶离画面，并非从人工精确弯道终点机械切 4 s。另看最近 4 s 的同向趋势：转角 ≥2°、同向一致性 ≥0.85 且主要转角持续 ≥1.5 s 时不视为恢复，防止持续宽弧尾部漏采。重新出现转向或恢复证据不足会清除恢复候选。
 
-三项硬停止由通用方法装饰器实现，不写入具体 Gate 的自然结束判断：
+以下硬边界仍优先：
+
+- 位姿跳变或普通 pose gap（>0.5 s），动作节点为断点前的最后 pose；正常 yaw 跨 ±π 不算跳变；
+- 核心开始后，连续 3 s 最大位置漂移 ≤3 cm、最大 yaw 漂移 ≤3°；因此停车尾部可以不足 4 s；
+- 自保存起点起最多 45 s，上下文计入此上限；
+- 外部媒体/文件结束，调用下述 `finish_collection()`。
+
+Tmax 切开仍在持续的弯道时，Gate 会携带跨过切点、已完整确认的有界核心证据继续下一段，默认向前重叠 4 s；剩余短尾不必重新独立转够 8°。没有跨切点的实际核心则不生成纯上下文续段。正常结束后抑制已完成窗口的重复触发；外部 `reset()` 清空活动、去重及续段状态。
+
+所有正常结束、硬停止与 EOF 都执行最终目标验收。完整证据及其平滑支持已经落在最终保存窗内时可复用确认；提前截断则只用实际窗口重新确认，不能退回“任意三个点曲率高就保存”。已确认长事件的续段可复用跨切点的核心证书。`>=4 s` 只决定最短保存时长，不能替代目标确认。
 
 ```python
-from data_collection_gate import with_hard_stop_conditions
-
-@with_hard_stop_conditions
-def end_collection(self, pose_cache, decision_timestamp_s):
-    # 只实现当前采集目标自己的自然结束条件。
-    ...
+# EOF：先按原有时间顺序排空最后 6 s 尚未检查的真实节点，
+# 每次完成结果都立即消费，允许发生多段；不能补造未来 pose。
+# 再关闭仍然活动的最后一段：
+should_end, end_s = turn_gate.finish_collection(pose_cache, actual_media_end_s)
+if should_end:
+    completed = turn_gate.last_completed_collection
+    # 根据 completed.should_save 保存或丢弃，随后停止本任务的调度。
 ```
 
-使用该装饰器的 Gate 需要提供 `active_start_timestamp_s`、`config.maximum_collection_interval_s` 和 `reset()`；要满足全局位姿硬停止，还必须实现或委托 `_pose_hard_stop_timestamp()`。`StraightGate` 委托其只读的 `turn_gate` 位姿判定器，两个现有 Gate 均已接入。装饰器先比较自然结束、位姿硬停止和时间硬停止的节点，返回最早者。`with_maximum_collection_interval` 保留为兼容别名；新类必须使用语义完整的 `with_hard_stop_conditions`。`functools.wraps` 保留原方法名称、docstring 和 `__wrapped__`。
+`finish_collection()` 只关闭活动段，**不会替调用方扫描最后 6 s 的新事件**；重复调用是幂等的。实际媒体终点应同时满足目标相机的覆盖范围。`last_completed_collection` 的消费方式及二元返回 API 均保持不变。
 
-`TurnGate` 是有状态对象，可用以下属性审计：
+### 参数与限制
 
-- `active_start_timestamp_s`：当前转弯片段的开始节点；
-- `straight_recovery_start_timestamp_s`：当前持续直线恢复候选的起点；
-- `evaluate(...) -> TurnEvidence`：单个时间节点的无副作用诊断结果。
+上述新增参数均可通过 `TurnGateConfig` 覆盖。其余默认值仍为：中值平滑 1 s、探测步长 0.2 s、最小路线点距 2 cm、pose 最大间隔 0.5 s、绝对跳变 2 m / 45°、表观线速度上限 3 m/s、角速度上限 2 rad/s。`pre_context_s=0, post_context_s=0` 可关闭额外上下文；`straight_recovery_persistence_s` 仍默认 1 s。
 
-### 默认参数
+慢速原地转动未扩大到 15 s 累积：低角速度与当前 3 s/3° 停车容差存在冲突，暂为能力边界。极浅弯、定位误差及小幅绕行仍可能处于不确定区间，不能把当前几何抽查结果当作完整线上 precision/recall。
 
-| 参数 | 默认值 | 作用 |
-| --- | ---: | --- |
-| `curve_lookahead_m` | 1.0 m | 弧线未来路线长度，与后处理一致 |
-| `curvature_threshold_rad_per_m` | 0.13962634 rad/m | `8 deg/m`，包含边界 |
-| `curve_minimum_path_m` | 0.30 m | 路径短于此值时证据不足 |
-| `curve_resample_m` | 0.05 m | 实际路线顶点的最小抽稀路程间隔，沿用参数名 |
-| `curve_maximum_lookahead_s` | 15.0 s | 原有时间上限；到 1 m 或可用缓存末端则提前停止搜索 |
-| `spin_measurement_window_s` | 2.0 s | 原地转弯观测窗 |
-| `spin_maximum_translation_m` | 0.10 m | 原地转弯最大平移 |
-| `spin_minimum_yaw_change_rad` | 8 deg | 原地转弯最小 yaw 变化 |
-| `start_lookahead_s` | 1.0 s | 首个阳性证据前保留上下文 |
-| `straight_recovery_window_s` | 2.0 s | 正常直线历史判别窗 |
-| `straight_recovery_persistence_s` | 1.0 s | 正常直线判别成立后的持续确认时间 |
-| `straight_recovery_minimum_translation_m` | 0.10 m | 恢复窗的最低平移，排除静止 |
-| `straight_recovery_maximum_yaw_change_rad` | 3 deg | 恢复窗允许的最大 yaw 变化 |
-| `stable_stop_window_s` | 3.0 s | 稳定停车需要连续满足的时间 |
-| `stable_stop_maximum_translation_m` | 0.03 m | 停车窗允许的最大位置漂移 |
-| `stable_stop_maximum_yaw_change_rad` | 3 deg | 停车窗允许的最大 yaw 漂移 |
-| `maximum_collection_interval_s` | 45.0 s | 每次采集的硬截止 `Tmax` |
-| `probe_interval_s` | 0.20 s | 补查两个流式调用之间历史节点的间隔 |
-| `pose_smoothing_window_s` | 1.0 s | XY 中值平滑；yaw 展开后中值平滑 |
-| `maximum_pose_gap_s` | 0.50 s | 超过则不跨 gap 判定 |
-| `maximum_pose_jump_m` | 2.0 m | 位置跳变阈值 |
-| `maximum_linear_speed_mps` | 3.0 m/s | 表观线速度阈值 |
-| `maximum_yaw_step_rad` | 45 deg | yaw 单步跳变阈值 |
-| `maximum_yaw_rate_rps` | 2.0 rad/s | yaw rate 阈值 |
-
-参数通过 `TurnGateConfig(...)` 覆盖。
+[本次独立盲评、历史回放及验证报告](reports/gate_method_revision_20260921/report.md)。只复用已下载数据；已有裁剪片段缺失的接近/驶离画面无法补回。
 
 ## 正常直线概率 Gate
 
-`StraightGate` 只把以下情况当作合格开始机会：未来证据充分且非转弯、有效路线曲率绝对值小于配置的转弯阈值（默认 8 deg/m）、未来 2 s 最大平移 `>=0.10 m`、yaw 变化 `<=3 deg`。不能仅凭“未触发转弯”认定直线；因平移门槛被拒绝的弯曲/抖动路线也不参与随机抽样。
+`StraightGate` 只把以下情况当作合格开始机会：未来证据充分且非转弯（uncertain 不合格）、有效路线曲率绝对值小于配置的转弯阈值（默认 8 deg/m）、未来 2 s 最大平移 `>=0.10 m`、yaw 变化 `<=3 deg`。不能仅凭“未触发转弯”认定直线；因平移门槛被拒绝的弯曲/抖动路线也不参与随机抽样。
 
 每个合格调用以 `start_probability=0.01` 做一次伯努利抽样。1% 指“每次合格开始机会的命中概率”，不是最终采集时长占比；调用方必须固定并记录机会节拍，例如 1 Hz。改变调用频率会改变实际启动率。
 
-开始命中后，从闭区间 `[6,12] s` 的连续均匀分布只抽一次时长并锁定截止节点。转弯本身不提前结束直线片段，但位姿跳变或连续 3 s 稳定停车属于全局硬停止，会提前结束；否则达到随机截止时间时结束。`StraightGateConfig.maximum_collection_interval_s` 同样默认为 45 s；默认随机上限只有 12 s，因此通常不会触发。如果自定义随机上限超过 `Tmax`，实际抽样上限取二者较小值。
+开始命中后，从闭区间 `[6,12] s` 的连续均匀分布只抽一次时长并锁定截止节点。转弯本身不提前结束直线片段，但位姿跳变、pose gap 或连续 3 s 稳定停车属于全局硬停止，会提前结束；否则达到随机截止时间时结束。`StraightGateConfig.maximum_collection_interval_s` 同样默认为 45 s；默认随机上限只有 12 s，因此通常不会触发。如果自定义随机上限超过 `Tmax`，实际抽样上限取二者较小值。
 
 ```python
 import random
@@ -211,24 +195,22 @@ sample = PoseSample(
 
 所有数值必须有限，时间戳必须严格递增；schema 错误或重复/逆序时间戳会抛出 `ValueError`，调用方应报警。
 
-要覆盖配置允许的完整未来范围，判定延迟应满足：
+默认沿用 **6 s 调度延迟、60 s pose 缓存**。无需等满 15 s 才能判断：常规转弯可由当前缓存确认；较慢转向还会使用有界历史复查，最终使用的单次原始证据窗口仍不超过 15 s。启动返回的保存起点可能比历史决策节点更早，不能假设就是 `decision_timestamp_s`。
 
-```text
-decision_delay >= start_lookahead
-                  + max(spin_measurement_window,
-                        curve_maximum_lookahead)
-```
+媒体缓存也必须覆盖确认延迟、回看及前置上下文：默认最坏回填可超过 20 s，建议和 pose 一样预留 60 s。**60 s pose 缓存不能证明视频缓存存在**。活动片段须锁定媒体或写入临时文件，不能采到 45 s 时把开头覆盖。每个相机的真实覆盖不足时应报告实际可用上下文，禁止外推/拼接缺帧。
 
-完整上限为 `1 + max(2,15) = 16 s`；若希望中值平滑窗口完整，再留出半个平滑窗（默认 0.5 s）。**现有 6 s 延迟保持不变**：曲率不要求必须观察满 15 秒，而是在缓存内最多取 1 m，达到 0.30 m 且几何充分即可判别。2 秒只固定用于附近运动和 yaw 检查；不是积累曲率路径的硬上限。低速可利用已有的更长未来段，但可用缓存不足仍不启动。最近 1 分钟缓存可继续沿用；本轮新旧比较保持相同 6 秒延迟，未用增加延迟掩盖 recall 损失。
+示例控制器不包含真实录制器。若 StraightGate 活动期间完全停用转弯检测，仍可能漏掉直行随机片段期间开始的转向；生产控制器需持续检测并统一处理重叠窗口。本仓库本次没有部署或修改远端录制器，也没有重导出历史片段。
 
 ## 失败安全
 
 - yaw 计算差值前会跨 `+pi/-pi` 展开，避免 179° 到 -179° 被误判为 358°；
-- 位姿 gap 会切断连续段，不会被当成转弯或恢复直行；位置/yaw 跳变会结束所有类型的活动采集，结束节点位于跳变之前；
+- 位姿 gap 会切断连续段，也会和位置/yaw 跳变一样结束所有类型的活动采集，保存节点位于断点之前；
 - 开始证据不足时不开始；结束证据不足时不触发运动结束条件，但到达 `Tmax` 仍会硬截止；
 - Gate 只依赖位姿，不能发现“画面在动但定位冻结”，采集系统仍需跨模态冻结报警。
 
 ## 验证与视频回放
+
+2026-09-21 当前 60 个单测通过；包括新增真实近直线反例、短慢弯闭合、前后上下文、宽弧持续性、Tmax 短尾续段、gap 封口及 EOF 平滑泄漏检查。详细回放范围及指标见[本轮报告](reports/gate_method_revision_20260921/report.md)。旧启停精确时间用显式 `pre_context_s=0, post_context_s=0` 检查；默认扩展上下文另有独立测试。
 
 运行：
 
@@ -237,7 +219,7 @@ python3 -m unittest -v test_data_collection_gate.py
 python3 -m py_compile data_collection_gate.py test_data_collection_gate.py
 ```
 
-2026-09-18 当前 42 个定向测试通过，包含低速/停走弯道、有限时长的 2 Hz 错相位圆弧、曲率边界、停车与跳变硬停止、4 秒精确保留边界，以及提前硬停止后的短真弧/原地转弯保留。17 个新旧默认 Gate 对比场景，双方应用相同 4 秒门槛，当前版额外实际消费 `should_save`；真实转弯覆盖时间均未下降。6 个误采验证场景中，无转弯的保存片段由旧版的 4 个降至 0 个，所有真实转弯区间完整保留。以上为定向合成验证，不是生产整体 precision/recall 估计。Python 编译与 diff 空白检查通过，复现命令和专家审阅见[联合修正记录](reports/gate_0917_diagnosis_20260918/precision_recall_repair.md)。
+2026-09-18 历史版本的 42 个定向测试通过，包含低速/停走弯道、有限时长的 2 Hz 错相位圆弧、曲率边界、停车与跳变硬停止、4 秒精确保留边界，以及提前硬停止后的短真弧/原地转弯保留。17 个新旧默认 Gate 对比场景，双方应用相同 4 秒门槛，当前版额外实际消费 `should_save`；真实转弯覆盖时间均未下降。6 个误采验证场景中，无转弯的保存片段由旧版的 4 个降至 0 个，所有真实转弯区间完整保留。以上为定向合成验证，不是生产整体 precision/recall 估计。Python 编译与 diff 空白检查通过，复现命令和专家审阅见[联合修正记录](reports/gate_0917_diagnosis_20260918/precision_recall_repair.md)。
 
 以下性能数字和真实回放为 2026-09-13 旧版本历史结果，不代表当前版本：60 s、20 Hz、1201 个合成 pose 上按 5 Hz 顺序执行 190 次结束检查，Turn 平均/95 分位/最大耗时为 `20.0/29.3/37.9 ms`，Straight 为 `10.6/12.9/19.6 ms`，均低于 5 Hz 的 200 ms 调用周期。该结果只代表当时环境和负载。
 

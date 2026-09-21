@@ -1,0 +1,1764 @@
+{
+  "results": [
+    {
+      "name": "20s_arc_30deg_per_m_at_0.06mps",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 20.0,
+      "truth_s": 20.0,
+      "windows": [
+        [
+          0.0,
+          22.6
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.0,
+            "start_s": 0.0,
+            "available_until_s": 5.999999999999995
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 22.6,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.8628769796341658,
+        "call_ms_p95": 7.167268532793967,
+        "calls": 162
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.06mps",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 20.0,
+      "truth_s": 20.0,
+      "windows": [
+        [
+          0.0,
+          22.51
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.11,
+            "start_s": 0.0,
+            "available_until_s": 6.099999999999994
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 22.51,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.7194570284336805,
+        "call_ms_p95": 3.6631969269365072,
+        "calls": 161
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.1mps",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 20.0,
+      "truth_s": 20.0,
+      "windows": [
+        [
+          0.0,
+          22.8
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.0,
+            "start_s": 0.0,
+            "available_until_s": 5.999999999999995
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 22.8,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.621195395477116,
+        "call_ms_p95": 3.666489571332931,
+        "calls": 162
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.1mps",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 20.0,
+      "truth_s": 20.0,
+      "windows": [
+        [
+          0.0,
+          22.71
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.11,
+            "start_s": 0.0,
+            "available_until_s": 6.099999999999994
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 22.71,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.6293068658560514,
+        "call_ms_p95": 3.6773739848285913,
+        "calls": 161
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.14mps",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 20.0,
+      "truth_s": 20.0,
+      "windows": [
+        [
+          0.0,
+          22.8
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.0,
+            "start_s": 0.0,
+            "available_until_s": 5.999999999999995
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 22.8,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.619288396090269,
+        "call_ms_p95": 3.6895870231091976,
+        "calls": 162
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.14mps",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 20.0,
+      "truth_s": 20.0,
+      "windows": [
+        [
+          0.0,
+          22.91
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.11,
+            "start_s": 0.0,
+            "available_until_s": 6.099999999999994
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 22.91,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.625649096444249,
+        "call_ms_p95": 3.6753041204065084,
+        "calls": 161
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.15mps",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 20.0,
+      "truth_s": 20.0,
+      "windows": [
+        [
+          0.0,
+          22.8
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.0,
+            "start_s": 0.0,
+            "available_until_s": 5.999999999999995
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 22.8,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.610045368783176,
+        "call_ms_p95": 3.679676947649568,
+        "calls": 162
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.15mps",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 20.0,
+      "truth_s": 20.0,
+      "windows": [
+        [
+          0.0,
+          22.91
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.11,
+            "start_s": 0.0,
+            "available_until_s": 6.099999999999994
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 22.91,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.60721892118454,
+        "call_ms_p95": 3.698640037328005,
+        "calls": 161
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.16mps",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 20.0,
+      "truth_s": 20.0,
+      "windows": [
+        [
+          0.0,
+          23.0
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.0,
+            "start_s": 0.0,
+            "available_until_s": 5.999999999999995
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 23.0,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.882450120523572,
+        "call_ms_p95": 4.250347579363733,
+        "calls": 162
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.16mps",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 20.0,
+      "truth_s": 20.0,
+      "windows": [
+        [
+          0.0,
+          22.91
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.11,
+            "start_s": 0.0,
+            "available_until_s": 6.099999999999994
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 22.91,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.980713965371251,
+        "call_ms_p95": 4.724128870293498,
+        "calls": 161
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.2mps",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 20.0,
+      "truth_s": 20.0,
+      "windows": [
+        [
+          0.0,
+          23.0
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.0,
+            "start_s": 0.0,
+            "available_until_s": 5.999999999999995
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 23.0,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.7120624436065555,
+        "call_ms_p95": 3.940962697379291,
+        "calls": 162
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.2mps",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 20.0,
+      "truth_s": 20.0,
+      "windows": [
+        [
+          0.0,
+          22.91
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.11,
+            "start_s": 0.0,
+            "available_until_s": 6.099999999999994
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 22.91,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.7320238295942545,
+        "call_ms_p95": 3.8816409651190042,
+        "calls": 161
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.4mps",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 20.0,
+      "truth_s": 20.0,
+      "windows": [
+        [
+          0.0,
+          23.0
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.0,
+            "start_s": 0.0,
+            "available_until_s": 5.999999999999995
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 23.0,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.7278554625809193,
+        "call_ms_p95": 3.8611722062341864,
+        "calls": 162
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.4mps",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 20.0,
+      "truth_s": 20.0,
+      "windows": [
+        [
+          0.0,
+          23.11
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.11,
+            "start_s": 0.0,
+            "available_until_s": 6.099999999999994
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 23.11,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.740588039159775,
+        "call_ms_p95": 3.98956798017025,
+        "calls": 161
+      }
+    },
+    {
+      "name": "20s_tight_arc_170deg_per_m_at_0.08mps",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 20.0,
+      "truth_s": 20.0,
+      "windows": [
+        [
+          0.0,
+          22.8
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.0,
+            "start_s": 0.0,
+            "available_until_s": 5.999999999999995
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 22.8,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.727506449446082,
+        "call_ms_p95": 6.280832865741102,
+        "calls": 162
+      }
+    },
+    {
+      "name": "20s_tight_arc_170deg_per_m_at_0.08mps",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 20.0,
+      "truth_s": 20.0,
+      "windows": [
+        [
+          0.0,
+          22.91
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.11,
+            "start_s": 0.0,
+            "available_until_s": 6.099999999999994
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 22.91,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.64551118016243,
+        "call_ms_p95": 3.685512812808156,
+        "calls": 161
+      }
+    },
+    {
+      "name": "stop_go_0.5s_move_1.5s_pause",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 5.0,
+      "truth_s": 5.0,
+      "windows": [
+        [
+          0.0,
+          21.6
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.0,
+            "start_s": 0.0,
+            "available_until_s": 5.999999999999995
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 21.6,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.6186874601989985,
+        "call_ms_p95": 3.7265576655045147,
+        "calls": 162
+      }
+    },
+    {
+      "name": "stop_go_0.5s_move_1.5s_pause",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 5.0,
+      "truth_s": 5.0,
+      "windows": [
+        [
+          0.0,
+          21.51
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.11,
+            "start_s": 0.0,
+            "available_until_s": 6.099999999999994
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 21.51,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.7050210628658533,
+        "call_ms_p95": 3.793872194364667,
+        "calls": 161
+      }
+    },
+    {
+      "name": "4s_slow_turn_after_3s_stop",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 4.0,
+      "truth_s": 4.0,
+      "windows": [
+        [
+          0.0,
+          9.8
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.0,
+            "start_s": 0.0,
+            "available_until_s": 5.999999999999995
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 9.8,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 1.883527496829629,
+        "call_ms_p95": 5.031773471273482,
+        "calls": 96
+      }
+    },
+    {
+      "name": "4s_slow_turn_after_3s_stop",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 4.0,
+      "truth_s": 4.0,
+      "windows": [
+        [
+          0.0,
+          9.709999999999999
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.11,
+            "start_s": 0.0,
+            "available_until_s": 6.099999999999994
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 9.709999999999999,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 1.947592943906784,
+        "call_ms_p95": 3.0731266015209258,
+        "calls": 96
+      }
+    },
+    {
+      "name": "short_true_arc_0.08mps_before_hard_stop",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 6.000000000000001,
+      "truth_s": 6.000000000000001,
+      "windows": [
+        [
+          0.0,
+          12.4
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.0,
+            "start_s": 0.0,
+            "available_until_s": 5.999999999999995
+          },
+          {
+            "decision_s": 4.800000000000001,
+            "start_s": 1.2999999999999972,
+            "available_until_s": 10.799999999999978
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 4.6000000000000005,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          },
+          {
+            "start_timestamp_s": 1.2999999999999972,
+            "end_timestamp_s": 12.4,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 1.8127639777958393,
+        "call_ms_p95": 3.0827148933894932,
+        "calls": 108
+      }
+    },
+    {
+      "name": "short_true_arc_0.08mps_before_hard_stop",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 6.000000000000001,
+      "truth_s": 6.000000000000001,
+      "windows": [
+        [
+          0.0,
+          12.309999999999999
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.11,
+            "start_s": 0.0,
+            "available_until_s": 6.099999999999994
+          },
+          {
+            "decision_s": 4.910000000000001,
+            "start_s": 1.1999999999999975,
+            "available_until_s": 10.899999999999977
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 4.710000000000001,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          },
+          {
+            "start_timestamp_s": 1.1999999999999975,
+            "end_timestamp_s": 12.309999999999999,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 1.7660970333963633,
+        "call_ms_p95": 3.0724269105121493,
+        "calls": 107
+      }
+    },
+    {
+      "name": "short_true_arc_0.1mps_before_hard_stop",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 6.000000000000001,
+      "truth_s": 6.000000000000001,
+      "windows": [
+        [
+          0.0,
+          12.4
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.0,
+            "start_s": 0.0,
+            "available_until_s": 5.999999999999995
+          },
+          {
+            "decision_s": 5.0,
+            "start_s": 1.0999999999999979,
+            "available_until_s": 10.999999999999977
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 4.800000000000001,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          },
+          {
+            "start_timestamp_s": 1.0999999999999979,
+            "end_timestamp_s": 12.4,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 1.7998660914599895,
+        "call_ms_p95": 3.0864412197843194,
+        "calls": 108
+      }
+    },
+    {
+      "name": "short_true_arc_0.1mps_before_hard_stop",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 6.000000000000001,
+      "truth_s": 6.000000000000001,
+      "windows": [
+        [
+          0.0,
+          12.309999999999999
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.11,
+            "start_s": 0.0,
+            "available_until_s": 6.099999999999994
+          },
+          {
+            "decision_s": 4.910000000000001,
+            "start_s": 1.1999999999999975,
+            "available_until_s": 10.899999999999977
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 4.710000000000001,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          },
+          {
+            "start_timestamp_s": 1.1999999999999975,
+            "end_timestamp_s": 12.309999999999999,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 1.77160301245749,
+        "call_ms_p95": 3.0486649833619595,
+        "calls": 107
+      }
+    },
+    {
+      "name": "2Hz_0.20mps_arc_with_0.01s_probe_offset",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 20.0,
+      "truth_s": 20.0,
+      "windows": [
+        [
+          0.0,
+          23.0
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.0,
+            "start_s": 0.0,
+            "available_until_s": 6.0
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 23.0,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 0.5121000576764345,
+        "call_ms_p95": 0.7706929463893175,
+        "calls": 161
+      }
+    },
+    {
+      "name": "2Hz_0.20mps_arc_with_0.01s_probe_offset",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 20.0,
+      "truth_s": 20.0,
+      "windows": [
+        [
+          0.0,
+          22.91
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.11,
+            "start_s": 0.0,
+            "available_until_s": 6.0
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 22.91,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 0.5104229785501957,
+        "call_ms_p95": 0.7729609496891499,
+        "calls": 161
+      }
+    },
+    {
+      "name": "finite_2Hz_2.0s_0.19mps_arc",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 2.0,
+      "truth_s": 2.0,
+      "windows": [
+        [
+          0.0,
+          5.0
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.0,
+            "start_s": 0.0,
+            "available_until_s": 6.0
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 5.0,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 0.4154578782618046,
+        "call_ms_p95": 0.5898181116208434,
+        "calls": 71
+      }
+    },
+    {
+      "name": "finite_2Hz_2.0s_0.19mps_arc",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 2.0,
+      "truth_s": 2.0,
+      "windows": [
+        [
+          0.0,
+          4.910000000000001
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.11,
+            "start_s": 0.0,
+            "available_until_s": 6.0
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 4.910000000000001,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 0.42015803046524525,
+        "call_ms_p95": 0.6037134444341063,
+        "calls": 71
+      }
+    },
+    {
+      "name": "finite_2Hz_2.0s_0.2mps_arc",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 2.0,
+      "truth_s": 2.0,
+      "windows": [
+        [
+          0.0,
+          5.0
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.0,
+            "start_s": 0.0,
+            "available_until_s": 6.0
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 5.0,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 0.4170779138803482,
+        "call_ms_p95": 0.5992124788463116,
+        "calls": 71
+      }
+    },
+    {
+      "name": "finite_2Hz_2.0s_0.2mps_arc",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 2.0,
+      "truth_s": 2.0,
+      "windows": [
+        [
+          0.0,
+          4.910000000000001
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.11,
+            "start_s": 0.0,
+            "available_until_s": 6.0
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 4.910000000000001,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 0.4270190838724375,
+        "call_ms_p95": 0.6073924014344811,
+        "calls": 71
+      }
+    },
+    {
+      "name": "finite_2Hz_3.0s_0.115mps_arc",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 3.0,
+      "truth_s": 3.0,
+      "windows": [
+        [
+          0.0,
+          5.800000000000001
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.0,
+            "start_s": 0.0,
+            "available_until_s": 6.0
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 5.800000000000001,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 0.41816942393779755,
+        "call_ms_p95": 0.6077472353354096,
+        "calls": 76
+      }
+    },
+    {
+      "name": "finite_2Hz_3.0s_0.115mps_arc",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 3.0,
+      "truth_s": 3.0,
+      "windows": [
+        [
+          0.0,
+          5.910000000000001
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.11,
+            "start_s": 0.0,
+            "available_until_s": 6.0
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 5.910000000000001,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 0.40829554200172424,
+        "call_ms_p95": 0.6162659265100956,
+        "calls": 76
+      }
+    },
+    {
+      "name": "finite_2Hz_3.0s_0.12mps_arc",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 3.0,
+      "truth_s": 3.0,
+      "windows": [
+        [
+          0.0,
+          5.800000000000001
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.0,
+            "start_s": 0.0,
+            "available_until_s": 6.0
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 5.800000000000001,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 0.41318440344184637,
+        "call_ms_p95": 0.6122176419012249,
+        "calls": 76
+      }
+    },
+    {
+      "name": "finite_2Hz_3.0s_0.12mps_arc",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 3.0,
+      "truth_s": 3.0,
+      "windows": [
+        [
+          0.0,
+          5.910000000000001
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 0.11,
+            "start_s": 0.0,
+            "available_until_s": 6.0
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 0.0,
+            "end_timestamp_s": 5.910000000000001,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 0.41198753751814365,
+        "call_ms_p95": 0.6126845837570727,
+        "calls": 76
+      }
+    },
+    {
+      "name": "straight_only",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 0,
+      "truth_s": 0,
+      "windows": [],
+      "replay": {
+        "saved": false,
+        "starts": [],
+        "clips": [],
+        "call_ms_p50": 4.401635495014489,
+        "call_ms_p95": 5.461990833282471,
+        "calls": 102
+      }
+    },
+    {
+      "name": "straight_only",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 0,
+      "truth_s": 0,
+      "windows": [],
+      "replay": {
+        "saved": false,
+        "starts": [],
+        "clips": [],
+        "call_ms_p50": 4.414184018969536,
+        "call_ms_p95": 5.413254955783486,
+        "calls": 101
+      }
+    },
+    {
+      "name": "S_turn_zero_net_yaw",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 6,
+      "truth_s": 6,
+      "windows": [
+        [
+          3.9999999999999876,
+          20.6
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 5.0,
+            "start_s": 3.9999999999999876,
+            "available_until_s": 10.999999999999977
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 3.9999999999999876,
+            "end_timestamp_s": 20.6,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.5728270411491394,
+        "call_ms_p95": 4.106597881764173,
+        "calls": 117
+      }
+    },
+    {
+      "name": "S_turn_zero_net_yaw",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 6,
+      "truth_s": 6,
+      "windows": [
+        [
+          3.9999999999999876,
+          20.51
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 5.11,
+            "start_s": 3.9999999999999876,
+            "available_until_s": 11.099999999999977
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 3.9999999999999876,
+            "end_timestamp_s": 20.51,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.590149058960378,
+        "call_ms_p95": 4.087463021278381,
+        "calls": 116
+      }
+    },
+    {
+      "name": "parked_pre_context",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 3,
+      "truth_s": 3,
+      "windows": [
+        [
+          5.9999999999999805,
+          19.6
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 7.0,
+            "start_s": 5.9999999999999805,
+            "available_until_s": 12.99999999999997
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 5.9999999999999805,
+            "end_timestamp_s": 19.6,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.4528231006115675,
+        "call_ms_p95": 2.8731846017763014,
+        "calls": 107
+      }
+    },
+    {
+      "name": "parked_pre_context",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 3,
+      "truth_s": 3,
+      "windows": [
+        [
+          5.9999999999999805,
+          19.509999999999998
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 7.11,
+            "start_s": 5.9999999999999805,
+            "available_until_s": 13.09999999999997
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 5.9999999999999805,
+            "end_timestamp_s": 19.509999999999998,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 2.482904470525682,
+        "call_ms_p95": 2.9626531759276986,
+        "calls": 106
+      }
+    },
+    {
+      "name": "long_turn_split",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 110,
+      "truth_s": 110,
+      "windows": [
+        [
+          3.9999999999999876,
+          124.60000000000001
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 5.0,
+            "start_s": 3.9999999999999876,
+            "available_until_s": 10.999999999999977
+          },
+          {
+            "decision_s": 49.2,
+            "start_s": 44.999999999999986,
+            "available_until_s": 55.200000000000514
+          },
+          {
+            "decision_s": 90.2,
+            "start_s": 85.99999999999999,
+            "available_until_s": 96.19999999999881
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 3.9999999999999876,
+            "end_timestamp_s": 48.999999999999986,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          },
+          {
+            "start_timestamp_s": 44.999999999999986,
+            "end_timestamp_s": 89.99999999999999,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          },
+          {
+            "start_timestamp_s": 85.99999999999999,
+            "end_timestamp_s": 124.60000000000001,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 7.606226019561291,
+        "call_ms_p95": 8.038118365220726,
+        "calls": 631
+      }
+    },
+    {
+      "name": "long_turn_split",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 110,
+      "truth_s": 110,
+      "windows": [
+        [
+          3.9999999999999876,
+          124.51
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 5.11,
+            "start_s": 3.9999999999999876,
+            "available_until_s": 11.099999999999977
+          },
+          {
+            "decision_s": 49.31,
+            "start_s": 44.999999999999986,
+            "available_until_s": 55.300000000000516
+          },
+          {
+            "decision_s": 90.31,
+            "start_s": 85.99999999999999,
+            "available_until_s": 96.2999999999988
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 3.9999999999999876,
+            "end_timestamp_s": 48.999999999999986,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          },
+          {
+            "start_timestamp_s": 44.999999999999986,
+            "end_timestamp_s": 89.99999999999999,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          },
+          {
+            "start_timestamp_s": 85.99999999999999,
+            "end_timestamp_s": 124.51,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "gate"
+          }
+        ],
+        "call_ms_p50": 7.57985794916749,
+        "call_ms_p95": 8.302533533424139,
+        "calls": 631
+      }
+    },
+    {
+      "name": "EOF_new_turn_last_2s",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 1.9999999999999805,
+      "truth_s": 2,
+      "windows": [
+        [
+          3.9999999999999876,
+          9.99999999999998
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 5.0,
+            "start_s": 3.9999999999999876,
+            "available_until_s": 9.99999999999998
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 3.9999999999999876,
+            "end_timestamp_s": 9.99999999999998,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "source_eof"
+          }
+        ],
+        "call_ms_p50": 2.8035829309374094,
+        "call_ms_p95": 4.073531366884708,
+        "calls": 51
+      }
+    },
+    {
+      "name": "EOF_new_turn_last_2s",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 1.9999999999999805,
+      "truth_s": 2,
+      "windows": [
+        [
+          3.9999999999999876,
+          9.99999999999998
+        ]
+      ],
+      "replay": {
+        "saved": true,
+        "starts": [
+          {
+            "decision_s": 5.11,
+            "start_s": 3.9999999999999876,
+            "available_until_s": 9.99999999999998
+          }
+        ],
+        "clips": [
+          {
+            "start_timestamp_s": 3.9999999999999876,
+            "end_timestamp_s": 9.99999999999998,
+            "target_confirmed": true,
+            "should_save": true,
+            "ending": "source_eof"
+          }
+        ],
+        "call_ms_p50": 2.6000821962952614,
+        "call_ms_p95": 4.040094907395542,
+        "calls": 51
+      }
+    },
+    {
+      "name": "wobble",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 0,
+      "truth_s": 0,
+      "windows": [],
+      "replay": {
+        "saved": false,
+        "starts": [],
+        "clips": [],
+        "call_ms_p50": 4.687390988692641,
+        "call_ms_p95": 5.584191996604204,
+        "calls": 101
+      }
+    },
+    {
+      "name": "wobble",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 0,
+      "truth_s": 0,
+      "windows": [],
+      "replay": {
+        "saved": false,
+        "starts": [],
+        "clips": [],
+        "call_ms_p50": 4.63355309329927,
+        "call_ms_p95": 5.537204910069704,
+        "calls": 101
+      }
+    },
+    {
+      "name": "brief_correction_then_stop",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 0,
+      "truth_s": 0,
+      "windows": [],
+      "replay": {
+        "saved": false,
+        "starts": [],
+        "clips": [],
+        "call_ms_p50": 3.6648340756073594,
+        "call_ms_p95": 4.761603660881519,
+        "calls": 74
+      }
+    },
+    {
+      "name": "brief_correction_then_stop",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 0,
+      "truth_s": 0,
+      "windows": [],
+      "replay": {
+        "saved": false,
+        "starts": [],
+        "clips": [],
+        "call_ms_p50": 3.681180067360401,
+        "call_ms_p95": 4.697867808863521,
+        "calls": 73
+      }
+    },
+    {
+      "name": "unfinished_weak_arc_keeps_growing",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 0,
+      "truth_s": 0,
+      "windows": [],
+      "replay": {
+        "saved": false,
+        "starts": [],
+        "clips": [],
+        "call_ms_p50": 4.448754014447331,
+        "call_ms_p95": 5.825251725036651,
+        "calls": 102
+      }
+    },
+    {
+      "name": "unfinished_weak_arc_keeps_growing",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 0,
+      "truth_s": 0,
+      "windows": [],
+      "replay": {
+        "saved": false,
+        "starts": [],
+        "clips": [],
+        "call_ms_p50": 4.420463927090168,
+        "call_ms_p95": 5.659062881022692,
+        "calls": 101
+      }
+    },
+    {
+      "name": "reverse_straight",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 0,
+      "truth_s": 0,
+      "windows": [],
+      "replay": {
+        "saved": false,
+        "starts": [],
+        "clips": [],
+        "call_ms_p50": 4.483839962631464,
+        "call_ms_p95": 5.4148060735315084,
+        "calls": 101
+      }
+    },
+    {
+      "name": "reverse_straight",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 0,
+      "truth_s": 0,
+      "windows": [],
+      "replay": {
+        "saved": false,
+        "starts": [],
+        "clips": [],
+        "call_ms_p50": 4.576770821586251,
+        "call_ms_p95": 5.550176836550236,
+        "calls": 101
+      }
+    },
+    {
+      "name": "pose_jump",
+      "phase_s": 0.0,
+      "passed": true,
+      "covered_s": 0,
+      "truth_s": 0,
+      "windows": [],
+      "replay": {
+        "saved": false,
+        "starts": [],
+        "clips": [],
+        "call_ms_p50": 3.6927550099790096,
+        "call_ms_p95": 4.665788030251861,
+        "calls": 101
+      }
+    },
+    {
+      "name": "pose_jump",
+      "phase_s": 0.11,
+      "passed": true,
+      "covered_s": 0,
+      "truth_s": 0,
+      "windows": [],
+      "replay": {
+        "saved": false,
+        "starts": [],
+        "clips": [],
+        "call_ms_p50": 3.59597010537982,
+        "call_ms_p95": 4.641128936782479,
+        "calls": 101
+      }
+    }
+  ],
+  "passed": 54,
+  "total": 54
+}

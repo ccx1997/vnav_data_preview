@@ -1,0 +1,23 @@
+{
+  "provenance": "One data-expert subagent independently viewed raw equal-scale XY and yaw-time review sheets before seeing the corresponding algorithm decisions. Geometry review only, not human/video ground truth. 8Up 19/20 also have explicit user negative feedback.",
+  "tasks": {
+    "202609201240128Up": {
+      "role": "calibration",
+      "positive": [1,8,13,25,27,33],
+      "negative": [2,3,4,5,6,7,9,10,11,12,16,17,19,20,21,22,24,26,28,29,31,32],
+      "ambiguous": [14,15,18,23,30]
+    },
+    "20260920122356WIt": {
+      "role": "initial held-out test failed; subsequently used for conservative ablation selection",
+      "positive": [8,11,21,27,30,34,35],
+      "negative": [2,3,5,6,7,10,12,13,14,15,16,17,18,19,20,22,24,25,26,28,29,31,32,36,37],
+      "ambiguous": [1,4,9,23,33]
+    },
+    "20260918200506GCy": {
+      "role": "new check of frozen conservative variant; independent geometry review, no human labels",
+      "positive": [1,7,11,21,22,23,24,25,26,27,28,33,37,39,41,49,52,53,54],
+      "negative": [5,6,8,9,10,12,16,18,19,20,30,31,32,35,38,40,42,44,45,46,48,51],
+      "ambiguous": [2,3,4,13,14,15,17,29,34,36,43,47,50]
+    }
+  }
+}

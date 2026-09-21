@@ -1,0 +1,125 @@
+{
+  "method": "20 Hz poses; 3 warmups + 20 fresh-instance start calls; paired inputs; no I/O; shared host, no speedup claim",
+  "results": [
+    {
+      "version": "baseline",
+      "cache_s": 15,
+      "poses": 301,
+      "scenario": "straight",
+      "calls": 20,
+      "p50_ms": 2.329904353246093,
+      "p95_ms": 2.356150886043906,
+      "max_ms": 2.382855862379074
+    },
+    {
+      "version": "current",
+      "cache_s": 15,
+      "poses": 301,
+      "scenario": "straight",
+      "calls": 20,
+      "p50_ms": 14.319069450721145,
+      "p95_ms": 14.530772110447288,
+      "max_ms": 14.895871048793197
+    },
+    {
+      "version": "baseline",
+      "cache_s": 15,
+      "poses": 301,
+      "scenario": "arc",
+      "calls": 20,
+      "p50_ms": 1.9994494505226612,
+      "p95_ms": 2.069055801257491,
+      "max_ms": 2.0927709992974997
+    },
+    {
+      "version": "current",
+      "cache_s": 15,
+      "poses": 301,
+      "scenario": "arc",
+      "calls": 20,
+      "p50_ms": 3.6697740433737636,
+      "p95_ms": 3.8545699790120125,
+      "max_ms": 3.8572829216718674
+    },
+    {
+      "version": "baseline",
+      "cache_s": 60,
+      "poses": 1201,
+      "scenario": "straight",
+      "calls": 20,
+      "p50_ms": 8.706125896424055,
+      "p95_ms": 9.513672208413482,
+      "max_ms": 9.608394000679255
+    },
+    {
+      "version": "current",
+      "cache_s": 60,
+      "poses": 1201,
+      "scenario": "straight",
+      "calls": 20,
+      "p50_ms": 20.413074526004493,
+      "p95_ms": 20.538522861897945,
+      "max_ms": 20.598135888576508
+    },
+    {
+      "version": "baseline",
+      "cache_s": 60,
+      "poses": 1201,
+      "scenario": "arc",
+      "calls": 20,
+      "p50_ms": 8.059319574385881,
+      "p95_ms": 8.47720098681748,
+      "max_ms": 8.917777799069881
+    },
+    {
+      "version": "current",
+      "cache_s": 60,
+      "poses": 1201,
+      "scenario": "arc",
+      "calls": 20,
+      "p50_ms": 9.650955442339182,
+      "p95_ms": 13.274198165163398,
+      "max_ms": 35.183137049898505
+    },
+    {
+      "version": "baseline",
+      "cache_s": 120,
+      "poses": 2401,
+      "scenario": "straight",
+      "calls": 20,
+      "p50_ms": 17.73192558903247,
+      "p95_ms": 19.438204122707248,
+      "max_ms": 54.162824992090464
+    },
+    {
+      "version": "current",
+      "cache_s": 120,
+      "poses": 2401,
+      "scenario": "straight",
+      "calls": 20,
+      "p50_ms": 28.598208562470973,
+      "p95_ms": 29.447826789692044,
+      "max_ms": 44.700081925839186
+    },
+    {
+      "version": "baseline",
+      "cache_s": 120,
+      "poses": 2401,
+      "scenario": "arc",
+      "calls": 20,
+      "p50_ms": 16.200390993617475,
+      "p95_ms": 16.592581057921052,
+      "max_ms": 30.85741796530783
+    },
+    {
+      "version": "current",
+      "cache_s": 120,
+      "poses": 2401,
+      "scenario": "arc",
+      "calls": 20,
+      "p50_ms": 17.72462099324912,
+      "p95_ms": 33.365834038704634,
+      "max_ms": 35.36895802244544
+    }
+  ]
+}

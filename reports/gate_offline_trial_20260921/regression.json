@@ -1,0 +1,2124 @@
+{
+  "scope": "Offline event/save-window regression. Not the original streaming API tests or production recall.",
+  "historical_count": 17,
+  "cases": [
+    {
+      "name": "20s_arc_30deg_per_m_at_0.06mps",
+      "passed": true,
+      "truth": [
+        [
+          0.0,
+          20.0
+        ]
+      ],
+      "covered_true_s": 20.0,
+      "expected_true_s": 20.0,
+      "saved_windows": [
+        [
+          0.0,
+          22.50000000000005
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:0:0",
+            "capture_start_s": 0.0,
+            "capture_end_s": 22.50000000000005,
+            "cores": [
+              {
+                "start_s": 0.0,
+                "end_s": 20.000000000000014,
+                "angle_deg": 35.55000000000018,
+                "bounded_angle_deg": 27.090000000000117,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 1.1849998692277721,
+                  "max_translation_m": 1.166082819567803,
+                  "heading_change_deg": 23.04318301307246,
+                  "lateral_from_entry_m": 0.23205082015923956,
+                  "fit_error_m": 0.010993297197654454
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 22.50000000000005,
+            "should_save": true,
+            "pre_context_available_s": 0.0,
+            "post_context_available_s": 2.5000000000000355,
+            "left_truncated": true,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 0.0,
+            "end_s": 20.000000000000014,
+            "angle_deg": 35.55000000000018,
+            "bounded_angle_deg": 27.090000000000117,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 1.1849998692277721,
+              "max_translation_m": 1.166082819567803,
+              "heading_change_deg": 23.04318301307246,
+              "lateral_from_entry_m": 0.23205082015923956,
+              "fit_error_m": 0.010993297197654454
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 0,
+            "core_id": 0
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.1mps",
+      "passed": true,
+      "truth": [
+        [
+          0.0,
+          20.0
+        ]
+      ],
+      "covered_true_s": 20.0,
+      "expected_true_s": 20.0,
+      "saved_windows": [
+        [
+          0.0,
+          22.700000000000053
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:0:0",
+            "capture_start_s": 0.0,
+            "capture_end_s": 22.700000000000053,
+            "cores": [
+              {
+                "start_s": 0.0,
+                "end_s": 20.000000000000014,
+                "angle_deg": 59.250000000000014,
+                "bounded_angle_deg": 45.15000000000006,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 1.9749993945732687,
+                  "max_translation_m": 1.8881668521404267,
+                  "heading_change_deg": 44.11192084392973,
+                  "lateral_from_entry_m": 0.7069136623716034,
+                  "fit_error_m": 0.016128099667449252
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 22.700000000000053,
+            "should_save": true,
+            "pre_context_available_s": 0.0,
+            "post_context_available_s": 2.7000000000000384,
+            "left_truncated": true,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 0.0,
+            "end_s": 20.000000000000014,
+            "angle_deg": 59.250000000000014,
+            "bounded_angle_deg": 45.15000000000006,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 1.9749993945732687,
+              "max_translation_m": 1.8881668521404267,
+              "heading_change_deg": 44.11192084392973,
+              "lateral_from_entry_m": 0.7069136623716034,
+              "fit_error_m": 0.016128099667449252
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 0,
+            "core_id": 0
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.14mps",
+      "passed": true,
+      "truth": [
+        [
+          0.0,
+          20.0
+        ]
+      ],
+      "covered_true_s": 20.0,
+      "expected_true_s": 20.0,
+      "saved_windows": [
+        [
+          0.0,
+          22.800000000000054
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:0:0",
+            "capture_start_s": 0.0,
+            "capture_end_s": 22.800000000000054,
+            "cores": [
+              {
+                "start_s": 0.0,
+                "end_s": 20.000000000000014,
+                "angle_deg": 82.94999999999987,
+                "bounded_angle_deg": 63.20999999999991,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 2.7649983387100745,
+                  "max_translation_m": 2.5297708131517154,
+                  "heading_change_deg": 67.95173147941408,
+                  "lateral_from_entry_m": 1.4082730603238085,
+                  "fit_error_m": 0.01616740685907744
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 22.800000000000054,
+            "should_save": true,
+            "pre_context_available_s": 0.0,
+            "post_context_available_s": 2.80000000000004,
+            "left_truncated": true,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 0.0,
+            "end_s": 20.000000000000014,
+            "angle_deg": 82.94999999999987,
+            "bounded_angle_deg": 63.20999999999991,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 2.7649983387100745,
+              "max_translation_m": 2.5297708131517154,
+              "heading_change_deg": 67.95173147941408,
+              "lateral_from_entry_m": 1.4082730603238085,
+              "fit_error_m": 0.01616740685907744
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 0,
+            "core_id": 0
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.15mps",
+      "passed": true,
+      "truth": [
+        [
+          0.0,
+          20.0
+        ]
+      ],
+      "covered_true_s": 20.0,
+      "expected_true_s": 20.0,
+      "saved_windows": [
+        [
+          0.0,
+          22.800000000000054
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:0:0",
+            "capture_start_s": 0.0,
+            "capture_end_s": 22.800000000000054,
+            "cores": [
+              {
+                "start_s": 0.0,
+                "end_s": 20.000000000000014,
+                "angle_deg": 88.87499999999969,
+                "bounded_angle_deg": 67.7249999999998,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 2.962497956686427,
+                  "max_translation_m": 2.674299271850912,
+                  "heading_change_deg": 73.70193815004171,
+                  "lateral_from_entry_m": 1.5978247790082634,
+                  "fit_error_m": 0.01672718204045963
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 22.800000000000054,
+            "should_save": true,
+            "pre_context_available_s": 0.0,
+            "post_context_available_s": 2.80000000000004,
+            "left_truncated": true,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 0.0,
+            "end_s": 20.000000000000014,
+            "angle_deg": 88.87499999999969,
+            "bounded_angle_deg": 67.7249999999998,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 2.962497956686427,
+              "max_translation_m": 2.674299271850912,
+              "heading_change_deg": 73.70193815004171,
+              "lateral_from_entry_m": 1.5978247790082634,
+              "fit_error_m": 0.01672718204045963
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 0,
+            "core_id": 0
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.16mps",
+      "passed": true,
+      "truth": [
+        [
+          0.0,
+          20.0
+        ]
+      ],
+      "covered_true_s": 20.0,
+      "expected_true_s": 20.0,
+      "saved_windows": [
+        [
+          0.0,
+          22.900000000000055
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:0:0",
+            "capture_start_s": 0.0,
+            "capture_end_s": 22.900000000000055,
+            "cores": [
+              {
+                "start_s": 0.0,
+                "end_s": 20.000000000000014,
+                "angle_deg": 94.79999999999973,
+                "bounded_angle_deg": 72.23999999999991,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 3.159991905577962,
+                  "max_translation_m": 2.811679649135611,
+                  "heading_change_deg": 79.72640841418817,
+                  "lateral_from_entry_m": 1.7982670608511033,
+                  "fit_error_m": 0.016125557809130626
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 22.900000000000055,
+            "should_save": true,
+            "pre_context_available_s": 0.0,
+            "post_context_available_s": 2.900000000000041,
+            "left_truncated": true,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 0.0,
+            "end_s": 20.000000000000014,
+            "angle_deg": 94.79999999999973,
+            "bounded_angle_deg": 72.23999999999991,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 3.159991905577962,
+              "max_translation_m": 2.811679649135611,
+              "heading_change_deg": 79.72640841418817,
+              "lateral_from_entry_m": 1.7982670608511033,
+              "fit_error_m": 0.016125557809130626
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 0,
+            "core_id": 0
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.2mps",
+      "passed": true,
+      "truth": [
+        [
+          0.0,
+          20.0
+        ]
+      ],
+      "covered_true_s": 20.0,
+      "expected_true_s": 20.0,
+      "saved_windows": [
+        [
+          0.0,
+          22.900000000000055
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:0:0",
+            "capture_start_s": 0.0,
+            "capture_end_s": 22.900000000000055,
+            "cores": [
+              {
+                "start_s": 0.0,
+                "end_s": 20.000000000000014,
+                "angle_deg": 118.50000000000003,
+                "bounded_angle_deg": 90.30000000000013,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 3.9499759665836702,
+                  "max_translation_m": 3.2826831846558844,
+                  "heading_change_deg": 103.26122452493522,
+                  "lateral_from_entry_m": 2.569446591928434,
+                  "fit_error_m": 0.016191816517861474
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 22.900000000000055,
+            "should_save": true,
+            "pre_context_available_s": 0.0,
+            "post_context_available_s": 2.900000000000041,
+            "left_truncated": true,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 0.0,
+            "end_s": 20.000000000000014,
+            "angle_deg": 118.50000000000003,
+            "bounded_angle_deg": 90.30000000000013,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 3.9499759665836702,
+              "max_translation_m": 3.2826831846558844,
+              "heading_change_deg": 103.26122452493522,
+              "lateral_from_entry_m": 2.569446591928434,
+              "fit_error_m": 0.016191816517861474
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 0,
+            "core_id": 0
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "20s_arc_30deg_per_m_at_0.4mps",
+      "passed": true,
+      "truth": [
+        [
+          0.0,
+          20.0
+        ]
+      ],
+      "covered_true_s": 20.0,
+      "expected_true_s": 20.0,
+      "saved_windows": [
+        [
+          0.0,
+          23.000000000000057
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:0:0",
+            "capture_start_s": 0.0,
+            "capture_end_s": 23.000000000000057,
+            "cores": [
+              {
+                "start_s": 0.0,
+                "end_s": 20.000000000000014,
+                "angle_deg": 237.00000000000006,
+                "bounded_angle_deg": 180.60000000000025,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 7.8996542553805735,
+                  "max_translation_m": 3.819631368277239,
+                  "heading_change_deg": 221.13882813066203,
+                  "lateral_from_entry_m": 3.7977802435416987,
+                  "fit_error_m": 0.020302615055173702
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 23.000000000000057,
+            "should_save": true,
+            "pre_context_available_s": 0.0,
+            "post_context_available_s": 3.0000000000000426,
+            "left_truncated": true,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 0.0,
+            "end_s": 20.000000000000014,
+            "angle_deg": 237.00000000000006,
+            "bounded_angle_deg": 180.60000000000025,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 7.8996542553805735,
+              "max_translation_m": 3.819631368277239,
+              "heading_change_deg": 221.13882813066203,
+              "lateral_from_entry_m": 3.7977802435416987,
+              "fit_error_m": 0.020302615055173702
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 0,
+            "core_id": 0
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "20s_tight_arc_170deg_per_m_at_0.08mps",
+      "passed": true,
+      "truth": [
+        [
+          0.0,
+          20.0
+        ]
+      ],
+      "covered_true_s": 20.0,
+      "expected_true_s": 20.0,
+      "saved_windows": [
+        [
+          0.0,
+          22.800000000000054
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:0:0",
+            "capture_start_s": 0.0,
+            "capture_end_s": 22.800000000000054,
+            "cores": [
+              {
+                "start_s": 0.0,
+                "end_s": 20.000000000000014,
+                "angle_deg": 268.6,
+                "bounded_angle_deg": 204.67999999999955,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 1.5799172205648255,
+                  "max_translation_m": 0.6740590554417538,
+                  "heading_change_deg": 182.94518772707997,
+                  "lateral_from_entry_m": 0.5815335744894974,
+                  "fit_error_m": 0.08826520829043442
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 22.800000000000054,
+            "should_save": true,
+            "pre_context_available_s": 0.0,
+            "post_context_available_s": 2.80000000000004,
+            "left_truncated": true,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 0.0,
+            "end_s": 20.000000000000014,
+            "angle_deg": 268.6,
+            "bounded_angle_deg": 204.67999999999955,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 1.5799172205648255,
+              "max_translation_m": 0.6740590554417538,
+              "heading_change_deg": 182.94518772707997,
+              "lateral_from_entry_m": 0.5815335744894974,
+              "fit_error_m": 0.08826520829043442
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 0,
+            "core_id": 0
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "stop_go_0.5s_move_1.5s_pause",
+      "passed": true,
+      "truth": [
+        [
+          0.0,
+          0.5
+        ],
+        [
+          2.0,
+          2.5
+        ],
+        [
+          4.0,
+          4.5
+        ],
+        [
+          6.0,
+          6.5
+        ],
+        [
+          8.0,
+          8.5
+        ],
+        [
+          10.0,
+          10.5
+        ],
+        [
+          12.0,
+          12.5
+        ],
+        [
+          14.0,
+          14.5
+        ],
+        [
+          16.0,
+          16.5
+        ],
+        [
+          18.0,
+          18.5
+        ]
+      ],
+      "covered_true_s": 5.0,
+      "expected_true_s": 5.0,
+      "saved_windows": [
+        [
+          0.0,
+          21.500000000000036
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:0:0",
+            "capture_start_s": 0.0,
+            "capture_end_s": 21.500000000000036,
+            "cores": [
+              {
+                "start_s": 0.0,
+                "end_s": 18.499999999999993,
+                "angle_deg": 57.000000000000064,
+                "bounded_angle_deg": 48.00000000000006,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 1.8999948824830235,
+                  "max_translation_m": 1.8225955543482264,
+                  "heading_change_deg": 42.143858239356895,
+                  "lateral_from_entry_m": 0.6491346433685581,
+                  "fit_error_m": 0.01648125097974012
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 21.500000000000036,
+            "should_save": true,
+            "pre_context_available_s": 0.0,
+            "post_context_available_s": 3.0000000000000426,
+            "left_truncated": true,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 0.0,
+            "end_s": 18.499999999999993,
+            "angle_deg": 57.000000000000064,
+            "bounded_angle_deg": 48.00000000000006,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 1.8999948824830235,
+              "max_translation_m": 1.8225955543482264,
+              "heading_change_deg": 42.143858239356895,
+              "lateral_from_entry_m": 0.6491346433685581,
+              "fit_error_m": 0.01648125097974012
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 0,
+            "core_id": 0
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "4s_slow_turn_after_3s_stop",
+      "passed": true,
+      "truth": [
+        [
+          3.0,
+          7.0
+        ]
+      ],
+      "covered_true_s": 4.0,
+      "expected_true_s": 4.0,
+      "saved_windows": [
+        [
+          0.0,
+          9.699999999999982
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:1:0",
+            "capture_start_s": 0.0,
+            "capture_end_s": 9.699999999999982,
+            "cores": [
+              {
+                "start_s": 3.0000000000000013,
+                "end_s": 6.999999999999991,
+                "angle_deg": 12.000000000000012,
+                "bounded_angle_deg": 12.000000000000012,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 0.3999998172296612,
+                  "max_translation_m": 0.39926977504014605,
+                  "heading_change_deg": 7.800770425383985,
+                  "lateral_from_entry_m": 0.026118849962238233,
+                  "fit_error_m": 0.0013604311505583783
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 1,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 9.699999999999982,
+            "should_save": true,
+            "pre_context_available_s": 3.0000000000000013,
+            "post_context_available_s": 2.6999999999999904,
+            "left_truncated": true,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 3.0000000000000013,
+            "end_s": 6.999999999999991,
+            "angle_deg": 12.000000000000012,
+            "bounded_angle_deg": 12.000000000000012,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 0.3999998172296612,
+              "max_translation_m": 0.39926977504014605,
+              "heading_change_deg": 7.800770425383985,
+              "lateral_from_entry_m": 0.026118849962238233,
+              "fit_error_m": 0.0013604311505583783
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 1,
+            "core_id": 0
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "short_true_arc_0.08mps_before_hard_stop",
+      "passed": true,
+      "truth": [
+        [
+          0.0,
+          2.0
+        ],
+        [
+          5.3,
+          9.3
+        ]
+      ],
+      "covered_true_s": 6.000000000000001,
+      "expected_true_s": 6.000000000000001,
+      "saved_windows": [
+        [
+          0.0,
+          12.299999999999972
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:0:0",
+            "capture_start_s": 0.0,
+            "capture_end_s": 4.6,
+            "cores": [
+              {
+                "start_s": 0.0,
+                "end_s": 2.0000000000000004,
+                "angle_deg": 4.812845479098915,
+                "bounded_angle_deg": 4.812845479098915,
+                "consistency": 1.0,
+                "branch": "short_slow_turn",
+                "geometry": {
+                  "path_m": 0.13999981568010322,
+                  "max_translation_m": 0.13995877653207303,
+                  "heading_change_deg": 2.9929941663344652,
+                  "lateral_from_entry_m": 0.003452625540289261,
+                  "fit_error_m": 0.0002306804804346668
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 4.6,
+            "should_save": true,
+            "pre_context_available_s": 0.0,
+            "post_context_available_s": 2.599999999999999,
+            "left_truncated": true,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          },
+          {
+            "event_id": "0:1:1",
+            "capture_start_s": 1.2999999999999972,
+            "capture_end_s": 12.299999999999972,
+            "cores": [
+              {
+                "start_s": 5.299999999999997,
+                "end_s": 9.299999999999983,
+                "angle_deg": 68.75493541569884,
+                "bounded_angle_deg": 68.75493541569884,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 2.000000000000001,
+                  "max_translation_m": 1.8822121601454023,
+                  "heading_change_deg": 52.425638254470265,
+                  "lateral_from_entry_m": 0.8186974175482977,
+                  "fit_error_m": 0.017965600057331655
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 1,
+                "core_id": 1
+              }
+            ],
+            "duration_s": 10.999999999999975,
+            "should_save": true,
+            "pre_context_available_s": 4.0,
+            "post_context_available_s": 2.9999999999999893,
+            "left_truncated": false,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0000000000000004,
+            "angle_deg": 4.812845479098915,
+            "bounded_angle_deg": 4.812845479098915,
+            "consistency": 1.0,
+            "branch": "short_slow_turn",
+            "geometry": {
+              "path_m": 0.13999981568010322,
+              "max_translation_m": 0.13995877653207303,
+              "heading_change_deg": 2.9929941663344652,
+              "lateral_from_entry_m": 0.003452625540289261,
+              "fit_error_m": 0.0002306804804346668
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 0,
+            "core_id": 0
+          },
+          {
+            "start_s": 5.299999999999997,
+            "end_s": 9.299999999999983,
+            "angle_deg": 68.75493541569884,
+            "bounded_angle_deg": 68.75493541569884,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 2.000000000000001,
+              "max_translation_m": 1.8822121601454023,
+              "heading_change_deg": 52.425638254470265,
+              "lateral_from_entry_m": 0.8186974175482977,
+              "fit_error_m": 0.017965600057331655
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 1,
+            "core_id": 1
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "short_true_arc_0.1mps_before_hard_stop",
+      "passed": true,
+      "truth": [
+        [
+          0.0,
+          2.0
+        ],
+        [
+          5.3,
+          9.3
+        ]
+      ],
+      "covered_true_s": 6.000000000000001,
+      "expected_true_s": 6.000000000000001,
+      "saved_windows": [
+        [
+          0.0,
+          12.299999999999972
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:0:0",
+            "capture_start_s": 0.0,
+            "capture_end_s": 4.699999999999999,
+            "cores": [
+              {
+                "start_s": 0.0,
+                "end_s": 2.0000000000000004,
+                "angle_deg": 6.016056848873647,
+                "bounded_angle_deg": 6.016056848873647,
+                "consistency": 1.0,
+                "branch": "short_slow_turn",
+                "geometry": {
+                  "path_m": 0.17499964000031504,
+                  "max_translation_m": 0.17491948942371677,
+                  "heading_change_deg": 3.7412431160181248,
+                  "lateral_from_entry_m": 0.005393529565686573,
+                  "fit_error_m": 0.00036043223599233455
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 4.699999999999999,
+            "should_save": true,
+            "pre_context_available_s": 0.0,
+            "post_context_available_s": 2.699999999999999,
+            "left_truncated": true,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          },
+          {
+            "event_id": "0:1:1",
+            "capture_start_s": 1.2999999999999972,
+            "capture_end_s": 12.299999999999972,
+            "cores": [
+              {
+                "start_s": 5.299999999999997,
+                "end_s": 9.299999999999983,
+                "angle_deg": 68.75493541569884,
+                "bounded_angle_deg": 68.75493541569884,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 2.0,
+                  "max_translation_m": 1.8822121601454025,
+                  "heading_change_deg": 50.70676486907798,
+                  "lateral_from_entry_m": 0.7931837818640601,
+                  "fit_error_m": 0.020949644771998753
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 1,
+                "core_id": 1
+              }
+            ],
+            "duration_s": 10.999999999999975,
+            "should_save": true,
+            "pre_context_available_s": 4.0,
+            "post_context_available_s": 2.9999999999999893,
+            "left_truncated": false,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0000000000000004,
+            "angle_deg": 6.016056848873647,
+            "bounded_angle_deg": 6.016056848873647,
+            "consistency": 1.0,
+            "branch": "short_slow_turn",
+            "geometry": {
+              "path_m": 0.17499964000031504,
+              "max_translation_m": 0.17491948942371677,
+              "heading_change_deg": 3.7412431160181248,
+              "lateral_from_entry_m": 0.005393529565686573,
+              "fit_error_m": 0.00036043223599233455
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 0,
+            "core_id": 0
+          },
+          {
+            "start_s": 5.299999999999997,
+            "end_s": 9.299999999999983,
+            "angle_deg": 68.75493541569884,
+            "bounded_angle_deg": 68.75493541569884,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 2.0,
+              "max_translation_m": 1.8822121601454025,
+              "heading_change_deg": 50.70676486907798,
+              "lateral_from_entry_m": 0.7931837818640601,
+              "fit_error_m": 0.020949644771998753
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 1,
+            "core_id": 1
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "2Hz_0.20mps_arc_with_0.01s_probe_offset",
+      "passed": true,
+      "truth": [
+        [
+          0.0,
+          20.0
+        ]
+      ],
+      "covered_true_s": 20.0,
+      "expected_true_s": 20.0,
+      "saved_windows": [
+        [
+          0.0,
+          23.0
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:0:0",
+            "capture_start_s": 0.0,
+            "capture_end_s": 23.0,
+            "cores": [
+              {
+                "start_s": 0.0,
+                "end_s": 20.0,
+                "angle_deg": 118.49999999999999,
+                "bounded_angle_deg": 90.0,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 3.9494802737332684,
+                  "max_translation_m": 3.2821282533702747,
+                  "heading_change_deg": 102.41863713412027,
+                  "lateral_from_entry_m": 2.538492412871204,
+                  "fit_error_m": 0.02020281525046933
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 23.0,
+            "should_save": true,
+            "pre_context_available_s": 0.0,
+            "post_context_available_s": 3.0,
+            "left_truncated": true,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 0.0,
+            "end_s": 20.0,
+            "angle_deg": 118.49999999999999,
+            "bounded_angle_deg": 90.0,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 3.9494802737332684,
+              "max_translation_m": 3.2821282533702747,
+              "heading_change_deg": 102.41863713412027,
+              "lateral_from_entry_m": 2.538492412871204,
+              "fit_error_m": 0.02020281525046933
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 0,
+            "core_id": 0
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "finite_2Hz_2.0s_0.19mps_arc",
+      "passed": true,
+      "truth": [
+        [
+          0.0,
+          2.0
+        ]
+      ],
+      "covered_true_s": 2.0,
+      "expected_true_s": 2.0,
+      "saved_windows": [
+        [
+          0.0,
+          5.0
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:0:0",
+            "capture_start_s": 0.0,
+            "capture_end_s": 5.0,
+            "cores": [
+              {
+                "start_s": 0.0,
+                "end_s": 2.0,
+                "angle_deg": 9.975,
+                "bounded_angle_deg": 9.975,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 0.33246572231912574,
+                  "max_translation_m": 0.332029415327242,
+                  "heading_change_deg": 5.013780199223301,
+                  "lateral_from_entry_m": 0.016073359606549032,
+                  "fit_error_m": 0.0014173514080418606
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 5.0,
+            "should_save": true,
+            "pre_context_available_s": 0.0,
+            "post_context_available_s": 3.0,
+            "left_truncated": true,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0,
+            "angle_deg": 9.975,
+            "bounded_angle_deg": 9.975,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 0.33246572231912574,
+              "max_translation_m": 0.332029415327242,
+              "heading_change_deg": 5.013780199223301,
+              "lateral_from_entry_m": 0.016073359606549032,
+              "fit_error_m": 0.0014173514080418606
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 0,
+            "core_id": 0
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "finite_2Hz_2.0s_0.2mps_arc",
+      "passed": true,
+      "truth": [
+        [
+          0.0,
+          2.0
+        ]
+      ],
+      "covered_true_s": 2.0,
+      "expected_true_s": 2.0,
+      "saved_windows": [
+        [
+          0.0,
+          5.0
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:0:0",
+            "capture_start_s": 0.0,
+            "capture_end_s": 5.0,
+            "cores": [
+              {
+                "start_s": 0.0,
+                "end_s": 2.0,
+                "angle_deg": 10.499999999999998,
+                "bounded_angle_deg": 10.499999999999998,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 0.3499600203337591,
+                  "max_translation_m": 0.3494511613348389,
+                  "heading_change_deg": 5.277651005290945,
+                  "lateral_from_entry_m": 0.0178064349539773,
+                  "fit_error_m": 0.0015704374906456038
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 5.0,
+            "should_save": true,
+            "pre_context_available_s": 0.0,
+            "post_context_available_s": 3.0,
+            "left_truncated": true,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0,
+            "angle_deg": 10.499999999999998,
+            "bounded_angle_deg": 10.499999999999998,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 0.3499600203337591,
+              "max_translation_m": 0.3494511613348389,
+              "heading_change_deg": 5.277651005290945,
+              "lateral_from_entry_m": 0.0178064349539773,
+              "fit_error_m": 0.0015704374906456038
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 0,
+            "core_id": 0
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "finite_2Hz_3.0s_0.115mps_arc",
+      "passed": true,
+      "truth": [
+        [
+          0.0,
+          3.0
+        ]
+      ],
+      "covered_true_s": 3.0,
+      "expected_true_s": 3.0,
+      "saved_windows": [
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:0:0",
+            "capture_start_s": 0.0,
+            "capture_end_s": 6.0,
+            "cores": [
+              {
+                "start_s": 0.0,
+                "end_s": 3.0,
+                "angle_deg": 9.4875,
+                "bounded_angle_deg": 9.4875,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 0.3162380560684511,
+                  "max_translation_m": 0.3158709941043476,
+                  "heading_change_deg": 5.5544635714374735,
+                  "lateral_from_entry_m": 0.01375935735039812,
+                  "fit_error_m": 0.0013015308603465943
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 6.0,
+            "should_save": true,
+            "pre_context_available_s": 0.0,
+            "post_context_available_s": 3.0,
+            "left_truncated": true,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 0.0,
+            "end_s": 3.0,
+            "angle_deg": 9.4875,
+            "bounded_angle_deg": 9.4875,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 0.3162380560684511,
+              "max_translation_m": 0.3158709941043476,
+              "heading_change_deg": 5.5544635714374735,
+              "lateral_from_entry_m": 0.01375935735039812,
+              "fit_error_m": 0.0013015308603465943
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 0,
+            "core_id": 0
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "finite_2Hz_3.0s_0.12mps_arc",
+      "passed": true,
+      "truth": [
+        [
+          0.0,
+          3.0
+        ]
+      ],
+      "covered_true_s": 3.0,
+      "expected_true_s": 3.0,
+      "saved_windows": [
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:0:0",
+            "capture_start_s": 0.0,
+            "capture_end_s": 6.0,
+            "cores": [
+              {
+                "start_s": 0.0,
+                "end_s": 3.0,
+                "angle_deg": 9.9,
+                "bounded_angle_deg": 9.9,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 0.3299864294613694,
+                  "max_translation_m": 0.329569392583596,
+                  "heading_change_deg": 5.79595860997537,
+                  "lateral_from_entry_m": 0.014979843207922245,
+                  "fit_error_m": 0.0014171394964061267
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 6.0,
+            "should_save": true,
+            "pre_context_available_s": 0.0,
+            "post_context_available_s": 3.0,
+            "left_truncated": true,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 0.0,
+            "end_s": 3.0,
+            "angle_deg": 9.9,
+            "bounded_angle_deg": 9.9,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 0.3299864294613694,
+              "max_translation_m": 0.329569392583596,
+              "heading_change_deg": 5.79595860997537,
+              "lateral_from_entry_m": 0.014979843207922245,
+              "fit_error_m": 0.0014171394964061267
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 0,
+            "core_id": 0
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "straight_only",
+      "passed": true,
+      "truth": [],
+      "covered_true_s": 0,
+      "expected_true_s": 0,
+      "saved_windows": [],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "straight",
+        "events": [],
+        "lobes": [],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "stationary_millimetre_drift",
+      "passed": true,
+      "truth": [],
+      "covered_true_s": 0,
+      "expected_true_s": 0,
+      "saved_windows": [],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "straight",
+        "events": [],
+        "lobes": [],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "moving_centimetre_wobble",
+      "passed": true,
+      "truth": [],
+      "covered_true_s": 0,
+      "expected_true_s": 0,
+      "saved_windows": [],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "straight",
+        "events": [],
+        "lobes": [],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "S_turn_zero_net_yaw",
+      "passed": true,
+      "truth": [
+        [
+          5,
+          11
+        ]
+      ],
+      "covered_true_s": 6,
+      "expected_true_s": 6,
+      "saved_windows": [
+        [
+          0.9999999999999982,
+          14.999999999999977
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:0:0",
+            "capture_start_s": 0.9999999999999982,
+            "capture_end_s": 14.999999999999977,
+            "cores": [
+              {
+                "start_s": 4.999999999999998,
+                "end_s": 7.699999999999989,
+                "angle_deg": 23.204790702798356,
+                "bounded_angle_deg": 23.204790702798356,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 1.3499999999999999,
+                  "max_translation_m": 1.3408050623192596,
+                  "heading_change_deg": 15.040142122184092,
+                  "lateral_from_entry_m": 0.17048984695055475,
+                  "fit_error_m": 0.008995697658267507
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 0
+              },
+              {
+                "start_s": 7.699999999999989,
+                "end_s": 10.999999999999977,
+                "angle_deg": -23.204790702798356,
+                "bounded_angle_deg": 23.204790702798356,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 1.6500000000000004,
+                  "max_translation_m": 1.6345920670583214,
+                  "heading_change_deg": -19.696830403998007,
+                  "lateral_from_entry_m": 0.27302981910132257,
+                  "fit_error_m": 0.006897210411043301
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 1
+              }
+            ],
+            "duration_s": 13.999999999999979,
+            "should_save": true,
+            "pre_context_available_s": 4.0,
+            "post_context_available_s": 4.0,
+            "left_truncated": false,
+            "right_truncated": false,
+            "right_boundary_reason": "context_complete"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 4.999999999999998,
+            "end_s": 7.699999999999989,
+            "angle_deg": 23.204790702798356,
+            "bounded_angle_deg": 23.204790702798356,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 1.3499999999999999,
+              "max_translation_m": 1.3408050623192596,
+              "heading_change_deg": 15.040142122184092,
+              "lateral_from_entry_m": 0.17048984695055475,
+              "fit_error_m": 0.008995697658267507
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 0,
+            "core_id": 0
+          },
+          {
+            "start_s": 7.699999999999989,
+            "end_s": 10.999999999999977,
+            "angle_deg": -23.204790702798356,
+            "bounded_angle_deg": 23.204790702798356,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 1.6500000000000004,
+              "max_translation_m": 1.6345920670583214,
+              "heading_change_deg": -19.696830403998007,
+              "lateral_from_entry_m": 0.27302981910132257,
+              "fit_error_m": 0.006897210411043301
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 0,
+            "core_id": 1
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "parked_context_before_turn",
+      "passed": true,
+      "truth": [
+        [
+          10,
+          13
+        ]
+      ],
+      "covered_true_s": 3,
+      "expected_true_s": 3,
+      "saved_windows": [
+        [
+          5.9999999999999805,
+          16.99999999999997
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:3:0",
+            "capture_start_s": 5.9999999999999805,
+            "capture_end_s": 16.99999999999997,
+            "cores": [
+              {
+                "start_s": 9.99999999999998,
+                "end_s": 12.99999999999997,
+                "angle_deg": 41.25296124941929,
+                "bounded_angle_deg": 41.25296124941929,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 1.2000000000000004,
+                  "max_translation_m": 1.174275626662426,
+                  "heading_change_deg": 26.814424812122507,
+                  "lateral_from_entry_m": 0.26542120998967095,
+                  "fit_error_m": 0.013419367898692412
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 3,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 10.999999999999991,
+            "should_save": true,
+            "pre_context_available_s": 4.0,
+            "post_context_available_s": 4.000000000000002,
+            "left_truncated": false,
+            "right_truncated": false,
+            "right_boundary_reason": "context_complete"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 9.99999999999998,
+            "end_s": 12.99999999999997,
+            "angle_deg": 41.25296124941929,
+            "bounded_angle_deg": 41.25296124941929,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 1.2000000000000004,
+              "max_translation_m": 1.174275626662426,
+              "heading_change_deg": 26.814424812122507,
+              "lateral_from_entry_m": 0.26542120998967095,
+              "fit_error_m": 0.013419367898692412
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 3,
+            "core_id": 0
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "long_turn_split_at_45s",
+      "passed": true,
+      "truth": [
+        [
+          5,
+          115
+        ]
+      ],
+      "covered_true_s": 110,
+      "expected_true_s": 110,
+      "saved_windows": [
+        [
+          0.9999999999999982,
+          118.99999999999774
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:0:0",
+            "capture_start_s": 0.9999999999999982,
+            "capture_end_s": 46.0,
+            "cores": [
+              {
+                "start_s": 4.999999999999998,
+                "end_s": 114.99999999999774,
+                "angle_deg": 378.15214478634493,
+                "bounded_angle_deg": 51.56620156177605,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 21.999982179547544,
+                  "max_translation_m": 6.666503690806976,
+                  "heading_change_deg": 369.5577778593824,
+                  "lateral_from_entry_m": 6.657305460930691,
+                  "fit_error_m": 0.008995626817273596
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 45.0,
+            "should_save": true,
+            "pre_context_available_s": 4.0,
+            "post_context_available_s": 0.0,
+            "left_truncated": false,
+            "right_truncated": false,
+            "right_boundary_reason": "context_complete"
+          },
+          {
+            "event_id": "0:0:0",
+            "capture_start_s": 44.0,
+            "capture_end_s": 89.0,
+            "cores": [
+              {
+                "start_s": 4.999999999999998,
+                "end_s": 114.99999999999774,
+                "angle_deg": 378.15214478634493,
+                "bounded_angle_deg": 51.56620156177605,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 21.999982179547544,
+                  "max_translation_m": 6.666503690806976,
+                  "heading_change_deg": 369.5577778593824,
+                  "lateral_from_entry_m": 6.657305460930691,
+                  "fit_error_m": 0.008995626817273596
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 45.0,
+            "should_save": true,
+            "pre_context_available_s": 0.0,
+            "post_context_available_s": 0.0,
+            "left_truncated": false,
+            "right_truncated": false,
+            "right_boundary_reason": "context_complete"
+          },
+          {
+            "event_id": "0:0:0",
+            "capture_start_s": 87.0,
+            "capture_end_s": 118.99999999999774,
+            "cores": [
+              {
+                "start_s": 4.999999999999998,
+                "end_s": 114.99999999999774,
+                "angle_deg": 378.15214478634493,
+                "bounded_angle_deg": 51.56620156177605,
+                "consistency": 1.0,
+                "branch": "turn",
+                "geometry": {
+                  "path_m": 21.999982179547544,
+                  "max_translation_m": 6.666503690806976,
+                  "heading_change_deg": 369.5577778593824,
+                  "lateral_from_entry_m": 6.657305460930691,
+                  "fit_error_m": 0.008995626817273596
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 0,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 31.99999999999774,
+            "should_save": true,
+            "pre_context_available_s": 0.0,
+            "post_context_available_s": 4.0,
+            "left_truncated": false,
+            "right_truncated": false,
+            "right_boundary_reason": "context_complete"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 4.999999999999998,
+            "end_s": 114.99999999999774,
+            "angle_deg": 378.15214478634493,
+            "bounded_angle_deg": 51.56620156177605,
+            "consistency": 1.0,
+            "branch": "turn",
+            "geometry": {
+              "path_m": 21.999982179547544,
+              "max_translation_m": 6.666503690806976,
+              "heading_change_deg": 369.5577778593824,
+              "lateral_from_entry_m": 6.657305460930691,
+              "fit_error_m": 0.008995626817273596
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 0,
+            "core_id": 0
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "20deg_spin_over_2.0s",
+      "passed": true,
+      "truth": [
+        [
+          5.0,
+          7.0
+        ]
+      ],
+      "covered_true_s": 2.0,
+      "expected_true_s": 2.0,
+      "saved_windows": [
+        [
+          1.0,
+          9.700000000000001
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:1:0",
+            "capture_start_s": 1.0,
+            "capture_end_s": 9.700000000000001,
+            "cores": [
+              {
+                "start_s": 5.0,
+                "end_s": 7.0,
+                "angle_deg": 20.0,
+                "bounded_angle_deg": 20.0,
+                "consistency": 1.0,
+                "branch": "spin",
+                "geometry": {
+                  "path_m": 0.0,
+                  "max_translation_m": 0.0,
+                  "heading_change_deg": null,
+                  "lateral_from_entry_m": null,
+                  "fit_error_m": null
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 1,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 8.700000000000001,
+            "should_save": true,
+            "pre_context_available_s": 4.0,
+            "post_context_available_s": 2.700000000000001,
+            "left_truncated": false,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 5.0,
+            "end_s": 7.0,
+            "angle_deg": 20.0,
+            "bounded_angle_deg": 20.0,
+            "consistency": 1.0,
+            "branch": "spin",
+            "geometry": {
+              "path_m": 0.0,
+              "max_translation_m": 0.0,
+              "heading_change_deg": null,
+              "lateral_from_entry_m": null,
+              "fit_error_m": null
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 1,
+            "core_id": 0
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "20deg_spin_over_10.0s",
+      "passed": true,
+      "truth": [
+        [
+          5.0,
+          15.0
+        ]
+      ],
+      "covered_true_s": 10.0,
+      "expected_true_s": 10.0,
+      "saved_windows": [
+        [
+          2.0,
+          16.5
+        ]
+      ],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "confirmed",
+        "events": [
+          {
+            "event_id": "0:2:0",
+            "capture_start_s": 2.0,
+            "capture_end_s": 16.5,
+            "cores": [
+              {
+                "start_s": 6.0,
+                "end_s": 15.0,
+                "angle_deg": 18.0,
+                "bounded_angle_deg": 18.0,
+                "consistency": 1.0,
+                "branch": "spin",
+                "geometry": {
+                  "path_m": 0.0,
+                  "max_translation_m": 0.0,
+                  "heading_change_deg": null,
+                  "lateral_from_entry_m": null,
+                  "fit_error_m": null
+                },
+                "status": "confirmed",
+                "segment_id": 0,
+                "block_id": 2,
+                "core_id": 0
+              }
+            ],
+            "duration_s": 14.5,
+            "should_save": true,
+            "pre_context_available_s": 4.0,
+            "post_context_available_s": 1.5,
+            "left_truncated": false,
+            "right_truncated": true,
+            "right_boundary_reason": "stable_stop"
+          }
+        ],
+        "lobes": [
+          {
+            "start_s": 5.0,
+            "end_s": 6.0,
+            "angle_deg": 2.0,
+            "bounded_angle_deg": 2.0,
+            "consistency": 1.0,
+            "branch": null,
+            "geometry": {
+              "path_m": 0.0,
+              "max_translation_m": 0.0,
+              "heading_change_deg": null,
+              "lateral_from_entry_m": null,
+              "fit_error_m": null
+            },
+            "status": "small_wobble",
+            "segment_id": 0,
+            "block_id": 1
+          },
+          {
+            "start_s": 6.0,
+            "end_s": 15.0,
+            "angle_deg": 18.0,
+            "bounded_angle_deg": 18.0,
+            "consistency": 1.0,
+            "branch": "spin",
+            "geometry": {
+              "path_m": 0.0,
+              "max_translation_m": 0.0,
+              "heading_change_deg": null,
+              "lateral_from_entry_m": null,
+              "fit_error_m": null
+            },
+            "status": "confirmed",
+            "segment_id": 0,
+            "block_id": 2,
+            "core_id": 0
+          }
+        ],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "straight_forward_then_reverse",
+      "passed": true,
+      "truth": [],
+      "covered_true_s": 0,
+      "expected_true_s": 0,
+      "saved_windows": [],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "straight",
+        "events": [],
+        "lobes": [],
+        "valid_segments": 1,
+        "pose_breaks": []
+      }
+    },
+    {
+      "name": "pose_jump_not_turn",
+      "passed": true,
+      "truth": [],
+      "covered_true_s": 0,
+      "expected_true_s": 0,
+      "saved_windows": [],
+      "false_saved_count": 0,
+      "result": {
+        "decision": "straight",
+        "events": [],
+        "lobes": [],
+        "valid_segments": 2,
+        "pose_breaks": [
+          [
+            9.9,
+            10.0,
+            "pose_jump"
+          ]
+        ]
+      }
+    }
+  ],
+  "passed": 27,
+  "total": 27
+}

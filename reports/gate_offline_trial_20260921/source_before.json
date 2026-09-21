@@ -1,0 +1,3202 @@
+{
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_1/frames.jsonl": [
+    130407,
+    1789896491578215138,
+    "3a3cdbf712d14d5e24dc7d3a0b9519b760cfb7a4492d33a39c9d09827cf9338e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_1/export_meta.json": [
+    5495,
+    1789896491553836759,
+    "b14fd6170a943ed07ebc53fb4a3ab39bba6b193bc2945b7ed10a274d62f0c8d3"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_1/task.json": [
+    132858,
+    1789896491530241633,
+    "4985789f526d4d6fa40c996ab20e560dab850f226d1483e5e828bb3963b485d5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_1/manifest.json": [
+    2920,
+    1789896552094512424,
+    "154efb5c85b2e28d479e66091e8708806f5f7ce8d6cd96cfa23c15d6d6a2bc96"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_2/frames.jsonl": [
+    18849,
+    1789896498710938766,
+    "e3702cfdc7ab726c7ccd36f6a89ef3df8e23479d69be2fa8b19ccb9868faac51"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_2/export_meta.json": [
+    5485,
+    1789896498693637115,
+    "12c26c6365ad7f74d41592672d16e8788962e9387fac17b86a9cd9619e9a6031"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_2/task.json": [
+    132856,
+    1789896498683037765,
+    "27a6447de45c5dafa195f1b4a98ac72e9db31833f7c772d98a0909ba923a2463"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_2/manifest.json": [
+    2644,
+    1789896573392578183,
+    "67cb81eceb3a61a130cfd9116e45280a5b655164d16c8af7d8851c4863571623"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_3/frames.jsonl": [
+    35985,
+    1789896505922419742,
+    "a3bcbd5b6c804ebc3a99c0807d23a341e2005145d810ba44a29902cfb3eefb78"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_3/export_meta.json": [
+    5488,
+    1789896505909465121,
+    "f0a0ed26cf6906d184d5880dc76a77f1907ce91342dba320884a9d0bcfd497f5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_3/task.json": [
+    132858,
+    1789896505901328901,
+    "06f5612df364773f7dc2c82f691766000c9c65c2f536c4d0d9619a584c7997fb"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_3/manifest.json": [
+    2648,
+    1789896596752162035,
+    "b87466b29c133507b5938bf2eaa92551ccc9017811f4146d1baae398755b3997"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_4/frames.jsonl": [
+    26033,
+    1789896508344946589,
+    "57321c479f3133fb778de36fb3f3b850f1026336a66085be828eb004d57b31b6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_4/export_meta.json": [
+    5488,
+    1789896508295893060,
+    "19fe31d88b877dda90a20d57102d4efddae9abbc648f2abb2449347b5bc7b28a"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_4/task.json": [
+    132858,
+    1789896508280814945,
+    "fcb4899468c493a69f6552e96937ff6d4845d99a3701e48ab3e16bb8533b24d3"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_4/manifest.json": [
+    2646,
+    1789896595457311998,
+    "326660cb7e30a43864fcfcb323cff956814339e934b9e7baceeae017ef87b321"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_5/frames.jsonl": [
+    25837,
+    1789896508768175351,
+    "3a25b6e9eda83f3d17aab9bbd3056a490e5f280f5ec8a3f05f24326e294efe84"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_5/export_meta.json": [
+    5485,
+    1789896508731277348,
+    "36f7c77149e27902eb445feacbed4e6d65e8af642efbe145264832ab2fafda29"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_5/task.json": [
+    132856,
+    1789896508721717361,
+    "a16b3382fe9c184f703ec4da90c00adeddddb255790e97b07f0057351b1d6193"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_5/manifest.json": [
+    2647,
+    1789896596367471324,
+    "b4c85706ce8f7a3b191335a7a2742f6b0bd8c724847772d9091583b4ea82d7bb"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_6/frames.jsonl": [
+    17972,
+    1789896509100120823,
+    "b6616075dc70d088fce1030d90c3b0f8a50680233256bf753ab522a573a717ee"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_6/export_meta.json": [
+    5485,
+    1789896509085580266,
+    "15bf8ab09e5fd1f6a122b8634a036d6170ca3723d6759b56a648eb860b847032"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_6/task.json": [
+    132856,
+    1789896509079771886,
+    "509a56aee3c4cd1e9bb52b944168076f92f2f252ead7f5c34812380e361df38c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_6/manifest.json": [
+    2769,
+    1789896598356979082,
+    "189fc6cb74b42f6bf02fa6b6568dfcbdc49f60a83cc63304e777526da3b05e57"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_7/frames.jsonl": [
+    17070,
+    1789896509324803558,
+    "4beb9ecb085187f08ef338f953d715ef97f11a4c32d4d22ae572b803efc4ba78"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_7/export_meta.json": [
+    5485,
+    1789896509311660648,
+    "a4523b5ac847463265b477af3fe9ce4deec56200f9a24cb2d55ee8024d88a08d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_7/task.json": [
+    132856,
+    1789896509302802632,
+    "fcb194de6aabdbe30b3036665f52ae707f7724a0958a23b1a7b4fe53d6500aaf"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_7/manifest.json": [
+    2648,
+    1789896603492286975,
+    "9cb019e7372dd7a89cf64f97d156a5e87be525efbee8a69063608aeb2105e190"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_8/frames.jsonl": [
+    95425,
+    1789896509664339350,
+    "8d071a63fe19f6609df563756b71aeecd25928ed3a1311a60568a1bb15ceb2ef"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_8/export_meta.json": [
+    5495,
+    1789896509635136281,
+    "4a44fcfabc0c66aa15ae3194fd83979d08394d8ff9241ec7c31900b0ce58499b"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_8/task.json": [
+    132858,
+    1789896509627055132,
+    "ebb04058a97606cc25431cdb76fe5b512108ccdad988a4c18c20b9fbc77b5646"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_8/manifest.json": [
+    3050,
+    1789896609255828969,
+    "298eda66a5c9982c8e263ebfab1001494b132f4ad8765876a395a71b44524b44"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_9/frames.jsonl": [
+    31634,
+    1789896511014002462,
+    "e42ee05ac3a9065d79e335980d48f06f1a8523dccabe2b1516dfa6af562d6c0b"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_9/export_meta.json": [
+    5488,
+    1789896510987714516,
+    "b6fea168197d9615e1c4565ddecd90bdf89e3a145353dae934e6e76abde68363"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_9/task.json": [
+    132858,
+    1789896510978880778,
+    "3113bea3ffe4995dacf27296e21b8bab2c320605948341b7257640a78ea10546"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_9/manifest.json": [
+    2647,
+    1789896605074557339,
+    "0beb1ae6359d685a753f9cae6301603bc4dee7f3e43691a74d953caeb8c987c2"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_10/frames.jsonl": [
+    22584,
+    1789896493681747947,
+    "4199b3125eb38725177acb5bd57b3637c995ba2966805c4d3e030d793dc787d3"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_10/export_meta.json": [
+    5487,
+    1789896493661871573,
+    "597c17ec49bcfc6d903612fc3fa440fa0439705522726db474027d5c242bc12d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_10/task.json": [
+    132858,
+    1789896493652143327,
+    "0fe3a3277ff8ab2e1a28b79ff7d32d5c0b1819bd8a0925746b8b67279d5c89df"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_10/manifest.json": [
+    2658,
+    1789896523878260705,
+    "aa56672e8a8d9fc0f2ead310f4abbf661481bf9fe5b40e3f88d87a74515209fc"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_11/frames.jsonl": [
+    16261,
+    1789896493989181573,
+    "ca351d67185035e0eb6f9b49d916f87ba7ea2f3d69839d62d9f43f7f03e557f6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_11/export_meta.json": [
+    5490,
+    1789896493962473061,
+    "9d8671e5a67563ec03bb10d3a4ba00bc887a49e1468c1c1280fcdf6f8880ac50"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_11/task.json": [
+    132860,
+    1789896493955693560,
+    "5b97bc05697e009997dbc56ebb242e673090c83b08bd28763302155619d792ec"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_11/manifest.json": [
+    2652,
+    1789896522405616191,
+    "4e7dc9ba4f143b088313c873458c5cc7aea755778a5bb9db2b55a74c39c94892"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_12/frames.jsonl": [
+    18071,
+    1789896494354251433,
+    "ae59963ae6494963cf32c858b654c3d5a11290ba3a31d1c533f4f01861383e83"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_12/export_meta.json": [
+    5490,
+    1789896494304077944,
+    "2b7ed67b95aafb0e3cabc80767713ec865a238a0b5cf37e4732593a64ca261ce"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_12/task.json": [
+    132860,
+    1789896494294694812,
+    "ff820414536e196ed49ff3214e788b528226a1ae08f1f27b6426cf0b201c8424"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_12/manifest.json": [
+    2906,
+    1789896523066214948,
+    "9978e2b276c692d29e9579aa6fae9edd4e3388206adfe90298fda26a2d276107"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_13/frames.jsonl": [
+    67887,
+    1789896494595011371,
+    "0277d70bf5f86873233eadc6b558c1879c5a900bfe0714b6da72a131ae44b517"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_13/export_meta.json": [
+    5484,
+    1789896494568483547,
+    "eb1897e2e88cc8e6479ec195dab68afc46cb1d2dc46d0b15147c46b785ec7351"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_13/task.json": [
+    132854,
+    1789896494547137241,
+    "95bd8c4e257016c4a1b267436b38d5e5bcfe3b07ce7830362ad7d325199a4547"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_13/manifest.json": [
+    2658,
+    1789896523836106618,
+    "1ba70f3f652040b95e097dcb3536d9e8d56f3946c614d15f92f19696c0badb86"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_14/frames.jsonl": [
+    57791,
+    1789896495598086046,
+    "30ee20db4f4ebc9796fe38cb2e7dc722269631716607bc761be82ff7c57a0091"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_14/export_meta.json": [
+    5490,
+    1789896495583639825,
+    "44256316d9a541152dc58983cbbf5c8436ed8887b6a011dfd79d5d33b9f76215"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_14/task.json": [
+    132860,
+    1789896495575164921,
+    "48c28a5fcce910aed5c757867f839f836cfd3e4c2487749541af56b0ff2754b1"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_14/manifest.json": [
+    2666,
+    1789896534667850676,
+    "277b2f5e135addf02fcf5ddc0a89608dd0b84a935089969f2674039fc4bbc092"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_15/frames.jsonl": [
+    36117,
+    1789896496428815697,
+    "50a7ba34e9af3f46f95314abdc0f5392647813be9f1a4838054e76cf5a2acd1a"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_15/export_meta.json": [
+    5490,
+    1789896496412829587,
+    "20d2f81a8fe92271bbb098f8fec131835dca567da24db06b5036ffa43095c1b3"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_15/task.json": [
+    132860,
+    1789896496403338639,
+    "a6d53bf9f5711d93e5add889cb0c9076f44e23258cc8d689752ebf84c338c637"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_15/manifest.json": [
+    2917,
+    1789896538541754199,
+    "3aa4e07692ae1ce6be649612e964f93d560e79d554f0eed1ff01026a937ba19c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_16/frames.jsonl": [
+    21618,
+    1789896496944450274,
+    "c1640593f0ccc3f04a80a436dcfad4d95a74deb950b29b306deb5a06e805cde0"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_16/export_meta.json": [
+    5487,
+    1789896496908452571,
+    "63c9614e3a96f6ac9aca70b2947341b2987a9cc01910cfbe31cda2594d83ce95"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_16/task.json": [
+    132858,
+    1789896496901663654,
+    "d88cef7c0691e7f3d9f1a9c9244b5199bad4e6d65e265c68f2ca00adde283891"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_16/manifest.json": [
+    2650,
+    1789896536501059123,
+    "d1db9080ebe6ac210b00010e9075e8e43652dd662f11456e7b741ec8e690c150"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_17/frames.jsonl": [
+    24403,
+    1789896497356218717,
+    "45e79626378c1fc3d91068f5d408b5e3909de58f6df1c6e2d988f274c698fc14"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_17/export_meta.json": [
+    5484,
+    1789896497332658772,
+    "cbfcef20ce62eb53d205e1c30704b42ea6249ce8f75ffec60f64265766cdbe37"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_17/task.json": [
+    132856,
+    1789896497324978086,
+    "b6c117e263d54236363b6969f46a28eba6639ee59c710a099ed58b24f8613e86"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_17/manifest.json": [
+    2652,
+    1789896537058724354,
+    "f62baf04425217eeffbf8e258562a69e4be2e92306dcfe9e580edf8f46c0ab4d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_18/frames.jsonl": [
+    54211,
+    1789896497816000484,
+    "abbb48632064d28e3ce87864b3021243e3d21576a53bd8dfef99813e9840c5bb"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_18/export_meta.json": [
+    5490,
+    1789896497798631218,
+    "973662401f7594415a9404876a0bb3f8435972b4e43c023c9b9265d08a507f28"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_18/task.json": [
+    132860,
+    1789896497777487064,
+    "8333951ea410b913bc2a4741ee6fb6770a1f32dbba68ccd80742bfff2167db52"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_18/manifest.json": [
+    2666,
+    1789896544522064456,
+    "8bc1971c757063733cc2a40d25ac7c3e623d678b35e928c64b6b68a2f7115315"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_19/frames.jsonl": [
+    18099,
+    1789896498477364723,
+    "caa059b194af6b876b2da4431cd78f0d26c2886dcbd35d4f3110536d064ca760"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_19/export_meta.json": [
+    5490,
+    1789896498445945869,
+    "7a6687375efed3980083dce71fd003c7d13ef9457c1614d71ff77750542bd7ff"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_19/task.json": [
+    132860,
+    1789896498435898225,
+    "c5112a6a6fdbccfa29baaa1534d0a4a200479df6e46158f60494d33484e9ecb8"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_19/manifest.json": [
+    2913,
+    1789896545756635311,
+    "3f4e7996bc2c75609cf03473a5fe4151fcc289e83701633226138babeb9c4206"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_20/frames.jsonl": [
+    17185,
+    1789896498953178013,
+    "0912c6c6aee6517eaad3b9b6d835ff59e7ea083b3286fcc0534726fcfbf8d01a"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_20/export_meta.json": [
+    5490,
+    1789896498929360589,
+    "7924ad122cfeb6d1b3bd23b5277d19c69a6ea9af18c2ff58f0ecc978175752d5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_20/task.json": [
+    132860,
+    1789896498900324722,
+    "d75df6c4a81f0ad3d0572e9c1236ab36a7c5fabb1a4832c364b07ec0ab0528e5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_20/manifest.json": [
+    2651,
+    1789896547490355405,
+    "5a18a61d904f9f2ad9747e287154e84294245effacfc88244d3b71e1464593a1"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_21/frames.jsonl": [
+    24455,
+    1789896499223062190,
+    "5b96bacd6d6ee933b8af151f661f7c01f373688ec2b0e4644945b657f11c145b"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_21/export_meta.json": [
+    5484,
+    1789896499188881122,
+    "91c819f40e13389c82bc5a8c92ec5c52663765988acc474c8ca60f24ad90fbbd"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_21/task.json": [
+    132856,
+    1789896499178643450,
+    "fc3d392190c9194138827a3d02cf69f8d25cec19ed409e227b86d1af8b1fa40c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_21/manifest.json": [
+    2651,
+    1789896551806359324,
+    "6c3ac3ce2b8a261bd246128c1f1e3a6f95d0db4c003a67f94844f59cb18668fc"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_22/frames.jsonl": [
+    20844,
+    1789896499547652926,
+    "7b49d9d88600613a7f02c229108e84dc80523499c44c28b2159a16332a4fb822"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_22/export_meta.json": [
+    5490,
+    1789896499528056736,
+    "c6bac2218e2fc2f53c9f2a156ecf0046f00c418a04447e19e0b6a28ff150fb75"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_22/task.json": [
+    132860,
+    1789896499518089389,
+    "e055958cde8d220ac44beb56301765f29fd90b332b86f4d0232679caa94ac883"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_22/manifest.json": [
+    2651,
+    1789896552918231837,
+    "a91d3103b855f145791498aab894ddfe080145aa924836bc8fcd4f39620903ba"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_23/frames.jsonl": [
+    39812,
+    1789896499929939248,
+    "34dc8a93ed7fc9eb605ec3703374a699df4c4e944b862c966e5a4919a7f0ea14"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_23/export_meta.json": [
+    5490,
+    1789896499909870800,
+    "27719909fde9ee52a6f9b99a6c729848eff0740adba2b6d7a631542b197b93ce"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_23/task.json": [
+    132860,
+    1789896499895777290,
+    "04d23f3f32dc7e3c7cd8ea7ae2d2e90dd59a13a5f861ead3e379f864e68c7b53"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_23/manifest.json": [
+    2909,
+    1789896557263543159,
+    "4730463a2c3a4dc2585e8d4ac935caffc209772d33781bbf5f532cc0e0dcfbd2"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_24/frames.jsonl": [
+    37101,
+    1789896500537031121,
+    "f9cb150a8e089231e5750ba68c306bb641cda8fb858ab0d33091472e045b9d33"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_24/export_meta.json": [
+    5490,
+    1789896500506108518,
+    "8873841ae7f575706642fba1859b7c0b007ffcdbc6738c1a21ef350cd95351b1"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_24/task.json": [
+    132860,
+    1789896500500555633,
+    "30d3914c55127dc28bbe13aee92109c374ce1fb006ca1b46245ba5c6f602a8c1"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_24/manifest.json": [
+    2786,
+    1789896563643033355,
+    "a213c2e0c2e957028301880d89532bc52da2ff4135e58b39c0410cf3b66149fb"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_25/frames.jsonl": [
+    188291,
+    1789896501199048919,
+    "1814a52cab7b2e838418f0f0e2ae63e03bb05cdbbabde064ed8bfb3b990cb915"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_25/export_meta.json": [
+    5497,
+    1789896501156357915,
+    "63d610efbed7730925eb3e47a3c06b9441af58ff747b8cd1b99b59b89b825c35"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_25/task.json": [
+    132860,
+    1789896501145666629,
+    "f3b60df16dbd92dadb27009ecf65c241b86d3f1f80fa1fe7c55270d98293bcf1"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_25/manifest.json": [
+    2788,
+    1789896565912802674,
+    "fd390ddf7b13321a7e2faa54a747bdce7593a8e068ca444ab72feb08952adeb4"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_26/frames.jsonl": [
+    32605,
+    1789896503652058433,
+    "79581c89ac108bd2340812715fc4c2ac1e0ee1cd67bc0164d2afe345b28d38db"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_26/export_meta.json": [
+    5487,
+    1789896503634078551,
+    "3cb00ebe38ba75942d87183b06e2c39aa8668e389d58976b119a009d65b1062b"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_26/task.json": [
+    132858,
+    1789896503628238024,
+    "1a0cc9e735ab6228b2fd2f1d12111ffaf6a66500fad4b22dc76404b66b620832"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_26/manifest.json": [
+    2913,
+    1789896563762298132,
+    "07c15c679c5be2b0ecc994ec5d4036f525e6311fcf0e338b1c3ed45195838626"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_27/frames.jsonl": [
+    83757,
+    1789896504194843736,
+    "b805202add53ea18c1675eca55bdcd155ee34a2b2d66bab29e2acd3c02ed6d7c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_27/export_meta.json": [
+    5493,
+    1789896504181533216,
+    "69e178d1c4909f18f79ac015daca02fb88a5b5b4861fea834dba14ff7ed393f6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_27/task.json": [
+    132860,
+    1789896504166618731,
+    "e72206b0c9dc697b383bded52e0c1a714e8239a08415e0743097ce48ac8c6d8e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_27/manifest.json": [
+    3055,
+    1789896569469105662,
+    "c922ba3c168686ac6f57162eee7dc7bc795391401652ca75480df9283b9d23f2"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_28/frames.jsonl": [
+    17100,
+    1789896505315816218,
+    "8ca4bc615c6257c4a7bf89ffe3d5056ce47900b3b4d0bf95ff678bbea9d015a2"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_28/export_meta.json": [
+    5487,
+    1789896505303509152,
+    "088a1dc7f6dee8a910e8a4c0ddfc4c4cee111ca284de74c56fe8edf7b0008060"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_28/task.json": [
+    132858,
+    1789896505280340749,
+    "6eec02021b145379a89c3a494ea43872feccab80b3453d47d155d8fbdf8a9ce8"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_28/manifest.json": [
+    2655,
+    1789896570664670180,
+    "367dde0ff4511796f3a1b19f19d5886f4eecb1858985748dca6cd03febde911c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_29/frames.jsonl": [
+    16234,
+    1789896505605872083,
+    "33880663b75982b5293ee9f5b0b857ed04f0023818a68c716ee2cdce54d66734"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_29/export_meta.json": [
+    5490,
+    1789896505590586215,
+    "5594fd443910089b2c13645b4ca37872dc426e77401a7b3ede9018769dc0feb8"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_29/task.json": [
+    132860,
+    1789896505564278095,
+    "d29332f5d136a799a984b25e1023055832f03c1a9a6c0d333a819251434fc1d7"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_29/manifest.json": [
+    2651,
+    1789896570574092502,
+    "8e38f9464f622525b5ffc1a59e95ce31fb9faca594c28487683596fc537e78eb"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_30/frames.jsonl": [
+    47755,
+    1789896506462628589,
+    "6bc65ef676f34befe9758ec94876f6b9fcf11037c342a9658989e339dfd91fbf"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_30/export_meta.json": [
+    5490,
+    1789896506450128146,
+    "383913fddc428d357fbb28b325a569bf8b016d5d7b29aac562451fbcc51ad2a0"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_30/task.json": [
+    132860,
+    1789896506444032165,
+    "515c025b272b044e79f284b8b719bcaa79f49bebae727d49955777721ee508ad"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_30/manifest.json": [
+    2925,
+    1789896586082986717,
+    "29862175f768a618fdf26a615bf4061d0d2688bd360853dbbed76cc84cf7fd5c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_31/frames.jsonl": [
+    18016,
+    1789896507059664887,
+    "63bd7365a7c68148a798abda3d5080e88582bda2b31d662d01f5c6a1f56fbd62"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_31/export_meta.json": [
+    5490,
+    1789896507032388046,
+    "94e60c82334d4d93e9e5a17f307fdc20227dd2951c60823e148b8cf53d0ace64"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_31/task.json": [
+    132860,
+    1789896507021892692,
+    "86102cd26bad34bfa83dc0f6ef2d23d96846f92eac86d667bdb8c51b29434e8b"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_31/manifest.json": [
+    2912,
+    1789896586224270599,
+    "900c049db4d5cdb5dd08b1561e89a67b902d7c97456fc1f012b37f126ce3017c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_32/frames.jsonl": [
+    25243,
+    1789896507391824151,
+    "fe3747ddb6d48ca547f203ff1bd41cbd22d5e6e04c2b520981aaabe04e09db04"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_32/export_meta.json": [
+    5490,
+    1789896507379052305,
+    "b39a2e8441cba1b48a55272fcce3987cb4211f7cf89c98a597c61c81da0f070a"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_32/task.json": [
+    132860,
+    1789896507372501909,
+    "4030e50b73a571b0e159a70317012036e5c91a77784a03cfb21288c38dc41b70"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_32/manifest.json": [
+    2706,
+    1789896585030122528,
+    "fae43e71eafc13a9b033cbbd0a33a37e840ffab40f16d43d96353ff3be063572"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_33/frames.jsonl": [
+    48707,
+    1789896507731310036,
+    "0ad6840708cf244619c1eb22c12fe0eb079339516fc743bdd6fb88f42938c100"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_33/export_meta.json": [
+    5490,
+    1789896507713823329,
+    "5cc01ed732bbe5ed19cc0ab8c496135c5a3ad956e235f6e681ad47cb341405e5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_33/task.json": [
+    132860,
+    1789896507705399990,
+    "70b6919d19c6683d85b4e359fb1a2ed63f30e1498ad357af61d593fb7f3946d8"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_33/manifest.json": [
+    2666,
+    1789896586573937686,
+    "4a74417a9673ba24fa1976555e3fe8c4205b258c1d81fbe4a0358a405c549cf6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_1/frames.jsonl": [
+    24342,
+    1789896365856656117,
+    "f7803aa7c50c47e68c71ad19d7e243ef6340b1060d7a3c8767745804f71ec2f9"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_1/export_meta.json": [
+    4876,
+    1789896365844745185,
+    "85dbf39a2148928e2a6f8c4f8fd5939f684f2499bf540b46d256a00b1a556bf0"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_1/task.json": [
+    145093,
+    1789896365838215127,
+    "48f824a4ac4637c34f36b3b329dab5bba0c0304840b2e26880218948b3f26306"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_1/manifest.json": [
+    2644,
+    1789896408470448625,
+    "8ad8e6f85c790842d20484e02258290bffef319d2c9009387966569ddd586cd7"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_2/frames.jsonl": [
+    31556,
+    1789896369559548725,
+    "ca4317a60d4ecc1e81f61d05474db4a638605750800db759ba9d94a42de1debd"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_2/export_meta.json": [
+    4879,
+    1789896369547252743,
+    "7ef3d153e96528bab13058c52a4baef470683c3750b101bdfe9991c593bb9030"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_2/task.json": [
+    145095,
+    1789896369533928786,
+    "ae61121d15f936ceb64e614f85707af2ba11d8e218e01ce93da7ba344a4e31e2"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_2/manifest.json": [
+    2648,
+    1789896438841959256,
+    "922d1c590ccafee54aad4a0bf320ad1d7717c47686746ae6d7ac26f58e8f2398"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_3/frames.jsonl": [
+    28909,
+    1789896373380213631,
+    "798c8d8d9cdceaaa339c7f9c3d2797b80cebbeb8179de11dc6b13561316959b2"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_3/export_meta.json": [
+    4879,
+    1789896373368376296,
+    "3d4750b4987fb746dc8561809b01f19e9f158920476ca44c1a2a6898dd1172b6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_3/task.json": [
+    145095,
+    1789896373362623708,
+    "217b626b5d3a4d5d9e6677cbe39e3dc49ec0a1b86c9c8be958305aeefa8d710e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_3/manifest.json": [
+    2648,
+    1789896466564715107,
+    "f1a3287308f43852a1f20bfa481208d52d0ae94a851a4f6da94cc7e2c5c2dac9"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_4/frames.jsonl": [
+    64951,
+    1789896376888858319,
+    "08793427c7cddd7925506b4893c17ab18648359d6eda535b84fd87af9671770f"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_4/export_meta.json": [
+    4879,
+    1789896376877134157,
+    "3579c2a26208367e24f8dbbfd215c723ee04b303565757a98f8511bcaa007ed6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_4/task.json": [
+    145095,
+    1789896376871377084,
+    "37c736cff81eaebe0260b33a8d87adeabd70f3c031f829dcffe436c5319eb7d7"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_4/manifest.json": [
+    2921,
+    1789896465373238246,
+    "dffd4264f193f6d9b49756aaf0c7d38769b2c38309808617ec880f48807c16f5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_5/frames.jsonl": [
+    19810,
+    1789896377564756779,
+    "d55ed41058d1d586f7de4f1e7c690c6203e10d1e7f97ab48c942bddd68a66706"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_5/export_meta.json": [
+    4879,
+    1789896377544099611,
+    "35ccfa4737b4866d3ac50fec42ab2e81462604662d0760a8c43c6f479026e950"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_5/task.json": [
+    145095,
+    1789896377538067648,
+    "599170e34148f121ab04b878f7abc67d66e68e73c03ae59b014630c4a6cf992a"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_5/manifest.json": [
+    2639,
+    1789896463875751451,
+    "ac21fd2cc71be661196011468d5d6c63499125a68dda973d25ed20b7d4e66ecb"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_6/frames.jsonl": [
+    25240,
+    1789896377762910409,
+    "ca13bf379a5fdb1df3676434523b84096b015333bc747dc7596e5b890cf1ef13"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_6/export_meta.json": [
+    4876,
+    1789896377752020666,
+    "c77cab5ac7285c92f6dbd2183bb3e2954a71e924af6015290a0064ca7712e5a5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_6/task.json": [
+    145093,
+    1789896377745946165,
+    "eaeaa07a6d4feb1b0980ad9357915a89ddd1b32bfdfff1547d53bdad8574a087"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_6/manifest.json": [
+    2645,
+    1789896466927234672,
+    "aa8810aa6e56daa26eb6ea9a9a3fe29e3c62e4ae7085e376e61c87453f420217"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_7/frames.jsonl": [
+    20697,
+    1789896378077853126,
+    "ed6c52861ba68de762043c1da02fbd341d8e01e670e3402602685640c29f4360"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_7/export_meta.json": [
+    4879,
+    1789896378050718303,
+    "cd60eb88b864af24d3ff66a4cc0ec8a096958098d4fa6c2b3f2ac7c8d428ae40"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_7/task.json": [
+    145095,
+    1789896378043449802,
+    "1dbce06b93322f9dcf6ede55eea68152e72f028bd402883b35f5ee4288f99b11"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_7/manifest.json": [
+    2651,
+    1789896473605661156,
+    "9ec95c63d05577fe8cd167d1a5a4c5e036cc3ef1fed2d2d1725ed45b3fc8a2d8"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_8/frames.jsonl": [
+    62537,
+    1789896378317199311,
+    "d93522d51e26daa5b9d4a265026df2f1996330467d1aea8192834a2b411f5ba9"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_8/export_meta.json": [
+    4879,
+    1789896378305930792,
+    "6a04bd29505a83edc5d6e2afa2e2e8136ab5d31cfe522430a726dacd0ce05330"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_8/task.json": [
+    145095,
+    1789896378280180876,
+    "9fdfa868da9e60f1f985d74ad0941fe9f63860b31d29f05f08710a91ddd7cae7"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_8/manifest.json": [
+    3181,
+    1789896476350347226,
+    "3590103826ae61db29a9faa804cd4713a5384871a32224ebcb3150bc3ab8ed3b"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_9/frames.jsonl": [
+    29908,
+    1789896378928510895,
+    "a21304d59751a4a3e4f4ce041c767700c24106e90d20d3440d92d7ce15d501e0"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_9/export_meta.json": [
+    4876,
+    1789896378916657980,
+    "9deffeb9697e0d29c97f5720de95cfe68043b1fea3017121ab40681de8bcae54"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_9/task.json": [
+    145093,
+    1789896378898906154,
+    "8581c3fa5750be241c799d70f1f547cf02f7a208c6634913448ca92e23458850"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_9/manifest.json": [
+    2647,
+    1789896474110886097,
+    "c0a2ed89e5ee18491b44d857bbf5d8fccd543f5ecaf799690af1d979b2824679"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_10/frames.jsonl": [
+    19019,
+    1789896366144905278,
+    "15c38f9e4949556a9f455aa341ee95408244d9f9387513698e5663ddd2b0219e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_10/export_meta.json": [
+    4878,
+    1789896366126485367,
+    "8ae3da24df39cf8ada13ed22400a3cf5b9f7475a6e8844f15d17ac96b68a60a6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_10/task.json": [
+    145095,
+    1789896366120221631,
+    "e949097f249ba6feda6cf5e5bfeb436b9bf10a6b375618a35f4afb3a0a179c84"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_10/manifest.json": [
+    2652,
+    1789896390613570687,
+    "f7e3afb9df5b9b5b5bbb284ea41cfd2f09e3da215ad3e956f7e93f1e097013f0"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_11/frames.jsonl": [
+    37763,
+    1789896366412121576,
+    "15e812150336f1bdf2c5d20f9256741cbd5b1ef4dc7916290dca190d50c2f63a"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_11/export_meta.json": [
+    4872,
+    1789896366395171669,
+    "23449a7d9fdf2e0a447bc651398c766a230f5ef20669ffb4fa375c8f133c65d0"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_11/task.json": [
+    145091,
+    1789896366388807104,
+    "bbe285c025c600a3414628ddd5879b12e349d732382f652194532fd97b7aef5f"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_11/manifest.json": [
+    2653,
+    1789896389448062805,
+    "a5a82d5db6ddf9c56022d370f82864bbff7cf2b0257510cd8ada1cacb7516ed2"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_12/frames.jsonl": [
+    27066,
+    1789896366808121471,
+    "6d0cd136f105dfc7bb7367b3195cad4b259bb87c8904c64ce1658e61ed1293ab"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_12/export_meta.json": [
+    4878,
+    1789896366794385817,
+    "6b05ddbce76c6a85e538654f007b4c0c5cac0a0f62dc7aa21c68282d6ea14231"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_12/task.json": [
+    145095,
+    1789896366788468751,
+    "8f4fa67782a4826f7784e24f1e2108cdbd197cae6208c0d79ef6afd2688cc134"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_12/manifest.json": [
+    2652,
+    1789896390817618126,
+    "f3a0845ac59fba1769da23bb84602a6602af91dd5d75c805cb791b6d03aa62ec"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_13/frames.jsonl": [
+    19853,
+    1789896367054708078,
+    "273b80ffdf9c943515f7c92d5a2fbcac874ae218ef71d9ae72a72dd9243daa26"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_13/export_meta.json": [
+    4878,
+    1789896367042683328,
+    "7ac1b5557286385f093c51efa1b6f0d82eaa27c099ccb6e3ac20afe2638127e3"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_13/task.json": [
+    145095,
+    1789896367037214842,
+    "fdde7a3634d9c55dfb38eb84d88f69575a8e793c5424500f2d18f2d787fe0f34"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_13/manifest.json": [
+    2912,
+    1789896392184868867,
+    "43b02d5d45d03bc7322e5ba7787453a7ad3f6026f93fa448485695c50b6b84ca"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_14/frames.jsonl": [
+    37024,
+    1789896367242673358,
+    "a2ea515b56f43df93a1231946a4b5e37170459d3ab4fa9f9f58181ed3c2cfa16"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_14/export_meta.json": [
+    4878,
+    1789896367229619653,
+    "ca4acb9f3e145600fb284148bab6abd22c0e6e6257b6eece187a5cca2eaed8cc"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_14/task.json": [
+    145095,
+    1789896367223628208,
+    "2a1f0ec7c5465469fa2747806391d694001c2d88fda8e7253d37de76e5e08b30"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_14/manifest.json": [
+    2785,
+    1789896399410539741,
+    "e6350c1158422b0ef4f1b5805792cc9661fbea9762b0eff898b19e3644478742"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_15/frames.jsonl": [
+    39697,
+    1789896367632093924,
+    "0cc80151f2645792330a944729fea98e0d6e7ff8bf51b440b5ca36c7188c0bdb"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_15/export_meta.json": [
+    4875,
+    1789896367620788210,
+    "4401d6438380505d0113799052f34118ed5aa769bc98d8cf320c26c95b8e013e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_15/task.json": [
+    145093,
+    1789896367608812498,
+    "63572ce7f0c7a73c93a97c8148387fc28db10379ecc34d6fdc87698826c1177e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_15/manifest.json": [
+    2664,
+    1789896398350643505,
+    "b9f7efe2ecb4efac23a5cc4948c67e929094051634cdd3f2eadc4023a3a69253"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_16/frames.jsonl": [
+    24335,
+    1789896368006811847,
+    "aa3774a037d9884a3c9f1492363589dd33382842883deffe369dc3add0d2656d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_16/export_meta.json": [
+    4878,
+    1789896367994719410,
+    "3be92350920b4a170151de2be42e61f8fcffeb4a3224e49916b0b25b5c127d94"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_16/task.json": [
+    145095,
+    1789896367988976967,
+    "07ac2f41c6a71b8060eb5787e9dc6282557e979f7d652c10862a24c030aa5eaf"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_16/manifest.json": [
+    2652,
+    1789896396938657951,
+    "56067d95a77cf63b9e6756d15345fad61ac8c2a37e1049dfda4231e1628554f6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_17/frames.jsonl": [
+    21611,
+    1789896368258585208,
+    "54713be77a8d9b5c6ce45c20ff44e68803d0080433ab7ca8c6ce862bd1d83c16"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_17/export_meta.json": [
+    4881,
+    1789896368241448611,
+    "56d033bdb7aa29ade88d1c137c008699d509299e5bf3f1dfbbbab3fd5c004974"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_17/task.json": [
+    145097,
+    1789896368230024534,
+    "1078f4311f9c635350cecb916c7a10c650778e402a6ceb85221828c9f554162d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_17/manifest.json": [
+    2653,
+    1789896399829208980,
+    "6b75cf70e5487616ad3fecb3cd838e1c378cadbc720cf179ad3db89ace6ba94d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_18/frames.jsonl": [
+    62160,
+    1789896368538056933,
+    "8b7764859487816e9c2f93da07edeed616d67aa0d90d3d73e16c19142e02bd4f"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_18/export_meta.json": [
+    4878,
+    1789896368496685202,
+    "ed2c441fd3b4ead53a32f252e8e97ca1a2477168aa2a02d2c01928c39d644fe5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_18/task.json": [
+    145095,
+    1789896368466618613,
+    "191b1c36ce9a87dfc4f3c41d947d200ba9a2a8e1358341c488e3d950910335b5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_18/manifest.json": [
+    3056,
+    1789896407120110133,
+    "55448d3e02bb8d4808fc27c3a885f5a66e1288f26cb78d2b788ae08675cbf0e8"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_19/frames.jsonl": [
+    32429,
+    1789896369156729390,
+    "eb3ac749448bc98d2fad753114e40d2a7490d0d7cb0bbd07867c50b7561eb62e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_19/export_meta.json": [
+    4881,
+    1789896369140969457,
+    "d3481edaaacbef00357703b2aa710f03542a6cdb65fbc9f71ccfd2dc78f5d3ea"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_19/task.json": [
+    145097,
+    1789896369135258166,
+    "f2e486d0a8b65618a7dfb6a102404ba179f8b16125f2113c9951255c6071a1ec"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_19/manifest.json": [
+    2650,
+    1789896407926392428,
+    "ce9991aac461b75c72f9ad643470a9a74286cdae047cfe4877a488be31c693d3"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_20/frames.jsonl": [
+    22481,
+    1789896369929781312,
+    "823b2e17df7435dedd213b6aaad1343454d210109d176a61adee62b3e309cd34"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_20/export_meta.json": [
+    4878,
+    1789896369911130355,
+    "e16b0eeca23924acc1eb51cdabe009dea7a3072e9d3da627d011a6e4c1b777f0"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_20/task.json": [
+    145095,
+    1789896369905355433,
+    "54b5b11538b30e83aa2ea03bbde5d09edcdcb171fbaeb76f9049c46ee8687972"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_20/manifest.json": [
+    2651,
+    1789896407329121485,
+    "2bd6b7ee3dfd7a924d022beec2e69b4d570a4434cd91d5296e55b37c3fad0c41"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_21/frames.jsonl": [
+    111772,
+    1789896370191046496,
+    "5d687d4f64a02759fbfd55aa168e4d87ca2cb6fa8dd0aecdf85381c6434eef70"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_21/export_meta.json": [
+    4888,
+    1789896370157264598,
+    "bf27868b240b380e66e46d7c8aed5711ad535fc60a347b6b38f94ca7c64d257b"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_21/task.json": [
+    145097,
+    1789896370151475243,
+    "76d1e697f1ae27c5d5e624f24a562ae2ab900cc4ea90eca91e4702cd41761058"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_21/manifest.json": [
+    3052,
+    1789896421367095494,
+    "8a613f7cfb2c4e9b09099baa7725900abdb641f0f509570699742540e035717a"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_22/frames.jsonl": [
+    20819,
+    1789896371195458566,
+    "1ad9bcdb62c5b19c991b588e4eaccc9ee308048129f8162d013c02e43ab7734f"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_22/export_meta.json": [
+    4878,
+    1789896371184979880,
+    "9a2dd7eaa35afc683e9c809697df97abda43cad9709bfec804390ea0e0221f6d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_22/task.json": [
+    145095,
+    1789896371175566714,
+    "7c1abe91479238ce910c0e8b3a5fbb3f6b645c25d8eaa5fde7f7e1d8d6b25906"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_22/manifest.json": [
+    2657,
+    1789896418739666456,
+    "c40f50e7e2ff9b08159101c9047d52f0487c4d22538f28e7a88ddf6287b71757"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_23/frames.jsonl": [
+    27924,
+    1789896371426898889,
+    "8d678bc7f49f4690146439592b21098a099d65bf57e51e25cb3cd8416e921863"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_23/export_meta.json": [
+    4881,
+    1789896371415011875,
+    "636c05da6caadab0918e3bbe8099e4e1445b3c934afd3e6979c42d4e27240155"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_23/task.json": [
+    145097,
+    1789896371408929341,
+    "45bf48030a4afd63bbcb9f5816d436fc8ec2a2414d5dbebb01c65b791f12748e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_23/manifest.json": [
+    2654,
+    1789896418392099484,
+    "f4bd90b63bfdf961670bf7ed676edfd4ddbe503f8774df24e5c0cc499e81e73c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_24/frames.jsonl": [
+    19852,
+    1789896371763710594,
+    "012aad43aa39f17fcfaeead4fde1f9197a4806904653992a7547c548817666b3"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_24/export_meta.json": [
+    4881,
+    1789896371751906113,
+    "878c0435dd02eed6d0d7736e8f75771697dfc5f0e4e5b54d1df835a8acb77588"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_24/task.json": [
+    145097,
+    1789896371745999684,
+    "93abc248d2d51ad7cfd9594fd4f86c74e0cf3248ecb5f8feedc72cb8c6782f03"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_24/manifest.json": [
+    2653,
+    1789896419018508059,
+    "13913b0187473f171bf9722cfbdf3569837288c8907cdd5e9843f980c16a04c6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_25/frames.jsonl": [
+    27097,
+    1789896371988787523,
+    "3760cc67c9ba1b19d7bf2e9ed2dafee3c81c09723a30b478b2b34068732a1c94"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_25/export_meta.json": [
+    4875,
+    1789896371971561323,
+    "608ddacfb37c4d0008f45843479415b65927fd143d8f79a5a5b0b8fce7a70bba"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_25/task.json": [
+    145093,
+    1789896371956037890,
+    "9427eeaf4361956a3b257949bbf165a1360b74a7a6595bee09ce4e0f2c96c8d2"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_25/manifest.json": [
+    2912,
+    1789896434864012037,
+    "794c45b8a41c52f644c15335923d138daf7194f27a0dd04b152da9b6e015b44e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_26/frames.jsonl": [
+    16274,
+    1789896372358078009,
+    "78de91a8e67f0f167854917d469f310128f98b335e5898382c6fa9c500c907a8"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_26/export_meta.json": [
+    4881,
+    1789896372347544487,
+    "11bfc42273ec28fef01433f447d5031ca75eb1ef942068229dbcfa96bc36f21d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_26/task.json": [
+    145097,
+    1789896372341818813,
+    "783736e46aa2f325de01f9920fe3ca40a1fd2f9528bfb93db4e332651822672e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_26/manifest.json": [
+    2906,
+    1789896430581038764,
+    "976c05170389478a1ee4c64332a27c9f7bb1b47581e6a4d4a2037d407802c997"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_27/frames.jsonl": [
+    21649,
+    1789896372600506712,
+    "398154e181257cdc550b4c937a01c386500af058f62a3083cd595be4de217172"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_27/export_meta.json": [
+    4881,
+    1789896372564385461,
+    "b58c893f68604928f0da0c686e47812e4ad066e9c2b364ef74a8af7ba18badcd"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_27/task.json": [
+    145097,
+    1789896372556953619,
+    "041005bcaf7d272d748236df260a07390bd6a856ebbb9952c05908d960b1e06e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_27/manifest.json": [
+    2654,
+    1789896427903008334,
+    "a0a8daf961ed9cf3afef66db11c9688dd4280431f0704abde70f1b8bc81795aa"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_28/frames.jsonl": [
+    30549,
+    1789896372849693276,
+    "94d5d2194e1357bfabc9d5d20db617a600e38d78b3181ae9b8faff4e2ccc72b5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_28/export_meta.json": [
+    4878,
+    1789896372836685243,
+    "5e7db6459bac6668826f0e45e6cc4d10f53036e848636dff3eb7171655d4c0cb"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_28/task.json": [
+    145095,
+    1789896372830468837,
+    "d4ea69235d5fcd54613933c2a4cd5663b11295646531c7d0ca351ca89ccebf2e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_28/manifest.json": [
+    2655,
+    1789896432720162926,
+    "50f276c06f24a3481602e402b805954dc832467a5da39bb78ec22b500ad34095"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_29/frames.jsonl": [
+    22468,
+    1789896373160207403,
+    "d02a641c0fa7ef95b6441012dccc9367121fa10f7a93badaa2b09854167bf46c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_29/export_meta.json": [
+    4881,
+    1789896373148234284,
+    "8869c916caa8c55c4458bd7f6a31dfdaaf22bdea13d75f17653ceeac10eb34e8"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_29/task.json": [
+    145097,
+    1789896373142757181,
+    "b46a864b99a3e476d7cffef24cc5ce07d4fee9afb9079fd9881309169479336e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_29/manifest.json": [
+    2654,
+    1789896437418231016,
+    "c9f538b1af0f1c546647df263e1f5d441920e7f33e4313b9c76db545510e299a"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_30/frames.jsonl": [
+    107184,
+    1789896373709388979,
+    "fc0810e2a97db04a15f21141d4d033437be531304460a8c07559f1dfde5f5124"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_30/export_meta.json": [
+    4888,
+    1789896373697687448,
+    "91d3dd4b245e87656b4b9351a87ba29f30260904040d21341668c59a51e29f20"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_30/task.json": [
+    145097,
+    1789896373663416682,
+    "4bf858bc030252c65eb8d0cb66cd33bc7f149339c1badb748186df997f06bb42"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_30/manifest.json": [
+    3180,
+    1789896446207931603,
+    "b1e274ce3429f932364f80317e356baa2f749990a99d8cbb46c135c552d6b4fc"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_31/frames.jsonl": [
+    19833,
+    1789896374834855344,
+    "50352e9470f52413108b3d50bfa029f4db385af9ce62fb72948027c8951a1263"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_31/export_meta.json": [
+    4878,
+    1789896374824576266,
+    "3ac5c01f0e7b2cf170a257d8ea98c4b1d999ebf26a260da0c498f84cd9f02c0c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_31/task.json": [
+    145095,
+    1789896374818532510,
+    "86bb78449adb98ec45a4a30b9b356fd6f69a9448ee425008140776b9edf5eb90"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_31/manifest.json": [
+    2781,
+    1789896443154561181,
+    "bbd90ba4083f6edada1903d79edc2931cad4b3f287fb1e38c533e9e857787d5b"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_32/frames.jsonl": [
+    17998,
+    1789896375024818020,
+    "fc6d7ccd0ce5674eddde6d382eda8e5d535907ff9e6707d569fd59c3d38a102f"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_32/export_meta.json": [
+    4878,
+    1789896375013866905,
+    "e3a2797f251c08d6aeb313221dddc53f62e7db4255c143b2bfc3d8099abdca6b"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_32/task.json": [
+    145095,
+    1789896375004964535,
+    "2cde5d0e0fca548d67caf7289b499e3d6a2bbe330a4d24c68dd91b9814ee7447"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_32/manifest.json": [
+    2651,
+    1789896445784251528,
+    "799d496c571f403ab950862a49803240ffc50469960d78291d8c5c8725be3aa3"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_33/frames.jsonl": [
+    35977,
+    1789896375262184006,
+    "5d72fb561700accedad1ec95079904910922bd6cae692c1c1202a97493bea7fd"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_33/export_meta.json": [
+    4881,
+    1789896375250865888,
+    "0c3a1df997eeb53d31c24f0e3279ecb60f0124503b10fe9bb878b4099f735b84"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_33/task.json": [
+    145097,
+    1789896375244838526,
+    "4d2b865c2bdd0f3efe96ebac4b449b170f5c55685cda87100a84fb8399842531"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_33/manifest.json": [
+    2656,
+    1789896447029491340,
+    "cb1473fa97a3cbacd15842ff81c8be7bf91e31d65568930da3734e7fc0431edb"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_34/frames.jsonl": [
+    52326,
+    1789896375640793623,
+    "b9e51cf114f0233632f74828115dfa1a9098841802fe9e0219002500a83821e7"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_34/export_meta.json": [
+    4881,
+    1789896375628880970,
+    "9e6dac37c68660c43587188b39dee2574171ff57c0a494535fe6418efb6c28cf"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_34/task.json": [
+    145097,
+    1789896375617810130,
+    "6c947cc7a428bc9cbf8223e990cd0812a1e5e268f0b51a6b17928458877b2dc4"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_34/manifest.json": [
+    2666,
+    1789896452498612262,
+    "c7266d561c9a1d466f0c4f2e340526107031941e837b8ecfa88176c4acdffdd8"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_35/frames.jsonl": [
+    29815,
+    1789896376133893661,
+    "fe58056b467ba5d8c8deb6af685a417d2c1342164ac3513299f87e4dcc27a435"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_35/export_meta.json": [
+    4881,
+    1789896376122802845,
+    "e4afdbb0ee5c811157e6fce3bb96f5d0bd1f5e967281360a7d54835c2cb6733d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_35/task.json": [
+    145097,
+    1789896376116856923,
+    "dc726a2aa61746468f04093cc6780fb58ce5262a6ac6b1d13c440441c74466a5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_35/manifest.json": [
+    2654,
+    1789896454244059189,
+    "b48df732099033b10d3d43e02b7fbd46da021a52af8d3ebd2d2de4745881b839"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_36/frames.jsonl": [
+    18038,
+    1789896376429260292,
+    "65cc067bb227941b93e6ab78b710277a65e6710ec1ebe836e2479206ac682fb5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_36/export_meta.json": [
+    4881,
+    1789896376413409848,
+    "0fe02e1feeb108ead2fd1ac9c42884ec2467874b4865bcf388dceade72344d38"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_36/task.json": [
+    145097,
+    1789896376407626192,
+    "9ff61da2bded47d40a38ead115d840e4e2baed37d51bc1a7846c307cafdd78ee"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_36/manifest.json": [
+    2646,
+    1789896456428384061,
+    "c7f816ae78d4a4e40ef48d241a2b0a701330eb8abdb70f26a6fd350f9a3748ae"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_37/frames.jsonl": [
+    15364,
+    1789896376695401688,
+    "6dbb5f3571c9b46825bf4a0e9f5494ba2c80e3ec4b6d88fb77162568e9c9b6c3"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_37/export_meta.json": [
+    4881,
+    1789896376684656670,
+    "861bbb75d5fc89f7e5b2e806d75c8b53b983f28f6d4f289c55c02ecde1721f29"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_37/task.json": [
+    145097,
+    1789896376664839983,
+    "da9a6d2768b1c0a171ff363d3eae7166c506a368a8fdabb82b3afb78d6c965eb"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_37/manifest.json": [
+    2646,
+    1789896454862439805,
+    "8fcc9ab330b44b8b6f807ecab7e669c718af88729b77a44fae40a30a72d40e6a"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_1/frames.jsonl": [
+    155142,
+    1789740328465273042,
+    "474517b02ef3bb973653fd23ed8e936505689b19dc3191aa86d2a6fa95de2eec"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_1/export_meta.json": [
+    6132,
+    1789740328451908912,
+    "f18d7293a57f27c747fe66c554c89550f503b5807e7d4c8f8aca4a8294e6cb71"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_1/task.json": [
+    208364,
+    1789740328445522985,
+    "684170d0717de7f579c60c631bc1d584f08f38e50910ad8cd65ddd2d5efa7434"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_1/manifest.json": [
+    3307,
+    1789740387515629066,
+    "a73e2c064c8bf2818a11a07fc8358bdad792e73dc1603dd7ae8ee9d17779cf29"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_2/frames.jsonl": [
+    40380,
+    1789740332679551136,
+    "64579554a146d7092cb823082599baf35b7c4941c87ea119e92ba9e5475dbacf"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_2/export_meta.json": [
+    6125,
+    1789740332667773851,
+    "b259a846ab53dd86ca0c3f5547f41f521687e280f403d881d3bade68b0866c90"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_2/task.json": [
+    208364,
+    1789740332660814980,
+    "91409f0c306223853e0dc7f0cf4687c791533073e443c46528d18933b45ebcfd"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_2/manifest.json": [
+    2644,
+    1789740402982966604,
+    "aacf3a2dec64ddb5878742e652d4d24a8fbcf32cf9541d5551c0574e2d04dfb5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_3/frames.jsonl": [
+    56890,
+    1789740338105635238,
+    "ed711929b4d53eef87a649de0614a4e0f8ba92ca9971da5b03d092496b0a620c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_3/export_meta.json": [
+    6125,
+    1789740338094180694,
+    "27ce9830c988ff2c998c523c1ddd0d02e8c6657b53c9c2d4d20ac0a914f70489"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_3/task.json": [
+    208364,
+    1789740338088108013,
+    "3a2e0f8012cc0ae830e6acab710e5109b0c02b7f0c42063d517a083103707f2c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_3/manifest.json": [
+    2655,
+    1789740423884073157,
+    "9a9d4c5090934dc38fbc9082face1f25be87184974967b91c3e636ff3a151b86"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_4/frames.jsonl": [
+    33366,
+    1789740341986218761,
+    "1434d1df8c6755a11550df9560817c5d95522ff92edc1d975e5ff00c90d22490"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_4/export_meta.json": [
+    6122,
+    1789740341974482597,
+    "dc365a88238128f43a5fd6bb43d330c728b82a12865b5b4042048f6c96f9b393"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_4/task.json": [
+    208362,
+    1789740341967430283,
+    "4c156efe1cae6db54f638ca022609ddc6b9364db8c1c358b992d5d98d4579d1b"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_4/manifest.json": [
+    2648,
+    1789740446928159984,
+    "e1cb51fa770eb9f5ecf45afdf6246910efe22317a37f71dc14efd5fbebf56907"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_5/frames.jsonl": [
+    22551,
+    1789740345203239522,
+    "dd22c9347191fc5f27817be47f7ffe9e6441450ca7a81324364f0c5a01bf4de2"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_5/export_meta.json": [
+    6125,
+    1789740345190617620,
+    "4f999a6715c3b7778bd41a0ae803501b2be8fee054db7868690461c81409d6ef"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_5/task.json": [
+    208364,
+    1789740345174230150,
+    "bb162dbe4eb2cb51ccdef28c1a9f9ba80fbc01955c8b0f4df9f86909f082f9aa"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_5/manifest.json": [
+    2644,
+    1789740459446951803,
+    "b03fd375628c94c3eca5f54eda2cae3bf452c25dd54d1c462d5bc70a32513b3d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_6/frames.jsonl": [
+    21634,
+    1789740347353465018,
+    "d5106d7b0fea9d3221891559cbc04447d54cd5f83e17a0652ef2ffa9c3d51894"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_6/export_meta.json": [
+    6122,
+    1789740347341178915,
+    "1f2a053418129a25665e6fb9133970109b7cb798f576f5080bf3415478e099ac"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_6/task.json": [
+    208362,
+    1789740347334796148,
+    "412086a27ddd6907bbc0a4d6a5437cbf52c36536907ae287d4a64b009aec9d21"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_6/manifest.json": [
+    2643,
+    1789740461912698878,
+    "8ba606d5a3305637929c7f9927403fedc086c0845d8b10dfd8ba35d3920031c4"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_7/frames.jsonl": [
+    103378,
+    1789740347532068496,
+    "02f3464f3901fd2c72c60d6b87ffbb8759d0775a9c732820c289c2e75c38f276"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_7/export_meta.json": [
+    6129,
+    1789740347519427541,
+    "9f308d678214161361282f70c6ca2713003dd95fd53fa7b3a18002477b4c3533"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_7/task.json": [
+    208362,
+    1789740347512624184,
+    "38a6b4e4571c41feb81ef6d9cc94b38c41819e6c5f697f3bbb72e71342fe3972"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_7/manifest.json": [
+    2919,
+    1789740467726444099,
+    "cbf4e44fc9763e5060b0bd0ffce32f73e7fc8cac370e6d4e51ca5649b4fc3262"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_8/frames.jsonl": [
+    30847,
+    1789740348348426383,
+    "8c9e69e9bd7a0cfd7ad9a2594e3ca2c2f4f03c526b2e6b398eeae9265b1318a1"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_8/export_meta.json": [
+    6125,
+    1789740348335217707,
+    "bcebb2d0123b5df7023ac6cc44993e98151f090b9d3b3fa0c189302c86ee91e1"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_8/task.json": [
+    208364,
+    1789740348317570102,
+    "bf950f59486c37b98903e2609e67c9f4512857ab2daa80f647f73ff2699470d5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_8/manifest.json": [
+    2906,
+    1789740463527062112,
+    "2bc1cfea566c93dcb99445646d55e15a3abad2db1d70c0f58c1f5b45ff2c0dbf"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_9/frames.jsonl": [
+    30823,
+    1789740348597274563,
+    "1e70b09329e2145fbfcc35e9ee2fde11f215725a9f5af8d136d4c4bac266afce"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_9/export_meta.json": [
+    6119,
+    1789740348585074018,
+    "aa0a1e394504e7e68ec8000b74e84cd672d8230f3c0ff7fb76802b20335c8035"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_9/task.json": [
+    208360,
+    1789740348576746742,
+    "e2d3d18fff04d334ff6b8ea079211ec27f06658e6f0b83b5f16cae08d51f8b79"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_9/manifest.json": [
+    2773,
+    1789740467267897382,
+    "18d21c67981c5bcb5ebae644cb59494ba3d65d6e6474f0c2c6f2dffae5b92530"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_10/frames.jsonl": [
+    22653,
+    1789740329657622788,
+    "9585391646d9cfd6bffbda2224eaf438917fb4a01323e26fe7869d7e3f8919ae"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_10/export_meta.json": [
+    6124,
+    1789740329645563867,
+    "d144744062e051f532e3a269e134e0d6f46a69e373b541ab0abc094cb0183830"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_10/task.json": [
+    208364,
+    1789740329637863530,
+    "559b03ff17bc895ee80fd620836e74d579e421dbeb143ecec9f470a67c6ff12a"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_10/manifest.json": [
+    2650,
+    1789740357277349351,
+    "b03573776cf65be2837213d242724b8215186be6415ce6e8a1048cfcdae43139"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_11/frames.jsonl": [
+    66058,
+    1789740329848786894,
+    "6852080046f6508d91be7f5b3034538d0a77a8c580084f69be026f327ddfcc1e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_11/export_meta.json": [
+    6130,
+    1789740329836780221,
+    "bf7bdced07c001cec7b385b18e74982ff1a7fa2845c65b86d687146b3aca0898"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_11/task.json": [
+    208366,
+    1789740329830351615,
+    "16693a76622afb6793a8e8c9a35a4cb9b26e2eff49100bcdc52702a54512e634"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_11/manifest.json": [
+    2660,
+    1789740356894217635,
+    "65b89065bdba52b419623de94bc4d2f16c2a8ba92981827e233a4625a990ad4d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_12/frames.jsonl": [
+    24363,
+    1789740330366125664,
+    "4aeb3bdcd16f5e1e58aedf325b844055f6328ba9c2fc7ab54b6aa8873a7c94e1"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_12/export_meta.json": [
+    6127,
+    1789740330354045274,
+    "8e3922773b21383620b3b84f4de26f53ced5039c0406111b9c0ec2e63a2a5d93"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_12/task.json": [
+    208366,
+    1789740330339216093,
+    "85bdc13afaddaba01677b57323bd3729354be784e9e656be5458164b8c48ea3e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_12/manifest.json": [
+    2651,
+    1789740360544711070,
+    "bf4d98e3e741f2894d754a1505b392a8a73a32cdd5cc034c870ffabecf13e64d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_13/frames.jsonl": [
+    64087,
+    1789740330577724808,
+    "92b85d9d5801076dc66ed4b020e0303918231eee90179f82d05572b610924339"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_13/export_meta.json": [
+    6127,
+    1789740330565650678,
+    "4407bd755f68a212bb74b4c2799740e5e0656cde4f5a05354cc40cb4faa2facc"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_13/task.json": [
+    208366,
+    1789740330550626700,
+    "8ef48ff81fb102900621e5caf14dab7ba1ebe5ab40f13ec654ca4086a706d6dd"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_13/manifest.json": [
+    2922,
+    1789740360224861631,
+    "afe716ffe6ec9e5b6dccccf6d38173240e7bc2b26d4fcf6d0092d84464adf810"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_14/frames.jsonl": [
+    59564,
+    1789740331073690961,
+    "6e58aa474375e17a3bbb720ae02c34aa6aeed16c391ff524f9f40a04f1ba9c78"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_14/export_meta.json": [
+    6127,
+    1789740331061319895,
+    "c7df19ebc94582e9e447f4e7f466d7e675ca866ba3fd72bef166acaa07d97da0"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_14/task.json": [
+    208366,
+    1789740331054053616,
+    "ccb1b04812052023f7711a6604388917090a9d16af9ebee5c6943c671c5a0c97"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_14/manifest.json": [
+    2922,
+    1789740367364362827,
+    "2f0355a469ad21d50419858b3e75f883940cf9dbf378487f8894ab42d583f6ac"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_15/frames.jsonl": [
+    33367,
+    1789740331527480743,
+    "527e4b965db24a7effce327dab323bc42279c5fb9e55831202513d22111a15a4"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_15/export_meta.json": [
+    6124,
+    1789740331515373161,
+    "7d30933e48cd35c0231f36acb6ac7e53018ac5400e8720564152d36781894a1d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_15/task.json": [
+    208364,
+    1789740331508430901,
+    "518097c3bf14bebe33fa12f86ec2bf5df16c7389903a323e9698f4ec3b367389"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_15/manifest.json": [
+    2645,
+    1789740361767914081,
+    "972af9ea3d2c964283ff515329f425e48ae62401ac4b61344a8fa759a714edc5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_16/frames.jsonl": [
+    20787,
+    1789740331791560160,
+    "babeb3a7bc2aac5b2e8634a91a37848b94f8b1d9fad9b4faaebe5b89e74a045d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_16/export_meta.json": [
+    6127,
+    1789740331780533212,
+    "530569d120c92386dee2b7d2eba76c24c5b25ec8b67dc9dc72098a664b37431e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_16/task.json": [
+    208366,
+    1789740331774586631,
+    "86ce817d994d436ec2dc52447f62a283a2ece2a51559b109ce1a50d8934f255b"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_16/manifest.json": [
+    2651,
+    1789740367564767097,
+    "f6e635dad6c5cdb5c2cb2a9826d11eee52fb8b625012cc29679c79b9b2acef87"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_17/frames.jsonl": [
+    34347,
+    1789740331979567449,
+    "7b8375a0327f6aa2de818f62c499b1b423c1c891c6cab8c1c45cdbfc7a6dcfd9"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_17/export_meta.json": [
+    6127,
+    1789740331967306972,
+    "0b9c786b70de451126d035591b11525efa3f3adb4bf58233b1b810d2305d1f59"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_17/task.json": [
+    208366,
+    1789740331952563080,
+    "64b832fd415248315e40b9f541ccd6ea3e564f544dc2d7e09d0d9bcc6d0338e6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_17/manifest.json": [
+    2651,
+    1789740367445630750,
+    "c2a49addfe8b0407171574d0e7623091021471076acb0a199080be7febd516ab"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_18/frames.jsonl": [
+    31562,
+    1789740332262368773,
+    "05f2179fb09b62279196e1785081aa62b3a69742ee906969fb508240b714edde"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_18/export_meta.json": [
+    6124,
+    1789740332245049406,
+    "2ef79bfa373c2f532a570fb25bc0d4da293c07007559e852a383304dd0e324f6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_18/task.json": [
+    208364,
+    1789740332232304302,
+    "dcfebd517b84f3d1d69304704122a6e363d2aac511465db1008889109da93af0"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_18/manifest.json": [
+    2783,
+    1789740376314276592,
+    "96d8e24ed02129714aa68cba5c185b4ac51e90b6a5ef30e80b5c505a4726a20a"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_19/frames.jsonl": [
+    18946,
+    1789740332505485308,
+    "83fcc06412514d39a6ec14443f6104a57c64bba6399a0aa944bb4a58c3c6cc52"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_19/export_meta.json": [
+    6124,
+    1789740332492350049,
+    "7a884bab3da28e827abf88ad486a55792b64539e6c938015332fae9d51c1dbab"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_19/task.json": [
+    208364,
+    1789740332486058307,
+    "973350e75fc8d6e6c675130fb883f0036a1dece4820bd351dd6d4b6e9831c2b6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_19/manifest.json": [
+    2904,
+    1789740374380057483,
+    "61ec6fe1e4d5eee1bc33f8f0ff2d1f89a634c0a79bcc92b87a8b2e91ed27fe4c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_20/frames.jsonl": [
+    17083,
+    1789740333011174131,
+    "defb4ae1ad0fb1b6e2306835853b25184f802e067435cbfaf78949fe09819806"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_20/export_meta.json": [
+    6127,
+    1789740332999249037,
+    "89053b0426b9f0da9fa8ed16cd32069530cddbd97cdebb048581e97b6326e498"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_20/task.json": [
+    208366,
+    1789740332992709782,
+    "1cd6ef30a32334883105059ac111ba14ed2b4c6407455916b0743025788c1104"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_20/manifest.json": [
+    2646,
+    1789740377916872047,
+    "937836ebe23783ac3f06e24ef57d1c6a9fadacfa5f1c19d98a0e44fa12af4cdd"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_21/frames.jsonl": [
+    36957,
+    1789740333163705813,
+    "39923e2261d07c819447a5e65352a347e2abc43b63052e29cc319c8c5c149f76"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_21/export_meta.json": [
+    6127,
+    1789740333146232038,
+    "b3d4d7e6a7bceadeae8dfd4411366f1608f8d2e4af1eb7d423508a38d56c5ea4"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_21/task.json": [
+    208366,
+    1789740333139534482,
+    "f131458351cab06931e7ea7e44ff7e1faec76d1044e52eb4926aa493dcd5a500"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_21/manifest.json": [
+    2651,
+    1789740381389849693,
+    "eab061647bb5e4a8da0fc6d0b600d3b4d977a22f5758d006c0d61de87aa3bd98"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_22/frames.jsonl": [
+    58741,
+    1789740333451795148,
+    "17bb4c53197a3a55ea7fed45d8c545c2484738d73d24bf07e2544d9e94f493c7"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_22/export_meta.json": [
+    6121,
+    1789740333440031648,
+    "8a6c04b1bd833159f127a2373403cf7f2bef2ed78507ca6b9a0843a709db898c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_22/task.json": [
+    208362,
+    1789740333433562998,
+    "fce509cf10d3110df80cb03c5ee49a738cf97ecfc88189e8ea47d33da2fb426c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_22/manifest.json": [
+    2654,
+    1789740386694683042,
+    "73060d37efda2d39d6735196e855473a34dec4d08546104dd75d2dce12bcd5c4"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_23/frames.jsonl": [
+    114057,
+    1789740333904342659,
+    "bfdc85fe9c2a2c8731735ff007004ac0771a46b78616ceef4dd1c87193af23cd"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_23/export_meta.json": [
+    6134,
+    1789740333892147395,
+    "04509589d3abe6d095a93814a1ae574b2803c35a4172d412922ba54a81876bd8"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_23/task.json": [
+    208366,
+    1789740333884761526,
+    "5d971862df2b57821b7a4ea0f0608673015cffd4ed40c6e946820b71070d0d9f"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_23/manifest.json": [
+    3181,
+    1789740394457543217,
+    "5d3be27c8801d3d363f0669c66d2bcf7b10578c5b911b2477abe1a75823a4245"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_24/frames.jsonl": [
+    49665,
+    1789740334721590955,
+    "57fd56dad05569dc0516cf28b4da3e3e46b253366dfafae90137e42d0388a1af"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_24/export_meta.json": [
+    6127,
+    1789740334708835080,
+    "087cfc404f1d1055ce20fe964ea8b9f549ecbc8d1945f7bd2706901b97858ef0"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_24/task.json": [
+    208366,
+    1789740334702326987,
+    "125cee9198e9510f1961e3bfc9a2f62b781447726270b65181560ff1dac274f0"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_24/manifest.json": [
+    2661,
+    1789740389073710152,
+    "e8de68a484016204b6a0888ab4a582e7b90588064d752ebae9b59ac8925b72a0"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_25/frames.jsonl": [
+    91037,
+    1789740335123529355,
+    "55e94e6ce8c63170dbc0115315d6048e71949324787da07af34365db738c2264"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_25/export_meta.json": [
+    6131,
+    1789740335111027391,
+    "c594a58fd2ea55171e79822b8af3adf9c050cfe2a09f5bb2c32cca451f2fe112"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_25/task.json": [
+    208364,
+    1789740335098359200,
+    "b2584a5492f2a89ceb523b47bc8c4e9b460b5829ff33536c1898f86e944618b6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_25/manifest.json": [
+    2660,
+    1789740394322737981,
+    "5189a08286ec25bf3d8cdcbdd746729b46ee1b931497dc2eb999701f299afd7d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_26/frames.jsonl": [
+    178626,
+    1789740335803715281,
+    "b4c48e9c59247576b28a8ed160f926f819bf661557e4c579310840e1ebfec923"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_26/export_meta.json": [
+    6134,
+    1789740335789469059,
+    "5f16c85ce4217de9586a92ac17761b8fe57a3533d49d916aa06d72bea41aada0"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_26/task.json": [
+    208366,
+    1789740335783196517,
+    "26840e65238cabd995bae9206c25037f8dff2d14cec3ac8d8d8387ec4b142863"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_26/manifest.json": [
+    3319,
+    1789740401127917022,
+    "84b6e246bb6f3fe6fd713651ea72cdaf4e5ff5a9fbc9fc2ba21884b31ff2cee4"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_27/frames.jsonl": [
+    51454,
+    1789740337080411250,
+    "c9178ec61b87a618bfbd412f7a1427a3f97ea02f339c29f0fe80d76aae48eeaa"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_27/export_meta.json": [
+    6127,
+    1789740337063718219,
+    "4a611250069c4876b5f229c8e113531d5cf81365555f7640ee600a14cfeb05f5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_27/task.json": [
+    208366,
+    1789740337057357258,
+    "90d3853b4b5733a24b371435180ef0b1ed1d86f1acfa6d0cc9b2285ae85d0b6c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_27/manifest.json": [
+    2661,
+    1789740396281050368,
+    "0669d34a740c1f107fd04c7b1b8db1a5f8e31514b8c235ef6ee38e09b63772d8"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_28/frames.jsonl": [
+    45875,
+    1789740337478179470,
+    "cd5e5340d20efbc39b1919a93e97c6aa81fc9c4c11d5707e96d527c3c935c61d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_28/export_meta.json": [
+    6127,
+    1789740337463792684,
+    "dda3398067a884faf32385a5323fb06007fabdbf7578441e9dab0edffddcaa90"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_28/task.json": [
+    208366,
+    1789740337457206465,
+    "0e0d22efdfa05d4ef750be8bc28a79874862b9b73949c2c80642c3cf7d1d3f53"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_28/manifest.json": [
+    2791,
+    1789740401832862288,
+    "c69e212a01f82ccf4a99b15fd75c647a4602eb9d66b105250ba2cf1207d04cea"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_29/frames.jsonl": [
+    35106,
+    1789740337836869982,
+    "a700182f62b1a39aec1d5af3a68c21003fc21d2c2e1d66f4315fd3806899fd78"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_29/export_meta.json": [
+    6127,
+    1789740337825702067,
+    "436ecc95f3fbd50011a42505342dc683821e26028a9be8172df877e5df06c072"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_29/task.json": [
+    208366,
+    1789740337818079238,
+    "e88e8a6c9cb657b00c299a988af606b0879600a081ca5bcca50bc9f8807f3057"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_29/manifest.json": [
+    2782,
+    1789740401538589586,
+    "b3a1f18a8efec36eac99559d292aeb5652d4b71ba9b8adfa12c4aa5a84a8fe2e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_30/frames.jsonl": [
+    33268,
+    1789740338524064431,
+    "f1f8d60a530f5af705b3f3ef4aabef3d2548aae15a94e90ef5ce8627db746a65"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_30/export_meta.json": [
+    6127,
+    1789740338512203722,
+    "cd5f1668fa9728ab08bd0b0a198f6051ff61caf9be7b394a41e823c438482e2f"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_30/task.json": [
+    208366,
+    1789740338496064839,
+    "3b3b31c170c6c2578cb809bfcab1041144ba2666913b6a62cb26b2281c67e0d8"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_30/manifest.json": [
+    2651,
+    1789740407620652494,
+    "f8ce0b949ed52e07e7d408814c8078b76d4d7582a8e49a929113e0f0e2f0ca06"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_31/frames.jsonl": [
+    18008,
+    1789740338821029938,
+    "03733df099cf446adf195d0bd43ef2acef9c7efbd9c7a5e5ba7dc2a079172289"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_31/export_meta.json": [
+    6124,
+    1789740338803209260,
+    "665a054c360949cb38da6cbc405fd8390c482e5c22238b0eab9f4c0843b0db3d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_31/task.json": [
+    208364,
+    1789740338796642852,
+    "3b57d95a3f15e62b5fe4530f7e54f1f778820c9b7734070b6dca12962a21982a"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_31/manifest.json": [
+    2650,
+    1789740407570059164,
+    "7534d1ee94568b0976c763816d4606c970592dc8501f2d95907e963083060342"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_32/frames.jsonl": [
+    26068,
+    1789740338992390065,
+    "e5f2667371e739dc0862c1078f7f08187c48196b154c4ac30df0e82c87aa9d14"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_32/export_meta.json": [
+    6124,
+    1789740338980242246,
+    "4b5b07fea68ad2e56ed2d2ce19cd7e5c9adae641444dd1221e17446bd1788235"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_32/task.json": [
+    208364,
+    1789740338973736358,
+    "917601ea8c79b81b52ccf651d7959070cf9e9a93112f873ae1623977aebcf181"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_32/manifest.json": [
+    2650,
+    1789740408438267882,
+    "283a4caa35a434b38161752fa2e2772dfa9ed9339f6f0811f7fffdb1b57c1449"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_33/frames.jsonl": [
+    90275,
+    1789740339214625364,
+    "bcbf039c46a31f15f68a75132ceacad8d8871765c486f92d5f267ba40b8cef12"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_33/export_meta.json": [
+    6131,
+    1789740339200819573,
+    "8b2b836c61b1e30841dda0689a5afe28a16ef53a17e632ead767b10dbd888950"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_33/task.json": [
+    208364,
+    1789740339194106675,
+    "f4cd6e23d9438883860747d77446734741b1a4595d414f7ec597c9a105746d56"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_33/manifest.json": [
+    3051,
+    1789740415027288073,
+    "89c925d3c06849f9715b859cab3bbddc3162ccd37f7aed6c912731da3bf6f631"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_34/frames.jsonl": [
+    37098,
+    1789740339876498353,
+    "9e0611ba16618385c0264121958ccb99b668423d6eaaf06f59feadcdbf80007e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_34/export_meta.json": [
+    6127,
+    1789740339860339972,
+    "980ea19dd3e2ccaad577b0234ade36a63548db696081f042f21f32612d0ce311"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_34/task.json": [
+    208366,
+    1789740339851891846,
+    "e00bc1a8bf8401260f11a81ec248518e047f4ed764a8e2fa07a2244288eddca1"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_34/manifest.json": [
+    2646,
+    1789740415097596540,
+    "0df49a18e8492194a334a8b6cc6919a1ea7ccd0c22e033bca6174060cb7b671e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_35/frames.jsonl": [
+    20774,
+    1789740340210158639,
+    "a76963c8cd9de730eaf61c0ede14bee1164a952dea8d71a7484b1605a5cf5ca5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_35/export_meta.json": [
+    6127,
+    1789740340187195256,
+    "e2a276f8c67da183608215307a9e82bbdbcf436345e7580dc155bfbe8248fd48"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_35/task.json": [
+    208366,
+    1789740340180553016,
+    "aab2039bcb48608123959b09bfbb560cbecf15a53985bdb73a7c25489f65753e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_35/manifest.json": [
+    2646,
+    1789740414175176818,
+    "4cd4f3b7734ca41689d2c69b01a9da322a7c0f064b9d102a036945d1ca4eeecc"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_36/frames.jsonl": [
+    36052,
+    1789740340404183188,
+    "201094ba8d38de6c4575cf21d6245e076ae10d97d87af3990668e4db5b5e7f0e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_36/export_meta.json": [
+    6127,
+    1789740340388443482,
+    "c41f5bda0ef98180052c12dc0403ca2d1ba902077682733722b7641a12f775d9"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_36/task.json": [
+    208366,
+    1789740340381865107,
+    "aa84be4f31a2818f662018ddeb4e5346839d776e311b306a2f33e8c3b1248657"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_36/manifest.json": [
+    2651,
+    1789740415527677298,
+    "c3effe5cf667e9c8959383895f1fda2e1a7e49b3cc4165dc70c84354cca4c905"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_37/frames.jsonl": [
+    69481,
+    1789740340755771351,
+    "615b59b9162a874e615c983ac5c7adc1899567e617c9c2d722953ac7c26fe4ec"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_37/export_meta.json": [
+    6124,
+    1789740340743287123,
+    "7621465524592453b075b193862442b656e4f3274dd6668a3faa77deab125b70"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_37/task.json": [
+    208364,
+    1789740340736308995,
+    "018efc32b2fed1af6863d2e17b7815c66eb6656b628597af65b6ada74a6b365f"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_37/manifest.json": [
+    3051,
+    1789740426789578844,
+    "23857afcf097761817a4a9b15a1142570fd8a33f1ff582446ddfb84ce93739a3"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_38/frames.jsonl": [
+    27095,
+    1789740341287236195,
+    "f8f6cc7a6d21bf9905d0afc2f9dd59b91fc3961ed84a5984782c015792cc36c9"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_38/export_meta.json": [
+    6127,
+    1789740341274934766,
+    "750e16fa8648d94a82c5b7f1891ae21d183d518df6534709ee8273c3cf503b98"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_38/task.json": [
+    208366,
+    1789740341267995166,
+    "696620d1280c6da37cc8c149ff559d6335dca514ae492c7f0c9297dd50434350"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_38/manifest.json": [
+    2641,
+    1789740421492140102,
+    "8b39ff3257eedcb8cb9f2d73a247dccecedfa28f902176fc2938933a2a588bd0"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_39/frames.jsonl": [
+    55949,
+    1789740341519405014,
+    "bc7b4957fe6b42ef3ddd4e8df8629b0a66d771dcfb7442d3d00c6fdf1c7a680f"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_39/export_meta.json": [
+    6124,
+    1789740341506375440,
+    "616b66cab1cb8d55c3e88aa8d4fee8c5d7ea15d39a7923ff7baea90bb52029a6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_39/task.json": [
+    208364,
+    1789740341499760040,
+    "80274a630695f9b96bb8e58343f03f82f5b1cf5447e30fee157716a8038dcce9"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_39/manifest.json": [
+    2660,
+    1789740424667255826,
+    "2d77ca0847247570f212f03535a9508534f4646d6013c6a9f9eb3701c5b73596"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_40/frames.jsonl": [
+    22550,
+    1789740342273551074,
+    "c45d16568508c9b48f964f9d16ffa5692b2d0fbf53b23caa0d649b2543e8c494"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_40/export_meta.json": [
+    6127,
+    1789740342262059353,
+    "bbc4396cae16367cfe4c310105eb18be154e83ca95d33529c158d86a6c1d45be"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_40/task.json": [
+    208366,
+    1789740342255671694,
+    "27339b69de40fa7b422f8e8184e68813acb8369b7929adb493b81103a85510b4"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_40/manifest.json": [
+    2651,
+    1789740428290130711,
+    "0e90bb8c86f2eae0ea8838917bec5feec8cec81100baa4aa8572ee4efc22fdda"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_41/frames.jsonl": [
+    46917,
+    1789740342476978863,
+    "86bc6c7048018ceb115304a4adfd064f7d51f9db9ffb3266e5cb7744236886e8"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_41/export_meta.json": [
+    6127,
+    1789740342462044119,
+    "c75a991dd2fad117cc390a5516feebffd1498934e8ba590e85ce3e1a3674a669"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_41/task.json": [
+    208366,
+    1789740342455152884,
+    "bbb29ae05c5a60a48814b4f8bd33bf976ead113f47b6e8b1a51a25bb63f83d5d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_41/manifest.json": [
+    2661,
+    1789740431760898040,
+    "b404a869e8fcb5b72ba2b036c859811359614c5a21b0929225e2b9bca294bf1c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_42/frames.jsonl": [
+    23191,
+    1789740342854738316,
+    "412799a6a24e97e773a8a422043c22aab6b180327391d7daeb28ada8a4163cad"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_42/export_meta.json": [
+    6127,
+    1789740342843104892,
+    "3a705f53288f02647d9ff3f486f657f25a1f4eb2638380993566907d6992af7e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_42/task.json": [
+    208366,
+    1789740342836734416,
+    "d9185844b73a6323e2b44a684e2b48d77e1385dc83b7af03a71badbf433ba401"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_42/manifest.json": [
+    2911,
+    1789740433010571055,
+    "ff7c443417dc92c1a3b201feb44989fac30bf264d633a4be3b1e622d4d837f05"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_43/frames.jsonl": [
+    31523,
+    1789740343071525468,
+    "ba8f30d21b84e42a4b2a52b0263cbfbb83acdde56cafecaac9fce289fe963916"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_43/export_meta.json": [
+    6121,
+    1789740343059431254,
+    "034aa3b7e0db126473db1f1b73da5bdf88e770466ae63117688642e700af0cf5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_43/task.json": [
+    208362,
+    1789740343052969805,
+    "06571dba6e800913c957b27f9986e1fe17a569291055c7c31eb266762c3ac055"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_43/manifest.json": [
+    2909,
+    1789740435180534293,
+    "692f7673d32258e9094ce3024e8bc70efae89650e8436ca0b3bdb9538eee65e0"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_44/frames.jsonl": [
+    18878,
+    1789740343324288131,
+    "5b6b4b101eb250df01ae4e60a81fb6eb9dca02d58cbaf01dae75673f2dd3b6f2"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_44/export_meta.json": [
+    6127,
+    1789740343311446979,
+    "6b629b0145414d0c652678b40edc3f3c6aae7d7c4794f55868959cc6ffeaaea4"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_44/task.json": [
+    208366,
+    1789740343304794788,
+    "08376b108628924b488a5e728ac7d9d72c81c054e785410f3a2111db1978e75c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_44/manifest.json": [
+    2776,
+    1789740435184249407,
+    "682ef0ff87498447bb3fcbd5aae419953e3b694f2fb35d089755396f06978501"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_45/frames.jsonl": [
+    18016,
+    1789740343496104660,
+    "5700da8033c9fc66964fc5ce79855a6c94339c7c618c00dd8f43a76e11de4c43"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_45/export_meta.json": [
+    6127,
+    1789740343481973587,
+    "65faecc21b19430d49d1b92bbc17b65242696e13dc2686271a27e9cb9fe99f61"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_45/task.json": [
+    208366,
+    1789740343473993640,
+    "6618730e1b1166ff5633ccb90d31d2abd1f7dbdf4966e47c8d2ba33e319f9441"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_45/manifest.json": [
+    2656,
+    1789740437802489965,
+    "3f4522d32eaf7a4150f3c14014c8c7c346b945f96b6631dac25bda7b4b995736"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_46/frames.jsonl": [
+    18028,
+    1789740343662277722,
+    "e9efa842d65e71b268dc919c4e70958429ba5bebe7b1495971d3264401f5c36e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_46/export_meta.json": [
+    6124,
+    1789740343650506373,
+    "34ec57a668a67640ab0f006e897e2779cbfdfe68455bb198287ff1d4bc5ba70b"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_46/task.json": [
+    208364,
+    1789740343643689399,
+    "e62dc291e0fcb57817dca249e9494e9ad43e7441a089f9a51d389581430e7f03"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_46/manifest.json": [
+    2650,
+    1789740440196141641,
+    "c031d54b54f06dcca98829d1cdc8201a17f5e70ef5cbaf64fb4f2155bb8e0423"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_47/frames.jsonl": [
+    72112,
+    1789740343822317084,
+    "ab3dd1776f002962f46fdcd6dde40feceabe143400a2ae469adab5fb0ea92616"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_47/export_meta.json": [
+    6127,
+    1789740343808919468,
+    "b3995949f320aafbbbcbe9f2b8a52b022c79e873eea70112af2d2056105da2c5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_47/task.json": [
+    208366,
+    1789740343802214209,
+    "247b44aa97baddfbf69b0272166d8d781b597a045675ed9359f77cf794fa54ee"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_47/manifest.json": [
+    3185,
+    1789740446375707052,
+    "4e6f88c1a178f089df28d48e243e3fbc49944725835de9357270f38d4eabfc15"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_48/frames.jsonl": [
+    23402,
+    1789740344367804214,
+    "edaaebe69b34c8a98eff34b7789bcc7d31bfd79f0a4b6f47fc3e6fe1a07c72ab"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_48/export_meta.json": [
+    6127,
+    1789740344351794301,
+    "e10e0ae8fbbea0df93c878269edf5fa6368ce2c0cec542109426d9ce7c07a51d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_48/task.json": [
+    208366,
+    1789740344345653403,
+    "de467e2636b9ce7c48c30b4737cdffddd6fb1b88d7f53bbb84ba3046fa7d3611"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_48/manifest.json": [
+    2781,
+    1789740442439670522,
+    "6bed9f7d375c72daf30830fb6b4ac6b86ccc97202e9fd44a3c43016ed22bbc42"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_49/frames.jsonl": [
+    80235,
+    1789740344573526608,
+    "e26e49690d1481fe510c875481dcf51dce68a3acabc43e977a8f099895a24281"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_49/export_meta.json": [
+    6130,
+    1789740344560446281,
+    "bc2f8f1a354be87bc913a68fdf92cebe8f957e76995a52b388d1353a968f4610"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_49/task.json": [
+    208366,
+    1789740344552915338,
+    "72c7d143831f58ce742948dde8c7f28b1944fddc147b485ea0fe8725675fc05b"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_49/manifest.json": [
+    2661,
+    1789740444501978213,
+    "7dc0054050fe165591d8a24cd1d974f5688a55dc17ac3f474791e8f6d3424381"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_50/frames.jsonl": [
+    43439,
+    1789740345407827426,
+    "668584da13111616a48483ed9f3d63baea7a9c083640c22008fc9f00a5d9981c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_50/export_meta.json": [
+    6124,
+    1789740345392897189,
+    "dbe536e1ab2cd4e2ecd028d8ecc8fb9b8efe06802e17580fe73bf3f87d576fde"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_50/task.json": [
+    208364,
+    1789740345386434309,
+    "3c0ff087da85766792b76356aba20b39968710e162b9222268df5005c3231a4e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_50/manifest.json": [
+    2660,
+    1789740451160007077,
+    "0e9e5ec30a3b5adfe0744c5733326b2252b48e3b4456bce04c960750b1a613a2"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_51/frames.jsonl": [
+    18940,
+    1789740345760946886,
+    "c5ffbb1b585c408826ac0d9a09d88f0c68f0a839e3d7b897a76f374cde01432e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_51/export_meta.json": [
+    6127,
+    1789740345746380147,
+    "96dcc18478626969fa377892917108f12eab68e2ad016625794067a85da0cd9c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_51/task.json": [
+    208366,
+    1789740345738932916,
+    "ff45a02857663584d700453762148209548af97d2398a05af27a80b431de29d0"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_51/manifest.json": [
+    2782,
+    1789740451903360298,
+    "1bfec2fba9d66ab189ef1f5027b22099525c246c8ae46c6160be534a33b43f55"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_52/frames.jsonl": [
+    40593,
+    1789740345956930898,
+    "d096bace766dea301c5807bba0ad453989f9ec56139f389b10158275a46cf3cd"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_52/export_meta.json": [
+    6127,
+    1789740345944404119,
+    "9b4fb856e3074890e180cdeb7685ae14120df61730c8532dd113005b1b98f173"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_52/task.json": [
+    208366,
+    1789740345935641487,
+    "bdfd54455f2b6a6e5290b3321e2c2e0a2fad2afdcff1fff027292ca58b75b280"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_52/manifest.json": [
+    3043,
+    1789740457335792301,
+    "1ee23fc654762d092e0bab78f25d50a41fde7ea2eba8db0b1e76d89679016e06"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_53/frames.jsonl": [
+    98189,
+    1789740346320523953,
+    "e9262b3e0efa7aab665d26bb21087481d6f1dcc7b630ae9db95027c7221c4bf9"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_53/export_meta.json": [
+    6131,
+    1789740346306199340,
+    "eed2ac364226aa2a1d7562d5b7af5a6394a0d31aee764bae60f3c92c784e8604"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_53/task.json": [
+    208364,
+    1789740346299702006,
+    "377e667d6d9e12dd0a6b0b08fc7d5cbc7dce2468ad84d974ef74a05e67b42a3a"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_53/manifest.json": [
+    2796,
+    1789740455786317508,
+    "3e329746c2dc781d9425d9016078d89633cbeb70b3be7db08d4c89947d1652fa"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_54/frames.jsonl": [
+    29772,
+    1789740347080690331,
+    "5d01e8b322fb85f2e023244e7f15cfa51ac81951d94ec2fa4e59a3d7e8afbe5b"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_54/export_meta.json": [
+    6121,
+    1789740347068173770,
+    "1327f2a62e576f51883b78551b923b33a06c56a2651f577a041d441d3af9fd5b"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_54/task.json": [
+    208362,
+    1789740347052093140,
+    "46f19a66d9231ac81ff53d3fb5b7031124aa77efd7c909387cd566c453e285a4"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_54/manifest.json": [
+    2649,
+    1789740457629005780,
+    "6fdd66c51f2fb7de3f47919ac138f8afb26b2ee284b37378af6bce13122e30bc"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_1/frames.jsonl": [
+    41608,
+    1789654106017117815,
+    "e1e6bbb4c5413b7a32726f293f2ba97a15106ded3d0f2b057c0229e5a1908872"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_1/export_meta.json": [
+    6703,
+    1789654105990524510,
+    "54ad10403864fb7b5b29c396c812a7e92c5d7fe4e8d74c5e419fede532f92294"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_1/task.json": [
+    223380,
+    1789654105984175856,
+    "6c3f2abc1db56526cdb4f74dea11f6b55cc8cf80f22065794aa4ee93b3873168"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_1/manifest.json": [
+    3163,
+    1789654149464168846,
+    "c4ae68eea1580208b8785b6ee32b544a343f83bb310f42fe156e7cfa49ca76aa"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_3/frames.jsonl": [
+    66050,
+    1789654110664014077,
+    "5de2854fbbb095fba1e7eaacb165f0a1cf35d7138eec6518392fce1fbf06ed46"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_3/export_meta.json": [
+    6706,
+    1789654110652241185,
+    "bf0a5cd3875cbb0a427c55d26bf4f1d29d2e2c93a2bda5457280ae308c217743"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_3/task.json": [
+    223380,
+    1789654110646455599,
+    "1ce76b80cb977c9a82ed25fe983d6d506978ea91cd67eab563735baa21129471"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_3/manifest.json": [
+    2654,
+    1789654187817553766,
+    "028aafb6c1f32732a65516d64b9546150a760a20d996990d19556ad97f9e72f6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_4/frames.jsonl": [
+    56221,
+    1789654115688287195,
+    "78dd663d5bdd29bd8eda53080542424b4651dc009dafe431c20d0d5b03644411"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_4/export_meta.json": [
+    6703,
+    1789654115676094196,
+    "a9518457bf2d24afb8601dfe6a8d0b5fcef899e328f280d6fffcc235a8ac3507"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_4/task.json": [
+    223380,
+    1789654115667129694,
+    "877091dd999cddc497cf9454cdcfc8b21a9323848e2a665b3549971605e87ad4"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_4/manifest.json": [
+    3051,
+    1789654209801173271,
+    "e966fd60e9303d26707baf6ab1785b925cac059014b36481226a4a6fe575910d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_6/frames.jsonl": [
+    58816,
+    1789654121026407043,
+    "1f25d1d4369dbcac3caee14cda4bb0f6e6eefb0cfdfb1af53e431a42a1e0be63"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_6/export_meta.json": [
+    6703,
+    1789654121014745281,
+    "912f82ac9602c51cc50c76810887fd3f3309a488396685cec8a58c2cb42d070b"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_6/task.json": [
+    223380,
+    1789654121005501159,
+    "38bcfa4471c4ed62f5e078f657fed95bf679c4e00ece6ccd161b07522f29501a"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_6/manifest.json": [
+    2785,
+    1789654228019091334,
+    "093319dc3a113c5d93f205d12d92c86f6748b8dc0b0fe9063730ff689f1e863c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_7/frames.jsonl": [
+    30759,
+    1789654121463082473,
+    "c8593001c7405d23ba66a48a81d7e3c4bbc50e49861872c2ac7f0eb1ccf6a085"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_7/export_meta.json": [
+    6700,
+    1789654121442199150,
+    "673409e2b182fcb93fd681f03c316e9dbbe56e90561f7477f0ad1102bf4fca1a"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_7/task.json": [
+    223378,
+    1789654121436014845,
+    "8a73234752c83e2f34be54a8be255aa18a45220e8b446d81f53ba57eb6631712"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_7/manifest.json": [
+    2643,
+    1789654228453725130,
+    "ae073989b2169e48df4f331b7cc9c2ac63d3e6ec96062c10273b1799064187ba"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_8/frames.jsonl": [
+    80482,
+    1789654121719508624,
+    "1fe29018f95fa5cfb54387ab14513f172341de9ccec9d77abea317d93ae01470"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_8/export_meta.json": [
+    6700,
+    1789654121701563402,
+    "46de6ce043eaf67594d4fe2f590216fb1cfdccba55282687c8fe93059b70e4a4"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_8/task.json": [
+    223378,
+    1789654121694686746,
+    "fd362a7c700f567898117d614d3cbe15fed12bbb44f860a7cbd5188f246a7044"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_8/manifest.json": [
+    2918,
+    1789654230939353902,
+    "7ae5c2f3ea8c819fa99ecdfff9f6597f0ea01a81e31a22d03bf01c625bdded7a"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_9/frames.jsonl": [
+    84278,
+    1789654122280243899,
+    "5bfbd481773d336e0364e7629309bb6300c71d6a47b0d59fb7b776390fd3919f"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_9/export_meta.json": [
+    6703,
+    1789654122268479780,
+    "d39acc5ede696bf09eacb0e5a4c76ec97009c0919eaef8d911cf666904ef3b1e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_9/task.json": [
+    223378,
+    1789654122261978510,
+    "fc91f30b4dfff3f290a21f3e49888d3715d6abf1ab4acfca55eb36e1454e6dee"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_9/manifest.json": [
+    2658,
+    1789654232892400517,
+    "0869c6df07be79c1fa456229346365d31336d50d9ca9411a2c14b5ab48a34361"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_11/frames.jsonl": [
+    37954,
+    1789654106458890826,
+    "ea974ef8c260f19e6fd5e06cae890aa0e649dc954590b3ab9ada51ea599271df"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_11/export_meta.json": [
+    6705,
+    1789654106447718136,
+    "5763dd272b8eda7ba7d8a4b6a9b6dc124be66e1c3b8534c68d7bc3f95cc9fb62"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_11/task.json": [
+    223382,
+    1789654106441669527,
+    "e33e99825205dbc5b12fe2e2f66a2e3c9498439a07b75980672b39a5f6770d91"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_11/manifest.json": [
+    2646,
+    1789654131158186299,
+    "ea34368e41a4af209b42989e320529f7c331aefd340abf90aae124da0eec1573"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_13/frames.jsonl": [
+    31624,
+    1789654106857719070,
+    "bd407592ff867d4d92e448725247786c1cce9b0918fa53843b30a868ade870fb"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_13/export_meta.json": [
+    6705,
+    1789654106846341521,
+    "b42055a7398eac5840cb88a76767b217e983d4637bbd458b09e0d983eccb1df4"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_13/task.json": [
+    223382,
+    1789654106837908432,
+    "4703391ac58f2d2cde013c0a3acf2906452a055593fd244f335aa728974df70b"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_13/manifest.json": [
+    2780,
+    1789654133368787147,
+    "00aec8582b33f2c59a4c423e88c875eefb9ce36be57fd4d7f7093dd4ffe51536"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_16/frames.jsonl": [
+    76627,
+    1789654107301520873,
+    "ed27c4f9342b9ff141c90547a14e734afeb5080afa1e63ea02605cf0e425cc54"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_16/export_meta.json": [
+    6708,
+    1789654107288748262,
+    "add5cf9d7792208d6d5ac5a04db5b53586c54c6152ce223e097a35a800e3ecd7"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_16/task.json": [
+    223382,
+    1789654107282545659,
+    "fa159ae9c5e99c8aeaaf2576d2689672e295ded094825f50f7a089af03c153c6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_16/manifest.json": [
+    2666,
+    1789654141694919870,
+    "1b1bb66e9a556720918a1ec2b1c03da785ecbe54d4743a87aeaed5d1268e6670"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_18/frames.jsonl": [
+    32484,
+    1789654107923962138,
+    "fe4ff5f657ed83a2e495bd523bdea01269a0d875bfb044a0cee136ddc3bd6ec4"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_18/export_meta.json": [
+    6702,
+    1789654107905596293,
+    "847339a44a8c063c3fc67857cda674e98430ad8a0a46f0c2ff4b58b248702313"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_18/task.json": [
+    223380,
+    1789654107899559429,
+    "909902f1686841b528e2c2e491ba0688679ab666cf9d7c8c4c3b6dc2e0a67d63"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_18/manifest.json": [
+    3038,
+    1789654146177121120,
+    "f51cd4376ee0ac8afa885eeb98d7da94bbca47e2c5bb2feaf52acc9789c57c73"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_19/frames.jsonl": [
+    28986,
+    1789654108173408899,
+    "d4376ed727798a789c89e7f6a4977d84292a820c20af25cfcd429e01ff3fcb29"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_19/export_meta.json": [
+    6696,
+    1789654108162375584,
+    "6ecbb98f91295cd2bbab8213e3d9acf2bf60d174a9eb9407a6c8fc3a8c5400ae"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_19/task.json": [
+    223376,
+    1789654108156111962,
+    "11acb617d202a557213c93bbcd643d34b69180cfa095c81f62e7294bc7658ab7"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_19/manifest.json": [
+    2771,
+    1789654143421083659,
+    "edc8c88174368cca52620d42ca0e4de951d5129928cdf052072150a5098e3888"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_23/frames.jsonl": [
+    37883,
+    1789654108866644988,
+    "cc8410ee29c11561c59b1a1f6a310f873495f47242c3b25e99f8b990f26e74e6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_23/export_meta.json": [
+    6705,
+    1789654108855314266,
+    "32f46d8c6a0fcff5ded75edff67b37567677f192fefc6c49134b724cf898e7fc"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_23/task.json": [
+    223382,
+    1789654108849515614,
+    "f1b3ab580d59558d39cd5f21868beb7500bb5031aabaef001ae03dc5ef7fbd99"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_23/manifest.json": [
+    2650,
+    1789654155165799432,
+    "9f644464db26595918188f62c9eaaf19664760c10debb468ead7c2ffe8958b90"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_24/frames.jsonl": [
+    51337,
+    1789654109141072340,
+    "b3b6e05d610817b599b308531cf4cbb5b0d7c442d8f3c09c6d37d4984aef3fcc"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_24/export_meta.json": [
+    6702,
+    1789654109129949790,
+    "5c872be19693846a47800dce1c9b179d3867fb834ec6750ea14e3732ef0572af"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_24/task.json": [
+    223380,
+    1789654109124083457,
+    "e97a5d7cd780bde28adb306cbcbc818c09157a2858b3064024fea188272bbae9"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_24/manifest.json": [
+    2660,
+    1789654155850253144,
+    "d5b4833cd9da14e5608765f0e68fd098b96ad62c3cebdf25865ea15167d5098f"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_26/frames.jsonl": [
+    22505,
+    1789654109701251137,
+    "d10638dd80b9415d650bec6d92987992f67c9c13aac9111d8ef4088857a26f54"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_26/export_meta.json": [
+    6705,
+    1789654109683579073,
+    "06114069dcf4b7e0522b50fd45f18ca7ec6f48541b4cfe8286e0575983ab04f1"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_26/task.json": [
+    223382,
+    1789654109678006564,
+    "b30c2bfe6b7828b004bb19cb55e7a4a30f87991fa8a9cb564c27467b92be9ca1"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_26/manifest.json": [
+    2782,
+    1789654159344093646,
+    "6af5843150f82ce14430304d84f00561df83327acac45ab887b452adb6042f5e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_27/frames.jsonl": [
+    38694,
+    1789654109889208403,
+    "6b3f82529f30a2da5120dda4a6ff7253946fe705883f71fa7b09a61de58d470b"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_27/export_meta.json": [
+    6702,
+    1789654109877972665,
+    "6590b095315d4eb5d0fca08cb85113dde54eb3ffd2b89e68c542c0a1acc1001d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_27/task.json": [
+    223380,
+    1789654109862065287,
+    "3e95d7c4b0a2dd54902f3cbd56c6c7d82e133a1d242a1121b6f33f09c06c1dfb"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_27/manifest.json": [
+    2651,
+    1789654159997203302,
+    "7c34fddba16a40c27aae787744adeec643fec4c4c02630cf0ecfe6cf96f437e8"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_29/frames.jsonl": [
+    51375,
+    1789654110287963703,
+    "8a8eaecd53589be0b5754113c9faec6a814d443dc279a1c4925af9d1002d81ca"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_29/export_meta.json": [
+    6705,
+    1789654110275609707,
+    "deac4a2552cb7e77c05ff6703d6fa3e80ddd65829e4deaeac931851224a32a57"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_29/task.json": [
+    223382,
+    1789654110269359635,
+    "e39fbc5b2c40cabe29aef02ac8b8cd3e46ee9aa91ab36b1a053cda0e863b8796"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_29/manifest.json": [
+    2666,
+    1789654163584436925,
+    "cce6349a58befd0a10bfc12efc1e5695411362cb1f31d1a4084279b4003cf156"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_30/frames.jsonl": [
+    60411,
+    1789654111157545148,
+    "ab07460aa1a5eaea1fce2ff3d10c70321b80e3b60b29ff376b3577bc0d5b63c4"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_30/export_meta.json": [
+    6705,
+    1789654111146676510,
+    "18e71ce5d109ffb07decc21cff61a422f16e98acaecaf3bed51f80e5bc3be2ec"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_30/task.json": [
+    223382,
+    1789654111140907087,
+    "6cb3c728d8ec9e767e7aba0a3fa2067d694de7aede70ff89f12f7426914cff23"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_30/manifest.json": [
+    3051,
+    1789654169608460670,
+    "7a1495b83703fbeb16d5dc71d4f51ef6f499777f3a7fa994c5677ede37388567"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_31/frames.jsonl": [
+    37860,
+    1789654111603110948,
+    "fcb11e42aba70d1c0a7630ea9f40a4decef6adc7bb0a41e836946469737a0c37"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_31/export_meta.json": [
+    6705,
+    1789654111591581119,
+    "490651ba873ab8378088072ef342e3ea0237ca30f115e8ff91339143651880a6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_31/task.json": [
+    223382,
+    1789654111575008048,
+    "42d6dd5995b1da079456b3e9e6d56d69698b6c830dca63cfa7b6ad57c750b433"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_31/manifest.json": [
+    3045,
+    1789654172536270197,
+    "57d72a13842667ad34b0abd9644dea5f1b11b8aeec2071680b02713dbb2bc6f3"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_32/frames.jsonl": [
+    37746,
+    1789654111998270954,
+    "98d773ff4123dd1434fd47f574d5a5cd04e98e8d046f97b9da060753c148419d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_32/export_meta.json": [
+    6702,
+    1789654111979002284,
+    "9befc47106e6e9aca404aca940b770556c56403f555eec7214f97abecffa57f8"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_32/task.json": [
+    223380,
+    1789654111965710181,
+    "4bc9aecf0eab3b150b1edfc3c0c1ba7b537ccd38273df7f93ec769e5e8a52e86"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_32/manifest.json": [
+    2651,
+    1789654169875098215,
+    "3319b65c215e91c1c45a782c70c5d34cbb44f284371978d401f29fc2b50a6653"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_33/frames.jsonl": [
+    86347,
+    1789654112276876664,
+    "5e74ae21d315393adb2b1a876d2a9219c1a92fe96d7da4487a80a0d53983b960"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_33/export_meta.json": [
+    6708,
+    1789654112265139705,
+    "f246bf3a1f3387461606f7346ba8176506d1091a3faa07517699c47039556ea4"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_33/task.json": [
+    223382,
+    1789654112258916891,
+    "f402e4cadd894d23def8caaf931c544f251ebdb30373ed5cde14b3b1f0a25b6b"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_33/manifest.json": [
+    3057,
+    1789654175729863028,
+    "740af232e017412bbc5778778fbc0e3e02fe6ff3f2df02458029c357470ad71f"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_34/frames.jsonl": [
+    125252,
+    1789654112932398993,
+    "04c99ef414cd283b5f2c5901e273b0cfba2170b987dbeaef56a17c90eb3443d2"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_34/export_meta.json": [
+    6712,
+    1789654112916241334,
+    "d87ad30ef4b1f95cd99e5b39521b8215b1e40dbc345c89e6f0f8543ce2a722e5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_34/task.json": [
+    223382,
+    1789654112906671597,
+    "cafc9704b9155b5460d575ac5560068a73c057c0e5b3f33d278b09bc8567005c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_34/manifest.json": [
+    2796,
+    1789654178790741202,
+    "b7f5568e83638abf2a61adf31a10f0971de8b773e1bb314781fd7e3e51e281d6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_35/frames.jsonl": [
+    35085,
+    1789654113836107073,
+    "4f135f8499af7021c28bfc92638d304bdf22b1f55655edfe853562e01925e9c9"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_35/export_meta.json": [
+    6705,
+    1789654113821614230,
+    "45af27627e004e48c44cd74dfa9089ef67fe36a9aa1f91618eb80e0872dfa852"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_35/task.json": [
+    223382,
+    1789654113815253038,
+    "3386c4b75d59f8d97c219610a3815aedcc974b77ec0766d4f3467864cfed611d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_35/manifest.json": [
+    2641,
+    1789654176750071975,
+    "47efd69afac42ab4593ef0be9f0b677fdc2e869eb905d9f2f28f788deb3c0ae0"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_36/frames.jsonl": [
+    26961,
+    1789654114097542513,
+    "47921f7b6e14bd5bd459d839678fc06cb1b2379725e79da488a72a57a2aa7bba"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_36/export_meta.json": [
+    6705,
+    1789654114085055160,
+    "3f748cda31cd8c1e0cdd8248a04b8dd5550dcd5623613aff73d6b4e50bcdef48"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_36/task.json": [
+    223382,
+    1789654114078984979,
+    "1652ceff274783730a74931d95c7fd5921304344c6d14713985b731476f66eca"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_36/manifest.json": [
+    2646,
+    1789654179161594946,
+    "106dd8e38d6ad258a45276479ac561f87fe31201cc28e1e334a20585548ef38e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_37/frames.jsonl": [
+    51341,
+    1789654114325908562,
+    "1f418880976d1eae3f42bef67f390f3892bd850103c8e34104ed6c3bd9ddeaac"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_37/export_meta.json": [
+    6705,
+    1789654114314911693,
+    "9a2538cb1e26f81dfea8c86cf4d4eda3d1e4d73760729a0afa76beb483337ad1"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_37/task.json": [
+    223382,
+    1789654114308714431,
+    "70b26d5d4b0f41829890dfae61ad844ab23ef77899634c936b2efd13a617a8aa"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_37/manifest.json": [
+    2656,
+    1789654181432615206,
+    "4c14503272959216de949a83a6517acb6e1cd2714f9aff47bbb615f32f6d463c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_38/frames.jsonl": [
+    77369,
+    1789654114700970086,
+    "a3f46b211dfb119f0a677f0576a5e0807d1abf87dd38782f80ee557048f958c1"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_38/export_meta.json": [
+    6708,
+    1789654114689254686,
+    "eb8340914623ad43a355cf669174cb2421e413f80d0cb505d965aff87c50557d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_38/task.json": [
+    223382,
+    1789654114683050193,
+    "114a301309a41076030ecd9373d20e5bd6c077a41df8a87031f8a012f838b7c4"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_38/manifest.json": [
+    3188,
+    1789654187083249315,
+    "d03531ab58dcf4dd49a211feeb380428ae282d786af808f9eb7e4bd9f0e8189c"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_39/frames.jsonl": [
+    59358,
+    1789654115248925346,
+    "59d778ce4636f7bc4ec3abad6be421ac4ea54241b08ce66eff67548cd55cf796"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_39/export_meta.json": [
+    6705,
+    1789654115228486973,
+    "07ff2fd9d6396f704eb547b427afc9af9cebb11f08c091c72a107ec7e9b7f6f6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_39/task.json": [
+    223382,
+    1789654115222747890,
+    "50b5db0eb9b3114f7861a1111ab238e1fb5a5b1effb8a1bfdc0fe8f16b3cc383"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_39/manifest.json": [
+    2665,
+    1789654185243569748,
+    "e86317e48f1789bc1b91f81d80228209c1b1768fa3dc3c56205888210ff55e18"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_40/frames.jsonl": [
+    18018,
+    1789654116130963292,
+    "9d533dfb7cd37a3fabe7593f066a29026d51c1b58dfd460db55f8e2cfcd50fd1"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_40/export_meta.json": [
+    6702,
+    1789654116119748778,
+    "ea0fa1e887c892d4fcbd789f558a64fad3f12eb8ac1d424b0b1894a7c454e9e3"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_40/task.json": [
+    223380,
+    1789654116102563827,
+    "75afb50394ade3da4bb9e86bf6f88d73bd3347ef5becfed35ac5fff13c0e9b66"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_40/manifest.json": [
+    2911,
+    1789654187849252040,
+    "2d3c571cc82f1b0f48e79d29a98ea7d46f87dc8d5cd772ef9cf678ce198324ff"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_41/frames.jsonl": [
+    59530,
+    1789654116275327661,
+    "ea51de1a104c8c0e1998798d256efab9a659ed2e3e50d6556297b5c34e428886"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_41/export_meta.json": [
+    6702,
+    1789654116264156750,
+    "b826d5cbb44f9d2675d7dd46bba721e7d2611c3aa57bef34c2140ca2540ffd22"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_41/task.json": [
+    223380,
+    1789654116258160429,
+    "c56a2129cedc5cc7a5e53a1eaac878af6269fbea7c8c56bb869388af5e2c15b5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_41/manifest.json": [
+    2656,
+    1789654190928984512,
+    "90f47c0a3c62d64cee6edb5b8726fb51181aa189ee708a26bd897406b0f64e1d"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_44/frames.jsonl": [
+    79966,
+    1789654116987324799,
+    "4bd824b2d30b839a2397d53045e0651457399119d5cb410bf9d242acc8b5c355"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_44/export_meta.json": [
+    6705,
+    1789654116975980789,
+    "09f5d2295639e39a3ef099a77117e39d78fba009dad229176d4481009844ef5e"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_44/task.json": [
+    223380,
+    1789654116969205502,
+    "12ba69e9f0ca820896449b0522a5e08bd88553aaedd3fed5c154aacdfbb26ac6"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_44/manifest.json": [
+    3309,
+    1789654200572901065,
+    "e815df5d7a4b4eeb220721f71e5573cdf41c2f70daa6a996e6655a61755a7b01"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_46/frames.jsonl": [
+    51389,
+    1789654117662636581,
+    "efa1edaefbc81df4d10cff33abcdc36a095471d3a11c821d58223668ad2781ff"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_46/export_meta.json": [
+    6699,
+    1789654117649727666,
+    "2e8d4b040bef7ef77abd522b5f0d0496cb2ebb9bc8fb93ddc9d38599e98e0a0f"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_46/task.json": [
+    223378,
+    1789654117634580764,
+    "93f3c508e4cb9aa5cd5b56fd0873a19601221dcbee345c4a75f7bffacb8c8d72"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_46/manifest.json": [
+    2663,
+    1789654200424761675,
+    "fb17818ecec3e193b72296b4bc883c9f18076707a0876f14f8ba41eead7217f5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_47/frames.jsonl": [
+    36077,
+    1789654118079217984,
+    "d5c21c0af6d96a6f06c5b6ee7bd514882c2c06f2cedaa89194bf9d6746b00d98"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_47/export_meta.json": [
+    6705,
+    1789654118067881282,
+    "e4a4956d1b28a1f2f7d2edbd593b2f06407c708ba53bc86d9dbabc9bc7a13aeb"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_47/task.json": [
+    223382,
+    1789654118052014392,
+    "730e9933e1fecf33c9676ff79bbe104cf4222254687f0e4743d9c01e1ba018cb"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_47/manifest.json": [
+    2646,
+    1789654199877901279,
+    "307d3a442b95d111cb617159473c3a22731852025449e676189fba2b8eac7c73"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_48/frames.jsonl": [
+    55071,
+    1789654118347309503,
+    "18ae61ca356826d64598e7a25f99849940f1df62a4df3176e613e4db8563b808"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_48/export_meta.json": [
+    6702,
+    1789654118330422490,
+    "0f99427421b794d46bf4a0612f9b5691e57ff2dd64300aee67628487806ab8aa"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_48/task.json": [
+    223380,
+    1789654118324170532,
+    "d4dbb8a45eca0deb2baa611afe62e3d97e07b5e5517dd1d79991d84ddd441377"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_48/manifest.json": [
+    2783,
+    1789654206830935070,
+    "ff4dc04c99e7038d7c0fbdb049d4171af18fac4a0c1f34604f518e9f9f670026"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_50/frames.jsonl": [
+    22521,
+    1789711522199306929,
+    "c0152b3eb16ca39944c032964d0b6af91276b64e9015e0e91db8199b3509359a"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_50/export_meta.json": [
+    6836,
+    1789711522177066553,
+    "28e1ce1be58ab2baa185a6ea2c764dfb6f4b75b012da88f3a94cd999c2ac04b5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_50/task.json": [
+    223686,
+    1789711522166441033,
+    "3e603f925088ffa9b54b95bd0bc83eab77bbfe01aebf125bdfc1dfbaee405504"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_50/manifest.json": [
+    2782,
+    1789711522189300688,
+    "7e8022dd580b441a03337983ee0c7427ee51473e183699884af4461eaff3a4b1"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_51/frames.jsonl": [
+    24261,
+    1789654119356304840,
+    "d9df798b5c2e3793ece97637812595681eb4ab48b2e6df85870c23261b731969"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_51/export_meta.json": [
+    6702,
+    1789654119344146824,
+    "c1529498fa44455bde89d52731fe01b75d0f58e44c92b07f958849b3bdc9781f"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_51/task.json": [
+    223380,
+    1789654119338043655,
+    "8a59ea6301aed9dbc25d88bdbb772fa3d97bdc9843d96d8783684635c37bacd5"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_51/manifest.json": [
+    2911,
+    1789654215016578893,
+    "9cd9ad023e2b3a465a27f705afb1e5119e8a12cca19ed952177298ec6b367c53"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_52/frames.jsonl": [
+    58584,
+    1789654119545904677,
+    "d0e0e7492de03e6c093e27d4e2d9e992287415e38ad0a3512591991af360bbcf"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_52/export_meta.json": [
+    6705,
+    1789654119533263756,
+    "8508a5bb0294a5e21910a249a7fa975f8dea8e3102885b40f34369a7d4ec2952"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_52/task.json": [
+    223382,
+    1789654119527409292,
+    "77cfb99a59f5f59a66655362d9d44f58b3ab8b45893b33b653b18c178f82e3fc"
+  ],
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_52/manifest.json": [
+    3051,
+    1789654215424480480,
+    "98ef5d8ff055cce11986188f4203e7386125c6f6d2059058b6107bdd370c6908"
+  ]
+}

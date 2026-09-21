@@ -1,0 +1,3840 @@
+{
+  "version": "baseline",
+  "future_delay_s": 6,
+  "cache_s": 60,
+  "probe_s": 0.2,
+  "results": {
+    "202609201240128Up_1": {
+      "task_id": "202609201240128Up",
+      "index": 1,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.06571602821350098,
+          "start_s": 0.06571602821350098,
+          "available_until_s": 6.0
+        },
+        {
+          "decision_s": 17.665716028213502,
+          "start_s": 17.665716028213502,
+          "available_until_s": 23.51901364326477
+        },
+        {
+          "decision_s": 27.8657160282135,
+          "start_s": 27.8657160282135,
+          "available_until_s": 31.086297035217285
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.06571602821350098,
+          "end_timestamp_s": 17.465716028213503,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        },
+        {
+          "start_timestamp_s": 17.665716028213502,
+          "end_timestamp_s": 27.665716028213502,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        },
+        {
+          "start_timestamp_s": 27.8657160282135,
+          "end_timestamp_s": 31.086297035217285,
+          "target_confirmed": true,
+          "should_save": false,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 1.0726319160312414,
+      "call_ms_p95": 1.6793816816061735,
+      "calls": 157
+    },
+    "202609201240128Up_2": {
+      "task_id": "202609201240128Up",
+      "index": 2,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.04877614974975586,
+          "start_s": 0.04877614974975586,
+          "available_until_s": 4.260225296020508
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.04877614974975586,
+          "end_timestamp_s": 4.260225296020508,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.26911799795925617,
+      "call_ms_p95": 0.31148449052125216,
+      "calls": 23
+    },
+    "202609201240128Up_3": {
+      "task_id": "202609201240128Up",
+      "index": 3,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.11919927597045898,
+          "start_s": 0.11919927597045898,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.11919927597045898,
+          "end_timestamp_s": 8.119199275970459,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.5012550391256809,
+      "call_ms_p95": 0.5187551956623793,
+      "calls": 42
+    },
+    "202609201240128Up_4": {
+      "task_id": "202609201240128Up",
+      "index": 4,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.05974221229553223,
+          "start_s": 0.05974221229553223,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.05974221229553223,
+          "end_timestamp_s": 5.459742212295533,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.37153391167521477,
+      "call_ms_p95": 0.39972399827092886,
+      "calls": 31
+    },
+    "202609201240128Up_5": {
+      "task_id": "202609201240128Up",
+      "index": 5,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.049561262130737305,
+          "start_s": 0.049561262130737305,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.049561262130737305,
+          "end_timestamp_s": 6.2495612621307375,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.3810508642345667,
+      "call_ms_p95": 0.404962245374918,
+      "calls": 33
+    },
+    "202609201240128Up_6": {
+      "task_id": "202609201240128Up",
+      "index": 6,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.07922530174255371,
+          "start_s": 0.07922530174255371,
+          "available_until_s": 4.1886818408966064
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.07922530174255371,
+          "end_timestamp_s": 4.1886818408966064,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.247109099291265,
+      "call_ms_p95": 0.2906400943174958,
+      "calls": 22
+    },
+    "202609201240128Up_7": {
+      "task_id": "202609201240128Up",
+      "index": 7,
+      "saved": false,
+      "starts": [
+        {
+          "decision_s": 0.045851707458496094,
+          "start_s": 0.045851707458496094,
+          "available_until_s": 3.958375930786133
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.045851707458496094,
+          "end_timestamp_s": 3.958375930786133,
+          "target_confirmed": true,
+          "should_save": false,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.23722113110125065,
+      "call_ms_p95": 0.2838168293237686,
+      "calls": 21
+    },
+    "202609201240128Up_8": {
+      "task_id": "202609201240128Up",
+      "index": 8,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.15506839752197266,
+          "start_s": 0.15506839752197266,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.15506839752197266,
+          "end_timestamp_s": 23.175429582595825,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.9669980499893427,
+      "call_ms_p95": 1.2605282943695784,
+      "calls": 117
+    },
+    "202609201240128Up_9": {
+      "task_id": "202609201240128Up",
+      "index": 9,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.10105514526367188,
+          "start_s": 0.10105514526367188,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.10105514526367188,
+          "end_timestamp_s": 7.4048662185668945,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.45133649837225676,
+      "call_ms_p95": 0.47414529835805297,
+      "calls": 38
+    },
+    "202609201240128Up_10": {
+      "task_id": "202609201240128Up",
+      "index": 10,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 1.1549417972564697,
+          "start_s": 1.1549417972564697,
+          "available_until_s": 5.223687171936035
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 1.1549417972564697,
+          "end_timestamp_s": 5.223687171936035,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.2741958014667034,
+      "call_ms_p95": 0.3477429039776325,
+      "calls": 27
+    },
+    "202609201240128Up_11": {
+      "task_id": "202609201240128Up",
+      "index": 11,
+      "saved": false,
+      "starts": [
+        {
+          "decision_s": 0.07229232788085938,
+          "start_s": 0.07229232788085938,
+          "available_until_s": 3.7773654460906982
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.07229232788085938,
+          "end_timestamp_s": 3.7773654460906982,
+          "target_confirmed": true,
+          "should_save": false,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.22956659086048603,
+      "call_ms_p95": 0.2634235075674951,
+      "calls": 20
+    },
+    "202609201240128Up_12": {
+      "task_id": "202609201240128Up",
+      "index": 12,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.07161784172058105,
+          "start_s": 0.07161784172058105,
+          "available_until_s": 4.2630228996276855
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.07161784172058105,
+          "end_timestamp_s": 4.2630228996276855,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.25835458654910326,
+      "call_ms_p95": 0.2894728328101337,
+      "calls": 22
+    },
+    "202609201240128Up_13": {
+      "task_id": "202609201240128Up",
+      "index": 13,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 1.5119701862335206,
+          "start_s": 1.5119701862335206,
+          "available_until_s": 7.333204030990601
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 1.5119701862335206,
+          "end_timestamp_s": 16.288440942764282,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7588410517200828,
+      "call_ms_p95": 0.9115600376389921,
+      "calls": 82
+    },
+    "202609201240128Up_14": {
+      "task_id": "202609201240128Up",
+      "index": 14,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.05462026596069336,
+          "start_s": 0.05462026596069336,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.05462026596069336,
+          "end_timestamp_s": 13.450378656387329,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7315885741263628,
+      "call_ms_p95": 0.7916072150692344,
+      "calls": 68
+    },
+    "202609201240128Up_15": {
+      "task_id": "202609201240128Up",
+      "index": 15,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 1.4150228023529055,
+          "start_s": 1.4150228023529055,
+          "available_until_s": 7.220784902572632
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 1.4150228023529055,
+          "end_timestamp_s": 9.015022802352906,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.46355847734957933,
+      "call_ms_p95": 0.4947959678247571,
+      "calls": 46
+    },
+    "202609201240128Up_16": {
+      "task_id": "202609201240128Up",
+      "index": 16,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.12774395942687988,
+          "start_s": 0.12774395942687988,
+          "available_until_s": 4.9893763065338135
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.12774395942687988,
+          "end_timestamp_s": 4.9893763065338135,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.29055599588900805,
+      "call_ms_p95": 0.3314027562737465,
+      "calls": 26
+    },
+    "202609201240128Up_17": {
+      "task_id": "202609201240128Up",
+      "index": 17,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.7589868068695069,
+          "start_s": 0.7589868068695069,
+          "available_until_s": 5.667473316192627
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.7589868068695069,
+          "end_timestamp_s": 5.667473316192627,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.28994400054216385,
+      "call_ms_p95": 0.37191533483564854,
+      "calls": 29
+    },
+    "202609201240128Up_18": {
+      "task_id": "202609201240128Up",
+      "index": 18,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.23427271842956543,
+          "start_s": 0.23427271842956543,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.23427271842956543,
+          "end_timestamp_s": 13.083868503570557,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7220514817163348,
+      "call_ms_p95": 0.742308737244457,
+      "calls": 66
+    },
+    "202609201240128Up_19": {
+      "task_id": "202609201240128Up",
+      "index": 19,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.06346583366394043,
+          "start_s": 0.06346583366394043,
+          "available_until_s": 4.150444746017456
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.06346583366394043,
+          "end_timestamp_s": 4.150444746017456,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.15292305033653975,
+      "call_ms_p95": 0.30990507220849395,
+      "calls": 22
+    },
+    "202609201240128Up_20": {
+      "task_id": "202609201240128Up",
+      "index": 20,
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.1470909919589758,
+      "call_ms_p95": 0.23277103900909424,
+      "calls": 21
+    },
+    "202609201240128Up_21": {
+      "task_id": "202609201240128Up",
+      "index": 21,
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.2363310195505619,
+      "call_ms_p95": 0.2813307102769613,
+      "calls": 29
+    },
+    "202609201240128Up_22": {
+      "task_id": "202609201240128Up",
+      "index": 22,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.029149770736694336,
+          "start_s": 0.029149770736694336,
+          "available_until_s": 4.794224977493286
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.029149770736694336,
+          "end_timestamp_s": 4.2291497707366945,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.26832008734345436,
+      "call_ms_p95": 0.3191159572452307,
+      "calls": 25
+    },
+    "202609201240128Up_23": {
+      "task_id": "202609201240128Up",
+      "index": 23,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.1672661304473877,
+          "start_s": 0.1672661304473877,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.1672661304473877,
+          "end_timestamp_s": 9.489652633666992,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.548237469047308,
+      "call_ms_p95": 0.5704912473447621,
+      "calls": 48
+    },
+    "202609201240128Up_24": {
+      "task_id": "202609201240128Up",
+      "index": 24,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.0935659408569336,
+          "start_s": 0.0935659408569336,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.0935659408569336,
+          "end_timestamp_s": 8.847224712371826,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.5210579838603735,
+      "call_ms_p95": 0.5632532294839621,
+      "calls": 45
+    },
+    "202609201240128Up_25": {
+      "task_id": "202609201240128Up",
+      "index": 25,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.17310833930969238,
+          "start_s": 0.17310833930969238,
+          "available_until_s": 6.0
+        },
+        {
+          "decision_s": 39.5731083393097,
+          "start_s": 39.5731083393097,
+          "available_until_s": 44.487640380859375
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.17310833930969238,
+          "end_timestamp_s": 36.9731083393097,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        },
+        {
+          "start_timestamp_s": 39.5731083393097,
+          "end_timestamp_s": 44.487640380859375,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 1.3607568107545376,
+      "call_ms_p95": 2.3917254991829395,
+      "calls": 223
+    },
+    "202609201240128Up_26": {
+      "task_id": "202609201240128Up",
+      "index": 26,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.16978240013122559,
+          "start_s": 0.16978240013122559,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.16978240013122559,
+          "end_timestamp_s": 4.769782400131225,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.2418248914182186,
+      "call_ms_p95": 0.47147448640316725,
+      "calls": 39
+    },
+    "202609201240128Up_27": {
+      "task_id": "202609201240128Up",
+      "index": 27,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.12146258354187012,
+          "start_s": 0.12146258354187012,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.12146258354187012,
+          "end_timestamp_s": 20.09286665916443,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.8899839594960213,
+      "call_ms_p95": 1.1211568489670753,
+      "calls": 101
+    },
+    "202609201240128Up_28": {
+      "task_id": "202609201240128Up",
+      "index": 28,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.07574057579040527,
+          "start_s": 0.07574057579040527,
+          "available_until_s": 4.0831334590911865
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.07574057579040527,
+          "end_timestamp_s": 4.075740575790405,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.23870845325291157,
+      "call_ms_p95": 0.27954758843407035,
+      "calls": 22
+    },
+    "202609201240128Up_29": {
+      "task_id": "202609201240128Up",
+      "index": 29,
+      "saved": false,
+      "starts": [
+        {
+          "decision_s": 0.09515738487243652,
+          "start_s": 0.09515738487243652,
+          "available_until_s": 3.9395997524261475
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.09515738487243652,
+          "end_timestamp_s": 3.9395997524261475,
+          "target_confirmed": true,
+          "should_save": false,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.23160409182310104,
+      "call_ms_p95": 0.2619780134409666,
+      "calls": 21
+    },
+    "202609201240128Up_30": {
+      "task_id": "202609201240128Up",
+      "index": 30,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.06614208221435547,
+          "start_s": 0.06614208221435547,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.06614208221435547,
+          "end_timestamp_s": 11.466142082214356,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.6451010704040527,
+      "call_ms_p95": 0.6674620555713773,
+      "calls": 59
+    },
+    "202609201240128Up_31": {
+      "task_id": "202609201240128Up",
+      "index": 31,
+      "saved": false,
+      "starts": [
+        {
+          "decision_s": 0.11870193481445312,
+          "start_s": 0.11870193481445312,
+          "available_until_s": 4.102106809616089
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.11870193481445312,
+          "end_timestamp_s": 3.5187019348144535,
+          "target_confirmed": true,
+          "should_save": false,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.23690680973231792,
+      "call_ms_p95": 0.2830331213772297,
+      "calls": 21
+    },
+    "202609201240128Up_32": {
+      "task_id": "202609201240128Up",
+      "index": 32,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 1.6304112434387208,
+          "start_s": 1.6304112434387208,
+          "available_until_s": 5.797902584075928
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 1.6304112434387208,
+          "end_timestamp_s": 5.797902584075928,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.26188348419964314,
+      "call_ms_p95": 0.3919167909771204,
+      "calls": 30
+    },
+    "202609201240128Up_33": {
+      "task_id": "202609201240128Up",
+      "index": 33,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 1.575236463546753,
+          "start_s": 1.575236463546753,
+          "available_until_s": 7.375683069229126
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 1.575236463546753,
+          "end_timestamp_s": 11.341592788696289,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.6594911683350801,
+      "call_ms_p95": 0.6795505061745644,
+      "calls": 57
+    },
+    "20260920122356WIt_1": {
+      "task_id": "20260920122356WIt",
+      "index": 1,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.062026262283325195,
+          "start_s": 0.062026262283325195,
+          "available_until_s": 5.594413757324219
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.062026262283325195,
+          "end_timestamp_s": 5.594413757324219,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.32697501592338085,
+      "call_ms_p95": 0.37130629643797874,
+      "calls": 29
+    },
+    "20260920122356WIt_2": {
+      "task_id": "20260920122356WIt",
+      "index": 2,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.12226343154907227,
+          "start_s": 0.12226343154907227,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.12226343154907227,
+          "end_timestamp_s": 7.522263431549073,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.4460909403860569,
+      "call_ms_p95": 0.4657717188820243,
+      "calls": 39
+    },
+    "20260920122356WIt_3": {
+      "task_id": "20260920122356WIt",
+      "index": 3,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.11599159240722656,
+          "start_s": 0.11599159240722656,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.11599159240722656,
+          "end_timestamp_s": 4.715991592407226,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.23411307483911514,
+      "call_ms_p95": 0.4332219483330846,
+      "calls": 35
+    },
+    "20260920122356WIt_4": {
+      "task_id": "20260920122356WIt",
+      "index": 4,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.03234362602233887,
+          "start_s": 0.03234362602233887,
+          "available_until_s": 6.0
+        },
+        {
+          "decision_s": 12.032343626022339,
+          "start_s": 12.032343626022339,
+          "available_until_s": 15.506696224212646
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.03234362602233887,
+          "end_timestamp_s": 11.83234362602234,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        },
+        {
+          "start_timestamp_s": 12.032343626022339,
+          "end_timestamp_s": 15.506696224212646,
+          "target_confirmed": true,
+          "should_save": false,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7164061535149813,
+      "call_ms_p95": 0.8944298140704632,
+      "calls": 79
+    },
+    "20260920122356WIt_5": {
+      "task_id": "20260920122356WIt",
+      "index": 5,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.009674549102783203,
+          "start_s": 0.009674549102783203,
+          "available_until_s": 4.517485618591309
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.009674549102783203,
+          "end_timestamp_s": 4.517485618591309,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.299519975669682,
+      "call_ms_p95": 0.3211504896171391,
+      "calls": 24
+    },
+    "20260920122356WIt_6": {
+      "task_id": "20260920122356WIt",
+      "index": 6,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.014785289764404297,
+          "start_s": 0.014785289764404297,
+          "available_until_s": 5.7994842529296875
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.014785289764404297,
+          "end_timestamp_s": 5.7994842529296875,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.3639720380306244,
+      "call_ms_p95": 0.3912719781510532,
+      "calls": 30
+    },
+    "20260920122356WIt_7": {
+      "task_id": "20260920122356WIt",
+      "index": 7,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.08371996879577637,
+          "start_s": 0.08371996879577637,
+          "available_until_s": 4.755032777786255
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.08371996879577637,
+          "end_timestamp_s": 4.755032777786255,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.2882848493754864,
+      "call_ms_p95": 0.32649291679263115,
+      "calls": 25
+    },
+    "20260920122356WIt_8": {
+      "task_id": "20260920122356WIt",
+      "index": 8,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.199202299118042,
+          "start_s": 0.199202299118042,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.199202299118042,
+          "end_timestamp_s": 14.599202299118042,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.7663735887035728,
+      "call_ms_p95": 0.8504827623255551,
+      "calls": 74
+    },
+    "20260920122356WIt_9": {
+      "task_id": "20260920122356WIt",
+      "index": 9,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 1.5856951713562013,
+          "start_s": 1.5856951713562013,
+          "available_until_s": 7.031795978546143
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 1.5856951713562013,
+          "end_timestamp_s": 5.785695171356202,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.28411648236215115,
+      "call_ms_p95": 0.444436795078218,
+      "calls": 36
+    },
+    "20260920122356WIt_10": {
+      "task_id": "20260920122356WIt",
+      "index": 10,
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.15561701729893684,
+      "call_ms_p95": 0.24384495336562392,
+      "calls": 23
+    },
+    "20260920122356WIt_11": {
+      "task_id": "20260920122356WIt",
+      "index": 11,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.0187532901763916,
+          "start_s": 0.0187532901763916,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.0187532901763916,
+          "end_timestamp_s": 8.765074968338013,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.5270880647003651,
+      "call_ms_p95": 0.5529902409762144,
+      "calls": 45
+    },
+    "20260920122356WIt_12": {
+      "task_id": "20260920122356WIt",
+      "index": 12,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.0354311466217041,
+          "start_s": 0.0354311466217041,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.0354311466217041,
+          "end_timestamp_s": 6.0,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.3970661200582981,
+      "call_ms_p95": 0.40752196218818426,
+      "calls": 31
+    },
+    "20260920122356WIt_13": {
+      "task_id": "20260920122356WIt",
+      "index": 13,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.10614466667175293,
+          "start_s": 0.10614466667175293,
+          "available_until_s": 4.785670042037964
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.10614466667175293,
+          "end_timestamp_s": 4.706144666671753,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.28123799711465836,
+      "call_ms_p95": 0.31647514551877975,
+      "calls": 25
+    },
+    "20260920122356WIt_14": {
+      "task_id": "20260920122356WIt",
+      "index": 14,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.9087992191314698,
+          "start_s": 0.9087992191314698,
+          "available_until_s": 6.855102062225342
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.9087992191314698,
+          "end_timestamp_s": 5.70879921913147,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.28658099472522736,
+      "call_ms_p95": 0.5280904471874237,
+      "calls": 45
+    },
+    "20260920122356WIt_15": {
+      "task_id": "20260920122356WIt",
+      "index": 15,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 2.410148096084595,
+          "start_s": 2.410148096084595,
+          "available_until_s": 8.40105390548706
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 2.410148096084595,
+          "end_timestamp_s": 9.410148096084596,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.5287150852382183,
+      "call_ms_p95": 0.5659414920955896,
+      "calls": 49
+    },
+    "20260920122356WIt_16": {
+      "task_id": "20260920122356WIt",
+      "index": 16,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.19405627250671387,
+          "start_s": 0.19405627250671387,
+          "available_until_s": 5.79888916015625
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.19405627250671387,
+          "end_timestamp_s": 5.794056272506714,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.34916296135634184,
+      "call_ms_p95": 0.37748857866972685,
+      "calls": 30
+    },
+    "20260920122356WIt_17": {
+      "task_id": "20260920122356WIt",
+      "index": 17,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.4470283031463623,
+          "start_s": 0.4470283031463623,
+          "available_until_s": 4.97843337059021
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.4470283031463623,
+          "end_timestamp_s": 4.97843337059021,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.30069344211369753,
+      "call_ms_p95": 0.3514479030855,
+      "calls": 26
+    },
+    "20260920122356WIt_18": {
+      "task_id": "20260920122356WIt",
+      "index": 18,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.08464217185974121,
+          "start_s": 0.08464217185974121,
+          "available_until_s": 6.0
+        },
+        {
+          "decision_s": 10.684642171859743,
+          "start_s": 10.684642171859743,
+          "available_until_s": 14.628740072250366
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.08464217185974121,
+          "end_timestamp_s": 5.884642171859742,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        },
+        {
+          "start_timestamp_s": 10.684642171859743,
+          "end_timestamp_s": 13.484642171859742,
+          "target_confirmed": true,
+          "should_save": false,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.4657756071537733,
+      "call_ms_p95": 0.8217563154175878,
+      "calls": 74
+    },
+    "20260920122356WIt_19": {
+      "task_id": "20260920122356WIt",
+      "index": 19,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.16291594505310059,
+          "start_s": 0.16291594505310059,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.16291594505310059,
+          "end_timestamp_s": 4.962915945053101,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.2438670489937067,
+      "call_ms_p95": 0.47155236825346947,
+      "calls": 39
+    },
+    "20260920122356WIt_20": {
+      "task_id": "20260920122356WIt",
+      "index": 20,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.028609037399291992,
+          "start_s": 0.028609037399291992,
+          "available_until_s": 4.9984824657440186
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.028609037399291992,
+          "end_timestamp_s": 4.9984824657440186,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.3192464355379343,
+      "call_ms_p95": 0.3462691674940288,
+      "calls": 26
+    },
+    "20260920122356WIt_21": {
+      "task_id": "20260920122356WIt",
+      "index": 21,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.1644878387451172,
+          "start_s": 0.1644878387451172,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.1644878387451172,
+          "end_timestamp_s": 26.294527292251587,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 1.0899680200964212,
+      "call_ms_p95": 1.4734950265847147,
+      "calls": 132
+    },
+    "20260920122356WIt_22": {
+      "task_id": "20260920122356WIt",
+      "index": 22,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.01342463493347168,
+          "start_s": 0.01342463493347168,
+          "available_until_s": 4.744953632354736
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.01342463493347168,
+          "end_timestamp_s": 4.744953632354736,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.2980201970785856,
+      "call_ms_p95": 0.3269046079367399,
+      "calls": 25
+    },
+    "20260920122356WIt_23": {
+      "task_id": "20260920122356WIt",
+      "index": 23,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.17778897285461426,
+          "start_s": 0.17778897285461426,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.17778897285461426,
+          "end_timestamp_s": 6.604319095611572,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.39424141868948936,
+      "call_ms_p95": 0.41416132589802146,
+      "calls": 34
+    },
+    "20260920122356WIt_24": {
+      "task_id": "20260920122356WIt",
+      "index": 24,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.0390315055847168,
+          "start_s": 0.0390315055847168,
+          "available_until_s": 4.5832531452178955
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.0390315055847168,
+          "end_timestamp_s": 4.5832531452178955,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.2815609332174063,
+      "call_ms_p95": 0.31131525756791234,
+      "calls": 24
+    },
+    "20260920122356WIt_25": {
+      "task_id": "20260920122356WIt",
+      "index": 25,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.16868114471435547,
+          "start_s": 0.16868114471435547,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.16868114471435547,
+          "end_timestamp_s": 6.218671560287476,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.3964635543525219,
+      "call_ms_p95": 0.42098958510905504,
+      "calls": 32
+    },
+    "20260920122356WIt_26": {
+      "task_id": "20260920122356WIt",
+      "index": 26,
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.12154201976954937,
+      "call_ms_p95": 0.2397791133262217,
+      "calls": 20
+    },
+    "20260920122356WIt_27": {
+      "task_id": "20260920122356WIt",
+      "index": 27,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.17055344581604004,
+          "start_s": 0.17055344581604004,
+          "available_until_s": 5.393436670303345
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.17055344581604004,
+          "end_timestamp_s": 5.393436670303345,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.28870953246951103,
+      "call_ms_p95": 0.3212855779565871,
+      "calls": 28
+    },
+    "20260920122356WIt_28": {
+      "task_id": "20260920122356WIt",
+      "index": 28,
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.2803599927574396,
+      "call_ms_p95": 0.29836026951670647,
+      "calls": 37
+    },
+    "20260920122356WIt_29": {
+      "task_id": "20260920122356WIt",
+      "index": 29,
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.20501995459198952,
+      "call_ms_p95": 0.2705759834498167,
+      "calls": 27
+    },
+    "20260920122356WIt_30": {
+      "task_id": "20260920122356WIt",
+      "index": 30,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.038311004638671875,
+          "start_s": 0.038311004638671875,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.038311004638671875,
+          "end_timestamp_s": 25.05399489402771,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 1.0559558868408203,
+      "call_ms_p95": 1.4287830330431461,
+      "calls": 127
+    },
+    "20260920122356WIt_31": {
+      "task_id": "20260920122356WIt",
+      "index": 31,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.0541841983795166,
+          "start_s": 0.0541841983795166,
+          "available_until_s": 4.4874796867370605
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.0541841983795166,
+          "end_timestamp_s": 4.4874796867370605,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.28163602109998465,
+      "call_ms_p95": 0.31200136290863156,
+      "calls": 24
+    },
+    "20260920122356WIt_32": {
+      "task_id": "20260920122356WIt",
+      "index": 32,
+      "saved": false,
+      "starts": [
+        {
+          "decision_s": 0.0819551944732666,
+          "start_s": 0.0819551944732666,
+          "available_until_s": 4.080052852630615
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.0819551944732666,
+          "end_timestamp_s": 4.080052852630615,
+          "target_confirmed": true,
+          "should_save": false,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.26092398911714554,
+      "call_ms_p95": 0.29279408045113087,
+      "calls": 21
+    },
+    "20260920122356WIt_33": {
+      "task_id": "20260920122356WIt",
+      "index": 33,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.031661272048950195,
+          "start_s": 0.031661272048950195,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.031661272048950195,
+          "end_timestamp_s": 8.383521795272827,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.49817911349236965,
+      "call_ms_p95": 0.5205873399972916,
+      "calls": 43
+    },
+    "20260920122356WIt_34": {
+      "task_id": "20260920122356WIt",
+      "index": 34,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.5804301738739014,
+          "start_s": 0.5804301738739014,
+          "available_until_s": 6.463285207748413
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.5804301738739014,
+          "end_timestamp_s": 12.47010612487793,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.6947240326553583,
+      "call_ms_p95": 0.7223868742585182,
+      "calls": 63
+    },
+    "20260920122356WIt_35": {
+      "task_id": "20260920122356WIt",
+      "index": 35,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.10360193252563477,
+          "start_s": 0.10360193252563477,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.10360193252563477,
+          "end_timestamp_s": 6.802389621734619,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.420181080698967,
+      "call_ms_p95": 0.45166942290961737,
+      "calls": 35
+    },
+    "20260920122356WIt_36": {
+      "task_id": "20260920122356WIt",
+      "index": 36,
+      "saved": false,
+      "starts": [
+        {
+          "decision_s": 0.05471014976501465,
+          "start_s": 0.05471014976501465,
+          "available_until_s": 4.053274154663086
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.05471014976501465,
+          "end_timestamp_s": 4.053274154663086,
+          "target_confirmed": true,
+          "should_save": false,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.25979289785027504,
+      "call_ms_p95": 0.29095099307596684,
+      "calls": 21
+    },
+    "20260920122356WIt_37": {
+      "task_id": "20260920122356WIt",
+      "index": 37,
+      "saved": false,
+      "starts": [
+        {
+          "decision_s": 0.12032794952392578,
+          "start_s": 0.12032794952392578,
+          "available_until_s": 3.669468402862549
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.12032794952392578,
+          "end_timestamp_s": 3.669468402862549,
+          "target_confirmed": true,
+          "should_save": false,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.20246999338269234,
+      "call_ms_p95": 0.2526100492104888,
+      "calls": 19
+    },
+    "20260918200506GCy_1": {
+      "task_id": "20260918200506GCy",
+      "index": 1,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.04135775566101074,
+          "start_s": 0.04135775566101074,
+          "available_until_s": 6.0
+        },
+        {
+          "decision_s": 12.241357755661012,
+          "start_s": 12.241357755661012,
+          "available_until_s": 18.22974181175232
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.04135775566101074,
+          "end_timestamp_s": 12.04135775566101,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        },
+        {
+          "start_timestamp_s": 12.241357755661012,
+          "end_timestamp_s": 35.62401580810547,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 1.3434479478746653,
+      "call_ms_p95": 2.0297696813941,
+      "calls": 179
+    },
+    "20260918200506GCy_2": {
+      "task_id": "20260918200506GCy",
+      "index": 2,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.04482436180114746,
+          "start_s": 0.04482436180114746,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.04482436180114746,
+          "end_timestamp_s": 9.465253114700317,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.5596079863607883,
+      "call_ms_p95": 0.5837416741997004,
+      "calls": 49
+    },
+    "20260918200506GCy_3": {
+      "task_id": "20260918200506GCy",
+      "index": 3,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.19455957412719727,
+          "start_s": 0.19455957412719727,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.19455957412719727,
+          "end_timestamp_s": 12.594559574127198,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.6990949623286724,
+      "call_ms_p95": 0.7780084270052612,
+      "calls": 66
+    },
+    "20260918200506GCy_4": {
+      "task_id": "20260918200506GCy",
+      "index": 4,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.07903528213500977,
+          "start_s": 0.07903528213500977,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.07903528213500977,
+          "end_timestamp_s": 7.67903528213501,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.4645930603146553,
+      "call_ms_p95": 0.4888857947662473,
+      "calls": 40
+    },
+    "20260918200506GCy_5": {
+      "task_id": "20260918200506GCy",
+      "index": 5,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.11226511001586914,
+          "start_s": 0.11226511001586914,
+          "available_until_s": 5.169389486312866
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.11226511001586914,
+          "end_timestamp_s": 5.169389486312866,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.3410459030419588,
+      "call_ms_p95": 0.3611241467297077,
+      "calls": 27
+    },
+    "20260918200506GCy_6": {
+      "task_id": "20260918200506GCy",
+      "index": 6,
+      "saved": false,
+      "starts": [
+        {
+          "decision_s": 0.031104087829589844,
+          "start_s": 0.031104087829589844,
+          "available_until_s": 4.996055603027344
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.031104087829589844,
+          "end_timestamp_s": 3.83110408782959,
+          "target_confirmed": true,
+          "should_save": false,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.18220196943730116,
+      "call_ms_p95": 0.3430235665291548,
+      "calls": 26
+    },
+    "20260918200506GCy_7": {
+      "task_id": "20260918200506GCy",
+      "index": 7,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.1477499008178711,
+          "start_s": 0.1477499008178711,
+          "available_until_s": 6.0
+        },
+        {
+          "decision_s": 16.14774990081787,
+          "start_s": 16.14774990081787,
+          "available_until_s": 22.041476488113403
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.1477499008178711,
+          "end_timestamp_s": 15.947749900817872,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        },
+        {
+          "start_timestamp_s": 16.14774990081787,
+          "end_timestamp_s": 24.18985891342163,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.892645912244916,
+      "call_ms_p95": 1.3605939457193017,
+      "calls": 122
+    },
+    "20260918200506GCy_8": {
+      "task_id": "20260918200506GCy",
+      "index": 8,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 2.1243221759796143,
+          "start_s": 2.1243221759796143,
+          "available_until_s": 7.029214859008789
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 2.1243221759796143,
+          "end_timestamp_s": 6.924322175979615,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.3055140841752291,
+      "call_ms_p95": 0.4637057427316904,
+      "calls": 36
+    },
+    "20260918200506GCy_9": {
+      "task_id": "20260918200506GCy",
+      "index": 9,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.20109009742736816,
+          "start_s": 0.20109009742736816,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.20109009742736816,
+          "end_timestamp_s": 5.801090097427369,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.29540015384554863,
+      "call_ms_p95": 0.4494456574320793,
+      "calls": 37
+    },
+    "20260918200506GCy_10": {
+      "task_id": "20260918200506GCy",
+      "index": 10,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.11586809158325195,
+          "start_s": 0.11586809158325195,
+          "available_until_s": 5.1140525341033936
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.11586809158325195,
+          "end_timestamp_s": 5.1140525341033936,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.31968404073268175,
+      "call_ms_p95": 0.3484206972643733,
+      "calls": 26
+    },
+    "20260918200506GCy_11": {
+      "task_id": "20260918200506GCy",
+      "index": 11,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.1037290096282959,
+          "start_s": 0.1037290096282959,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.1037290096282959,
+          "end_timestamp_s": 15.287611961364746,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7870199624449015,
+      "call_ms_p95": 0.8929537143558264,
+      "calls": 77
+    },
+    "20260918200506GCy_12": {
+      "task_id": "20260918200506GCy",
+      "index": 12,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.11637639999389648,
+          "start_s": 0.11637639999389648,
+          "available_until_s": 5.393074035644531
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.11637639999389648,
+          "end_timestamp_s": 5.393074035644531,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.34250388853251934,
+      "call_ms_p95": 0.3729357966221869,
+      "calls": 28
+    },
+    "20260918200506GCy_13": {
+      "task_id": "20260918200506GCy",
+      "index": 13,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.01156759262084961,
+          "start_s": 0.01156759262084961,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.01156759262084961,
+          "end_timestamp_s": 14.611567592620851,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.7822359912097454,
+      "call_ms_p95": 0.8801723131909966,
+      "calls": 75
+    },
+    "20260918200506GCy_14": {
+      "task_id": "20260918200506GCy",
+      "index": 14,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.08822822570800781,
+          "start_s": 0.08822822570800781,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.08822822570800781,
+          "end_timestamp_s": 11.888228225708009,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.6458794232457876,
+      "call_ms_p95": 0.8148766588419676,
+      "calls": 70
+    },
+    "20260918200506GCy_15": {
+      "task_id": "20260918200506GCy",
+      "index": 15,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.1494910717010498,
+          "start_s": 0.1494910717010498,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.1494910717010498,
+          "end_timestamp_s": 6.34949107170105,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.4397749435156584,
+      "call_ms_p95": 0.489173480309546,
+      "calls": 40
+    },
+    "20260918200506GCy_16": {
+      "task_id": "20260918200506GCy",
+      "index": 16,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.08813667297363281,
+          "start_s": 0.08813667297363281,
+          "available_until_s": 4.694569110870361
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.08813667297363281,
+          "end_timestamp_s": 4.694569110870361,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.31719403341412544,
+      "call_ms_p95": 0.33311652950942516,
+      "calls": 25
+    },
+    "20260918200506GCy_17": {
+      "task_id": "20260918200506GCy",
+      "index": 17,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.061071157455444336,
+          "start_s": 0.061071157455444336,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.061071157455444336,
+          "end_timestamp_s": 8.046980619430542,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.47489581629633904,
+      "call_ms_p95": 0.4958999343216419,
+      "calls": 41
+    },
+    "20260918200506GCy_18": {
+      "task_id": "20260918200506GCy",
+      "index": 18,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.08010268211364746,
+          "start_s": 0.08010268211364746,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.08010268211364746,
+          "end_timestamp_s": 7.2211079597473145,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.4551138263195753,
+      "call_ms_p95": 0.4691430833190679,
+      "calls": 37
+    },
+    "20260918200506GCy_19": {
+      "task_id": "20260918200506GCy",
+      "index": 19,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.08776283264160156,
+          "start_s": 0.08776283264160156,
+          "available_until_s": 4.227248907089233
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.08776283264160156,
+          "end_timestamp_s": 4.087762832641602,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.2627270296216011,
+      "call_ms_p95": 0.3130103228613734,
+      "calls": 22
+    },
+    "20260918200506GCy_20": {
+      "task_id": "20260918200506GCy",
+      "index": 20,
+      "saved": false,
+      "starts": [
+        {
+          "decision_s": 0.12792348861694336,
+          "start_s": 0.12792348861694336,
+          "available_until_s": 3.8698673248291016
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.12792348861694336,
+          "end_timestamp_s": 3.8698673248291016,
+          "target_confirmed": true,
+          "should_save": false,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.23569399490952492,
+      "call_ms_p95": 0.2797247492708266,
+      "calls": 20
+    },
+    "20260918200506GCy_21": {
+      "task_id": "20260918200506GCy",
+      "index": 21,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 1.428317975997925,
+          "start_s": 1.428317975997925,
+          "available_until_s": 7.427793264389038
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 1.428317975997925,
+          "end_timestamp_s": 8.650187253952026,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.5046656588092446,
+      "call_ms_p95": 0.5273379385471344,
+      "calls": 44
+    },
+    "20260918200506GCy_22": {
+      "task_id": "20260918200506GCy",
+      "index": 22,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.26194071769714355,
+          "start_s": 0.26194071769714355,
+          "available_until_s": 6.201772689819336
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.26194071769714355,
+          "end_timestamp_s": 13.878946542739868,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7428390672430396,
+      "call_ms_p95": 0.8053226862102747,
+      "calls": 70
+    },
+    "20260918200506GCy_23": {
+      "task_id": "20260918200506GCy",
+      "index": 23,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.014703512191772461,
+          "start_s": 0.014703512191772461,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.014703512191772461,
+          "end_timestamp_s": 25.945240259170532,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 1.0901570785790682,
+      "call_ms_p95": 1.4932869235053658,
+      "calls": 131
+    },
+    "20260918200506GCy_24": {
+      "task_id": "20260918200506GCy",
+      "index": 24,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.0479586124420166,
+          "start_s": 0.0479586124420166,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.0479586124420166,
+          "end_timestamp_s": 11.3413987159729,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.672269961796701,
+      "call_ms_p95": 0.70613605203107,
+      "calls": 58
+    },
+    "20260918200506GCy_25": {
+      "task_id": "20260918200506GCy",
+      "index": 25,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.02534031867980957,
+          "start_s": 0.02534031867980957,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.02534031867980957,
+          "end_timestamp_s": 21.02534031867981,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.9452761150896549,
+      "call_ms_p95": 1.2195970630273223,
+      "calls": 107
+    },
+    "20260918200506GCy_26": {
+      "task_id": "20260918200506GCy",
+      "index": 26,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.10469937324523926,
+          "start_s": 0.10469937324523926,
+          "available_until_s": 6.0
+        },
+        {
+          "decision_s": 26.90469937324524,
+          "start_s": 26.90469937324524,
+          "available_until_s": 32.759193420410156
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.10469937324523926,
+          "end_timestamp_s": 26.70469937324524,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        },
+        {
+          "start_timestamp_s": 26.90469937324524,
+          "end_timestamp_s": 41.52739453315735,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 1.4093711506575346,
+      "call_ms_p95": 2.319275913760066,
+      "calls": 209
+    },
+    "20260918200506GCy_27": {
+      "task_id": "20260918200506GCy",
+      "index": 27,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.15092015266418457,
+          "start_s": 0.15092015266418457,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.15092015266418457,
+          "end_timestamp_s": 11.954089403152466,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.6955820135772228,
+      "call_ms_p95": 0.724029028788209,
+      "calls": 61
+    },
+    "20260918200506GCy_28": {
+      "task_id": "20260918200506GCy",
+      "index": 28,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.03590726852416992,
+          "start_s": 0.03590726852416992,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.03590726852416992,
+          "end_timestamp_s": 10.624459505081177,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.62249053735286,
+      "call_ms_p95": 0.6422256585210562,
+      "calls": 54
+    },
+    "20260918200506GCy_29": {
+      "task_id": "20260918200506GCy",
+      "index": 29,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.9265923976898194,
+          "start_s": 0.9265923976898194,
+          "available_until_s": 6.84896183013916
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.9265923976898194,
+          "end_timestamp_s": 8.178497076034546,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.4967455752193928,
+      "call_ms_p95": 0.511495943646878,
+      "calls": 42
+    },
+    "20260918200506GCy_30": {
+      "task_id": "20260918200506GCy",
+      "index": 30,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.04681563377380371,
+          "start_s": 0.04681563377380371,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.04681563377380371,
+          "end_timestamp_s": 7.943791389465332,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.4695751704275608,
+      "call_ms_p95": 0.4903748631477356,
+      "calls": 41
+    },
+    "20260918200506GCy_31": {
+      "task_id": "20260918200506GCy",
+      "index": 31,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.15242505073547363,
+          "start_s": 0.15242505073547363,
+          "available_until_s": 4.266520261764526
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.15242505073547363,
+          "end_timestamp_s": 4.266520261764526,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.26101560797542334,
+      "call_ms_p95": 0.2911880030296743,
+      "calls": 22
+    },
+    "20260918200506GCy_32": {
+      "task_id": "20260918200506GCy",
+      "index": 32,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.18080782890319824,
+          "start_s": 0.18080782890319824,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.18080782890319824,
+          "end_timestamp_s": 6.2875659465789795,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.371081056073308,
+      "call_ms_p95": 0.392815622035414,
+      "calls": 32
+    },
+    "20260918200506GCy_33": {
+      "task_id": "20260918200506GCy",
+      "index": 33,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.04689335823059082,
+          "start_s": 0.04689335823059082,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.04689335823059082,
+          "end_timestamp_s": 21.228164196014404,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.941326143220067,
+      "call_ms_p95": 1.2069517280906439,
+      "calls": 107
+    },
+    "20260918200506GCy_34": {
+      "task_id": "20260918200506GCy",
+      "index": 34,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 1.2657558441162111,
+          "start_s": 1.2657558441162111,
+          "available_until_s": 7.208156585693359
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 1.2657558441162111,
+          "end_timestamp_s": 7.865755844116212,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.4821058828383684,
+      "call_ms_p95": 0.5338636692613363,
+      "calls": 43
+    },
+    "20260918200506GCy_35": {
+      "task_id": "20260918200506GCy",
+      "index": 35,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.08895397186279297,
+          "start_s": 0.08895397186279297,
+          "available_until_s": 4.759216785430908
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.08895397186279297,
+          "end_timestamp_s": 4.288953971862793,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.27501583099365234,
+      "call_ms_p95": 0.33137407153844833,
+      "calls": 25
+    },
+    "20260918200506GCy_36": {
+      "task_id": "20260918200506GCy",
+      "index": 36,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.06647706031799316,
+          "start_s": 0.06647706031799316,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.06647706031799316,
+          "end_timestamp_s": 8.234743595123291,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.5032579647377133,
+      "call_ms_p95": 0.5212916759774089,
+      "calls": 42
+    },
+    "20260918200506GCy_37": {
+      "task_id": "20260918200506GCy",
+      "index": 37,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.1301414966583252,
+          "start_s": 0.1301414966583252,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.1301414966583252,
+          "end_timestamp_s": 16.03805708885193,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.8230688981711864,
+      "call_ms_p95": 0.9523958433419466,
+      "calls": 81
+    },
+    "20260918200506GCy_38": {
+      "task_id": "20260918200506GCy",
+      "index": 38,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.051091670989990234,
+          "start_s": 0.051091670989990234,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.051091670989990234,
+          "end_timestamp_s": 6.219519853591919,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.4135221242904663,
+      "call_ms_p95": 0.43423743918538094,
+      "calls": 32
+    },
+    "20260918200506GCy_39": {
+      "task_id": "20260918200506GCy",
+      "index": 39,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.11936306953430176,
+          "start_s": 0.11936306953430176,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.11936306953430176,
+          "end_timestamp_s": 12.91724944114685,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7351019885390997,
+      "call_ms_p95": 0.7581477519124746,
+      "calls": 65
+    },
+    "20260918200506GCy_40": {
+      "task_id": "20260918200506GCy",
+      "index": 40,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.0404200553894043,
+          "start_s": 0.0404200553894043,
+          "available_until_s": 4.891416311264038
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.0404200553894043,
+          "end_timestamp_s": 4.891416311264038,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.31458702869713306,
+      "call_ms_p95": 0.3554894938133657,
+      "calls": 26
+    },
+    "20260918200506GCy_41": {
+      "task_id": "20260918200506GCy",
+      "index": 41,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.0042459964752197266,
+          "start_s": 0.0042459964752197266,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.0042459964752197266,
+          "end_timestamp_s": 10.673036813735962,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.6304539274424314,
+      "call_ms_p95": 0.6484749726951122,
+      "calls": 55
+    },
+    "20260918200506GCy_42": {
+      "task_id": "20260918200506GCy",
+      "index": 42,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.10729598999023438,
+          "start_s": 0.10729598999023438,
+          "available_until_s": 5.395126819610596
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.10729598999023438,
+          "end_timestamp_s": 5.395126819610596,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.34065847285091877,
+      "call_ms_p95": 0.3626189660280943,
+      "calls": 28
+    },
+    "20260918200506GCy_43": {
+      "task_id": "20260918200506GCy",
+      "index": 43,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.1987297534942627,
+          "start_s": 0.1987297534942627,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.1987297534942627,
+          "end_timestamp_s": 4.198729753494263,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.22735586389899254,
+      "call_ms_p95": 0.460136029869318,
+      "calls": 37
+    },
+    "20260918200506GCy_44": {
+      "task_id": "20260918200506GCy",
+      "index": 44,
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.1455704914405942,
+      "call_ms_p95": 0.2647046581842005,
+      "calls": 22
+    },
+    "20260918200506GCy_45": {
+      "task_id": "20260918200506GCy",
+      "index": 45,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.17181825637817383,
+          "start_s": 0.17181825637817383,
+          "available_until_s": 4.238799810409546
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.17181825637817383,
+          "end_timestamp_s": 4.238799810409546,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.2549829659983516,
+      "call_ms_p95": 0.298888236284256,
+      "calls": 22
+    },
+    "20260918200506GCy_46": {
+      "task_id": "20260918200506GCy",
+      "index": 46,
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.1576209906488657,
+      "call_ms_p95": 0.25430601090192795,
+      "calls": 21
+    },
+    "20260918200506GCy_47": {
+      "task_id": "20260918200506GCy",
+      "index": 47,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.018869400024414062,
+          "start_s": 0.018869400024414062,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.018869400024414062,
+          "end_timestamp_s": 16.922940731048584,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.8270489051938057,
+      "call_ms_p95": 0.9766108123585582,
+      "calls": 86
+    },
+    "20260918200506GCy_48": {
+      "task_id": "20260918200506GCy",
+      "index": 48,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.05914807319641113,
+          "start_s": 0.05914807319641113,
+          "available_until_s": 5.31726598739624
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.05914807319641113,
+          "end_timestamp_s": 5.259148073196411,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.34133903682231903,
+      "call_ms_p95": 0.37910196697339416,
+      "calls": 28
+    },
+    "20260918200506GCy_49": {
+      "task_id": "20260918200506GCy",
+      "index": 49,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.11099123954772949,
+          "start_s": 0.11099123954772949,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.11099123954772949,
+          "end_timestamp_s": 13.710991239547731,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.5713789723813534,
+      "call_ms_p95": 1.0500219068489969,
+      "calls": 96
+    },
+    "20260918200506GCy_50": {
+      "task_id": "20260918200506GCy",
+      "index": 50,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.021157026290893555,
+          "start_s": 0.021157026290893555,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.021157026290893555,
+          "end_timestamp_s": 10.011439561843872,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.593491829931736,
+      "call_ms_p95": 0.6130493711680174,
+      "calls": 51
+    },
+    "20260918200506GCy_51": {
+      "task_id": "20260918200506GCy",
+      "index": 51,
+      "saved": false,
+      "starts": [
+        {
+          "decision_s": 0.21450514793395997,
+          "start_s": 0.21450514793395997,
+          "available_until_s": 4.2052929401397705
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.21450514793395997,
+          "end_timestamp_s": 4.2052929401397705,
+          "target_confirmed": true,
+          "should_save": false,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.26036950293928385,
+      "call_ms_p95": 0.3015141817741096,
+      "calls": 22
+    },
+    "20260918200506GCy_52": {
+      "task_id": "20260918200506GCy",
+      "index": 52,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.13561487197875977,
+          "start_s": 0.13561487197875977,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.13561487197875977,
+          "end_timestamp_s": 9.79889440536499,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.5546584725379944,
+      "call_ms_p95": 0.5748096387833357,
+      "calls": 50
+    },
+    "20260918200506GCy_53": {
+      "task_id": "20260918200506GCy",
+      "index": 53,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.0353398323059082,
+          "start_s": 0.0353398323059082,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.0353398323059082,
+          "end_timestamp_s": 22.619593620300293,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 1.0076729813590646,
+      "call_ms_p95": 1.3065278413705528,
+      "calls": 114
+    },
+    "20260918200506GCy_54": {
+      "task_id": "20260918200506GCy",
+      "index": 54,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.1940450668334961,
+          "start_s": 0.1940450668334961,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.1940450668334961,
+          "end_timestamp_s": 7.006034851074219,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.4209724720567465,
+      "call_ms_p95": 0.4471818101592362,
+      "calls": 36
+    },
+    "20260917174539CCx_1": {
+      "task_id": "20260917174539CCx",
+      "index": 1,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.05051302909851074,
+          "start_s": 0.05051302909851074,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.05051302909851074,
+          "end_timestamp_s": 9.433981657028198,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.5634519038721919,
+      "call_ms_p95": 0.584397092461586,
+      "calls": 48
+    },
+    "20260917174539CCx_3": {
+      "task_id": "20260917174539CCx",
+      "index": 3,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.12282133102416992,
+          "start_s": 0.12282133102416992,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.12282133102416992,
+          "end_timestamp_s": 15.131829261779785,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.8048969320952892,
+      "call_ms_p95": 0.8989498484879732,
+      "calls": 77
+    },
+    "20260917174539CCx_4": {
+      "task_id": "20260917174539CCx",
+      "index": 4,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.028281450271606445,
+          "start_s": 0.028281450271606445,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.028281450271606445,
+          "end_timestamp_s": 13.028281450271606,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.7207330781966448,
+      "call_ms_p95": 0.7628825260326266,
+      "calls": 67
+    },
+    "20260917174539CCx_6": {
+      "task_id": "20260917174539CCx",
+      "index": 6,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.11130261421203613,
+          "start_s": 0.11130261421203613,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.11130261421203613,
+          "end_timestamp_s": 13.486308097839355,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7598224328830838,
+      "call_ms_p95": 0.8052378543652594,
+      "calls": 68
+    },
+    "20260917174539CCx_7": {
+      "task_id": "20260917174539CCx",
+      "index": 7,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.719900941848755,
+          "start_s": 0.719900941848755,
+          "available_until_s": 6.690748929977417
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.719900941848755,
+          "end_timestamp_s": 6.119900941848755,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.34657749347388744,
+      "call_ms_p95": 0.45538577251136303,
+      "calls": 36
+    },
+    "20260917174539CCx_8": {
+      "task_id": "20260917174539CCx",
+      "index": 8,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.27873826026916504,
+          "start_s": 0.27873826026916504,
+          "available_until_s": 6.215771198272705
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.27873826026916504,
+          "end_timestamp_s": 18.85357666015625,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.8987184846773744,
+      "call_ms_p95": 1.0809321771375835,
+      "calls": 94
+    },
+    "20260917174539CCx_9": {
+      "task_id": "20260917174539CCx",
+      "index": 9,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.16945385932922363,
+          "start_s": 0.16945385932922363,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.16945385932922363,
+          "end_timestamp_s": 19.05595302581787,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.9027085034176707,
+      "call_ms_p95": 1.1220822925679386,
+      "calls": 96
+    },
+    "20260917174539CCx_11": {
+      "task_id": "20260917174539CCx",
+      "index": 11,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.0803530216217041,
+          "start_s": 0.0803530216217041,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.0803530216217041,
+          "end_timestamp_s": 8.680353021621704,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.5315258167684078,
+      "call_ms_p95": 0.545673118904233,
+      "calls": 45
+    },
+    "20260917174539CCx_13": {
+      "task_id": "20260917174539CCx",
+      "index": 13,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.009128332138061523,
+          "start_s": 0.009128332138061523,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.009128332138061523,
+          "end_timestamp_s": 7.011915922164917,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.44243992306292057,
+      "call_ms_p95": 0.4728917498141527,
+      "calls": 37
+    },
+    "20260917174539CCx_16": {
+      "task_id": "20260917174539CCx",
+      "index": 16,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.1064450740814209,
+          "start_s": 0.1064450740814209,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.1064450740814209,
+          "end_timestamp_s": 17.701454162597656,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.867227092385292,
+      "call_ms_p95": 1.0361792519688606,
+      "calls": 89
+    },
+    "20260917174539CCx_18": {
+      "task_id": "20260917174539CCx",
+      "index": 18,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.18887710571289062,
+          "start_s": 0.18887710571289062,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.18887710571289062,
+          "end_timestamp_s": 7.406487941741943,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.45054545626044273,
+      "call_ms_p95": 0.46140796039253473,
+      "calls": 38
+    },
+    "20260917174539CCx_19": {
+      "task_id": "20260917174539CCx",
+      "index": 19,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.18056941032409668,
+          "start_s": 0.18056941032409668,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.18056941032409668,
+          "end_timestamp_s": 6.64926290512085,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.23601483553647995,
+      "call_ms_p95": 0.4279347020201385,
+      "calls": 34
+    },
+    "20260917174539CCx_23": {
+      "task_id": "20260917174539CCx",
+      "index": 23,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.19426512718200684,
+          "start_s": 0.19426512718200684,
+          "available_until_s": 6.0
+        },
+        {
+          "decision_s": 4.594265127182007,
+          "start_s": 4.594265127182007,
+          "available_until_s": 8.756551742553711
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.19426512718200684,
+          "end_timestamp_s": 4.394265127182007,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        },
+        {
+          "start_timestamp_s": 4.594265127182007,
+          "end_timestamp_s": 8.756551742553711,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.30554505065083504,
+      "call_ms_p95": 0.5502484156750143,
+      "calls": 44
+    },
+    "20260917174539CCx_24": {
+      "task_id": "20260917174539CCx",
+      "index": 24,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.0227508544921875,
+          "start_s": 0.0227508544921875,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.0227508544921875,
+          "end_timestamp_s": 11.666709661483765,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.6834435043856502,
+      "call_ms_p95": 0.7093100342899561,
+      "calls": 60
+    },
+    "20260917174539CCx_26": {
+      "task_id": "20260917174539CCx",
+      "index": 26,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.1319873332977295,
+          "start_s": 0.1319873332977295,
+          "available_until_s": 5.190856695175171
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.1319873332977295,
+          "end_timestamp_s": 5.190856695175171,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.3150319680571556,
+      "call_ms_p95": 0.3499910468235612,
+      "calls": 27
+    },
+    "20260917174539CCx_27": {
+      "task_id": "20260917174539CCx",
+      "index": 27,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 1.787112331390381,
+          "start_s": 1.787112331390381,
+          "available_until_s": 7.61444091796875
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 1.787112331390381,
+          "end_timestamp_s": 5.987112331390382,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.28657494112849236,
+      "call_ms_p95": 0.5581513047218323,
+      "calls": 47
+    },
+    "20260917174539CCx_29": {
+      "task_id": "20260917174539CCx",
+      "index": 29,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.09568572044372559,
+          "start_s": 0.09568572044372559,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.09568572044372559,
+          "end_timestamp_s": 11.855166912078857,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.6943674525246024,
+      "call_ms_p95": 0.7167428615503012,
+      "calls": 60
+    },
+    "20260917174539CCx_30": {
+      "task_id": "20260917174539CCx",
+      "index": 30,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.036322832107543945,
+          "start_s": 0.036322832107543945,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.036322832107543945,
+          "end_timestamp_s": 14.075452089309692,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7497939513996243,
+      "call_ms_p95": 0.8221684256568551,
+      "calls": 72
+    },
+    "20260917174539CCx_31": {
+      "task_id": "20260917174539CCx",
+      "index": 31,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 1.1016244888305664,
+          "start_s": 1.1016244888305664,
+          "available_until_s": 7.079352855682373
+        },
+        {
+          "decision_s": 5.901624488830567,
+          "start_s": 5.901624488830567,
+          "available_until_s": 9.183237552642822
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 1.1016244888305664,
+          "end_timestamp_s": 5.701624488830567,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        },
+        {
+          "start_timestamp_s": 5.901624488830567,
+          "end_timestamp_s": 9.183237552642822,
+          "target_confirmed": true,
+          "should_save": false,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.5083940923213959,
+      "call_ms_p95": 0.5527599714696407,
+      "calls": 47
+    },
+    "20260917174539CCx_32": {
+      "task_id": "20260917174539CCx",
+      "index": 32,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.019562482833862305,
+          "start_s": 0.019562482833862305,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.019562482833862305,
+          "end_timestamp_s": 9.15196704864502,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.5268421955406666,
+      "call_ms_p95": 0.547071686014533,
+      "calls": 47
+    },
+    "20260917174539CCx_33": {
+      "task_id": "20260917174539CCx",
+      "index": 33,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.0813133716583252,
+          "start_s": 0.0813133716583252,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.0813133716583252,
+          "end_timestamp_s": 19.795522689819336,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.9281245293095708,
+      "call_ms_p95": 1.1650537955574691,
+      "calls": 100
+    },
+    "20260917174539CCx_34": {
+      "task_id": "20260917174539CCx",
+      "index": 34,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.13754796981811523,
+          "start_s": 0.13754796981811523,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.13754796981811523,
+          "end_timestamp_s": 29.121220111846924,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 1.203930121846497,
+      "call_ms_p95": 1.663076225668192,
+      "calls": 146
+    },
+    "20260917174539CCx_35": {
+      "task_id": "20260917174539CCx",
+      "index": 35,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.05629086494445801,
+          "start_s": 0.05629086494445801,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.05629086494445801,
+          "end_timestamp_s": 7.962549209594727,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.48368005082011223,
+      "call_ms_p95": 0.5043738055974245,
+      "calls": 41
+    },
+    "20260917174539CCx_36": {
+      "task_id": "20260917174539CCx",
+      "index": 36,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.13147711753845215,
+          "start_s": 0.13147711753845215,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.13147711753845215,
+          "end_timestamp_s": 5.931477117538453,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.3689611330628395,
+      "call_ms_p95": 0.40834653191268444,
+      "calls": 31
+    },
+    "20260917174539CCx_37": {
+      "task_id": "20260917174539CCx",
+      "index": 37,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.1198878288269043,
+          "start_s": 0.1198878288269043,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.1198878288269043,
+          "end_timestamp_s": 11.588423490524292,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.6969920359551907,
+      "call_ms_p95": 0.7190625416114926,
+      "calls": 59
+    },
+    "20260917174539CCx_38": {
+      "task_id": "20260917174539CCx",
+      "index": 38,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.027533769607543945,
+          "start_s": 0.027533769607543945,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.027533769607543945,
+          "end_timestamp_s": 17.871989250183105,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.8625490590929985,
+      "call_ms_p95": 1.0443595238029957,
+      "calls": 91
+    },
+    "20260917174539CCx_39": {
+      "task_id": "20260917174539CCx",
+      "index": 39,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.024980783462524414,
+          "start_s": 0.024980783462524414,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.024980783462524414,
+          "end_timestamp_s": 13.756434917449951,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7563470862805843,
+      "call_ms_p95": 0.8152901544235647,
+      "calls": 70
+    },
+    "20260917174539CCx_40": {
+      "task_id": "20260917174539CCx",
+      "index": 40,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.170792818069458,
+          "start_s": 0.170792818069458,
+          "available_until_s": 4.370214939117432
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.170792818069458,
+          "end_timestamp_s": 4.370214939117432,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.24545600172132254,
+      "call_ms_p95": 0.2934636198915541,
+      "calls": 22
+    },
+    "20260917174539CCx_41": {
+      "task_id": "20260917174539CCx",
+      "index": 41,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.12402844429016113,
+          "start_s": 0.12402844429016113,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.12402844429016113,
+          "end_timestamp_s": 13.62765908241272,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.7703870069235563,
+      "call_ms_p95": 0.8149219676852226,
+      "calls": 69
+    },
+    "20260917174539CCx_44": {
+      "task_id": "20260917174539CCx",
+      "index": 44,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.09602713584899902,
+          "start_s": 0.09602713584899902,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.09602713584899902,
+          "end_timestamp_s": 18.456239461898804,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.8978720288723707,
+      "call_ms_p95": 1.0792076122015715,
+      "calls": 93
+    },
+    "20260917174539CCx_46": {
+      "task_id": "20260917174539CCx",
+      "index": 46,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.16221213340759277,
+          "start_s": 0.16221213340759277,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.16221213340759277,
+          "end_timestamp_s": 11.683917999267578,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.6894699763506651,
+      "call_ms_p95": 0.7180247688665986,
+      "calls": 59
+    },
+    "20260917174539CCx_47": {
+      "task_id": "20260917174539CCx",
+      "index": 47,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.16927886009216309,
+          "start_s": 0.16927886009216309,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.16927886009216309,
+          "end_timestamp_s": 8.240238189697266,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.4986909916624427,
+      "call_ms_p95": 0.518197228666395,
+      "calls": 42
+    },
+    "20260917174539CCx_48": {
+      "task_id": "20260917174539CCx",
+      "index": 48,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.10260224342346191,
+          "start_s": 0.10260224342346191,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.10260224342346191,
+          "end_timestamp_s": 13.081668853759766,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7168521406129003,
+      "call_ms_p95": 0.760005263146013,
+      "calls": 66
+    },
+    "20260917174539CCx_51": {
+      "task_id": "20260917174539CCx",
+      "index": 51,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.13413023948669434,
+          "start_s": 0.13413023948669434,
+          "available_until_s": 5.3954856395721436
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.13413023948669434,
+          "end_timestamp_s": 5.3954856395721436,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.33105805050581694,
+      "call_ms_p95": 0.3718924825079739,
+      "calls": 28
+    },
+    "20260917174539CCx_52": {
+      "task_id": "20260917174539CCx",
+      "index": 52,
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.05194258689880371,
+          "start_s": 0.05194258689880371,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.05194258689880371,
+          "end_timestamp_s": 13.364063262939453,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7565340492874384,
+      "call_ms_p95": 0.8158199954777956,
+      "calls": 68
+    }
+  },
+  "issues": [
+    {
+      "directory": "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_50",
+      "error": "non-single or inconsistent keep window; do not bridge cuts"
+    }
+  ],
+  "saved_sources": 141,
+  "sources": 159
+}

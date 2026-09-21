@@ -1,0 +1,181 @@
+{
+  "seed": 2026092103,
+  "population": 159,
+  "random_count": 24,
+  "entries": {
+    "A01": {
+      "id": "20260917174539CCx_40",
+      "task_id": "20260917174539CCx",
+      "index": 40,
+      "sampling": "random"
+    },
+    "A02": {
+      "id": "20260918200506GCy_52",
+      "task_id": "20260918200506GCy",
+      "index": 52,
+      "sampling": "random"
+    },
+    "A03": {
+      "id": "202609201240128Up_20",
+      "task_id": "202609201240128Up",
+      "index": 20,
+      "sampling": "targeted"
+    },
+    "A04": {
+      "id": "20260918200506GCy_5",
+      "task_id": "20260918200506GCy",
+      "index": 5,
+      "sampling": "random"
+    },
+    "A05": {
+      "id": "20260917174539CCx_36",
+      "task_id": "20260917174539CCx",
+      "index": 36,
+      "sampling": "random"
+    },
+    "A06": {
+      "id": "20260920122356WIt_18",
+      "task_id": "20260920122356WIt",
+      "index": 18,
+      "sampling": "random"
+    },
+    "A07": {
+      "id": "20260920122356WIt_31",
+      "task_id": "20260920122356WIt",
+      "index": 31,
+      "sampling": "random"
+    },
+    "A08": {
+      "id": "202609201240128Up_22",
+      "task_id": "202609201240128Up",
+      "index": 22,
+      "sampling": "random"
+    },
+    "A09": {
+      "id": "20260917174539CCx_19",
+      "task_id": "20260917174539CCx",
+      "index": 19,
+      "sampling": "random"
+    },
+    "A10": {
+      "id": "20260917174539CCx_26",
+      "task_id": "20260917174539CCx",
+      "index": 26,
+      "sampling": "random"
+    },
+    "A11": {
+      "id": "202609201240128Up_19",
+      "task_id": "202609201240128Up",
+      "index": 19,
+      "sampling": "random"
+    },
+    "A12": {
+      "id": "20260920122356WIt_32",
+      "task_id": "20260920122356WIt",
+      "index": 32,
+      "sampling": "random"
+    },
+    "A13": {
+      "id": "20260917174539CCx_38",
+      "task_id": "20260917174539CCx",
+      "index": 38,
+      "sampling": "random"
+    },
+    "A14": {
+      "id": "202609201240128Up_25",
+      "task_id": "202609201240128Up",
+      "index": 25,
+      "sampling": "targeted"
+    },
+    "A15": {
+      "id": "20260917174539CCx_33",
+      "task_id": "20260917174539CCx",
+      "index": 33,
+      "sampling": "random"
+    },
+    "A16": {
+      "id": "202609201240128Up_16",
+      "task_id": "202609201240128Up",
+      "index": 16,
+      "sampling": "random"
+    },
+    "A17": {
+      "id": "20260918200506GCy_42",
+      "task_id": "20260918200506GCy",
+      "index": 42,
+      "sampling": "targeted"
+    },
+    "A18": {
+      "id": "20260918200506GCy_23",
+      "task_id": "20260918200506GCy",
+      "index": 23,
+      "sampling": "random"
+    },
+    "A19": {
+      "id": "20260920122356WIt_8",
+      "task_id": "20260920122356WIt",
+      "index": 8,
+      "sampling": "random"
+    },
+    "A20": {
+      "id": "202609201240128Up_10",
+      "task_id": "202609201240128Up",
+      "index": 10,
+      "sampling": "random"
+    },
+    "A21": {
+      "id": "20260917174539CCx_6",
+      "task_id": "20260917174539CCx",
+      "index": 6,
+      "sampling": "random"
+    },
+    "A22": {
+      "id": "20260917174539CCx_4",
+      "task_id": "20260917174539CCx",
+      "index": 4,
+      "sampling": "random"
+    },
+    "A23": {
+      "id": "20260920122356WIt_14",
+      "task_id": "20260920122356WIt",
+      "index": 14,
+      "sampling": "targeted"
+    },
+    "A24": {
+      "id": "20260920122356WIt_34",
+      "task_id": "20260920122356WIt",
+      "index": 34,
+      "sampling": "random"
+    },
+    "A25": {
+      "id": "202609201240128Up_7",
+      "task_id": "202609201240128Up",
+      "index": 7,
+      "sampling": "random"
+    },
+    "A26": {
+      "id": "20260920122356WIt_26",
+      "task_id": "20260920122356WIt",
+      "index": 26,
+      "sampling": "random"
+    },
+    "A27": {
+      "id": "20260918200506GCy_29",
+      "task_id": "20260918200506GCy",
+      "index": 29,
+      "sampling": "targeted"
+    },
+    "A28": {
+      "id": "20260920122356WIt_20",
+      "task_id": "20260920122356WIt",
+      "index": 20,
+      "sampling": "random"
+    },
+    "A29": {
+      "id": "20260917174539CCx_29",
+      "task_id": "20260917174539CCx",
+      "index": 29,
+      "sampling": "random"
+    }
+  }
+}
