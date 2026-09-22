@@ -1,0 +1,1740 @@
+{
+  "summary": {
+    "passed": 68,
+    "total": 68,
+    "errors": 0,
+    "future_starts": 0
+  },
+  "reproductions": [
+    {
+      "gap_s": 1,
+      "decision_s": 10.4,
+      "start": [
+        false,
+        10.4
+      ],
+      "end": [
+        false,
+        10.4
+      ]
+    },
+    {
+      "gap_s": 2,
+      "decision_s": 11.4,
+      "start": [
+        false,
+        11.4
+      ],
+      "end": [
+        false,
+        11.4
+      ]
+    },
+    {
+      "gap_s": 3,
+      "decision_s": 12.4,
+      "start": [
+        false,
+        12.4
+      ],
+      "end": [
+        false,
+        12.4
+      ]
+    },
+    {
+      "gap_s": 4,
+      "decision_s": 13.4,
+      "start": [
+        false,
+        13.4
+      ],
+      "end": [
+        false,
+        13.4
+      ]
+    },
+    {
+      "gap_s": 5,
+      "decision_s": 14.4,
+      "start": [
+        false,
+        14.4
+      ],
+      "end": [
+        false,
+        14.4
+      ]
+    },
+    {
+      "gap_s": 6,
+      "decision_s": 15.4,
+      "start": [
+        false,
+        15.4
+      ],
+      "end": [
+        false,
+        15.4
+      ]
+    },
+    {
+      "gap_s": 7,
+      "decision_s": 16.4,
+      "start": [
+        false,
+        16.4
+      ],
+      "end": [
+        false,
+        16.4
+      ]
+    },
+    {
+      "gap_s": 8,
+      "decision_s": 17.4,
+      "start": [
+        false,
+        17.4
+      ],
+      "end": [
+        false,
+        17.4
+      ]
+    }
+  ],
+  "results": [
+    {
+      "case": "no_gap",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "no_gap",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "no_gap",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "no_gap",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_1s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_1s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_1s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_1s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_1s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_1s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_1s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_1s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_2s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_2s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_2s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_2s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_2s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_2s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_2s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_2s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_3s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_3s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_3s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_3s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_3s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_3s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_3s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_3s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_4s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_4s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_4s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_4s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_4s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_4s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_4s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_4s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_5s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_5s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_5s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_5s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_5s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_5s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_5s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_5s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_6s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_6s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_6s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_6s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_6s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_6s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_6s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_6s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_7s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_7s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_7s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_7s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_7s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_7s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_7s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_7s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_8s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_8s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_8s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_8s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_8s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_8s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_8s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_8s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    }
+  ]
+}

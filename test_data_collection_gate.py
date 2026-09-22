@@ -908,14 +908,17 @@ class TurnGateRevisionTest(unittest.TestCase):
                 for a,b in zip(clips,clips[1:]):
                     self.assertGreaterEqual(a.end_timestamp_s,b.start_timestamp_s)
 
-    def test_tmax_continuation_stops_at_pose_gap(self):
+    def test_tmax_continuation_can_retain_plain_gap_as_context(self):
         samples = _motion_profile([(8,.5,0),(42,.1,math.radians(30)),(14,.5,0)])
         samples = [p for p in samples if not 49.5 < p.timestamp_s < 51.0]
         clips = self.collect(samples)
         self.assertTrue(clips)
         before = max(p.timestamp_s for p in samples if p.timestamp_s < 51.0)
         after = min(p.timestamp_s for p in samples if p.timestamp_s >= 51.0)
-        self.assertTrue(all(c.end_timestamp_s <= before + 1e-8 or c.start_timestamp_s >= after for c in clips))
+        # A pose evidence boundary need not split an already confirmed media
+        # window. It still cannot create geometric evidence across the gap.
+        self.assertTrue(any(c.start_timestamp_s <= before and c.end_timestamp_s >= after for c in clips))
+        self.assertTrue(all(c.duration_s <= 45.0 + 1e-8 for c in clips))
 
     def test_spin_filter_support_after_eof_cannot_confirm_saved_window(self):
         times = [i*.5 for i in range(13)] + [6+i*.1 for i in range(1,41)]
@@ -937,6 +940,99 @@ class TurnGateRevisionTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             TurnGateConfig(pre_context_s=45.0)
 
+
+
+class DelayedGapContractTest(unittest.TestCase):
+    def test_new_segment_waits_for_decision_before_starting(self):
+        samples = _motion_profile([(10, .1, 0), (20, .1, .4)])
+        for gap in range(1, 9):
+            with self.subTest(gap=gap):
+                restart = 10 + gap
+                decision = restart - .6
+                cache = [p for p in samples if (p.timestamp_s <= 10 + 1e-8 or p.timestamp_s >= restart - 1e-8)
+                         and p.timestamp_s <= decision + 6 + 1e-8]
+                gate = TurnGate()
+                self.assertEqual(gate.start_collection(cache, decision), (False, decision))
+                self.assertIsNone(gate.active_start_timestamp_s)
+                self.assertEqual(gate.end_collection(cache, decision), (False, decision))
+                first = min(p.timestamp_s for p in cache if p.timestamp_s >= restart - 1e-8)
+                act, action = gate.start_collection(cache, first)
+                self.assertTrue(act)
+                self.assertEqual(action, first)
+                self.assertLessEqual(action, first)
+
+    def test_early_end_and_finish_preserve_all_active_state(self):
+        gates = [(TurnGate(), _arc(.4)),
+                 (StraightGate(StraightGateConfig(start_probability=1)), _straight())]
+        for gate, samples in gates:
+            with self.subTest(gate=type(gate).__name__):
+                self.assertTrue(gate.start_collection(samples, 5)[0])
+                early = gate.active_start_timestamp_s - .2
+                state = gate.__dict__.copy()
+                for _ in range(3):
+                    self.assertEqual(gate.end_collection([], early), (False, early))
+                    self.assertEqual(gate.__dict__, state)
+                if isinstance(gate, TurnGate):
+                    self.assertEqual(gate.finish_collection([], early), (False, early))
+                    self.assertEqual(gate.__dict__, state)
+                self.assertTrue(gate.end_collection(samples, gate.active_start_timestamp_s + 45)[0])
+                self.assertIsNone(gate.active_start_timestamp_s)
+
+    def test_plain_gap_does_not_close_either_gate(self):
+        for gate, samples in [(TurnGate(), _arc(.4, 20, speed_mps=.1)),
+                              (StraightGate(StraightGateConfig(start_probability=1,
+                                   minimum_collection_duration_s=12,
+                                   maximum_collection_duration_s=12)), _straight(20, .2))]:
+            with self.subTest(gate=type(gate).__name__):
+                samples = [p for p in samples if not 5 < p.timestamp_s < 9]
+                self.assertTrue(gate.start_collection(samples, 2)[0])
+                start = gate.active_start_timestamp_s
+                self.assertEqual(gate.end_collection(samples, 9.5), (False, 9.5))
+                self.assertEqual(gate.active_start_timestamp_s, start)
+
+    def test_subthreshold_turns_cannot_accumulate_across_gap(self):
+        samples = _arc(math.radians(10), 10, speed_mps=.1)
+        samples = [p for p in samples if not 3 < p.timestamp_s < 7]
+        gate = TurnGate()
+        for i in range(51):
+            ts = i * .2
+            self.assertFalse(gate.evaluate(samples, ts).is_turn)
+            self.assertFalse(gate.start_collection(samples, ts)[0])
+
+    def test_gap_resets_straight_recovery_clock(self):
+        samples = _motion_profile([(8,.5,0),(4,.2,.4),(16,.2,0)])
+        samples = [p for p in samples if not 16 + 1e-8 < p.timestamp_s < 18 - 1e-8]
+        gate = TurnGate()
+        self.assertTrue(gate.start_collection(samples, 9)[0])
+        self.assertFalse(gate.end_collection(samples, 15.5)[0])
+        self.assertIsNotNone(gate.straight_recovery_start_timestamp_s)
+        self.assertFalse(gate.end_collection(samples, 19)[0])
+        self.assertIsNone(gate.straight_recovery_start_timestamp_s)
+        self.assertFalse(gate.end_collection(samples, 23)[0])
+        self.assertTrue(gate.end_collection(samples, 25)[0])
+        self.assertGreaterEqual(gate.last_completed_collection.end_timestamp_s, 24 - 1e-8)
+
+    def test_gap_is_not_evidence_of_stable_stop(self):
+        samples = [PoseSample(t, 0, 0, 0) for t in (0., .1, .2, 6., 6.1, 6.2)]
+        gate = TurnGate()
+        self.assertIsNone(gate._pose_hard_stop_timestamp(samples, 0., 0., 6.2))
+
+    def test_stale_cache_reaches_tmax_and_cannot_invent_continuation(self):
+        samples = _arc(.4, 12, speed_mps=.1)
+        gate = TurnGate()
+        self.assertTrue(gate.start_collection(samples, 4)[0])
+        end = gate.active_start_timestamp_s + 45
+        for ts in range(12, int(end)):
+            self.assertFalse(gate.end_collection(samples, ts)[0])
+        self.assertEqual(gate.end_collection(samples, end), (True, end))
+        self.assertTrue(gate.last_completed_collection.should_save)
+        self.assertIsNone(gate._continuation_evidence)
+        self.assertFalse(gate.start_collection(samples, end + .2)[0])
+        # Resume with wholly new continuous evidence, not a certificate that
+        # extrapolates the pre-outage turn through the missing interval.
+        resumed = [PoseSample(p.timestamp_s + 50, p.x_m, p.y_m, p.yaw_rad) for p in samples]
+        self.assertTrue(gate.start_collection(resumed, 51)[0])
+        self.assertGreaterEqual(gate.active_start_timestamp_s, 50)
 
 
 class _StubRandom:

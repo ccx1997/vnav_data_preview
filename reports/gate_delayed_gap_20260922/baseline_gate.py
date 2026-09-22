@@ -89,9 +89,7 @@ def with_hard_stop_conditions(
             setattr(self, "_hard_stop_decorator_state", None)
             return method(self, pose_cache, timestamp_s)
         if timestamp_s < active_start_s:
-            # Delayed or repeated recorder checks are harmless; do not advance
-            # the scan cursor, clear the active window, or parse a stale cache.
-            return False, timestamp_s
+            return method(self, pose_cache, timestamp_s)
 
         maximum_end_s = active_start_s + self.config.maximum_collection_interval_s
         hard_stop_s = maximum_end_s
@@ -577,13 +575,6 @@ class TurnGate:
                 segment, _ = self._continuous_segment(samples, core_start_s)
                 if segment is None:
                     continue  # The recorder no longer has this history.
-                if segment[0].timestamp_s > timestamp_s:
-                    # Lookahead can see a new segment before the delayed
-                    # decision reaches it. Wait, rather than open in the future
-                    # or clamp the capture boundary into a missing pose span.
-                    if evidence is continuation:
-                        self._continuation_evidence = continuation
-                    continue
                 capture_start_s = max(segment[0].timestamp_s, min(timestamp_s, core_start_s - self.config.pre_context_s))
                 self._active_start_timestamp_s = capture_start_s
                 self._core_start_timestamp_s = core_start_s
@@ -615,7 +606,7 @@ class TurnGate:
         if active_start_s is None:
             return False, timestamp_s
         if timestamp_s < active_start_s:
-            return False, timestamp_s
+            raise ValueError("end timestamp cannot precede collection start")
         previous_check_s = self._last_end_check_timestamp_s
         if previous_check_s is not None and timestamp_s < previous_check_s:
             # The start decision already observed this future turn window.
@@ -690,7 +681,7 @@ class TurnGate:
         if start_s is None:
             return False, end_s
         if end_s < start_s:
-            return False, end_s
+            raise ValueError("end timestamp cannot precede collection start")
         # Respect natural/pose/Tmax stops before applying the external boundary.
         result = self.end_collection(pose_cache, end_s)
         if result[0]:
@@ -733,7 +724,8 @@ class TurnGate:
             translation_m = math.hypot(second.x_m - first.x_m, second.y_m - first.y_m)
             yaw_change_rad = abs(second.yaw_rad - first.yaw_rad)
             is_discontinuity = bool(
-                translation_m > self.config.maximum_pose_jump_m
+                dt_s > self.config.maximum_pose_gap_s
+                or translation_m > self.config.maximum_pose_jump_m
                 or yaw_change_rad > self.config.maximum_yaw_step_rad
                 or (
                     dt_s <= self.config.maximum_pose_gap_s
@@ -743,9 +735,6 @@ class TurnGate:
                     )
                 )
             )
-            # A plain time gap breaks geometric evidence in _prepare_cache,
-            # but does not by itself close an already confirmed media window.
-            # Absolute jumps remain conservative stops even across a gap.
             if is_discontinuity:
                 candidates.append(max(active_start_s, first.timestamp_s))
                 break
@@ -1309,7 +1298,7 @@ class StraightGate:
         if collection is None:
             return False, timestamp_s
         if timestamp_s < collection.start_timestamp_s:
-            return False, timestamp_s
+            raise ValueError("end timestamp cannot precede collection start")
         if timestamp_s + 1.0e-12 < collection.end_timestamp_s:
             return False, timestamp_s
         self._last_collection = collection

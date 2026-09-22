@@ -1,0 +1,2496 @@
+{
+  "summary": {
+    "sources": 159,
+    "source_files_unchanged": 640,
+    "source_issues": [
+      {
+        "directory": "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_50",
+        "error": "non-single or inconsistent keep window; do not bridge cuts"
+      }
+    ],
+    "changed_actions_or_windows": [
+      "202609201240128Up_1",
+      "202609201240128Up_8",
+      "202609201240128Up_13",
+      "202609201240128Up_14",
+      "202609201240128Up_15",
+      "20260920122356WIt_27",
+      "20260918200506GCy_49"
+    ],
+    "reference_metrics": {
+      "positive": {
+        "count": 32,
+        "started": 32,
+        "saved": 32
+      },
+      "negative": {
+        "count": 69,
+        "started": 0,
+        "saved": 0
+      },
+      "ambiguous": {
+        "count": 23,
+        "started": 20,
+        "saved": 20
+      }
+    },
+    "audit_agrees": 29,
+    "audit_total": 29,
+    "saved_sources": 84,
+    "saved_windows": 84,
+    "source_sha256": {
+      "data_collection_gate.py": "250e9f03f6653f2ae5d8219a31ed401192a3e7137e8afee0b927c2f117e83349",
+      "test_data_collection_gate.py": "0dadadfc29ebcc6e222a55738e29be271d44d8a8c064a16435e41941fc07eb03"
+    }
+  },
+  "results": {
+    "202609201240128Up_1": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 6.465716028213501,
+          "start_s": 5.367751598358154,
+          "available_until_s": 12.294799566268921
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 5.367751598358154,
+          "end_timestamp_s": 31.086297035217285,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 1.5139179304242134,
+      "call_ms_p95": 2.4159244261682034,
+      "calls": 157
+    },
+    "202609201240128Up_2": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.6970632821321487,
+      "call_ms_p95": 1.3436847832053898,
+      "calls": 23
+    },
+    "202609201240128Up_3": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.2250628788024187,
+      "call_ms_p95": 2.077379054389894,
+      "calls": 42
+    },
+    "202609201240128Up_4": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.9236861951649189,
+      "call_ms_p95": 1.9532579462975264,
+      "calls": 31
+    },
+    "202609201240128Up_5": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.887878704816103,
+      "call_ms_p95": 1.7393222078680992,
+      "calls": 33
+    },
+    "202609201240128Up_6": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.6894569378346205,
+      "call_ms_p95": 1.2682159198448062,
+      "calls": 22
+    },
+    "202609201240128Up_7": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.5622869357466698,
+      "call_ms_p95": 0.8416459895670414,
+      "calls": 21
+    },
+    "202609201240128Up_8": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.15506839752197266,
+          "start_s": 0.15506839752197266,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.15506839752197266,
+          "end_timestamp_s": 23.175429582595825,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.9954860433936119,
+      "call_ms_p95": 2.4709440767765045,
+      "calls": 117
+    },
+    "202609201240128Up_9": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.218070276081562,
+      "call_ms_p95": 1.4990951400250196,
+      "calls": 38
+    },
+    "202609201240128Up_10": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.7167509756982327,
+      "call_ms_p95": 1.156096626073122,
+      "calls": 27
+    },
+    "202609201240128Up_11": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.558450585231185,
+      "call_ms_p95": 0.7505136774852872,
+      "calls": 20
+    },
+    "202609201240128Up_12": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.5802740342915058,
+      "call_ms_p95": 0.857105664908886,
+      "calls": 22
+    },
+    "202609201240128Up_13": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.11197018623352051,
+          "start_s": 0.11197018623352051,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.11197018623352051,
+          "end_timestamp_s": 16.288440942764282,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.765450531616807,
+      "call_ms_p95": 0.9185349568724632,
+      "calls": 82
+    },
+    "202609201240128Up_14": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 2.4546202659606937,
+          "start_s": 1.3975915908813477,
+          "available_until_s": 8.430879592895508
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 1.3975915908813477,
+          "end_timestamp_s": 13.450378656387329,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7426333613693714,
+      "call_ms_p95": 1.6791998874396086,
+      "calls": 68
+    },
+    "202609201240128Up_15": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.21502280235290527,
+          "start_s": 0.21502280235290527,
+          "available_until_s": 6.2027506828308105
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.21502280235290527,
+          "end_timestamp_s": 9.154139041900635,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.2710146363824606,
+      "call_ms_p95": 0.5659769522026181,
+      "calls": 46
+    },
+    "202609201240128Up_16": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.7662621792405844,
+      "call_ms_p95": 1.550079439766705,
+      "calls": 26
+    },
+    "202609201240128Up_17": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.8841590024530888,
+      "call_ms_p95": 1.8133276142179964,
+      "calls": 29
+    },
+    "202609201240128Up_18": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.23427271842956543,
+          "start_s": 0.23427271842956543,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.23427271842956543,
+          "end_timestamp_s": 13.083868503570557,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7349534425884485,
+      "call_ms_p95": 0.7902368670329452,
+      "calls": 66
+    },
+    "202609201240128Up_19": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.5951544735580683,
+      "call_ms_p95": 0.8981105871498585,
+      "calls": 22
+    },
+    "202609201240128Up_20": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.6082747131586075,
+      "call_ms_p95": 0.8053481578826904,
+      "calls": 21
+    },
+    "202609201240128Up_21": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.7932982407510281,
+      "call_ms_p95": 1.7368623986840244,
+      "calls": 29
+    },
+    "202609201240128Up_22": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.6529889069497585,
+      "call_ms_p95": 1.023542694747448,
+      "calls": 25
+    },
+    "202609201240128Up_23": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.1672661304473877,
+          "start_s": 0.1672661304473877,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.1672661304473877,
+          "end_timestamp_s": 9.489652633666992,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.5594424437731504,
+      "call_ms_p95": 0.6367926253005862,
+      "calls": 48
+    },
+    "202609201240128Up_24": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.2981700710952282,
+      "call_ms_p95": 2.017105370759964,
+      "calls": 45
+    },
+    "202609201240128Up_25": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.17310833930969238,
+          "start_s": 0.17310833930969238,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.17310833930969238,
+          "end_timestamp_s": 44.487640380859375,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 1.6644480638206005,
+      "call_ms_p95": 2.5212618056684732,
+      "calls": 223
+    },
+    "202609201240128Up_26": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.244241837412119,
+      "call_ms_p95": 1.8818407319486141,
+      "calls": 39
+    },
+    "202609201240128Up_27": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.12146258354187012,
+          "start_s": 0.12146258354187012,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.12146258354187012,
+          "end_timestamp_s": 20.09286665916443,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.9332690387964249,
+      "call_ms_p95": 1.3599847443401814,
+      "calls": 101
+    },
+    "202609201240128Up_28": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.5358241032809019,
+      "call_ms_p95": 0.8012818405404687,
+      "calls": 22
+    },
+    "202609201240128Up_29": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.5191541276872158,
+      "call_ms_p95": 0.7347180508077145,
+      "calls": 21
+    },
+    "202609201240128Up_30": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.06614208221435547,
+          "start_s": 0.06614208221435547,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.06614208221435547,
+          "end_timestamp_s": 11.482930421829224,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.5604783073067665,
+      "call_ms_p95": 0.7444682996720076,
+      "calls": 59
+    },
+    "202609201240128Up_31": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.58346102014184,
+      "call_ms_p95": 0.8456548675894737,
+      "calls": 21
+    },
+    "202609201240128Up_32": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.8999949786812067,
+      "call_ms_p95": 1.3397268019616604,
+      "calls": 30
+    },
+    "202609201240128Up_33": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.17523646354675293,
+          "start_s": 0.17523646354675293,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.17523646354675293,
+          "end_timestamp_s": 11.341592788696289,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.3943927586078644,
+      "call_ms_p95": 0.7062787190079689,
+      "calls": 57
+    },
+    "20260920122356WIt_1": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.062026262283325195,
+          "start_s": 0.062026262283325195,
+          "available_until_s": 5.594413757324219
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.062026262283325195,
+          "end_timestamp_s": 5.594413757324219,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.20683184266090393,
+      "call_ms_p95": 0.22061755880713463,
+      "calls": 29
+    },
+    "20260920122356WIt_2": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.231346745043993,
+      "call_ms_p95": 2.13448004797101,
+      "calls": 39
+    },
+    "20260920122356WIt_3": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.9093629196286201,
+      "call_ms_p95": 1.4789854642003775,
+      "calls": 35
+    },
+    "20260920122356WIt_4": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.03234362602233887,
+          "start_s": 0.03234362602233887,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.03234362602233887,
+          "end_timestamp_s": 15.506696224212646,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7888330146670341,
+      "call_ms_p95": 0.9758548811078072,
+      "calls": 79
+    },
+    "20260920122356WIt_5": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.6627454422414303,
+      "call_ms_p95": 0.989628443494439,
+      "calls": 24
+    },
+    "20260920122356WIt_6": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.8781522046774626,
+      "call_ms_p95": 3.8329891860485015,
+      "calls": 30
+    },
+    "20260920122356WIt_7": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.6847754120826721,
+      "call_ms_p95": 1.0460416786372662,
+      "calls": 25
+    },
+    "20260920122356WIt_8": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.199202299118042,
+          "start_s": 0.199202299118042,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.199202299118042,
+          "end_timestamp_s": 14.62866735458374,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 1.5971604734659195,
+      "call_ms_p95": 1.7699321499094367,
+      "calls": 74
+    },
+    "20260920122356WIt_9": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.071543199941516,
+      "call_ms_p95": 2.441438497044146,
+      "calls": 36
+    },
+    "20260920122356WIt_10": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.6273561157286167,
+      "call_ms_p95": 0.9219518397003412,
+      "calls": 23
+    },
+    "20260920122356WIt_11": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.0187532901763916,
+          "start_s": 0.0187532901763916,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.0187532901763916,
+          "end_timestamp_s": 8.765074968338013,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.3043222241103649,
+      "call_ms_p95": 0.6533461622893807,
+      "calls": 45
+    },
+    "20260920122356WIt_12": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.1910730972886086,
+      "call_ms_p95": 1.479516038671136,
+      "calls": 31
+    },
+    "20260920122356WIt_13": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.232133712619543,
+      "call_ms_p95": 1.8329780548810959,
+      "calls": 25
+    },
+    "20260920122356WIt_14": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.561843790113926,
+      "call_ms_p95": 4.481469094753265,
+      "calls": 45
+    },
+    "20260920122356WIt_15": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 2.2559138014912605,
+      "call_ms_p95": 3.0860133469104767,
+      "calls": 49
+    },
+    "20260920122356WIt_16": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.7589940689504147,
+      "call_ms_p95": 2.7637966908514495,
+      "calls": 30
+    },
+    "20260920122356WIt_17": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.591445179656148,
+      "call_ms_p95": 2.400716533884406,
+      "calls": 26
+    },
+    "20260920122356WIt_18": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 4.747968632727861,
+      "call_ms_p95": 5.2331473445519805,
+      "calls": 74
+    },
+    "20260920122356WIt_19": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.1922083795070648,
+      "call_ms_p95": 2.424831734970212,
+      "calls": 39
+    },
+    "20260920122356WIt_20": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.7382340263575315,
+      "call_ms_p95": 1.1271920520812273,
+      "calls": 26
+    },
+    "20260920122356WIt_21": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 3.9644878387451175,
+          "start_s": 1.2844915390014648,
+          "available_until_s": 9.916809558868408
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 1.2844915390014648,
+          "end_timestamp_s": 26.294527292251587,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 1.4658793807029724,
+      "call_ms_p95": 2.4706519674509764,
+      "calls": 132
+    },
+    "20260920122356WIt_22": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.7491139695048332,
+      "call_ms_p95": 1.1865945532917972,
+      "calls": 25
+    },
+    "20260920122356WIt_23": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.17778897285461426,
+          "start_s": 0.17778897285461426,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.17778897285461426,
+          "end_timestamp_s": 6.604319095611572,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.24162069894373417,
+      "call_ms_p95": 0.49335735384374846,
+      "calls": 34
+    },
+    "20260920122356WIt_24": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.7069150451570749,
+      "call_ms_p95": 1.123066642321646,
+      "calls": 24
+    },
+    "20260920122356WIt_25": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.842745415866375,
+      "call_ms_p95": 1.4281436568126082,
+      "calls": 32
+    },
+    "20260920122356WIt_26": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.5983649753034115,
+      "call_ms_p95": 0.9315620874986053,
+      "calls": 20
+    },
+    "20260920122356WIt_27": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.17055344581604004,
+          "start_s": 0.17055344581604004,
+          "available_until_s": 5.393436670303345
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.17055344581604004,
+          "end_timestamp_s": 5.393436670303345,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.18670782446861267,
+      "call_ms_p95": 0.3021691692993045,
+      "calls": 28
+    },
+    "20260920122356WIt_28": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.3147518038749695,
+      "call_ms_p95": 1.5351430512964725,
+      "calls": 37
+    },
+    "20260920122356WIt_29": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.8355402387678623,
+      "call_ms_p95": 1.903565227985382,
+      "calls": 27
+    },
+    "20260920122356WIt_30": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.038311004638671875,
+          "start_s": 0.038311004638671875,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.038311004638671875,
+          "end_timestamp_s": 25.05399489402771,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 1.0998491197824478,
+      "call_ms_p95": 1.5058301854878662,
+      "calls": 127
+    },
+    "20260920122356WIt_31": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.6456566043198109,
+      "call_ms_p95": 0.9663762990385293,
+      "calls": 24
+    },
+    "20260920122356WIt_32": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.5815448239445686,
+      "call_ms_p95": 0.8390061557292938,
+      "calls": 21
+    },
+    "20260920122356WIt_33": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.031661272048950195,
+          "start_s": 0.031661272048950195,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.031661272048950195,
+          "end_timestamp_s": 8.383521795272827,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.3097141161561012,
+      "call_ms_p95": 0.5883874837309122,
+      "calls": 43
+    },
+    "20260920122356WIt_34": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.18043017387390137,
+          "start_s": 0.18043017387390137,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.18043017387390137,
+          "end_timestamp_s": 12.47010612487793,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7037152536213398,
+      "call_ms_p95": 0.7964093238115311,
+      "calls": 63
+    },
+    "20260920122356WIt_35": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.10360193252563477,
+          "start_s": 0.10360193252563477,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.10360193252563477,
+          "end_timestamp_s": 6.802389621734619,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.24921167641878128,
+      "call_ms_p95": 0.5111455451697111,
+      "calls": 35
+    },
+    "20260920122356WIt_36": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.5894009955227375,
+      "call_ms_p95": 0.8458700031042099,
+      "calls": 21
+    },
+    "20260920122356WIt_37": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.5243290215730667,
+      "call_ms_p95": 0.7250644266605376,
+      "calls": 19
+    },
+    "20260918200506GCy_1": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.6413577556610108,
+          "start_s": 0.04135775566101074,
+          "available_until_s": 6.465879678726196
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.04135775566101074,
+          "end_timestamp_s": 35.62401580810547,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 1.431971788406372,
+      "call_ms_p95": 2.148054214194417,
+      "calls": 179
+    },
+    "20260918200506GCy_2": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.04482436180114746,
+          "start_s": 0.04482436180114746,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.04482436180114746,
+          "end_timestamp_s": 9.465253114700317,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.5624028854072094,
+      "call_ms_p95": 0.6383320316672325,
+      "calls": 49
+    },
+    "20260918200506GCy_3": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 1.7945595741271974,
+          "start_s": 0.7537305355072021,
+          "available_until_s": 7.622758865356445
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.7537305355072021,
+          "end_timestamp_s": 13.029162645339966,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7647417951375246,
+      "call_ms_p95": 1.586410216987133,
+      "calls": 66
+    },
+    "20260918200506GCy_4": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.07903528213500977,
+          "start_s": 0.07903528213500977,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.07903528213500977,
+          "end_timestamp_s": 7.688355445861816,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.4772450774908066,
+      "call_ms_p95": 0.5430026678368449,
+      "calls": 40
+    },
+    "20260918200506GCy_5": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.7404722273349762,
+      "call_ms_p95": 1.1767819989472628,
+      "calls": 27
+    },
+    "20260918200506GCy_6": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.687893945723772,
+      "call_ms_p95": 1.1373257730156183,
+      "calls": 26
+    },
+    "20260918200506GCy_7": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.1477499008178711,
+          "start_s": 0.1477499008178711,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.1477499008178711,
+          "end_timestamp_s": 24.18985891342163,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 1.0296166874468327,
+      "call_ms_p95": 1.406873413361609,
+      "calls": 122
+    },
+    "20260918200506GCy_8": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.0664514265954494,
+      "call_ms_p95": 2.7371683390811086,
+      "calls": 36
+    },
+    "20260918200506GCy_9": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.1034938506782055,
+      "call_ms_p95": 2.2710268385708328,
+      "calls": 37
+    },
+    "20260918200506GCy_10": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.8500665426254272,
+      "call_ms_p95": 1.795403310097754,
+      "calls": 26
+    },
+    "20260918200506GCy_11": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.1037290096282959,
+          "start_s": 0.1037290096282959,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.1037290096282959,
+          "end_timestamp_s": 15.287611961364746,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.8302680216729641,
+      "call_ms_p95": 0.9762158617377281,
+      "calls": 77
+    },
+    "20260918200506GCy_12": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.7878837641328573,
+      "call_ms_p95": 1.712412224151194,
+      "calls": 28
+    },
+    "20260918200506GCy_13": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.01156759262084961,
+          "start_s": 0.01156759262084961,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.01156759262084961,
+          "end_timestamp_s": 14.628982305526733,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.8000289089977741,
+      "call_ms_p95": 0.914430385455489,
+      "calls": 75
+    },
+    "20260918200506GCy_14": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.48822822570800783,
+          "start_s": 0.08822822570800781,
+          "available_until_s": 6.401493072509766
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.08822822570800781,
+          "end_timestamp_s": 13.713635683059692,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7871056441217661,
+      "call_ms_p95": 0.8973653893917799,
+      "calls": 70
+    },
+    "20260918200506GCy_15": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.1494910717010498,
+          "start_s": 0.1494910717010498,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.1494910717010498,
+          "end_timestamp_s": 7.911118745803833,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.2829215954989195,
+      "call_ms_p95": 0.5585247650742531,
+      "calls": 40
+    },
+    "20260918200506GCy_16": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.6733671762049198,
+      "call_ms_p95": 1.0399986058473587,
+      "calls": 25
+    },
+    "20260918200506GCy_17": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.061071157455444336,
+          "start_s": 0.061071157455444336,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.061071157455444336,
+          "end_timestamp_s": 8.046980619430542,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.4859641194343567,
+      "call_ms_p95": 0.5723051726818085,
+      "calls": 41
+    },
+    "20260918200506GCy_18": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.117045059800148,
+      "call_ms_p95": 2.182327024638653,
+      "calls": 37
+    },
+    "20260918200506GCy_19": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.6315717473626137,
+      "call_ms_p95": 0.9214665042236447,
+      "calls": 22
+    },
+    "20260918200506GCy_20": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.6544406060129404,
+      "call_ms_p95": 0.8433406706899405,
+      "calls": 20
+    },
+    "20260918200506GCy_21": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.2283179759979248,
+          "start_s": 0.2283179759979248,
+          "available_until_s": 6.206244468688965
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.2283179759979248,
+          "end_timestamp_s": 8.650187253952026,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.3014423418790102,
+      "call_ms_p95": 0.6326314993202686,
+      "calls": 44
+    },
+    "20260918200506GCy_22": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.26194071769714355,
+          "start_s": 0.26194071769714355,
+          "available_until_s": 6.201772689819336
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.26194071769714355,
+          "end_timestamp_s": 13.878946542739868,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7569538429379463,
+      "call_ms_p95": 0.9019398596137762,
+      "calls": 70
+    },
+    "20260918200506GCy_23": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.014703512191772461,
+          "start_s": 0.014703512191772461,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.014703512191772461,
+          "end_timestamp_s": 25.945240259170532,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 1.1574099771678448,
+      "call_ms_p95": 1.5719186048954725,
+      "calls": 131
+    },
+    "20260918200506GCy_24": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.0479586124420166,
+          "start_s": 0.0479586124420166,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.0479586124420166,
+          "end_timestamp_s": 11.3413987159729,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.6952446419745684,
+      "call_ms_p95": 0.774687877856195,
+      "calls": 58
+    },
+    "20260918200506GCy_25": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.02534031867980957,
+          "start_s": 0.02534031867980957,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.02534031867980957,
+          "end_timestamp_s": 21.04893970489502,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.981522724032402,
+      "call_ms_p95": 1.3061364647001028,
+      "calls": 107
+    },
+    "20260918200506GCy_26": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.10469937324523926,
+          "start_s": 0.10469937324523926,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.10469937324523926,
+          "end_timestamp_s": 41.52739453315735,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 1.6136537306010723,
+      "call_ms_p95": 2.450314164161682,
+      "calls": 209
+    },
+    "20260918200506GCy_27": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.15092015266418457,
+          "start_s": 0.15092015266418457,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.15092015266418457,
+          "end_timestamp_s": 11.954089403152466,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7035178132355213,
+      "call_ms_p95": 0.901942141354084,
+      "calls": 61
+    },
+    "20260918200506GCy_28": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.03590726852416992,
+          "start_s": 0.03590726852416992,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.03590726852416992,
+          "end_timestamp_s": 10.624459505081177,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.39077200926840305,
+      "call_ms_p95": 0.697301304899156,
+      "calls": 54
+    },
+    "20260918200506GCy_29": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.4084619469940662,
+      "call_ms_p95": 2.3017759434878826,
+      "calls": 42
+    },
+    "20260918200506GCy_30": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.2167831882834435,
+      "call_ms_p95": 2.3758788593113422,
+      "calls": 41
+    },
+    "20260918200506GCy_31": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.6094044074416161,
+      "call_ms_p95": 0.8582785725593567,
+      "calls": 22
+    },
+    "20260918200506GCy_32": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.9934306144714355,
+      "call_ms_p95": 1.9587694900110364,
+      "calls": 32
+    },
+    "20260918200506GCy_33": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.04689335823059082,
+          "start_s": 0.04689335823059082,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.04689335823059082,
+          "end_timestamp_s": 21.228164196014404,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.9393277578055859,
+      "call_ms_p95": 1.246415916830301,
+      "calls": 107
+    },
+    "20260918200506GCy_34": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.06575584411621094,
+          "start_s": 0.06575584411621094,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.06575584411621094,
+          "end_timestamp_s": 8.434110164642334,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.2734968438744545,
+      "call_ms_p95": 0.6384633015841245,
+      "calls": 43
+    },
+    "20260918200506GCy_35": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.6954162381589413,
+      "call_ms_p95": 1.2307780794799321,
+      "calls": 25
+    },
+    "20260918200506GCy_36": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.06647706031799316,
+          "start_s": 0.06647706031799316,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.06647706031799316,
+          "end_timestamp_s": 8.234743595123291,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.2927985042333603,
+      "call_ms_p95": 0.5821750732138753,
+      "calls": 42
+    },
+    "20260918200506GCy_37": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.1301414966583252,
+          "start_s": 0.1301414966583252,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.1301414966583252,
+          "end_timestamp_s": 16.03805708885193,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.8333590812981129,
+      "call_ms_p95": 1.0300418362021446,
+      "calls": 81
+    },
+    "20260918200506GCy_38": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.8533957879990339,
+      "call_ms_p95": 1.4455055352300406,
+      "calls": 32
+    },
+    "20260918200506GCy_39": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.7193630695343018,
+          "start_s": 0.11936306953430176,
+          "available_until_s": 6.636455297470093
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.11936306953430176,
+          "end_timestamp_s": 12.91724944114685,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7564080879092216,
+      "call_ms_p95": 1.398864947259426,
+      "calls": 65
+    },
+    "20260918200506GCy_40": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.835272716358304,
+      "call_ms_p95": 1.3371390523388982,
+      "calls": 26
+    },
+    "20260918200506GCy_41": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.0042459964752197266,
+          "start_s": 0.0042459964752197266,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.0042459964752197266,
+          "end_timestamp_s": 10.673036813735962,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.40803197771310806,
+      "call_ms_p95": 0.6745839491486549,
+      "calls": 55
+    },
+    "20260918200506GCy_42": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.7375576533377171,
+      "call_ms_p95": 1.8111710902303455,
+      "calls": 28
+    },
+    "20260918200506GCy_43": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.2358976528048515,
+      "call_ms_p95": 2.0498868077993393,
+      "calls": 37
+    },
+    "20260918200506GCy_44": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.700224656611681,
+      "call_ms_p95": 1.1981071671471,
+      "calls": 22
+    },
+    "20260918200506GCy_45": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.6316304206848145,
+      "call_ms_p95": 0.8934455225244164,
+      "calls": 22
+    },
+    "20260918200506GCy_46": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.5928468890488148,
+      "call_ms_p95": 0.8284770883619785,
+      "calls": 21
+    },
+    "20260918200506GCy_47": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.018869400024414062,
+          "start_s": 0.018869400024414062,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.018869400024414062,
+          "end_timestamp_s": 16.922940731048584,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.9086728096008301,
+      "call_ms_p95": 1.1550812050700188,
+      "calls": 86
+    },
+    "20260918200506GCy_48": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.8312875870615244,
+      "call_ms_p95": 1.261161849834025,
+      "calls": 28
+    },
+    "20260918200506GCy_49": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.11099123954772949,
+          "start_s": 0.11099123954772949,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.11099123954772949,
+          "end_timestamp_s": 19.048762798309326,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.8839969523251057,
+      "call_ms_p95": 1.1392930755391717,
+      "calls": 96
+    },
+    "20260918200506GCy_50": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 1.2211570262908937,
+          "start_s": 0.021157026290893555,
+          "available_until_s": 7.079873561859131
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.021157026290893555,
+          "end_timestamp_s": 10.011439561843872,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.3846408799290657,
+      "call_ms_p95": 2.3677186109125614,
+      "calls": 51
+    },
+    "20260918200506GCy_51": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.7144715636968613,
+      "call_ms_p95": 1.1163437040522695,
+      "calls": 22
+    },
+    "20260918200506GCy_52": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.13561487197875977,
+          "start_s": 0.13561487197875977,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.13561487197875977,
+          "end_timestamp_s": 9.79889440536499,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.5658494774252176,
+      "call_ms_p95": 0.5966459400951862,
+      "calls": 50
+    },
+    "20260918200506GCy_53": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.23533983230590821,
+          "start_s": 0.0353398323059082,
+          "available_until_s": 6.2007155418396
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.0353398323059082,
+          "end_timestamp_s": 22.619593620300293,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 1.0386649519205093,
+      "call_ms_p95": 1.4171150047332046,
+      "calls": 114
+    },
+    "20260918200506GCy_54": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.1940450668334961,
+          "start_s": 0.1940450668334961,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.1940450668334961,
+          "end_timestamp_s": 7.006034851074219,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.24951482191681862,
+      "call_ms_p95": 0.4989966982975602,
+      "calls": 36
+    },
+    "20260917174539CCx_1": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.05051302909851074,
+          "start_s": 0.05051302909851074,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.05051302909851074,
+          "end_timestamp_s": 9.433981657028198,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.5698669701814651,
+      "call_ms_p95": 0.6466553313657641,
+      "calls": 48
+    },
+    "20260917174539CCx_3": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.12282133102416992,
+          "start_s": 0.12282133102416992,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.12282133102416992,
+          "end_timestamp_s": 15.131829261779785,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.8179261349141598,
+      "call_ms_p95": 0.9711580350995064,
+      "calls": 77
+    },
+    "20260917174539CCx_4": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.028281450271606445,
+          "start_s": 0.028281450271606445,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.028281450271606445,
+          "end_timestamp_s": 13.048165321350098,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7405388168990612,
+      "call_ms_p95": 0.8076869882643223,
+      "calls": 67
+    },
+    "20260917174539CCx_6": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.11130261421203613,
+          "start_s": 0.11130261421203613,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.11130261421203613,
+          "end_timestamp_s": 13.486308097839355,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7943310774862766,
+      "call_ms_p95": 0.9004414780065417,
+      "calls": 68
+    },
+    "20260917174539CCx_7": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.1125989258289337,
+      "call_ms_p95": 2.165924059227109,
+      "calls": 36
+    },
+    "20260917174539CCx_8": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.27873826026916504,
+          "start_s": 0.27873826026916504,
+          "available_until_s": 6.215771198272705
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.27873826026916504,
+          "end_timestamp_s": 18.85357666015625,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.9127727244049311,
+      "call_ms_p95": 1.1270973132923245,
+      "calls": 94
+    },
+    "20260917174539CCx_9": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.16945385932922363,
+          "start_s": 0.16945385932922363,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.16945385932922363,
+          "end_timestamp_s": 19.05595302581787,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.9430749341845512,
+      "call_ms_p95": 1.1510937474668026,
+      "calls": 96
+    },
+    "20260917174539CCx_11": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.0803530216217041,
+          "start_s": 0.0803530216217041,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.0803530216217041,
+          "end_timestamp_s": 8.680353021621704,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.5440148524940014,
+      "call_ms_p95": 0.7943995296955109,
+      "calls": 45
+    },
+    "20260917174539CCx_13": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 1.1464497074484825,
+      "call_ms_p95": 2.005384769290685,
+      "calls": 37
+    },
+    "20260917174539CCx_16": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.1064450740814209,
+          "start_s": 0.1064450740814209,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.1064450740814209,
+          "end_timestamp_s": 17.701454162597656,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.9322110563516617,
+      "call_ms_p95": 1.0617774911224842,
+      "calls": 89
+    },
+    "20260917174539CCx_18": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.18887710571289062,
+          "start_s": 0.18887710571289062,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.18887710571289062,
+          "end_timestamp_s": 7.406487941741943,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.25903061032295227,
+      "call_ms_p95": 0.48659658059477806,
+      "calls": 38
+    },
+    "20260917174539CCx_19": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.18056941032409668,
+          "start_s": 0.18056941032409668,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.18056941032409668,
+          "end_timestamp_s": 6.64926290512085,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.2362073864787817,
+      "call_ms_p95": 0.43154023587703705,
+      "calls": 34
+    },
+    "20260917174539CCx_23": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 2.394265127182007,
+          "start_s": 1.3517050743103027,
+          "available_until_s": 8.349604845046997
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 1.3517050743103027,
+          "end_timestamp_s": 8.756551742553711,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.2799744252115488,
+      "call_ms_p95": 1.6589300939813256,
+      "calls": 44
+    },
+    "20260917174539CCx_24": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.0227508544921875,
+          "start_s": 0.0227508544921875,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.0227508544921875,
+          "end_timestamp_s": 11.666709661483765,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.6175460293889046,
+      "call_ms_p95": 0.7953611668199299,
+      "calls": 60
+    },
+    "20260917174539CCx_26": {
+      "saved": false,
+      "starts": [],
+      "clips": [],
+      "call_ms_p50": 0.7598111405968666,
+      "call_ms_p95": 1.1965477839112282,
+      "calls": 27
+    },
+    "20260917174539CCx_27": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 4.587112331390381,
+          "start_s": 1.5871123313903812,
+          "available_until_s": 9.20630693435669
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 1.5871123313903812,
+          "end_timestamp_s": 9.20630693435669,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.6996411830186844,
+      "call_ms_p95": 2.1366703789681196,
+      "calls": 47
+    },
+    "20260917174539CCx_29": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.09568572044372559,
+          "start_s": 0.09568572044372559,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.09568572044372559,
+          "end_timestamp_s": 11.855166912078857,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7027424871921539,
+      "call_ms_p95": 0.7962868316099047,
+      "calls": 60
+    },
+    "20260917174539CCx_30": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.036322832107543945,
+          "start_s": 0.036322832107543945,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.036322832107543945,
+          "end_timestamp_s": 14.075452089309692,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.8176483679562807,
+      "call_ms_p95": 0.8994380012154579,
+      "calls": 72
+    },
+    "20260917174539CCx_31": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 3.5016244888305668,
+          "start_s": 2.4037153720855713,
+          "available_until_s": 9.183237552642822
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 2.4037153720855713,
+          "end_timestamp_s": 9.183237552642822,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.28298376128077507,
+      "call_ms_p95": 2.235557744279504,
+      "calls": 47
+    },
+    "20260917174539CCx_32": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.019562482833862305,
+          "start_s": 0.019562482833862305,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.019562482833862305,
+          "end_timestamp_s": 9.15196704864502,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.4956698976457119,
+      "call_ms_p95": 0.6078517995774746,
+      "calls": 47
+    },
+    "20260917174539CCx_33": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.0813133716583252,
+          "start_s": 0.0813133716583252,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.0813133716583252,
+          "end_timestamp_s": 19.795522689819336,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.9367554448544979,
+      "call_ms_p95": 1.2384887784719465,
+      "calls": 100
+    },
+    "20260917174539CCx_34": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.13754796981811523,
+          "start_s": 0.13754796981811523,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.13754796981811523,
+          "end_timestamp_s": 29.121220111846924,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 1.2360429391264915,
+      "call_ms_p95": 1.7253392143175006,
+      "calls": 146
+    },
+    "20260917174539CCx_35": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.05629086494445801,
+          "start_s": 0.05629086494445801,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.05629086494445801,
+          "end_timestamp_s": 7.962549209594727,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.5008908919990063,
+      "call_ms_p95": 0.5794293247163296,
+      "calls": 41
+    },
+    "20260917174539CCx_36": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.13147711753845215,
+          "start_s": 0.13147711753845215,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.13147711753845215,
+          "end_timestamp_s": 5.931477117538453,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.2314518205821514,
+      "call_ms_p95": 0.4214514046907425,
+      "calls": 31
+    },
+    "20260917174539CCx_37": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.1198878288269043,
+          "start_s": 0.1198878288269043,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.1198878288269043,
+          "end_timestamp_s": 11.588423490524292,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.7176557555794716,
+      "call_ms_p95": 0.7389121223241091,
+      "calls": 59
+    },
+    "20260917174539CCx_38": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.027533769607543945,
+          "start_s": 0.027533769607543945,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.027533769607543945,
+          "end_timestamp_s": 17.871989250183105,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.8751451969146729,
+      "call_ms_p95": 1.0618027299642563,
+      "calls": 91
+    },
+    "20260917174539CCx_39": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.024980783462524414,
+          "start_s": 0.024980783462524414,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.024980783462524414,
+          "end_timestamp_s": 13.756434917449951,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.8019085507839918,
+      "call_ms_p95": 0.8526107994839549,
+      "calls": 70
+    },
+    "20260917174539CCx_40": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.170792818069458,
+          "start_s": 0.170792818069458,
+          "available_until_s": 4.370214939117432
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.170792818069458,
+          "end_timestamp_s": 4.370214939117432,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.20822416990995407,
+      "call_ms_p95": 0.35836752504110336,
+      "calls": 22
+    },
+    "20260917174539CCx_41": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.12402844429016113,
+          "start_s": 0.12402844429016113,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.12402844429016113,
+          "end_timestamp_s": 13.62765908241272,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "gate"
+        }
+      ],
+      "call_ms_p50": 0.7735309191048145,
+      "call_ms_p95": 0.8471229113638401,
+      "calls": 69
+    },
+    "20260917174539CCx_44": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.09602713584899902,
+          "start_s": 0.09602713584899902,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.09602713584899902,
+          "end_timestamp_s": 18.456239461898804,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.9051491506397724,
+      "call_ms_p95": 1.1307122185826302,
+      "calls": 93
+    },
+    "20260917174539CCx_46": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.16221213340759277,
+          "start_s": 0.16221213340759277,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.16221213340759277,
+          "end_timestamp_s": 11.683917999267578,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7063290104269981,
+      "call_ms_p95": 0.8106700610369444,
+      "calls": 59
+    },
+    "20260917174539CCx_47": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.16927886009216309,
+          "start_s": 0.16927886009216309,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.16927886009216309,
+          "end_timestamp_s": 8.240238189697266,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.29287743382155895,
+      "call_ms_p95": 0.591328414157033,
+      "calls": 42
+    },
+    "20260917174539CCx_48": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.10260224342346191,
+          "start_s": 0.10260224342346191,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.10260224342346191,
+          "end_timestamp_s": 13.081668853759766,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7333974353969097,
+      "call_ms_p95": 0.8074024226516485,
+      "calls": 66
+    },
+    "20260917174539CCx_51": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.13413023948669434,
+          "start_s": 0.13413023948669434,
+          "available_until_s": 5.3954856395721436
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.13413023948669434,
+          "end_timestamp_s": 5.3954856395721436,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.34301215782761574,
+      "call_ms_p95": 0.4537179134786129,
+      "calls": 28
+    },
+    "20260917174539CCx_52": {
+      "saved": true,
+      "starts": [
+        {
+          "decision_s": 0.05194258689880371,
+          "start_s": 0.05194258689880371,
+          "available_until_s": 6.0
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 0.05194258689880371,
+          "end_timestamp_s": 13.364063262939453,
+          "target_confirmed": true,
+          "should_save": true,
+          "ending": "source_eof"
+        }
+      ],
+      "call_ms_p50": 0.7878427859395742,
+      "call_ms_p95": 0.8816532790660858,
+      "calls": 68
+    }
+  }
+}

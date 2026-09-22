@@ -1,0 +1,2832 @@
+{
+  "summary": {
+    "passed": 4,
+    "total": 68,
+    "errors": 40,
+    "future_starts": 10
+  },
+  "reproductions": [
+    {
+      "gap_s": 1,
+      "decision_s": 10.4,
+      "start": [
+        true,
+        10.999999999999977
+      ],
+      "end": "end timestamp cannot precede collection start"
+    },
+    {
+      "gap_s": 2,
+      "decision_s": 11.4,
+      "start": [
+        true,
+        11.999999999999973
+      ],
+      "end": "end timestamp cannot precede collection start"
+    },
+    {
+      "gap_s": 3,
+      "decision_s": 12.4,
+      "start": [
+        true,
+        12.99999999999997
+      ],
+      "end": "end timestamp cannot precede collection start"
+    },
+    {
+      "gap_s": 4,
+      "decision_s": 13.4,
+      "start": [
+        true,
+        13.999999999999966
+      ],
+      "end": "end timestamp cannot precede collection start"
+    },
+    {
+      "gap_s": 5,
+      "decision_s": 14.4,
+      "start": [
+        true,
+        14.999999999999963
+      ],
+      "end": "end timestamp cannot precede collection start"
+    },
+    {
+      "gap_s": 6,
+      "decision_s": 15.4,
+      "start": [
+        true,
+        15.99999999999996
+      ],
+      "end": "end timestamp cannot precede collection start"
+    },
+    {
+      "gap_s": 7,
+      "decision_s": 16.4,
+      "start": [
+        true,
+        16.99999999999997
+      ],
+      "end": "end timestamp cannot precede collection start"
+    },
+    {
+      "gap_s": 8,
+      "decision_s": 17.4,
+      "start": [
+        true,
+        17.999999999999986
+      ],
+      "end": "end timestamp cannot precede collection start"
+    }
+  ],
+  "results": [
+    {
+      "case": "no_gap",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "no_gap",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "no_gap",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "no_gap",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": true,
+      "saved_count": 1,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_1s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 17.200000000000003,
+          "start_s": 16.99999999999997,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 16.99999999999997,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_1s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 17.310000000000002,
+          "start_s": 16.99999999999997,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 16.99999999999997,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_1s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 17.20000000000006,
+          "start_s": 16.99999999999997,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 16.99999999999997,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_1s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 17.30000000000006,
+          "start_s": 16.99999999999997,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 16.99999999999997,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_1s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 3,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 17.200000000000003,
+          "start_s": 16.99999999999997,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 27.200000000000003,
+          "start_s": 27.000000000000114,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 16.99999999999997,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 27.000000000000114,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_1s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 3,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 17.310000000000002,
+          "start_s": 16.99999999999997,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 27.310000000000002,
+          "start_s": 27.000000000000114,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 16.99999999999997,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 27.000000000000114,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_1s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 3,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 17.20000000000006,
+          "start_s": 16.99999999999997,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 27.200000000000202,
+          "start_s": 27.000000000000114,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 16.99999999999997,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 27.000000000000114,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_1s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 3,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 17.30000000000006,
+          "start_s": 16.99999999999997,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 27.300000000000203,
+          "start_s": 27.000000000000114,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 16.99999999999997,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 27.000000000000114,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_2s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 18.200000000000003,
+          "start_s": 17.999999999999986,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 17.999999999999986,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_2s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 18.310000000000002,
+          "start_s": 17.999999999999986,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 17.999999999999986,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_2s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 18.200000000000074,
+          "start_s": 17.999999999999986,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 17.999999999999986,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_2s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 18.300000000000075,
+          "start_s": 17.999999999999986,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 17.999999999999986,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_2s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 3,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 18.200000000000003,
+          "start_s": 17.999999999999986,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 28.200000000000003,
+          "start_s": 28.000000000000128,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 17.999999999999986,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 28.000000000000128,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_2s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 3,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 18.310000000000002,
+          "start_s": 17.999999999999986,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 28.310000000000002,
+          "start_s": 28.000000000000128,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 17.999999999999986,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 28.000000000000128,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_2s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 3,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 18.200000000000074,
+          "start_s": 17.999999999999986,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 28.200000000000216,
+          "start_s": 28.000000000000128,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 17.999999999999986,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 28.000000000000128,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_2s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 3,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 18.300000000000075,
+          "start_s": 17.999999999999986,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 28.300000000000217,
+          "start_s": 28.000000000000128,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 17.999999999999986,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 28.000000000000128,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_3s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 19.200000000000003,
+          "start_s": 19.0,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 19.0,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_3s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 19.310000000000002,
+          "start_s": 19.0,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 19.0,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_3s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 19.200000000000088,
+          "start_s": 19.0,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 19.0,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_3s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 19.30000000000009,
+          "start_s": 19.0,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 19.0,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_3s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 3,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 19.200000000000003,
+          "start_s": 19.0,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 29.200000000000003,
+          "start_s": 29.000000000000142,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 19.0,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 29.000000000000142,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_3s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 3,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 19.310000000000002,
+          "start_s": 19.0,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 29.310000000000002,
+          "start_s": 29.000000000000142,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 19.0,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 29.000000000000142,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_3s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 3,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 19.200000000000088,
+          "start_s": 19.0,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 29.20000000000023,
+          "start_s": 29.000000000000142,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 19.0,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 29.000000000000142,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_3s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 3,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 19.30000000000009,
+          "start_s": 19.0,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 29.30000000000023,
+          "start_s": 29.000000000000142,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 19.0,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 29.000000000000142,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_4s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 20.200000000000003,
+          "start_s": 20.000000000000014,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 20.000000000000014,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_4s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 20.310000000000002,
+          "start_s": 20.000000000000014,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 20.000000000000014,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_4s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 20.200000000000102,
+          "start_s": 20.000000000000014,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 20.000000000000014,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_4s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 20.300000000000104,
+          "start_s": 20.000000000000014,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 20.000000000000014,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_4s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 3,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 20.200000000000003,
+          "start_s": 20.000000000000014,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 30.200000000000003,
+          "start_s": 30.000000000000156,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 20.000000000000014,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 30.000000000000156,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_4s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 3,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 20.310000000000002,
+          "start_s": 20.000000000000014,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 30.310000000000002,
+          "start_s": 30.000000000000156,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 20.000000000000014,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 30.000000000000156,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_4s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 3,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 20.0000000000001,
+          "start_s": 20.000000000000014,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 30.200000000000244,
+          "start_s": 30.000000000000156,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 20.000000000000014,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 30.000000000000156,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_4s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 3,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 20.0000000000001,
+          "start_s": 20.000000000000014,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 30.300000000000246,
+          "start_s": 30.000000000000156,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 20.000000000000014,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 30.000000000000156,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_5s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 21.200000000000003,
+          "start_s": 21.00000000000003,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 21.00000000000003,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_5s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 21.310000000000002,
+          "start_s": 21.00000000000003,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 21.00000000000003,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_5s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 21.200000000000117,
+          "start_s": 21.00000000000003,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 21.00000000000003,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_5s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 21.300000000000118,
+          "start_s": 21.00000000000003,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 21.00000000000003,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_5s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 3,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 21.200000000000003,
+          "start_s": 21.00000000000003,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 31.200000000000003,
+          "start_s": 31.00000000000017,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 21.00000000000003,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 31.00000000000017,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_5s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 3,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 21.310000000000002,
+          "start_s": 21.00000000000003,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 31.310000000000002,
+          "start_s": 31.00000000000017,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 21.00000000000003,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 31.00000000000017,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_5s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 30.00000000000024,
+          "start_s": 31.00000000000017,
+          "start_after_decision": true
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 31.00000000000017,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [
+        {
+          "decision_s": 30.200000000000244,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 30.400000000000247,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 30.60000000000025,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 30.800000000000253,
+          "error": "end timestamp cannot precede collection start"
+        }
+      ],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_5s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 30.100000000000243,
+          "start_s": 31.00000000000017,
+          "start_after_decision": true
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 31.00000000000017,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [
+        {
+          "decision_s": 30.300000000000246,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 30.50000000000025,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 30.70000000000025,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 30.900000000000254,
+          "error": "end timestamp cannot precede collection start"
+        }
+      ],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_6s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 22.200000000000003,
+          "start_s": 22.000000000000043,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 22.000000000000043,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_6s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 22.310000000000002,
+          "start_s": 22.000000000000043,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 22.000000000000043,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_6s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 22.20000000000013,
+          "start_s": 22.000000000000043,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 22.000000000000043,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_6s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 22.300000000000132,
+          "start_s": 22.000000000000043,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 22.000000000000043,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_6s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 3,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 22.200000000000003,
+          "start_s": 22.000000000000043,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 32.2,
+          "start_s": 32.000000000000185,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 22.000000000000043,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 32.000000000000185,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_6s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 3,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 22.310000000000002,
+          "start_s": 22.000000000000043,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 32.31,
+          "start_s": 32.000000000000185,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 22.000000000000043,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 32.000000000000185,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_6s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 31.000000000000256,
+          "start_s": 32.000000000000185,
+          "start_after_decision": true
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 32.000000000000185,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [
+        {
+          "decision_s": 31.20000000000026,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 31.40000000000026,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 31.600000000000264,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 31.800000000000267,
+          "error": "end timestamp cannot precede collection start"
+        }
+      ],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_6s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 31.100000000000257,
+          "start_s": 32.000000000000185,
+          "start_after_decision": true
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 32.000000000000185,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [
+        {
+          "decision_s": 31.30000000000026,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 31.500000000000263,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 31.700000000000266,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 31.90000000000027,
+          "error": "end timestamp cannot precede collection start"
+        }
+      ],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_7s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 23.200000000000003,
+          "start_s": 23.000000000000057,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 23.000000000000057,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_7s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 23.310000000000002,
+          "start_s": 23.000000000000057,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 23.000000000000057,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_7s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 23.200000000000145,
+          "start_s": 23.000000000000057,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 23.000000000000057,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_7s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 23.300000000000146,
+          "start_s": 23.000000000000057,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 23.000000000000057,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_7s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 23.200000000000003,
+          "start_s": 23.000000000000057,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 33.2,
+          "start_s": 33.0000000000002,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 23.000000000000057,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": false
+        },
+        {
+          "start_timestamp_s": 33.0000000000002,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_7s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 23.310000000000002,
+          "start_s": 23.000000000000057,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 33.31,
+          "start_s": 33.0000000000002,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 23.000000000000057,
+          "end_timestamp_s": 26.0000000000001,
+          "target_confirmed": true,
+          "should_save": false
+        },
+        {
+          "start_timestamp_s": 33.0000000000002,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_7s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 32.00000000000027,
+          "start_s": 33.0000000000002,
+          "start_after_decision": true
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 33.0000000000002,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [
+        {
+          "decision_s": 32.20000000000027,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 32.400000000000276,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 32.60000000000028,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 32.80000000000028,
+          "error": "end timestamp cannot precede collection start"
+        }
+      ],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_7s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 32.10000000000027,
+          "start_s": 33.0000000000002,
+          "start_after_decision": true
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 33.0000000000002,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [
+        {
+          "decision_s": 32.300000000000274,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 32.50000000000028,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 32.70000000000028,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 32.90000000000028,
+          "error": "end timestamp cannot precede collection start"
+        }
+      ],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_8s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 24.200000000000003,
+          "start_s": 24.00000000000007,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 24.00000000000007,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_8s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 24.310000000000002,
+          "start_s": 24.00000000000007,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 24.00000000000007,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_8s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 24.20000000000016,
+          "start_s": 24.00000000000007,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 24.00000000000007,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "1_holes_8s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 24.30000000000016,
+          "start_s": 24.00000000000007,
+          "start_after_decision": false
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 24.00000000000007,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_8s",
+      "clock": "media",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 33.2,
+          "start_s": 34.00000000000021,
+          "start_after_decision": true
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 34.00000000000021,
+          "end_timestamp_s": 44.6,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [
+        {
+          "decision_s": 33.400000000000006,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 33.6,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 33.800000000000004,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 34.0,
+          "error": "end timestamp cannot precede collection start"
+        }
+      ],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_8s",
+      "clock": "media",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.109999999999999,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 33.11,
+          "start_s": 34.00000000000021,
+          "start_after_decision": true
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 34.00000000000021,
+          "end_timestamp_s": 44.510000000000005,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [
+        {
+          "decision_s": 33.31,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 33.510000000000005,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 33.71,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 33.910000000000004,
+          "error": "end timestamp cannot precede collection start"
+        }
+      ],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_8s",
+      "clock": "latest_pose",
+      "phase_s": 0.0,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 4.999999999999977,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 33.000000000000284,
+          "start_s": 34.00000000000021,
+          "start_after_decision": true
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 34.00000000000021,
+          "end_timestamp_s": 44.60000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [
+        {
+          "decision_s": 33.20000000000029,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 33.40000000000029,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 33.60000000000029,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 33.800000000000296,
+          "error": "end timestamp cannot precede collection start"
+        }
+      ],
+      "closed_at_eof": true
+    },
+    {
+      "case": "2_holes_8s",
+      "clock": "latest_pose",
+      "phase_s": 0.11,
+      "passed": false,
+      "saved_count": 2,
+      "starts": [
+        {
+          "decision_s": 5.0999999999999766,
+          "start_s": 3.9999999999999876,
+          "start_after_decision": false
+        },
+        {
+          "decision_s": 33.100000000000286,
+          "start_s": 34.00000000000021,
+          "start_after_decision": true
+        }
+      ],
+      "clips": [
+        {
+          "start_timestamp_s": 3.9999999999999876,
+          "end_timestamp_s": 15.99999999999996,
+          "target_confirmed": true,
+          "should_save": true
+        },
+        {
+          "start_timestamp_s": 34.00000000000021,
+          "end_timestamp_s": 44.50000000000039,
+          "target_confirmed": true,
+          "should_save": true
+        }
+      ],
+      "errors": [
+        {
+          "decision_s": 33.30000000000029,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 33.50000000000029,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 33.700000000000294,
+          "error": "end timestamp cannot precede collection start"
+        },
+        {
+          "decision_s": 33.9000000000003,
+          "error": "end timestamp cannot precede collection start"
+        }
+      ],
+      "closed_at_eof": true
+    }
+  ]
+}
