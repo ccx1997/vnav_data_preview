@@ -1,0 +1,12 @@
+======================================================================
+FAIL: test_straight_requires_low_curvature_even_when_turn_motion_is_rejected (test_data_collection_gate.GateTimingTest.test_straight_requires_low_curvature_even_when_turn_motion_is_rejected) (threshold=9.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 481, in test_straight_requires_low_curvature_even_when_turn_motion_is_rejected
+    self.assertEqual(straight.start_collection(samples, 2.0)[0], threshold > 8.1)
+AssertionError: False != True
+
+----------------------------------------------------------------------
+Ran 42 tests in 1.563s
+
+FAILED (failures=1)

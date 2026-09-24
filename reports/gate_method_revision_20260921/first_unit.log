@@ -1,0 +1,637 @@
+======================================================================
+FAIL: test_curve_classification_is_stable_with_sparse_poses_and_probe_phase (test_data_collection_gate.GateTimingTest.test_curve_classification_is_stable_with_sparse_poses_and_probe_phase) (frequency=4.0, speed=0.39, degrees=-7.9, timestamp=2.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 498, in test_curve_classification_is_stable_with_sparse_poses_and_probe_phase
+    self.assertEqual(evidence.is_curve, abs(degrees) >= 8.0)
+AssertionError: True != False
+
+======================================================================
+FAIL: test_curve_classification_is_stable_with_sparse_poses_and_probe_phase (test_data_collection_gate.GateTimingTest.test_curve_classification_is_stable_with_sparse_poses_and_probe_phase) (frequency=4.0, speed=0.39, degrees=-7.9, timestamp=2.2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 498, in test_curve_classification_is_stable_with_sparse_poses_and_probe_phase
+    self.assertEqual(evidence.is_curve, abs(degrees) >= 8.0)
+AssertionError: True != False
+
+======================================================================
+FAIL: test_curve_classification_is_stable_with_sparse_poses_and_probe_phase (test_data_collection_gate.GateTimingTest.test_curve_classification_is_stable_with_sparse_poses_and_probe_phase) (frequency=4.0, speed=0.39, degrees=-7.9, timestamp=2.4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 498, in test_curve_classification_is_stable_with_sparse_poses_and_probe_phase
+    self.assertEqual(evidence.is_curve, abs(degrees) >= 8.0)
+AssertionError: True != False
+
+======================================================================
+FAIL: test_curve_classification_is_stable_with_sparse_poses_and_probe_phase (test_data_collection_gate.GateTimingTest.test_curve_classification_is_stable_with_sparse_poses_and_probe_phase) (frequency=4.0, speed=0.39, degrees=-7.9, timestamp=2.6)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 498, in test_curve_classification_is_stable_with_sparse_poses_and_probe_phase
+    self.assertEqual(evidence.is_curve, abs(degrees) >= 8.0)
+AssertionError: True != False
+
+======================================================================
+FAIL: test_curve_classification_is_stable_with_sparse_poses_and_probe_phase (test_data_collection_gate.GateTimingTest.test_curve_classification_is_stable_with_sparse_poses_and_probe_phase) (frequency=4.0, speed=0.39, degrees=-7.9, timestamp=2.8)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 498, in test_curve_classification_is_stable_with_sparse_poses_and_probe_phase
+    self.assertEqual(evidence.is_curve, abs(degrees) >= 8.0)
+AssertionError: True != False
+
+======================================================================
+FAIL: test_curve_classification_is_stable_with_sparse_poses_and_probe_phase (test_data_collection_gate.GateTimingTest.test_curve_classification_is_stable_with_sparse_poses_and_probe_phase) (frequency=4.0, speed=0.39, degrees=-7.9, timestamp=3.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 498, in test_curve_classification_is_stable_with_sparse_poses_and_probe_phase
+    self.assertEqual(evidence.is_curve, abs(degrees) >= 8.0)
+AssertionError: True != False
+
+======================================================================
+FAIL: test_curve_classification_is_stable_with_sparse_poses_and_probe_phase (test_data_collection_gate.GateTimingTest.test_curve_classification_is_stable_with_sparse_poses_and_probe_phase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 500, in test_curve_classification_is_stable_with_sparse_poses_and_probe_phase
+    self.assertEqual(gate.start_collection(samples, 2.0)[0], abs(degrees) >= 8.0)
+AssertionError: True != False
+
+======================================================================
+FAIL: test_curve_observation_ends_at_distance_support_not_at_cache_tail (test_data_collection_gate.GateTimingTest.test_curve_observation_ends_at_distance_support_not_at_cache_tail)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 610, in test_curve_observation_ends_at_distance_support_not_at_cache_tail
+    self.assertLess(evidence.observation_end_timestamp_s, 3.3)
+AssertionError: 4.500000000000002 not less than 3.3
+
+======================================================================
+FAIL: test_curve_window_is_bounded_in_time_and_retains_low_speed_turns (test_data_collection_gate.GateTimingTest.test_curve_window_is_bounded_in_time_and_retains_low_speed_turns)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 516, in test_curve_window_is_bounded_in_time_and_retains_low_speed_turns
+    self.assertTrue(evidence.is_curve)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_finite_sparse_turn_retains_interpolated_anchor_distance (test_data_collection_gate.GateTimingTest.test_finite_sparse_turn_retains_interpolated_anchor_distance) (duration=2.0, speed=0.19)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 625, in test_finite_sparse_turn_retains_interpolated_anchor_distance
+    self.assertEqual(gate.start_collection(cache, 0.01), (True, 0.01))
+AssertionError: Tuples differ: (True, 0.0) != (True, 0.01)
+
+First differing element 1:
+0.0
+0.01
+
+- (True, 0.0)
++ (True, 0.01)
+?           +
+
+
+======================================================================
+FAIL: test_finite_sparse_turn_retains_interpolated_anchor_distance (test_data_collection_gate.GateTimingTest.test_finite_sparse_turn_retains_interpolated_anchor_distance) (duration=2.0, speed=0.2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 625, in test_finite_sparse_turn_retains_interpolated_anchor_distance
+    self.assertEqual(gate.start_collection(cache, 0.01), (True, 0.01))
+AssertionError: Tuples differ: (True, 0.0) != (True, 0.01)
+
+First differing element 1:
+0.0
+0.01
+
+- (True, 0.0)
++ (True, 0.01)
+?           +
+
+
+======================================================================
+FAIL: test_finite_sparse_turn_retains_interpolated_anchor_distance (test_data_collection_gate.GateTimingTest.test_finite_sparse_turn_retains_interpolated_anchor_distance) (duration=3.0, speed=0.115)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 625, in test_finite_sparse_turn_retains_interpolated_anchor_distance
+    self.assertEqual(gate.start_collection(cache, 0.01), (True, 0.01))
+AssertionError: Tuples differ: (True, 0.0) != (True, 0.01)
+
+First differing element 1:
+0.0
+0.01
+
+- (True, 0.0)
++ (True, 0.01)
+?           +
+
+
+======================================================================
+FAIL: test_finite_sparse_turn_retains_interpolated_anchor_distance (test_data_collection_gate.GateTimingTest.test_finite_sparse_turn_retains_interpolated_anchor_distance) (duration=3.0, speed=0.12)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 625, in test_finite_sparse_turn_retains_interpolated_anchor_distance
+    self.assertEqual(gate.start_collection(cache, 0.01), (True, 0.01))
+AssertionError: Tuples differ: (True, 0.0) != (True, 0.01)
+
+First differing element 1:
+0.0
+0.01
+
+- (True, 0.0)
++ (True, 0.01)
+?           +
+
+
+======================================================================
+FAIL: test_hard_stop_keeps_only_turns_present_in_the_final_window (test_data_collection_gate.GateTimingTest.test_hard_stop_keeps_only_turns_present_in_the_final_window) (first_speed=0.04)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 640, in test_hard_stop_keeps_only_turns_present_in_the_final_window
+    self.assertTrue(gate.start_collection(cache, 0.2)[0])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_natural_and_timeout_ends_publish_final_window (test_data_collection_gate.GateTimingTest.test_natural_and_timeout_ends_publish_final_window)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 730, in test_natural_and_timeout_ends_publish_final_window
+    self.assertEqual(turn.end_collection([], 60.0), (True, 47.0))
+AssertionError: Tuples differ: (True, 45.0) != (True, 47.0)
+
+First differing element 1:
+45.0
+47.0
+
+- (True, 45.0)
+?         ^
+
++ (True, 47.0)
+?         ^
+
+
+======================================================================
+FAIL: test_natural_recovery_waits_for_the_start_observation (test_data_collection_gate.GateTimingTest.test_natural_recovery_waits_for_the_start_observation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 560, in test_natural_recovery_waits_for_the_start_observation
+    self.assertEqual(gate.start_collection(samples, 3.0), (True, 3.0))
+AssertionError: Tuples differ: (True, 0.5) != (True, 3.0)
+
+First differing element 1:
+0.5
+3.0
+
+- (True, 0.5)
+?         --
+
++ (True, 3.0)
+?        ++
+
+
+======================================================================
+FAIL: test_short_hard_stop_ends_both_gates_and_publishes_discard (test_data_collection_gate.GateTimingTest.test_short_hard_stop_ends_both_gates_and_publishes_discard) (kind='turn', duration=3.999)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 708, in test_short_hard_stop_ends_both_gates_and_publishes_discard
+    self.assertEqual(gate.start_collection(samples, start), (True, start))
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.0)
+
+First differing element 1:
+0.0
+2.0
+
+- (True, 0.0)
+?        ^
+
++ (True, 2.0)
+?        ^
+
+
+======================================================================
+FAIL: test_short_hard_stop_ends_both_gates_and_publishes_discard (test_data_collection_gate.GateTimingTest.test_short_hard_stop_ends_both_gates_and_publishes_discard) (kind='turn', duration=4.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 708, in test_short_hard_stop_ends_both_gates_and_publishes_discard
+    self.assertEqual(gate.start_collection(samples, start), (True, start))
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.0)
+
+First differing element 1:
+0.0
+2.0
+
+- (True, 0.0)
+?        ^
+
++ (True, 2.0)
+?        ^
+
+
+======================================================================
+FAIL: test_short_stable_stop_is_discarded_even_before_observation_end (test_data_collection_gate.GateTimingTest.test_short_stable_stop_is_discarded_even_before_observation_end) (kind='turn')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 748, in test_short_stable_stop_is_discarded_even_before_observation_end
+    self.assertFalse(gate.last_completed_collection.should_save)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_slow_turns_accumulate_distance_without_a_two_second_speed_cutoff (test_data_collection_gate.GateTimingTest.test_slow_turns_accumulate_distance_without_a_two_second_speed_cutoff) (speed=0.06, degrees=30.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 572, in test_slow_turns_accumulate_distance_without_a_two_second_speed_cutoff
+    self.assertEqual(gate.start_collection(cache, 2.0), (True, 2.0))
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.0)
+
+First differing element 1:
+0.0
+2.0
+
+- (True, 0.0)
+?        ^
+
++ (True, 2.0)
+?        ^
+
+
+======================================================================
+FAIL: test_slow_turns_accumulate_distance_without_a_two_second_speed_cutoff (test_data_collection_gate.GateTimingTest.test_slow_turns_accumulate_distance_without_a_two_second_speed_cutoff) (speed=0.1, degrees=30.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 572, in test_slow_turns_accumulate_distance_without_a_two_second_speed_cutoff
+    self.assertEqual(gate.start_collection(cache, 2.0), (True, 2.0))
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.0)
+
+First differing element 1:
+0.0
+2.0
+
+- (True, 0.0)
+?        ^
+
++ (True, 2.0)
+?        ^
+
+
+======================================================================
+FAIL: test_slow_turns_accumulate_distance_without_a_two_second_speed_cutoff (test_data_collection_gate.GateTimingTest.test_slow_turns_accumulate_distance_without_a_two_second_speed_cutoff) (speed=0.14, degrees=30.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 572, in test_slow_turns_accumulate_distance_without_a_two_second_speed_cutoff
+    self.assertEqual(gate.start_collection(cache, 2.0), (True, 2.0))
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.0)
+
+First differing element 1:
+0.0
+2.0
+
+- (True, 0.0)
+?        ^
+
++ (True, 2.0)
+?        ^
+
+
+======================================================================
+FAIL: test_slow_turns_accumulate_distance_without_a_two_second_speed_cutoff (test_data_collection_gate.GateTimingTest.test_slow_turns_accumulate_distance_without_a_two_second_speed_cutoff) (speed=0.08, degrees=170.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 572, in test_slow_turns_accumulate_distance_without_a_two_second_speed_cutoff
+    self.assertEqual(gate.start_collection(cache, 2.0), (True, 2.0))
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.0)
+
+First differing element 1:
+0.0
+2.0
+
+- (True, 0.0)
+?        ^
+
++ (True, 2.0)
+?        ^
+
+
+======================================================================
+FAIL: test_sparse_pose_phase_does_not_prevent_slow_curve_start (test_data_collection_gate.GateTimingTest.test_sparse_pose_phase_does_not_prevent_slow_curve_start) (timestamp=2.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 580, in test_sparse_pose_phase_does_not_prevent_slow_curve_start
+    self.assertEqual(gate.start_collection(cache, timestamp), (True, timestamp))
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.0)
+
+First differing element 1:
+0.0
+2.0
+
+- (True, 0.0)
+?        ^
+
++ (True, 2.0)
+?        ^
+
+
+======================================================================
+FAIL: test_sparse_pose_phase_does_not_prevent_slow_curve_start (test_data_collection_gate.GateTimingTest.test_sparse_pose_phase_does_not_prevent_slow_curve_start) (timestamp=2.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 580, in test_sparse_pose_phase_does_not_prevent_slow_curve_start
+    self.assertEqual(gate.start_collection(cache, timestamp), (True, timestamp))
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.01)
+
+First differing element 1:
+0.0
+2.01
+
+- (True, 0.0)
+?        ^
+
++ (True, 2.01)
+?        ^  +
+
+
+======================================================================
+FAIL: test_sparse_pose_phase_does_not_prevent_slow_curve_start (test_data_collection_gate.GateTimingTest.test_sparse_pose_phase_does_not_prevent_slow_curve_start) (timestamp=2.11)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 580, in test_sparse_pose_phase_does_not_prevent_slow_curve_start
+    self.assertEqual(gate.start_collection(cache, timestamp), (True, timestamp))
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.11)
+
+First differing element 1:
+0.0
+2.11
+
+- (True, 0.0)
+?        ^ ^
+
++ (True, 2.11)
+?        ^ ^^
+
+
+======================================================================
+FAIL: test_sparse_pose_phase_does_not_prevent_slow_curve_start (test_data_collection_gate.GateTimingTest.test_sparse_pose_phase_does_not_prevent_slow_curve_start) (timestamp=2.31)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 580, in test_sparse_pose_phase_does_not_prevent_slow_curve_start
+    self.assertEqual(gate.start_collection(cache, timestamp), (True, timestamp))
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.31)
+
+First differing element 1:
+0.0
+2.31
+
+- (True, 0.0)
+?        ^ ^
+
++ (True, 2.31)
+?        ^ ^^
+
+
+======================================================================
+FAIL: test_sparse_pose_phase_does_not_prevent_slow_curve_start (test_data_collection_gate.GateTimingTest.test_sparse_pose_phase_does_not_prevent_slow_curve_start) (timestamp=2.49)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 580, in test_sparse_pose_phase_does_not_prevent_slow_curve_start
+    self.assertEqual(gate.start_collection(cache, timestamp), (True, timestamp))
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.49)
+
+First differing element 1:
+0.0
+2.49
+
+- (True, 0.0)
+?        ^ ^
+
++ (True, 2.49)
+?        ^ ^^
+
+
+======================================================================
+FAIL: test_straight_requires_low_curvature_even_when_turn_motion_is_rejected (test_data_collection_gate.GateTimingTest.test_straight_requires_low_curvature_even_when_turn_motion_is_rejected) (threshold=8.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 471, in test_straight_requires_low_curvature_even_when_turn_motion_is_rejected
+    self.assertFalse(detector.evaluate(samples, 2.0).is_turn)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_straight_requires_low_curvature_even_when_turn_motion_is_rejected (test_data_collection_gate.GateTimingTest.test_straight_requires_low_curvature_even_when_turn_motion_is_rejected) (threshold=9.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 471, in test_straight_requires_low_curvature_even_when_turn_motion_is_rejected
+    self.assertFalse(detector.evaluate(samples, 2.0).is_turn)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_streaming_clips_include_the_turn_that_triggered_them (test_data_collection_gate.GateTimingTest.test_streaming_clips_include_the_turn_that_triggered_them) (approach_s=6.0, speed=0.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 553, in test_streaming_clips_include_the_turn_that_triggered_them
+    self.assertGreaterEqual(clip.start_timestamp_s, approach_s - 3.0)
+AssertionError: 1.9999999999999947 not greater than or equal to 3.0
+
+======================================================================
+FAIL: test_curve_threshold_is_inclusive (test_data_collection_gate.TurnGateTest.test_curve_threshold_is_inclusive) (degrees=-7.9)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 106, in test_curve_threshold_is_inclusive
+    self.assertEqual(evidence.is_curve, abs(degrees) >= 8.0)
+AssertionError: True != False
+
+======================================================================
+FAIL: test_curve_threshold_is_inclusive (test_data_collection_gate.TurnGateTest.test_curve_threshold_is_inclusive) (degrees=7.9)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 106, in test_curve_threshold_is_inclusive
+    self.assertEqual(evidence.is_curve, abs(degrees) >= 8.0)
+AssertionError: True != False
+
+======================================================================
+FAIL: test_end_waits_for_sustained_normal_straight_recovery (test_data_collection_gate.TurnGateTest.test_end_waits_for_sustained_normal_straight_recovery)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 154, in test_end_waits_for_sustained_normal_straight_recovery
+    self.assertEqual(gate.start_collection(samples, 2.0), (True, 2.0))
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.0)
+
+First differing element 1:
+0.0
+2.0
+
+- (True, 0.0)
+?        ^
+
++ (True, 2.0)
+?        ^
+
+
+======================================================================
+FAIL: test_future_one_metre_curve_starts_collection (test_data_collection_gate.TurnGateTest.test_future_one_metre_curve_starts_collection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 97, in test_future_one_metre_curve_starts_collection
+    self.assertEqual(gate.start_collection(samples, 2.0), (True, 2.0))
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.0)
+
+First differing element 1:
+0.0
+2.0
+
+- (True, 0.0)
+?        ^
+
++ (True, 2.0)
+?        ^
+
+
+======================================================================
+FAIL: test_insufficient_future_never_ends_collection (test_data_collection_gate.TurnGateTest.test_insufficient_future_never_ends_collection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 175, in test_insufficient_future_never_ends_collection
+    self.assertEqual(
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.0)
+
+First differing element 1:
+0.0
+2.0
+
+- (True, 0.0)
+?        ^
+
++ (True, 2.0)
+?        ^
+
+
+======================================================================
+FAIL: test_pose_jump_is_a_hard_stop_for_turn_collection (test_data_collection_gate.TurnGateTest.test_pose_jump_is_a_hard_stop_for_turn_collection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 240, in test_pose_jump_is_a_hard_stop_for_turn_collection
+    self.assertEqual(gate.start_collection(samples, 2.0), (True, 2.0))
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.0)
+
+First differing element 1:
+0.0
+2.0
+
+- (True, 0.0)
+?        ^
+
++ (True, 2.0)
+?        ^
+
+
+======================================================================
+FAIL: test_renewed_turn_resets_pending_straight_recovery (test_data_collection_gate.TurnGateTest.test_renewed_turn_resets_pending_straight_recovery)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 254, in test_renewed_turn_resets_pending_straight_recovery
+    self.assertEqual(gate.start_collection(samples, 2.0), (True, 2.0))
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.0)
+
+First differing element 1:
+0.0
+2.0
+
+- (True, 0.0)
+?        ^
+
++ (True, 2.0)
+?        ^
+
+
+======================================================================
+FAIL: test_short_stationary_pause_does_not_end_collection (test_data_collection_gate.TurnGateTest.test_short_stationary_pause_does_not_end_collection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 211, in test_short_stationary_pause_does_not_end_collection
+    self.assertEqual(gate.start_collection(samples, 2.0), (True, 2.0))
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.0)
+
+First differing element 1:
+0.0
+2.0
+
+- (True, 0.0)
+?        ^
+
++ (True, 2.0)
+?        ^
+
+
+======================================================================
+FAIL: test_sparse_stream_call_returns_historical_action_node (test_data_collection_gate.TurnGateTest.test_sparse_stream_call_returns_historical_action_node)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 282, in test_sparse_stream_call_returns_historical_action_node
+    self.assertEqual(gate.start_collection(samples, 2.0), (True, 2.0))
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.0)
+
+First differing element 1:
+0.0
+2.0
+
+- (True, 0.0)
+?        ^
+
++ (True, 2.0)
+?        ^
+
+
+======================================================================
+FAIL: test_spin_uses_unwrapped_yaw_and_low_translation (test_data_collection_gate.TurnGateTest.test_spin_uses_unwrapped_yaw_and_low_translation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 126, in test_spin_uses_unwrapped_yaw_and_low_translation
+    self.assertEqual(gate.start_collection(samples, 2.0), (True, 2.0))
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.0)
+
+First differing element 1:
+0.0
+2.0
+
+- (True, 0.0)
+?        ^
+
++ (True, 2.0)
+?        ^
+
+
+======================================================================
+FAIL: test_stable_stop_after_turn_ends_collection (test_data_collection_gate.TurnGateTest.test_stable_stop_after_turn_ends_collection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 190, in test_stable_stop_after_turn_ends_collection
+    self.assertEqual(gate.start_collection(samples, 2.0), (True, 2.0))
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.0)
+
+First differing element 1:
+0.0
+2.0
+
+- (True, 0.0)
+?        ^
+
++ (True, 2.0)
+?        ^
+
+
+======================================================================
+FAIL: test_turn_collection_has_exact_default_maximum_interval (test_data_collection_gate.TurnGateTest.test_turn_collection_has_exact_default_maximum_interval)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 224, in test_turn_collection_has_exact_default_maximum_interval
+    self.assertEqual(gate.start_collection(initial_cache, 2.0), (True, 2.0))
+AssertionError: Tuples differ: (True, 0.0) != (True, 2.0)
+
+First differing element 1:
+0.0
+2.0
+
+- (True, 0.0)
+?        ^
+
++ (True, 2.0)
+?        ^
+
+
+----------------------------------------------------------------------
+Ran 42 tests in 1.274s
+
+FAILED (failures=43)

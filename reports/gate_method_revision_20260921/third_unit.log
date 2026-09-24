@@ -1,0 +1,15 @@
+======================================================================
+FAIL: test_curve_window_is_bounded_in_time_and_retains_low_speed_turns (test_data_collection_gate.GateTimingTest.test_curve_window_is_bounded_in_time_and_retains_low_speed_turns)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 524, in test_curve_window_is_bounded_in_time_and_retains_low_speed_turns
+    self.assertEqual(evidence.reason, "uncertain_turn")
+AssertionError: 'future_time_insufficient' != 'uncertain_turn'
+- future_time_insufficient
++ uncertain_turn
+
+
+----------------------------------------------------------------------
+Ran 42 tests in 1.879s
+
+FAILED (failures=1)

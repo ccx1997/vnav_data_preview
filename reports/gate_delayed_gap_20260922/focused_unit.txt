@@ -1,0 +1,12 @@
+======================================================================
+FAIL: test_plain_gap_does_not_close_either_gate (test_data_collection_gate.DelayedGapContractTest.test_plain_gap_does_not_close_either_gate) (gate='StraightGate')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/chengchangxu/projects/vnav_data_preview/test_data_collection_gate.py", line 988, in test_plain_gap_does_not_close_either_gate
+    self.assertTrue(gate.start_collection(samples, 2)[0])
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.699s
+
+FAILED (failures=1)

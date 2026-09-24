@@ -1,0 +1,49 @@
+30/159 sources
+60/159 sources
+90/159 sources
+120/159 sources
+150/159 sources
+{
+  "sources": 159,
+  "source_files_unchanged": 640,
+  "source_issues": [
+    {
+      "directory": "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_50",
+      "error": "non-single or inconsistent keep window; do not bridge cuts"
+    }
+  ],
+  "changed_actions_or_windows": [
+    "202609201240128Up_1",
+    "202609201240128Up_8",
+    "202609201240128Up_13",
+    "202609201240128Up_14",
+    "202609201240128Up_15",
+    "20260920122356WIt_27",
+    "20260918200506GCy_49"
+  ],
+  "reference_metrics": {
+    "positive": {
+      "count": 32,
+      "started": 32,
+      "saved": 32
+    },
+    "negative": {
+      "count": 69,
+      "started": 0,
+      "saved": 0
+    },
+    "ambiguous": {
+      "count": 23,
+      "started": 20,
+      "saved": 20
+    }
+  },
+  "audit_agrees": 29,
+  "audit_total": 29,
+  "saved_sources": 84,
+  "saved_windows": 84,
+  "source_sha256": {
+    "data_collection_gate.py": "250e9f03f6653f2ae5d8219a31ed401192a3e7137e8afee0b927c2f117e83349",
+    "test_data_collection_gate.py": "0dadadfc29ebcc6e222a55738e29be271d44d8a8c064a16435e41941fc07eb03"
+  }
+}

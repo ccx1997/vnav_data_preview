@@ -1,0 +1,227 @@
+{
+  "counts": {
+    "202609201240128Up": {
+      "confirmed": 11,
+      "uncertain": 9,
+      "straight": 13
+    },
+    "20260920122356WIt": {
+      "confirmed": 11,
+      "uncertain": 9,
+      "straight": 17
+    },
+    "20260918200506GCy": {
+      "confirmed": 31,
+      "straight": 11,
+      "uncertain": 12
+    },
+    "20260917174539CCx": {
+      "confirmed": 32,
+      "uncertain": 2,
+      "straight": 1
+    }
+  },
+  "reference_metrics": {
+    "202609201240128Up": {
+      "role": "calibration",
+      "positive": {
+        "confirmed": [
+          1,
+          8,
+          13,
+          25,
+          27,
+          33
+        ],
+        "uncertain": [],
+        "straight": []
+      },
+      "negative": {
+        "confirmed": [],
+        "uncertain": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          16,
+          17,
+          24,
+          26
+        ],
+        "straight": [
+          7,
+          9,
+          10,
+          11,
+          12,
+          19,
+          20,
+          21,
+          22,
+          28,
+          29,
+          31,
+          32
+        ]
+      },
+      "ambiguous": {
+        "confirmed": [
+          14,
+          15,
+          18,
+          23,
+          30
+        ],
+        "uncertain": [],
+        "straight": []
+      }
+    },
+    "20260920122356WIt": {
+      "role": "initial held-out test failed; subsequently used for conservative ablation selection",
+      "positive": {
+        "confirmed": [
+          8,
+          11,
+          21,
+          27,
+          30,
+          34,
+          35
+        ],
+        "uncertain": [],
+        "straight": []
+      },
+      "negative": {
+        "confirmed": [],
+        "uncertain": [
+          2,
+          14,
+          15,
+          18,
+          19,
+          22,
+          24,
+          26
+        ],
+        "straight": [
+          3,
+          5,
+          6,
+          7,
+          10,
+          12,
+          13,
+          16,
+          17,
+          20,
+          25,
+          28,
+          29,
+          31,
+          32,
+          36,
+          37
+        ]
+      },
+      "ambiguous": {
+        "confirmed": [
+          1,
+          4,
+          23,
+          33
+        ],
+        "uncertain": [
+          9
+        ],
+        "straight": []
+      }
+    },
+    "20260918200506GCy": {
+      "role": "new check of frozen conservative variant; independent geometry review, no human labels",
+      "positive": {
+        "confirmed": [
+          1,
+          7,
+          11,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          33,
+          37,
+          39,
+          41,
+          49,
+          52,
+          53,
+          54
+        ],
+        "uncertain": [],
+        "straight": []
+      },
+      "negative": {
+        "confirmed": [
+          42
+        ],
+        "uncertain": [
+          8,
+          9,
+          10,
+          12,
+          18,
+          30,
+          32,
+          40,
+          44,
+          51
+        ],
+        "straight": [
+          5,
+          6,
+          16,
+          19,
+          20,
+          31,
+          35,
+          38,
+          45,
+          46,
+          48
+        ]
+      },
+      "ambiguous": {
+        "confirmed": [
+          2,
+          3,
+          4,
+          13,
+          14,
+          15,
+          17,
+          34,
+          36,
+          47,
+          50
+        ],
+        "uncertain": [
+          29,
+          43
+        ],
+        "straight": []
+      }
+    }
+  },
+  "context": {
+    "saved_windows": 88,
+    "both_4s_available": 0,
+    "left_truncated": 81,
+    "right_truncated": 86,
+    "limits": "Only existing per-clip poses are available. Missing pre/post data are not downloaded, invented, or bridged."
+  },
+  "source_files_unchanged": true
+}

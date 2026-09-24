@@ -1,0 +1,293 @@
+[
+  {
+    "id": "20260917174539CCx_40",
+    "task_id": "20260917174539CCx",
+    "index": 40,
+    "sampling": "random",
+    "anonymous_id": "A01",
+    "label": "turn",
+    "decision": "confirmed",
+    "agrees": true
+  },
+  {
+    "id": "20260918200506GCy_52",
+    "task_id": "20260918200506GCy",
+    "index": 52,
+    "sampling": "random",
+    "anonymous_id": "A02",
+    "label": "turn",
+    "decision": "confirmed",
+    "agrees": true
+  },
+  {
+    "id": "202609201240128Up_20",
+    "task_id": "202609201240128Up",
+    "index": 20,
+    "sampling": "targeted",
+    "anonymous_id": "A03",
+    "label": "straight",
+    "decision": "straight",
+    "agrees": true
+  },
+  {
+    "id": "20260918200506GCy_5",
+    "task_id": "20260918200506GCy",
+    "index": 5,
+    "sampling": "random",
+    "anonymous_id": "A04",
+    "label": "straight",
+    "decision": "straight",
+    "agrees": true
+  },
+  {
+    "id": "20260917174539CCx_36",
+    "task_id": "20260917174539CCx",
+    "index": 36,
+    "sampling": "random",
+    "anonymous_id": "A05",
+    "label": "turn",
+    "decision": "confirmed",
+    "agrees": true
+  },
+  {
+    "id": "20260920122356WIt_18",
+    "task_id": "20260920122356WIt",
+    "index": 18,
+    "sampling": "random",
+    "anonymous_id": "A06",
+    "label": "straight",
+    "decision": "uncertain",
+    "agrees": true
+  },
+  {
+    "id": "20260920122356WIt_31",
+    "task_id": "20260920122356WIt",
+    "index": 31,
+    "sampling": "random",
+    "anonymous_id": "A07",
+    "label": "straight",
+    "decision": "straight",
+    "agrees": true
+  },
+  {
+    "id": "202609201240128Up_22",
+    "task_id": "202609201240128Up",
+    "index": 22,
+    "sampling": "random",
+    "anonymous_id": "A08",
+    "label": "straight",
+    "decision": "straight",
+    "agrees": true
+  },
+  {
+    "id": "20260917174539CCx_19",
+    "task_id": "20260917174539CCx",
+    "index": 19,
+    "sampling": "random",
+    "anonymous_id": "A09",
+    "label": "turn",
+    "decision": "confirmed",
+    "agrees": true
+  },
+  {
+    "id": "20260917174539CCx_26",
+    "task_id": "20260917174539CCx",
+    "index": 26,
+    "sampling": "random",
+    "anonymous_id": "A10",
+    "label": "straight",
+    "decision": "straight",
+    "agrees": true
+  },
+  {
+    "id": "202609201240128Up_19",
+    "task_id": "202609201240128Up",
+    "index": 19,
+    "sampling": "random",
+    "anonymous_id": "A11",
+    "label": "straight",
+    "decision": "straight",
+    "agrees": true
+  },
+  {
+    "id": "20260920122356WIt_32",
+    "task_id": "20260920122356WIt",
+    "index": 32,
+    "sampling": "random",
+    "anonymous_id": "A12",
+    "label": "straight",
+    "decision": "straight",
+    "agrees": true
+  },
+  {
+    "id": "20260917174539CCx_38",
+    "task_id": "20260917174539CCx",
+    "index": 38,
+    "sampling": "random",
+    "anonymous_id": "A13",
+    "label": "turn",
+    "decision": "confirmed",
+    "agrees": true
+  },
+  {
+    "id": "202609201240128Up_25",
+    "task_id": "202609201240128Up",
+    "index": 25,
+    "sampling": "targeted",
+    "anonymous_id": "A14",
+    "label": "turn",
+    "decision": "confirmed",
+    "agrees": true
+  },
+  {
+    "id": "20260917174539CCx_33",
+    "task_id": "20260917174539CCx",
+    "index": 33,
+    "sampling": "random",
+    "anonymous_id": "A15",
+    "label": "turn",
+    "decision": "confirmed",
+    "agrees": true
+  },
+  {
+    "id": "202609201240128Up_16",
+    "task_id": "202609201240128Up",
+    "index": 16,
+    "sampling": "random",
+    "anonymous_id": "A16",
+    "label": "straight",
+    "decision": "uncertain",
+    "agrees": true
+  },
+  {
+    "id": "20260918200506GCy_42",
+    "task_id": "20260918200506GCy",
+    "index": 42,
+    "sampling": "targeted",
+    "anonymous_id": "A17",
+    "label": "straight",
+    "decision": "uncertain",
+    "agrees": true
+  },
+  {
+    "id": "20260918200506GCy_23",
+    "task_id": "20260918200506GCy",
+    "index": 23,
+    "sampling": "random",
+    "anonymous_id": "A18",
+    "label": "turn",
+    "decision": "confirmed",
+    "agrees": true
+  },
+  {
+    "id": "20260920122356WIt_8",
+    "task_id": "20260920122356WIt",
+    "index": 8,
+    "sampling": "random",
+    "anonymous_id": "A19",
+    "label": "turn",
+    "decision": "confirmed",
+    "agrees": true
+  },
+  {
+    "id": "202609201240128Up_10",
+    "task_id": "202609201240128Up",
+    "index": 10,
+    "sampling": "random",
+    "anonymous_id": "A20",
+    "label": "straight",
+    "decision": "straight",
+    "agrees": true
+  },
+  {
+    "id": "20260917174539CCx_6",
+    "task_id": "20260917174539CCx",
+    "index": 6,
+    "sampling": "random",
+    "anonymous_id": "A21",
+    "label": "turn",
+    "decision": "confirmed",
+    "agrees": true
+  },
+  {
+    "id": "20260917174539CCx_4",
+    "task_id": "20260917174539CCx",
+    "index": 4,
+    "sampling": "random",
+    "anonymous_id": "A22",
+    "label": "turn",
+    "decision": "confirmed",
+    "agrees": true
+  },
+  {
+    "id": "20260920122356WIt_14",
+    "task_id": "20260920122356WIt",
+    "index": 14,
+    "sampling": "targeted",
+    "anonymous_id": "A23",
+    "label": "straight",
+    "decision": "uncertain",
+    "agrees": true
+  },
+  {
+    "id": "20260920122356WIt_34",
+    "task_id": "20260920122356WIt",
+    "index": 34,
+    "sampling": "random",
+    "anonymous_id": "A24",
+    "label": "turn",
+    "decision": "confirmed",
+    "agrees": true
+  },
+  {
+    "id": "202609201240128Up_7",
+    "task_id": "202609201240128Up",
+    "index": 7,
+    "sampling": "random",
+    "anonymous_id": "A25",
+    "label": "straight",
+    "decision": "straight",
+    "agrees": true
+  },
+  {
+    "id": "20260920122356WIt_26",
+    "task_id": "20260920122356WIt",
+    "index": 26,
+    "sampling": "random",
+    "anonymous_id": "A26",
+    "label": "straight",
+    "decision": "uncertain",
+    "agrees": true
+  },
+  {
+    "id": "20260918200506GCy_29",
+    "task_id": "20260918200506GCy",
+    "index": 29,
+    "sampling": "targeted",
+    "anonymous_id": "A27",
+    "label": "straight",
+    "decision": "uncertain",
+    "agrees": true
+  },
+  {
+    "id": "20260920122356WIt_20",
+    "task_id": "20260920122356WIt",
+    "index": 20,
+    "sampling": "random",
+    "anonymous_id": "A28",
+    "label": "straight",
+    "decision": "straight",
+    "agrees": true
+  },
+  {
+    "id": "20260917174539CCx_29",
+    "task_id": "20260917174539CCx",
+    "index": 29,
+    "sampling": "random",
+    "anonymous_id": "A29",
+    "label": "turn",
+    "decision": "confirmed",
+    "agrees": true
+  }
+]
+agrees 29 / 29
