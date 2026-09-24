@@ -1,0 +1,744 @@
+{
+  "status": "success",
+  "version": "vnav_pixels_source_map_v2",
+  "selection": "latest successful full run per task; no pilot or duplicate historical runs",
+  "training_root": "/mnt/chengchangxu/data/visual_nav_training",
+  "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map",
+  "jobs": 4,
+  "tasks": [
+    {
+      "task": "20260818193938Axg",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260818193938Axg/vnav_teacher_rule10_history_v2/full/run_20260901_220250",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260818193938Axg/run_20260901_220250",
+      "status": "success",
+      "input_count": 2148,
+      "retained": 1483,
+      "excluded": 665,
+      "exclusion_reasons": {
+        "reference_outside_drawn_road": 640,
+        "history_outside_drawn_road": 25
+      },
+      "trimmed_routes": 1346,
+      "validation": {
+        "passed": true,
+        "retained": 1483,
+        "excluded": 665,
+        "maps": {
+          "P_map": 1483
+        },
+        "gray_points_checked": 95058,
+        "gray_segments_checked": 84832,
+        "world_roundtrip_max_error_m": 4.263256414560601e-14,
+        "source_and_output_hashes_verified": true
+      },
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260818193938Axg/run_20260901_220250/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260818193938Axg/run_20260901_220250/coordinate_schema.json"
+    },
+    {
+      "task": "20260819203318qFl",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260819203318qFl/vnav_teacher_rule10_history_v2/full/run_20260901_223142",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260819203318qFl/run_20260901_223142",
+      "status": "success",
+      "input_count": 1467,
+      "retained": 1194,
+      "excluded": 273,
+      "exclusion_reasons": {
+        "reference_outside_drawn_road": 271,
+        "history_outside_drawn_road": 2
+      },
+      "trimmed_routes": 235,
+      "validation": {
+        "passed": true,
+        "retained": 1194,
+        "excluded": 273,
+        "maps": {
+          "B10_map": 156,
+          "P_map": 1038
+        },
+        "gray_points_checked": 91041,
+        "gray_segments_checked": 83800,
+        "world_roundtrip_max_error_m": 4.263256414560601e-14,
+        "source_and_output_hashes_verified": true
+      },
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260819203318qFl/run_20260901_223142/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260819203318qFl/run_20260901_223142/coordinate_schema.json"
+    },
+    {
+      "task": "20260820180215WDK",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260820180215WDK/vnav_teacher_rule10_history_v2/full/run_20260901_225058",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260820180215WDK/run_20260901_225058",
+      "status": "success",
+      "input_count": 1920,
+      "retained": 1377,
+      "excluded": 543,
+      "exclusion_reasons": {
+        "reference_outside_drawn_road": 531,
+        "history_outside_drawn_road": 12
+      },
+      "trimmed_routes": 1356,
+      "validation": {
+        "passed": true,
+        "retained": 1377,
+        "excluded": 543,
+        "maps": {
+          "P_map": 1356,
+          "B10_map": 21
+        },
+        "gray_points_checked": 82709,
+        "gray_segments_checked": 73014,
+        "world_roundtrip_max_error_m": 4.263256414560601e-14,
+        "source_and_output_hashes_verified": true
+      },
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260820180215WDK/run_20260901_225058/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260820180215WDK/run_20260901_225058/coordinate_schema.json"
+    },
+    {
+      "task": "20260821114524n4Q",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260821114524n4Q/vnav_teacher_rule10_history_v2/full/run_20260901_231656",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260821114524n4Q/run_20260901_231656",
+      "status": "success",
+      "input_count": 300,
+      "retained": 150,
+      "excluded": 150,
+      "exclusion_reasons": {
+        "reference_outside_drawn_road": 150
+      },
+      "trimmed_routes": 150,
+      "validation": {
+        "passed": true,
+        "retained": 150,
+        "excluded": 150,
+        "maps": {
+          "P_map": 150
+        },
+        "gray_points_checked": 6060,
+        "gray_segments_checked": 5009,
+        "world_roundtrip_max_error_m": 2.1316282072803006e-14,
+        "source_and_output_hashes_verified": true
+      },
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260821114524n4Q/run_20260901_231656/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260821114524n4Q/run_20260901_231656/coordinate_schema.json"
+    },
+    {
+      "task": "20260824161657Li2",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260824161657Li2/vnav_teacher_rule10_history_v2/full/run_20260912_180447",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260824161657Li2/run_20260912_180447",
+      "status": "success",
+      "input_count": 89,
+      "retained": 89,
+      "excluded": 0,
+      "exclusion_reasons": {},
+      "trimmed_routes": 0,
+      "validation": {
+        "passed": true,
+        "retained": 89,
+        "excluded": 0,
+        "maps": {
+          "B10_map": 89
+        },
+        "gray_points_checked": 0,
+        "gray_segments_checked": 0,
+        "world_roundtrip_max_error_m": 2.6645352591003757e-15,
+        "source_and_output_hashes_verified": true
+      },
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260824161657Li2/run_20260912_180447/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260824161657Li2/run_20260912_180447/coordinate_schema.json"
+    },
+    {
+      "task": "202608251919001QS",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/202608251919001QS/vnav_teacher_rule10_history_v2/full/run_20260912_180638",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/202608251919001QS/run_20260912_180638",
+      "status": "success",
+      "input_count": 904,
+      "retained": 585,
+      "excluded": 319,
+      "exclusion_reasons": {
+        "reference_outside_drawn_road": 318,
+        "history_outside_drawn_road": 1
+      },
+      "trimmed_routes": 333,
+      "validation": {
+        "passed": true,
+        "retained": 585,
+        "excluded": 319,
+        "maps": {
+          "P_map": 505,
+          "B10_map": 80
+        },
+        "gray_points_checked": 17283,
+        "gray_segments_checked": 13674,
+        "world_roundtrip_max_error_m": 2.1316282072803006e-14,
+        "source_and_output_hashes_verified": true
+      },
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/202608251919001QS/run_20260912_180638/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/202608251919001QS/run_20260912_180638/coordinate_schema.json"
+    },
+    {
+      "task": "20260826154539RI5",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260826154539RI5/vnav_teacher_rule10_history_v2/full/run_20260912_181915",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260826154539RI5/run_20260912_181915",
+      "status": "success",
+      "input_count": 33,
+      "retained": 33,
+      "excluded": 0,
+      "exclusion_reasons": {},
+      "trimmed_routes": 0,
+      "validation": {
+        "passed": true,
+        "retained": 33,
+        "excluded": 0,
+        "maps": {
+          "B10_map": 33
+        },
+        "gray_points_checked": 0,
+        "gray_segments_checked": 0,
+        "world_roundtrip_max_error_m": 1.7763568394002505e-15,
+        "source_and_output_hashes_verified": true
+      },
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260826154539RI5/run_20260912_181915/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260826154539RI5/run_20260912_181915/coordinate_schema.json"
+    },
+    {
+      "task": "20260827180935lmd",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260827180935lmd/vnav_teacher_rule10_history_v2/full/run_20260901_233516",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260827180935lmd/run_20260901_233516",
+      "status": "success",
+      "input_count": 79,
+      "retained": 79,
+      "excluded": 0,
+      "exclusion_reasons": {},
+      "trimmed_routes": 0,
+      "validation": {
+        "passed": true,
+        "retained": 79,
+        "excluded": 0,
+        "maps": {
+          "B10_map": 79
+        },
+        "gray_points_checked": 0,
+        "gray_segments_checked": 0,
+        "world_roundtrip_max_error_m": 3.552713678800501e-15,
+        "source_and_output_hashes_verified": true
+      },
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260827180935lmd/run_20260901_233516/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260827180935lmd/run_20260901_233516/coordinate_schema.json"
+    },
+    {
+      "task": "20260828154654XXz",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260828154654XXz/vnav_teacher_rule10_history_v2/full/run_20260901_233613",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260828154654XXz/run_20260901_233613",
+      "status": "success",
+      "input_count": 1382,
+      "retained": 650,
+      "excluded": 732,
+      "exclusion_reasons": {
+        "reference_outside_drawn_road": 715,
+        "history_outside_drawn_road": 17
+      },
+      "trimmed_routes": 426,
+      "validation": {
+        "passed": true,
+        "retained": 650,
+        "excluded": 732,
+        "maps": {
+          "P_map": 650
+        },
+        "gray_points_checked": 32741,
+        "gray_segments_checked": 28090,
+        "world_roundtrip_max_error_m": 4.263256414560601e-14,
+        "source_and_output_hashes_verified": true
+      },
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260828154654XXz/run_20260901_233613/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260828154654XXz/run_20260901_233613/coordinate_schema.json"
+    },
+    {
+      "task": "20260831152735OM4",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260831152735OM4/vnav_teacher_rule10_history_v2/full/run_20260901_235317",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260831152735OM4/run_20260901_235317",
+      "status": "success",
+      "input_count": 269,
+      "retained": 219,
+      "excluded": 50,
+      "exclusion_reasons": {
+        "reference_outside_drawn_road": 50
+      },
+      "trimmed_routes": 0,
+      "validation": {
+        "passed": true,
+        "retained": 219,
+        "excluded": 50,
+        "maps": {
+          "B10_map": 219
+        },
+        "gray_points_checked": 0,
+        "gray_segments_checked": 0,
+        "world_roundtrip_max_error_m": 2.6645352591003757e-15,
+        "source_and_output_hashes_verified": true
+      },
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260831152735OM4/run_20260901_235317/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260831152735OM4/run_20260901_235317/coordinate_schema.json"
+    },
+    {
+      "task": "2026083119533604q",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/2026083119533604q/vnav_teacher_rule10_history_v2/full/run_20260901_235740",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/2026083119533604q/run_20260901_235740",
+      "status": "success",
+      "input_count": 58,
+      "retained": 58,
+      "excluded": 0,
+      "exclusion_reasons": {},
+      "trimmed_routes": 0,
+      "validation": {
+        "passed": true,
+        "retained": 58,
+        "excluded": 0,
+        "maps": {
+          "B10_map": 58
+        },
+        "gray_points_checked": 0,
+        "gray_segments_checked": 0,
+        "world_roundtrip_max_error_m": 1.7763568394002505e-15,
+        "source_and_output_hashes_verified": true
+      },
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/2026083119533604q/run_20260901_235740/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/2026083119533604q/run_20260901_235740/coordinate_schema.json"
+    },
+    {
+      "task": "20260901185939a1N",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260901185939a1N/vnav_teacher_rule10_history_v2/full/run_20260909_144652",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260901185939a1N/run_20260909_144652",
+      "status": "success",
+      "input_count": 22,
+      "retained": 22,
+      "excluded": 0,
+      "exclusion_reasons": {},
+      "trimmed_routes": 0,
+      "validation": {
+        "passed": true,
+        "retained": 22,
+        "excluded": 0,
+        "maps": {
+          "B10_map": 22
+        },
+        "gray_points_checked": 0,
+        "gray_segments_checked": 0,
+        "world_roundtrip_max_error_m": 1.7763568394002505e-15,
+        "source_and_output_hashes_verified": true
+      },
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260901185939a1N/run_20260909_144652/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260901185939a1N/run_20260909_144652/coordinate_schema.json"
+    },
+    {
+      "task": "20260902153110uGf",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260902153110uGf/vnav_teacher_rule10_history_v2/full/run_20260909_144758",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260902153110uGf/run_20260909_144758",
+      "status": "success",
+      "input_count": 1376,
+      "retained": 1109,
+      "excluded": 267,
+      "exclusion_reasons": {
+        "reference_outside_drawn_road": 259,
+        "history_outside_drawn_road": 8
+      },
+      "trimmed_routes": 414,
+      "validation": {
+        "passed": true,
+        "retained": 1109,
+        "excluded": 267,
+        "maps": {
+          "P_map": 804,
+          "B10_map": 305
+        },
+        "gray_points_checked": 60213,
+        "gray_segments_checked": 53478,
+        "world_roundtrip_max_error_m": 4.263256414560601e-14,
+        "source_and_output_hashes_verified": true
+      },
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260902153110uGf/run_20260909_144758/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260902153110uGf/run_20260909_144758/coordinate_schema.json"
+    },
+    {
+      "task": "20260903154146O1X",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260903154146O1X/vnav_teacher_rule10_history_v2/full/run_20260909_150420",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260903154146O1X/run_20260909_150420",
+      "status": "success",
+      "input_count": 1373,
+      "retained": 1127,
+      "excluded": 246,
+      "exclusion_reasons": {
+        "reference_outside_drawn_road": 238,
+        "history_outside_drawn_road": 8
+      },
+      "trimmed_routes": 1005,
+      "validation": {
+        "passed": true,
+        "retained": 1127,
+        "excluded": 246,
+        "maps": {
+          "P_map": 1005,
+          "B10_map": 122
+        },
+        "gray_points_checked": 71100,
+        "gray_segments_checked": 62654,
+        "world_roundtrip_max_error_m": 4.263256414560601e-14,
+        "source_and_output_hashes_verified": true
+      },
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260903154146O1X/run_20260909_150420/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260903154146O1X/run_20260909_150420/coordinate_schema.json"
+    },
+    {
+      "task": "20260917174539CCx",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260917174539CCx/vnav_teacher_rule10_history_v2/full/run_20260917_221344",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260917174539CCx/run_20260917_221344",
+      "status": "success",
+      "input_count": 1058,
+      "retained": 390,
+      "excluded": 668,
+      "exclusion_reasons": {
+        "reference_outside_drawn_road": 650,
+        "history_outside_drawn_road": 18
+      },
+      "trimmed_routes": 73,
+      "validation": {
+        "passed": true,
+        "retained": 390,
+        "excluded": 668,
+        "maps": {
+          "P_map": 390
+        },
+        "gray_points_checked": 8728,
+        "gray_segments_checked": 5379,
+        "world_roundtrip_max_error_m": 4.263256414560601e-14,
+        "source_and_output_hashes_verified": true
+      },
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260917174539CCx/run_20260917_221344/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260917174539CCx/run_20260917_221344/coordinate_schema.json"
+    },
+    {
+      "task": "20260918200506GCy",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260918200506GCy/run_20260918_220806",
+      "status": "success",
+      "input_count": 1727,
+      "retained": 1200,
+      "excluded": 527,
+      "exclusion_reasons": {
+        "reference_outside_drawn_road": 508,
+        "history_outside_drawn_road": 19
+      },
+      "trimmed_routes": 110,
+      "validation": {
+        "passed": true,
+        "retained": 1200,
+        "excluded": 527,
+        "maps": {
+          "P_map": 1200
+        },
+        "gray_points_checked": 23636,
+        "gray_segments_checked": 13360,
+        "world_roundtrip_max_error_m": 4.263256414560601e-14,
+        "source_and_output_hashes_verified": true
+      },
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260918200506GCy/run_20260918_220806/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260918200506GCy/run_20260918_220806/coordinate_schema.json"
+    },
+    {
+      "task": "20260920122356WIt",
+      "run": "/mnt/chengchangxu/ckpt/vn_e2e/processed_data/20260920122356WIt/vnav_teacher_rule10_history_v2/full/run_20260920_172826",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260920122356WIt/run_20260920_172826",
+      "status": "success",
+      "input_count": 835,
+      "retained": 800,
+      "excluded": 35,
+      "exclusion_reasons": {
+        "reference_outside_drawn_road": 26,
+        "history_outside_drawn_road": 9
+      },
+      "trimmed_routes": 110,
+      "validation": {
+        "passed": true,
+        "retained": 800,
+        "excluded": 35,
+        "maps": {
+          "P_map": 800
+        },
+        "gray_points_checked": 16842,
+        "gray_segments_checked": 10106,
+        "world_roundtrip_max_error_m": 4.263256414560601e-14,
+        "source_and_output_hashes_verified": true
+      },
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260920122356WIt/run_20260920_172826/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260920122356WIt/run_20260920_172826/coordinate_schema.json"
+    },
+    {
+      "task": "202609201240128Up",
+      "run": "/mnt/chengchangxu/ckpt/vn_e2e/processed_data/202609201240128Up/vnav_teacher_rule10_history_v2/full/run_20260920_174149",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/202609201240128Up/run_20260920_174149",
+      "status": "success",
+      "input_count": 940,
+      "retained": 864,
+      "excluded": 76,
+      "exclusion_reasons": {
+        "reference_outside_drawn_road": 63,
+        "history_outside_drawn_road": 13
+      },
+      "trimmed_routes": 227,
+      "validation": {
+        "passed": true,
+        "retained": 864,
+        "excluded": 76,
+        "maps": {
+          "P_map": 864
+        },
+        "gray_points_checked": 20845,
+        "gray_segments_checked": 13577,
+        "world_roundtrip_max_error_m": 4.263256414560601e-14,
+        "source_and_output_hashes_verified": true
+      },
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/202609201240128Up/run_20260920_174149/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/202609201240128Up/run_20260920_174149/coordinate_schema.json"
+    }
+  ],
+  "failed_tasks": 0,
+  "totals": {
+    "input_count": 15980,
+    "retained": 11429,
+    "excluded": 4551,
+    "trimmed_routes": 5785
+  },
+  "retained_maps": {
+    "P_map": 10245,
+    "B10_map": 1184
+  },
+  "exclusion_reasons": {
+    "reference_outside_drawn_road": 4419,
+    "history_outside_drawn_road": 132
+  },
+  "gray_points_checked": 526256,
+  "gray_segments_checked": 446973,
+  "world_roundtrip_max_error_m": 4.263256414560601e-14,
+  "raw_source_protection": {
+    "checked_files": 452,
+    "unchanged": true,
+    "changed": []
+  },
+  "teacher_map_asset_sources_verified": 32003,
+  "trimmed_route_prefix_lengths": {
+    "1": 79,
+    "2": 136,
+    "3": 122,
+    "4": 70,
+    "5": 91,
+    "6": 86,
+    "7": 80,
+    "8": 69,
+    "9": 58,
+    "10": 65,
+    "11": 59,
+    "12": 73,
+    "13": 93,
+    "14": 87,
+    "15": 97,
+    "16": 79,
+    "17": 66,
+    "18": 86,
+    "19": 67,
+    "20": 61,
+    "21": 52,
+    "22": 50,
+    "23": 74,
+    "24": 59,
+    "25": 49,
+    "26": 74,
+    "27": 56,
+    "28": 86,
+    "29": 71,
+    "30": 68,
+    "31": 64,
+    "32": 48,
+    "33": 74,
+    "34": 83,
+    "35": 70,
+    "36": 76,
+    "37": 53,
+    "38": 63,
+    "39": 54,
+    "40": 40,
+    "41": 43,
+    "42": 39,
+    "43": 33,
+    "44": 34,
+    "45": 51,
+    "46": 47,
+    "47": 55,
+    "48": 60,
+    "49": 51,
+    "50": 70,
+    "51": 67,
+    "52": 38,
+    "53": 57,
+    "54": 28,
+    "55": 49,
+    "56": 52,
+    "57": 56,
+    "58": 43,
+    "59": 54,
+    "60": 58,
+    "61": 40,
+    "62": 69,
+    "63": 58,
+    "64": 47,
+    "65": 52,
+    "66": 43,
+    "67": 47,
+    "68": 43,
+    "69": 48,
+    "70": 42,
+    "71": 59,
+    "72": 32,
+    "73": 42,
+    "74": 28,
+    "75": 44,
+    "76": 22,
+    "77": 21,
+    "78": 23,
+    "79": 27,
+    "80": 31,
+    "81": 24,
+    "82": 27,
+    "83": 17,
+    "84": 31,
+    "85": 22,
+    "86": 17,
+    "87": 19,
+    "88": 13,
+    "89": 34,
+    "90": 13,
+    "91": 10,
+    "92": 23,
+    "93": 22,
+    "94": 17,
+    "95": 15,
+    "96": 13,
+    "97": 32,
+    "98": 16,
+    "99": 35,
+    "100": 20,
+    "101": 21,
+    "102": 8,
+    "103": 13,
+    "104": 5,
+    "105": 8,
+    "106": 5,
+    "107": 6,
+    "108": 11,
+    "109": 11,
+    "110": 17,
+    "111": 12,
+    "112": 18,
+    "113": 10,
+    "114": 10,
+    "115": 10,
+    "116": 15,
+    "117": 14,
+    "118": 12,
+    "119": 23,
+    "120": 13,
+    "121": 18,
+    "122": 20,
+    "123": 15,
+    "124": 14,
+    "125": 14,
+    "126": 7,
+    "127": 6,
+    "128": 17,
+    "129": 12,
+    "130": 9,
+    "131": 7,
+    "132": 2,
+    "133": 6,
+    "134": 9,
+    "135": 3,
+    "136": 7,
+    "137": 14,
+    "138": 8,
+    "139": 12,
+    "140": 5,
+    "141": 1,
+    "142": 1,
+    "144": 3,
+    "145": 2,
+    "146": 5,
+    "147": 5,
+    "148": 7,
+    "149": 9,
+    "150": 4,
+    "151": 6,
+    "152": 5,
+    "153": 3,
+    "154": 9,
+    "155": 3,
+    "156": 10,
+    "157": 10,
+    "158": 5,
+    "159": 8,
+    "160": 8,
+    "161": 3,
+    "162": 2,
+    "163": 1,
+    "164": 4,
+    "165": 3,
+    "166": 3,
+    "167": 2,
+    "168": 2,
+    "169": 4,
+    "170": 3,
+    "171": 4,
+    "172": 5,
+    "173": 3,
+    "174": 3,
+    "177": 1,
+    "178": 6,
+    "179": 2,
+    "180": 8,
+    "181": 5,
+    "182": 3,
+    "183": 3,
+    "184": 4,
+    "185": 3,
+    "186": 1,
+    "187": 1,
+    "188": 2,
+    "189": 1,
+    "190": 10,
+    "191": 6,
+    "196": 9,
+    "197": 4,
+    "202": 1,
+    "204": 1,
+    "205": 1,
+    "206": 1,
+    "207": 1,
+    "208": 1,
+    "209": 2,
+    "211": 2,
+    "212": 1,
+    "213": 1
+  },
+  "regression": {
+    "passed": 65,
+    "failed": 0,
+    "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python3 -m pytest -q processing/coordinate-converter/tests processing/data_pipeline/tests"
+  },
+  "code_sha256": {
+    "processing/coordinate-converter/export_pixels.py": "d8d69c6776d0908a4802603d930703791a50815a6680a8b19bf940b596b6a3db",
+    "processing/coordinate-converter/remap_existing.py": "ff702a696c21d5bfb1f919de0cc3e336b0f70c3a29c4f201eb1162866a9e7021",
+    "processing/coordinate-converter/tests/test_coordinates.py": "4c68cb19db17656d9179d2b7c4e0766afc1d4220230cd191c1d9794fc0c26c09",
+    "processing/coordinate-converter/tests/test_source_map.py": "7fa1708567d6e614dd8f50030dbf88f1931a8a363baf93fc185a87fae9b341d8",
+    "processing/coordinate-converter/vnav_coordinates/__init__.py": "c7f4af3bebd7731a2f7f4b608f0397e00593b45490ca9ab37157b41031bad814",
+    "processing/coordinate-converter/vnav_coordinates/_paired_roads.py": "a0ad2a59924753f803cd5442b66228abb6ccf32d48dd8dfa5046ebc35df9d3fb",
+    "processing/coordinate-converter/vnav_coordinates/export.py": "d22d7be9ca8efb4fdbf05cb1bb8bb730ca4ee0d530979b3c46f87108c36c14a1",
+    "processing/coordinate-converter/vnav_coordinates/geometry.py": "1942350558be4d58e565589627b9c10e51e0b84407d2fd34d9352671ad4300a7",
+    "processing/coordinate-converter/vnav_coordinates/source_map.py": "783dd55f0c10cb5efc4a92cc21e56c494fb53d88afb39794a95a8f3fa0835092"
+  }
+}

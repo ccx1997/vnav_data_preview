@@ -1,0 +1,2262 @@
+{
+  "/mnt/chengchangxu/data/visual_nav_mv/20260818193938Axg/meta/unpacked/meta_20260818193938Axg_1/frames.jsonl": {
+    "size": 382400,
+    "mtime_ns": 1787815385806004220,
+    "sha256": "ff00a5f7e5fa9cd8472d830ecb645e64f41aac34f85ebde69956cc4047c99e9e"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260818193938Axg/meta/unpacked/meta_20260818193938Axg_10/frames.jsonl": {
+    "size": 73542,
+    "mtime_ns": 1787815001655807881,
+    "sha256": "e80fdb9cc4a5ad1ac92f2b9c49ff599f8a35704d3aad8a9bd9e78411dadf3ae5"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260818193938Axg/meta/unpacked/meta_20260818193938Axg_11/frames.jsonl": {
+    "size": 29631,
+    "mtime_ns": 1787814855395903839,
+    "sha256": "914c3f0ea1ebd5cc4273073dde819efbf8b62b6638b9e812bde25a609862a57c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260818193938Axg/meta/unpacked/meta_20260818193938Axg_2/frames.jsonl": {
+    "size": 160484,
+    "mtime_ns": 1787815340787597503,
+    "sha256": "95649a23930874304e2293b2d9ae525591bce59f53c806879c5c3bbee870cec6"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260818193938Axg/meta/unpacked/meta_20260818193938Axg_3/frames.jsonl": {
+    "size": 37792,
+    "mtime_ns": 1787815315182938404,
+    "sha256": "905e6b20591b2a8eae457c5fd5e75fb8b351f714e9c9b8ea700fa18694878014"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260818193938Axg/meta/unpacked/meta_20260818193938Axg_4/frames.jsonl": {
+    "size": 1051419,
+    "mtime_ns": 1787815291028239396,
+    "sha256": "3a460bed88a8f212eeea6794edcdb969716d16ab790c6eb5a8c2dd644ae19713"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260818193938Axg/meta/unpacked/meta_20260818193938Axg_6/frames.jsonl": {
+    "size": 941129,
+    "mtime_ns": 1787815176375434756,
+    "sha256": "ef637079a67dd2b585842a5f08397998ed6e65e762644115dca0ef30ea3c23d4"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260818193938Axg/meta/unpacked/meta_20260818193938Axg_8/frames.jsonl": {
+    "size": 170499,
+    "mtime_ns": 1787815108174951300,
+    "sha256": "2b6da4b9b1fa95a2cfc558c029af3ff98ae6967b04f269f6fef3103bcaae309e"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260818193938Axg/meta/unpacked/meta_20260818193938Axg_9/frames.jsonl": {
+    "size": 865679,
+    "mtime_ns": 1787815071623287273,
+    "sha256": "7d9296fddc4b6e6f83bb58850285e045589d8e17ce72e058482164ab42244dfe"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260818193938Axg/videos/videos_20260818193938Axg_1/manifest.json": {
+    "size": 3063,
+    "mtime_ns": 1787812113424831961,
+    "sha256": "d9e66dd4b8faff1a62aabc13ee63d62152d577cbc1aa5dd7ebc1cc2b3eeb085c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260818193938Axg/videos/videos_20260818193938Axg_10/manifest.json": {
+    "size": 3068,
+    "mtime_ns": 1787812087670660099,
+    "sha256": "ae2416b14644a7649ee58c02654b7479291a29f99ba6911bee5152d14bbc56c6"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260818193938Axg/videos/videos_20260818193938Axg_11/manifest.json": {
+    "size": 3064,
+    "mtime_ns": 1787812090573233264,
+    "sha256": "0c5d4bf8ea96cf258621d84f2c646c5caa82a138c727b4460c8e898286ca533f"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260818193938Axg/videos/videos_20260818193938Axg_2/manifest.json": {
+    "size": 3057,
+    "mtime_ns": 1787812101095050082,
+    "sha256": "3712e295da53de537b9ae3fbf63725d6bbdfad2edc185a793eaffe08308dab8e"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260818193938Axg/videos/videos_20260818193938Axg_3/manifest.json": {
+    "size": 3056,
+    "mtime_ns": 1787812098523186229,
+    "sha256": "a7ade0617451f17d4816108bbbf561db051f0c498cca4072db92c7ea037c6979"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260818193938Axg/videos/videos_20260818193938Axg_4/manifest.json": {
+    "size": 3069,
+    "mtime_ns": 1787812177017328299,
+    "sha256": "3f8d9b0976bb8c7adc5afce8d787762339653c5e8de9c5305a566acf3fac751b"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260818193938Axg/videos/videos_20260818193938Axg_6/manifest.json": {
+    "size": 3068,
+    "mtime_ns": 1787812180020348452,
+    "sha256": "209c4c42145e87ce05435f182fc4ceba02faf4ad1ac31331547f8f66d404e459"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260818193938Axg/videos/videos_20260818193938Axg_8/manifest.json": {
+    "size": 3063,
+    "mtime_ns": 1787812139408893864,
+    "sha256": "54d8f27f91c1c5acac3dcc40f1a1d5ec3b61669815e0f61fd1ba92eef4a1643e"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260818193938Axg/videos/videos_20260818193938Axg_9/manifest.json": {
+    "size": 3069,
+    "mtime_ns": 1787812191096369030,
+    "sha256": "725f1e61929442f757f220fe9fd11b87f39a58166e29b2b5adfc748f29188cd3"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260819181014HWI/meta/unpacked/meta_20260819181014HWI_1/frames.jsonl": {
+    "size": 411114,
+    "mtime_ns": 1788182342661726180,
+    "sha256": "1ded693ef88fb5ae4a8d202b0f9573c17fbe3be7600ab24c3859fafd4a3a0e5c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260819181014HWI/meta/unpacked/meta_20260819181014HWI_2/frames.jsonl": {
+    "size": 361365,
+    "mtime_ns": 1788182345758187766,
+    "sha256": "663296802f3df7638db16435bae17238d3b5c459941eb6df6012533522c11d30"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260819181014HWI/videos/videos_20260819181014HWI_1/manifest.json": {
+    "size": 3069,
+    "mtime_ns": 1788182367570073829,
+    "sha256": "c12c63dfd3dfb83b7bdfdb1057f6d69100dc9f3fa9efde8b9a23c3c8cff0f442"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260819181014HWI/videos/videos_20260819181014HWI_2/manifest.json": {
+    "size": 3064,
+    "mtime_ns": 1788182365131056081,
+    "sha256": "37ddc46129e911ae735ff6587dbe728fd778468ad3ca254dcf433287b29acaec"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260819203318qFl/meta/unpacked/meta_20260819203318qFl_10/frames.jsonl": {
+    "size": 109194,
+    "mtime_ns": 1787813757815932183,
+    "sha256": "865d8cda2b5d8cb9177f0d70e51753e2b44f84607c95e6d5b80eb32c906801db"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260819203318qFl/meta/unpacked/meta_20260819203318qFl_12/frames.jsonl": {
+    "size": 1111618,
+    "mtime_ns": 1787813710337139692,
+    "sha256": "99bc3a15a6ec9275b769b184dfcca30c0c5e85f7d9b8e138c1d431af4248f9d3"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260819203318qFl/meta/unpacked/meta_20260819203318qFl_2/frames.jsonl": {
+    "size": 215914,
+    "mtime_ns": 1787813971401479206,
+    "sha256": "26cd573fbaa3da49991b0bf6d3c3514059622dd235a592c6aef755021360db80"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260819203318qFl/meta/unpacked/meta_20260819203318qFl_4/frames.jsonl": {
+    "size": 155365,
+    "mtime_ns": 1787813942490198994,
+    "sha256": "db0e2c1a604fe3797e06f3b36bd31af5f4d91ae11cb2d979775dd7776ecbba9e"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260819203318qFl/meta/unpacked/meta_20260819203318qFl_6/frames.jsonl": {
+    "size": 1104443,
+    "mtime_ns": 1787813875129727682,
+    "sha256": "cac6e81669f9c455085325fb9f37c7301bafd9b9a41b15dbb981e50fa459cad5"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260819203318qFl/meta/unpacked/meta_20260819203318qFl_7/frames.jsonl": {
+    "size": 60238,
+    "mtime_ns": 1787813847318375417,
+    "sha256": "905deced8d705692ffb87783f7b056107662d4c3904761335aaeb3b7fa7bb94c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260819203318qFl/videos/videos_20260819203318qFl_10/manifest.json": {
+    "size": 3064,
+    "mtime_ns": 1787811658720649464,
+    "sha256": "346e8014366cf4a5ad5a7518f113db632fea5e96d2c095eed99203d7cc2cc255"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260819203318qFl/videos/videos_20260819203318qFl_12/manifest.json": {
+    "size": 3077,
+    "mtime_ns": 1787811731059596511,
+    "sha256": "b60f76b0737e175d4aa09a8ff87bc5523cd0f3d71ceb3cd4ff10acd2608bd8af"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260819203318qFl/videos/videos_20260819203318qFl_2/manifest.json": {
+    "size": 3057,
+    "mtime_ns": 1787811663845068688,
+    "sha256": "94d5ccbd48331a0fa80bac560111e7920d494febf7ba1b8a6e5d4e172c895f4a"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260819203318qFl/videos/videos_20260819203318qFl_4/manifest.json": {
+    "size": 3057,
+    "mtime_ns": 1787811668030053058,
+    "sha256": "6283720fe9e98eb808665212fd285e417d5b4dca849f514064cb3beedc4035be"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260819203318qFl/videos/videos_20260819203318qFl_6/manifest.json": {
+    "size": 3062,
+    "mtime_ns": 1787811744142993043,
+    "sha256": "ddc352e066e0337fdca3e089f092baaf0fc09d54ed4d1b552b6c25808ccc82c4"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260819203318qFl/videos/videos_20260819203318qFl_7/manifest.json": {
+    "size": 3056,
+    "mtime_ns": 1787811675826204207,
+    "sha256": "34e4d6c4c0a22426da15d555e3b82b88be4ffcb6c535ed17d5c0e3ecaca171e9"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260820180215WDK/meta/unpacked/meta_20260820180215WDK_1/frames.jsonl": {
+    "size": 333367,
+    "mtime_ns": 1787741255286484522,
+    "sha256": "411528229753be3d85792c20dd454886d5a3403a1c3edc98aca36dbadb3bbe9b"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260820180215WDK/meta/unpacked/meta_20260820180215WDK_3/frames.jsonl": {
+    "size": 98994,
+    "mtime_ns": 1787741235862946790,
+    "sha256": "617e66bfda29e08201e5c7d1652722dbaa9955cdf9dc9268532c8bdf11b8e1f6"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260820180215WDK/meta/unpacked/meta_20260820180215WDK_5/frames.jsonl": {
+    "size": 527578,
+    "mtime_ns": 1787741181524463509,
+    "sha256": "3e376706123765e30c80eb55465d9b9d4b0117e616a299b7c673aa7bc0c2d95d"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260820180215WDK/meta/unpacked/meta_20260820180215WDK_6/frames.jsonl": {
+    "size": 967988,
+    "mtime_ns": 1787741147406113069,
+    "sha256": "91dea2e86e9541a369d6d1e4e1efe3b87580dda63d9ed1dfcfb50c1ea93fe021"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260820180215WDK/meta/unpacked/meta_20260820180215WDK_7/frames.jsonl": {
+    "size": 2822459,
+    "mtime_ns": 1787740230650966960,
+    "sha256": "f4e2db10b8feb7ffd6ebb0c7a2be02f0e16688d7aaf6397072447e6151dac815"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260820180215WDK/videos/videos_20260820180215WDK_1/manifest.json": {
+    "size": 3072,
+    "mtime_ns": 1787641814448361109,
+    "sha256": "b09621f49e7373cd0c505b39b6b3415a4583515d0dfc26c2698d8abe29b8c1e1"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260820180215WDK/videos/videos_20260820180215WDK_3/manifest.json": {
+    "size": 3062,
+    "mtime_ns": 1787641819117523566,
+    "sha256": "1fe186f3f74e654188daba76d09bf64757cf4d100f37e77322b5467d77aa7a37"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260820180215WDK/videos/videos_20260820180215WDK_5/manifest.json": {
+    "size": 3075,
+    "mtime_ns": 1787641836125442296,
+    "sha256": "2c17777e91ffced1ad07e996cfa1d00a18b618adadd4c92ac71978c5d3ad9502"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260820180215WDK/videos/videos_20260820180215WDK_6/manifest.json": {
+    "size": 3069,
+    "mtime_ns": 1787641865246039033,
+    "sha256": "84c66ccc52a42c42d7101806be131bdb060dcea688aab06eeefce696f462fd6c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260820180215WDK/videos/videos_20260820180215WDK_7/manifest.json": {
+    "size": 3066,
+    "mtime_ns": 1787641935612535908,
+    "sha256": "5f89889f51280a083b4dcfad6b79df4e50bc4805d265086926ba535d4a335d7b"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260821114524n4Q/meta/unpacked/meta_20260821114524n4Q_2/frames.jsonl": {
+    "size": 1050465,
+    "mtime_ns": 1787813556669097251,
+    "sha256": "5d4ef184c499ceaf271457f3dd801770a3c052bf77f0252428e9dfa7d348ffb5"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260821114524n4Q/meta/unpacked/meta_20260821114524n4Q_3/frames.jsonl": {
+    "size": 413670,
+    "mtime_ns": 1787814526595707023,
+    "sha256": "28173bdf193f9bcf2dd49c6ee0074da6dcc9209efba03ee34af446e4acce8606"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260821114524n4Q/videos/videos_20260821114524n4Q_2/manifest.json": {
+    "size": 3074,
+    "mtime_ns": 1787811048975502429,
+    "sha256": "daa500e8ac11237c7e247a3d9dd5ef168802ffee7a26df2d1d70d00d9bd8dfea"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260821114524n4Q/videos/videos_20260821114524n4Q_3/manifest.json": {
+    "size": 3199,
+    "mtime_ns": 1787814509519433034,
+    "sha256": "676ec0801865019abfcc70bb2e918f7be24574f3f72c422c89402f13830c96ef"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260824161657Li2/meta/unpacked/meta_20260824161657Li2_1/frames.jsonl": {
+    "size": 1781458,
+    "mtime_ns": 1789205809912131716,
+    "sha256": "d52e34342ce1b8a970cee188d5b85a329b9ef91fbeda8d1d84951fb27800a86c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260824161657Li2/videos/videos_20260824161657Li2_1/manifest.json": {
+    "size": 3064,
+    "mtime_ns": 1788182426255472043,
+    "sha256": "641d52f597cb26c52f509c1d2c6b1c1bd15c992ee8f8806dddacdad8460338da"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202608251919001QS/meta/unpacked/meta_202608251919001QS_2/frames.jsonl": {
+    "size": 522190,
+    "mtime_ns": 1789205791376036621,
+    "sha256": "f7b955007604c312f42fe098a13a3f8c8d4c90d19fa1a3a18c7d337b01501496"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202608251919001QS/meta/unpacked/meta_202608251919001QS_5/frames.jsonl": {
+    "size": 152563,
+    "mtime_ns": 1789205703655530211,
+    "sha256": "348a9dd342df5b6a0251a85406308eb439208edfdc5f7be6e7b27b1ac134c15e"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202608251919001QS/meta/unpacked/meta_202608251919001QS_6/frames.jsonl": {
+    "size": 1051401,
+    "mtime_ns": 1789205739512837168,
+    "sha256": "87991f560ab2641547f6faa7c55f1152ba9f7658720543b5a42a3bbab0efda83"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202608251919001QS/meta/unpacked/meta_202608251919001QS_7/frames.jsonl": {
+    "size": 354733,
+    "mtime_ns": 1789205762772474250,
+    "sha256": "7400f6d8460ee9c70b5701c55f1f1ef8bc7934a1572e8a653557fbe45b711e84"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202608251919001QS/meta/unpacked/meta_202608251919001QS_8/frames.jsonl": {
+    "size": 421271,
+    "mtime_ns": 1789205778676047352,
+    "sha256": "7fa21525902924990aeb9c64ac50c9539969fce6f0ff29083b1daca7fead04a1"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202608251919001QS/videos/videos_202608251919001QS_2/manifest.json": {
+    "size": 5175,
+    "mtime_ns": 1787821059849059319,
+    "sha256": "b20c95e75995dea80d7e047cd70906b2611ad543d5cc578a64ef6a3837bb147b"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202608251919001QS/videos/videos_202608251919001QS_5/manifest.json": {
+    "size": 3674,
+    "mtime_ns": 1787821040644647328,
+    "sha256": "b9704e8737aad59cf86808c77df31a336d6ed8ad1360260f9798a5e972a7f556"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202608251919001QS/videos/videos_202608251919001QS_6/manifest.json": {
+    "size": 3075,
+    "mtime_ns": 1787821094101095019,
+    "sha256": "2f89650b1a5cd25e2d714a836149d35b5b1fb8fc19f8c0939a241618e4cf44e5"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202608251919001QS/videos/videos_202608251919001QS_7/manifest.json": {
+    "size": 3063,
+    "mtime_ns": 1787821053599814605,
+    "sha256": "1a88b4eea5c988517149383e1c722783708c97f47eea538a6a02dd2f83d8795f"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202608251919001QS/videos/videos_202608251919001QS_8/manifest.json": {
+    "size": 3069,
+    "mtime_ns": 1787821077923755085,
+    "sha256": "d6a4eb7f4d7153c4ace93ffacbf79c26bfef46152fe5864749fe0ea6dd1afdae"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260826154539RI5/meta/unpacked/meta_20260826154539RI5_1/frames.jsonl": {
+    "size": 108783,
+    "mtime_ns": 1789206274656600899,
+    "sha256": "d87e4b1f4878b91b6a5ecb862bd64287e90294695504b52812cfe51e88da7caf"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260826154539RI5/meta/unpacked/meta_20260826154539RI5_2/frames.jsonl": {
+    "size": 80317,
+    "mtime_ns": 1789206294467056867,
+    "sha256": "384b55646f13790ffa42cfc83bca9c393c1a95c320ff5c4bc0f18d5d18ab1c21"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260826154539RI5/videos/videos_20260826154539RI5_1/manifest.json": {
+    "size": 3056,
+    "mtime_ns": 1787820735602785639,
+    "sha256": "060db202951918d2969b4d213cbda676f44616ba319bb96af8662fe3468ef6b5"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260826154539RI5/videos/videos_20260826154539RI5_2/manifest.json": {
+    "size": 3060,
+    "mtime_ns": 1787820735096252836,
+    "sha256": "1edced9e010789e0f575204e69a6d7b69b5d160b790f9810a1a01d283552fe43"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260827180935lmd/meta/unpacked/meta_20260827180935lmd_2/frames.jsonl": {
+    "size": 114944,
+    "mtime_ns": 1787900406307080514,
+    "sha256": "fd8798ea11d76d194af8ba1a51e5f9b5382247b5aa77917148b2aa6570989f58"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260827180935lmd/videos/videos_20260827180935lmd_2/manifest.json": {
+    "size": 3194,
+    "mtime_ns": 1787900406300996887,
+    "sha256": "5c4725dba0bc9bc6b2d63eccb6ab799b188c9b96cf600ced45a41ab54390c804"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260828154654XXz/meta/unpacked/meta_20260828154654XXz_1/frames.jsonl": {
+    "size": 769334,
+    "mtime_ns": 315417600000000000,
+    "sha256": "792d25b7f0de9cc628a45e11576c26f401fa8abaf98738a40f6bd968e2ea1b1b"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260828154654XXz/meta/unpacked/meta_20260828154654XXz_2/frames.jsonl": {
+    "size": 610964,
+    "mtime_ns": 315417600000000000,
+    "sha256": "b300a46f3f6ba797e893742bcdca2cc3a05f6f7c00c558c37f72d656227f6e17"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260828154654XXz/meta/unpacked/meta_20260828154654XXz_3/frames.jsonl": {
+    "size": 453212,
+    "mtime_ns": 315417600000000000,
+    "sha256": "80a5404e9a187fc5e11f092e218cf53fd854f2c30abdcb35ba69a92c61c9f1d0"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260828154654XXz/meta/unpacked/meta_20260828154654XXz_4/frames.jsonl": {
+    "size": 892237,
+    "mtime_ns": 315417600000000000,
+    "sha256": "d0208a589fda989d39d3844f6c16ac8868afee82bd479861b689caeb53dce518"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260828154654XXz/meta/unpacked/meta_20260828154654XXz_5/frames.jsonl": {
+    "size": 402203,
+    "mtime_ns": 315417600000000000,
+    "sha256": "230ecf3255b7c4f597a4195b33f4c7793557f261f0327e128eb959f8c0369c87"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260828154654XXz/meta/unpacked/meta_20260828154654XXz_6/frames.jsonl": {
+    "size": 400854,
+    "mtime_ns": 315417600000000000,
+    "sha256": "80cedf85d1d02dbc946938e69dd7009578cf5083958a4b368f161ac24b3c8bad"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260828154654XXz/meta/unpacked/meta_20260828154654XXz_7/frames.jsonl": {
+    "size": 608377,
+    "mtime_ns": 315417600000000000,
+    "sha256": "19a578fd959a08a1918095e34352eef3d8bcb1bfb5209adc249c28d5958f1bef"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260828154654XXz/meta/unpacked/meta_20260828154654XXz_8/frames.jsonl": {
+    "size": 394751,
+    "mtime_ns": 315417600000000000,
+    "sha256": "def8314c97f068e42c7cdbe571259ed10ecc0edee8bd65e2b4fa6c4b585fe969"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260828154654XXz/videos/videos_20260828154654XXz_1/manifest.json": {
+    "size": 5666,
+    "mtime_ns": 1788157249561570689,
+    "sha256": "936173d1ddb5688bda357994d6f992b4e481b368637a7158d81128ccd40c749a"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260828154654XXz/videos/videos_20260828154654XXz_2/manifest.json": {
+    "size": 4810,
+    "mtime_ns": 1788157243173893306,
+    "sha256": "fb4bd1574db9f4ace57b2ba296ced1f260c6f6eaae6a1babae5c8fae9cc1d969"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260828154654XXz/videos/videos_20260828154654XXz_3/manifest.json": {
+    "size": 4565,
+    "mtime_ns": 1788157238609470763,
+    "sha256": "d6bf2a4361e0bafb310328c989b28672c30d00c47992521de546c572dbf7bcea"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260828154654XXz/videos/videos_20260828154654XXz_4/manifest.json": {
+    "size": 6183,
+    "mtime_ns": 1788157261302429498,
+    "sha256": "ba2c1f732579f57b065ff4994f3519484d4770a2d308103d283649506233621c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260828154654XXz/videos/videos_20260828154654XXz_5/manifest.json": {
+    "size": 3939,
+    "mtime_ns": 1788157263029725913,
+    "sha256": "9da67e0aa0f87ae697d87bd9c7a4b18ebd73bae74443285ca7c567ca7912bcd1"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260828154654XXz/videos/videos_20260828154654XXz_6/manifest.json": {
+    "size": 4062,
+    "mtime_ns": 1788157267114422453,
+    "sha256": "7cc36b1491e1b189b88550fc248e7ece8cd59f879e9aa1ac35b23d97dd7dc6da"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260828154654XXz/videos/videos_20260828154654XXz_7/manifest.json": {
+    "size": 4687,
+    "mtime_ns": 1788157282351168328,
+    "sha256": "ab7b51e04176fb4eebe40385019bb839c27d4452304d83667092803dad7c4f77"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260828154654XXz/videos/videos_20260828154654XXz_8/manifest.json": {
+    "size": 3942,
+    "mtime_ns": 1788157285299493554,
+    "sha256": "7def39522b394994bceb67ee325c79df87e988b61aabb68ce4cc1445225f02cb"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260831152735OM4/meta/unpacked/meta_20260831152735OM4_1/frames.jsonl": {
+    "size": 153498,
+    "mtime_ns": 1788233847445649608,
+    "sha256": "9a13fc93a11b1a14585bd790e88f4e49eda18e2addd2eaa8d038380f3a7a938f"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260831152735OM4/meta/unpacked/meta_20260831152735OM4_2/frames.jsonl": {
+    "size": 832850,
+    "mtime_ns": 1788233848624745354,
+    "sha256": "08f7e90b0754c784995216971f660da779aa4e15a4255806b9a9ef89f9e1c50b"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260831152735OM4/meta/unpacked/meta_20260831152735OM4_3/frames.jsonl": {
+    "size": 528606,
+    "mtime_ns": 1788233854643757545,
+    "sha256": "6cb4ca096be63b9945b4d4c11e1e8f0a5715de51d276de0ebe936416a4f687a1"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260831152735OM4/meta/unpacked/meta_20260831152735OM4_4/frames.jsonl": {
+    "size": 758428,
+    "mtime_ns": 1788233858376511686,
+    "sha256": "9935ef9de6338617d7643ef728d2cccf5b45fba8d325c326b7180bf802f910ed"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260831152735OM4/meta/unpacked/meta_20260831152735OM4_5/frames.jsonl": {
+    "size": 2271463,
+    "mtime_ns": 1788233863698587899,
+    "sha256": "29effc223e94f6e03a990118bc6d913bac8ff0208c4f4f029856b1fe0397ccb6"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260831152735OM4/videos/videos_20260831152735OM4_1/manifest.json": {
+    "size": 3669,
+    "mtime_ns": 1788233915357043550,
+    "sha256": "124b3a3f98ee2c241f71fa5aecfffe9bf8c38f3245f1f3727ba3c9321873d3ff"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260831152735OM4/videos/videos_20260831152735OM4_2/manifest.json": {
+    "size": 6669,
+    "mtime_ns": 1788233956832391413,
+    "sha256": "f38e3f1c00276b591311235b0f728051a548f33f817d835bc9f11b9760613bd0"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260831152735OM4/videos/videos_20260831152735OM4_3/manifest.json": {
+    "size": 5295,
+    "mtime_ns": 1788233943553215431,
+    "sha256": "87ceeef370737a7dc0a2f5fd51807d2fb73beb0cb37f8531ffaca24781f23c09"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260831152735OM4/videos/videos_20260831152735OM4_4/manifest.json": {
+    "size": 6542,
+    "mtime_ns": 1788233958597504949,
+    "sha256": "ee43ba2f538a18849a5fd8046e8ccfb1f941a18605bfa48eb6a434e900f52a50"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260831152735OM4/videos/videos_20260831152735OM4_5/manifest.json": {
+    "size": 12752,
+    "mtime_ns": 1788234046682615422,
+    "sha256": "e4a639d5d6562a8f56e8efa3c6fd220503d7e50bc887a4cb1e6e550eb4056c0d"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/2026083119533604q/meta/unpacked/meta_2026083119533604q_1/frames.jsonl": {
+    "size": 179631,
+    "mtime_ns": 1788234058508523563,
+    "sha256": "538a20462fc7f96291aedee114785a560e624dacd1ecfae3dcb7734bc57b6f54"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/2026083119533604q/meta/unpacked/meta_2026083119533604q_2/frames.jsonl": {
+    "size": 144782,
+    "mtime_ns": 1788234060464667423,
+    "sha256": "5a64c568cc6ff4bd60f4c8d5ef44ff1c12d658664263925d6b4f2f834bf4a130"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/2026083119533604q/meta/unpacked/meta_2026083119533604q_3/frames.jsonl": {
+    "size": 448929,
+    "mtime_ns": 1788234062225627892,
+    "sha256": "0ee173abcfae450f03c52db71b7711fd18bd2d982f69e82ceefe1fb2f10272eb"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/2026083119533604q/meta/unpacked/meta_2026083119533604q_4/frames.jsonl": {
+    "size": 672875,
+    "mtime_ns": 1788234067304188769,
+    "sha256": "6030fd3f3801fcbc057ec8fc44e0d12f50f9f12f82e5267b15ed49cbeba56d1b"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/2026083119533604q/meta/unpacked/meta_2026083119533604q_5/frames.jsonl": {
+    "size": 1873708,
+    "mtime_ns": 1788234073240040746,
+    "sha256": "5cd5f56c5312870b248bfb0b42af29febba96c2296b614e1158d31120cd20746"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/2026083119533604q/videos/videos_2026083119533604q_1/manifest.json": {
+    "size": 3801,
+    "mtime_ns": 1788234114701511282,
+    "sha256": "09368ff9151152a117e390394f128a664fceeac6a3ce6f70775ec2aa8f7eea3c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/2026083119533604q/videos/videos_2026083119533604q_2/manifest.json": {
+    "size": 3798,
+    "mtime_ns": 1788234113509491366,
+    "sha256": "28ca8cc79fd179571508ee211b979105d2ef3f1b79da03314db09ed04b7886a0"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/2026083119533604q/videos/videos_2026083119533604q_3/manifest.json": {
+    "size": 5166,
+    "mtime_ns": 1788234131496748183,
+    "sha256": "0c1b43f5b16f3f75db007784a068c7cf2d274d17b8de4f44f6c68b060f7b9bd2"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/2026083119533604q/videos/videos_2026083119533604q_4/manifest.json": {
+    "size": 6043,
+    "mtime_ns": 1788234141212261073,
+    "sha256": "95dc59564bdfc2e0735a2c14f81a5c074eb358762ff8ba686d918b8dd59ef9a0"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/2026083119533604q/videos/videos_2026083119533604q_5/manifest.json": {
+    "size": 11514,
+    "mtime_ns": 1788234240834252967,
+    "sha256": "8d1f331671c4410911d8b19c1adc4832d1a62afdd3ba109efbd01d414042f66d"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260901185939a1N/meta/unpacked/meta_20260901185939a1N_1/frames.jsonl": {
+    "size": 213254,
+    "mtime_ns": 1788927022634531879,
+    "sha256": "45cbcac3b0580850f53bd5eab4b6aff2b894c963f7531909b8e2e7948871269f"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260901185939a1N/meta/unpacked/meta_20260901185939a1N_2/frames.jsonl": {
+    "size": 42292,
+    "mtime_ns": 1788927024160135610,
+    "sha256": "57bc52145b506543dedec30b3026bcc81606963868a8e886c39db51f5c0f4171"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260901185939a1N/meta/unpacked/meta_20260901185939a1N_3/frames.jsonl": {
+    "size": 1068782,
+    "mtime_ns": 1788927024509695844,
+    "sha256": "1a7a4218546df4d0396a3042645a9c85b0067bb57b3e931d6295c31f3d4a227f"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260901185939a1N/videos/videos_20260901185939a1N_1/manifest.json": {
+    "size": 3799,
+    "mtime_ns": 1788927285802813152,
+    "sha256": "aca9e03a6fe3cbe404ffba3f71668ddfb8f6986a8c3c7bd74dbf736311851fa5"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260901185939a1N/videos/videos_20260901185939a1N_2/manifest.json": {
+    "size": 3534,
+    "mtime_ns": 1788927152484580274,
+    "sha256": "59f326d364ca7e7b571d0c9d68a860cca2ca1d8f4701101e896986b4d4582a0a"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260901185939a1N/videos/videos_20260901185939a1N_3/manifest.json": {
+    "size": 7536,
+    "mtime_ns": 1788927581276619107,
+    "sha256": "831ff2f93d1be62dc31fd249007d4bbc744df5233b43379e71a96707d1058170"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260902153110uGf/meta/unpacked/meta_20260902153110uGf_1/frames.jsonl": {
+    "size": 789629,
+    "mtime_ns": 1788929124650318699,
+    "sha256": "3eba2f1db6bd579e3ff5185e804429bca1953210d52bcd866982b5eff79416cd"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260902153110uGf/meta/unpacked/meta_20260902153110uGf_10/frames.jsonl": {
+    "size": 34352,
+    "mtime_ns": 1788929130150659759,
+    "sha256": "0d1a99deaebfe52a96bea150c4838dac3e91fd411f5b66942affb46b28d684a7"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260902153110uGf/meta/unpacked/meta_20260902153110uGf_2/frames.jsonl": {
+    "size": 1125399,
+    "mtime_ns": 1788929130426555149,
+    "sha256": "0ce3327f37201920d735127017568e7c4d21a439e583d997c20730f4e2bb8dc0"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260902153110uGf/meta/unpacked/meta_20260902153110uGf_3/frames.jsonl": {
+    "size": 162524,
+    "mtime_ns": 1788929138215551707,
+    "sha256": "e0263d378a7e9a46d35f6a7792accee156720946878da14b387e23786ceea0ef"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260902153110uGf/meta/unpacked/meta_20260902153110uGf_4/frames.jsonl": {
+    "size": 22842,
+    "mtime_ns": 1788929139409940794,
+    "sha256": "ca035a49a66c4df808ffc7e89cf2bc6e55874aab2799546aa59089c9b10c3826"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260902153110uGf/meta/unpacked/meta_20260902153110uGf_5/frames.jsonl": {
+    "size": 214852,
+    "mtime_ns": 1788929139605614553,
+    "sha256": "1202a3760704d0334e165a6431f9a2ebbb85761a36d74bcf06f720c55993768a"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260902153110uGf/meta/unpacked/meta_20260902153110uGf_6/frames.jsonl": {
+    "size": 121584,
+    "mtime_ns": 1788929141191039674,
+    "sha256": "93c01b1df28107ea9b9431b5f708020fa5b123bfc445c1b2419c89a54b6398ff"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260902153110uGf/meta/unpacked/meta_20260902153110uGf_7/frames.jsonl": {
+    "size": 120511,
+    "mtime_ns": 1788929142038665707,
+    "sha256": "e2f66160d0fa8734465d9b55ceea8a5fd167495bc3dbe0789e70168e977e1007"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260902153110uGf/meta/unpacked/meta_20260902153110uGf_8/frames.jsonl": {
+    "size": 159666,
+    "mtime_ns": 1788929142902772494,
+    "sha256": "3f9ee40faa74a28988eb9f384de38662798d3e27228ce9efeb13ff557cb0b121"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260902153110uGf/meta/unpacked/meta_20260902153110uGf_9/frames.jsonl": {
+    "size": 57547,
+    "mtime_ns": 1788929144043398952,
+    "sha256": "fa8786f7558b6e32c09900a934d44631a4d8f0279c61161c6ce92405de94fc20"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260902153110uGf/videos/videos_20260902153110uGf_1/manifest.json": {
+    "size": 5183,
+    "mtime_ns": 1788929174320464811,
+    "sha256": "2e7c7095d6c04666fc409efe8768e21c8c8da638393e3fa1ce78522c885c9bcc"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260902153110uGf/videos/videos_20260902153110uGf_10/manifest.json": {
+    "size": 2643,
+    "mtime_ns": 1788929152695894847,
+    "sha256": "0f0ca6cb689ba5f54a7070395442150b50471295f8671aecd581dd7d730f36df"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260902153110uGf/videos/videos_20260902153110uGf_2/manifest.json": {
+    "size": 6421,
+    "mtime_ns": 1788929179032308231,
+    "sha256": "519187c99dbd2d79f54cff47361c59afb8824faff7954cd63bb5a72baa52bb91"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260902153110uGf/videos/videos_20260902153110uGf_3/manifest.json": {
+    "size": 3296,
+    "mtime_ns": 1788929156378806347,
+    "sha256": "418c34eff00e85d72c5203165ea074122ffd2b253e948853ab30355da27c5c96"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260902153110uGf/videos/videos_20260902153110uGf_4/manifest.json": {
+    "size": 2636,
+    "mtime_ns": 1788929154889408822,
+    "sha256": "d04dd852b6aa05c29f0d4e190ef5aeff9ef70ac50ac410f766a1dfb842c36810"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260902153110uGf/videos/videos_20260902153110uGf_5/manifest.json": {
+    "size": 3298,
+    "mtime_ns": 1788929163073668677,
+    "sha256": "69e54811fd34edb7f1249cc8a4d9bd5e296816b0f601c9573fd6981fe7ea2064"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260902153110uGf/videos/videos_20260902153110uGf_6/manifest.json": {
+    "size": 3298,
+    "mtime_ns": 1788929162040170351,
+    "sha256": "85d83f9dde3435a114d34274460190042067d94b268584614ab7b7f882e290eb"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260902153110uGf/videos/videos_20260902153110uGf_7/manifest.json": {
+    "size": 2646,
+    "mtime_ns": 1788929166752933450,
+    "sha256": "65c98b39bb3577f5d31990437e0f860c4a90eddb1561b93d23145df5af7c3e49"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260902153110uGf/videos/videos_20260902153110uGf_8/manifest.json": {
+    "size": 3302,
+    "mtime_ns": 1788929170728218606,
+    "sha256": "2fcf4403aad5d7d4281d2196c98c8ab5b4c5fb7c063ab1b5bc85383b1a990022"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260902153110uGf/videos/videos_20260902153110uGf_9/manifest.json": {
+    "size": 2646,
+    "mtime_ns": 1788929169770721583,
+    "sha256": "5da2142f79ec9dc9ca5a89bea61211ddfc06d055d941eff4464a6ca45ecd7626"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260903154146O1X/meta/unpacked/meta_20260903154146O1X_1/frames.jsonl": {
+    "size": 2505125,
+    "mtime_ns": 1788927956131659475,
+    "sha256": "f51e6c2baa38116c9a90cb96e95f8e913673aa173c5f87e66960e4591736793f"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260903154146O1X/meta/unpacked/meta_20260903154146O1X_2/frames.jsonl": {
+    "size": 238312,
+    "mtime_ns": 1788927977568222604,
+    "sha256": "3ff815f8650cf7475669dbc655922a58864c7d316ba0bb4362d37347ddd43cea"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260903154146O1X/videos/videos_20260903154146O1X_1/manifest.json": {
+    "size": 10155,
+    "mtime_ns": 1788928596220869986,
+    "sha256": "5045e2ed8df144b4704262f1c851c65b84cff918c84b7cbe0085a8dfea77c7a9"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260903154146O1X/videos/videos_20260903154146O1X_2/manifest.json": {
+    "size": 3295,
+    "mtime_ns": 1788927992848588466,
+    "sha256": "3b94ade4e4f8b694f0e5ed0928c79fa227d3cbf5776ccffe3d5ad61a55b40522"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_1/frames.jsonl": {
+    "size": 41608,
+    "mtime_ns": 1789654106017117815,
+    "sha256": "e1e6bbb4c5413b7a32726f293f2ba97a15106ded3d0f2b057c0229e5a1908872"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_11/frames.jsonl": {
+    "size": 37954,
+    "mtime_ns": 1789654106458890826,
+    "sha256": "ea974ef8c260f19e6fd5e06cae890aa0e649dc954590b3ab9ada51ea599271df"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_13/frames.jsonl": {
+    "size": 31624,
+    "mtime_ns": 1789654106857719070,
+    "sha256": "bd407592ff867d4d92e448725247786c1cce9b0918fa53843b30a868ade870fb"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_16/frames.jsonl": {
+    "size": 76627,
+    "mtime_ns": 1789654107301520873,
+    "sha256": "ed27c4f9342b9ff141c90547a14e734afeb5080afa1e63ea02605cf0e425cc54"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_18/frames.jsonl": {
+    "size": 32484,
+    "mtime_ns": 1789654107923962138,
+    "sha256": "fe4ff5f657ed83a2e495bd523bdea01269a0d875bfb044a0cee136ddc3bd6ec4"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_19/frames.jsonl": {
+    "size": 28986,
+    "mtime_ns": 1789654108173408899,
+    "sha256": "d4376ed727798a789c89e7f6a4977d84292a820c20af25cfcd429e01ff3fcb29"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_23/frames.jsonl": {
+    "size": 37883,
+    "mtime_ns": 1789654108866644988,
+    "sha256": "cc8410ee29c11561c59b1a1f6a310f873495f47242c3b25e99f8b990f26e74e6"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_24/frames.jsonl": {
+    "size": 51337,
+    "mtime_ns": 1789654109141072340,
+    "sha256": "b3b6e05d610817b599b308531cf4cbb5b0d7c442d8f3c09c6d37d4984aef3fcc"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_26/frames.jsonl": {
+    "size": 22505,
+    "mtime_ns": 1789654109701251137,
+    "sha256": "d10638dd80b9415d650bec6d92987992f67c9c13aac9111d8ef4088857a26f54"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_27/frames.jsonl": {
+    "size": 38694,
+    "mtime_ns": 1789654109889208403,
+    "sha256": "6b3f82529f30a2da5120dda4a6ff7253946fe705883f71fa7b09a61de58d470b"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_29/frames.jsonl": {
+    "size": 51375,
+    "mtime_ns": 1789654110287963703,
+    "sha256": "8a8eaecd53589be0b5754113c9faec6a814d443dc279a1c4925af9d1002d81ca"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_3/frames.jsonl": {
+    "size": 66050,
+    "mtime_ns": 1789654110664014077,
+    "sha256": "5de2854fbbb095fba1e7eaacb165f0a1cf35d7138eec6518392fce1fbf06ed46"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_30/frames.jsonl": {
+    "size": 60411,
+    "mtime_ns": 1789654111157545148,
+    "sha256": "ab07460aa1a5eaea1fce2ff3d10c70321b80e3b60b29ff376b3577bc0d5b63c4"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_31/frames.jsonl": {
+    "size": 37860,
+    "mtime_ns": 1789654111603110948,
+    "sha256": "fcb11e42aba70d1c0a7630ea9f40a4decef6adc7bb0a41e836946469737a0c37"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_32/frames.jsonl": {
+    "size": 37746,
+    "mtime_ns": 1789654111998270954,
+    "sha256": "98d773ff4123dd1434fd47f574d5a5cd04e98e8d046f97b9da060753c148419d"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_33/frames.jsonl": {
+    "size": 86347,
+    "mtime_ns": 1789654112276876664,
+    "sha256": "5e74ae21d315393adb2b1a876d2a9219c1a92fe96d7da4487a80a0d53983b960"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_34/frames.jsonl": {
+    "size": 125252,
+    "mtime_ns": 1789654112932398993,
+    "sha256": "04c99ef414cd283b5f2c5901e273b0cfba2170b987dbeaef56a17c90eb3443d2"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_35/frames.jsonl": {
+    "size": 35085,
+    "mtime_ns": 1789654113836107073,
+    "sha256": "4f135f8499af7021c28bfc92638d304bdf22b1f55655edfe853562e01925e9c9"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_36/frames.jsonl": {
+    "size": 26961,
+    "mtime_ns": 1789654114097542513,
+    "sha256": "47921f7b6e14bd5bd459d839678fc06cb1b2379725e79da488a72a57a2aa7bba"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_37/frames.jsonl": {
+    "size": 51341,
+    "mtime_ns": 1789654114325908562,
+    "sha256": "1f418880976d1eae3f42bef67f390f3892bd850103c8e34104ed6c3bd9ddeaac"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_38/frames.jsonl": {
+    "size": 77369,
+    "mtime_ns": 1789654114700970086,
+    "sha256": "a3f46b211dfb119f0a677f0576a5e0807d1abf87dd38782f80ee557048f958c1"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_39/frames.jsonl": {
+    "size": 59358,
+    "mtime_ns": 1789654115248925346,
+    "sha256": "59d778ce4636f7bc4ec3abad6be421ac4ea54241b08ce66eff67548cd55cf796"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_4/frames.jsonl": {
+    "size": 56221,
+    "mtime_ns": 1789654115688287195,
+    "sha256": "78dd663d5bdd29bd8eda53080542424b4651dc009dafe431c20d0d5b03644411"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_40/frames.jsonl": {
+    "size": 18018,
+    "mtime_ns": 1789654116130963292,
+    "sha256": "9d533dfb7cd37a3fabe7593f066a29026d51c1b58dfd460db55f8e2cfcd50fd1"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_41/frames.jsonl": {
+    "size": 59530,
+    "mtime_ns": 1789654116275327661,
+    "sha256": "ea51de1a104c8c0e1998798d256efab9a659ed2e3e50d6556297b5c34e428886"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_44/frames.jsonl": {
+    "size": 79966,
+    "mtime_ns": 1789654116987324799,
+    "sha256": "4bd824b2d30b839a2397d53045e0651457399119d5cb410bf9d242acc8b5c355"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_46/frames.jsonl": {
+    "size": 51389,
+    "mtime_ns": 1789654117662636581,
+    "sha256": "efa1edaefbc81df4d10cff33abcdc36a095471d3a11c821d58223668ad2781ff"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_47/frames.jsonl": {
+    "size": 36077,
+    "mtime_ns": 1789654118079217984,
+    "sha256": "d5c21c0af6d96a6f06c5b6ee7bd514882c2c06f2cedaa89194bf9d6746b00d98"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_48/frames.jsonl": {
+    "size": 55071,
+    "mtime_ns": 1789654118347309503,
+    "sha256": "18ae61ca356826d64598e7a25f99849940f1df62a4df3176e613e4db8563b808"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_50/frames.jsonl": {
+    "size": 22521,
+    "mtime_ns": 1789711522199306929,
+    "sha256": "c0152b3eb16ca39944c032964d0b6af91276b64e9015e0e91db8199b3509359a"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_51/frames.jsonl": {
+    "size": 24261,
+    "mtime_ns": 1789654119356304840,
+    "sha256": "d9df798b5c2e3793ece97637812595681eb4ab48b2e6df85870c23261b731969"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_52/frames.jsonl": {
+    "size": 58584,
+    "mtime_ns": 1789654119545904677,
+    "sha256": "d0e0e7492de03e6c093e27d4e2d9e992287415e38ad0a3512591991af360bbcf"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_6/frames.jsonl": {
+    "size": 58816,
+    "mtime_ns": 1789654121026407043,
+    "sha256": "1f25d1d4369dbcac3caee14cda4bb0f6e6eefb0cfdfb1af53e431a42a1e0be63"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_7/frames.jsonl": {
+    "size": 30759,
+    "mtime_ns": 1789654121463082473,
+    "sha256": "c8593001c7405d23ba66a48a81d7e3c4bbc50e49861872c2ac7f0eb1ccf6a085"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_8/frames.jsonl": {
+    "size": 80482,
+    "mtime_ns": 1789654121719508624,
+    "sha256": "1fe29018f95fa5cfb54387ab14513f172341de9ccec9d77abea317d93ae01470"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/meta/unpacked/meta_20260917174539CCx_9/frames.jsonl": {
+    "size": 84278,
+    "mtime_ns": 1789654122280243899,
+    "sha256": "5bfbd481773d336e0364e7629309bb6300c71d6a47b0d59fb7b776390fd3919f"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_1/manifest.json": {
+    "size": 3163,
+    "mtime_ns": 1789654149464168846,
+    "sha256": "c4ae68eea1580208b8785b6ee32b544a343f83bb310f42fe156e7cfa49ca76aa"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_11/manifest.json": {
+    "size": 2646,
+    "mtime_ns": 1789654131158186299,
+    "sha256": "ea34368e41a4af209b42989e320529f7c331aefd340abf90aae124da0eec1573"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_13/manifest.json": {
+    "size": 2780,
+    "mtime_ns": 1789654133368787147,
+    "sha256": "00aec8582b33f2c59a4c423e88c875eefb9ce36be57fd4d7f7093dd4ffe51536"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_16/manifest.json": {
+    "size": 2666,
+    "mtime_ns": 1789654141694919870,
+    "sha256": "1b1bb66e9a556720918a1ec2b1c03da785ecbe54d4743a87aeaed5d1268e6670"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_18/manifest.json": {
+    "size": 3038,
+    "mtime_ns": 1789654146177121120,
+    "sha256": "f51cd4376ee0ac8afa885eeb98d7da94bbca47e2c5bb2feaf52acc9789c57c73"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_19/manifest.json": {
+    "size": 2771,
+    "mtime_ns": 1789654143421083659,
+    "sha256": "edc8c88174368cca52620d42ca0e4de951d5129928cdf052072150a5098e3888"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_23/manifest.json": {
+    "size": 2650,
+    "mtime_ns": 1789654155165799432,
+    "sha256": "9f644464db26595918188f62c9eaaf19664760c10debb468ead7c2ffe8958b90"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_24/manifest.json": {
+    "size": 2660,
+    "mtime_ns": 1789654155850253144,
+    "sha256": "d5b4833cd9da14e5608765f0e68fd098b96ad62c3cebdf25865ea15167d5098f"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_26/manifest.json": {
+    "size": 2782,
+    "mtime_ns": 1789654159344093646,
+    "sha256": "6af5843150f82ce14430304d84f00561df83327acac45ab887b452adb6042f5e"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_27/manifest.json": {
+    "size": 2651,
+    "mtime_ns": 1789654159997203302,
+    "sha256": "7c34fddba16a40c27aae787744adeec643fec4c4c02630cf0ecfe6cf96f437e8"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_29/manifest.json": {
+    "size": 2666,
+    "mtime_ns": 1789654163584436925,
+    "sha256": "cce6349a58befd0a10bfc12efc1e5695411362cb1f31d1a4084279b4003cf156"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_3/manifest.json": {
+    "size": 2654,
+    "mtime_ns": 1789654187817553766,
+    "sha256": "028aafb6c1f32732a65516d64b9546150a760a20d996990d19556ad97f9e72f6"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_30/manifest.json": {
+    "size": 3051,
+    "mtime_ns": 1789654169608460670,
+    "sha256": "7a1495b83703fbeb16d5dc71d4f51ef6f499777f3a7fa994c5677ede37388567"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_31/manifest.json": {
+    "size": 3045,
+    "mtime_ns": 1789654172536270197,
+    "sha256": "57d72a13842667ad34b0abd9644dea5f1b11b8aeec2071680b02713dbb2bc6f3"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_32/manifest.json": {
+    "size": 2651,
+    "mtime_ns": 1789654169875098215,
+    "sha256": "3319b65c215e91c1c45a782c70c5d34cbb44f284371978d401f29fc2b50a6653"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_33/manifest.json": {
+    "size": 3057,
+    "mtime_ns": 1789654175729863028,
+    "sha256": "740af232e017412bbc5778778fbc0e3e02fe6ff3f2df02458029c357470ad71f"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_34/manifest.json": {
+    "size": 2796,
+    "mtime_ns": 1789654178790741202,
+    "sha256": "b7f5568e83638abf2a61adf31a10f0971de8b773e1bb314781fd7e3e51e281d6"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_35/manifest.json": {
+    "size": 2641,
+    "mtime_ns": 1789654176750071975,
+    "sha256": "47efd69afac42ab4593ef0be9f0b677fdc2e869eb905d9f2f28f788deb3c0ae0"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_36/manifest.json": {
+    "size": 2646,
+    "mtime_ns": 1789654179161594946,
+    "sha256": "106dd8e38d6ad258a45276479ac561f87fe31201cc28e1e334a20585548ef38e"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_37/manifest.json": {
+    "size": 2656,
+    "mtime_ns": 1789654181432615206,
+    "sha256": "4c14503272959216de949a83a6517acb6e1cd2714f9aff47bbb615f32f6d463c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_38/manifest.json": {
+    "size": 3188,
+    "mtime_ns": 1789654187083249315,
+    "sha256": "d03531ab58dcf4dd49a211feeb380428ae282d786af808f9eb7e4bd9f0e8189c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_39/manifest.json": {
+    "size": 2665,
+    "mtime_ns": 1789654185243569748,
+    "sha256": "e86317e48f1789bc1b91f81d80228209c1b1768fa3dc3c56205888210ff55e18"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_4/manifest.json": {
+    "size": 3051,
+    "mtime_ns": 1789654209801173271,
+    "sha256": "e966fd60e9303d26707baf6ab1785b925cac059014b36481226a4a6fe575910d"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_40/manifest.json": {
+    "size": 2911,
+    "mtime_ns": 1789654187849252040,
+    "sha256": "2d3c571cc82f1b0f48e79d29a98ea7d46f87dc8d5cd772ef9cf678ce198324ff"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_41/manifest.json": {
+    "size": 2656,
+    "mtime_ns": 1789654190928984512,
+    "sha256": "90f47c0a3c62d64cee6edb5b8726fb51181aa189ee708a26bd897406b0f64e1d"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_44/manifest.json": {
+    "size": 3309,
+    "mtime_ns": 1789654200572901065,
+    "sha256": "e815df5d7a4b4eeb220721f71e5573cdf41c2f70daa6a996e6655a61755a7b01"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_46/manifest.json": {
+    "size": 2663,
+    "mtime_ns": 1789654200424761675,
+    "sha256": "fb17818ecec3e193b72296b4bc883c9f18076707a0876f14f8ba41eead7217f5"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_47/manifest.json": {
+    "size": 2646,
+    "mtime_ns": 1789654199877901279,
+    "sha256": "307d3a442b95d111cb617159473c3a22731852025449e676189fba2b8eac7c73"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_48/manifest.json": {
+    "size": 2783,
+    "mtime_ns": 1789654206830935070,
+    "sha256": "ff4dc04c99e7038d7c0fbdb049d4171af18fac4a0c1f34604f518e9f9f670026"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_50/manifest.json": {
+    "size": 2782,
+    "mtime_ns": 1789711522189300688,
+    "sha256": "7e8022dd580b441a03337983ee0c7427ee51473e183699884af4461eaff3a4b1"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_51/manifest.json": {
+    "size": 2911,
+    "mtime_ns": 1789654215016578893,
+    "sha256": "9cd9ad023e2b3a465a27f705afb1e5119e8a12cca19ed952177298ec6b367c53"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_52/manifest.json": {
+    "size": 3051,
+    "mtime_ns": 1789654215424480480,
+    "sha256": "98ef5d8ff055cce11986188f4203e7386125c6f6d2059058b6107bdd370c6908"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_6/manifest.json": {
+    "size": 2785,
+    "mtime_ns": 1789654228019091334,
+    "sha256": "093319dc3a113c5d93f205d12d92c86f6748b8dc0b0fe9063730ff689f1e863c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_7/manifest.json": {
+    "size": 2643,
+    "mtime_ns": 1789654228453725130,
+    "sha256": "ae073989b2169e48df4f331b7cc9c2ac63d3e6ec96062c10273b1799064187ba"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_8/manifest.json": {
+    "size": 2918,
+    "mtime_ns": 1789654230939353902,
+    "sha256": "7ae5c2f3ea8c819fa99ecdfff9f6597f0ea01a81e31a22d03bf01c625bdded7a"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260917174539CCx/videos/videos_20260917174539CCx_9/manifest.json": {
+    "size": 2658,
+    "mtime_ns": 1789654232892400517,
+    "sha256": "0869c6df07be79c1fa456229346365d31336d50d9ca9411a2c14b5ab48a34361"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_1/frames.jsonl": {
+    "size": 155142,
+    "mtime_ns": 1789740328465273042,
+    "sha256": "474517b02ef3bb973653fd23ed8e936505689b19dc3191aa86d2a6fa95de2eec"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_10/frames.jsonl": {
+    "size": 22653,
+    "mtime_ns": 1789740329657622788,
+    "sha256": "9585391646d9cfd6bffbda2224eaf438917fb4a01323e26fe7869d7e3f8919ae"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_11/frames.jsonl": {
+    "size": 66058,
+    "mtime_ns": 1789740329848786894,
+    "sha256": "6852080046f6508d91be7f5b3034538d0a77a8c580084f69be026f327ddfcc1e"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_12/frames.jsonl": {
+    "size": 24363,
+    "mtime_ns": 1789740330366125664,
+    "sha256": "4aeb3bdcd16f5e1e58aedf325b844055f6328ba9c2fc7ab54b6aa8873a7c94e1"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_13/frames.jsonl": {
+    "size": 64087,
+    "mtime_ns": 1789740330577724808,
+    "sha256": "92b85d9d5801076dc66ed4b020e0303918231eee90179f82d05572b610924339"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_14/frames.jsonl": {
+    "size": 59564,
+    "mtime_ns": 1789740331073690961,
+    "sha256": "6e58aa474375e17a3bbb720ae02c34aa6aeed16c391ff524f9f40a04f1ba9c78"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_15/frames.jsonl": {
+    "size": 33367,
+    "mtime_ns": 1789740331527480743,
+    "sha256": "527e4b965db24a7effce327dab323bc42279c5fb9e55831202513d22111a15a4"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_16/frames.jsonl": {
+    "size": 20787,
+    "mtime_ns": 1789740331791560160,
+    "sha256": "babeb3a7bc2aac5b2e8634a91a37848b94f8b1d9fad9b4faaebe5b89e74a045d"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_17/frames.jsonl": {
+    "size": 34347,
+    "mtime_ns": 1789740331979567449,
+    "sha256": "7b8375a0327f6aa2de818f62c499b1b423c1c891c6cab8c1c45cdbfc7a6dcfd9"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_18/frames.jsonl": {
+    "size": 31562,
+    "mtime_ns": 1789740332262368773,
+    "sha256": "05f2179fb09b62279196e1785081aa62b3a69742ee906969fb508240b714edde"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_19/frames.jsonl": {
+    "size": 18946,
+    "mtime_ns": 1789740332505485308,
+    "sha256": "83fcc06412514d39a6ec14443f6104a57c64bba6399a0aa944bb4a58c3c6cc52"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_2/frames.jsonl": {
+    "size": 40380,
+    "mtime_ns": 1789740332679551136,
+    "sha256": "64579554a146d7092cb823082599baf35b7c4941c87ea119e92ba9e5475dbacf"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_20/frames.jsonl": {
+    "size": 17083,
+    "mtime_ns": 1789740333011174131,
+    "sha256": "defb4ae1ad0fb1b6e2306835853b25184f802e067435cbfaf78949fe09819806"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_21/frames.jsonl": {
+    "size": 36957,
+    "mtime_ns": 1789740333163705813,
+    "sha256": "39923e2261d07c819447a5e65352a347e2abc43b63052e29cc319c8c5c149f76"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_22/frames.jsonl": {
+    "size": 58741,
+    "mtime_ns": 1789740333451795148,
+    "sha256": "17bb4c53197a3a55ea7fed45d8c545c2484738d73d24bf07e2544d9e94f493c7"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_23/frames.jsonl": {
+    "size": 114057,
+    "mtime_ns": 1789740333904342659,
+    "sha256": "bfdc85fe9c2a2c8731735ff007004ac0771a46b78616ceef4dd1c87193af23cd"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_24/frames.jsonl": {
+    "size": 49665,
+    "mtime_ns": 1789740334721590955,
+    "sha256": "57fd56dad05569dc0516cf28b4da3e3e46b253366dfafae90137e42d0388a1af"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_25/frames.jsonl": {
+    "size": 91037,
+    "mtime_ns": 1789740335123529355,
+    "sha256": "55e94e6ce8c63170dbc0115315d6048e71949324787da07af34365db738c2264"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_26/frames.jsonl": {
+    "size": 178626,
+    "mtime_ns": 1789740335803715281,
+    "sha256": "b4c48e9c59247576b28a8ed160f926f819bf661557e4c579310840e1ebfec923"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_27/frames.jsonl": {
+    "size": 51454,
+    "mtime_ns": 1789740337080411250,
+    "sha256": "c9178ec61b87a618bfbd412f7a1427a3f97ea02f339c29f0fe80d76aae48eeaa"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_28/frames.jsonl": {
+    "size": 45875,
+    "mtime_ns": 1789740337478179470,
+    "sha256": "cd5e5340d20efbc39b1919a93e97c6aa81fc9c4c11d5707e96d527c3c935c61d"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_29/frames.jsonl": {
+    "size": 35106,
+    "mtime_ns": 1789740337836869982,
+    "sha256": "a700182f62b1a39aec1d5af3a68c21003fc21d2c2e1d66f4315fd3806899fd78"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_3/frames.jsonl": {
+    "size": 56890,
+    "mtime_ns": 1789740338105635238,
+    "sha256": "ed711929b4d53eef87a649de0614a4e0f8ba92ca9971da5b03d092496b0a620c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_30/frames.jsonl": {
+    "size": 33268,
+    "mtime_ns": 1789740338524064431,
+    "sha256": "f1f8d60a530f5af705b3f3ef4aabef3d2548aae15a94e90ef5ce8627db746a65"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_31/frames.jsonl": {
+    "size": 18008,
+    "mtime_ns": 1789740338821029938,
+    "sha256": "03733df099cf446adf195d0bd43ef2acef9c7efbd9c7a5e5ba7dc2a079172289"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_32/frames.jsonl": {
+    "size": 26068,
+    "mtime_ns": 1789740338992390065,
+    "sha256": "e5f2667371e739dc0862c1078f7f08187c48196b154c4ac30df0e82c87aa9d14"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_33/frames.jsonl": {
+    "size": 90275,
+    "mtime_ns": 1789740339214625364,
+    "sha256": "bcbf039c46a31f15f68a75132ceacad8d8871765c486f92d5f267ba40b8cef12"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_34/frames.jsonl": {
+    "size": 37098,
+    "mtime_ns": 1789740339876498353,
+    "sha256": "9e0611ba16618385c0264121958ccb99b668423d6eaaf06f59feadcdbf80007e"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_35/frames.jsonl": {
+    "size": 20774,
+    "mtime_ns": 1789740340210158639,
+    "sha256": "a76963c8cd9de730eaf61c0ede14bee1164a952dea8d71a7484b1605a5cf5ca5"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_36/frames.jsonl": {
+    "size": 36052,
+    "mtime_ns": 1789740340404183188,
+    "sha256": "201094ba8d38de6c4575cf21d6245e076ae10d97d87af3990668e4db5b5e7f0e"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_37/frames.jsonl": {
+    "size": 69481,
+    "mtime_ns": 1789740340755771351,
+    "sha256": "615b59b9162a874e615c983ac5c7adc1899567e617c9c2d722953ac7c26fe4ec"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_38/frames.jsonl": {
+    "size": 27095,
+    "mtime_ns": 1789740341287236195,
+    "sha256": "f8f6cc7a6d21bf9905d0afc2f9dd59b91fc3961ed84a5984782c015792cc36c9"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_39/frames.jsonl": {
+    "size": 55949,
+    "mtime_ns": 1789740341519405014,
+    "sha256": "bc7b4957fe6b42ef3ddd4e8df8629b0a66d771dcfb7442d3d00c6fdf1c7a680f"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_4/frames.jsonl": {
+    "size": 33366,
+    "mtime_ns": 1789740341986218761,
+    "sha256": "1434d1df8c6755a11550df9560817c5d95522ff92edc1d975e5ff00c90d22490"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_40/frames.jsonl": {
+    "size": 22550,
+    "mtime_ns": 1789740342273551074,
+    "sha256": "c45d16568508c9b48f964f9d16ffa5692b2d0fbf53b23caa0d649b2543e8c494"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_41/frames.jsonl": {
+    "size": 46917,
+    "mtime_ns": 1789740342476978863,
+    "sha256": "86bc6c7048018ceb115304a4adfd064f7d51f9db9ffb3266e5cb7744236886e8"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_42/frames.jsonl": {
+    "size": 23191,
+    "mtime_ns": 1789740342854738316,
+    "sha256": "412799a6a24e97e773a8a422043c22aab6b180327391d7daeb28ada8a4163cad"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_43/frames.jsonl": {
+    "size": 31523,
+    "mtime_ns": 1789740343071525468,
+    "sha256": "ba8f30d21b84e42a4b2a52b0263cbfbb83acdde56cafecaac9fce289fe963916"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_44/frames.jsonl": {
+    "size": 18878,
+    "mtime_ns": 1789740343324288131,
+    "sha256": "5b6b4b101eb250df01ae4e60a81fb6eb9dca02d58cbaf01dae75673f2dd3b6f2"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_45/frames.jsonl": {
+    "size": 18016,
+    "mtime_ns": 1789740343496104660,
+    "sha256": "5700da8033c9fc66964fc5ce79855a6c94339c7c618c00dd8f43a76e11de4c43"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_46/frames.jsonl": {
+    "size": 18028,
+    "mtime_ns": 1789740343662277722,
+    "sha256": "e9efa842d65e71b268dc919c4e70958429ba5bebe7b1495971d3264401f5c36e"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_47/frames.jsonl": {
+    "size": 72112,
+    "mtime_ns": 1789740343822317084,
+    "sha256": "ab3dd1776f002962f46fdcd6dde40feceabe143400a2ae469adab5fb0ea92616"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_48/frames.jsonl": {
+    "size": 23402,
+    "mtime_ns": 1789740344367804214,
+    "sha256": "edaaebe69b34c8a98eff34b7789bcc7d31bfd79f0a4b6f47fc3e6fe1a07c72ab"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_49/frames.jsonl": {
+    "size": 80235,
+    "mtime_ns": 1789740344573526608,
+    "sha256": "e26e49690d1481fe510c875481dcf51dce68a3acabc43e977a8f099895a24281"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_5/frames.jsonl": {
+    "size": 22551,
+    "mtime_ns": 1789740345203239522,
+    "sha256": "dd22c9347191fc5f27817be47f7ffe9e6441450ca7a81324364f0c5a01bf4de2"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_50/frames.jsonl": {
+    "size": 43439,
+    "mtime_ns": 1789740345407827426,
+    "sha256": "668584da13111616a48483ed9f3d63baea7a9c083640c22008fc9f00a5d9981c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_51/frames.jsonl": {
+    "size": 18940,
+    "mtime_ns": 1789740345760946886,
+    "sha256": "c5ffbb1b585c408826ac0d9a09d88f0c68f0a839e3d7b897a76f374cde01432e"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_52/frames.jsonl": {
+    "size": 40593,
+    "mtime_ns": 1789740345956930898,
+    "sha256": "d096bace766dea301c5807bba0ad453989f9ec56139f389b10158275a46cf3cd"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_53/frames.jsonl": {
+    "size": 98189,
+    "mtime_ns": 1789740346320523953,
+    "sha256": "e9262b3e0efa7aab665d26bb21087481d6f1dcc7b630ae9db95027c7221c4bf9"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_54/frames.jsonl": {
+    "size": 29772,
+    "mtime_ns": 1789740347080690331,
+    "sha256": "5d01e8b322fb85f2e023244e7f15cfa51ac81951d94ec2fa4e59a3d7e8afbe5b"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_6/frames.jsonl": {
+    "size": 21634,
+    "mtime_ns": 1789740347353465018,
+    "sha256": "d5106d7b0fea9d3221891559cbc04447d54cd5f83e17a0652ef2ffa9c3d51894"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_7/frames.jsonl": {
+    "size": 103378,
+    "mtime_ns": 1789740347532068496,
+    "sha256": "02f3464f3901fd2c72c60d6b87ffbb8759d0775a9c732820c289c2e75c38f276"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_8/frames.jsonl": {
+    "size": 30847,
+    "mtime_ns": 1789740348348426383,
+    "sha256": "8c9e69e9bd7a0cfd7ad9a2594e3ca2c2f4f03c526b2e6b398eeae9265b1318a1"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/meta/unpacked/meta_20260918200506GCy_9/frames.jsonl": {
+    "size": 30823,
+    "mtime_ns": 1789740348597274563,
+    "sha256": "1e70b09329e2145fbfcc35e9ee2fde11f215725a9f5af8d136d4c4bac266afce"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_1/manifest.json": {
+    "size": 3307,
+    "mtime_ns": 1789740387515629066,
+    "sha256": "a73e2c064c8bf2818a11a07fc8358bdad792e73dc1603dd7ae8ee9d17779cf29"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_10/manifest.json": {
+    "size": 2650,
+    "mtime_ns": 1789740357277349351,
+    "sha256": "b03573776cf65be2837213d242724b8215186be6415ce6e8a1048cfcdae43139"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_11/manifest.json": {
+    "size": 2660,
+    "mtime_ns": 1789740356894217635,
+    "sha256": "65b89065bdba52b419623de94bc4d2f16c2a8ba92981827e233a4625a990ad4d"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_12/manifest.json": {
+    "size": 2651,
+    "mtime_ns": 1789740360544711070,
+    "sha256": "bf4d98e3e741f2894d754a1505b392a8a73a32cdd5cc034c870ffabecf13e64d"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_13/manifest.json": {
+    "size": 2922,
+    "mtime_ns": 1789740360224861631,
+    "sha256": "afe716ffe6ec9e5b6dccccf6d38173240e7bc2b26d4fcf6d0092d84464adf810"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_14/manifest.json": {
+    "size": 2922,
+    "mtime_ns": 1789740367364362827,
+    "sha256": "2f0355a469ad21d50419858b3e75f883940cf9dbf378487f8894ab42d583f6ac"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_15/manifest.json": {
+    "size": 2645,
+    "mtime_ns": 1789740361767914081,
+    "sha256": "972af9ea3d2c964283ff515329f425e48ae62401ac4b61344a8fa759a714edc5"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_16/manifest.json": {
+    "size": 2651,
+    "mtime_ns": 1789740367564767097,
+    "sha256": "f6e635dad6c5cdb5c2cb2a9826d11eee52fb8b625012cc29679c79b9b2acef87"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_17/manifest.json": {
+    "size": 2651,
+    "mtime_ns": 1789740367445630750,
+    "sha256": "c2a49addfe8b0407171574d0e7623091021471076acb0a199080be7febd516ab"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_18/manifest.json": {
+    "size": 2783,
+    "mtime_ns": 1789740376314276592,
+    "sha256": "96d8e24ed02129714aa68cba5c185b4ac51e90b6a5ef30e80b5c505a4726a20a"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_19/manifest.json": {
+    "size": 2904,
+    "mtime_ns": 1789740374380057483,
+    "sha256": "61ec6fe1e4d5eee1bc33f8f0ff2d1f89a634c0a79bcc92b87a8b2e91ed27fe4c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_2/manifest.json": {
+    "size": 2644,
+    "mtime_ns": 1789740402982966604,
+    "sha256": "aacf3a2dec64ddb5878742e652d4d24a8fbcf32cf9541d5551c0574e2d04dfb5"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_20/manifest.json": {
+    "size": 2646,
+    "mtime_ns": 1789740377916872047,
+    "sha256": "937836ebe23783ac3f06e24ef57d1c6a9fadacfa5f1c19d98a0e44fa12af4cdd"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_21/manifest.json": {
+    "size": 2651,
+    "mtime_ns": 1789740381389849693,
+    "sha256": "eab061647bb5e4a8da0fc6d0b600d3b4d977a22f5758d006c0d61de87aa3bd98"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_22/manifest.json": {
+    "size": 2654,
+    "mtime_ns": 1789740386694683042,
+    "sha256": "73060d37efda2d39d6735196e855473a34dec4d08546104dd75d2dce12bcd5c4"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_23/manifest.json": {
+    "size": 3181,
+    "mtime_ns": 1789740394457543217,
+    "sha256": "5d3be27c8801d3d363f0669c66d2bcf7b10578c5b911b2477abe1a75823a4245"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_24/manifest.json": {
+    "size": 2661,
+    "mtime_ns": 1789740389073710152,
+    "sha256": "e8de68a484016204b6a0888ab4a582e7b90588064d752ebae9b59ac8925b72a0"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_25/manifest.json": {
+    "size": 2660,
+    "mtime_ns": 1789740394322737981,
+    "sha256": "5189a08286ec25bf3d8cdcbdd746729b46ee1b931497dc2eb999701f299afd7d"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_26/manifest.json": {
+    "size": 3319,
+    "mtime_ns": 1789740401127917022,
+    "sha256": "84b6e246bb6f3fe6fd713651ea72cdaf4e5ff5a9fbc9fc2ba21884b31ff2cee4"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_27/manifest.json": {
+    "size": 2661,
+    "mtime_ns": 1789740396281050368,
+    "sha256": "0669d34a740c1f107fd04c7b1b8db1a5f8e31514b8c235ef6ee38e09b63772d8"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_28/manifest.json": {
+    "size": 2791,
+    "mtime_ns": 1789740401832862288,
+    "sha256": "c69e212a01f82ccf4a99b15fd75c647a4602eb9d66b105250ba2cf1207d04cea"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_29/manifest.json": {
+    "size": 2782,
+    "mtime_ns": 1789740401538589586,
+    "sha256": "b3a1f18a8efec36eac99559d292aeb5652d4b71ba9b8adfa12c4aa5a84a8fe2e"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_3/manifest.json": {
+    "size": 2655,
+    "mtime_ns": 1789740423884073157,
+    "sha256": "9a9d4c5090934dc38fbc9082face1f25be87184974967b91c3e636ff3a151b86"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_30/manifest.json": {
+    "size": 2651,
+    "mtime_ns": 1789740407620652494,
+    "sha256": "f8ce0b949ed52e07e7d408814c8078b76d4d7582a8e49a929113e0f0e2f0ca06"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_31/manifest.json": {
+    "size": 2650,
+    "mtime_ns": 1789740407570059164,
+    "sha256": "7534d1ee94568b0976c763816d4606c970592dc8501f2d95907e963083060342"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_32/manifest.json": {
+    "size": 2650,
+    "mtime_ns": 1789740408438267882,
+    "sha256": "283a4caa35a434b38161752fa2e2772dfa9ed9339f6f0811f7fffdb1b57c1449"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_33/manifest.json": {
+    "size": 3051,
+    "mtime_ns": 1789740415027288073,
+    "sha256": "89c925d3c06849f9715b859cab3bbddc3162ccd37f7aed6c912731da3bf6f631"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_34/manifest.json": {
+    "size": 2646,
+    "mtime_ns": 1789740415097596540,
+    "sha256": "0df49a18e8492194a334a8b6cc6919a1ea7ccd0c22e033bca6174060cb7b671e"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_35/manifest.json": {
+    "size": 2646,
+    "mtime_ns": 1789740414175176818,
+    "sha256": "4cd4f3b7734ca41689d2c69b01a9da322a7c0f064b9d102a036945d1ca4eeecc"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_36/manifest.json": {
+    "size": 2651,
+    "mtime_ns": 1789740415527677298,
+    "sha256": "c3effe5cf667e9c8959383895f1fda2e1a7e49b3cc4165dc70c84354cca4c905"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_37/manifest.json": {
+    "size": 3051,
+    "mtime_ns": 1789740426789578844,
+    "sha256": "23857afcf097761817a4a9b15a1142570fd8a33f1ff582446ddfb84ce93739a3"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_38/manifest.json": {
+    "size": 2641,
+    "mtime_ns": 1789740421492140102,
+    "sha256": "8b39ff3257eedcb8cb9f2d73a247dccecedfa28f902176fc2938933a2a588bd0"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_39/manifest.json": {
+    "size": 2660,
+    "mtime_ns": 1789740424667255826,
+    "sha256": "2d77ca0847247570f212f03535a9508534f4646d6013c6a9f9eb3701c5b73596"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_4/manifest.json": {
+    "size": 2648,
+    "mtime_ns": 1789740446928159984,
+    "sha256": "e1cb51fa770eb9f5ecf45afdf6246910efe22317a37f71dc14efd5fbebf56907"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_40/manifest.json": {
+    "size": 2651,
+    "mtime_ns": 1789740428290130711,
+    "sha256": "0e90bb8c86f2eae0ea8838917bec5feec8cec81100baa4aa8572ee4efc22fdda"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_41/manifest.json": {
+    "size": 2661,
+    "mtime_ns": 1789740431760898040,
+    "sha256": "b404a869e8fcb5b72ba2b036c859811359614c5a21b0929225e2b9bca294bf1c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_42/manifest.json": {
+    "size": 2911,
+    "mtime_ns": 1789740433010571055,
+    "sha256": "ff7c443417dc92c1a3b201feb44989fac30bf264d633a4be3b1e622d4d837f05"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_43/manifest.json": {
+    "size": 2909,
+    "mtime_ns": 1789740435180534293,
+    "sha256": "692f7673d32258e9094ce3024e8bc70efae89650e8436ca0b3bdb9538eee65e0"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_44/manifest.json": {
+    "size": 2776,
+    "mtime_ns": 1789740435184249407,
+    "sha256": "682ef0ff87498447bb3fcbd5aae419953e3b694f2fb35d089755396f06978501"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_45/manifest.json": {
+    "size": 2656,
+    "mtime_ns": 1789740437802489965,
+    "sha256": "3f4522d32eaf7a4150f3c14014c8c7c346b945f96b6631dac25bda7b4b995736"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_46/manifest.json": {
+    "size": 2650,
+    "mtime_ns": 1789740440196141641,
+    "sha256": "c031d54b54f06dcca98829d1cdc8201a17f5e70ef5cbaf64fb4f2155bb8e0423"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_47/manifest.json": {
+    "size": 3185,
+    "mtime_ns": 1789740446375707052,
+    "sha256": "4e6f88c1a178f089df28d48e243e3fbc49944725835de9357270f38d4eabfc15"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_48/manifest.json": {
+    "size": 2781,
+    "mtime_ns": 1789740442439670522,
+    "sha256": "6bed9f7d375c72daf30830fb6b4ac6b86ccc97202e9fd44a3c43016ed22bbc42"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_49/manifest.json": {
+    "size": 2661,
+    "mtime_ns": 1789740444501978213,
+    "sha256": "7dc0054050fe165591d8a24cd1d974f5688a55dc17ac3f474791e8f6d3424381"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_5/manifest.json": {
+    "size": 2644,
+    "mtime_ns": 1789740459446951803,
+    "sha256": "b03fd375628c94c3eca5f54eda2cae3bf452c25dd54d1c462d5bc70a32513b3d"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_50/manifest.json": {
+    "size": 2660,
+    "mtime_ns": 1789740451160007077,
+    "sha256": "0e9e5ec30a3b5adfe0744c5733326b2252b48e3b4456bce04c960750b1a613a2"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_51/manifest.json": {
+    "size": 2782,
+    "mtime_ns": 1789740451903360298,
+    "sha256": "1bfec2fba9d66ab189ef1f5027b22099525c246c8ae46c6160be534a33b43f55"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_52/manifest.json": {
+    "size": 3043,
+    "mtime_ns": 1789740457335792301,
+    "sha256": "1ee23fc654762d092e0bab78f25d50a41fde7ea2eba8db0b1e76d89679016e06"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_53/manifest.json": {
+    "size": 2796,
+    "mtime_ns": 1789740455786317508,
+    "sha256": "3e329746c2dc781d9425d9016078d89633cbeb70b3be7db08d4c89947d1652fa"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_54/manifest.json": {
+    "size": 2649,
+    "mtime_ns": 1789740457629005780,
+    "sha256": "6fdd66c51f2fb7de3f47919ac138f8afb26b2ee284b37378af6bce13122e30bc"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_6/manifest.json": {
+    "size": 2643,
+    "mtime_ns": 1789740461912698878,
+    "sha256": "8ba606d5a3305637929c7f9927403fedc086c0845d8b10dfd8ba35d3920031c4"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_7/manifest.json": {
+    "size": 2919,
+    "mtime_ns": 1789740467726444099,
+    "sha256": "cbf4e44fc9763e5060b0bd0ffce32f73e7fc8cac370e6d4e51ca5649b4fc3262"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_8/manifest.json": {
+    "size": 2906,
+    "mtime_ns": 1789740463527062112,
+    "sha256": "2bc1cfea566c93dcb99445646d55e15a3abad2db1d70c0f58c1f5b45ff2c0dbf"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260918200506GCy/videos/videos_20260918200506GCy_9/manifest.json": {
+    "size": 2773,
+    "mtime_ns": 1789740467267897382,
+    "sha256": "18d21c67981c5bcb5ebae644cb59494ba3d65d6e6474f0c2c6f2dffae5b92530"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_1/frames.jsonl": {
+    "size": 24342,
+    "mtime_ns": 1789896365856656117,
+    "sha256": "f7803aa7c50c47e68c71ad19d7e243ef6340b1060d7a3c8767745804f71ec2f9"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_10/frames.jsonl": {
+    "size": 19019,
+    "mtime_ns": 1789896366144905278,
+    "sha256": "15c38f9e4949556a9f455aa341ee95408244d9f9387513698e5663ddd2b0219e"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_11/frames.jsonl": {
+    "size": 37763,
+    "mtime_ns": 1789896366412121576,
+    "sha256": "15e812150336f1bdf2c5d20f9256741cbd5b1ef4dc7916290dca190d50c2f63a"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_12/frames.jsonl": {
+    "size": 27066,
+    "mtime_ns": 1789896366808121471,
+    "sha256": "6d0cd136f105dfc7bb7367b3195cad4b259bb87c8904c64ce1658e61ed1293ab"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_13/frames.jsonl": {
+    "size": 19853,
+    "mtime_ns": 1789896367054708078,
+    "sha256": "273b80ffdf9c943515f7c92d5a2fbcac874ae218ef71d9ae72a72dd9243daa26"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_14/frames.jsonl": {
+    "size": 37024,
+    "mtime_ns": 1789896367242673358,
+    "sha256": "a2ea515b56f43df93a1231946a4b5e37170459d3ab4fa9f9f58181ed3c2cfa16"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_15/frames.jsonl": {
+    "size": 39697,
+    "mtime_ns": 1789896367632093924,
+    "sha256": "0cc80151f2645792330a944729fea98e0d6e7ff8bf51b440b5ca36c7188c0bdb"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_16/frames.jsonl": {
+    "size": 24335,
+    "mtime_ns": 1789896368006811847,
+    "sha256": "aa3774a037d9884a3c9f1492363589dd33382842883deffe369dc3add0d2656d"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_17/frames.jsonl": {
+    "size": 21611,
+    "mtime_ns": 1789896368258585208,
+    "sha256": "54713be77a8d9b5c6ce45c20ff44e68803d0080433ab7ca8c6ce862bd1d83c16"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_18/frames.jsonl": {
+    "size": 62160,
+    "mtime_ns": 1789896368538056933,
+    "sha256": "8b7764859487816e9c2f93da07edeed616d67aa0d90d3d73e16c19142e02bd4f"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_19/frames.jsonl": {
+    "size": 32429,
+    "mtime_ns": 1789896369156729390,
+    "sha256": "eb3ac749448bc98d2fad753114e40d2a7490d0d7cb0bbd07867c50b7561eb62e"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_2/frames.jsonl": {
+    "size": 31556,
+    "mtime_ns": 1789896369559548725,
+    "sha256": "ca4317a60d4ecc1e81f61d05474db4a638605750800db759ba9d94a42de1debd"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_20/frames.jsonl": {
+    "size": 22481,
+    "mtime_ns": 1789896369929781312,
+    "sha256": "823b2e17df7435dedd213b6aaad1343454d210109d176a61adee62b3e309cd34"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_21/frames.jsonl": {
+    "size": 111772,
+    "mtime_ns": 1789896370191046496,
+    "sha256": "5d687d4f64a02759fbfd55aa168e4d87ca2cb6fa8dd0aecdf85381c6434eef70"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_22/frames.jsonl": {
+    "size": 20819,
+    "mtime_ns": 1789896371195458566,
+    "sha256": "1ad9bcdb62c5b19c991b588e4eaccc9ee308048129f8162d013c02e43ab7734f"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_23/frames.jsonl": {
+    "size": 27924,
+    "mtime_ns": 1789896371426898889,
+    "sha256": "8d678bc7f49f4690146439592b21098a099d65bf57e51e25cb3cd8416e921863"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_24/frames.jsonl": {
+    "size": 19852,
+    "mtime_ns": 1789896371763710594,
+    "sha256": "012aad43aa39f17fcfaeead4fde1f9197a4806904653992a7547c548817666b3"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_25/frames.jsonl": {
+    "size": 27097,
+    "mtime_ns": 1789896371988787523,
+    "sha256": "3760cc67c9ba1b19d7bf2e9ed2dafee3c81c09723a30b478b2b34068732a1c94"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_26/frames.jsonl": {
+    "size": 16274,
+    "mtime_ns": 1789896372358078009,
+    "sha256": "78de91a8e67f0f167854917d469f310128f98b335e5898382c6fa9c500c907a8"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_27/frames.jsonl": {
+    "size": 21649,
+    "mtime_ns": 1789896372600506712,
+    "sha256": "398154e181257cdc550b4c937a01c386500af058f62a3083cd595be4de217172"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_28/frames.jsonl": {
+    "size": 30549,
+    "mtime_ns": 1789896372849693276,
+    "sha256": "94d5d2194e1357bfabc9d5d20db617a600e38d78b3181ae9b8faff4e2ccc72b5"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_29/frames.jsonl": {
+    "size": 22468,
+    "mtime_ns": 1789896373160207403,
+    "sha256": "d02a641c0fa7ef95b6441012dccc9367121fa10f7a93badaa2b09854167bf46c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_3/frames.jsonl": {
+    "size": 28909,
+    "mtime_ns": 1789896373380213631,
+    "sha256": "798c8d8d9cdceaaa339c7f9c3d2797b80cebbeb8179de11dc6b13561316959b2"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_30/frames.jsonl": {
+    "size": 107184,
+    "mtime_ns": 1789896373709388979,
+    "sha256": "fc0810e2a97db04a15f21141d4d033437be531304460a8c07559f1dfde5f5124"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_31/frames.jsonl": {
+    "size": 19833,
+    "mtime_ns": 1789896374834855344,
+    "sha256": "50352e9470f52413108b3d50bfa029f4db385af9ce62fb72948027c8951a1263"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_32/frames.jsonl": {
+    "size": 17998,
+    "mtime_ns": 1789896375024818020,
+    "sha256": "fc6d7ccd0ce5674eddde6d382eda8e5d535907ff9e6707d569fd59c3d38a102f"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_33/frames.jsonl": {
+    "size": 35977,
+    "mtime_ns": 1789896375262184006,
+    "sha256": "5d72fb561700accedad1ec95079904910922bd6cae692c1c1202a97493bea7fd"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_34/frames.jsonl": {
+    "size": 52326,
+    "mtime_ns": 1789896375640793623,
+    "sha256": "b9e51cf114f0233632f74828115dfa1a9098841802fe9e0219002500a83821e7"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_35/frames.jsonl": {
+    "size": 29815,
+    "mtime_ns": 1789896376133893661,
+    "sha256": "fe58056b467ba5d8c8deb6af685a417d2c1342164ac3513299f87e4dcc27a435"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_36/frames.jsonl": {
+    "size": 18038,
+    "mtime_ns": 1789896376429260292,
+    "sha256": "65cc067bb227941b93e6ab78b710277a65e6710ec1ebe836e2479206ac682fb5"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_37/frames.jsonl": {
+    "size": 15364,
+    "mtime_ns": 1789896376695401688,
+    "sha256": "6dbb5f3571c9b46825bf4a0e9f5494ba2c80e3ec4b6d88fb77162568e9c9b6c3"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_4/frames.jsonl": {
+    "size": 64951,
+    "mtime_ns": 1789896376888858319,
+    "sha256": "08793427c7cddd7925506b4893c17ab18648359d6eda535b84fd87af9671770f"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_5/frames.jsonl": {
+    "size": 19810,
+    "mtime_ns": 1789896377564756779,
+    "sha256": "d55ed41058d1d586f7de4f1e7c690c6203e10d1e7f97ab48c942bddd68a66706"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_6/frames.jsonl": {
+    "size": 25240,
+    "mtime_ns": 1789896377762910409,
+    "sha256": "ca13bf379a5fdb1df3676434523b84096b015333bc747dc7596e5b890cf1ef13"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_7/frames.jsonl": {
+    "size": 20697,
+    "mtime_ns": 1789896378077853126,
+    "sha256": "ed6c52861ba68de762043c1da02fbd341d8e01e670e3402602685640c29f4360"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_8/frames.jsonl": {
+    "size": 62537,
+    "mtime_ns": 1789896378317199311,
+    "sha256": "d93522d51e26daa5b9d4a265026df2f1996330467d1aea8192834a2b411f5ba9"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/meta/unpacked/meta_20260920122356WIt_9/frames.jsonl": {
+    "size": 29908,
+    "mtime_ns": 1789896378928510895,
+    "sha256": "a21304d59751a4a3e4f4ce041c767700c24106e90d20d3440d92d7ce15d501e0"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_1/manifest.json": {
+    "size": 2644,
+    "mtime_ns": 1789896408470448625,
+    "sha256": "8ad8e6f85c790842d20484e02258290bffef319d2c9009387966569ddd586cd7"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_10/manifest.json": {
+    "size": 2652,
+    "mtime_ns": 1789896390613570687,
+    "sha256": "f7e3afb9df5b9b5b5bbb284ea41cfd2f09e3da215ad3e956f7e93f1e097013f0"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_11/manifest.json": {
+    "size": 2653,
+    "mtime_ns": 1789896389448062805,
+    "sha256": "a5a82d5db6ddf9c56022d370f82864bbff7cf2b0257510cd8ada1cacb7516ed2"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_12/manifest.json": {
+    "size": 2652,
+    "mtime_ns": 1789896390817618126,
+    "sha256": "f3a0845ac59fba1769da23bb84602a6602af91dd5d75c805cb791b6d03aa62ec"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_13/manifest.json": {
+    "size": 2912,
+    "mtime_ns": 1789896392184868867,
+    "sha256": "43b02d5d45d03bc7322e5ba7787453a7ad3f6026f93fa448485695c50b6b84ca"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_14/manifest.json": {
+    "size": 2785,
+    "mtime_ns": 1789896399410539741,
+    "sha256": "e6350c1158422b0ef4f1b5805792cc9661fbea9762b0eff898b19e3644478742"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_15/manifest.json": {
+    "size": 2664,
+    "mtime_ns": 1789896398350643505,
+    "sha256": "b9f7efe2ecb4efac23a5cc4948c67e929094051634cdd3f2eadc4023a3a69253"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_16/manifest.json": {
+    "size": 2652,
+    "mtime_ns": 1789896396938657951,
+    "sha256": "56067d95a77cf63b9e6756d15345fad61ac8c2a37e1049dfda4231e1628554f6"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_17/manifest.json": {
+    "size": 2653,
+    "mtime_ns": 1789896399829208980,
+    "sha256": "6b75cf70e5487616ad3fecb3cd838e1c378cadbc720cf179ad3db89ace6ba94d"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_18/manifest.json": {
+    "size": 3056,
+    "mtime_ns": 1789896407120110133,
+    "sha256": "55448d3e02bb8d4808fc27c3a885f5a66e1288f26cb78d2b788ae08675cbf0e8"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_19/manifest.json": {
+    "size": 2650,
+    "mtime_ns": 1789896407926392428,
+    "sha256": "ce9991aac461b75c72f9ad643470a9a74286cdae047cfe4877a488be31c693d3"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_2/manifest.json": {
+    "size": 2648,
+    "mtime_ns": 1789896438841959256,
+    "sha256": "922d1c590ccafee54aad4a0bf320ad1d7717c47686746ae6d7ac26f58e8f2398"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_20/manifest.json": {
+    "size": 2651,
+    "mtime_ns": 1789896407329121485,
+    "sha256": "2bd6b7ee3dfd7a924d022beec2e69b4d570a4434cd91d5296e55b37c3fad0c41"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_21/manifest.json": {
+    "size": 3052,
+    "mtime_ns": 1789896421367095494,
+    "sha256": "8a613f7cfb2c4e9b09099baa7725900abdb641f0f509570699742540e035717a"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_22/manifest.json": {
+    "size": 2657,
+    "mtime_ns": 1789896418739666456,
+    "sha256": "c40f50e7e2ff9b08159101c9047d52f0487c4d22538f28e7a88ddf6287b71757"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_23/manifest.json": {
+    "size": 2654,
+    "mtime_ns": 1789896418392099484,
+    "sha256": "f4bd90b63bfdf961670bf7ed676edfd4ddbe503f8774df24e5c0cc499e81e73c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_24/manifest.json": {
+    "size": 2653,
+    "mtime_ns": 1789896419018508059,
+    "sha256": "13913b0187473f171bf9722cfbdf3569837288c8907cdd5e9843f980c16a04c6"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_25/manifest.json": {
+    "size": 2912,
+    "mtime_ns": 1789896434864012037,
+    "sha256": "794c45b8a41c52f644c15335923d138daf7194f27a0dd04b152da9b6e015b44e"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_26/manifest.json": {
+    "size": 2906,
+    "mtime_ns": 1789896430581038764,
+    "sha256": "976c05170389478a1ee4c64332a27c9f7bb1b47581e6a4d4a2037d407802c997"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_27/manifest.json": {
+    "size": 2654,
+    "mtime_ns": 1789896427903008334,
+    "sha256": "a0a8daf961ed9cf3afef66db11c9688dd4280431f0704abde70f1b8bc81795aa"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_28/manifest.json": {
+    "size": 2655,
+    "mtime_ns": 1789896432720162926,
+    "sha256": "50f276c06f24a3481602e402b805954dc832467a5da39bb78ec22b500ad34095"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_29/manifest.json": {
+    "size": 2654,
+    "mtime_ns": 1789896437418231016,
+    "sha256": "c9f538b1af0f1c546647df263e1f5d441920e7f33e4313b9c76db545510e299a"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_3/manifest.json": {
+    "size": 2648,
+    "mtime_ns": 1789896466564715107,
+    "sha256": "f1a3287308f43852a1f20bfa481208d52d0ae94a851a4f6da94cc7e2c5c2dac9"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_30/manifest.json": {
+    "size": 3180,
+    "mtime_ns": 1789896446207931603,
+    "sha256": "b1e274ce3429f932364f80317e356baa2f749990a99d8cbb46c135c552d6b4fc"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_31/manifest.json": {
+    "size": 2781,
+    "mtime_ns": 1789896443154561181,
+    "sha256": "bbd90ba4083f6edada1903d79edc2931cad4b3f287fb1e38c533e9e857787d5b"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_32/manifest.json": {
+    "size": 2651,
+    "mtime_ns": 1789896445784251528,
+    "sha256": "799d496c571f403ab950862a49803240ffc50469960d78291d8c5c8725be3aa3"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_33/manifest.json": {
+    "size": 2656,
+    "mtime_ns": 1789896447029491340,
+    "sha256": "cb1473fa97a3cbacd15842ff81c8be7bf91e31d65568930da3734e7fc0431edb"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_34/manifest.json": {
+    "size": 2666,
+    "mtime_ns": 1789896452498612262,
+    "sha256": "c7266d561c9a1d466f0c4f2e340526107031941e837b8ecfa88176c4acdffdd8"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_35/manifest.json": {
+    "size": 2654,
+    "mtime_ns": 1789896454244059189,
+    "sha256": "b48df732099033b10d3d43e02b7fbd46da021a52af8d3ebd2d2de4745881b839"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_36/manifest.json": {
+    "size": 2646,
+    "mtime_ns": 1789896456428384061,
+    "sha256": "c7f816ae78d4a4e40ef48d241a2b0a701330eb8abdb70f26a6fd350f9a3748ae"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_37/manifest.json": {
+    "size": 2646,
+    "mtime_ns": 1789896454862439805,
+    "sha256": "8fcc9ab330b44b8b6f807ecab7e669c718af88729b77a44fae40a30a72d40e6a"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_4/manifest.json": {
+    "size": 2921,
+    "mtime_ns": 1789896465373238246,
+    "sha256": "dffd4264f193f6d9b49756aaf0c7d38769b2c38309808617ec880f48807c16f5"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_5/manifest.json": {
+    "size": 2639,
+    "mtime_ns": 1789896463875751451,
+    "sha256": "ac21fd2cc71be661196011468d5d6c63499125a68dda973d25ed20b7d4e66ecb"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_6/manifest.json": {
+    "size": 2645,
+    "mtime_ns": 1789896466927234672,
+    "sha256": "aa8810aa6e56daa26eb6ea9a9a3fe29e3c62e4ae7085e376e61c87453f420217"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_7/manifest.json": {
+    "size": 2651,
+    "mtime_ns": 1789896473605661156,
+    "sha256": "9ec95c63d05577fe8cd167d1a5a4c5e036cc3ef1fed2d2d1725ed45b3fc8a2d8"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_8/manifest.json": {
+    "size": 3181,
+    "mtime_ns": 1789896476350347226,
+    "sha256": "3590103826ae61db29a9faa804cd4713a5384871a32224ebcb3150bc3ab8ed3b"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/20260920122356WIt/videos/videos_20260920122356WIt_9/manifest.json": {
+    "size": 2647,
+    "mtime_ns": 1789896474110886097,
+    "sha256": "c0a2ed89e5ee18491b44d857bbf5d8fccd543f5ecaf799690af1d979b2824679"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_1/frames.jsonl": {
+    "size": 130407,
+    "mtime_ns": 1789896491578215138,
+    "sha256": "3a3cdbf712d14d5e24dc7d3a0b9519b760cfb7a4492d33a39c9d09827cf9338e"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_10/frames.jsonl": {
+    "size": 22584,
+    "mtime_ns": 1789896493681747947,
+    "sha256": "4199b3125eb38725177acb5bd57b3637c995ba2966805c4d3e030d793dc787d3"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_11/frames.jsonl": {
+    "size": 16261,
+    "mtime_ns": 1789896493989181573,
+    "sha256": "ca351d67185035e0eb6f9b49d916f87ba7ea2f3d69839d62d9f43f7f03e557f6"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_12/frames.jsonl": {
+    "size": 18071,
+    "mtime_ns": 1789896494354251433,
+    "sha256": "ae59963ae6494963cf32c858b654c3d5a11290ba3a31d1c533f4f01861383e83"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_13/frames.jsonl": {
+    "size": 67887,
+    "mtime_ns": 1789896494595011371,
+    "sha256": "0277d70bf5f86873233eadc6b558c1879c5a900bfe0714b6da72a131ae44b517"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_14/frames.jsonl": {
+    "size": 57791,
+    "mtime_ns": 1789896495598086046,
+    "sha256": "30ee20db4f4ebc9796fe38cb2e7dc722269631716607bc761be82ff7c57a0091"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_15/frames.jsonl": {
+    "size": 36117,
+    "mtime_ns": 1789896496428815697,
+    "sha256": "50a7ba34e9af3f46f95314abdc0f5392647813be9f1a4838054e76cf5a2acd1a"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_16/frames.jsonl": {
+    "size": 21618,
+    "mtime_ns": 1789896496944450274,
+    "sha256": "c1640593f0ccc3f04a80a436dcfad4d95a74deb950b29b306deb5a06e805cde0"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_17/frames.jsonl": {
+    "size": 24403,
+    "mtime_ns": 1789896497356218717,
+    "sha256": "45e79626378c1fc3d91068f5d408b5e3909de58f6df1c6e2d988f274c698fc14"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_18/frames.jsonl": {
+    "size": 54211,
+    "mtime_ns": 1789896497816000484,
+    "sha256": "abbb48632064d28e3ce87864b3021243e3d21576a53bd8dfef99813e9840c5bb"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_19/frames.jsonl": {
+    "size": 18099,
+    "mtime_ns": 1789896498477364723,
+    "sha256": "caa059b194af6b876b2da4431cd78f0d26c2886dcbd35d4f3110536d064ca760"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_2/frames.jsonl": {
+    "size": 18849,
+    "mtime_ns": 1789896498710938766,
+    "sha256": "e3702cfdc7ab726c7ccd36f6a89ef3df8e23479d69be2fa8b19ccb9868faac51"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_20/frames.jsonl": {
+    "size": 17185,
+    "mtime_ns": 1789896498953178013,
+    "sha256": "0912c6c6aee6517eaad3b9b6d835ff59e7ea083b3286fcc0534726fcfbf8d01a"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_21/frames.jsonl": {
+    "size": 24455,
+    "mtime_ns": 1789896499223062190,
+    "sha256": "5b96bacd6d6ee933b8af151f661f7c01f373688ec2b0e4644945b657f11c145b"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_22/frames.jsonl": {
+    "size": 20844,
+    "mtime_ns": 1789896499547652926,
+    "sha256": "7b49d9d88600613a7f02c229108e84dc80523499c44c28b2159a16332a4fb822"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_23/frames.jsonl": {
+    "size": 39812,
+    "mtime_ns": 1789896499929939248,
+    "sha256": "34dc8a93ed7fc9eb605ec3703374a699df4c4e944b862c966e5a4919a7f0ea14"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_24/frames.jsonl": {
+    "size": 37101,
+    "mtime_ns": 1789896500537031121,
+    "sha256": "f9cb150a8e089231e5750ba68c306bb641cda8fb858ab0d33091472e045b9d33"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_25/frames.jsonl": {
+    "size": 188291,
+    "mtime_ns": 1789896501199048919,
+    "sha256": "1814a52cab7b2e838418f0f0e2ae63e03bb05cdbbabde064ed8bfb3b990cb915"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_26/frames.jsonl": {
+    "size": 32605,
+    "mtime_ns": 1789896503652058433,
+    "sha256": "79581c89ac108bd2340812715fc4c2ac1e0ee1cd67bc0164d2afe345b28d38db"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_27/frames.jsonl": {
+    "size": 83757,
+    "mtime_ns": 1789896504194843736,
+    "sha256": "b805202add53ea18c1675eca55bdcd155ee34a2b2d66bab29e2acd3c02ed6d7c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_28/frames.jsonl": {
+    "size": 17100,
+    "mtime_ns": 1789896505315816218,
+    "sha256": "8ca4bc615c6257c4a7bf89ffe3d5056ce47900b3b4d0bf95ff678bbea9d015a2"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_29/frames.jsonl": {
+    "size": 16234,
+    "mtime_ns": 1789896505605872083,
+    "sha256": "33880663b75982b5293ee9f5b0b857ed04f0023818a68c716ee2cdce54d66734"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_3/frames.jsonl": {
+    "size": 35985,
+    "mtime_ns": 1789896505922419742,
+    "sha256": "a3bcbd5b6c804ebc3a99c0807d23a341e2005145d810ba44a29902cfb3eefb78"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_30/frames.jsonl": {
+    "size": 47755,
+    "mtime_ns": 1789896506462628589,
+    "sha256": "6bc65ef676f34befe9758ec94876f6b9fcf11037c342a9658989e339dfd91fbf"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_31/frames.jsonl": {
+    "size": 18016,
+    "mtime_ns": 1789896507059664887,
+    "sha256": "63bd7365a7c68148a798abda3d5080e88582bda2b31d662d01f5c6a1f56fbd62"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_32/frames.jsonl": {
+    "size": 25243,
+    "mtime_ns": 1789896507391824151,
+    "sha256": "fe3747ddb6d48ca547f203ff1bd41cbd22d5e6e04c2b520981aaabe04e09db04"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_33/frames.jsonl": {
+    "size": 48707,
+    "mtime_ns": 1789896507731310036,
+    "sha256": "0ad6840708cf244619c1eb22c12fe0eb079339516fc743bdd6fb88f42938c100"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_4/frames.jsonl": {
+    "size": 26033,
+    "mtime_ns": 1789896508344946589,
+    "sha256": "57321c479f3133fb778de36fb3f3b850f1026336a66085be828eb004d57b31b6"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_5/frames.jsonl": {
+    "size": 25837,
+    "mtime_ns": 1789896508768175351,
+    "sha256": "3a25b6e9eda83f3d17aab9bbd3056a490e5f280f5ec8a3f05f24326e294efe84"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_6/frames.jsonl": {
+    "size": 17972,
+    "mtime_ns": 1789896509100120823,
+    "sha256": "b6616075dc70d088fce1030d90c3b0f8a50680233256bf753ab522a573a717ee"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_7/frames.jsonl": {
+    "size": 17070,
+    "mtime_ns": 1789896509324803558,
+    "sha256": "4beb9ecb085187f08ef338f953d715ef97f11a4c32d4d22ae572b803efc4ba78"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_8/frames.jsonl": {
+    "size": 95425,
+    "mtime_ns": 1789896509664339350,
+    "sha256": "8d071a63fe19f6609df563756b71aeecd25928ed3a1311a60568a1bb15ceb2ef"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/meta/unpacked/meta_202609201240128Up_9/frames.jsonl": {
+    "size": 31634,
+    "mtime_ns": 1789896511014002462,
+    "sha256": "e42ee05ac3a9065d79e335980d48f06f1a8523dccabe2b1516dfa6af562d6c0b"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_1/manifest.json": {
+    "size": 2920,
+    "mtime_ns": 1789896552094512424,
+    "sha256": "154efb5c85b2e28d479e66091e8708806f5f7ce8d6cd96cfa23c15d6d6a2bc96"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_10/manifest.json": {
+    "size": 2658,
+    "mtime_ns": 1789896523878260705,
+    "sha256": "aa56672e8a8d9fc0f2ead310f4abbf661481bf9fe5b40e3f88d87a74515209fc"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_11/manifest.json": {
+    "size": 2652,
+    "mtime_ns": 1789896522405616191,
+    "sha256": "4e7dc9ba4f143b088313c873458c5cc7aea755778a5bb9db2b55a74c39c94892"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_12/manifest.json": {
+    "size": 2906,
+    "mtime_ns": 1789896523066214948,
+    "sha256": "9978e2b276c692d29e9579aa6fae9edd4e3388206adfe90298fda26a2d276107"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_13/manifest.json": {
+    "size": 2658,
+    "mtime_ns": 1789896523836106618,
+    "sha256": "1ba70f3f652040b95e097dcb3536d9e8d56f3946c614d15f92f19696c0badb86"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_14/manifest.json": {
+    "size": 2666,
+    "mtime_ns": 1789896534667850676,
+    "sha256": "277b2f5e135addf02fcf5ddc0a89608dd0b84a935089969f2674039fc4bbc092"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_15/manifest.json": {
+    "size": 2917,
+    "mtime_ns": 1789896538541754199,
+    "sha256": "3aa4e07692ae1ce6be649612e964f93d560e79d554f0eed1ff01026a937ba19c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_16/manifest.json": {
+    "size": 2650,
+    "mtime_ns": 1789896536501059123,
+    "sha256": "d1db9080ebe6ac210b00010e9075e8e43652dd662f11456e7b741ec8e690c150"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_17/manifest.json": {
+    "size": 2652,
+    "mtime_ns": 1789896537058724354,
+    "sha256": "f62baf04425217eeffbf8e258562a69e4be2e92306dcfe9e580edf8f46c0ab4d"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_18/manifest.json": {
+    "size": 2666,
+    "mtime_ns": 1789896544522064456,
+    "sha256": "8bc1971c757063733cc2a40d25ac7c3e623d678b35e928c64b6b68a2f7115315"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_19/manifest.json": {
+    "size": 2913,
+    "mtime_ns": 1789896545756635311,
+    "sha256": "3f4e7996bc2c75609cf03473a5fe4151fcc289e83701633226138babeb9c4206"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_2/manifest.json": {
+    "size": 2644,
+    "mtime_ns": 1789896573392578183,
+    "sha256": "67cb81eceb3a61a130cfd9116e45280a5b655164d16c8af7d8851c4863571623"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_20/manifest.json": {
+    "size": 2651,
+    "mtime_ns": 1789896547490355405,
+    "sha256": "5a18a61d904f9f2ad9747e287154e84294245effacfc88244d3b71e1464593a1"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_21/manifest.json": {
+    "size": 2651,
+    "mtime_ns": 1789896551806359324,
+    "sha256": "6c3ac3ce2b8a261bd246128c1f1e3a6f95d0db4c003a67f94844f59cb18668fc"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_22/manifest.json": {
+    "size": 2651,
+    "mtime_ns": 1789896552918231837,
+    "sha256": "a91d3103b855f145791498aab894ddfe080145aa924836bc8fcd4f39620903ba"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_23/manifest.json": {
+    "size": 2909,
+    "mtime_ns": 1789896557263543159,
+    "sha256": "4730463a2c3a4dc2585e8d4ac935caffc209772d33781bbf5f532cc0e0dcfbd2"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_24/manifest.json": {
+    "size": 2786,
+    "mtime_ns": 1789896563643033355,
+    "sha256": "a213c2e0c2e957028301880d89532bc52da2ff4135e58b39c0410cf3b66149fb"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_25/manifest.json": {
+    "size": 2788,
+    "mtime_ns": 1789896565912802674,
+    "sha256": "fd390ddf7b13321a7e2faa54a747bdce7593a8e068ca444ab72feb08952adeb4"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_26/manifest.json": {
+    "size": 2913,
+    "mtime_ns": 1789896563762298132,
+    "sha256": "07c15c679c5be2b0ecc994ec5d4036f525e6311fcf0e338b1c3ed45195838626"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_27/manifest.json": {
+    "size": 3055,
+    "mtime_ns": 1789896569469105662,
+    "sha256": "c922ba3c168686ac6f57162eee7dc7bc795391401652ca75480df9283b9d23f2"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_28/manifest.json": {
+    "size": 2655,
+    "mtime_ns": 1789896570664670180,
+    "sha256": "367dde0ff4511796f3a1b19f19d5886f4eecb1858985748dca6cd03febde911c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_29/manifest.json": {
+    "size": 2651,
+    "mtime_ns": 1789896570574092502,
+    "sha256": "8e38f9464f622525b5ffc1a59e95ce31fb9faca594c28487683596fc537e78eb"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_3/manifest.json": {
+    "size": 2648,
+    "mtime_ns": 1789896596752162035,
+    "sha256": "b87466b29c133507b5938bf2eaa92551ccc9017811f4146d1baae398755b3997"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_30/manifest.json": {
+    "size": 2925,
+    "mtime_ns": 1789896586082986717,
+    "sha256": "29862175f768a618fdf26a615bf4061d0d2688bd360853dbbed76cc84cf7fd5c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_31/manifest.json": {
+    "size": 2912,
+    "mtime_ns": 1789896586224270599,
+    "sha256": "900c049db4d5cdb5dd08b1561e89a67b902d7c97456fc1f012b37f126ce3017c"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_32/manifest.json": {
+    "size": 2706,
+    "mtime_ns": 1789896585030122528,
+    "sha256": "fae43e71eafc13a9b033cbbd0a33a37e840ffab40f16d43d96353ff3be063572"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_33/manifest.json": {
+    "size": 2666,
+    "mtime_ns": 1789896586573937686,
+    "sha256": "4a74417a9673ba24fa1976555e3fe8c4205b258c1d81fbe4a0358a405c549cf6"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_4/manifest.json": {
+    "size": 2646,
+    "mtime_ns": 1789896595457311998,
+    "sha256": "326660cb7e30a43864fcfcb323cff956814339e934b9e7baceeae017ef87b321"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_5/manifest.json": {
+    "size": 2647,
+    "mtime_ns": 1789896596367471324,
+    "sha256": "b4c85706ce8f7a3b191335a7a2742f6b0bd8c724847772d9091583b4ea82d7bb"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_6/manifest.json": {
+    "size": 2769,
+    "mtime_ns": 1789896598356979082,
+    "sha256": "189fc6cb74b42f6bf02fa6b6568dfcbdc49f60a83cc63304e777526da3b05e57"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_7/manifest.json": {
+    "size": 2648,
+    "mtime_ns": 1789896603492286975,
+    "sha256": "9cb019e7372dd7a89cf64f97d156a5e87be525efbee8a69063608aeb2105e190"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_8/manifest.json": {
+    "size": 3050,
+    "mtime_ns": 1789896609255828969,
+    "sha256": "298eda66a5c9982c8e263ebfab1001494b132f4ad8765876a395a71b44524b44"
+  },
+  "/mnt/chengchangxu/data/visual_nav_mv/202609201240128Up/videos/videos_202609201240128Up_9/manifest.json": {
+    "size": 2647,
+    "mtime_ns": 1789896605074557339,
+    "sha256": "0beb1ae6359d685a753f9cae6301603bc4dee7f3e43691a74d953caeb8c987c2"
+  }
+}

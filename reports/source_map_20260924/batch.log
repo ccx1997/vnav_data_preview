@@ -1,0 +1,37 @@
+20260818193938Axg: mapping run_20260901_220250
+20260819203318qFl: mapping run_20260901_223142
+20260821114524n4Q: mapping run_20260901_231656
+20260820180215WDK: mapping run_20260901_225058
+20260821114524n4Q: retained=150 excluded=150 trimmed=150
+20260824161657Li2: mapping run_20260912_180447
+20260824161657Li2: retained=89 excluded=0 trimmed=0
+202608251919001QS: mapping run_20260912_180638
+202608251919001QS: retained=585 excluded=319 trimmed=333
+20260826154539RI5: mapping run_20260912_181915
+20260826154539RI5: retained=33 excluded=0 trimmed=0
+20260827180935lmd: mapping run_20260901_233516
+20260827180935lmd: retained=79 excluded=0 trimmed=0
+20260828154654XXz: mapping run_20260901_233613
+20260819203318qFl: retained=1194 excluded=273 trimmed=235
+20260831152735OM4: mapping run_20260901_235317
+20260831152735OM4: retained=219 excluded=50 trimmed=0
+2026083119533604q: mapping run_20260901_235740
+2026083119533604q: retained=58 excluded=0 trimmed=0
+20260901185939a1N: mapping run_20260909_144652
+20260901185939a1N: retained=22 excluded=0 trimmed=0
+20260902153110uGf: mapping run_20260909_144758
+20260820180215WDK: retained=1377 excluded=543 trimmed=1356
+20260903154146O1X: mapping run_20260909_150420
+20260828154654XXz: retained=650 excluded=732 trimmed=426
+20260917174539CCx: mapping run_20260917_221344
+20260818193938Axg: retained=1483 excluded=665 trimmed=1346
+20260918200506GCy: mapping run_20260918_220806
+20260917174539CCx: retained=390 excluded=668 trimmed=73
+20260920122356WIt: mapping run_20260920_172826
+20260902153110uGf: retained=1109 excluded=267 trimmed=414
+202609201240128Up: mapping run_20260920_174149
+20260920122356WIt: retained=800 excluded=35 trimmed=110
+20260918200506GCy: retained=1200 excluded=527 trimmed=110
+202609201240128Up: retained=864 excluded=76 trimmed=227
+20260903154146O1X: retained=1127 excluded=246 trimmed=1005
+{"status": "success", "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map", "totals": {"input_count": 15980, "retained": 11429, "excluded": 4551, "trimmed_routes": 5785}}

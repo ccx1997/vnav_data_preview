@@ -1,0 +1,39 @@
+{
+  "version": "source_map_registration_v1",
+  "source_path": "/mnt/chengchangxu/projects/visual_navigation_e2e/data/source_map.png",
+  "source_sha256": "5de339d6453e30089f8086ee1e7dc2ab3681104ac255be69703582eec0008cdc",
+  "source_size": [
+    2192,
+    1642
+  ],
+  "reference_sha256": "1a2bead0f9c4c6c056d12e7d01c9341dd8f03571027479f56e3151fba0090668",
+  "reference_size": [
+    1441,
+    1079
+  ],
+  "paired_roads_sha256": "30199849f179a04772d6daf25b7cfca8d590bfef70e88a45c3b68b98de51e507",
+  "related_thread": "01a0d2c1-2f2e-7971-bdc7-9a4610bc7196",
+  "provenance": "User confirmed on 2026-09-24: new drawing preserves the old map layout after enlargement. Existing paired-road calibration is reused, not a new survey.",
+  "raster_transform": "source_xy=(legacy_jpg_xy+0.5)*[2192/1441,1642/1079]-0.5",
+  "erased_road_rects": [
+    {
+      "x": 1199,
+      "y": 816,
+      "width": 125,
+      "height": 63
+    },
+    {
+      "x": 1504,
+      "y": 1155,
+      "width": 51,
+      "height": 55
+    },
+    {
+      "x": 1482,
+      "y": 558,
+      "width": 98,
+      "height": 67
+    }
+  ],
+  "annotation_source_sha256": "3229c189f8df02f49c6492f3c31331d3767ee88b7b7fecb600fee532e716fa58"
+}

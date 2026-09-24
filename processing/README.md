@@ -32,6 +32,11 @@ python3 processing/coordinate-converter/export_pixels.py \
   --output /path/to/pixel_exports/new_run
 ```
 
+新版灰线地图使用 `--handdraw-map source-map`：仅导出 P_map，排除 B10 等无配准地图；
+剔除当前/历史落在未绘制道路的样本，路线在断口或
+进楼处截断，并独立保存审计。对已有任务批量映射可用 `coordinate-converter/remap_existing.py`，
+复用每任务最新成功 full run；参数及 2026-09-24 已完成结果见坐标转换器 README。
+
 ## 训练数据制作
 
 [`training-data-builder/`](training-data-builder/) 提供多视角训练样本、稀疏路线、地图裁剪和雷达教师

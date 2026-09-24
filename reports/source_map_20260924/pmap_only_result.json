@@ -1,0 +1,350 @@
+{
+  "status": "success",
+  "version": "vnav_pixels_source_map_v2",
+  "map_scope": [
+    "P_map"
+  ],
+  "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only",
+  "reused_source_batch": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map",
+  "operation": "scope selection only; no remapping, downloads, teacher runs or source edits",
+  "totals": {
+    "input_count": 14796,
+    "out_of_scope_count": 1184,
+    "retained": 10245,
+    "excluded": 4551,
+    "trimmed_routes": 5785
+  },
+  "retained_maps": {
+    "P_map": 10245
+  },
+  "tasks": [
+    {
+      "task": "20260818193938Axg",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260818193938Axg/vnav_teacher_rule10_history_v2/full/run_20260901_220250",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260818193938Axg/run_20260901_220250",
+      "status": "success",
+      "input_count": 2148,
+      "retained": 1483,
+      "excluded": 665,
+      "out_of_scope_count": 0,
+      "trimmed_routes": 1346,
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260818193938Axg/run_20260901_220250/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260818193938Axg/run_20260901_220250/coordinate_schema.json",
+      "validation": {
+        "passed": true,
+        "maps": {
+          "P_map": 1483
+        },
+        "method": "all P_map manifest lines reused byte-for-byte; upstream export hashes verified",
+        "upstream_audit": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260818193938Axg/run_20260901_220250/pixel_coordinate_audit.json",
+        "gray_points_checked": 95058,
+        "gray_segments_checked": 84832
+      }
+    },
+    {
+      "task": "20260819203318qFl",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260819203318qFl/vnav_teacher_rule10_history_v2/full/run_20260901_223142",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260819203318qFl/run_20260901_223142",
+      "status": "success",
+      "input_count": 1311,
+      "retained": 1038,
+      "excluded": 273,
+      "out_of_scope_count": 156,
+      "trimmed_routes": 235,
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260819203318qFl/run_20260901_223142/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260819203318qFl/run_20260901_223142/coordinate_schema.json",
+      "validation": {
+        "passed": true,
+        "maps": {
+          "P_map": 1038
+        },
+        "method": "all P_map manifest lines reused byte-for-byte; upstream export hashes verified",
+        "upstream_audit": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260819203318qFl/run_20260901_223142/pixel_coordinate_audit.json",
+        "gray_points_checked": 91041,
+        "gray_segments_checked": 83800
+      }
+    },
+    {
+      "task": "20260820180215WDK",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260820180215WDK/vnav_teacher_rule10_history_v2/full/run_20260901_225058",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260820180215WDK/run_20260901_225058",
+      "status": "success",
+      "input_count": 1899,
+      "retained": 1356,
+      "excluded": 543,
+      "out_of_scope_count": 21,
+      "trimmed_routes": 1356,
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260820180215WDK/run_20260901_225058/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260820180215WDK/run_20260901_225058/coordinate_schema.json",
+      "validation": {
+        "passed": true,
+        "maps": {
+          "P_map": 1356
+        },
+        "method": "all P_map manifest lines reused byte-for-byte; upstream export hashes verified",
+        "upstream_audit": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260820180215WDK/run_20260901_225058/pixel_coordinate_audit.json",
+        "gray_points_checked": 82709,
+        "gray_segments_checked": 73014
+      }
+    },
+    {
+      "task": "20260821114524n4Q",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260821114524n4Q/vnav_teacher_rule10_history_v2/full/run_20260901_231656",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260821114524n4Q/run_20260901_231656",
+      "status": "success",
+      "input_count": 300,
+      "retained": 150,
+      "excluded": 150,
+      "out_of_scope_count": 0,
+      "trimmed_routes": 150,
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260821114524n4Q/run_20260901_231656/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260821114524n4Q/run_20260901_231656/coordinate_schema.json",
+      "validation": {
+        "passed": true,
+        "maps": {
+          "P_map": 150
+        },
+        "method": "all P_map manifest lines reused byte-for-byte; upstream export hashes verified",
+        "upstream_audit": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260821114524n4Q/run_20260901_231656/pixel_coordinate_audit.json",
+        "gray_points_checked": 6060,
+        "gray_segments_checked": 5009
+      }
+    },
+    {
+      "task": "202608251919001QS",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/202608251919001QS/vnav_teacher_rule10_history_v2/full/run_20260912_180638",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/202608251919001QS/run_20260912_180638",
+      "status": "success",
+      "input_count": 824,
+      "retained": 505,
+      "excluded": 319,
+      "out_of_scope_count": 80,
+      "trimmed_routes": 333,
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/202608251919001QS/run_20260912_180638/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/202608251919001QS/run_20260912_180638/coordinate_schema.json",
+      "validation": {
+        "passed": true,
+        "maps": {
+          "P_map": 505
+        },
+        "method": "all P_map manifest lines reused byte-for-byte; upstream export hashes verified",
+        "upstream_audit": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/202608251919001QS/run_20260912_180638/pixel_coordinate_audit.json",
+        "gray_points_checked": 17283,
+        "gray_segments_checked": 13674
+      }
+    },
+    {
+      "task": "20260828154654XXz",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260828154654XXz/vnav_teacher_rule10_history_v2/full/run_20260901_233613",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260828154654XXz/run_20260901_233613",
+      "status": "success",
+      "input_count": 1382,
+      "retained": 650,
+      "excluded": 732,
+      "out_of_scope_count": 0,
+      "trimmed_routes": 426,
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260828154654XXz/run_20260901_233613/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260828154654XXz/run_20260901_233613/coordinate_schema.json",
+      "validation": {
+        "passed": true,
+        "maps": {
+          "P_map": 650
+        },
+        "method": "all P_map manifest lines reused byte-for-byte; upstream export hashes verified",
+        "upstream_audit": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260828154654XXz/run_20260901_233613/pixel_coordinate_audit.json",
+        "gray_points_checked": 32741,
+        "gray_segments_checked": 28090
+      }
+    },
+    {
+      "task": "20260831152735OM4",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260831152735OM4/vnav_teacher_rule10_history_v2/full/run_20260901_235317",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260831152735OM4/run_20260901_235317",
+      "status": "success",
+      "input_count": 50,
+      "retained": 0,
+      "excluded": 50,
+      "out_of_scope_count": 219,
+      "trimmed_routes": 0,
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260831152735OM4/run_20260901_235317/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260831152735OM4/run_20260901_235317/coordinate_schema.json",
+      "validation": {
+        "passed": true,
+        "maps": {
+          "P_map": 0
+        },
+        "method": "all P_map manifest lines reused byte-for-byte; upstream export hashes verified",
+        "upstream_audit": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260831152735OM4/run_20260901_235317/pixel_coordinate_audit.json",
+        "gray_points_checked": 0,
+        "gray_segments_checked": 0
+      }
+    },
+    {
+      "task": "20260902153110uGf",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260902153110uGf/vnav_teacher_rule10_history_v2/full/run_20260909_144758",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260902153110uGf/run_20260909_144758",
+      "status": "success",
+      "input_count": 1071,
+      "retained": 804,
+      "excluded": 267,
+      "out_of_scope_count": 305,
+      "trimmed_routes": 414,
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260902153110uGf/run_20260909_144758/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260902153110uGf/run_20260909_144758/coordinate_schema.json",
+      "validation": {
+        "passed": true,
+        "maps": {
+          "P_map": 804
+        },
+        "method": "all P_map manifest lines reused byte-for-byte; upstream export hashes verified",
+        "upstream_audit": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260902153110uGf/run_20260909_144758/pixel_coordinate_audit.json",
+        "gray_points_checked": 60213,
+        "gray_segments_checked": 53478
+      }
+    },
+    {
+      "task": "20260903154146O1X",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260903154146O1X/vnav_teacher_rule10_history_v2/full/run_20260909_150420",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260903154146O1X/run_20260909_150420",
+      "status": "success",
+      "input_count": 1251,
+      "retained": 1005,
+      "excluded": 246,
+      "out_of_scope_count": 122,
+      "trimmed_routes": 1005,
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260903154146O1X/run_20260909_150420/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260903154146O1X/run_20260909_150420/coordinate_schema.json",
+      "validation": {
+        "passed": true,
+        "maps": {
+          "P_map": 1005
+        },
+        "method": "all P_map manifest lines reused byte-for-byte; upstream export hashes verified",
+        "upstream_audit": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260903154146O1X/run_20260909_150420/pixel_coordinate_audit.json",
+        "gray_points_checked": 71100,
+        "gray_segments_checked": 62654
+      }
+    },
+    {
+      "task": "20260917174539CCx",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260917174539CCx/vnav_teacher_rule10_history_v2/full/run_20260917_221344",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260917174539CCx/run_20260917_221344",
+      "status": "success",
+      "input_count": 1058,
+      "retained": 390,
+      "excluded": 668,
+      "out_of_scope_count": 0,
+      "trimmed_routes": 73,
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260917174539CCx/run_20260917_221344/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260917174539CCx/run_20260917_221344/coordinate_schema.json",
+      "validation": {
+        "passed": true,
+        "maps": {
+          "P_map": 390
+        },
+        "method": "all P_map manifest lines reused byte-for-byte; upstream export hashes verified",
+        "upstream_audit": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260917174539CCx/run_20260917_221344/pixel_coordinate_audit.json",
+        "gray_points_checked": 8728,
+        "gray_segments_checked": 5379
+      }
+    },
+    {
+      "task": "20260918200506GCy",
+      "run": "/mnt/chengchangxu/data/visual_nav_training/20260918200506GCy/vnav_teacher_rule10_history_v2/full/run_20260918_220806",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260918200506GCy/run_20260918_220806",
+      "status": "success",
+      "input_count": 1727,
+      "retained": 1200,
+      "excluded": 527,
+      "out_of_scope_count": 0,
+      "trimmed_routes": 110,
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260918200506GCy/run_20260918_220806/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260918200506GCy/run_20260918_220806/coordinate_schema.json",
+      "validation": {
+        "passed": true,
+        "maps": {
+          "P_map": 1200
+        },
+        "method": "all P_map manifest lines reused byte-for-byte; upstream export hashes verified",
+        "upstream_audit": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260918200506GCy/run_20260918_220806/pixel_coordinate_audit.json",
+        "gray_points_checked": 23636,
+        "gray_segments_checked": 13360
+      }
+    },
+    {
+      "task": "20260920122356WIt",
+      "run": "/mnt/chengchangxu/ckpt/vn_e2e/processed_data/20260920122356WIt/vnav_teacher_rule10_history_v2/full/run_20260920_172826",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260920122356WIt/run_20260920_172826",
+      "status": "success",
+      "input_count": 835,
+      "retained": 800,
+      "excluded": 35,
+      "out_of_scope_count": 0,
+      "trimmed_routes": 110,
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260920122356WIt/run_20260920_172826/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/20260920122356WIt/run_20260920_172826/coordinate_schema.json",
+      "validation": {
+        "passed": true,
+        "maps": {
+          "P_map": 800
+        },
+        "method": "all P_map manifest lines reused byte-for-byte; upstream export hashes verified",
+        "upstream_audit": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/20260920122356WIt/run_20260920_172826/pixel_coordinate_audit.json",
+        "gray_points_checked": 16842,
+        "gray_segments_checked": 10106
+      }
+    },
+    {
+      "task": "202609201240128Up",
+      "run": "/mnt/chengchangxu/ckpt/vn_e2e/processed_data/202609201240128Up/vnav_teacher_rule10_history_v2/full/run_20260920_174149",
+      "output": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/202609201240128Up/run_20260920_174149",
+      "status": "success",
+      "input_count": 940,
+      "retained": 864,
+      "excluded": 76,
+      "out_of_scope_count": 0,
+      "trimmed_routes": 227,
+      "samples": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/202609201240128Up/run_20260920_174149/samples.jsonl",
+      "schema": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_pmap_only/202609201240128Up/run_20260920_174149/coordinate_schema.json",
+      "validation": {
+        "passed": true,
+        "maps": {
+          "P_map": 864
+        },
+        "method": "all P_map manifest lines reused byte-for-byte; upstream export hashes verified",
+        "upstream_audit": "/mnt/chengchangxu/data/visual_nav_training/_source_map_exports/20260924_source_map/202609201240128Up/run_20260920_174149/pixel_coordinate_audit.json",
+        "gray_points_checked": 20845,
+        "gray_segments_checked": 13577
+      }
+    }
+  ],
+  "skipped_tasks": [
+    {
+      "task": "20260824161657Li2",
+      "reason": "no_P_map_samples",
+      "samples": 89
+    },
+    {
+      "task": "20260826154539RI5",
+      "reason": "no_P_map_samples",
+      "samples": 33
+    },
+    {
+      "task": "20260827180935lmd",
+      "reason": "no_P_map_samples",
+      "samples": 79
+    },
+    {
+      "task": "2026083119533604q",
+      "reason": "no_P_map_samples",
+      "samples": 58
+    },
+    {
+      "task": "20260901185939a1N",
+      "reason": "no_P_map_samples",
+      "samples": 22
+    }
+  ],
+  "source_unchanged": true,
+  "retained_manifest_bytes_unchanged": true
+}
