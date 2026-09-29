@@ -2,6 +2,14 @@
 
 本文记录本项目已经确认的训练数据读取、同步、过滤和处理方式。后续对话或代码改动只要涉及训练数据读取、同步、采样、过滤、裁剪、导出或预处理，都必须同步更新本文，记录新增结论、参数和验证结果。
 
+## 2026-09-25 预览服务模块化维护
+
+- 将采集预览的 `frames.jsonl` 解析、原始裁剪帧解析移至 `server/datasetFrames.ts`，裁剪后的任务、导出和视频元数据更新移至 `server/datasetTrimMetadata.ts`，视频 Range 响应移至 `server/videoRange.ts`。`server/datasets.ts` 保留原有公开导出，调用方接口不变。
+- 帧排序、无效行警告、`map_name` 判定、裁剪窗口与元数据字段、Range 状态码和响应头均沿用原实现；没有改变采样、同步、过滤、教师输入或其他参数。未读取或改写已处理采集任务，也未重新下载、解包、导出或处理数据。
+- 删除 7 个没有文档引用、且已有 JSON 或报告记录结果的历史运行日志；保留报告明确引用和注明留作审计的日志。
+- 验证：`npx vitest run server/datasets.test.ts --maxWorkers=2 --minWorkers=2` **12/12 通过**，`npx vitest run --maxWorkers=2 --minWorkers=2` **53/53 通过**，`npm run build` 通过。默认并发的首次完整测试在共享文件系统上产生大量 worker，出现一次训练页面异步断言超时后中断；限并发重跑该页面及全套测试均通过。
+- 2026-09-29 提交前复验：以 2 个 worker 运行全套 Vitest，12 个测试文件、53 项测试全部通过；`npm run build` 通过。
+
 ## 2026-09-22 Gate 延迟契约与普通 pose 空洞切碎修复
 
 - 复现同事反馈：6 s 延迟下，1–8 s 空洞后的未来连续段可令 `start > decision`，随后 end

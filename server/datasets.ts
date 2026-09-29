@@ -1,9 +1,8 @@
 import { spawn } from 'node:child_process'
 import { randomUUID } from 'node:crypto'
-import { createReadStream, existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
 import { rename, rm, stat, unlink, writeFile } from 'node:fs/promises'
 import { basename, dirname, join, resolve } from 'node:path'
-import type { Response } from 'express'
 import type {
   CameraInfo,
   DatasetDeleteResult,
@@ -11,15 +10,24 @@ import type {
   DatasetMapNameResult,
   DatasetSummary,
   DatasetTrimResult,
-  FrameSample,
-  GridFrame,
-  MapName,
-  Pose,
-  Velocity,
 } from '../shared/types.js'
 import { MAP_NAMES } from '../shared/types.js'
+import {
+  asBoolean,
+  asMapName,
+  asNumber,
+  asObject,
+  asString,
+  asStringArray,
+  parseFramesJsonl,
+  parseRawFrameLines,
+} from './datasetFrames.js'
+import type { JsonObject } from './datasetFrames.js'
+import { updateExportMetadata, updateTaskMetadata, updateVideoMetadata } from './datasetTrimMetadata.js'
 
-type JsonObject = Record<string, unknown>
+function readJson(path: string): JsonObject {
+  return asObject(JSON.parse(readFileSync(path, 'utf8')))
+}
 
 interface DatasetDescriptor {
   id: string
@@ -51,13 +59,6 @@ type VideoTrimmer = (
 
 interface DatasetRepositoryOptions {
   trimVideo?: VideoTrimmer
-}
-
-interface RawFrameLine {
-  line: string
-  value: JsonObject
-  timestamp: number
-  gridFilename: string | null
 }
 
 const META_PREFIX = 'meta_'
@@ -125,176 +126,6 @@ async function runWithConcurrency<T>(items: T[], concurrency: number, operation:
   await Promise.all(workers)
 }
 
-function parseRawFrameLines(content: string): { valid: RawFrameLine[]; passthrough: string[] } {
-  const valid: RawFrameLine[] = []
-  const passthrough: string[] = []
-  for (const line of content.split(/\r?\n/)) {
-    if (!line.trim()) continue
-    try {
-      const value = asObject(JSON.parse(line))
-      const timestamp = asNumber(value.ts)
-      if (timestamp === null) {
-        passthrough.push(line)
-        continue
-      }
-      const rawGridPath = asString(value.grid_png)
-      valid.push({
-        line,
-        value,
-        timestamp,
-        gridFilename: rawGridPath ? basename(rawGridPath) : null,
-      })
-    } catch {
-      passthrough.push(line)
-    }
-  }
-  return { valid, passthrough }
-}
-
-function timestampFields(timestamp: number, timezone: string): { utc: string; local: string } {
-  const date = new Date(timestamp * 1000)
-  const utc = date.toISOString()
-  try {
-    const local = new Intl.DateTimeFormat('sv-SE', {
-      timeZone: timezone || 'Asia/Shanghai',
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      fractionalSecondDigits: 3,
-      hourCycle: 'h23',
-    }).format(date).replace(',', '.')
-    return { utc, local }
-  } catch {
-    return { utc, local: utc.replace('T', ' ').replace('Z', '') }
-  }
-}
-
-function updateWindow(value: JsonObject, from: number, to: number): void {
-  value.from = from
-  value.to = to
-  value.keep_windows = [{ from, to }]
-}
-
-function updateTaskMetadata(
-  task: JsonObject,
-  descriptor: DatasetDescriptor,
-  from: number,
-  to: number,
-  videoSizes: Map<string, number>,
-): void {
-  const timezone = asString(task.tz, 'Asia/Shanghai')
-  const startedAt = timestampFields(from, timezone)
-  const endedAt = timestampFields(to, timezone)
-  task.started_ts = from
-  task.ended_ts = to
-  task.started_at_utc = startedAt.utc
-  task.started_at_local = startedAt.local
-  task.ended_at_utc = endedAt.utc
-  task.ended_at_local = endedAt.local
-
-  const subTask = asObject(task.sub_task)
-  if (descriptor.grouped || Object.keys(subTask).length) {
-    const previousFrom = asNumber(subTask.from)
-    const previousTo = asNumber(subTask.to)
-    updateWindow(subTask, from, to)
-    task.sub_task = subTask
-    if (Array.isArray(task.keep_windows)) {
-      task.keep_windows = task.keep_windows.map((entry) => {
-        const window = asObject(entry)
-        return asNumber(window.from) === previousFrom && asNumber(window.to) === previousTo ? { from, to } : entry
-      })
-    }
-    if (Array.isArray(task.sub_tasks)) {
-      task.sub_tasks = task.sub_tasks.map((entry) => {
-        const candidate = asObject(entry)
-        return asString(candidate.sub_task_id) === descriptor.id
-          ? { ...candidate, from, to, keep_windows: [{ from, to }] }
-          : entry
-      })
-    }
-  }
-
-  const videoContinuous = asObject(task.video_continuous)
-  if (Array.isArray(videoContinuous.items)) {
-    videoContinuous.items = videoContinuous.items.map((entry) => {
-      const item = asObject(entry)
-      if (asString(item.sub_task_id) !== descriptor.id) return entry
-      const size = videoSizes.get(asString(item.camera))
-      return { ...item, ...(size === undefined ? {} : { bytes: size }), locally_trimmed: true }
-    })
-    task.video_continuous = videoContinuous
-  }
-  task.local_trim = { from, to, updated_at: new Date().toISOString() }
-}
-
-function updateExportMetadata(
-  exportMeta: JsonObject,
-  descriptor: DatasetDescriptor,
-  keptFrames: RawFrameLine[],
-  from: number,
-  to: number,
-): void {
-  const gridFrames = keptFrames.filter((frame) => asBoolean(frame.value.grid_valid) && frame.gridFilename)
-  exportMeta.sample_count = keptFrames.length
-  exportMeta.grids_total = gridFrames.length
-  exportMeta.grids_valid = gridFrames.length
-  exportMeta.grids_with_pose = gridFrames.filter((frame) => asBoolean(asObject(frame.value.pose).valid)).length
-  exportMeta.png_rendered = gridFrames.length
-  exportMeta.pose_count = keptFrames.filter((frame) => asBoolean(asObject(frame.value.pose).valid)).length
-  exportMeta.vel_count = keptFrames.filter((frame) => asBoolean(asObject(frame.value.actual_vel).valid)).length
-  exportMeta.keep_windows = [{ from, to }]
-  if (descriptor.grouped || Object.keys(asObject(exportMeta.sub_task)).length) {
-    const subTask = asObject(exportMeta.sub_task)
-    updateWindow(subTask, from, to)
-    exportMeta.sub_task = subTask
-  }
-  exportMeta.local_trim = { from, to, updated_at: new Date().toISOString() }
-}
-
-function updateVideoMetadata(
-  metadata: JsonObject,
-  descriptor: DatasetDescriptor,
-  from: number,
-  to: number,
-  videoSizes: Map<string, number>,
-): void {
-  const duration = to - from
-  if (!descriptor.grouped) {
-    metadata.from = from
-    metadata.to = to
-    const perCamera = asObject(metadata.per_camera)
-    for (const [cameraId, size] of videoSizes) {
-      const camera = asObject(perCamera[cameraId])
-      camera.output_window = { from, to }
-      camera.window_s = duration
-      camera.output_bytes = size
-      camera.coverage = null
-      camera.coverage_warning = '本地裁剪后未重新计算覆盖率'
-      perCamera[cameraId] = camera
-    }
-    metadata.per_camera = perCamera
-  } else if (Array.isArray(metadata.segments)) {
-    const segments = metadata.segments.flatMap((entry) => {
-      const segment = asObject(entry)
-      const segmentFrom = asNumber(segment.clip_from_ts) ?? asNumber(segment.start_ts)
-      const segmentTo = asNumber(segment.clip_to_ts) ?? asNumber(segment.end_ts)
-      if (segmentFrom === null || segmentTo === null || segmentTo < from || segmentFrom > to) return []
-      return [{
-        ...segment,
-        clip_from_ts: Math.max(from, segmentFrom),
-        clip_to_ts: Math.min(to, segmentTo),
-        keep_windows: [{ from, to }],
-      }]
-    })
-    metadata.segments = segments
-    metadata.count = segments.length
-  }
-  metadata.local_trim = { from, to, updated_at: new Date().toISOString() }
-}
-
 function createDescriptor(
   id: string,
   metaDirectory: string,
@@ -345,38 +176,6 @@ function videoFilename(descriptor: DatasetDescriptor, metadata: JsonObject, came
     : `${cameraId}${descriptor.defaultVideoSuffix}`
 }
 
-function asObject(value: unknown): JsonObject {
-  return value !== null && typeof value === 'object' && !Array.isArray(value)
-    ? (value as JsonObject)
-    : {}
-}
-
-function asString(value: unknown, fallback = ''): string {
-  return typeof value === 'string' ? value : fallback
-}
-
-function asNumber(value: unknown): number | null {
-  return typeof value === 'number' && Number.isFinite(value) ? value : null
-}
-
-function asBoolean(value: unknown, fallback = false): boolean {
-  return typeof value === 'boolean' ? value : fallback
-}
-
-function asStringArray(value: unknown): string[] {
-  return Array.isArray(value) ? value.filter((item): item is string => typeof item === 'string') : []
-}
-
-function asMapName(value: unknown): MapName | null {
-  return typeof value === 'string' && (MAP_NAMES as readonly string[]).includes(value)
-    ? value as MapName
-    : null
-}
-
-function readJson(path: string): JsonObject {
-  return asObject(JSON.parse(readFileSync(path, 'utf8')))
-}
-
 function fileSignature(paths: string[]): string {
   return paths
     .map((path) => {
@@ -388,89 +187,6 @@ function fileSignature(paths: string[]): string {
       }
     })
     .join('|')
-}
-
-function normalizePose(value: unknown): Pose {
-  const pose = asObject(value)
-  return {
-    x: asNumber(pose.x),
-    y: asNumber(pose.y),
-    yaw: asNumber(pose.yaw),
-    valid: asBoolean(pose.valid),
-    poseAgeSeconds: asNumber(pose.pose_age_s),
-  }
-}
-
-function normalizeVelocity(value: unknown): Velocity {
-  const velocity = asObject(value)
-  return {
-    vx: asNumber(velocity.vx),
-    vy: asNumber(velocity.vy),
-    wz: asNumber(velocity.wz),
-    linearVelocity: asNumber(velocity.linear_vel_mps),
-    angularVelocity: asNumber(velocity.angular_vel_rads),
-    source: asString(velocity.src, 'unknown'),
-    valid: asBoolean(velocity.valid),
-  }
-}
-
-function normalizeGrid(frame: JsonObject): GridFrame {
-  const rawGridPath = asString(frame.grid_png)
-  const filename = rawGridPath ? basename(rawGridPath) : null
-  return {
-    valid: asBoolean(frame.grid_valid) && filename !== null,
-    filename,
-    width: asNumber(frame.width),
-    height: asNumber(frame.height),
-    resolution: asNumber(frame.resolution),
-    originX: asNumber(frame.origin_x),
-    originY: asNumber(frame.origin_y),
-    frameId: asString(frame.frame_id),
-  }
-}
-
-export function parseFramesJsonl(content: string): {
-  frames: FrameSample[]
-  warnings: string[]
-  grids: Set<string>
-  mapName: MapName | null
-} {
-  const frames: FrameSample[] = []
-  const warnings: string[] = []
-  const grids = new Set<string>()
-  const mapNames = new Set<MapName>()
-  let unlabeledFrames = 0
-
-  for (const [index, line] of content.split(/\r?\n/).entries()) {
-    if (!line.trim()) continue
-    try {
-      const frame = asObject(JSON.parse(line))
-      const mapName = asMapName(frame.map_name)
-      if (mapName) mapNames.add(mapName)
-      else unlabeledFrames += 1
-      const timestamp = asNumber(frame.ts)
-      if (timestamp === null) {
-        warnings.push(`第 ${index + 1} 行缺少有效时间戳`)
-        continue
-      }
-      const grid = normalizeGrid(frame)
-      if (grid.filename) grids.add(grid.filename)
-      frames.push({
-        timestamp,
-        timestampMs: asNumber(frame.ts_ms) ?? Math.round(timestamp * 1000),
-        dateTimeLocal: asString(frame.datetime_local),
-        pose: normalizePose(frame.pose),
-        velocity: normalizeVelocity(frame.actual_vel),
-        grid,
-      })
-    } catch {
-      warnings.push(`第 ${index + 1} 行 JSON 无法解析`)
-    }
-  }
-
-  frames.sort((left, right) => left.timestamp - right.timestamp)
-  const mapName = mapNames.size === 1 && unlabeledFrames === 0 ? [...mapNames][0] : null
-  return { frames, warnings, grids, mapName }
 }
 
 export class DatasetRepository {
@@ -968,44 +684,5 @@ export class DatasetRepository {
   }
 }
 
-export function sendVideoWithRange(response: Response, videoPath: string, rangeHeader?: string): void {
-  const stat = statSync(videoPath)
-  const total = stat.size
-  response.setHeader('Accept-Ranges', 'bytes')
-  response.setHeader('Content-Type', 'video/mp4')
-  response.setHeader('Cache-Control', 'no-store')
-
-  if (!rangeHeader) {
-    response.setHeader('Content-Length', total)
-    createReadStream(videoPath).pipe(response)
-    return
-  }
-
-  const byteRange = resolveByteRange(rangeHeader, total)
-  if (!byteRange) {
-    response.status(416).setHeader('Content-Range', `bytes */${total}`).end()
-    return
-  }
-  const { start, end } = byteRange
-
-  response.status(206)
-  response.setHeader('Content-Range', `bytes ${start}-${end}/${total}`)
-  response.setHeader('Content-Length', end - start + 1)
-  createReadStream(videoPath, { start, end }).pipe(response)
-}
-
-export function resolveByteRange(rangeHeader: string, total: number): { start: number; end: number } | null {
-  const match = /^bytes=(\d*)-(\d*)$/.exec(rangeHeader)
-  if (!match || (!match[1] && !match[2]) || total <= 0) return null
-
-  if (!match[1]) {
-    const suffixLength = Number(match[2])
-    if (!Number.isFinite(suffixLength) || suffixLength <= 0) return null
-    return { start: Math.max(0, total - suffixLength), end: total - 1 }
-  }
-
-  const start = Number(match[1])
-  const end = match[2] ? Math.min(Number(match[2]), total - 1) : total - 1
-  if (!Number.isFinite(start) || !Number.isFinite(end) || start < 0 || start > end || start >= total) return null
-  return { start, end }
-}
+export { parseFramesJsonl } from './datasetFrames.js'
+export { sendVideoWithRange, resolveByteRange } from './videoRange.js'
